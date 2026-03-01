@@ -50,8 +50,6 @@ WAHLKREIS_GEOJSON_PATH = META_DIR / "LTWahlkreise2026-BW.geojson"
 WAHLKREIS_MAPPING_PATH = META_DIR / "LTWahlkreise2026-BW-wkr_kr_gem.csv"
 WAHLKREIS_STATUS_MAP_PATH = META_DIR / "wahlkreis-status.svg"
 WAHLKREIS_STATUS_CSV_PATH = META_DIR / "wahlkreis-status.csv"
-MAP_QA_JSON_PATH = META_DIR / "reference" / "schaubild8-map-test.json"
-MAP_QA_IMAGE_PATH = META_DIR / "reference" / "schaubild8-map-comparison.png"
 
 STATLA_EXCLUDED_GEBIETSART = {
     "LAND",
@@ -1625,41 +1623,97 @@ def canonical_vote_type(label: str) -> str:
     return label.strip() or "Unbekannt"
 
 
-def party_summary_by_vote_type(party_rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def source_party_totals(
+    party_rows: List[Dict[str, Any]],
+    party_field: str,
+) -> Dict[str, Dict[str, int]]:
     totals_by_type: Dict[str, Dict[str, int]] = {}
     for row in party_rows:
         votes = row.get("votes")
-        party = str(row.get("party") or "").strip()
+        party = str(row.get(party_field) or "").strip()
         if not party or not isinstance(votes, int):
             continue
         vote_type = canonical_vote_type(str(row.get("vote_type") or ""))
         bucket = totals_by_type.setdefault(vote_type, {})
         bucket[party] = bucket.get(party, 0) + votes
+    return totals_by_type
+
+
+def fixed_party_order_by_vote_type() -> Dict[str, List[str]]:
+    first: List[str] = []
+    second: List[str] = []
+    dummy_path = META_DIR / "2026021_LTW26-Dummy-Datei.csv"
+    if dummy_path.exists():
+        try:
+            header_line = decode_bytes(dummy_path.read_bytes()).splitlines()[0]
+            header = next(csv.reader([header_line], delimiter=";"))
+            first = sorted(
+                [name for name in header if re.fullmatch(r"D\d+", name)],
+                key=lambda name: int(name[1:]),
+            )
+            second = sorted(
+                [name for name in header if re.fullmatch(r"F\d+", name)],
+                key=lambda name: int(name[1:]),
+            )
+        except Exception:  # pylint: disable=broad-except
+            pass
+    return {
+        "Erststimmen": first,
+        "Zweitstimmen": second,
+    }
+
+
+def party_summary_by_vote_type_sources(
+    kommone_party_rows: List[Dict[str, Any]],
+    statla_party_rows: List[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    kommone_totals = source_party_totals(kommone_party_rows, party_field="party")
+    statla_totals = source_party_totals(statla_party_rows, party_field="party_name")
+    fixed_parties = fixed_party_order_by_vote_type()
 
     rows: List[Dict[str, Any]] = []
     ordered_vote_types = ["Erststimmen", "Zweitstimmen"]
-    remaining_vote_types = sorted(vt for vt in totals_by_type if vt not in ordered_vote_types)
+    remaining_vote_types = sorted(
+        vt for vt in set(kommone_totals.keys()) | set(statla_totals.keys()) if vt not in ordered_vote_types
+    )
+
     for vote_type in ordered_vote_types + remaining_vote_types:
-        party_totals = totals_by_type.get(vote_type, {})
-        if not party_totals:
+        k_party_totals = kommone_totals.get(vote_type, {})
+        s_party_totals = statla_totals.get(vote_type, {})
+        k_grand_total = sum(k_party_totals.values())
+        s_grand_total = sum(s_party_totals.values())
+
+        parties = list(fixed_parties.get(vote_type, []))
+        extras = sorted(
+            party
+            for party in (set(k_party_totals.keys()) | set(s_party_totals.keys()))
+            if party not in set(parties)
+        )
+        parties.extend(extras)
+        if not parties:
             rows.append(
                 {
                     "vote_type": vote_type,
                     "party": "",
-                    "votes": 0,
-                    "share_percent": 0.0,
+                    "kommone_votes": 0,
+                    "kommone_share_percent": 0.0,
+                    "statla_votes": 0,
+                    "statla_share_percent": 0.0,
                 }
             )
             continue
-        grand_total = sum(party_totals.values())
-        for party, votes in sorted(party_totals.items(), key=lambda item: item[1], reverse=True):
-            share = (votes / grand_total * 100.0) if grand_total else 0.0
+
+        for party in parties:
+            kommone_votes = k_party_totals.get(party, 0)
+            statla_votes = s_party_totals.get(party, 0)
             rows.append(
                 {
                     "vote_type": vote_type,
                     "party": party,
-                    "votes": votes,
-                    "share_percent": share,
+                    "kommone_votes": kommone_votes,
+                    "kommone_share_percent": (kommone_votes / k_grand_total * 100.0) if k_grand_total else 0.0,
+                    "statla_votes": statla_votes,
+                    "statla_share_percent": (statla_votes / s_grand_total * 100.0) if s_grand_total else 0.0,
                 }
             )
     return rows
@@ -1974,44 +2028,13 @@ def generate_wahlkreis_map(
     return status_rows
 
 
-def append_map_qa_section(lines: List[str]) -> None:
-    if not MAP_QA_JSON_PATH.exists():
-        return
-    try:
-        report = json.loads(MAP_QA_JSON_PATH.read_text(encoding="utf-8"))
-    except Exception:  # pylint: disable=broad-except
-        return
-
-    iou_value = report.get("iou")
-    threshold = report.get("threshold")
-    passed = report.get("passed")
-    generated_at = report.get("generated_at_utc")
-
-    lines.append("## Map QA (Schaubild 8)")
-    lines.append("")
-    if generated_at:
-        lines.append(f"- Last run (UTC): **{generated_at}**")
-    if isinstance(iou_value, (int, float)):
-        if isinstance(threshold, (int, float)):
-            lines.append(
-                f"- IoU vs Schaubild 8 page 63: **{float(iou_value):.3f}** (threshold **{float(threshold):.3f}**)"
-            )
-        else:
-            lines.append(f"- IoU vs Schaubild 8 page 63: **{float(iou_value):.3f}**")
-    if isinstance(passed, bool):
-        lines.append(f"- Passed: **{passed}**")
-    lines.append("- Validation command: `python scripts/test_map_against_schaubild8.py`")
-    if MAP_QA_IMAGE_PATH.exists():
-        lines.append("![Schaubild 8 map comparison](data/ltw26/metadata/reference/schaubild8-map-comparison.png)")
-    lines.append("")
-
-
 def generate_readme(
     config: Config,
     polled_at_local: str,
     municipalities: List[Dict[str, str]],
     kommone_snapshots: List[Dict[str, Any]],
     party_rows: List[Dict[str, Any]],
+    statla_party_rows: List[Dict[str, Any]],
     statla_mode: str,
     statla_url: str,
     diff_rows: List[Dict[str, Any]],
@@ -2029,7 +2052,10 @@ def generate_readme(
     status_counts["no_data"] += len(missing_ags)
 
     party_summary, party_details = party_dashboard_rows(kommone_snapshots, party_rows)
-    vote_type_summary = party_summary_by_vote_type(party_rows)
+    vote_type_summary = party_summary_by_vote_type_sources(
+        kommone_party_rows=party_rows,
+        statla_party_rows=statla_party_rows,
+    )
 
     statla_diff_summary: Dict[str, Dict[str, float]] = {}
     for row in diff_rows:
@@ -2099,15 +2125,18 @@ def generate_readme(
     lines.append(f"- Geometry source ZIP: `{config.wahlkreise_geojson_zip_url}`")
     lines.append(f"- SHP source ZIP: `{config.wahlkreise_shp_zip_url}`")
     lines.append("")
-    append_map_qa_section(lines)
     lines.append("## Party Totals (First and Second Votes)")
     lines.append("")
-    lines.append("| Vote Type | Party | Count | Share |")
-    lines.append("|---|---|---:|---:|")
+    lines.append("| Vote Type | Party | `komm.one` Count | `komm.one` Share | `statla` Count | `statla` Share |")
+    lines.append("|---|---|---:|---:|---:|---:|")
     for row in vote_type_summary:
         party_label = row["party"] or "-"
         lines.append(
-            f"| {row['vote_type']} | {party_label} | {int(row['votes'])} | {float(row['share_percent']):.2f}% |"
+            (
+                f"| {row['vote_type']} | {party_label} | {int(row['kommone_votes'])} | "
+                f"{float(row['kommone_share_percent']):.2f}% | {int(row['statla_votes'])} | "
+                f"{float(row['statla_share_percent']):.2f}% |"
+            )
         )
     lines.append("")
     lines.append("## Party Dashboard (Municipality Drill-Down)")
@@ -2219,13 +2248,19 @@ def write_prestart_readme(config: Config) -> None:
         "Map file and status table are prepared from official published geometry in `data/ltw26/metadata/`."
     )
     lines.append("")
-    append_map_qa_section(lines)
     lines.append("## Party Totals (First and Second Votes)")
     lines.append("")
-    lines.append("| Vote Type | Party | Count | Share |")
-    lines.append("|---|---|---:|---:|")
-    lines.append("| Erststimmen | - | 0 | 0.00% |")
-    lines.append("| Zweitstimmen | - | 0 | 0.00% |")
+    lines.append("| Vote Type | Party | `komm.one` Count | `komm.one` Share | `statla` Count | `statla` Share |")
+    lines.append("|---|---|---:|---:|---:|---:|")
+    for row in party_summary_by_vote_type_sources([], []):
+        party_label = row["party"] or "-"
+        lines.append(
+            (
+                f"| {row['vote_type']} | {party_label} | {int(row['kommone_votes'])} | "
+                f"{float(row['kommone_share_percent']):.2f}% | {int(row['statla_votes'])} | "
+                f"{float(row['statla_share_percent']):.2f}% |"
+            )
+        )
     lines.append("")
     lines.append("## Operations")
     lines.append("")
@@ -2245,7 +2280,10 @@ def persist_files(
     diff_rows: List[Dict[str, Any]],
     events_rows: List[Dict[str, Any]],
 ) -> None:
-    vote_type_summary = party_summary_by_vote_type(kommone_party_rows)
+    vote_type_summary = party_summary_by_vote_type_sources(
+        kommone_party_rows=kommone_party_rows,
+        statla_party_rows=statla.get("party_rows", []),
+    )
 
     # Raw snapshots
     write_json(RAW_KOMMONE_DIR / f"{label_file}-kommone.json", {"snapshots": kommone_snapshots, "party_rows": kommone_party_rows})
@@ -2277,7 +2315,14 @@ def persist_files(
     )
     write_csv(
         LATEST_DIR / "party_vote_type_summary.csv",
-        ["vote_type", "party", "votes", "share_percent"],
+        [
+            "vote_type",
+            "party",
+            "kommone_votes",
+            "kommone_share_percent",
+            "statla_votes",
+            "statla_share_percent",
+        ],
         vote_type_summary,
     )
     write_csv(
@@ -2436,6 +2481,7 @@ def main() -> None:
             municipalities=municipalities if args.limit_ags is None else municipalities[: args.limit_ags],
             kommone_snapshots=kommone["snapshots"],
             party_rows=kommone["party_rows"],
+            statla_party_rows=statla["party_rows"],
             statla_mode=statla.get("mode", "UNAVAILABLE"),
             statla_url=statla.get("url", ""),
             diff_rows=diffs,

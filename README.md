@@ -18,20 +18,48 @@ No official results are expected before **2026-03-08 18:00 CET**, so polling is 
 
 Map file and status table are prepared from official published geometry in `data/ltw26/metadata/`.
 
-## Map QA (Schaubild 8)
-
-- Last run (UTC): **2026-03-01T10:39:51.744412+00:00**
-- IoU vs Schaubild 8 page 63: **0.926** (threshold **0.900**)
-- Passed: **True**
-- Validation command: `python scripts/test_map_against_schaubild8.py`
-![Schaubild 8 map comparison](data/ltw26/metadata/reference/schaubild8-map-comparison.png)
-
 ## Party Totals (First and Second Votes)
 
-| Vote Type | Party | Count | Share |
-|---|---|---:|---:|
-| Erststimmen | - | 0 | 0.00% |
-| Zweitstimmen | - | 0 | 0.00% |
+| Vote Type | Party | `komm.one` Count | `komm.one` Share | `statla` Count | `statla` Share |
+|---|---|---:|---:|---:|---:|
+| Erststimmen | D1 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D2 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D3 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D4 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D5 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D6 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D7 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D8 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D9 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D11 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D12 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D13 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D16 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D17 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D20 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D21 | 0 | 0.00% | 0 | 0.00% |
+| Erststimmen | D22 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F1 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F2 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F3 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F4 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F5 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F6 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F7 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F8 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F9 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F10 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F11 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F12 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F13 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F14 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F15 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F16 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F17 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F18 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F19 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F20 | 0 | 0.00% | 0 | 0.00% |
+| Zweitstimmen | F21 | 0 | 0.00% | 0 | 0.00% |
 
 ## Operations
 
