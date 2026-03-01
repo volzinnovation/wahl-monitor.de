@@ -1693,12 +1693,15 @@ def party_summary_by_vote_type_sources(
         if not parties:
             rows.append(
                 {
+                    "row_type": "TOTAL",
                     "vote_type": vote_type,
-                    "party": "",
+                    "party": "TOTAL",
                     "kommone_votes": 0,
                     "kommone_share_percent": 0.0,
                     "statla_votes": 0,
                     "statla_share_percent": 0.0,
+                    "delta_votes": 0,
+                    "delta_share_percent": 0.0,
                 }
             )
             continue
@@ -1706,17 +1709,75 @@ def party_summary_by_vote_type_sources(
         for party in parties:
             kommone_votes = k_party_totals.get(party, 0)
             statla_votes = s_party_totals.get(party, 0)
+            kommone_share = (kommone_votes / k_grand_total * 100.0) if k_grand_total else 0.0
+            statla_share = (statla_votes / s_grand_total * 100.0) if s_grand_total else 0.0
             rows.append(
                 {
+                    "row_type": "PARTY",
                     "vote_type": vote_type,
                     "party": party,
                     "kommone_votes": kommone_votes,
-                    "kommone_share_percent": (kommone_votes / k_grand_total * 100.0) if k_grand_total else 0.0,
+                    "kommone_share_percent": kommone_share,
                     "statla_votes": statla_votes,
-                    "statla_share_percent": (statla_votes / s_grand_total * 100.0) if s_grand_total else 0.0,
+                    "statla_share_percent": statla_share,
+                    "delta_votes": kommone_votes - statla_votes,
+                    "delta_share_percent": kommone_share - statla_share,
                 }
             )
+        kommone_total_share = 100.0 if k_grand_total else 0.0
+        statla_total_share = 100.0 if s_grand_total else 0.0
+        rows.append(
+            {
+                "row_type": "TOTAL",
+                "vote_type": vote_type,
+                "party": "TOTAL",
+                "kommone_votes": k_grand_total,
+                "kommone_share_percent": kommone_total_share,
+                "statla_votes": s_grand_total,
+                "statla_share_percent": statla_total_share,
+                "delta_votes": k_grand_total - s_grand_total,
+                "delta_share_percent": kommone_total_share - statla_total_share,
+            }
+        )
     return rows
+
+
+def append_party_totals_tables(
+    lines: List[str],
+    vote_type_summary: List[Dict[str, Any]],
+) -> None:
+    lines.append("## Party Totals (First and Second Votes)")
+    lines.append("")
+
+    rows_by_vote_type: Dict[str, List[Dict[str, Any]]] = {}
+    order_seen: List[str] = []
+    for row in vote_type_summary:
+        vote_type = str(row.get("vote_type") or "Unbekannt")
+        if vote_type not in rows_by_vote_type:
+            order_seen.append(vote_type)
+        rows_by_vote_type.setdefault(vote_type, []).append(row)
+
+    ordered_vote_types = [vote_type for vote_type in ["Erststimmen", "Zweitstimmen"] if vote_type in rows_by_vote_type]
+    ordered_vote_types.extend(vote_type for vote_type in order_seen if vote_type not in ordered_vote_types)
+
+    for vote_type in ordered_vote_types:
+        lines.append(f"### {vote_type}")
+        lines.append("")
+        lines.append(
+            "| Party | `komm.one` Count | `komm.one` Share | `statla` Count | `statla` Share | Delta Count (`komm.one`-`statla`) | Delta Share (`komm.one`-`statla`) |"
+        )
+        lines.append("|---|---:|---:|---:|---:|---:|---:|")
+        for row in rows_by_vote_type.get(vote_type, []):
+            is_total = str(row.get("row_type") or "") == "TOTAL"
+            party = "**TOTAL**" if is_total else str(row.get("party") or "-")
+            lines.append(
+                (
+                    f"| {party} | {int(row.get('kommone_votes') or 0)} | {float(row.get('kommone_share_percent') or 0.0):.2f}% | "
+                    f"{int(row.get('statla_votes') or 0)} | {float(row.get('statla_share_percent') or 0.0):.2f}% | "
+                    f"{int(row.get('delta_votes') or 0):+d} | {float(row.get('delta_share_percent') or 0.0):+.2f}% |"
+                )
+            )
+        lines.append("")
 
 
 def normalize_wahlkreis_nummer(value: Any) -> str:
@@ -2125,20 +2186,7 @@ def generate_readme(
     lines.append(f"- Geometry source ZIP: `{config.wahlkreise_geojson_zip_url}`")
     lines.append(f"- SHP source ZIP: `{config.wahlkreise_shp_zip_url}`")
     lines.append("")
-    lines.append("## Party Totals (First and Second Votes)")
-    lines.append("")
-    lines.append("| Vote Type | Party | `komm.one` Count | `komm.one` Share | `statla` Count | `statla` Share |")
-    lines.append("|---|---|---:|---:|---:|---:|")
-    for row in vote_type_summary:
-        party_label = row["party"] or "-"
-        lines.append(
-            (
-                f"| {row['vote_type']} | {party_label} | {int(row['kommone_votes'])} | "
-                f"{float(row['kommone_share_percent']):.2f}% | {int(row['statla_votes'])} | "
-                f"{float(row['statla_share_percent']):.2f}% |"
-            )
-        )
-    lines.append("")
+    append_party_totals_tables(lines, vote_type_summary)
     lines.append("## Party Dashboard (Municipality Drill-Down)")
     lines.append("")
     if not party_summary:
@@ -2248,20 +2296,7 @@ def write_prestart_readme(config: Config) -> None:
         "Map file and status table are prepared from official published geometry in `data/ltw26/metadata/`."
     )
     lines.append("")
-    lines.append("## Party Totals (First and Second Votes)")
-    lines.append("")
-    lines.append("| Vote Type | Party | `komm.one` Count | `komm.one` Share | `statla` Count | `statla` Share |")
-    lines.append("|---|---|---:|---:|---:|---:|")
-    for row in party_summary_by_vote_type_sources([], []):
-        party_label = row["party"] or "-"
-        lines.append(
-            (
-                f"| {row['vote_type']} | {party_label} | {int(row['kommone_votes'])} | "
-                f"{float(row['kommone_share_percent']):.2f}% | {int(row['statla_votes'])} | "
-                f"{float(row['statla_share_percent']):.2f}% |"
-            )
-        )
-    lines.append("")
+    append_party_totals_tables(lines, party_summary_by_vote_type_sources([], []))
     lines.append("## Operations")
     lines.append("")
     lines.append("- Local run after start: `python scripts/poll_ltw26.py`")
@@ -2316,12 +2351,15 @@ def persist_files(
     write_csv(
         LATEST_DIR / "party_vote_type_summary.csv",
         [
+            "row_type",
             "vote_type",
             "party",
             "kommone_votes",
             "kommone_share_percent",
             "statla_votes",
             "statla_share_percent",
+            "delta_votes",
+            "delta_share_percent",
         ],
         vote_type_summary,
     )
