@@ -58,6 +58,7 @@ STATLA_EXCLUDED_GEBIETSART = {
 class Config:
     election_name: str
     election_date: str
+    tracking_start_local: str
     timezone: str
     kommone_wahltermin: str
     kommone_base_url_template: str
@@ -86,6 +87,7 @@ def load_config() -> Config:
     return Config(
         election_name=data["election_name"],
         election_date=data["election_date"],
+        tracking_start_local=data.get("tracking_start_local", "2026-03-08T18:00:00"),
         timezone=data.get("timezone", "Europe/Berlin"),
         kommone_wahltermin=data["kommone_wahltermin"],
         kommone_base_url_template=data["kommone_base_url_template"],
@@ -107,6 +109,18 @@ def time_labels(tz_name: str) -> Tuple[str, str]:
     label_file = ts_berlin.strftime("%Y-%m-%d-%H-%M-%S")
     label_human = ts_berlin.strftime("%Y-%m-%d %H:%M:%S %Z")
     return label_file, label_human
+
+
+def tracking_start_local_dt(config: Config) -> datetime:
+    dt = datetime.fromisoformat(config.tracking_start_local)
+    tz = ZoneInfo(config.timezone)
+    if dt.tzinfo is None:
+        return dt.replace(tzinfo=tz)
+    return dt.astimezone(tz)
+
+
+def format_local_dt(dt: datetime) -> str:
+    return dt.strftime("%Y-%m-%d %H:%M %Z")
 
 
 def sha256_bytes(content: bytes) -> str:
@@ -1284,6 +1298,7 @@ def generate_readme(
     statla_url: str,
     diff_rows: List[Dict[str, Any]],
 ) -> None:
+    tracking_start = tracking_start_local_dt(config)
     status_counts = {"complete": 0, "pending": 0, "no_data": 0}
     status_by_ags: Dict[str, str] = {}
     for snapshot in kommone_snapshots:
@@ -1320,6 +1335,13 @@ def generate_readme(
     lines.append(f"# {config.election_name} - Tracking Template")
     lines.append("")
     lines.append(f"Last poll: **{polled_at_local}**")
+    lines.append("")
+    lines.append("## Tracking Window")
+    lines.append("")
+    lines.append(
+        f"- Tracking starts at **{format_local_dt(tracking_start)}**. "
+        "Before this point, official result collection is intentionally disabled."
+    )
     lines.append("")
     lines.append("## Data Sources")
     lines.append("")
@@ -1408,10 +1430,43 @@ def generate_readme(
     lines.append("## Notes")
     lines.append("")
     lines.append("- Polling is designed for minute-level snapshots and immutable timing of updates/removals.")
+    lines.append(f"- No official results are expected before **{format_local_dt(tracking_start)}**.")
     lines.append("- `komm.one` is expected to publish first. Statistik BW may start later; fallback currently uses the provided dummy CSV.")
     lines.append("- If Statistik BW keeps coded party columns (e.g. `D1`, `F1`), cross-source party mapping requires an external codebook.")
     lines.append("")
 
+    README_PATH.write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_prestart_readme(config: Config) -> None:
+    tracking_start = tracking_start_local_dt(config)
+    lines: List[str] = []
+    lines.append(f"# {config.election_name} - Tracking Template")
+    lines.append("")
+    lines.append("## Tracking Window")
+    lines.append("")
+    lines.append(
+        f"Automated tracking is scheduled to commence at **{format_local_dt(tracking_start)}**."
+    )
+    lines.append(
+        f"No official results are expected before **{format_local_dt(tracking_start)}**, "
+        "so polling is intentionally disabled until then."
+    )
+    lines.append("")
+    lines.append("## Data Sources (Planned)")
+    lines.append("")
+    lines.append(
+        f"- `komm.one` municipality APIs (template: `{config.kommone_base_url_template}` + `/daten/api/...`)"
+    )
+    lines.append(
+        f"- Statistik BW single CSV: `{config.statla_live_csv_url}` (fallback: `{config.statla_dummy_csv_url}`)"
+    )
+    lines.append("")
+    lines.append("## Operations")
+    lines.append("")
+    lines.append("- Local run after start: `python scripts/poll_ltw26.py`")
+    lines.append("- Minute automation: `.github/workflows/poll.yml`")
+    lines.append("")
     README_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 
@@ -1514,6 +1569,11 @@ def main() -> None:
     args = parse_args()
     ensure_directories()
     config = load_config()
+    now_local = now_utc().astimezone(ZoneInfo(config.timezone))
+    if now_local < tracking_start_local_dt(config):
+        write_prestart_readme(config)
+        return
+
     label_file, label_human = time_labels(config.timezone)
     polled_at_utc = now_utc().isoformat()
 

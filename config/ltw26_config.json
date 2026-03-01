@@ -1,6 +1,7 @@
 {
   "election_name": "Landtagswahl Baden-Wuerttemberg 2026",
   "election_date": "2026-03-08",
+  "tracking_start_local": "2026-03-08T18:00:00",
   "timezone": "Europe/Berlin",
   "kommone_wahltermin": "20260308",
   "kommone_base_url_template": "https://wahlergebnisse.komm.one/lb/produktion/wahltermin-{wahltermin}/{ags}",
