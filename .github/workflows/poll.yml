@@ -2,7 +2,7 @@ name: LTW26 Poll Every Minute
 
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "1 1 1 1 1"
   workflow_dispatch:
 
 permissions:
