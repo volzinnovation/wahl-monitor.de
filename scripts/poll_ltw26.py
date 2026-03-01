@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import html
 import json
 import re
 import sqlite3
@@ -45,6 +46,12 @@ LATEST_DIR = ROOT / "data" / "ltw26" / "latest"
 REPORT_DIR = ROOT / "data" / "ltw26" / "reports"
 META_DIR = ROOT / "data" / "ltw26" / "metadata"
 README_PATH = ROOT / "README.md"
+WAHLKREIS_GEOJSON_PATH = META_DIR / "LTWahlkreise2026-BW.geojson"
+WAHLKREIS_MAPPING_PATH = META_DIR / "LTWahlkreise2026-BW-wkr_kr_gem.csv"
+WAHLKREIS_STATUS_MAP_PATH = META_DIR / "wahlkreis-status.svg"
+WAHLKREIS_STATUS_CSV_PATH = META_DIR / "wahlkreis-status.csv"
+MAP_QA_JSON_PATH = META_DIR / "reference" / "schaubild8-map-test.json"
+MAP_QA_IMAGE_PATH = META_DIR / "reference" / "schaubild8-map-comparison.png"
 
 STATLA_EXCLUDED_GEBIETSART = {
     "LAND",
@@ -64,6 +71,9 @@ class Config:
     kommone_base_url_template: str
     statla_live_csv_url: str
     statla_dummy_csv_url: str
+    wahlkreise_geojson_zip_url: str
+    wahlkreise_shp_zip_url: str
+    wahlkreise_mapping_csv_url: str
     legacy_city_source_csv: str
     request_timeout_seconds: int
     max_workers: int
@@ -93,6 +103,9 @@ def load_config() -> Config:
         kommone_base_url_template=data["kommone_base_url_template"],
         statla_live_csv_url=data["statla_live_csv_url"],
         statla_dummy_csv_url=data["statla_dummy_csv_url"],
+        wahlkreise_geojson_zip_url=data["wahlkreise_geojson_zip_url"],
+        wahlkreise_shp_zip_url=data["wahlkreise_shp_zip_url"],
+        wahlkreise_mapping_csv_url=data["wahlkreise_mapping_csv_url"],
         legacy_city_source_csv=data["legacy_city_source_csv"],
         request_timeout_seconds=int(data.get("request_timeout_seconds", 4)),
         max_workers=int(data.get("max_workers", 48)),
@@ -341,10 +354,10 @@ def build_municipality_master(config: Config, timeout_seconds: int) -> List[Dict
     legacy_path = ROOT / config.legacy_city_source_csv
     if legacy_path.exists():
         try:
-            text = legacy_path.read_text(encoding="latin-1")
+            text = decode_bytes(legacy_path.read_bytes())
             for row in csv_rows_from_text(text, delimiter=","):
-                ags = canonical_ags(row.get("AGS", ""))
-                name = canonical_municipality_name(row.get("Gemeindename", ""))
+                ags = canonical_ags(row.get("AGS") or row.get("ags") or "")
+                name = canonical_municipality_name(row.get("Gemeindename") or row.get("municipality_name") or "")
                 if ags and name:
                     merged[ags] = {
                         "ags": ags,
@@ -731,14 +744,17 @@ def is_statla_municipality_row(row: Dict[str, str]) -> bool:
 def parse_statla_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     snapshots: List[Dict[str, Any]] = []
     party_rows: List[Dict[str, Any]] = []
-    for raw_row in csv_rows_from_text(csv_text, delimiter=";"):
+    for idx, raw_row in enumerate(csv_rows_from_text(csv_text, delimiter=";")):
         row = dict(raw_row)
         canonical_row_json = json.dumps(row, sort_keys=True, ensure_ascii=False).encode("utf-8")
         row_hash = sha256_bytes(canonical_row_json)
 
         row_key = (
-            str(row.get("Gebietsnummer", "")).strip()
-            or f"{canonical_ags(row.get('AGS'))}:{str(row.get('Gebietsart', '')).strip()}:{str(row.get('Gebietsname', '')).strip()}"
+            f"{idx:06d}:"
+            f"{str(row.get('Gebietsnummer', '')).strip() or '-'}:"
+            f"{str(row.get('Bezirksnummer', '')).strip() or '-'}:"
+            f"{canonical_ags(row.get('AGS')) or '-'}:"
+            f"{str(row.get('Gebietsart', '')).strip() or '-'}"
         )
         snapshot = {
             "row_key": row_key,
@@ -761,14 +777,14 @@ def parse_statla_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dic
     return snapshots, party_rows
 
 
-def fetch_statla(config: Config, timeout_seconds: int) -> Dict[str, Any]:
+def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False) -> Dict[str, Any]:
     live_result = http_get(config.statla_live_csv_url, timeout_seconds)
     selected_result = live_result
     selected_mode = "LIVE"
     selected_url = config.statla_live_csv_url
     fallback_used = False
 
-    if live_result.status_code != 200 or not live_result.content:
+    if force_dummy or live_result.status_code != 200 or not live_result.content:
         selected_result = http_get(config.statla_dummy_csv_url, timeout_seconds)
         selected_mode = "DUMMY"
         selected_url = config.statla_dummy_csv_url
@@ -795,6 +811,19 @@ def fetch_statla(config: Config, timeout_seconds: int) -> Dict[str, Any]:
                 "error_message": selected_result.error_message,
             }
         )
+
+    if (selected_result.status_code != 200 or not selected_result.content) and force_dummy:
+        local_dummy = META_DIR / "2026021_LTW26-Dummy-Datei.csv"
+        if local_dummy.exists():
+            content = local_dummy.read_bytes()
+            selected_result = HttpResult(
+                url=str(local_dummy),
+                status_code=200,
+                content=content,
+                error_message=None,
+            )
+            selected_mode = "DUMMY"
+            selected_url = str(local_dummy)
 
     if selected_result.status_code != 200 or not selected_result.content:
         return {
@@ -1288,6 +1317,347 @@ def party_dashboard_rows(
     return summary_rows, detail_rows_by_party
 
 
+def normalize_wahlkreis_nummer(value: Any) -> str:
+    number = parse_int(value)
+    if number is None:
+        return ""
+    return str(number)
+
+
+def load_wahlkreis_features() -> List[Dict[str, Any]]:
+    if not WAHLKREIS_GEOJSON_PATH.exists():
+        return []
+    try:
+        payload = json.loads(WAHLKREIS_GEOJSON_PATH.read_text(encoding="utf-8"))
+    except Exception:  # pylint: disable=broad-except
+        return []
+    return payload.get("features", []) or []
+
+
+def load_wahlkreis_mapping() -> Dict[str, Dict[str, Any]]:
+    mapping: Dict[str, Dict[str, Any]] = {}
+    if not WAHLKREIS_MAPPING_PATH.exists():
+        return mapping
+
+    lines: List[str] = []
+    with WAHLKREIS_MAPPING_PATH.open("r", encoding="latin-1", newline="") as handle:
+        for line in handle:
+            if not line.strip() or line.startswith("#"):
+                continue
+            lines.append(line)
+
+    reader = csv.DictReader(lines, delimiter=";")
+    for row in reader:
+        wk = normalize_wahlkreis_nummer(row.get("Wahlkreisnummer"))
+        if not wk:
+            continue
+        ags = canonical_ags(row.get("Gemeindekennziffer"))
+        wk_name = canonical_municipality_name(row.get("Wahlkreisname"))
+        bucket = mapping.setdefault(wk, {"wahlkreis_name": wk_name or f"Wahlkreis {wk}", "ags_set": set()})
+        if wk_name:
+            bucket["wahlkreis_name"] = wk_name
+        if ags:
+            bucket["ags_set"].add(ags)
+    return mapping
+
+
+def iter_exterior_rings(geometry: Dict[str, Any]) -> Iterable[List[List[float]]]:
+    geom_type = geometry.get("type")
+    coords = geometry.get("coordinates") or []
+    if geom_type == "Polygon":
+        if coords:
+            yield coords[0]
+    elif geom_type == "MultiPolygon":
+        for polygon in coords:
+            if polygon:
+                yield polygon[0]
+
+
+def project_point(
+    lon: float,
+    lat: float,
+    min_lon: float,
+    min_lat: float,
+    scale: float,
+    pad: float,
+    height: float,
+) -> Tuple[float, float]:
+    x = pad + (lon - min_lon) * scale
+    y = height - pad - (lat - min_lat) * scale
+    return x, y
+
+
+def statla_wahlkreis_status_map(statla_snapshots: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    by_wk: Dict[str, Dict[str, Any]] = {}
+    for row in statla_snapshots:
+        if str(row.get("gebietsart", "")).strip().upper() != "WAHLKREIS":
+            continue
+        wk = normalize_wahlkreis_nummer(row.get("gebietsnummer") or row.get("row_key"))
+        if not wk:
+            continue
+        by_wk[wk] = {
+            "reported_precincts": row.get("reported_precincts"),
+            "total_precincts": row.get("total_precincts"),
+        }
+    return by_wk
+
+
+def compute_wahlkreis_status_rows(
+    features: List[Dict[str, Any]],
+    mapping: Dict[str, Dict[str, Any]],
+    kommone_snapshots: List[Dict[str, Any]],
+    statla_snapshots: List[Dict[str, Any]],
+    prestart: bool,
+) -> List[Dict[str, Any]]:
+    status_by_ags = {row["ags"]: municipality_status(row) for row in kommone_snapshots}
+    statla_by_wk = statla_wahlkreis_status_map(statla_snapshots)
+
+    rows: List[Dict[str, Any]] = []
+    seen: set = set()
+    for feature in features:
+        props = feature.get("properties") or {}
+        wk = normalize_wahlkreis_nummer(props.get("Nummer"))
+        if not wk:
+            continue
+        seen.add(wk)
+        name = str(props.get("WK Name") or f"Wahlkreis {wk}").strip()
+        ags_set = mapping.get(wk, {}).get("ags_set", set())
+        total_municipalities = len(ags_set)
+        complete_municipalities = 0
+        pending_municipalities = 0
+        no_data_municipalities = 0
+        for ags in ags_set:
+            status = status_by_ags.get(ags, "no_data")
+            if status == "complete":
+                complete_municipalities += 1
+            elif status == "pending":
+                pending_municipalities += 1
+            else:
+                no_data_municipalities += 1
+
+        statla = statla_by_wk.get(wk, {})
+        reported = statla.get("reported_precincts")
+        total = statla.get("total_precincts")
+
+        if prestart:
+            status = "prestart"
+        elif isinstance(total, int) and total > 0:
+            if isinstance(reported, int) and reported >= total:
+                status = "complete"
+            else:
+                status = "pending"
+        elif complete_municipalities == total_municipalities and total_municipalities > 0:
+            status = "complete"
+        elif complete_municipalities > 0 or pending_municipalities > 0:
+            status = "pending"
+        else:
+            status = "no_data"
+
+        rows.append(
+            {
+                "wahlkreisnummer": wk,
+                "wahlkreisname": mapping.get(wk, {}).get("wahlkreis_name") or name,
+                "status": status,
+                "reported_precincts": reported,
+                "total_precincts": total,
+                "municipalities_total": total_municipalities,
+                "municipalities_complete": complete_municipalities,
+                "municipalities_pending": pending_municipalities,
+                "municipalities_no_data": no_data_municipalities,
+            }
+        )
+
+    for wk, entry in mapping.items():
+        if wk in seen:
+            continue
+        ags_set = entry.get("ags_set", set())
+        rows.append(
+            {
+                "wahlkreisnummer": wk,
+                "wahlkreisname": entry.get("wahlkreis_name") or f"Wahlkreis {wk}",
+                "status": "prestart" if prestart else "no_data",
+                "reported_precincts": None,
+                "total_precincts": None,
+                "municipalities_total": len(ags_set),
+                "municipalities_complete": 0,
+                "municipalities_pending": 0,
+                "municipalities_no_data": len(ags_set),
+            }
+        )
+
+    rows.sort(key=lambda row: int(row["wahlkreisnummer"]))
+    return rows
+
+
+def render_wahlkreis_svg(features: List[Dict[str, Any]], status_rows: List[Dict[str, Any]]) -> None:
+    if not features:
+        WAHLKREIS_STATUS_MAP_PATH.write_text(
+            "<svg xmlns='http://www.w3.org/2000/svg' width='800' height='200'><text x='20' y='40'>No Wahlkreis geometry available.</text></svg>",
+            encoding="utf-8",
+        )
+        return
+
+    status_by_wk = {row["wahlkreisnummer"]: row["status"] for row in status_rows}
+    colors = {
+        "prestart": "#d1d5db",
+        "no_data": "#e5e7eb",
+        "pending": "#f59e0b",
+        "complete": "#16a34a",
+    }
+
+    all_points: List[Tuple[float, float]] = []
+    for feature in features:
+        for ring in iter_exterior_rings(feature.get("geometry") or {}):
+            for point in ring:
+                if len(point) >= 2:
+                    all_points.append((float(point[0]), float(point[1])))
+    if not all_points:
+        return
+
+    min_lon = min(p[0] for p in all_points)
+    max_lon = max(p[0] for p in all_points)
+    min_lat = min(p[1] for p in all_points)
+    max_lat = max(p[1] for p in all_points)
+
+    width = 1000.0
+    height = 1300.0
+    pad = 40.0
+    scale_x = (width - 2 * pad) / max(max_lon - min_lon, 1e-9)
+    scale_y = (height - 2 * pad) / max(max_lat - min_lat, 1e-9)
+    scale = min(scale_x, scale_y)
+
+    path_nodes: List[str] = []
+    for feature in features:
+        props = feature.get("properties") or {}
+        wk = normalize_wahlkreis_nummer(props.get("Nummer"))
+        name = str(props.get("WK Name") or f"Wahlkreis {wk}").strip()
+        status = status_by_wk.get(wk, "no_data")
+        fill = colors.get(status, colors["no_data"])
+        d_parts: List[str] = []
+        for ring in iter_exterior_rings(feature.get("geometry") or {}):
+            if len(ring) < 3:
+                continue
+            projected = [
+                project_point(
+                    float(pt[0]),
+                    float(pt[1]),
+                    min_lon=min_lon,
+                    min_lat=min_lat,
+                    scale=scale,
+                    pad=pad,
+                    height=height,
+                )
+                for pt in ring
+            ]
+            seg = "M " + " L ".join(f"{x:.2f} {y:.2f}" for x, y in projected) + " Z"
+            d_parts.append(seg)
+        if not d_parts:
+            continue
+        title = html.escape(f"{wk} {name} ({status})")
+        path_nodes.append(
+            f"<path d=\"{' '.join(d_parts)}\" fill=\"{fill}\" stroke=\"#111827\" stroke-width=\"0.6\"><title>{title}</title></path>"
+        )
+
+    status_counts = {"prestart": 0, "no_data": 0, "pending": 0, "complete": 0}
+    for row in status_rows:
+        status_counts[row["status"]] = status_counts.get(row["status"], 0) + 1
+
+    legend_nodes: List[str] = []
+    legend_items = [
+        ("prestart", "Tracking not started"),
+        ("no_data", "No data"),
+        ("pending", "Pending"),
+        ("complete", "Complete"),
+    ]
+    legend_y = 18
+    for status, label in legend_items:
+        count = status_counts.get(status, 0)
+        legend_nodes.append(
+            (
+                f"<rect x='20' y='{legend_y}' width='14' height='14' fill='{colors[status]}' stroke='#111827' stroke-width='0.4' />"
+                f"<text x='40' y='{legend_y + 12}' font-size='12' fill='#111827'>{html.escape(label)}: {count}</text>"
+            )
+        )
+        legend_y += 20
+
+    svg = (
+        f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {int(width)} {int(height)}'>"
+        "<rect width='100%' height='100%' fill='#ffffff'/>"
+        f"{''.join(path_nodes)}"
+        "<g>"
+        f"{''.join(legend_nodes)}"
+        "</g>"
+        "<text x='20' y='1245' font-size='11' fill='#374151'>Source: Statistik BW LTWahlkreise2026-BW geometry</text>"
+        "</svg>"
+    )
+    WAHLKREIS_STATUS_MAP_PATH.write_text(svg, encoding="utf-8")
+
+
+def generate_wahlkreis_map(
+    kommone_snapshots: List[Dict[str, Any]],
+    statla_snapshots: List[Dict[str, Any]],
+    prestart: bool,
+) -> List[Dict[str, Any]]:
+    features = load_wahlkreis_features()
+    mapping = load_wahlkreis_mapping()
+    status_rows = compute_wahlkreis_status_rows(
+        features=features,
+        mapping=mapping,
+        kommone_snapshots=kommone_snapshots,
+        statla_snapshots=statla_snapshots,
+        prestart=prestart,
+    )
+    write_csv(
+        WAHLKREIS_STATUS_CSV_PATH,
+        [
+            "wahlkreisnummer",
+            "wahlkreisname",
+            "status",
+            "reported_precincts",
+            "total_precincts",
+            "municipalities_total",
+            "municipalities_complete",
+            "municipalities_pending",
+            "municipalities_no_data",
+        ],
+        status_rows,
+    )
+    render_wahlkreis_svg(features, status_rows)
+    return status_rows
+
+
+def append_map_qa_section(lines: List[str]) -> None:
+    if not MAP_QA_JSON_PATH.exists():
+        return
+    try:
+        report = json.loads(MAP_QA_JSON_PATH.read_text(encoding="utf-8"))
+    except Exception:  # pylint: disable=broad-except
+        return
+
+    iou_value = report.get("iou")
+    threshold = report.get("threshold")
+    passed = report.get("passed")
+    generated_at = report.get("generated_at_utc")
+
+    lines.append("## Map QA (Schaubild 8)")
+    lines.append("")
+    if generated_at:
+        lines.append(f"- Last run (UTC): **{generated_at}**")
+    if isinstance(iou_value, (int, float)):
+        if isinstance(threshold, (int, float)):
+            lines.append(
+                f"- IoU vs Schaubild 8 page 63: **{float(iou_value):.3f}** (threshold **{float(threshold):.3f}**)"
+            )
+        else:
+            lines.append(f"- IoU vs Schaubild 8 page 63: **{float(iou_value):.3f}**")
+    if isinstance(passed, bool):
+        lines.append(f"- Passed: **{passed}**")
+    lines.append("- Validation command: `python scripts/test_map_against_schaubild8.py`")
+    if MAP_QA_IMAGE_PATH.exists():
+        lines.append("![Schaubild 8 map comparison](data/ltw26/metadata/reference/schaubild8-map-comparison.png)")
+    lines.append("")
+
+
 def generate_readme(
     config: Config,
     polled_at_local: str,
@@ -1297,6 +1667,7 @@ def generate_readme(
     statla_mode: str,
     statla_url: str,
     diff_rows: List[Dict[str, Any]],
+    wahlkreis_status_rows: List[Dict[str, Any]],
 ) -> None:
     tracking_start = tracking_start_local_dt(config)
     status_counts = {"complete": 0, "pending": 0, "no_data": 0}
@@ -1363,6 +1734,22 @@ def generate_readme(
     lines.append(f"- `komm.one` pending: **{status_counts['pending']}**")
     lines.append(f"- `komm.one` no data: **{status_counts['no_data']}**")
     lines.append("")
+    wahlkreis_counts = {"prestart": 0, "no_data": 0, "pending": 0, "complete": 0}
+    for row in wahlkreis_status_rows:
+        wahlkreis_counts[row["status"]] = wahlkreis_counts.get(row["status"], 0) + 1
+
+    lines.append("## Wahlkreis Map")
+    lines.append("")
+    lines.append("![Wahlkreis status map](data/ltw26/metadata/wahlkreis-status.svg)")
+    lines.append("")
+    lines.append(f"- Wahlkreise complete: **{wahlkreis_counts['complete']}**")
+    lines.append(f"- Wahlkreise pending: **{wahlkreis_counts['pending']}**")
+    lines.append(f"- Wahlkreise no data: **{wahlkreis_counts['no_data']}**")
+    lines.append("- Status table: `data/ltw26/metadata/wahlkreis-status.csv`")
+    lines.append(f"- Geometry source ZIP: `{config.wahlkreise_geojson_zip_url}`")
+    lines.append(f"- SHP source ZIP: `{config.wahlkreise_shp_zip_url}`")
+    lines.append("")
+    append_map_qa_section(lines)
     lines.append("## Party Dashboard (Municipality Drill-Down)")
     lines.append("")
     if not party_summary:
@@ -1461,7 +1848,18 @@ def write_prestart_readme(config: Config) -> None:
     lines.append(
         f"- Statistik BW single CSV: `{config.statla_live_csv_url}` (fallback: `{config.statla_dummy_csv_url}`)"
     )
+    lines.append(f"- Wahlkreis geometry (GeoJSON ZIP): `{config.wahlkreise_geojson_zip_url}`")
+    lines.append(f"- Wahlkreis geometry (SHP ZIP): `{config.wahlkreise_shp_zip_url}`")
     lines.append("")
+    lines.append("## Wahlkreis Map")
+    lines.append("")
+    lines.append("![Wahlkreis status map](data/ltw26/metadata/wahlkreis-status.svg)")
+    lines.append("")
+    lines.append(
+        "Map file and status table are prepared from official published geometry in `data/ltw26/metadata/`."
+    )
+    lines.append("")
+    append_map_qa_section(lines)
     lines.append("## Operations")
     lines.append("")
     lines.append("- Local run after start: `python scripts/poll_ltw26.py`")
@@ -1562,6 +1960,21 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Optional cap for municipality polling (useful for local dry runs).",
     )
+    parser.add_argument(
+        "--force-run",
+        action="store_true",
+        help="Run even before tracking_start_local (for testing with dummy data).",
+    )
+    parser.add_argument(
+        "--use-dummy-statla",
+        action="store_true",
+        help="Force Statistik BW dummy CSV instead of live CSV.",
+    )
+    parser.add_argument(
+        "--skip-kommone",
+        action="store_true",
+        help="Skip all komm.one network polling and use empty municipality snapshots.",
+    )
     return parser.parse_args()
 
 
@@ -1570,7 +1983,8 @@ def main() -> None:
     ensure_directories()
     config = load_config()
     now_local = now_utc().astimezone(ZoneInfo(config.timezone))
-    if now_local < tracking_start_local_dt(config):
+    if now_local < tracking_start_local_dt(config) and not args.force_run:
+        generate_wahlkreis_map(kommone_snapshots=[], statla_snapshots=[], prestart=True)
         write_prestart_readme(config)
         return
 
@@ -1585,19 +1999,47 @@ def main() -> None:
         municipalities = build_municipality_master(config, config.request_timeout_seconds)
         store_municipalities(conn, municipalities)
 
-        kommone = fetch_kommone_all(
-            config=config,
-            municipalities=municipalities,
-            timeout_seconds=config.request_timeout_seconds,
-            max_workers=config.max_workers,
-            limit_ags=args.limit_ags,
-        )
-        statla = fetch_statla(config, config.request_timeout_seconds)
+        if args.skip_kommone:
+            selected_municipalities = municipalities[: args.limit_ags] if args.limit_ags is not None else municipalities
+            kommone = {
+                "snapshots": [
+                    {
+                        "ags": city["ags"],
+                        "municipality_name": city["municipality_name"],
+                        "status": "NO_DATA",
+                        "reported_precincts": None,
+                        "total_precincts": None,
+                        "voters_total": None,
+                        "valid_votes": None,
+                        "invalid_votes": None,
+                        "source_timestamp": None,
+                        "payload_hash": None,
+                        "error_message": "komm.one polling skipped by --skip-kommone",
+                    }
+                    for city in selected_municipalities
+                ],
+                "party_rows": [],
+                "fetches": [],
+            }
+        else:
+            kommone = fetch_kommone_all(
+                config=config,
+                municipalities=municipalities,
+                timeout_seconds=config.request_timeout_seconds,
+                max_workers=config.max_workers,
+                limit_ags=args.limit_ags,
+            )
+        statla = fetch_statla(config, config.request_timeout_seconds, force_dummy=args.use_dummy_statla)
 
         all_fetches = list(kommone["fetches"]) + list(statla["fetches"])
         store_source_fetches(conn, poll_id, all_fetches)
         store_kommone(conn, poll_id, kommone["snapshots"], kommone["party_rows"])
         store_statla(conn, poll_id, statla["snapshots"], statla["party_rows"], statla.get("content_hash"))
+        wahlkreis_status_rows = generate_wahlkreis_map(
+            kommone_snapshots=kommone["snapshots"],
+            statla_snapshots=statla["snapshots"],
+            prestart=False,
+        )
 
         diffs = compute_source_diffs(poll_id, kommone["snapshots"], statla["snapshots"])
         store_source_diffs(conn, diffs)
@@ -1620,6 +2062,7 @@ def main() -> None:
             statla_mode=statla.get("mode", "UNAVAILABLE"),
             statla_url=statla.get("url", ""),
             diff_rows=diffs,
+            wahlkreis_status_rows=wahlkreis_status_rows,
         )
     finally:
         conn.close()

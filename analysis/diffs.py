@@ -79,7 +79,7 @@ def main(repo_path, csv_file):
 
 if __name__ == "__main__":
     repo_path = ".."      # Repository path (current directory)
-    csv_file1 = "data/latest-btw25-bw-kreise.csv"  # Replace with your CSV file name
-    csv_file2 = "data/latest-btw25-bw-gemeinden.csv"  # Replace with your CSV file name
+    csv_file1 = "data/latest-ltw26-bw-kreise.csv"  # Replace with your CSV file name
+    csv_file2 = "data/latest-ltw26-bw-gemeinden.csv"  # Replace with your CSV file name
     main(repo_path, csv_file1)
     main(repo_path, csv_file2)

@@ -7,7 +7,10 @@
   "kommone_base_url_template": "https://wahlergebnisse.komm.one/lb/produktion/wahltermin-{wahltermin}/{ags}",
   "statla_live_csv_url": "https://www.statistik-bw.de/fileadmin/user_upload/Wahlen/Landesdaten/ltw26_daten.csv",
   "statla_dummy_csv_url": "https://www.statistik-bw.de/fileadmin/user_upload/Presse/Pressemitteilungen/2026021_LTW26-Dummy-Datei.csv",
-  "legacy_city_source_csv": "data/latest-btw25-bw-gemeinden.csv",
+  "wahlkreise_geojson_zip_url": "https://www.statistik-bw.de/fileadmin/user_upload/medien/bilder/Karten_und_Geometrien_der_Wahlkreise/LTWahlkreise2026-BW_GEOJSON.zip",
+  "wahlkreise_shp_zip_url": "https://www.statistik-bw.de/fileadmin/user_upload/medien/bilder/Karten_und_Geometrien_der_Wahlkreise/LTWahlkreise2026-BW_SHP.zip",
+  "wahlkreise_mapping_csv_url": "https://www.statistik-bw.de/fileadmin/user_upload/medien/bilder/Karten_und_Geometrien_der_Wahlkreise/LTWahlkreise2026-BW-wkr_kr_gem.csv",
+  "legacy_city_source_csv": "data/ltw26/metadata/ltw26-bw-gemeinden.csv",
   "request_timeout_seconds": 4,
   "max_workers": 48
 }

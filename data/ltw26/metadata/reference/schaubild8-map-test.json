@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-03-01T10:39:51.744412+00:00",
+  "pdf_url": "https://www.statistik-bw.de/fileadmin/user_upload/Service/Veroeff/Statistische_Berichte/423525001.pdf",
+  "page": 63,
+  "reference_pdf": "data/ltw26/metadata/reference/423525001.pdf",
+  "reference_page_image": "data/ltw26/metadata/reference/schaubild8-page63.png",
+  "generated_map_image": "data/ltw26/metadata/reference/schaubild8-generated-map.png",
+  "comparison_image": "data/ltw26/metadata/reference/schaubild8-map-comparison.png",
+  "iou": 0.92581,
+  "threshold": 0.9,
+  "passed": true,
+  "wahlkreis_count": 70,
+  "wahlkreis_numbering_ok": true
+}
