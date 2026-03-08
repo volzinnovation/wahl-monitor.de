@@ -21,7 +21,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 20,Neckarsulm,pending,0,156,23,0,0,23
 21,Hohenlohe,pending,0,169,22,0,0,22
 22,Schwäbisch Hall,pending,0,182,24,0,0,24
-23,Main-Tauber,pending,0,203,18,0,0,18
+23,Main-Tauber,pending,0,204,18,0,0,18
 24,Heidenheim,pending,0,163,11,0,0,11
 25,Schwäbisch Gmünd,pending,0,150,22,0,0,22
 26,Aalen,pending,0,175,20,0,0,20
@@ -49,7 +49,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 48,Breisgau,pending,0,192,31,0,0,31
 49,Emmendingen,pending,0,165,24,0,0,24
 50,Lahr,pending,0,179,22,0,0,22
-51,Offenburg,pending,0,129,15,0,0,15
+51,Offenburg,pending,0,130,15,0,0,15
 52,Kehl,pending,0,132,14,0,0,14
 53,Rottweil,pending,0,149,21,0,0,21
 54,Villingen-Schwenningen,pending,0,189,17,0,0,17
