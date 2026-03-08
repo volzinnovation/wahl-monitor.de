@@ -63,7 +63,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 62,Tübingen,pending,0,161,8,0,8,0
 63,Balingen,pending,0,195,24,0,24,0
 64,Ulm,pending,0,218,10,0,0,10
-65,Ehingen,pending,0,197,46,0,45,1
+65,Ehingen,pending,0,197,46,0,46,0
 66,Biberach,pending,0,226,38,0,38,0
 67,Bodensee,pending,0,201,20,0,20,0
 68,Wangen,pending,0,185,22,0,0,22

@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-03-08T20:13:59.651562+00:00",
+  "generated_at_utc": "2026-03-08T20:27:25.208520+00:00",
   "kommone_municipalities_polled": 1104,
-  "run_label": "2026-03-08-21-07-41",
-  "statla_error": "Rejected truncated StatLA CSV: Wahlkreise 3 < 70, AGS 1 < 1101, Zeilen 344 < 12738",
+  "run_label": "2026-03-08-21-20-40",
+  "statla_error": "Rejected truncated StatLA CSV: Wahlkreise 2 < 70, AGS 1 < 1101, Zeilen 218 < 12738",
   "statla_mode": "LIVE_FALLBACK",
   "statla_url": "https://wahlen.statistik-bw.de/ltw26/ltw26-ergebnisse.csv"
 }
