@@ -20,8 +20,8 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 19,Eppingen,pending,132,144,19,0,0,19
 20,Neckarsulm,pending,132,156,23,0,0,23
 21,Hohenlohe,pending,157,169,22,0,22,0
-22,Schwäbisch Hall,pending,162,182,24,0,21,3
-23,Main-Tauber,pending,195,204,18,0,16,2
+22,Schwäbisch Hall,pending,162,182,24,0,24,0
+23,Main-Tauber,pending,195,204,18,0,18,0
 24,Heidenheim,pending,162,163,11,0,11,0
 25,Schwäbisch Gmünd,pending,143,150,22,0,0,22
 26,Aalen,pending,162,175,20,0,0,20
@@ -41,31 +41,31 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 40,Schwetzingen,pending,112,128,10,0,0,10
 41,Sinsheim,pending,129,150,24,0,0,24
 42,Pforzheim,pending,121,129,5,0,5,0
-43,Calw,pending,159,186,25,0,22,3
+43,Calw,pending,159,186,25,0,24,1
 44,Enz,pending,142,166,24,0,23,1
-45,Freudenstadt,pending,125,143,16,0,15,1
+45,Freudenstadt,pending,125,143,16,0,16,0
 46,Freiburg I,pending,175,219,30,0,0,30
 47,Freiburg II,pending,132,183,5,0,0,5
 48,Breisgau,pending,174,192,31,0,0,31
-49,Emmendingen,pending,144,165,24,0,22,2
+49,Emmendingen,pending,144,165,24,0,24,0
 50,Lahr,pending,161,179,22,0,0,22
 51,Offenburg,pending,111,130,15,0,0,15
 52,Kehl,pending,119,132,14,0,0,14
-53,Rottweil,pending,134,149,21,0,20,1
+53,Rottweil,pending,134,149,21,0,21,0
 54,Villingen-Schwenningen,pending,156,189,17,0,17,0
-55,Tuttlingen-Donaueschingen,pending,163,191,38,0,31,7
+55,Tuttlingen-Donaueschingen,pending,163,191,38,0,36,2
 56,Konstanz,pending,120,161,7,0,0,7
 57,Singen,pending,150,159,18,0,0,18
-58,Lörrach,pending,222,248,30,0,25,5
-59,Waldshut,pending,198,214,23,0,21,2
+58,Lörrach,pending,222,248,30,0,28,2
+59,Waldshut,pending,198,214,23,0,23,0
 60,Reutlingen,pending,157,171,10,0,0,10
 61,Hechingen-Münsingen,pending,168,187,25,0,0,25
 62,Tübingen,pending,139,161,8,0,8,0
-63,Balingen,pending,177,195,24,0,23,1
+63,Balingen,pending,177,195,24,0,24,0
 64,Ulm,pending,205,218,10,0,0,10
-65,Ehingen,pending,183,197,46,0,43,3
+65,Ehingen,pending,183,197,46,0,45,1
 66,Biberach,pending,217,226,38,0,38,0
-67,Bodensee,pending,191,201,20,0,19,1
+67,Bodensee,pending,191,201,20,0,20,0
 68,Wangen,pending,172,185,22,0,0,22
 69,Ravensburg,pending,146,174,27,0,0,27
 70,Sigmaringen,pending,165,180,25,0,24,1
