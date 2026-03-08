@@ -2,6 +2,7 @@
 .DS_Store
 __pycache__/
 *.pyc
-data/ltw26/history.sqlite
-data/ltw26/history.sqlite-shm
-data/ltw26/history.sqlite-wal
+data/*/history.sqlite
+data/*/history.sqlite-shm
+data/*/history.sqlite-wal
+data/*/raw/

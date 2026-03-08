@@ -34,7 +34,12 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add data/2026-bw config/2026-bw.json scripts/poll_election.py scripts/poll_election_core.py scripts/poll_ltw26.py
+          git add data/2026-bw/latest
+          git add data/2026-bw/metadata/municipalities.csv
+          git add data/2026-bw/metadata/wahlkreis-status.csv
+          git add data/2026-bw/reports/latest_events.csv
+          git add data/2026-bw/reports/latest_source_diff.csv
+          git add config/2026-bw.json scripts/poll_election.py scripts/poll_election_core.py scripts/poll_ltw26.py
           git commit -m "2026-bw poll $(date -u +"%Y-%m-%dT%H:%M:%SZ")" || exit 0
           git pull --rebase
           git push
