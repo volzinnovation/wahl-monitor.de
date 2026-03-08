@@ -77,8 +77,8 @@ poll_id,ags,municipality_name,metric,kommone_value,statla_value,delta
 2,08115044,Schönaich,valid_votes,4464,0,4464.0
 2,08115045,"Sindelfingen, Stadt",reported_precincts,,0,
 2,08115045,"Sindelfingen, Stadt",total_precincts,,63,
-2,08115045,"Sindelfingen, Stadt",voters_total,23049,0,23049.0
-2,08115045,"Sindelfingen, Stadt",valid_votes,22825,0,22825.0
+2,08115045,"Sindelfingen, Stadt",voters_total,23516,0,23516.0
+2,08115045,"Sindelfingen, Stadt",valid_votes,23286,0,23286.0
 2,08115046,Steinenbronn,reported_precincts,,0,
 2,08115046,Steinenbronn,total_precincts,,4,
 2,08115046,Steinenbronn,voters_total,2967,0,2967.0
@@ -697,8 +697,8 @@ poll_id,ags,municipality_name,metric,kommone_value,statla_value,delta
 2,08119086,Winterbach,valid_votes,4416,0,4416.0
 2,08119087,Aspach,reported_precincts,,0,
 2,08119087,Aspach,total_precincts,,9,
-2,08119087,Aspach,voters_total,4366,0,4366.0
-2,08119087,Aspach,valid_votes,4339,0,4339.0
+2,08119087,Aspach,voters_total,4367,0,4367.0
+2,08119087,Aspach,valid_votes,4340,0,4340.0
 2,08119089,Berglen,reported_precincts,,0,
 2,08119089,Berglen,total_precincts,,6,
 2,08119089,Berglen,voters_total,3987,0,3987.0
@@ -1365,8 +1365,8 @@ poll_id,ags,municipality_name,metric,kommone_value,statla_value,delta
 2,08136087,Riesbürg,valid_votes,1170,0,1170.0
 2,08136088,"Aalen, Stadt",reported_precincts,,0,
 2,08136088,"Aalen, Stadt",total_precincts,,60,
-2,08136088,"Aalen, Stadt",voters_total,32567,0,32567.0
-2,08136088,"Aalen, Stadt",valid_votes,32286,0,32286.0
+2,08136088,"Aalen, Stadt",voters_total,33127,0,33127.0
+2,08136088,"Aalen, Stadt",valid_votes,32841,0,32841.0
 2,08136089,Rainau,reported_precincts,,0,
 2,08136089,Rainau,total_precincts,,4,
 2,08136089,Rainau,voters_total,2047,0,2047.0
@@ -1541,8 +1541,8 @@ poll_id,ags,municipality_name,metric,kommone_value,statla_value,delta
 2,08216013,Forbach,valid_votes,2401,0,2401.0
 2,08216015,"Gaggenau, Stadt",reported_precincts,,0,
 2,08216015,"Gaggenau, Stadt",total_precincts,,32,
-2,08216015,"Gaggenau, Stadt",voters_total,13473,0,13473.0
-2,08216015,"Gaggenau, Stadt",valid_votes,13377,0,13377.0
+2,08216015,"Gaggenau, Stadt",voters_total,14076,0,14076.0
+2,08216015,"Gaggenau, Stadt",valid_votes,13974,0,13974.0
 2,08216017,"Gernsbach, Stadt",reported_precincts,,0,
 2,08216017,"Gernsbach, Stadt",total_precincts,,14,
 2,08216017,"Gernsbach, Stadt",voters_total,7035,0,7035.0
@@ -1901,8 +1901,8 @@ poll_id,ags,municipality_name,metric,kommone_value,statla_value,delta
 2,08226098,"Wiesloch, Stadt",valid_votes,12679,0,12679.0
 2,08226099,Wilhelmsfeld,reported_precincts,,0,
 2,08226099,Wilhelmsfeld,total_precincts,,4,
-2,08226099,Wilhelmsfeld,voters_total,0,0,0.0
-2,08226099,Wilhelmsfeld,valid_votes,0,0,0.0
+2,08226099,Wilhelmsfeld,voters_total,1797,0,1797.0
+2,08226099,Wilhelmsfeld,valid_votes,1780,0,1780.0
 2,08226101,Zuzenhausen,reported_precincts,,0,
 2,08226101,Zuzenhausen,total_precincts,,2,
 2,08226101,Zuzenhausen,voters_total,1327,0,1327.0
@@ -2629,8 +2629,8 @@ poll_id,ags,municipality_name,metric,kommone_value,statla_value,delta
 2,08317093,Oberwolfach,valid_votes,1589,0,1589.0
 2,08317096,"Offenburg, Stadt",reported_precincts,,0,
 2,08317096,"Offenburg, Stadt",total_precincts,,60,
-2,08317096,"Offenburg, Stadt",voters_total,26106,0,26106.0
-2,08317096,"Offenburg, Stadt",valid_votes,25709,0,25709.0
+2,08317096,"Offenburg, Stadt",voters_total,27027,0,27027.0
+2,08317096,"Offenburg, Stadt",valid_votes,26615,0,26615.0
 2,08317097,Ohlsbach,reported_precincts,,0,
 2,08317097,Ohlsbach,total_precincts,,3,
 2,08317097,Ohlsbach,voters_total,1994,0,1994.0
@@ -3557,8 +3557,8 @@ poll_id,ags,municipality_name,metric,kommone_value,statla_value,delta
 2,08416050,Starzach,valid_votes,2582,0,2582.0
 2,08417002,"Balingen, Stadt",reported_precincts,,0,
 2,08417002,"Balingen, Stadt",total_precincts,,37,
-2,08417002,"Balingen, Stadt",voters_total,16970,0,16970.0
-2,08417002,"Balingen, Stadt",valid_votes,16858,0,16858.0
+2,08417002,"Balingen, Stadt",voters_total,17681,0,17681.0
+2,08417002,"Balingen, Stadt",valid_votes,17557,0,17557.0
 2,08417008,Bisingen,reported_precincts,,0,
 2,08417008,Bisingen,total_precincts,,10,
 2,08417008,Bisingen,voters_total,4973,0,4973.0

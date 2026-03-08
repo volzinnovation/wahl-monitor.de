@@ -171,8 +171,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08216012,Elchesheim-Illingen,Zweitstimmen,AfD,367,20.6
 08216013,Forbach,Erststimmen,AfD,459,19.1
 08216013,Forbach,Zweitstimmen,AfD,457,19.0
-08216015,"Gaggenau, Stadt",Erststimmen,AfD,2805,21.0
-08216015,"Gaggenau, Stadt",Zweitstimmen,AfD,2767,20.7
+08216015,"Gaggenau, Stadt",Erststimmen,AfD,2931,21.0
+08216015,"Gaggenau, Stadt",Zweitstimmen,AfD,2896,20.7
 08216017,"Gernsbach, Stadt",Erststimmen,AfD,1376,19.8
 08216017,"Gernsbach, Stadt",Zweitstimmen,AfD,1356,19.4
 08216023,Iffezheim,Erststimmen,AfD,484,18.3
@@ -657,8 +657,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08416049,Neustetten,Zweitstimmen,AfD,475,22.3
 08416050,Starzach,Erststimmen,AfD,685,26.7
 08416050,Starzach,Zweitstimmen,AfD,663,25.7
-08417002,"Balingen, Stadt",Erststimmen,AfD,3838,22.8
-08417002,"Balingen, Stadt",Zweitstimmen,AfD,3914,23.2
+08417002,"Balingen, Stadt",Erststimmen,AfD,4055,23.2
+08417002,"Balingen, Stadt",Zweitstimmen,AfD,4132,23.5
 08417008,Bisingen,Erststimmen,AfD,1252,25.5
 08417008,Bisingen,Zweitstimmen,AfD,1253,25.4
 08417010,Bitz,Erststimmen,AfD,564,28.0
@@ -1132,7 +1132,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08216013,Forbach,Erststimmen,BSW,,
 08216013,Forbach,Zweitstimmen,BSW,18,0.7
 08216015,"Gaggenau, Stadt",Erststimmen,BSW,,
-08216015,"Gaggenau, Stadt",Zweitstimmen,BSW,147,1.1
+08216015,"Gaggenau, Stadt",Zweitstimmen,BSW,153,1.1
 08216017,"Gernsbach, Stadt",Erststimmen,BSW,,
 08216017,"Gernsbach, Stadt",Zweitstimmen,BSW,76,1.1
 08216023,Iffezheim,Erststimmen,BSW,,
@@ -1618,7 +1618,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08416050,Starzach,Erststimmen,BSW,,
 08416050,Starzach,Zweitstimmen,BSW,32,1.2
 08417002,"Balingen, Stadt",Erststimmen,BSW,,
-08417002,"Balingen, Stadt",Zweitstimmen,BSW,225,1.3
+08417002,"Balingen, Stadt",Zweitstimmen,BSW,239,1.4
 08417008,Bisingen,Erststimmen,BSW,,
 08417008,Bisingen,Zweitstimmen,BSW,97,2.0
 08417010,Bitz,Erststimmen,BSW,,
@@ -1945,7 +1945,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08416018,Hirrlingen,Zweitstimmen,BÜNDNIS DEUTSCHLAND,,
 08416050,Starzach,Erststimmen,BÜNDNIS DEUTSCHLAND,8,0.3
 08416050,Starzach,Zweitstimmen,BÜNDNIS DEUTSCHLAND,,
-08417002,"Balingen, Stadt",Erststimmen,BÜNDNIS DEUTSCHLAND,142,0.8
+08417002,"Balingen, Stadt",Erststimmen,BÜNDNIS DEUTSCHLAND,146,0.8
 08417002,"Balingen, Stadt",Zweitstimmen,BÜNDNIS DEUTSCHLAND,,
 08417008,Bisingen,Erststimmen,BÜNDNIS DEUTSCHLAND,34,0.7
 08417008,Bisingen,Zweitstimmen,BÜNDNIS DEUTSCHLAND,,
@@ -2254,7 +2254,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08216013,Forbach,Erststimmen,Bündnis C,,
 08216013,Forbach,Zweitstimmen,Bündnis C,2,0.1
 08216015,"Gaggenau, Stadt",Erststimmen,Bündnis C,,
-08216015,"Gaggenau, Stadt",Zweitstimmen,Bündnis C,9,0.1
+08216015,"Gaggenau, Stadt",Zweitstimmen,Bündnis C,10,0.1
 08216017,"Gernsbach, Stadt",Erststimmen,Bündnis C,,
 08216017,"Gernsbach, Stadt",Zweitstimmen,Bündnis C,4,0.1
 08216023,Iffezheim,Erststimmen,Bündnis C,,
@@ -2740,7 +2740,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08416050,Starzach,Erststimmen,Bündnis C,,
 08416050,Starzach,Zweitstimmen,Bündnis C,1,0.0
 08417002,"Balingen, Stadt",Erststimmen,Bündnis C,,
-08417002,"Balingen, Stadt",Zweitstimmen,Bündnis C,46,0.3
+08417002,"Balingen, Stadt",Zweitstimmen,Bündnis C,48,0.3
 08417008,Bisingen,Erststimmen,Bündnis C,,
 08417008,Bisingen,Zweitstimmen,Bündnis C,13,0.3
 08417010,Bitz,Erststimmen,Bündnis C,,
@@ -3213,8 +3213,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08216012,Elchesheim-Illingen,Zweitstimmen,CDU,546,30.6
 08216013,Forbach,Erststimmen,CDU,961,40.1
 08216013,Forbach,Zweitstimmen,CDU,877,36.5
-08216015,"Gaggenau, Stadt",Erststimmen,CDU,4518,33.9
-08216015,"Gaggenau, Stadt",Zweitstimmen,CDU,4107,30.7
+08216015,"Gaggenau, Stadt",Erststimmen,CDU,4699,33.7
+08216015,"Gaggenau, Stadt",Zweitstimmen,CDU,4268,30.5
 08216017,"Gernsbach, Stadt",Erststimmen,CDU,2376,34.1
 08216017,"Gernsbach, Stadt",Zweitstimmen,CDU,2087,29.8
 08216023,Iffezheim,Erststimmen,CDU,1073,40.6
@@ -3699,8 +3699,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08416049,Neustetten,Zweitstimmen,CDU,786,36.9
 08416050,Starzach,Erststimmen,CDU,1034,40.2
 08416050,Starzach,Zweitstimmen,CDU,864,33.5
-08417002,"Balingen, Stadt",Erststimmen,CDU,7083,42.2
-08417002,"Balingen, Stadt",Zweitstimmen,CDU,5189,30.8
+08417002,"Balingen, Stadt",Erststimmen,CDU,7338,41.9
+08417002,"Balingen, Stadt",Zweitstimmen,CDU,5391,30.7
 08417008,Bisingen,Erststimmen,CDU,1893,38.5
 08417008,Bisingen,Zweitstimmen,CDU,1532,31.0
 08417010,Bitz,Erststimmen,CDU,838,41.5
@@ -4174,7 +4174,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08216013,Forbach,Erststimmen,Die Gerechtigkeitspartei,,
 08216013,Forbach,Zweitstimmen,Die Gerechtigkeitspartei,0,0.0
 08216015,"Gaggenau, Stadt",Erststimmen,Die Gerechtigkeitspartei,,
-08216015,"Gaggenau, Stadt",Zweitstimmen,Die Gerechtigkeitspartei,19,0.1
+08216015,"Gaggenau, Stadt",Zweitstimmen,Die Gerechtigkeitspartei,20,0.1
 08216017,"Gernsbach, Stadt",Erststimmen,Die Gerechtigkeitspartei,,
 08216017,"Gernsbach, Stadt",Zweitstimmen,Die Gerechtigkeitspartei,9,0.1
 08216023,Iffezheim,Erststimmen,Die Gerechtigkeitspartei,,
@@ -4660,7 +4660,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08416050,Starzach,Erststimmen,Die Gerechtigkeitspartei,,
 08416050,Starzach,Zweitstimmen,Die Gerechtigkeitspartei,8,0.3
 08417002,"Balingen, Stadt",Erststimmen,Die Gerechtigkeitspartei,,
-08417002,"Balingen, Stadt",Zweitstimmen,Die Gerechtigkeitspartei,22,0.1
+08417002,"Balingen, Stadt",Zweitstimmen,Die Gerechtigkeitspartei,23,0.1
 08417008,Bisingen,Erststimmen,Die Gerechtigkeitspartei,,
 08417008,Bisingen,Zweitstimmen,Die Gerechtigkeitspartei,3,0.1
 08417010,Bitz,Erststimmen,Die Gerechtigkeitspartei,,
@@ -5133,8 +5133,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08216012,Elchesheim-Illingen,Zweitstimmen,Die Linke,68,3.8
 08216013,Forbach,Erststimmen,Die Linke,93,3.9
 08216013,Forbach,Zweitstimmen,Die Linke,87,3.6
-08216015,"Gaggenau, Stadt",Erststimmen,Die Linke,519,3.9
-08216015,"Gaggenau, Stadt",Zweitstimmen,Die Linke,453,3.4
+08216015,"Gaggenau, Stadt",Erststimmen,Die Linke,544,3.9
+08216015,"Gaggenau, Stadt",Zweitstimmen,Die Linke,481,3.4
 08216017,"Gernsbach, Stadt",Erststimmen,Die Linke,247,3.5
 08216017,"Gernsbach, Stadt",Zweitstimmen,Die Linke,222,3.2
 08216023,Iffezheim,Erststimmen,Die Linke,66,2.5
@@ -5619,8 +5619,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08416049,Neustetten,Zweitstimmen,Die Linke,57,2.7
 08416050,Starzach,Erststimmen,Die Linke,87,3.4
 08416050,Starzach,Zweitstimmen,Die Linke,65,2.5
-08417002,"Balingen, Stadt",Erststimmen,Die Linke,675,4.0
-08417002,"Balingen, Stadt",Zweitstimmen,Die Linke,588,3.5
+08417002,"Balingen, Stadt",Erststimmen,Die Linke,703,4.0
+08417002,"Balingen, Stadt",Zweitstimmen,Die Linke,610,3.5
 08417008,Bisingen,Erststimmen,Die Linke,194,4.0
 08417008,Bisingen,Zweitstimmen,Die Linke,150,3.0
 08417010,Bitz,Erststimmen,Die Linke,75,3.7
@@ -6094,7 +6094,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08216013,Forbach,Erststimmen,Die PARTEI,,
 08216013,Forbach,Zweitstimmen,Die PARTEI,11,0.5
 08216015,"Gaggenau, Stadt",Erststimmen,Die PARTEI,,
-08216015,"Gaggenau, Stadt",Zweitstimmen,Die PARTEI,49,0.4
+08216015,"Gaggenau, Stadt",Zweitstimmen,Die PARTEI,52,0.4
 08216017,"Gernsbach, Stadt",Erststimmen,Die PARTEI,,
 08216017,"Gernsbach, Stadt",Zweitstimmen,Die PARTEI,17,0.2
 08216023,Iffezheim,Erststimmen,Die PARTEI,,
@@ -6580,7 +6580,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08416050,Starzach,Erststimmen,Die PARTEI,,
 08416050,Starzach,Zweitstimmen,Die PARTEI,11,0.4
 08417002,"Balingen, Stadt",Erststimmen,Die PARTEI,,
-08417002,"Balingen, Stadt",Zweitstimmen,Die PARTEI,63,0.4
+08417002,"Balingen, Stadt",Zweitstimmen,Die PARTEI,67,0.4
 08417008,Bisingen,Erststimmen,Die PARTEI,,
 08417008,Bisingen,Zweitstimmen,Die PARTEI,17,0.3
 08417010,Bitz,Erststimmen,Die PARTEI,,
@@ -7053,8 +7053,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08216012,Elchesheim-Illingen,Zweitstimmen,FDP,67,3.8
 08216013,Forbach,Erststimmen,FDP,81,3.4
 08216013,Forbach,Zweitstimmen,FDP,74,3.1
-08216015,"Gaggenau, Stadt",Erststimmen,FDP,931,7.0
-08216015,"Gaggenau, Stadt",Zweitstimmen,FDP,570,4.3
+08216015,"Gaggenau, Stadt",Erststimmen,FDP,961,6.9
+08216015,"Gaggenau, Stadt",Zweitstimmen,FDP,596,4.3
 08216017,"Gernsbach, Stadt",Erststimmen,FDP,317,4.6
 08216017,"Gernsbach, Stadt",Zweitstimmen,FDP,308,4.4
 08216023,Iffezheim,Erststimmen,FDP,107,4.0
@@ -7539,8 +7539,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08416049,Neustetten,Zweitstimmen,FDP,86,4.0
 08416050,Starzach,Erststimmen,FDP,103,4.0
 08416050,Starzach,Zweitstimmen,FDP,99,3.8
-08417002,"Balingen, Stadt",Erststimmen,FDP,645,3.8
-08417002,"Balingen, Stadt",Zweitstimmen,FDP,726,4.3
+08417002,"Balingen, Stadt",Erststimmen,FDP,668,3.8
+08417002,"Balingen, Stadt",Zweitstimmen,FDP,754,4.3
 08417008,Bisingen,Erststimmen,FDP,204,4.2
 08417008,Bisingen,Zweitstimmen,FDP,181,3.7
 08417010,Bitz,Erststimmen,FDP,93,4.6
@@ -8014,7 +8014,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08216013,Forbach,Erststimmen,FREIE WÄHLER,,
 08216013,Forbach,Zweitstimmen,FREIE WÄHLER,79,3.3
 08216015,"Gaggenau, Stadt",Erststimmen,FREIE WÄHLER,,
-08216015,"Gaggenau, Stadt",Zweitstimmen,FREIE WÄHLER,338,2.5
+08216015,"Gaggenau, Stadt",Zweitstimmen,FREIE WÄHLER,351,2.5
 08216017,"Gernsbach, Stadt",Erststimmen,FREIE WÄHLER,,
 08216017,"Gernsbach, Stadt",Zweitstimmen,FREIE WÄHLER,132,1.9
 08216023,Iffezheim,Erststimmen,FREIE WÄHLER,,
@@ -8500,7 +8500,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08416050,Starzach,Erststimmen,FREIE WÄHLER,,
 08416050,Starzach,Zweitstimmen,FREIE WÄHLER,38,1.5
 08417002,"Balingen, Stadt",Erststimmen,FREIE WÄHLER,,
-08417002,"Balingen, Stadt",Zweitstimmen,FREIE WÄHLER,227,1.3
+08417002,"Balingen, Stadt",Zweitstimmen,FREIE WÄHLER,232,1.3
 08417008,Bisingen,Erststimmen,FREIE WÄHLER,,
 08417008,Bisingen,Zweitstimmen,FREIE WÄHLER,82,1.7
 08417010,Bitz,Erststimmen,FREIE WÄHLER,,
@@ -8973,8 +8973,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08216012,Elchesheim-Illingen,Zweitstimmen,GRÜNE,499,28.0
 08216013,Forbach,Erststimmen,GRÜNE,417,17.4
 08216013,Forbach,Zweitstimmen,GRÜNE,531,22.1
-08216015,"Gaggenau, Stadt",Erststimmen,GRÜNE,2829,21.2
-08216015,"Gaggenau, Stadt",Zweitstimmen,GRÜNE,3426,25.6
+08216015,"Gaggenau, Stadt",Erststimmen,GRÜNE,2994,21.5
+08216015,"Gaggenau, Stadt",Zweitstimmen,GRÜNE,3608,25.8
 08216017,"Gernsbach, Stadt",Erststimmen,GRÜNE,1699,24.4
 08216017,"Gernsbach, Stadt",Zweitstimmen,GRÜNE,2058,29.4
 08216023,Iffezheim,Erststimmen,GRÜNE,612,23.2
@@ -9459,8 +9459,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08416049,Neustetten,Zweitstimmen,GRÜNE,531,24.9
 08416050,Starzach,Erststimmen,GRÜNE,478,18.6
 08416050,Starzach,Zweitstimmen,GRÜNE,626,24.2
-08417002,"Balingen, Stadt",Erststimmen,GRÜNE,2853,17.0
-08417002,"Balingen, Stadt",Zweitstimmen,GRÜNE,4482,26.6
+08417002,"Balingen, Stadt",Erststimmen,GRÜNE,2965,16.9
+08417002,"Balingen, Stadt",Zweitstimmen,GRÜNE,4640,26.4
 08417008,Bisingen,Erststimmen,GRÜNE,875,17.8
 08417008,Bisingen,Zweitstimmen,GRÜNE,1187,24.0
 08417010,Bitz,Erststimmen,GRÜNE,298,14.8
@@ -11380,7 +11380,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08416050,Starzach,Erststimmen,PDH,,
 08416050,Starzach,Zweitstimmen,PDH,0,0.0
 08417002,"Balingen, Stadt",Erststimmen,PDH,,
-08417002,"Balingen, Stadt",Zweitstimmen,PDH,4,0.0
+08417002,"Balingen, Stadt",Zweitstimmen,PDH,5,0.0
 08417008,Bisingen,Erststimmen,PDH,,
 08417008,Bisingen,Zweitstimmen,PDH,1,0.0
 08417010,Bitz,Erststimmen,PDH,,
@@ -13849,8 +13849,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08216012,Elchesheim-Illingen,Zweitstimmen,SPD,114,6.4
 08216013,Forbach,Erststimmen,SPD,348,14.5
 08216013,Forbach,Zweitstimmen,SPD,203,8.5
-08216015,"Gaggenau, Stadt",Erststimmen,SPD,1522,11.4
-08216015,"Gaggenau, Stadt",Zweitstimmen,SPD,1097,8.2
+08216015,"Gaggenau, Stadt",Erststimmen,SPD,1579,11.3
+08216015,"Gaggenau, Stadt",Zweitstimmen,SPD,1132,8.1
 08216017,"Gernsbach, Stadt",Erststimmen,SPD,856,12.3
 08216017,"Gernsbach, Stadt",Zweitstimmen,SPD,529,7.6
 08216023,Iffezheim,Erststimmen,SPD,263,10.0
@@ -14335,8 +14335,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08416049,Neustetten,Zweitstimmen,SPD,84,3.9
 08416050,Starzach,Erststimmen,SPD,134,5.2
 08416050,Starzach,Zweitstimmen,SPD,98,3.8
-08417002,"Balingen, Stadt",Erststimmen,SPD,1308,7.8
-08417002,"Balingen, Stadt",Zweitstimmen,SPD,919,5.5
+08417002,"Balingen, Stadt",Erststimmen,SPD,1358,7.8
+08417002,"Balingen, Stadt",Zweitstimmen,SPD,951,5.4
 08417008,Bisingen,Erststimmen,SPD,364,7.4
 08417008,Bisingen,Zweitstimmen,SPD,271,5.5
 08417010,Bitz,Erststimmen,SPD,107,5.3
@@ -14810,7 +14810,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08216013,Forbach,Erststimmen,Tierschutzpartei,,
 08216013,Forbach,Zweitstimmen,Tierschutzpartei,27,1.1
 08216015,"Gaggenau, Stadt",Erststimmen,Tierschutzpartei,,
-08216015,"Gaggenau, Stadt",Zweitstimmen,Tierschutzpartei,155,1.2
+08216015,"Gaggenau, Stadt",Zweitstimmen,Tierschutzpartei,160,1.1
 08216017,"Gernsbach, Stadt",Erststimmen,Tierschutzpartei,,
 08216017,"Gernsbach, Stadt",Zweitstimmen,Tierschutzpartei,85,1.2
 08216023,Iffezheim,Erststimmen,Tierschutzpartei,,
@@ -15296,7 +15296,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08416050,Starzach,Erststimmen,Tierschutzpartei,,
 08416050,Starzach,Zweitstimmen,Tierschutzpartei,22,0.9
 08417002,"Balingen, Stadt",Erststimmen,Tierschutzpartei,,
-08417002,"Balingen, Stadt",Zweitstimmen,Tierschutzpartei,164,1.0
+08417002,"Balingen, Stadt",Zweitstimmen,Tierschutzpartei,169,1.0
 08417008,Bisingen,Erststimmen,Tierschutzpartei,,
 08417008,Bisingen,Zweitstimmen,Tierschutzpartei,55,1.1
 08417010,Bitz,Erststimmen,Tierschutzpartei,,
@@ -16729,8 +16729,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08216012,Elchesheim-Illingen,Zweitstimmen,Volt,15,0.8
 08216013,Forbach,Erststimmen,Volt,38,1.6
 08216013,Forbach,Zweitstimmen,Volt,15,0.6
-08216015,"Gaggenau, Stadt",Erststimmen,Volt,223,1.7
-08216015,"Gaggenau, Stadt",Zweitstimmen,Volt,95,0.7
+08216015,"Gaggenau, Stadt",Erststimmen,Volt,234,1.7
+08216015,"Gaggenau, Stadt",Zweitstimmen,Volt,98,0.7
 08216017,"Gernsbach, Stadt",Erststimmen,Volt,92,1.3
 08216017,"Gernsbach, Stadt",Zweitstimmen,Volt,48,0.7
 08216023,Iffezheim,Erststimmen,Volt,38,1.4
@@ -17215,8 +17215,8 @@ ags,municipality_name,vote_type,party,votes,percent
 08416049,Neustetten,Zweitstimmen,Volt,9,0.4
 08416050,Starzach,Erststimmen,Volt,40,1.6
 08416050,Starzach,Zweitstimmen,Volt,16,0.6
-08417002,"Balingen, Stadt",Erststimmen,Volt,257,1.5
-08417002,"Balingen, Stadt",Zweitstimmen,Volt,119,0.7
+08417002,"Balingen, Stadt",Erststimmen,Volt,266,1.5
+08417002,"Balingen, Stadt",Zweitstimmen,Volt,124,0.7
 08417008,Bisingen,Erststimmen,Volt,95,1.9
 08417008,Bisingen,Zweitstimmen,Volt,41,0.8
 08417010,Bitz,Erststimmen,Volt,32,1.6
@@ -17690,7 +17690,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08216013,Forbach,Erststimmen,Werteunion,,
 08216013,Forbach,Zweitstimmen,Werteunion,2,0.1
 08216015,"Gaggenau, Stadt",Erststimmen,Werteunion,,
-08216015,"Gaggenau, Stadt",Zweitstimmen,Werteunion,20,0.1
+08216015,"Gaggenau, Stadt",Zweitstimmen,Werteunion,21,0.2
 08216017,"Gernsbach, Stadt",Erststimmen,Werteunion,,
 08216017,"Gernsbach, Stadt",Zweitstimmen,Werteunion,14,0.2
 08216023,Iffezheim,Erststimmen,Werteunion,,
@@ -18650,7 +18650,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08216013,Forbach,Erststimmen,dieBasis,,
 08216013,Forbach,Zweitstimmen,dieBasis,6,0.2
 08216015,"Gaggenau, Stadt",Erststimmen,dieBasis,,
-08216015,"Gaggenau, Stadt",Zweitstimmen,dieBasis,55,0.4
+08216015,"Gaggenau, Stadt",Zweitstimmen,dieBasis,57,0.4
 08216017,"Gernsbach, Stadt",Erststimmen,dieBasis,,
 08216017,"Gernsbach, Stadt",Zweitstimmen,dieBasis,20,0.3
 08216023,Iffezheim,Erststimmen,dieBasis,,
@@ -19136,7 +19136,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08416050,Starzach,Erststimmen,dieBasis,,
 08416050,Starzach,Zweitstimmen,dieBasis,16,0.6
 08417002,"Balingen, Stadt",Erststimmen,dieBasis,,
-08417002,"Balingen, Stadt",Zweitstimmen,dieBasis,43,0.3
+08417002,"Balingen, Stadt",Zweitstimmen,dieBasis,45,0.3
 08417008,Bisingen,Erststimmen,dieBasis,,
 08417008,Bisingen,Zweitstimmen,dieBasis,19,0.4
 08417010,Bitz,Erststimmen,dieBasis,,
@@ -19610,7 +19610,7 @@ ags,municipality_name,vote_type,party,votes,percent
 08216013,Forbach,Erststimmen,ÖDP,,
 08216013,Forbach,Zweitstimmen,ÖDP,3,0.1
 08216015,"Gaggenau, Stadt",Erststimmen,ÖDP,,
-08216015,"Gaggenau, Stadt",Zweitstimmen,ÖDP,9,0.1
+08216015,"Gaggenau, Stadt",Zweitstimmen,ÖDP,10,0.1
 08216017,"Gernsbach, Stadt",Erststimmen,ÖDP,,
 08216017,"Gernsbach, Stadt",Zweitstimmen,ÖDP,6,0.1
 08216023,Iffezheim,Erststimmen,ÖDP,,
