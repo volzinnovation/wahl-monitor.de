@@ -48,16 +48,35 @@ jobs:
             attempt=$((attempt + 1))
           done
 
+      - name: Snapshot generated outputs
+        run: |
+          mkdir -p /tmp/poll-output/data/2026-bw/metadata
+          mkdir -p /tmp/poll-output/data/2026-bw/reports
+          cp -R data/2026-bw/latest /tmp/poll-output/data/2026-bw/
+          cp data/2026-bw/metadata/municipalities.csv /tmp/poll-output/data/2026-bw/metadata/
+          cp data/2026-bw/metadata/wahlkreis-status.csv /tmp/poll-output/data/2026-bw/metadata/
+          cp data/2026-bw/reports/latest_events.csv /tmp/poll-output/data/2026-bw/reports/
+          cp data/2026-bw/reports/latest_source_diff.csv /tmp/poll-output/data/2026-bw/reports/
+
       - name: Commit and push updates
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
+          git fetch origin main
+          git checkout -B main origin/main
+          rm -rf data/2026-bw/latest
+          mkdir -p data/2026-bw/metadata
+          mkdir -p data/2026-bw/reports
+          cp -R /tmp/poll-output/data/2026-bw/latest data/2026-bw/
+          cp /tmp/poll-output/data/2026-bw/metadata/municipalities.csv data/2026-bw/metadata/
+          cp /tmp/poll-output/data/2026-bw/metadata/wahlkreis-status.csv data/2026-bw/metadata/
+          cp /tmp/poll-output/data/2026-bw/reports/latest_events.csv data/2026-bw/reports/
+          cp /tmp/poll-output/data/2026-bw/reports/latest_source_diff.csv data/2026-bw/reports/
           git add data/2026-bw/latest
           git add data/2026-bw/metadata/municipalities.csv
           git add data/2026-bw/metadata/wahlkreis-status.csv
           git add data/2026-bw/reports/latest_events.csv
           git add data/2026-bw/reports/latest_source_diff.csv
-          git add config/2026-bw.json scripts/poll_election.py scripts/poll_election_core.py scripts/poll_ltw26.py
-          git commit -m "2026-bw poll $(date -u +"%Y-%m-%dT%H:%M:%SZ")" || exit 0
-          git pull --rebase --autostash
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "2026-bw poll $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          git push origin HEAD:main
