@@ -397,6 +397,23 @@ def vote_total_for_snapshot(snapshot: Dict[str, Any], vote_type: str) -> int:
     return core.parse_int(snapshot.get("valid_votes_zweit")) or 0
 
 
+def reporting_counts(snapshot: Dict[str, Any]) -> Tuple[int, int]:
+    reported = core.parse_int(snapshot.get("reported_precincts")) or 0
+    total = core.parse_int(snapshot.get("total_precincts")) or 0
+    return reported, total
+
+
+def reporting_status_label(snapshot: Dict[str, Any]) -> str:
+    reported, total = reporting_counts(snapshot)
+    if total <= 0:
+        return "keine Daten"
+    if reported <= 0:
+        return "offen"
+    if reported >= total:
+        return "vollständig"
+    return "teilweise"
+
+
 def pct(value: int, total: int) -> str:
     if total <= 0:
         return "0.00%"
@@ -901,13 +918,20 @@ def render_vote_table(
 ) -> str:
     totals_by_party = {party: 0 for party in parties}
     grand_total = 0
+    total_reported = 0
+    total_precincts = 0
     body_rows: List[str] = []
 
     for label, row_key, snapshot in rows:
         total = vote_total_for_snapshot(snapshot, vote_type)
         grand_total += total
+        reported, precinct_total = reporting_counts(snapshot)
+        total_reported += reported
+        total_precincts += precinct_total
         votes_for_row = party_votes_by_row_key.get(row_key, {}).get(vote_type, {})
         cells = [f"<td><a href='{html.escape(link_lookup[row_key])}'>{html.escape(label)}</a></td>"]
+        cells.append(f"<td>{html.escape(reporting_status_label(snapshot))}</td>")
+        cells.append(f"<td>{reported}/{precinct_total}</td>")
         for party in parties:
             votes = votes_for_row.get(party, 0)
             totals_by_party[party] += votes
@@ -916,12 +940,20 @@ def render_vote_table(
         body_rows.append("<tr>" + "".join(cells) + "</tr>")
 
     total_cells = ["<td><strong>Gesamt</strong></td>"]
+    overall_status = "vollständig" if total_precincts > 0 and total_reported >= total_precincts else ("teilweise" if total_reported > 0 else "offen")
+    total_cells.append(f"<td><strong>{overall_status}</strong></td>")
+    total_cells.append(f"<td><strong>{total_reported}/{total_precincts}</strong></td>")
     for party in parties:
         total_cells.append(f"<td><strong>{format_votes_cell(totals_by_party[party], grand_total or 1)}</strong></td>")
     total_cells.append(f"<td><strong>{format_votes_cell(grand_total, grand_total or 1)}</strong></td>")
 
-    header = "<tr><th>Gebiet</th>" + "".join(party_header_cell(party) for party in parties) + "<th>Gültige Stimmen</th></tr>"
+    header = (
+        "<tr><th>Gebiet</th><th>Status</th><th>Gemeldete Bezirke</th>"
+        + "".join(party_header_cell(party) for party in parties)
+        + "<th>Gültige Stimmen</th></tr>"
+    )
     return (
+        "<p class='small'>Anteile beziehen sich auf die bisher gemeldeten gültigen Stimmen des jeweiligen Gebiets.</p>"
         f"<table><thead>{header}</thead><tbody>{''.join(body_rows)}</tbody>"
         f"<tfoot><tr>{''.join(total_cells)}</tr></tfoot></table>"
     )
@@ -933,6 +965,7 @@ def render_booth_list(
 ) -> str:
     rows: List[str] = []
     for booth in booths:
+        reported, total = reporting_counts(booth)
         location_link = ""
         if booth.get("structure_location_url"):
             location_link = (
@@ -943,13 +976,14 @@ def render_booth_list(
             "<tr>"
             f"<td><a href='{html.escape(booth_local_links[booth['row_key']])}'>{html.escape(booth['display_name'])}</a></td>"
             f"<td>{html.escape(booth['gebietsart'])}</td>"
-            f"<td>{booth['total_precincts']}</td>"
+            f"<td>{html.escape(reporting_status_label(booth))}</td>"
+            f"<td>{reported}/{total}</td>"
             f"<td>{booth['valid_votes_zweit']}</td>"
             f"<td>{location_link}</td>"
             "</tr>"
         )
     return (
-        "<table><thead><tr><th>Wahlbezirk</th><th>Typ</th><th>Bezirke</th><th>Gültige Zweitstimmen</th><th>Wahllokal 2021</th></tr></thead>"
+        "<table><thead><tr><th>Wahlbezirk</th><th>Typ</th><th>Status</th><th>Gemeldete Bezirke</th><th>Gültige Zweitstimmen</th><th>Wahllokal 2021</th></tr></thead>"
         f"<tbody>{''.join(rows)}</tbody></table>"
     )
 
