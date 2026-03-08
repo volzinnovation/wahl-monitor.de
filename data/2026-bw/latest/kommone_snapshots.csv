@@ -2,7 +2,7 @@ ags,municipality_name,status,reported_precincts,total_precincts,voters_total,val
 08111000,Stuttgart-Landeshauptstadt,NO_DATA,,,,,,,,No komm.one municipality page discovered for AGS
 08115001,Aidlingen,NO_DATA,,,4945,4910,35,Vorläufiges Endergebnis,e027086fc3e60501d34295ae3b3e91c88bbdf8d16e99c7b281679d2ee517a425,
 08115002,Altdorf,NO_DATA,,,2697,2680,17,Vorläufiges Endergebnis,27ce8539efd9e6575f629e4c39972d864030b844c3f3e71c5439056ecab1710b,
-08115003,"Böblingen, Stadt",NO_DATA,,,19419,19273,146,"Ausgezählte Gebiete: 56 von 56, 08.03.2026, 22:02:38",f8bff1e7e951bee85ac42f997a0efee414add439ca11d8566d40dd6a0270c1dc,
+08115003,"Böblingen, Stadt",NO_DATA,,,19419,19273,146,Vorläufiges Endergebnis,33be38426f407e798fdde4ada877d9a0ce9a98dca0a0e99a61f4b498a79b299f,
 08115004,Bondorf,NO_DATA,,,3279,3260,19,Vorläufiges Endergebnis,50eb2665ffef0a098289f21f587a0c5850c7956413abeb66a5b97c2028debc1a,
 08115010,Deckenpfronn,NO_DATA,,,1966,1939,27,Vorläufiges Endergebnis,6f32bcbe416714fe8a7b9d2f2e0e25b0f8c44c7896db3e3890990ae12ff2ee85,
 08115013,Ehningen,NO_DATA,,,4843,4794,49,Vorläufiges Endergebnis,2cb21c9cc1866900ffefa6f28ddc3a5bf5bd48e6dd4effb9631f1efd02c049dd,
@@ -17,7 +17,7 @@ ags,municipality_name,status,reported_precincts,total_precincts,voters_total,val
 08115037,Nufringen,NO_DATA,,,3200,3183,17,Vorläufiges Endergebnis,6987459aca3a3eec44f72ff7f6d2cb4517d519bb95697a3593c9f3fba9c441fd,
 08115041,"Renningen, Stadt",NO_DATA,,,9753,9678,75,Vorläufiges Endergebnis,10eb08af803792f8958bb03967c18207b6dd82007aeba5bcaf9b180a71c2fed3,
 08115042,"Rutesheim, Stadt",NO_DATA,,,5886,5850,36,Vorläufiges Endergebnis,f920147e301fa708b2b9546f48a7ee4b523187b9fa5a05bcf6346a70d507280e,
-08115044,Schönaich,NO_DATA,,,4492,4464,28,"Ausgezählte Gebiete: 9 von 10, 08.03.2026, 22:02:38",3f89560044a11a133be42d9af9404df1caf2e4489b43c717331189a6c35f15da,
+08115044,Schönaich,NO_DATA,,,5259,5225,34,"Ausgezählte Gebiete: 10 von 10, 09.03.2026, 00:19:45",478f3723d1af36215885dc563f23edcb487ecc3fca7bdf5fceefdb0554f73f1e,
 08115045,"Sindelfingen, Stadt",NO_DATA,,,23516,23286,230,Vorläufiges Endergebnis,eea8746ef670243876853ac0d77bcbb6875593137b3ba5f21b6e2d82faeadab8,
 08115046,Steinenbronn,NO_DATA,,,2967,2945,22,Vorläufiges Endergebnis,ce2237ef46d8196781b69b9fcab854180bf213d183be4af0ca7da059f041ffae,
 08115048,"Waldenbuch, Stadt",NO_DATA,,,4694,4664,30,Vorläufiges Endergebnis,5362ab320462ed057f34e3c94c1da35d4ed3764865045a0166edac5d44aa1db5,
