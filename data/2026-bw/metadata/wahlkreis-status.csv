@@ -6,7 +6,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 5,Böblingen,pending,188,189,12,0,0,12
 6,Leonberg,complete,178,178,14,0,0,14
 7,Esslingen,complete,152,152,6,0,0,6
-8,Kirchheim,pending,163,164,22,0,0,22
+8,Kirchheim,complete,164,164,22,0,0,22
 9,Nürtingen,complete,176,176,15,0,0,15
 10,Göppingen,complete,157,157,12,0,0,12
 11,Geislingen,complete,128,128,27,0,0,27
@@ -42,10 +42,10 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 41,Sinsheim,complete,150,150,24,0,0,24
 42,Pforzheim,complete,129,129,5,0,5,0
 43,Calw,complete,186,186,25,0,25,0
-44,Enz,pending,164,166,24,0,24,0
+44,Enz,pending,165,166,24,0,24,0
 45,Freudenstadt,complete,143,143,16,0,16,0
 46,Freiburg I,complete,219,219,30,0,0,30
-47,Freiburg II,pending,182,183,5,0,0,5
+47,Freiburg II,complete,183,183,5,0,0,5
 48,Breisgau,complete,192,192,31,0,0,31
 49,Emmendingen,complete,165,165,24,0,24,0
 50,Lahr,pending,178,179,22,0,0,22
