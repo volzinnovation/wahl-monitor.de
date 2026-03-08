@@ -49,7 +49,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 48,Breisgau,complete,192,192,31,0,0,31
 49,Emmendingen,complete,165,165,24,0,24,0
 50,Lahr,complete,179,179,22,0,0,22
-51,Offenburg,pending,129,130,15,0,0,15
+51,Offenburg,complete,130,130,15,0,0,15
 52,Kehl,complete,132,132,14,0,0,14
 53,Rottweil,complete,149,149,21,0,21,0
 54,Villingen-Schwenningen,complete,189,189,17,0,17,0

@@ -2627,10 +2627,10 @@ poll_id,ags,municipality_name,metric,kommone_value,statla_value,delta
 2,08317093,Oberwolfach,total_precincts,,2,
 2,08317093,Oberwolfach,voters_total,1599,1599,0.0
 2,08317093,Oberwolfach,valid_votes,1589,1595,-6.0
-2,08317096,"Offenburg, Stadt",reported_precincts,,59,
+2,08317096,"Offenburg, Stadt",reported_precincts,,60,
 2,08317096,"Offenburg, Stadt",total_precincts,,60,
-2,08317096,"Offenburg, Stadt",voters_total,27910,27910,0.0
-2,08317096,"Offenburg, Stadt",valid_votes,27478,27674,-196.0
+2,08317096,"Offenburg, Stadt",voters_total,28296,28296,0.0
+2,08317096,"Offenburg, Stadt",valid_votes,27860,28057,-197.0
 2,08317097,Ohlsbach,reported_precincts,,3,
 2,08317097,Ohlsbach,total_precincts,,3,
 2,08317097,Ohlsbach,voters_total,1994,1994,0.0
