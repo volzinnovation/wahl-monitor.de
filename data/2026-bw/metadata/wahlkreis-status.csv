@@ -19,10 +19,10 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 18,Heilbronn,pending,0,143,5,0,0,5
 19,Eppingen,pending,0,144,19,0,0,19
 20,Neckarsulm,pending,0,156,23,0,0,23
-21,Hohenlohe,pending,0,169,22,0,7,15
-22,Schwäbisch Hall,pending,0,182,24,0,1,23
-23,Main-Tauber,pending,0,204,18,0,9,9
-24,Heidenheim,pending,0,163,11,0,3,8
+21,Hohenlohe,pending,0,169,22,0,10,12
+22,Schwäbisch Hall,pending,0,182,24,0,5,19
+23,Main-Tauber,pending,0,204,18,0,13,5
+24,Heidenheim,pending,0,163,11,0,6,5
 25,Schwäbisch Gmünd,pending,0,150,22,0,0,22
 26,Aalen,pending,0,175,20,0,0,20
 27,Karlsruhe I,pending,0,137,1,0,0,1
@@ -30,7 +30,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 29,Bruchsal,pending,0,152,11,0,0,11
 30,Bretten,pending,0,177,14,0,0,14
 31,Ettlingen,pending,0,157,7,0,0,7
-32,Rastatt,pending,0,153,16,0,0,16
+32,Rastatt,pending,0,153,16,0,1,15
 33,Baden-Baden,pending,0,139,8,0,0,8
 34,Heidelberg,pending,0,149,1,0,0,1
 35,Mannheim I,pending,0,110,1,0,0,1
@@ -40,32 +40,32 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 39,Weinheim,pending,0,191,10,0,0,10
 40,Schwetzingen,pending,0,128,10,0,0,10
 41,Sinsheim,pending,0,150,24,0,0,24
-42,Pforzheim,pending,0,129,5,0,0,5
+42,Pforzheim,pending,0,129,5,0,1,4
 43,Calw,pending,0,186,25,0,3,22
-44,Enz,pending,0,166,24,0,0,24
-45,Freudenstadt,pending,0,143,16,0,1,15
+44,Enz,pending,0,166,24,0,1,23
+45,Freudenstadt,pending,0,143,16,0,3,13
 46,Freiburg I,pending,0,219,30,0,0,30
 47,Freiburg II,pending,0,183,5,0,0,5
 48,Breisgau,pending,0,192,31,0,0,31
-49,Emmendingen,pending,0,165,24,0,0,24
+49,Emmendingen,pending,0,165,24,0,2,22
 50,Lahr,pending,0,179,22,0,0,22
 51,Offenburg,pending,0,130,15,0,0,15
 52,Kehl,pending,0,132,14,0,0,14
-53,Rottweil,pending,0,149,21,0,0,21
-54,Villingen-Schwenningen,pending,0,189,17,0,1,16
-55,Tuttlingen-Donaueschingen,pending,0,191,38,0,1,37
+53,Rottweil,pending,0,149,21,0,3,18
+54,Villingen-Schwenningen,pending,0,189,17,0,6,11
+55,Tuttlingen-Donaueschingen,pending,0,191,38,0,2,36
 56,Konstanz,pending,0,161,7,0,0,7
 57,Singen,pending,0,159,18,0,0,18
-58,Lörrach,pending,0,248,30,0,3,27
-59,Waldshut,pending,0,214,23,0,2,21
+58,Lörrach,pending,0,248,30,0,5,25
+59,Waldshut,pending,0,214,23,0,5,18
 60,Reutlingen,pending,0,171,10,0,0,10
 61,Hechingen-Münsingen,pending,0,187,25,0,0,25
-62,Tübingen,pending,0,161,8,0,0,8
+62,Tübingen,pending,0,161,8,0,1,7
 63,Balingen,pending,0,195,24,0,0,24
 64,Ulm,pending,0,218,10,0,0,10
-65,Ehingen,pending,0,197,46,0,3,43
-66,Biberach,pending,0,226,38,0,3,35
+65,Ehingen,pending,0,197,46,0,6,40
+66,Biberach,pending,0,226,38,0,6,32
 67,Bodensee,pending,0,201,20,0,0,20
 68,Wangen,pending,0,185,22,0,0,22
 69,Ravensburg,pending,0,174,27,0,0,27
-70,Sigmaringen,pending,0,180,25,0,4,21
+70,Sigmaringen,pending,0,180,25,0,5,20
