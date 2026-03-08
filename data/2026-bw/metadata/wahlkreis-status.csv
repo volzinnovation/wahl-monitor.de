@@ -59,7 +59,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 58,Lörrach,complete,248,248,30,0,30,0
 59,Waldshut,complete,214,214,23,0,23,0
 60,Reutlingen,complete,171,171,10,0,0,10
-61,Hechingen-Münsingen,pending,186,187,25,0,0,25
+61,Hechingen-Münsingen,complete,187,187,25,0,0,25
 62,Tübingen,complete,161,161,8,0,8,0
 63,Balingen,complete,195,195,24,0,24,0
 64,Ulm,complete,218,218,10,0,0,10
