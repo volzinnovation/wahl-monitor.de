@@ -1,0 +1,20 @@
+{
+  "election_key": "2026-bw",
+  "election_name": "Landtagswahl Baden-Wuerttemberg 2026",
+  "election_date": "2026-03-08",
+  "tracking_start_local": "2026-03-08T18:00:00",
+  "timezone": "Europe/Berlin",
+  "kommone_wahltermin": "20260308",
+  "kommone_base_url_template": "https://wahlergebnisse.komm.one/lb/produktion/wahltermin-{wahltermin}/{ags}",
+  "statla_live_csv_url": "https://wahlen.statistik-bw.de/ltw26/ltw26-ergebnisse.csv",
+  "statla_dummy_csv_url": "https://www.statistik-bw.de/fileadmin/user_upload/Presse/Pressemitteilungen/2026021_LTW26-Dummy-Datei.csv",
+  "wahlkreise_geojson_zip_url": "https://www.statistik-bw.de/fileadmin/user_upload/medien/bilder/Karten_und_Geometrien_der_Wahlkreise/LTWahlkreise2026-BW_GEOJSON.zip",
+  "wahlkreise_shp_zip_url": "https://www.statistik-bw.de/fileadmin/user_upload/medien/bilder/Karten_und_Geometrien_der_Wahlkreise/LTWahlkreise2026-BW_SHP.zip",
+  "wahlkreise_mapping_csv_url": "https://www.statistik-bw.de/fileadmin/user_upload/medien/bilder/Karten_und_Geometrien_der_Wahlkreise/LTWahlkreise2026-BW-wkr_kr_gem.csv",
+  "legacy_city_source_csv": "data/2026-bw/metadata/2026-bw-gemeinden.csv",
+  "local_dummy_statla_csv_filename": "2026021_LTW26-Dummy-Datei.csv",
+  "local_wahlkreise_geojson_filename": "LTWahlkreise2026-BW.geojson",
+  "local_wahlkreise_mapping_csv_filename": "LTWahlkreise2026-BW-wkr_kr_gem.csv",
+  "request_timeout_seconds": 4,
+  "max_workers": 48
+}

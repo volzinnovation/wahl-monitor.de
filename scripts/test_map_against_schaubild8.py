@@ -15,10 +15,12 @@ from typing import Any, Dict, Iterable, List, Tuple
 import numpy as np
 from PIL import Image, ImageDraw
 
+import poll_election_core as core
+
 ROOT = Path(__file__).resolve().parents[1]
-META_DIR = ROOT / "data" / "ltw26" / "metadata"
+META_DIR = core.META_DIR
 REF_DIR = META_DIR / "reference"
-GEOJSON_PATH = META_DIR / "LTWahlkreise2026-BW.geojson"
+GEOJSON_PATH = core.WAHLKREIS_GEOJSON_PATH
 DEFAULT_PDF_URL = (
     "https://www.statistik-bw.de/fileadmin/user_upload/Service/Veroeff/"
     "Statistische_Berichte/423525001.pdf"
@@ -287,7 +289,7 @@ def compose_comparison_image(
     canvas.paste(diff_panel, (x0 + 2 * (panel_w + 20), y0))
 
     draw.text((x0, 12), "Schaubild 8 (page 63)", fill=(17, 24, 39))
-    draw.text((x0 + panel_w + 20, 12), "Generated from LTWahlkreise2026-BW.geojson", fill=(17, 24, 39))
+    draw.text((x0 + panel_w + 20, 12), f"Generated from {GEOJSON_PATH.name}", fill=(17, 24, 39))
     draw.text((x0 + 2 * (panel_w + 20), 12), f"Normalized mask diff (IoU: {iou_score:.3f})", fill=(17, 24, 39))
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -389,11 +391,23 @@ def run(pdf_url: str, threshold: float, page: int) -> Dict[str, Any]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Validate LTW26 map against Schaubild 8 (page 63).")
+    parser = argparse.ArgumentParser(description="Validate Wahlkreis map against Schaubild 8 (page 63).")
+    parser.add_argument(
+        "--election-key",
+        default=core.DEFAULT_ELECTION_KEY,
+        help="Election storage key, for example 2026-bw. Defaults to %(default)s.",
+    )
     parser.add_argument("--pdf-url", default=DEFAULT_PDF_URL, help="PDF URL for the official report.")
     parser.add_argument("--threshold", type=float, default=0.90, help="Minimum IoU to pass.")
     parser.add_argument("--page", type=int, default=63, help="PDF page number containing Schaubild 8.")
     args = parser.parse_args()
+
+    core.set_active_election(election_key=args.election_key)
+    core.load_config()
+    global META_DIR, REF_DIR, GEOJSON_PATH
+    META_DIR = core.META_DIR
+    REF_DIR = META_DIR / "reference"
+    GEOJSON_PATH = core.WAHLKREIS_GEOJSON_PATH
 
     report = run(pdf_url=args.pdf_url, threshold=args.threshold, page=args.page)
     print(f"IoU: {report['iou']:.3f}")

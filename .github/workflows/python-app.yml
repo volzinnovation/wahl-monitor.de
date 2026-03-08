@@ -1,4 +1,4 @@
-name: LTW26 Poller Smoke Test
+name: Election Poller Smoke Test
 
 on:
   workflow_dispatch:
@@ -20,4 +20,4 @@ jobs:
         python-version: "3.11"
     - name: Run poller in limited mode
       run: |
-        python scripts/poll_ltw26.py --limit-ags 50
+        python scripts/poll_election.py --election-key 2026-bw --force-run --use-dummy-statla --skip-kommone --limit-ags 50

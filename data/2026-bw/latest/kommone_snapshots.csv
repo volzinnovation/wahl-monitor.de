@@ -1,0 +1,2 @@
+ags,municipality_name,status,reported_precincts,total_precincts,voters_total,valid_votes,invalid_votes,source_timestamp,payload_hash,error_message
+08111000,Stuttgart-Landeshauptstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone

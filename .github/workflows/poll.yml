@@ -1,4 +1,4 @@
-name: LTW26 Poll Every Minute
+name: Election Poll
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: ltw26-minute-poll
+  group: 2026-bw-minute-poll
   cancel-in-progress: false
 
 jobs:
@@ -26,15 +26,15 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Run LTW26 poller
+      - name: Run election poller
         run: |
-          python scripts/poll_ltw26.py
+          python scripts/poll_election.py --election-key 2026-bw
 
       - name: Commit and push updates
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git pull --rebase
-          git add README.md data/ltw26 config/ltw26_config.json scripts/poll_ltw26.py
-          git commit -m "LTW26 poll $(date -u +"%Y-%m-%dT%H:%M:%SZ")" || echo "No changes to commit"
+          git add README.md data/2026-bw config/2026-bw.json scripts/poll_election.py scripts/poll_election_core.py scripts/poll_ltw26.py
+          git commit -m "2026-bw poll $(date -u +"%Y-%m-%dT%H:%M:%SZ")" || echo "No changes to commit"
           git push

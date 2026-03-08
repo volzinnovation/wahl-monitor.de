@@ -1,0 +1,41 @@
+row_type,vote_type,party,kommone_votes,kommone_share_percent,statla_votes,statla_share_percent,delta_votes,delta_share_percent
+PARTY,Erststimmen,GRÜNE,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,CDU,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,SPD,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,FDP,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,AfD,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,Die Linke,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,FREIE WÄHLER,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,Die PARTEI,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,dieBasis,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,ÖDP,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,Volt,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,Bündnis C,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,BSW,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,Die Gerechtigkeitspartei,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,Tierschutzpartei,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,Werteunion,0,0.0,0,0.0,0,0.0
+PARTY,Erststimmen,Anderer Kreiswahlvorschlag,0,0.0,0,0.0,0,0.0
+TOTAL,Erststimmen,TOTAL,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,GRÜNE,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,CDU,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,SPD,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,FDP,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,AfD,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,Die Linke,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,FREIE WÄHLER,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,Die PARTEI,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,dieBasis,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,KlimalisteBW,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,ÖDP,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,Volt,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,Bündnis C,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,PDH,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,Verjüngungsforschung,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,BSW,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,Die Gerechtigkeitspartei,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,PDR,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,PdF,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,Tierschutzpartei,0,0.0,0,0.0,0,0.0
+PARTY,Zweitstimmen,Werteunion,0,0.0,0,0.0,0,0.0
+TOTAL,Zweitstimmen,TOTAL,0,0.0,0,0.0,0,0.0

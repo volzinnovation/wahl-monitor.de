@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild data/ltw26/history.sqlite from git-tracked poll delta files."""
+"""Rebuild an election history.sqlite from git-tracked poll delta files."""
 
 from __future__ import annotations
 
@@ -14,11 +14,7 @@ from typing import Dict, List, Optional
 
 from zoneinfo import ZoneInfo
 
-import poll_ltw26 as core
-
-RUN_METADATA_PATH = "data/ltw26/latest/run_metadata.json"
-LATEST_EVENTS_PATH = "data/ltw26/reports/latest_events.csv"
-LATEST_DIFFS_PATH = "data/ltw26/reports/latest_source_diff.csv"
+import poll_election_core as core
 
 
 def run_git(args: List[str], *, text: bool = True) -> str | bytes:
@@ -52,7 +48,8 @@ def commit_date_iso(commit: str) -> str:
 
 
 def list_poll_commits() -> List[str]:
-    raw = run_git(["rev-list", "--reverse", "--all", "--", RUN_METADATA_PATH], text=True)
+    run_metadata_path = core.repo_relative_path(core.LATEST_DIR / "run_metadata.json")
+    raw = run_git(["rev-list", "--reverse", "--all", "--", run_metadata_path], text=True)
     commits = [line.strip() for line in raw.splitlines() if line.strip()]
     return commits
 
@@ -81,6 +78,10 @@ def local_label(utc_iso: str, tz_name: str) -> str:
 
 def rebuild(db_path: Path, limit: Optional[int]) -> Dict[str, int]:
     config = core.load_config()
+    run_metadata_path = core.repo_relative_path(core.LATEST_DIR / "run_metadata.json")
+    latest_events_path = core.repo_relative_path(core.REPORT_DIR / "latest_events.csv")
+    latest_diffs_path = core.repo_relative_path(core.REPORT_DIR / "latest_source_diff.csv")
+    raw_statla_dir = core.repo_relative_path(core.RAW_STATLA_DIR)
     commits = list_poll_commits()
     if limit is not None and limit > 0:
         commits = commits[-limit:]
@@ -98,7 +99,7 @@ def rebuild(db_path: Path, limit: Optional[int]) -> Dict[str, int]:
         diff_count = 0
 
         for commit in commits:
-            metadata_text = git_show_text(commit, RUN_METADATA_PATH)
+            metadata_text = git_show_text(commit, run_metadata_path)
             if not metadata_text:
                 continue
             try:
@@ -124,7 +125,7 @@ def rebuild(db_path: Path, limit: Optional[int]) -> Dict[str, int]:
             statla_hash = None
             statla_bytes = 0
             if run_label:
-                raw_statla_path = f"data/ltw26/raw/statla/{run_label}-statla.csv"
+                raw_statla_path = f"{raw_statla_dir}/{run_label}-statla.csv"
                 raw_statla = git_show_bytes(commit, raw_statla_path)
                 if raw_statla:
                     statla_hash = core.sha256_bytes(raw_statla)
@@ -149,7 +150,7 @@ def rebuild(db_path: Path, limit: Optional[int]) -> Dict[str, int]:
                 ),
             )
 
-            events_text = git_show_text(commit, LATEST_EVENTS_PATH)
+            events_text = git_show_text(commit, latest_events_path)
             if events_text:
                 events = parse_csv_rows(events_text)
                 conn.executemany(
@@ -175,7 +176,7 @@ def rebuild(db_path: Path, limit: Optional[int]) -> Dict[str, int]:
                 )
                 event_count += len(events)
 
-            diffs_text = git_show_text(commit, LATEST_DIFFS_PATH)
+            diffs_text = git_show_text(commit, latest_diffs_path)
             if diffs_text:
                 diffs = parse_csv_rows(diffs_text)
                 conn.executemany(
@@ -220,9 +221,14 @@ def rebuild(db_path: Path, limit: Optional[int]) -> Dict[str, int]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Rebuild history.sqlite from git-tracked delta files.")
     parser.add_argument(
+        "--election-key",
+        default=core.DEFAULT_ELECTION_KEY,
+        help="Election storage key, for example 2026-bw. Defaults to %(default)s.",
+    )
+    parser.add_argument(
         "--db-path",
-        default=str(core.DB_PATH),
-        help="Target SQLite path (default: data/ltw26/history.sqlite).",
+        default=None,
+        help="Optional explicit SQLite path. Defaults to data/<election-key>/history.sqlite.",
     )
     parser.add_argument(
         "--limit",
@@ -235,8 +241,10 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    stats = rebuild(db_path=Path(args.db_path), limit=args.limit)
-    print(f"Rebuilt SQLite: {args.db_path}")
+    core.set_active_election(election_key=args.election_key)
+    db_path = Path(args.db_path) if args.db_path else core.DB_PATH
+    stats = rebuild(db_path=db_path, limit=args.limit)
+    print(f"Rebuilt SQLite: {db_path}")
     print(f"Poll commits scanned: {stats['poll_commits']}")
     print(f"Poll rows inserted: {stats['poll_rows']}")
     print(f"Event rows inserted: {stats['events_rows']}")
