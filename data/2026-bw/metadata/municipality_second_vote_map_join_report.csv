@@ -1,0 +1,1105 @@
+ags,metadata_name,geometry_name,geometry_found,result_found,winner_party,winner_percent
+08111000,Stuttgart-Landeshauptstadt,"Stuttgart, Stadt",True,True,GRÜNE,40.932
+08115001,Aidlingen,"Aidlingen, Gemeinde",True,True,CDU,33.780
+08115002,Altdorf,"Altdorf, Gemeinde",True,True,GRÜNE,34.251
+08115003,"Böblingen, Stadt","Böblingen, Stadt",True,True,GRÜNE,32.981
+08115004,Bondorf,"Bondorf, Gemeinde",True,True,CDU,31.832
+08115010,Deckenpfronn,"Deckenpfronn, Gemeinde",True,True,CDU,35.871
+08115013,Ehningen,"Ehningen, Gemeinde",True,True,GRÜNE,34.165
+08115015,Gärtringen,"Gärtringen, Gemeinde",True,True,CDU,34.176
+08115016,Gäufelden,"Gäufelden, Gemeinde",True,True,CDU,32.133
+08115021,"Herrenberg, Stadt","Herrenberg, Stadt",True,True,GRÜNE,37.116
+08115022,Hildrizhausen,"Hildrizhausen, Gemeinde",True,True,CDU,36.423
+08115024,"Holzgerlingen, Stadt","Holzgerlingen, Stadt",True,True,GRÜNE,33.481
+08115028,"Leonberg, Stadt","Leonberg, Stadt",True,True,GRÜNE,35.724
+08115029,Magstadt,"Magstadt, Gemeinde",True,True,GRÜNE,31.823
+08115034,Mötzingen,"Mötzingen, Gemeinde",True,True,CDU,34.306
+08115037,Nufringen,"Nufringen, Gemeinde",True,True,CDU,33.846
+08115041,"Renningen, Stadt","Renningen, Stadt",True,True,GRÜNE,36.340
+08115042,"Rutesheim, Stadt","Rutesheim, Stadt",True,True,GRÜNE,36.164
+08115044,Schönaich,"Schönaich, Gemeinde",True,True,CDU,31.903
+08115045,"Sindelfingen, Stadt","Sindelfingen, Stadt",True,True,GRÜNE,31.578
+08115046,Steinenbronn,"Steinenbronn, Gemeinde",True,True,CDU,30.881
+08115048,"Waldenbuch, Stadt","Waldenbuch, Stadt",True,True,GRÜNE,32.870
+08115050,"Weil der Stadt, Stadt","Weil der Stadt, Stadt",True,True,GRÜNE,33.434
+08115051,Weil im Schönbuch,"Weil im Schönbuch, Gemeinde",True,True,CDU,32.647
+08115052,Weissach,"Weissach, Gemeinde",True,True,CDU,33.464
+08115053,Jettingen,"Jettingen, Gemeinde",True,True,CDU,33.993
+08115054,Grafenau,"Grafenau, Gemeinde",True,True,CDU,33.624
+08116004,Altbach,"Altbach, Gemeinde",True,True,GRÜNE,31.041
+08116005,Altdorf,"Altdorf, Gemeinde",True,True,CDU,35.233
+08116006,Altenriet,"Altenriet, Gemeinde",True,True,CDU,33.388
+08116007,Baltmannsweiler,"Baltmannsweiler, Gemeinde",True,True,CDU,31.022
+08116008,Bempflingen,"Bempflingen, Gemeinde",True,True,GRÜNE,33.737
+08116011,Beuren,"Beuren, Gemeinde",True,True,CDU,31.337
+08116012,Bissingen an der Teck,"Bissingen an der Teck, Gemeinde",True,True,GRÜNE,33.100
+08116014,Deizisau,"Deizisau, Gemeinde",True,True,CDU,31.241
+08116015,Denkendorf,"Denkendorf, Gemeinde",True,True,CDU,33.614
+08116016,Dettingen unter Teck,"Dettingen unter Teck, Gemeinde",True,True,GRÜNE,32.851
+08116018,Erkenbrechtsweiler,"Erkenbrechtsweiler, Gemeinde",True,True,CDU,32.962
+08116019,"Esslingen am Neckar, Stadt","Esslingen am Neckar, Stadt",True,True,GRÜNE,39.279
+08116020,Frickenhausen,"Frickenhausen, Gemeinde",True,True,CDU,30.845
+08116022,Großbettlingen,"Großbettlingen, Gemeinde",True,True,GRÜNE,30.940
+08116027,Hochdorf,"Hochdorf, Gemeinde",True,True,GRÜNE,32.303
+08116029,Holzmaden,"Holzmaden, Gemeinde",True,True,CDU,33.905
+08116033,"Kirchheim unter Teck, Stadt","Kirchheim unter Teck, Stadt",True,True,GRÜNE,35.004
+08116035,Köngen,"Köngen, Gemeinde",True,True,GRÜNE,32.075
+08116036,Kohlberg,"Kohlberg, Gemeinde",True,True,CDU,35.673
+08116037,Lichtenwald,"Lichtenwald, Gemeinde",True,True,CDU,33.184
+08116041,Neckartailfingen,"Neckartailfingen, Gemeinde",True,True,CDU,32.413
+08116042,Neckartenzlingen,"Neckartenzlingen, Gemeinde",True,True,GRÜNE,31.259
+08116043,Neidlingen,"Neidlingen, Gemeinde",True,True,CDU,43.275
+08116046,"Neuffen, Stadt","Neuffen, Stadt",True,True,CDU,30.963
+08116047,Neuhausen auf den Fildern,"Neuhausen auf den Fildern, Gemeinde",True,True,GRÜNE,33.343
+08116048,Notzingen,"Notzingen, Gemeinde",True,True,CDU,35.481
+08116049,"Nürtingen, Stadt","Nürtingen, Stadt",True,True,GRÜNE,32.782
+08116050,Oberboihingen,"Oberboihingen, Gemeinde",True,True,CDU,31.508
+08116053,Ohmden,"Ohmden, Gemeinde",True,True,CDU,33.500
+08116054,"Owen, Stadt","Owen, Stadt",True,True,CDU,35.442
+08116056,"Plochingen, Stadt","Plochingen, Stadt",True,True,GRÜNE,31.554
+08116058,Reichenbach an der Fils,"Reichenbach an der Fils, Gemeinde",True,True,GRÜNE,31.094
+08116063,Schlaitdorf,"Schlaitdorf, Gemeinde",True,True,GRÜNE,31.652
+08116068,Unterensingen,"Unterensingen, Gemeinde",True,True,CDU,29.954
+08116070,"Weilheim an der Teck, Stadt","Weilheim an der Teck, Stadt",True,True,CDU,33.781
+08116071,"Wendlingen am Neckar, Stadt","Wendlingen am Neckar, Stadt",True,True,GRÜNE,31.195
+08116072,"Wernau (Neckar), Stadt","Wernau (Neckar), Stadt",True,True,CDU,31.096
+08116073,Wolfschlugen,"Wolfschlugen, Gemeinde",True,True,CDU,31.868
+08116076,Aichwald,"Aichwald, Gemeinde",True,True,CDU,32.723
+08116077,"Filderstadt, Stadt","Filderstadt, Stadt",True,True,GRÜNE,31.480
+08116078,"Leinfelden-Echterdingen, Stadt","Leinfelden-Echterdingen, Stadt",True,True,GRÜNE,38.133
+08116079,Lenningen,"Lenningen, Gemeinde",True,True,CDU,32.701
+08116080,"Ostfildern, Stadt","Ostfildern, Stadt",True,True,GRÜNE,35.589
+08116081,"Aichtal, Stadt","Aichtal, Stadt",True,True,CDU,31.453
+08117001,Adelberg,"Adelberg, Gemeinde",True,True,CDU,31.437
+08117002,Aichelberg,"Aichelberg, Gemeinde",True,True,GRÜNE,30.424
+08117003,Albershausen,"Albershausen, Gemeinde",True,True,CDU,34.337
+08117006,Bad Ditzenbach,"Bad Ditzenbach, Gemeinde",True,True,CDU,37.747
+08117007,Bad Überkingen,"Bad Überkingen, Gemeinde",True,True,CDU,39.450
+08117009,Birenbach,"Birenbach, Gemeinde",True,True,CDU,33.753
+08117010,Böhmenkirch,"Böhmenkirch, Gemeinde",True,True,CDU,41.721
+08117011,Börtlingen,"Börtlingen, Gemeinde",True,True,CDU,32.358
+08117012,Bad Boll,"Bad Boll, Gemeinde",True,True,GRÜNE,35.429
+08117014,Deggingen,"Deggingen, Gemeinde",True,True,CDU,38.588
+08117015,"Donzdorf, Stadt","Donzdorf, Stadt",True,True,CDU,39.953
+08117016,Drackenstein,"Drackenstein, Gemeinde",True,True,CDU,34.276
+08117017,Dürnau,"Dürnau, Gemeinde",True,True,GRÜNE,32.073
+08117018,"Ebersbach an der Fils, Stadt","Ebersbach an der Fils, Stadt",True,True,GRÜNE,30.748
+08117019,"Eislingen/Fils, Stadt","Eislingen/Fils, Stadt",True,True,CDU,31.079
+08117020,Eschenbach,"Eschenbach, Gemeinde",True,True,CDU,34.140
+08117023,Gammelshausen,"Gammelshausen, Gemeinde",True,True,CDU,33.333
+08117024,"Geislingen an der Steige, Stadt","Geislingen an der Steige, Stadt",True,True,CDU,30.191
+08117025,Gingen an der Fils,"Gingen an der Fils, Gemeinde",True,True,CDU,34.740
+08117026,"Göppingen, Stadt","Göppingen, Stadt",True,True,CDU,28.185
+08117028,Gruibingen,"Gruibingen, Gemeinde",True,True,CDU,33.141
+08117029,Hattenhofen,"Hattenhofen, Gemeinde",True,True,CDU,33.483
+08117030,Heiningen,"Heiningen, Gemeinde",True,True,CDU,31.721
+08117031,Hohenstadt,"Hohenstadt, Gemeinde",True,True,CDU,39.035
+08117033,Kuchen,"Kuchen, Gemeinde",True,True,CDU,33.055
+08117035,Mühlhausen im Täle,"Mühlhausen im Täle, Gemeinde",True,True,CDU,36.486
+08117037,Ottenbach,"Ottenbach, Gemeinde",True,True,CDU,41.742
+08117038,Rechberghausen,"Rechberghausen, Gemeinde",True,True,CDU,33.949
+08117042,Salach,"Salach, Gemeinde",True,True,CDU,33.016
+08117043,Schlat,"Schlat, Gemeinde",True,True,CDU,33.240
+08117044,Schlierbach,"Schlierbach, Gemeinde",True,True,CDU,34.739
+08117049,"Süßen, Stadt","Süßen, Stadt",True,True,CDU,31.638
+08117051,"Uhingen, Stadt","Uhingen, Stadt",True,True,CDU,28.472
+08117053,Wäschenbeuren,"Wäschenbeuren, Gemeinde",True,True,CDU,34.071
+08117055,Wangen,"Wangen, Gemeinde",True,True,CDU,31.191
+08117058,"Wiesensteig, Stadt","Wiesensteig, Stadt",True,True,CDU,38.868
+08117060,Zell unter Aichelberg,"Zell unter Aichelberg, Gemeinde",True,True,CDU,37.023
+08117061,"Lauterstein, Stadt","Lauterstein, Stadt",True,True,CDU,41.116
+08118001,Affalterbach,"Affalterbach, Gemeinde",True,True,CDU,35.483
+08118003,"Asperg, Stadt","Asperg, Stadt",True,True,GRÜNE,32.057
+08118006,Benningen am Neckar,"Benningen am Neckar, Gemeinde",True,True,GRÜNE,32.470
+08118007,"Besigheim, Stadt","Besigheim, Stadt",True,True,GRÜNE,33.064
+08118010,"Bönnigheim, Stadt","Bönnigheim, Stadt",True,True,CDU,32.192
+08118011,"Ditzingen, Stadt","Ditzingen, Stadt",True,True,GRÜNE,33.559
+08118012,Eberdingen,"Eberdingen, Gemeinde",True,True,CDU,32.853
+08118014,Erdmannhausen,"Erdmannhausen, Gemeinde",True,True,GRÜNE,31.836
+08118015,Erligheim,"Erligheim, Gemeinde",True,True,CDU,32.256
+08118016,Freudental,"Freudental, Gemeinde",True,True,GRÜNE,32.763
+08118018,Gemmrigheim,"Gemmrigheim, Gemeinde",True,True,CDU,34.202
+08118019,"Gerlingen, Stadt","Gerlingen, Stadt",True,True,GRÜNE,35.280
+08118021,"Großbottwar, Stadt","Großbottwar, Stadt",True,True,CDU,34.455
+08118027,Hemmingen,"Hemmingen, Gemeinde",True,True,CDU,30.344
+08118028,Hessigheim,"Hessigheim, Gemeinde",True,True,CDU,36.489
+08118040,Kirchheim am Neckar,"Kirchheim am Neckar, Gemeinde",True,True,CDU,31.782
+08118046,"Kornwestheim, Stadt","Kornwestheim, Stadt",True,True,GRÜNE,32.398
+08118047,Löchgau,"Löchgau, Gemeinde",True,True,CDU,31.973
+08118048,"Ludwigsburg, Stadt","Ludwigsburg, Stadt",True,True,GRÜNE,37.334
+08118049,"Marbach am Neckar, Stadt","Marbach am Neckar, Stadt",True,True,GRÜNE,36.692
+08118050,"Markgröningen, Stadt","Markgröningen, Stadt",True,True,GRÜNE,30.880
+08118051,Möglingen,"Möglingen, Gemeinde",True,True,GRÜNE,29.114
+08118053,Mundelsheim,"Mundelsheim, Gemeinde",True,True,CDU,37.060
+08118054,Murr,"Murr, Gemeinde",True,True,CDU,35.282
+08118059,"Oberriexingen, Stadt","Oberriexingen, Stadt",True,True,CDU,31.878
+08118060,Oberstenfeld,"Oberstenfeld, Gemeinde",True,True,CDU,36.872
+08118063,Pleidelsheim,"Pleidelsheim, Gemeinde",True,True,CDU,32.850
+08118067,Schwieberdingen,"Schwieberdingen, Gemeinde",True,True,CDU,33.405
+08118068,Sersheim,"Sersheim, Gemeinde",True,True,CDU,31.011
+08118070,"Steinheim an der Murr, Stadt","Steinheim an der Murr, Stadt",True,True,CDU,34.633
+08118071,"Tamm, Stadt","Tamm, Stadt",True,True,CDU,32.337
+08118073,"Vaihingen an der Enz, Stadt","Vaihingen an der Enz, Stadt",True,True,GRÜNE,30.883
+08118074,Walheim,"Walheim, Gemeinde",True,True,GRÜNE,31.402
+08118076,"Sachsenheim, Stadt","Sachsenheim, Stadt",True,True,CDU,32.227
+08118077,Ingersheim,"Ingersheim, Gemeinde",True,True,CDU,32.357
+08118078,"Freiberg am Neckar, Stadt","Freiberg am Neckar, Stadt",True,True,GRÜNE,31.778
+08118079,"Bietigheim-Bissingen, Stadt","Bietigheim-Bissingen, Stadt",True,True,GRÜNE,31.531
+08118080,"Korntal-Münchingen, Stadt","Korntal-Münchingen, Stadt",True,True,GRÜNE,35.154
+08118081,"Remseck am Neckar, Stadt","Remseck am Neckar, Stadt",True,True,CDU,31.046
+08119001,Alfdorf,"Alfdorf, Gemeinde",True,True,CDU,33.673
+08119003,Allmersbach im Tal,"Allmersbach im Tal, Gemeinde",True,True,CDU,31.012
+08119004,Althütte,"Althütte, Gemeinde",True,True,AfD,31.747
+08119006,Auenwald,"Auenwald, Gemeinde",True,True,CDU,31.426
+08119008,"Backnang, Stadt","Backnang, Stadt",True,True,GRÜNE,29.818
+08119018,Burgstetten,"Burgstetten, Gemeinde",True,True,GRÜNE,32.043
+08119020,"Fellbach, Stadt","Fellbach, Stadt",True,True,GRÜNE,33.776
+08119024,Großerlach,"Großerlach, Gemeinde",True,True,AfD,34.715
+08119037,Kaisersbach,"Kaisersbach, Gemeinde",True,True,CDU,35.875
+08119038,Kirchberg an der Murr,"Kirchberg an der Murr, Gemeinde",True,True,CDU,30.588
+08119041,Korb,"Korb, Gemeinde",True,True,CDU,34.328
+08119042,Leutenbach,"Leutenbach, Gemeinde",True,True,GRÜNE,30.542
+08119044,"Murrhardt, Stadt","Murrhardt, Stadt",True,True,CDU,27.973
+08119053,Oppenweiler,"Oppenweiler, Gemeinde",True,True,GRÜNE,31.024
+08119055,Plüderhausen,"Plüderhausen, Gemeinde",True,True,CDU,31.952
+08119061,Rudersberg,"Rudersberg, Gemeinde",True,True,CDU,31.435
+08119067,"Schorndorf, Stadt","Schorndorf, Stadt",True,True,GRÜNE,30.859
+08119068,Schwaikheim,"Schwaikheim, Gemeinde",True,True,GRÜNE,34.905
+08119069,Spiegelberg,"Spiegelberg, Gemeinde",True,True,AfD,35.406
+08119075,Sulzbach an der Murr,"Sulzbach an der Murr, Gemeinde",True,True,CDU,29.333
+08119076,Urbach,"Urbach, Gemeinde",True,True,CDU,31.012
+08119079,"Waiblingen, Stadt","Waiblingen, Stadt",True,True,GRÜNE,32.415
+08119083,Weissach im Tal,"Weissach im Tal, Gemeinde",True,True,CDU,30.753
+08119084,"Welzheim, Stadt","Welzheim, Stadt",True,True,CDU,30.537
+08119085,"Winnenden, Stadt","Winnenden, Stadt",True,True,GRÜNE,31.801
+08119086,Winterbach,"Winterbach, Gemeinde",True,True,GRÜNE,34.118
+08119087,Aspach,"Aspach, Gemeinde",True,True,CDU,31.479
+08119089,Berglen,"Berglen, Gemeinde",True,True,CDU,32.008
+08119090,Remshalden,"Remshalden, Gemeinde",True,True,GRÜNE,32.342
+08119091,"Weinstadt, Stadt","Weinstadt, Stadt",True,True,GRÜNE,33.662
+08119093,Kernen im Remstal,"Kernen im Remstal, Gemeinde",True,True,GRÜNE,32.544
+08121000,"Heilbronn, Universitätsstadt","Heilbronn, Stadt",True,True,GRÜNE,26.910
+08125001,Abstatt,"Abstatt, Gemeinde",True,True,CDU,29.447
+08125005,"Bad Friedrichshall, Stadt","Bad Friedrichshall, Stadt",True,True,AfD,28.029
+08125006,"Bad Rappenau, Stadt","Bad Rappenau, Stadt",True,True,CDU,30.105
+08125007,"Bad Wimpfen, Stadt","Bad Wimpfen, Stadt",True,True,GRÜNE,30.042
+08125008,"Beilstein, Stadt","Beilstein, Stadt",True,True,CDU,31.319
+08125013,"Brackenheim, Stadt","Brackenheim, Stadt",True,True,CDU,28.334
+08125017,Cleebronn,"Cleebronn, Gemeinde",True,True,CDU,37.113
+08125021,Eberstadt,"Eberstadt, Gemeinde",True,True,CDU,29.632
+08125024,Ellhofen,"Ellhofen, Gemeinde",True,True,CDU,32.061
+08125026,"Eppingen, Stadt","Eppingen, Stadt",True,True,AfD,29.734
+08125027,Erlenbach,"Erlenbach, Gemeinde",True,True,CDU,37.590
+08125030,Flein,"Flein, Gemeinde",True,True,CDU,31.299
+08125034,Gemmingen,"Gemmingen, Gemeinde",True,True,CDU,28.526
+08125038,"Güglingen, Stadt","Güglingen, Stadt",True,True,AfD,29.219
+08125039,"Gundelsheim, Stadt","Gundelsheim, Stadt",True,True,CDU,35.401
+08125046,Ilsfeld,"Ilsfeld, Gemeinde",True,True,CDU,31.490
+08125047,Ittlingen,"Ittlingen, Gemeinde",True,True,CDU,32.140
+08125048,Jagsthausen,"Jagsthausen, Gemeinde",True,True,CDU,32.673
+08125049,Kirchardt,"Kirchardt, Gemeinde",True,True,AfD,33.480
+08125056,"Lauffen am Neckar, Stadt","Lauffen am Neckar, Stadt",True,True,GRÜNE,32.223
+08125057,Lehrensteinsfeld,"Lehrensteinsfeld, Gemeinde",True,True,CDU,28.865
+08125058,"Leingarten, Stadt","Leingarten, Stadt",True,True,CDU,30.260
+08125059,"Löwenstein, Stadt","Löwenstein, Stadt",True,True,CDU,27.444
+08125061,Massenbachhausen,"Massenbachhausen, Gemeinde",True,True,CDU,34.373
+08125063,"Möckmühl, Stadt","Möckmühl, Stadt",True,True,AfD,32.219
+08125065,"Neckarsulm, Stadt","Neckarsulm, Stadt",True,True,CDU,28.151
+08125066,Neckarwestheim,"Neckarwestheim, Gemeinde",True,True,CDU,34.501
+08125068,"Neudenau, Stadt","Neudenau, Stadt",True,True,CDU,32.346
+08125069,"Neuenstadt am Kocher, Stadt","Neuenstadt am Kocher, Stadt",True,True,CDU,30.445
+08125074,Nordheim,"Nordheim, Gemeinde",True,True,CDU,28.609
+08125078,Oedheim,"Oedheim, Gemeinde",True,True,CDU,35.160
+08125079,Offenau,"Offenau, Gemeinde",True,True,CDU,29.265
+08125081,Pfaffenhofen,"Pfaffenhofen, Gemeinde",True,True,AfD,30.438
+08125084,Roigheim,"Roigheim, Gemeinde",True,True,AfD,32.336
+08125086,"Schwaigern, Stadt","Schwaigern, Stadt",True,True,CDU,30.705
+08125087,Siegelsbach,"Siegelsbach, Gemeinde",True,True,AfD,31.579
+08125094,Talheim,"Talheim, Gemeinde",True,True,CDU,32.368
+08125096,Untereisesheim,"Untereisesheim, Gemeinde",True,True,CDU,27.404
+08125098,Untergruppenbach,"Untergruppenbach, Gemeinde",True,True,CDU,30.433
+08125102,"Weinsberg, Stadt","Weinsberg, Stadt",True,True,GRÜNE,29.922
+08125103,"Widdern, Stadt","Widdern, Stadt",True,True,CDU,30.246
+08125107,Wüstenrot,"Wüstenrot, Gemeinde",True,True,AfD,29.711
+08125108,Zaberfeld,"Zaberfeld, Gemeinde",True,True,AfD,33.216
+08125110,Obersulm,"Obersulm, Gemeinde",True,True,CDU,28.233
+08125111,Hardthausen am Kocher,"Hardthausen am Kocher, Gemeinde",True,True,CDU,29.918
+08125113,Langenbrettach,"Langenbrettach, Gemeinde",True,True,CDU,29.888
+08126011,Bretzfeld,"Bretzfeld, Gemeinde",True,True,CDU,29.805
+08126020,Dörzbach,"Dörzbach, Gemeinde",True,True,CDU,37.606
+08126028,"Forchtenberg, Stadt","Forchtenberg, Stadt",True,True,CDU,31.885
+08126039,"Ingelfingen, Stadt","Ingelfingen, Stadt",True,True,CDU,34.645
+08126045,"Krautheim, Stadt","Krautheim, Stadt",True,True,CDU,41.191
+08126046,"Künzelsau, Stadt","Künzelsau, Stadt",True,True,CDU,30.085
+08126047,Kupferzell,"Kupferzell, Gemeinde",True,True,CDU,32.643
+08126056,Mulfingen,"Mulfingen, Gemeinde",True,True,CDU,42.299
+08126058,"Neuenstein, Stadt","Neuenstein, Stadt",True,True,CDU,30.486
+08126060,"Niedernhall, Stadt","Niedernhall, Stadt",True,True,CDU,26.414
+08126066,"Öhringen, Stadt","Öhringen, Stadt",True,True,CDU,27.319
+08126069,Pfedelbach,"Pfedelbach, Gemeinde",True,True,CDU,31.151
+08126072,Schöntal,"Schöntal, Gemeinde",True,True,CDU,42.923
+08126085,"Waldenburg, Stadt","Waldenburg, Stadt",True,True,CDU,30.831
+08126086,Weißbach,"Weißbach, Gemeinde",True,True,CDU,32.181
+08126094,Zweiflingen,"Zweiflingen, Gemeinde",True,True,CDU,35.539
+08127008,Blaufelden,"Blaufelden, Gemeinde",True,True,CDU,40.618
+08127009,Braunsbach,"Braunsbach, Gemeinde",True,True,CDU,30.800
+08127012,Bühlertann,"Bühlertann, Gemeinde",True,True,CDU,33.654
+08127013,Bühlerzell,"Bühlerzell, Gemeinde",True,True,CDU,37.739
+08127014,"Crailsheim, Stadt","Crailsheim, Stadt",True,True,CDU,33.468
+08127023,Fichtenberg,"Fichtenberg, Gemeinde",True,True,CDU,28.607
+08127025,"Gaildorf, Stadt","Gaildorf, Stadt",True,True,CDU,28.908
+08127032,"Gerabronn, Stadt","Gerabronn, Stadt",True,True,CDU,30.631
+08127043,"Ilshofen, Stadt","Ilshofen, Stadt",True,True,CDU,34.322
+08127046,"Kirchberg an der Jagst, Stadt","Kirchberg an der Jagst, Stadt",True,True,CDU,28.512
+08127047,"Langenburg, Stadt","Langenburg, Stadt",True,True,CDU,33.102
+08127052,Mainhardt,"Mainhardt, Gemeinde",True,True,CDU,30.245
+08127056,Michelbach an der Bilz,"Michelbach an der Bilz, Gemeinde",True,True,GRÜNE,33.201
+08127059,Michelfeld,"Michelfeld, Gemeinde",True,True,CDU,33.210
+08127062,Oberrot,"Oberrot, Gemeinde",True,True,CDU,29.967
+08127063,Obersontheim,"Obersontheim, Gemeinde",True,True,CDU,30.055
+08127071,Rot am See,"Rot am See, Gemeinde",True,True,CDU,38.386
+08127073,Satteldorf,"Satteldorf, Gemeinde",True,True,CDU,33.275
+08127075,"Schrozberg, Stadt","Schrozberg, Stadt",True,True,CDU,37.504
+08127076,"Schwäbisch Hall, Stadt","Schwäbisch Hall, Stadt",True,True,GRÜNE,37.137
+08127079,Sulzbach-Laufen,"Sulzbach-Laufen, Gemeinde",True,True,CDU,30.086
+08127086,Untermünkheim,"Untermünkheim, Gemeinde",True,True,CDU,36.773
+08127089,"Vellberg, Stadt","Vellberg, Stadt",True,True,CDU,33.398
+08127091,Wallhausen,"Wallhausen, Gemeinde",True,True,CDU,34.293
+08127099,Wolpertshausen,"Wolpertshausen, Gemeinde",True,True,GRÜNE,29.484
+08127100,Rosengarten,"Rosengarten, Gemeinde",True,True,CDU,31.074
+08127101,Kreßberg,"Kreßberg, Gemeinde",True,True,CDU,35.605
+08127102,Fichtenau,"Fichtenau, Gemeinde",True,True,CDU,36.723
+08127103,Frankenhardt,"Frankenhardt, Gemeinde",True,True,CDU,33.037
+08127104,Stimpfach,"Stimpfach, Gemeinde",True,True,CDU,40.814
+08128006,Assamstadt,"Assamstadt, Gemeinde",True,True,CDU,43.897
+08128007,"Bad Mergentheim, Stadt","Bad Mergentheim, Stadt",True,True,CDU,34.998
+08128014,"Boxberg, Stadt","Boxberg, Stadt",True,True,CDU,30.805
+08128020,"Creglingen, Stadt","Creglingen, Stadt",True,True,CDU,38.507
+08128039,"Freudenberg, Stadt","Freudenberg, Stadt",True,True,CDU,44.392
+08128045,Großrinderfeld,"Großrinderfeld, Gemeinde",True,True,CDU,42.930
+08128047,"Grünsfeld, Stadt","Grünsfeld, Stadt",True,True,CDU,39.880
+08128058,Igersheim,"Igersheim, Gemeinde",True,True,CDU,36.902
+08128061,Königheim,"Königheim, Gemeinde",True,True,CDU,46.705
+08128064,"Külsheim, Stadt","Külsheim, Stadt",True,True,CDU,42.446
+08128082,"Niederstetten, Stadt","Niederstetten, Stadt",True,True,CDU,34.405
+08128115,"Tauberbischofsheim, Stadt","Tauberbischofsheim, Stadt",True,True,CDU,39.731
+08128126,"Weikersheim, Stadt","Weikersheim, Stadt",True,True,CDU,34.675
+08128128,Werbach,"Werbach, Gemeinde",True,True,CDU,38.132
+08128131,"Wertheim, Stadt","Wertheim, Stadt",True,True,CDU,30.623
+08128137,Wittighausen,"Wittighausen, Gemeinde",True,True,CDU,39.445
+08128138,Ahorn,"Ahorn, Gemeinde",True,True,CDU,36.146
+08128139,"Lauda-Königshofen, Stadt","Lauda-Königshofen, Stadt",True,True,CDU,36.441
+08135010,Dischingen,"Dischingen, Gemeinde",True,True,CDU,39.088
+08135015,Gerstetten,"Gerstetten, Gemeinde",True,True,CDU,30.124
+08135016,"Giengen an der Brenz, Stadt","Giengen an der Brenz, Stadt",True,True,AfD,29.203
+08135019,"Heidenheim an der Brenz, Stadt","Heidenheim an der Brenz, Stadt",True,True,GRÜNE,28.057
+08135020,"Herbrechtingen, Stadt","Herbrechtingen, Stadt",True,True,CDU,27.366
+08135021,Hermaringen,"Hermaringen, Gemeinde",True,True,CDU,31.168
+08135025,Königsbronn,"Königsbronn, Gemeinde",True,True,CDU,27.483
+08135026,Nattheim,"Nattheim, Gemeinde",True,True,CDU,32.786
+08135027,"Niederstotzingen, Stadt","Niederstotzingen, Stadt",True,True,CDU,32.285
+08135031,Sontheim an der Brenz,"Sontheim an der Brenz, Gemeinde",True,True,CDU,32.845
+08135032,Steinheim am Albuch,"Steinheim am Albuch, Gemeinde",True,True,CDU,31.563
+08136002,Abtsgmünd,"Abtsgmünd, Gemeinde",True,True,CDU,34.577
+08136003,Adelmannsfelden,"Adelmannsfelden, Gemeinde",True,True,CDU,33.845
+08136007,Bartholomä,"Bartholomä, Gemeinde",True,True,CDU,33.770
+08136009,Böbingen an der Rems,"Böbingen an der Rems, Gemeinde",True,True,CDU,31.381
+08136010,"Bopfingen, Stadt","Bopfingen, Stadt",True,True,CDU,35.321
+08136015,Durlangen,"Durlangen, Gemeinde",True,True,CDU,35.309
+08136018,Ellenberg,"Ellenberg, Gemeinde",True,True,CDU,47.328
+08136019,"Ellwangen (Jagst), Stadt","Ellwangen (Jagst), Stadt",True,True,CDU,40.214
+08136020,Eschach,"Eschach, Gemeinde",True,True,CDU,31.318
+08136021,Essingen,"Essingen, Gemeinde",True,True,CDU,35.733
+08136024,Göggingen,"Göggingen, Gemeinde",True,True,CDU,33.810
+08136027,Gschwend,"Gschwend, Gemeinde",True,True,CDU,33.204
+08136028,"Heubach, Stadt","Heubach, Stadt",True,True,CDU,30.100
+08136029,Heuchlingen,"Heuchlingen, Gemeinde",True,True,CDU,39.587
+08136033,Hüttlingen,"Hüttlingen, Gemeinde",True,True,CDU,38.303
+08136034,Iggingen,"Iggingen, Gemeinde",True,True,CDU,41.188
+08136035,Jagstzell,"Jagstzell, Gemeinde",True,True,CDU,38.747
+08136037,Kirchheim am Ries,"Kirchheim am Ries, Gemeinde",True,True,CDU,43.545
+08136038,"Lauchheim, Stadt","Lauchheim, Stadt",True,True,CDU,36.539
+08136040,Leinzell,"Leinzell, Gemeinde",True,True,AfD,30.980
+08136042,"Lorch, Stadt","Lorch, Stadt",True,True,CDU,32.227
+08136043,Mögglingen,"Mögglingen, Gemeinde",True,True,CDU,34.625
+08136044,Mutlangen,"Mutlangen, Gemeinde",True,True,CDU,32.350
+08136045,"Neresheim, Stadt","Neresheim, Stadt",True,True,CDU,42.162
+08136046,Neuler,"Neuler, Gemeinde",True,True,CDU,49.147
+08136049,Obergröningen,"Obergröningen, Gemeinde",True,True,CDU,31.086
+08136050,"Oberkochen, Stadt","Oberkochen, Stadt",True,True,GRÜNE,30.113
+08136060,Rosenberg,"Rosenberg, Gemeinde",True,True,CDU,42.085
+08136061,Ruppertshofen,"Ruppertshofen, Gemeinde",True,True,AfD,35.571
+08136062,Schechingen,"Schechingen, Gemeinde",True,True,CDU,34.786
+08136065,"Schwäbisch Gmünd, Stadt","Schwäbisch Gmünd, Stadt",True,True,GRÜNE,30.761
+08136066,Spraitbach,"Spraitbach, Gemeinde",True,True,CDU,31.628
+08136068,Stödtlen,"Stödtlen, Gemeinde",True,True,CDU,46.337
+08136070,Täferrot,"Täferrot, Gemeinde",True,True,AfD,31.419
+08136071,Tannhausen,"Tannhausen, Gemeinde",True,True,CDU,51.325
+08136075,Unterschneidheim,"Unterschneidheim, Gemeinde",True,True,CDU,47.749
+08136079,Waldstetten,"Waldstetten, Gemeinde",True,True,CDU,38.933
+08136082,Westhausen,"Westhausen, Gemeinde",True,True,CDU,37.398
+08136084,Wört,"Wört, Gemeinde",True,True,CDU,42.875
+08136087,Riesbürg,"Riesbürg, Gemeinde",True,True,CDU,41.517
+08136088,"Aalen, Stadt","Aalen, Stadt",True,True,CDU,30.709
+08136089,Rainau,"Rainau, Gemeinde",True,True,CDU,42.289
+08211000,"Baden-Baden, Stadt","Baden-Baden, Stadt",True,True,CDU,33.225
+08212000,Karlsruhe-Stadt,"Karlsruhe, Stadt",True,True,GRÜNE,42.147
+08215007,"Bretten, Stadt","Bretten, Stadt",True,True,CDU,30.077
+08215009,"Bruchsal, Stadt","Bruchsal, Stadt",True,True,GRÜNE,30.071
+08215017,"Ettlingen, Stadt","Ettlingen, Stadt",True,True,GRÜNE,32.884
+08215021,Forst,"Forst, Gemeinde",True,True,CDU,30.680
+08215025,Gondelsheim,"Gondelsheim, Gemeinde",True,True,CDU,27.182
+08215029,Hambrücken,"Hambrücken, Gemeinde",True,True,CDU,37.322
+08215039,Kronau,"Kronau, Gemeinde",True,True,CDU,30.283
+08215040,Kürnbach,"Kürnbach, Gemeinde",True,True,GRÜNE,28.724
+08215046,Malsch,"Malsch, Gemeinde",True,True,CDU,30.221
+08215047,Marxzell,"Marxzell, Gemeinde",True,True,CDU,37.848
+08215059,"Oberderdingen, Stadt","Oberderdingen, Stadt",True,True,CDU,29.846
+08215064,"Östringen, Stadt","Östringen, Stadt",True,True,CDU,31.113
+08215066,"Philippsburg, Stadt","Philippsburg, Stadt",True,True,AfD,28.916
+08215082,Sulzfeld,"Sulzfeld, Gemeinde",True,True,CDU,29.515
+08215084,Ubstadt-Weiher,"Ubstadt-Weiher, Gemeinde",True,True,CDU,32.610
+08215089,Walzbachtal,"Walzbachtal, Gemeinde",True,True,GRÜNE,30.659
+08215090,Weingarten (Baden),"Weingarten (Baden), Gemeinde",True,True,GRÜNE,35.071
+08215094,Zaisenhausen,"Zaisenhausen, Gemeinde",True,True,AfD,31.052
+08215096,Karlsbad,"Karlsbad, Gemeinde",True,True,CDU,30.390
+08215097,"Kraichtal, Stadt","Kraichtal, Stadt",True,True,CDU,31.317
+08215099,Graben-Neudorf,"Graben-Neudorf, Gemeinde",True,True,CDU,29.609
+08215100,Bad Schönborn,"Bad Schönborn, Gemeinde",True,True,GRÜNE,28.967
+08215101,Pfinztal,"Pfinztal, Gemeinde",True,True,GRÜNE,31.651
+08215102,Eggenstein-Leopoldshafen,"Eggenstein-Leopoldshafen, Gemeinde",True,True,CDU,29.777
+08215103,Karlsdorf-Neuthard,"Karlsdorf-Neuthard, Gemeinde",True,True,CDU,35.309
+08215105,Linkenheim-Hochstetten,"Linkenheim-Hochstetten, Gemeinde",True,True,CDU,30.821
+08215106,"Waghäusel, Stadt","Waghäusel, Stadt",True,True,CDU,28.504
+08215107,Oberhausen-Rheinhausen,"Oberhausen-Rheinhausen, Gemeinde",True,True,CDU,30.581
+08215108,"Rheinstetten, Stadt","Rheinstetten, Stadt",True,True,CDU,30.481
+08215109,"Stutensee, Stadt","Stutensee, Stadt",True,True,GRÜNE,31.207
+08215110,Waldbronn,"Waldbronn, Gemeinde",True,True,GRÜNE,33.708
+08215111,Dettenheim,"Dettenheim, Gemeinde",True,True,CDU,32.945
+08216002,Au am Rhein,"Au am Rhein, Gemeinde",True,True,CDU,33.831
+08216005,Bietigheim,"Bietigheim, Gemeinde",True,True,CDU,29.300
+08216006,Bischweier,"Bischweier, Gemeinde",True,True,CDU,31.795
+08216007,"Bühl, Stadt","Bühl, Stadt",True,True,CDU,32.427
+08216008,Bühlertal,"Bühlertal, Gemeinde",True,True,CDU,35.195
+08216009,Durmersheim,"Durmersheim, Gemeinde",True,True,CDU,28.484
+08216012,Elchesheim-Illingen,"Elchesheim-Illingen, Gemeinde",True,True,CDU,30.605
+08216013,Forbach,"Forbach, Gemeinde",True,True,CDU,36.526
+08216015,"Gaggenau, Stadt","Gaggenau, Stadt",True,True,CDU,30.542
+08216017,"Gernsbach, Stadt","Gernsbach, Stadt",True,True,CDU,29.844
+08216022,Hügelsheim,"Hügelsheim, Gemeinde",True,True,AfD,34.535
+08216023,Iffezheim,"Iffezheim, Gemeinde",True,True,CDU,35.569
+08216024,"Kuppenheim, Stadt","Kuppenheim, Stadt",True,True,CDU,32.141
+08216028,"Lichtenau, Stadt","Lichtenau, Stadt",True,True,CDU,29.065
+08216029,Loffenau,"Loffenau, Gemeinde",True,True,CDU,31.781
+08216033,Muggensturm,"Muggensturm, Gemeinde",True,True,GRÜNE,28.624
+08216039,Ötigheim,"Ötigheim, Gemeinde",True,True,CDU,36.716
+08216041,Ottersweier,"Ottersweier, Gemeinde",True,True,CDU,34.905
+08216043,"Rastatt, Stadt","Rastatt, Stadt",True,True,AfD,29.661
+08216049,Sinzheim,"Sinzheim, Gemeinde",True,True,CDU,33.083
+08216052,Steinmauern,"Steinmauern, Gemeinde",True,True,CDU,32.567
+08216059,Weisenbach,"Weisenbach, Gemeinde",True,True,CDU,35.405
+08216063,Rheinmünster,"Rheinmünster, Gemeinde",True,True,CDU,32.510
+08221000,"Heidelberg, Stadt","Heidelberg, Stadt",True,True,GRÜNE,47.399
+08222000,Mannheim-Universitätsstadt,"Mannheim, Stadt",True,True,GRÜNE,33.166
+08225001,"Adelsheim, Stadt","Adelsheim, Stadt",True,True,CDU,31.422
+08225002,Aglasterhausen,"Aglasterhausen, Gemeinde",True,True,CDU,28.006
+08225009,Billigheim,"Billigheim, Gemeinde",True,True,CDU,35.758
+08225010,Binau,"Binau, Gemeinde",True,True,CDU,27.891
+08225014,"Buchen (Odenwald), Stadt","Buchen (Odenwald), Stadt",True,True,CDU,35.565
+08225024,Fahrenbach,"Fahrenbach, Gemeinde",True,True,CDU,39.424
+08225032,Hardheim,"Hardheim, Gemeinde",True,True,CDU,41.970
+08225033,Haßmersheim,"Haßmersheim, Gemeinde",True,True,CDU,27.454
+08225039,Höpfingen,"Höpfingen, Gemeinde",True,True,CDU,38.958
+08225042,Hüffenhardt,"Hüffenhardt, Gemeinde",True,True,AfD,31.390
+08225052,Limbach,"Limbach, Gemeinde",True,True,CDU,43.625
+08225058,"Mosbach, Stadt","Mosbach, Stadt",True,True,CDU,29.282
+08225060,Mudau,"Mudau, Gemeinde",True,True,CDU,41.149
+08225064,Neckargerach,"Neckargerach, Gemeinde",True,True,CDU,30.874
+08225067,Neckarzimmern,"Neckarzimmern, Gemeinde",True,True,CDU,31.126
+08225068,Neunkirchen,"Neunkirchen, Gemeinde",True,True,CDU,25.164
+08225074,Obrigheim,"Obrigheim, Gemeinde",True,True,CDU,29.944
+08225075,"Osterburken, Stadt","Osterburken, Stadt",True,True,CDU,32.254
+08225082,Rosenberg,"Rosenberg, Gemeinde",True,True,CDU,34.497
+08225091,Seckach,"Seckach, Gemeinde",True,True,CDU,31.936
+08225109,"Walldürn, Stadt","Walldürn, Stadt",True,True,CDU,37.237
+08225113,Zwingenberg,"Zwingenberg, Gemeinde",True,True,GRÜNE,27.869
+08225114,"Ravenstein, Stadt","Ravenstein, Stadt",True,True,CDU,42.003
+08225115,Schefflenz,"Schefflenz, Gemeinde",True,True,CDU,27.260
+08225116,Schwarzach,"Schwarzach, Gemeinde",True,True,CDU,28.450
+08225117,Elztal,"Elztal, Gemeinde",True,True,CDU,30.962
+08225118,Waldbrunn,"Waldbrunn, Gemeinde",True,True,CDU,32.810
+08226003,Altlußheim,"Altlußheim, Gemeinde",True,True,CDU,27.536
+08226006,Bammental,"Bammental, Gemeinde",True,True,GRÜNE,33.551
+08226009,Brühl,"Brühl, Gemeinde",True,True,CDU,28.412
+08226010,Dielheim,"Dielheim, Gemeinde",True,True,CDU,35.245
+08226012,Dossenheim,"Dossenheim, Gemeinde",True,True,GRÜNE,43.005
+08226013,"Eberbach, Stadt","Eberbach, Stadt",True,True,CDU,24.664
+08226017,Epfenbach,"Epfenbach, Gemeinde",True,True,CDU,27.073
+08226018,"Eppelheim, Stadt","Eppelheim, Stadt",True,True,GRÜNE,36.368
+08226020,Eschelbronn,"Eschelbronn, Gemeinde",True,True,CDU,29.025
+08226022,Gaiberg,"Gaiberg, Gemeinde",True,True,GRÜNE,34.391
+08226027,Heddesbach,"Heddesbach, Gemeinde",True,True,CDU,28.452
+08226028,Heddesheim,"Heddesheim, Gemeinde",True,True,CDU,29.373
+08226029,Heiligkreuzsteinach,"Heiligkreuzsteinach, Gemeinde",True,True,CDU,32.235
+08226031,"Hemsbach, Stadt","Hemsbach, Stadt",True,True,GRÜNE,29.802
+08226032,"Hockenheim, Stadt","Hockenheim, Stadt",True,True,CDU,28.250
+08226036,Ilvesheim,"Ilvesheim, Gemeinde",True,True,GRÜNE,32.255
+08226037,Ketsch,"Ketsch, Gemeinde",True,True,CDU,31.086
+08226038,"Ladenburg, Stadt","Ladenburg, Stadt",True,True,GRÜNE,37.530
+08226040,Laudenbach,"Laudenbach, Gemeinde",True,True,GRÜNE,29.693
+08226041,"Leimen, Stadt","Leimen, Stadt",True,True,GRÜNE,26.932
+08226046,Malsch,"Malsch, Gemeinde",True,True,CDU,33.415
+08226048,Mauer,"Mauer, Gemeinde",True,True,CDU,30.917
+08226049,Meckesheim,"Meckesheim, Gemeinde",True,True,CDU,31.557
+08226054,Mühlhausen,"Mühlhausen, Gemeinde",True,True,CDU,33.389
+08226055,"Neckarbischofsheim, Stadt","Neckarbischofsheim, Stadt",True,True,CDU,28.378
+08226056,"Neckargemünd, Stadt","Neckargemünd, Stadt",True,True,GRÜNE,38.510
+08226058,Neidenstein,"Neidenstein, Gemeinde",True,True,CDU,26.685
+08226059,Neulußheim,"Neulußheim, Gemeinde",True,True,CDU,27.390
+08226060,Nußloch,"Nußloch, Gemeinde",True,True,GRÜNE,30.190
+08226062,Oftersheim,"Oftersheim, Gemeinde",True,True,GRÜNE,29.570
+08226063,Plankstadt,"Plankstadt, Gemeinde",True,True,CDU,29.436
+08226065,"Rauenberg, Stadt","Rauenberg, Stadt",True,True,CDU,32.729
+08226066,Reichartshausen,"Reichartshausen, Gemeinde",True,True,CDU,29.718
+08226068,Reilingen,"Reilingen, Gemeinde",True,True,CDU,29.171
+08226076,Sandhausen,"Sandhausen, Gemeinde",True,True,GRÜNE,28.173
+08226080,"Schönau, Stadt","Schönau, Stadt",True,True,CDU,26.744
+08226081,Schönbrunn,"Schönbrunn, Gemeinde",True,True,CDU,29.882
+08226082,"Schriesheim, Stadt","Schriesheim, Stadt",True,True,GRÜNE,35.173
+08226084,"Schwetzingen, Stadt","Schwetzingen, Stadt",True,True,GRÜNE,32.414
+08226085,"Sinsheim, Stadt","Sinsheim, Stadt",True,True,CDU,30.048
+08226086,Spechbach,"Spechbach, Gemeinde",True,True,CDU,29.055
+08226091,"Waibstadt, Stadt","Waibstadt, Stadt",True,True,CDU,34.255
+08226095,"Walldorf, Stadt","Walldorf, Stadt",True,True,GRÜNE,32.578
+08226096,"Weinheim, Stadt","Weinheim, Stadt",True,True,GRÜNE,33.802
+08226097,Wiesenbach,"Wiesenbach, Gemeinde",True,True,GRÜNE,36.114
+08226098,"Wiesloch, Stadt","Wiesloch, Stadt",True,True,GRÜNE,33.304
+08226099,Wilhelmsfeld,"Wilhelmsfeld, Gemeinde",True,True,GRÜNE,30.696
+08226101,Zuzenhausen,"Zuzenhausen, Gemeinde",True,True,CDU,30.822
+08226102,Angelbachtal,"Angelbachtal, Gemeinde",True,True,CDU,31.492
+08226103,St. Leon-Rot,"St. Leon-Rot, Gemeinde",True,True,CDU,32.126
+08226104,Lobbach,"Lobbach, Gemeinde",True,True,CDU,35.751
+08226105,Edingen-Neckarhausen,"Edingen-Neckarhausen, Gemeinde",True,True,GRÜNE,34.109
+08226106,Helmstadt-Bargen,"Helmstadt-Bargen, Gemeinde",True,True,CDU,30.014
+08226107,Hirschberg an der Bergstraße,"Hirschberg an der Bergstraße, Gemeinde",True,True,GRÜNE,35.383
+08231000,"Pforzheim, Stadt","Pforzheim, Stadt",True,True,AfD,27.263
+08235006,"Altensteig, Stadt","Altensteig, Stadt",True,True,CDU,34.242
+08235007,Althengstett,"Althengstett, Gemeinde",True,True,CDU,32.599
+08235008,"Bad Liebenzell, Stadt","Bad Liebenzell, Stadt",True,True,CDU,31.618
+08235018,Dobel,"Dobel, Gemeinde",True,True,AfD,27.796
+08235020,Ebhausen,"Ebhausen, Gemeinde",True,True,CDU,34.646
+08235022,Egenhausen,"Egenhausen, Gemeinde",True,True,CDU,37.723
+08235025,Enzklösterle,"Enzklösterle, Gemeinde",True,True,CDU,37.902
+08235029,Gechingen,"Gechingen, Gemeinde",True,True,CDU,32.783
+08235032,"Haiterbach, Stadt","Haiterbach, Stadt",True,True,CDU,36.690
+08235033,"Bad Herrenalb, Stadt","Bad Herrenalb, Stadt",True,True,CDU,27.830
+08235035,Höfen an der Enz,"Höfen an der Enz, Gemeinde",True,True,CDU,29.611
+08235046,"Nagold, Stadt","Nagold, Stadt",True,True,CDU,32.008
+08235047,"Neubulach, Stadt","Neubulach, Stadt",True,True,CDU,36.116
+08235050,Neuweiler,"Neuweiler, Gemeinde",True,True,CDU,37.868
+08235055,Oberreichenbach,"Oberreichenbach, Gemeinde",True,True,AfD,30.889
+08235057,Ostelsheim,"Ostelsheim, Gemeinde",True,True,GRÜNE,36.212
+08235060,Rohrdorf,"Rohrdorf, Gemeinde",True,True,CDU,33.258
+08235065,Schömberg,"Schömberg, Gemeinde",True,True,CDU,28.691
+08235066,Simmersfeld,"Simmersfeld, Gemeinde",True,True,CDU,38.256
+08235067,Simmozheim,"Simmozheim, Gemeinde",True,True,CDU,30.502
+08235073,Unterreichenbach,"Unterreichenbach, Gemeinde",True,True,CDU,28.095
+08235079,"Bad Wildbad, Stadt","Bad Wildbad, Stadt",True,True,CDU,31.077
+08235080,"Wildberg, Stadt","Wildberg, Stadt",True,True,CDU,35.041
+08235084,"Bad Teinach-Zavelstein, Stadt","Bad Teinach-Zavelstein, Stadt",True,True,CDU,34.861
+08235085,"Calw, Stadt","Calw, Stadt",True,True,CDU,28.254
+08236004,Birkenfeld,"Birkenfeld, Gemeinde",True,True,CDU,29.617
+08236011,Eisingen,"Eisingen, Gemeinde",True,True,CDU,27.153
+08236013,Engelsbrand,"Engelsbrand, Gemeinde",True,True,CDU,31.424
+08236019,Friolzheim,"Friolzheim, Gemeinde",True,True,CDU,33.080
+08236025,"Heimsheim, Stadt","Heimsheim, Stadt",True,True,CDU,31.767
+08236028,Illingen,"Illingen, Gemeinde",True,True,CDU,29.540
+08236030,Ispringen,"Ispringen, Gemeinde",True,True,CDU,26.674
+08236031,Kieselbronn,"Kieselbronn, Gemeinde",True,True,GRÜNE,29.167
+08236033,"Knittlingen, Stadt","Knittlingen, Stadt",True,True,CDU,27.195
+08236038,"Maulbronn, Stadt","Maulbronn, Stadt",True,True,GRÜNE,29.728
+08236039,Mönsheim,"Mönsheim, Gemeinde",True,True,CDU,32.658
+08236040,"Mühlacker, Stadt","Mühlacker, Stadt",True,True,GRÜNE,28.700
+08236043,"Neuenbürg, Stadt","Neuenbürg, Stadt",True,True,CDU,26.802
+08236044,Neuhausen,"Neuhausen, Gemeinde",True,True,CDU,31.344
+08236046,Niefern-Öschelbronn,"Niefern-Öschelbronn, Gemeinde",True,True,CDU,25.819
+08236050,Ötisheim,"Ötisheim, Gemeinde",True,True,CDU,27.015
+08236061,Sternenfels,"Sternenfels, Gemeinde",True,True,GRÜNE,27.571
+08236062,Tiefenbronn,"Tiefenbronn, Gemeinde",True,True,CDU,33.851
+08236065,Wiernsheim,"Wiernsheim, Gemeinde",True,True,CDU,29.334
+08236067,Wimsheim,"Wimsheim, Gemeinde",True,True,CDU,29.238
+08236068,Wurmberg,"Wurmberg, Gemeinde",True,True,CDU,31.840
+08236070,Keltern,"Keltern, Gemeinde",True,True,CDU,28.892
+08236071,Remchingen,"Remchingen, Gemeinde",True,True,CDU,30.890
+08236072,Straubenhardt,"Straubenhardt, Gemeinde",True,True,CDU,28.986
+08236073,Neulingen,"Neulingen, Gemeinde",True,True,CDU,29.058
+08236074,Kämpfelbach,"Kämpfelbach, Gemeinde",True,True,CDU,29.813
+08236075,Ölbronn-Dürrn,"Ölbronn-Dürrn, Gemeinde",True,True,CDU,28.980
+08236076,Königsbach-Stein,"Königsbach-Stein, Gemeinde",True,True,CDU,27.954
+08237002,"Alpirsbach, Stadt","Alpirsbach, Stadt",True,True,CDU,28.940
+08237004,Baiersbronn,"Baiersbronn, Gemeinde",True,True,CDU,37.188
+08237019,"Dornstetten, Stadt","Dornstetten, Stadt",True,True,CDU,30.437
+08237024,Empfingen,"Empfingen, Gemeinde",True,True,CDU,38.237
+08237027,Eutingen im Gäu,"Eutingen im Gäu, Gemeinde",True,True,CDU,35.969
+08237028,"Freudenstadt, Stadt","Freudenstadt, Stadt",True,True,CDU,30.786
+08237030,Glatten,"Glatten, Gemeinde",True,True,AfD,33.004
+08237032,Grömbach,"Grömbach, Gemeinde",True,True,CDU,36.981
+08237040,"Horb am Neckar, Stadt","Horb am Neckar, Stadt",True,True,CDU,33.943
+08237045,Loßburg,"Loßburg, Gemeinde",True,True,CDU,36.646
+08237054,Pfalzgrafenweiler,"Pfalzgrafenweiler, Gemeinde",True,True,CDU,34.508
+08237061,Schopfloch,"Schopfloch, Gemeinde",True,True,CDU,36.451
+08237072,Wörnersberg,"Wörnersberg, Gemeinde",True,True,CDU,38.889
+08237073,Seewald,"Seewald, Gemeinde",True,True,CDU,36.464
+08237074,Waldachtal,"Waldachtal, Gemeinde",True,True,CDU,35.768
+08237075,Bad Rippoldsau-Schapbach,"Bad Rippoldsau-Schapbach, Gemeinde",True,True,CDU,40.192
+08311000,"Freiburg im Breisgau, Stadt","Freiburg im Breisgau, Stadt",True,True,GRÜNE,46.151
+08315003,Au,"Au, Gemeinde",True,True,GRÜNE,46.559
+08315004,Auggen,"Auggen, Gemeinde",True,True,GRÜNE,34.063
+08315006,"Bad Krozingen, Stadt","Bad Krozingen, Stadt",True,True,GRÜNE,33.056
+08315007,Badenweiler,"Badenweiler, Gemeinde",True,True,GRÜNE,34.814
+08315008,Ballrechten-Dottingen,"Ballrechten-Dottingen, Gemeinde",True,True,GRÜNE,34.800
+08315013,Bötzingen,"Bötzingen, Gemeinde",True,True,CDU,34.586
+08315014,Bollschweil,"Bollschweil, Gemeinde",True,True,GRÜNE,42.787
+08315015,"Breisach am Rhein, Stadt","Breisach am Rhein, Stadt",True,True,GRÜNE,32.053
+08315016,Breitnau,"Breitnau, Gemeinde",True,True,CDU,36.295
+08315020,Buchenbach,"Buchenbach, Gemeinde",True,True,GRÜNE,33.675
+08315022,Buggingen,"Buggingen, Gemeinde",True,True,GRÜNE,31.754
+08315028,Ebringen,"Ebringen, Gemeinde",True,True,GRÜNE,40.924
+08315030,Eichstetten am Kaiserstuhl,"Eichstetten am Kaiserstuhl, Gemeinde",True,True,GRÜNE,30.347
+08315031,Eisenbach (Hochschwarzwald),"Eisenbach (Hochschwarzwald), Gemeinde",True,True,CDU,32.741
+08315033,Eschbach,"Eschbach, Gemeinde",True,True,GRÜNE,31.334
+08315037,Feldberg (Schwarzwald),"Feldberg (Schwarzwald), Gemeinde",True,True,CDU,35.589
+08315039,Friedenweiler,"Friedenweiler, Gemeinde",True,True,CDU,33.840
+08315041,Glottertal,"Glottertal, Gemeinde",True,True,CDU,35.069
+08315043,Gottenheim,"Gottenheim, Gemeinde",True,True,GRÜNE,34.801
+08315047,Gundelfingen,"Gundelfingen, Gemeinde",True,True,GRÜNE,44.604
+08315048,Hartheim am Rhein,"Hartheim am Rhein, Gemeinde",True,True,CDU,34.868
+08315050,"Heitersheim, Stadt","Heitersheim, Stadt",True,True,GRÜNE,36.488
+08315051,Heuweiler,"Heuweiler, Gemeinde",True,True,GRÜNE,36.936
+08315052,Hinterzarten,"Hinterzarten, Gemeinde",True,True,GRÜNE,38.240
+08315056,Horben,"Horben, Gemeinde",True,True,GRÜNE,43.360
+08315059,Ihringen,"Ihringen, Gemeinde",True,True,CDU,32.410
+08315064,Kirchzarten,"Kirchzarten, Gemeinde",True,True,GRÜNE,45.966
+08315068,Lenzkirch,"Lenzkirch, Gemeinde",True,True,CDU,31.501
+08315070,"Löffingen, Stadt","Löffingen, Stadt",True,True,CDU,30.313
+08315072,Merdingen,"Merdingen, Gemeinde",True,True,CDU,38.205
+08315073,Merzhausen,"Merzhausen, Gemeinde",True,True,GRÜNE,50.236
+08315074,"Müllheim im Markgräflerland, Stadt","Müllheim im Markgräflerland, Stadt",True,True,GRÜNE,37.962
+08315076,"Neuenburg am Rhein, Stadt","Neuenburg am Rhein, Stadt",True,True,CDU,27.581
+08315084,Oberried,"Oberried, Gemeinde",True,True,CDU,40.060
+08315089,Pfaffenweiler,"Pfaffenweiler, Gemeinde",True,True,GRÜNE,34.011
+08315094,St. Märgen,"St. Märgen, Gemeinde",True,True,CDU,40.877
+08315095,St. Peter,"St. Peter, Gemeinde",True,True,GRÜNE,34.574
+08315098,Schallstadt,"Schallstadt, Gemeinde",True,True,GRÜNE,39.851
+08315102,Schluchsee,"Schluchsee, Gemeinde",True,True,CDU,40.362
+08315107,Sölden,"Sölden, Gemeinde",True,True,GRÜNE,44.242
+08315108,"Staufen im Breisgau, Stadt","Staufen im Breisgau, Stadt",True,True,GRÜNE,45.705
+08315109,Stegen,"Stegen, Gemeinde",True,True,GRÜNE,38.673
+08315111,"Sulzburg, Stadt","Sulzburg, Stadt",True,True,GRÜNE,41.176
+08315113,"Titisee-Neustadt, Stadt","Titisee-Neustadt, Stadt",True,True,CDU,31.561
+08315115,Umkirch,"Umkirch, Gemeinde",True,True,GRÜNE,30.953
+08315125,Wittnau,"Wittnau, Gemeinde",True,True,GRÜNE,43.763
+08315130,Münstertal/Schwarzwald,"Münstertal/Schwarzwald, Gemeinde",True,True,CDU,34.987
+08315131,Ehrenkirchen,"Ehrenkirchen, Gemeinde",True,True,GRÜNE,34.702
+08315132,March,"March, Gemeinde",True,True,GRÜNE,34.801
+08315133,"Vogtsburg im Kaiserstuhl, Stadt","Vogtsburg im Kaiserstuhl, Stadt",True,True,CDU,37.734
+08316002,Bahlingen am Kaiserstuhl,"Bahlingen am Kaiserstuhl, Gemeinde",True,True,GRÜNE,32.241
+08316003,Biederbach,"Biederbach, Gemeinde",True,True,CDU,46.887
+08316009,Denzlingen,"Denzlingen, Gemeinde",True,True,GRÜNE,40.429
+08316010,"Elzach, Stadt","Elzach, Stadt",True,True,CDU,41.756
+08316011,"Emmendingen, Stadt","Emmendingen, Stadt",True,True,GRÜNE,38.814
+08316012,"Endingen am Kaiserstuhl, Stadt","Endingen am Kaiserstuhl, Stadt",True,True,CDU,31.771
+08316013,Forchheim,"Forchheim, Gemeinde",True,True,CDU,30.834
+08316014,Gutach im Breisgau,"Gutach im Breisgau, Gemeinde",True,True,CDU,35.142
+08316017,"Herbolzheim, Stadt","Herbolzheim, Stadt",True,True,GRÜNE,30.521
+08316020,"Kenzingen, Stadt","Kenzingen, Stadt",True,True,GRÜNE,33.046
+08316024,Malterdingen,"Malterdingen, Gemeinde",True,True,CDU,29.743
+08316036,Reute,"Reute, Gemeinde",True,True,CDU,35.977
+08316037,Riegel am Kaiserstuhl,"Riegel am Kaiserstuhl, Gemeinde",True,True,GRÜNE,31.337
+08316038,Sasbach am Kaiserstuhl,"Sasbach am Kaiserstuhl, Gemeinde",True,True,CDU,31.110
+08316039,Sexau,"Sexau, Gemeinde",True,True,GRÜNE,36.493
+08316042,Simonswald,"Simonswald, Gemeinde",True,True,CDU,42.946
+08316043,Teningen,"Teningen, Gemeinde",True,True,GRÜNE,32.768
+08316045,Vörstetten,"Vörstetten, Gemeinde",True,True,GRÜNE,39.599
+08316049,Weisweil,"Weisweil, Gemeinde",True,True,CDU,24.800
+08316051,Wyhl am Kaiserstuhl,"Wyhl am Kaiserstuhl, Gemeinde",True,True,CDU,33.623
+08316053,Rheinhausen im Breisgau,"Rheinhausen, Gemeinde",True,True,CDU,35.475
+08316054,Freiamt,"Freiamt, Gemeinde",True,True,CDU,32.736
+08316055,Winden im Elztal,"Winden im Elztal, Gemeinde",True,True,CDU,37.026
+08316056,"Waldkirch, Stadt","Waldkirch, Stadt",True,True,GRÜNE,38.189
+08317001,"Achern, Stadt","Achern, Stadt",True,True,CDU,32.388
+08317005,Appenweier,"Appenweier, Gemeinde",True,True,CDU,31.522
+08317008,Bad Peterstal-Griesbach,"Bad Peterstal-Griesbach, Gemeinde",True,True,CDU,45.260
+08317009,Berghaupten,"Berghaupten, Gemeinde",True,True,CDU,38.686
+08317011,Biberach,"Biberach, Gemeinde",True,True,CDU,36.581
+08317021,Durbach,"Durbach, Gemeinde",True,True,CDU,40.976
+08317026,"Ettenheim, Stadt","Ettenheim, Stadt",True,True,CDU,30.759
+08317029,Fischerbach,"Fischerbach, Gemeinde",True,True,CDU,44.033
+08317031,Friesenheim,"Friesenheim, Gemeinde",True,True,CDU,32.746
+08317034,"Gengenbach, Stadt","Gengenbach, Stadt",True,True,CDU,34.831
+08317039,Gutach (Schwarzwaldbahn),"Gutach (Schwarzwaldbahn), Gemeinde",True,True,CDU,35.633
+08317040,"Haslach im Kinzigtal, Stadt","Haslach im Kinzigtal, Stadt",True,True,CDU,37.141
+08317041,"Hausach, Stadt","Hausach, Stadt",True,True,CDU,32.558
+08317046,Hofstetten,"Hofstetten, Gemeinde",True,True,CDU,47.326
+08317047,Hohberg,"Hohberg, Gemeinde",True,True,CDU,33.289
+08317051,"Hornberg, Stadt","Hornberg, Stadt",True,True,CDU,36.912
+08317056,Kappelrodeck,"Kappelrodeck, Gemeinde",True,True,CDU,39.804
+08317057,"Kehl, Stadt","Kehl, Stadt",True,True,CDU,25.137
+08317059,Kippenheim,"Kippenheim, Gemeinde",True,True,CDU,29.508
+08317065,"Lahr/Schwarzwald, Stadt","Lahr/Schwarzwald, Stadt",True,True,AfD,29.415
+08317067,Lautenbach,"Lautenbach, Gemeinde",True,True,CDU,43.376
+08317068,Lauf,"Lauf, Gemeinde",True,True,CDU,34.770
+08317073,"Mahlberg, Stadt","Mahlberg, Stadt",True,True,CDU,27.134
+08317075,Meißenheim,"Meißenheim, Gemeinde",True,True,CDU,33.139
+08317078,Mühlenbach,"Mühlenbach, Gemeinde",True,True,CDU,50.000
+08317085,Nordrach,"Nordrach, Gemeinde",True,True,CDU,34.089
+08317088,Oberharmersbach,"Oberharmersbach, Gemeinde",True,True,CDU,37.196
+08317089,"Oberkirch, Stadt","Oberkirch, Stadt",True,True,CDU,37.687
+08317093,Oberwolfach,"Oberwolfach, Gemeinde",True,True,CDU,44.389
+08317096,"Offenburg, Stadt","Offenburg, Stadt",True,True,GRÜNE,31.957
+08317097,Ohlsbach,"Ohlsbach, Gemeinde",True,True,CDU,33.148
+08317098,"Oppenau, Stadt","Oppenau, Stadt",True,True,CDU,45.561
+08317100,Ortenberg,"Ortenberg, Gemeinde",True,True,CDU,33.868
+08317102,Ottenhöfen im Schwarzwald,"Ottenhöfen im Schwarzwald, Gemeinde",True,True,CDU,42.198
+08317110,"Renchen, Stadt","Renchen, Stadt",True,True,CDU,31.326
+08317113,Ringsheim,"Ringsheim, Gemeinde",True,True,CDU,34.026
+08317114,Rust,"Rust, Gemeinde",True,True,CDU,32.895
+08317116,Sasbach,"Sasbach, Gemeinde",True,True,CDU,34.199
+08317118,Sasbachwalden,"Sasbachwalden, Gemeinde",True,True,CDU,37.273
+08317121,Schuttertal,"Schuttertal, Gemeinde",True,True,CDU,46.442
+08317122,Schutterwald,"Schutterwald, Gemeinde",True,True,CDU,31.701
+08317126,Seebach,"Seebach, Gemeinde",True,True,CDU,42.805
+08317127,Seelbach,"Seelbach, Gemeinde",True,True,CDU,34.399
+08317129,Steinach,"Steinach, Gemeinde",True,True,CDU,40.050
+08317141,Willstätt,"Willstätt, Gemeinde",True,True,CDU,28.751
+08317145,"Wolfach, Stadt","Wolfach, Stadt",True,True,CDU,37.546
+08317146,"Zell am Harmersbach, Stadt","Zell am Harmersbach, Stadt",True,True,CDU,34.126
+08317150,Schwanau,"Schwanau, Gemeinde",True,True,CDU,31.001
+08317151,Neuried,"Neuried, Gemeinde",True,True,CDU,31.752
+08317152,Kappel-Grafenhausen,"Kappel-Grafenhausen, Gemeinde",True,True,CDU,33.815
+08317153,"Rheinau, Stadt","Rheinau, Stadt",True,True,CDU,28.524
+08325001,Aichhalden,"Aichhalden, Gemeinde",True,True,CDU,36.642
+08325009,Bösingen,"Bösingen, Gemeinde",True,True,CDU,40.542
+08325011,Dietingen,"Dietingen, Gemeinde",True,True,CDU,35.181
+08325012,"Dornhan, Stadt","Dornhan, Stadt",True,True,CDU,34.040
+08325014,Dunningen,"Dunningen, Gemeinde",True,True,CDU,36.417
+08325015,Epfendorf,"Epfendorf, Gemeinde",True,True,CDU,34.698
+08325024,Hardt,"Hardt, Gemeinde",True,True,CDU,40.036
+08325036,Lauterbach,"Lauterbach, Gemeinde",True,True,CDU,40.738
+08325045,"Oberndorf am Neckar, Stadt","Oberndorf am Neckar, Stadt",True,True,CDU,30.737
+08325049,"Rottweil, Stadt","Rottweil, Stadt",True,True,CDU,30.173
+08325050,Schenkenzell,"Schenkenzell, Gemeinde",True,True,CDU,42.100
+08325051,"Schiltach, Stadt","Schiltach, Stadt",True,True,CDU,31.176
+08325053,"Schramberg, Stadt","Schramberg, Stadt",True,True,CDU,32.961
+08325057,"Sulz am Neckar, Stadt","Sulz am Neckar, Stadt",True,True,CDU,31.079
+08325060,Villingendorf,"Villingendorf, Gemeinde",True,True,CDU,35.838
+08325061,Vöhringen,"Vöhringen, Gemeinde",True,True,AfD,30.361
+08325064,Wellendingen,"Wellendingen, Gemeinde",True,True,CDU,38.976
+08325069,Zimmern ob Rottweil,"Zimmern ob Rottweil, Gemeinde",True,True,CDU,33.393
+08325070,Fluorn-Winzeln,"Fluorn-Winzeln, Gemeinde",True,True,CDU,32.143
+08325071,Eschbronn,"Eschbronn, Gemeinde",True,True,CDU,31.558
+08325072,Deißlingen,"Deißlingen, Gemeinde",True,True,AfD,29.669
+08326003,"Bad Dürrheim, Stadt","Bad Dürrheim, Stadt",True,True,CDU,32.623
+08326005,"Blumberg, Stadt","Blumberg, Stadt",True,True,CDU,35.033
+08326006,"Bräunlingen, Stadt","Bräunlingen, Stadt",True,True,CDU,35.141
+08326010,Dauchingen,"Dauchingen, Gemeinde",True,True,CDU,34.843
+08326012,"Donaueschingen, Stadt","Donaueschingen, Stadt",True,True,CDU,28.405
+08326017,"Furtwangen im Schwarzwald, Stadt","Furtwangen im Schwarzwald, Stadt",True,True,CDU,33.216
+08326020,Gütenbach,"Gütenbach, Gemeinde",True,True,CDU,37.900
+08326027,"Hüfingen, Stadt","Hüfingen, Stadt",True,True,CDU,32.498
+08326031,Königsfeld im Schwarzwald,"Königsfeld im Schwarzwald, Gemeinde",True,True,CDU,31.586
+08326037,Mönchweiler,"Mönchweiler, Gemeinde",True,True,CDU,30.941
+08326041,Niedereschach,"Niedereschach, Gemeinde",True,True,CDU,34.695
+08326052,"St. Georgen im Schwarzwald, Stadt","St. Georgen im Schwarzwald, Stadt",True,True,CDU,28.903
+08326054,Schönwald im Schwarzwald,"Schönwald im Schwarzwald, Gemeinde",True,True,CDU,34.137
+08326055,Schonach im Schwarzwald,"Schonach im Schwarzwald, Gemeinde",True,True,CDU,41.908
+08326060,"Triberg im Schwarzwald, Stadt","Triberg im Schwarzwald, Stadt",True,True,CDU,39.218
+08326061,Tuningen,"Tuningen, Gemeinde",True,True,AfD,28.992
+08326065,Unterkirnach,"Unterkirnach, Gemeinde",True,True,CDU,31.474
+08326068,"Vöhrenbach, Stadt","Vöhrenbach, Stadt",True,True,CDU,36.773
+08326074,"Villingen-Schwenningen, Stadt","Villingen-Schwenningen, Stadt",True,True,CDU,27.275
+08326075,Brigachtal,"Brigachtal, Gemeinde",True,True,CDU,34.835
+08327002,Aldingen,"Aldingen, Gemeinde",True,True,AfD,33.107
+08327004,Bärenthal,"Bärenthal, Gemeinde",True,True,CDU,50.538
+08327005,Balgheim,"Balgheim, Gemeinde",True,True,CDU,35.795
+08327006,Böttingen,"Böttingen, Gemeinde",True,True,CDU,41.060
+08327007,Bubsheim,"Bubsheim, Gemeinde",True,True,CDU,39.279
+08327008,Buchheim,"Buchheim, Gemeinde",True,True,CDU,42.699
+08327009,Deilingen,"Deilingen, Gemeinde",True,True,CDU,46.275
+08327010,Denkingen,"Denkingen, Gemeinde",True,True,CDU,33.784
+08327011,Dürbheim,"Dürbheim, Gemeinde",True,True,CDU,43.460
+08327012,Durchhausen,"Durchhausen, Gemeinde",True,True,CDU,34.594
+08327013,Egesheim,"Egesheim, Gemeinde",True,True,CDU,41.197
+08327016,"Fridingen an der Donau, Stadt","Fridingen an der Donau, Stadt",True,True,CDU,36.896
+08327017,Frittlingen,"Frittlingen, Gemeinde",True,True,CDU,39.578
+08327018,"Geisingen, Stadt","Geisingen, Stadt",True,True,CDU,36.191
+08327019,Gosheim,"Gosheim, Gemeinde",True,True,CDU,39.527
+08327020,Gunningen,"Gunningen, Gemeinde",True,True,CDU,34.963
+08327023,Hausen ob Verena,"Hausen ob Verena, Gemeinde",True,True,CDU,27.869
+08327025,Immendingen,"Immendingen, Gemeinde",True,True,CDU,32.422
+08327027,Irndorf,"Irndorf, Gemeinde",True,True,CDU,38.717
+08327029,Königsheim,"Königsheim, Gemeinde",True,True,CDU,43.220
+08327030,Kolbingen,"Kolbingen, Gemeinde",True,True,CDU,45.752
+08327033,Mahlstetten,"Mahlstetten, Gemeinde",True,True,CDU,43.035
+08327036,"Mühlheim an der Donau, Stadt","Mühlheim an der Donau, Stadt",True,True,CDU,40.040
+08327038,Neuhausen ob Eck,"Neuhausen ob Eck, Gemeinde",True,True,CDU,32.848
+08327040,Reichenbach am Heuberg,"Reichenbach am Heuberg, Gemeinde",True,True,AfD,38.182
+08327041,Renquishausen,"Renquishausen, Gemeinde",True,True,CDU,43.713
+08327046,"Spaichingen, Stadt","Spaichingen, Stadt",True,True,CDU,35.911
+08327048,Talheim,"Talheim, Gemeinde",True,True,CDU,35.605
+08327049,"Trossingen, Stadt","Trossingen, Stadt",True,True,AfD,32.809
+08327050,"Tuttlingen, Stadt","Tuttlingen, Stadt",True,True,CDU,30.145
+08327051,Wehingen,"Wehingen, Gemeinde",True,True,CDU,35.571
+08327054,Wurmlingen,"Wurmlingen, Gemeinde",True,True,CDU,39.740
+08327055,Seitingen-Oberflacht,"Seitingen-Oberflacht, Gemeinde",True,True,CDU,35.649
+08327056,Rietheim-Weilheim,"Rietheim-Weilheim, Gemeinde",True,True,CDU,38.462
+08327057,Emmingen-Liptingen,"Emmingen-Liptingen, Gemeinde",True,True,CDU,33.613
+08335001,"Aach, Stadt","Aach, Stadt",True,True,CDU,28.914
+08335002,Allensbach,"Allensbach, Gemeinde",True,True,GRÜNE,38.635
+08335015,Büsingen am Hochrhein,"Büsingen am Hochrhein, Gemeinde",True,True,CDU,31.090
+08335021,Eigeltingen,"Eigeltingen, Gemeinde",True,True,CDU,36.863
+08335022,"Engen, Stadt","Engen, Stadt",True,True,CDU,33.106
+08335025,Gaienhofen,"Gaienhofen, Gemeinde",True,True,CDU,35.332
+08335026,Gailingen am Hochrhein,"Gailingen am Hochrhein, Gemeinde",True,True,CDU,31.206
+08335028,Gottmadingen,"Gottmadingen, Gemeinde",True,True,CDU,27.316
+08335035,Hilzingen,"Hilzingen, Gemeinde",True,True,CDU,33.663
+08335043,"Konstanz, Universitätsstadt","Konstanz, Stadt",True,True,GRÜNE,44.296
+08335055,Moos,"Moos, Gemeinde",True,True,GRÜNE,32.537
+08335057,Mühlingen,"Mühlingen, Gemeinde",True,True,CDU,34.430
+08335061,Öhningen,"Öhningen, Gemeinde",True,True,CDU,34.064
+08335063,"Radolfzell am Bodensee, Stadt","Radolfzell am Bodensee, Stadt",True,True,GRÜNE,35.586
+08335066,Reichenau,"Reichenau, Gemeinde",True,True,CDU,37.082
+08335075,"Singen (Hohentwiel), Stadt","Singen (Hohentwiel), Stadt",True,True,AfD,27.439
+08335077,Steißlingen,"Steißlingen, Gemeinde",True,True,CDU,35.533
+08335079,"Stockach, Stadt","Stockach, Stadt",True,True,CDU,32.615
+08335080,"Tengen, Stadt","Tengen, Stadt",True,True,CDU,36.462
+08335081,Volkertshausen,"Volkertshausen, Gemeinde",True,True,GRÜNE,27.459
+08335096,Hohenfels,"Hohenfels, Gemeinde",True,True,CDU,38.139
+08335097,Mühlhausen-Ehingen,"Mühlhausen-Ehingen, Gemeinde",True,True,CDU,33.690
+08335098,Bodman-Ludwigshafen,"Bodman-Ludwigshafen, Gemeinde",True,True,CDU,36.601
+08335099,Orsingen-Nenzingen,"Orsingen-Nenzingen, Gemeinde",True,True,CDU,35.500
+08335100,Rielasingen-Worblingen,"Rielasingen-Worblingen, Gemeinde",True,True,CDU,30.140
+08336004,Aitern,"Aitern, Gemeinde",True,True,CDU,45.277
+08336006,Bad Bellingen,"Bad Bellingen, Gemeinde",True,True,CDU,30.662
+08336008,Binzen,"Binzen, Gemeinde",True,True,GRÜNE,35.827
+08336010,Böllen,"Böllen, Gemeinde",True,True,CDU,31.148
+08336014,Efringen-Kirchen,"Efringen-Kirchen, Gemeinde",True,True,GRÜNE,30.292
+08336019,Eimeldingen,"Eimeldingen, Gemeinde",True,True,GRÜNE,32.198
+08336024,Fischingen,"Fischingen, Gemeinde",True,True,CDU,33.014
+08336025,Fröhnd,"Fröhnd, Gemeinde",True,True,CDU,44.937
+08336034,Hasel,"Hasel, Gemeinde",True,True,GRÜNE,27.869
+08336036,Hausen im Wiesental,"Hausen im Wiesental, Gemeinde",True,True,GRÜNE,30.016
+08336043,Inzlingen,"Inzlingen, Gemeinde",True,True,GRÜNE,37.190
+08336045,"Kandern, Stadt","Kandern, Stadt",True,True,GRÜNE,31.767
+08336050,"Lörrach, Stadt","Lörrach, Stadt",True,True,GRÜNE,37.177
+08336057,Maulburg,"Maulburg, Gemeinde",True,True,GRÜNE,28.778
+08336069,"Rheinfelden (Baden), Stadt","Rheinfelden (Baden), Stadt",True,True,GRÜNE,30.601
+08336073,Rümmingen,"Rümmingen, Gemeinde",True,True,GRÜNE,34.545
+08336075,Schallbach,"Schallbach, Gemeinde",True,True,CDU,34.990
+08336078,Schliengen,"Schliengen, Gemeinde",True,True,GRÜNE,32.104
+08336079,"Schönau im Schwarzwald, Stadt","Schönau im Schwarzwald, Stadt",True,True,GRÜNE,27.692
+08336080,Schönenberg,"Schönenberg, Gemeinde",True,True,CDU,32.716
+08336081,"Schopfheim, Stadt","Schopfheim, Stadt",True,True,GRÜNE,33.337
+08336082,Schwörstadt,"Schwörstadt, Gemeinde",True,True,CDU,29.966
+08336084,Steinen,"Steinen, Gemeinde",True,True,GRÜNE,29.442
+08336087,"Todtnau, Stadt","Todtnau, Stadt",True,True,CDU,37.405
+08336089,Tunau,"Tunau, Gemeinde",True,True,CDU,45.977
+08336090,Utzenfeld,"Utzenfeld, Gemeinde",True,True,CDU,39.067
+08336091,"Weil am Rhein, Stadt","Weil am Rhein, Stadt",True,True,GRÜNE,32.067
+08336094,Wembach,"Wembach, Gemeinde",True,True,CDU,32.143
+08336096,Wieden,"Wieden, Gemeinde",True,True,CDU,49.267
+08336100,Wittlingen,"Wittlingen, Gemeinde",True,True,CDU,33.396
+08336103,"Zell im Wiesental, Stadt","Zell im Wiesental, Stadt",True,True,CDU,30.206
+08336104,Malsburg-Marzell,"Malsburg-Marzell, Gemeinde",True,True,GRÜNE,23.846
+08336105,Grenzach-Wyhlen,"Grenzach-Wyhlen, Gemeinde",True,True,GRÜNE,34.669
+08336106,Häg-Ehrsberg,"Häg-Ehrsberg, Gemeinde",True,True,CDU,42.073
+08336107,Kleines Wiesental,"Kleines Wiesental, Gemeinde",True,True,CDU,28.070
+08336991,Briefwahl für mehrere Gemeinden,,False,False,,
+08337002,Albbruck,"Albbruck, Gemeinde",True,True,CDU,34.121
+08337013,Bernau im Schwarzwald,"Bernau im Schwarzwald, Gemeinde",True,True,CDU,44.199
+08337022,"Bonndorf im Schwarzwald, Stadt","Bonndorf im Schwarzwald, Stadt",True,True,CDU,36.551
+08337027,Dachsberg (Südschwarzwald),"Dachsberg (Südschwarzwald), Gemeinde",True,True,CDU,32.139
+08337030,Dettighofen,"Dettighofen, Gemeinde",True,True,GRÜNE,28.647
+08337032,Dogern,"Dogern, Gemeinde",True,True,CDU,34.754
+08337038,Görwihl,"Görwihl, Gemeinde",True,True,CDU,36.568
+08337039,Grafenhausen,"Grafenhausen, Gemeinde",True,True,CDU,44.893
+08337045,Häusern,"Häusern, Gemeinde",True,True,CDU,34.844
+08337049,Herrischried,"Herrischried, Gemeinde",True,True,CDU,32.594
+08337051,Höchenschwand,"Höchenschwand, Gemeinde",True,True,CDU,34.900
+08337053,Hohentengen am Hochrhein,"Hohentengen am Hochrhein, Gemeinde",True,True,CDU,31.900
+08337059,Ibach,"Ibach, Gemeinde",True,True,CDU,41.702
+08337060,Jestetten,"Jestetten, Gemeinde",True,True,GRÜNE,31.766
+08337062,Klettgau,"Klettgau, Gemeinde",True,True,GRÜNE,30.535
+08337065,Lauchringen,"Lauchringen, Gemeinde",True,True,CDU,33.835
+08337066,"Laufenburg (Baden), Stadt","Laufenburg (Baden), Stadt",True,True,CDU,28.969
+08337070,Lottstetten,"Lottstetten, Gemeinde",True,True,CDU,28.587
+08337076,Murg,"Murg, Gemeinde",True,True,CDU,28.656
+08337090,Rickenbach,"Rickenbach, Gemeinde",True,True,CDU,29.245
+08337096,"Bad Säckingen, Stadt","Bad Säckingen, Stadt",True,True,GRÜNE,31.818
+08337097,"St. Blasien, Stadt","St. Blasien, Stadt",True,True,CDU,34.039
+08337106,"Stühlingen, Stadt","Stühlingen, Stadt",True,True,CDU,40.337
+08337108,Todtmoos,"Todtmoos, Gemeinde",True,True,CDU,28.571
+08337116,"Wehr, Stadt","Wehr, Stadt",True,True,GRÜNE,28.464
+08337118,Weilheim,"Weilheim, Gemeinde",True,True,CDU,38.569
+08337123,Wutöschingen,"Wutöschingen, Gemeinde",True,True,CDU,31.999
+08337124,Eggingen,"Eggingen, Gemeinde",True,True,CDU,36.227
+08337125,Küssaberg,"Küssaberg, Gemeinde",True,True,CDU,31.263
+08337126,"Waldshut-Tiengen, Stadt","Waldshut-Tiengen, Stadt",True,True,CDU,31.274
+08337127,Wutach,"Wutach, Gemeinde",True,True,CDU,43.188
+08337128,Ühlingen-Birkendorf,"Ühlingen-Birkendorf, Gemeinde",True,True,CDU,37.133
+08415014,Dettingen an der Erms,"Dettingen an der Erms, Gemeinde",True,True,GRÜNE,34.364
+08415019,Eningen unter Achalm,"Eningen unter Achalm, Gemeinde",True,True,GRÜNE,31.663
+08415027,Gomadingen,"Gomadingen, Gemeinde",True,True,CDU,33.547
+08415028,Grabenstetten,"Grabenstetten, Gemeinde",True,True,CDU,30.300
+08415029,Grafenberg,"Grafenberg, Gemeinde",True,True,CDU,36.329
+08415034,"Hayingen, Stadt","Hayingen, Stadt",True,True,CDU,42.193
+08415039,Hülben,"Hülben, Gemeinde",True,True,CDU,34.382
+08415048,Mehrstetten,"Mehrstetten, Gemeinde",True,True,CDU,34.361
+08415050,"Metzingen, Stadt","Metzingen, Stadt",True,True,GRÜNE,32.021
+08415053,"Münsingen, Stadt","Münsingen, Stadt",True,True,CDU,28.913
+08415058,Pfronstetten,"Pfronstetten, Gemeinde",True,True,CDU,45.358
+08415059,"Pfullingen, Stadt","Pfullingen, Stadt",True,True,GRÜNE,31.660
+08415060,Pliezhausen,"Pliezhausen, Gemeinde",True,True,CDU,31.533
+08415061,"Reutlingen, Stadt","Reutlingen, Stadt",True,True,GRÜNE,33.970
+08415062,Riederich,"Riederich, Gemeinde",True,True,CDU,33.796
+08415073,"Trochtelfingen, Stadt","Trochtelfingen, Stadt",True,True,CDU,35.535
+08415078,"Bad Urach, Stadt","Bad Urach, Stadt",True,True,GRÜNE,34.573
+08415080,Wannweil,"Wannweil, Gemeinde",True,True,GRÜNE,40.220
+08415085,Zwiefalten,"Zwiefalten, Gemeinde",True,True,CDU,42.755
+08415087,Walddorfhäslach,"Walddorfhäslach, Gemeinde",True,True,CDU,34.940
+08415088,Römerstein,"Römerstein, Gemeinde",True,True,CDU,37.591
+08415089,Engstingen,"Engstingen, Gemeinde",True,True,CDU,35.294
+08415090,Hohenstein,"Hohenstein, Gemeinde",True,True,CDU,41.406
+08415091,Sonnenbühl,"Sonnenbühl, Gemeinde",True,True,CDU,38.012
+08415092,Lichtenstein,"Lichtenstein, Gemeinde",True,True,CDU,32.431
+08415093,St. Johann,"St. Johann, Gemeinde",True,True,CDU,32.256
+08416006,Bodelshausen,"Bodelshausen, Gemeinde",True,True,CDU,29.905
+08416009,Dettenhausen,"Dettenhausen, Gemeinde",True,True,GRÜNE,33.417
+08416011,Dußlingen,"Dußlingen, Gemeinde",True,True,GRÜNE,34.321
+08416015,Gomaringen,"Gomaringen, Gemeinde",True,True,GRÜNE,33.360
+08416018,Hirrlingen,"Hirrlingen, Gemeinde",True,True,CDU,37.699
+08416022,Kirchentellinsfurt,"Kirchentellinsfurt, Gemeinde",True,True,GRÜNE,42.338
+08416023,Kusterdingen,"Kusterdingen, Gemeinde",True,True,GRÜNE,41.936
+08416025,"Mössingen, Stadt","Mössingen, Stadt",True,True,GRÜNE,32.424
+08416026,Nehren,"Nehren, Gemeinde",True,True,GRÜNE,38.446
+08416031,Ofterdingen,"Ofterdingen, Gemeinde",True,True,GRÜNE,32.710
+08416036,"Rottenburg am Neckar, Stadt","Rottenburg am Neckar, Stadt",True,True,GRÜNE,32.425
+08416041,"Tübingen, Universitätsstadt","Tübingen, Stadt",True,True,GRÜNE,53.194
+08416048,Ammerbuch,"Ammerbuch, Gemeinde",True,True,GRÜNE,38.403
+08416049,Neustetten,"Neustetten, Gemeinde",True,True,CDU,36.867
+08416050,Starzach,"Starzach, Gemeinde",True,True,CDU,33.462
+08417002,"Balingen, Stadt","Balingen, Stadt",True,True,CDU,30.706
+08417008,Bisingen,"Bisingen, Gemeinde",True,True,CDU,31.025
+08417010,Bitz,"Bitz, Gemeinde",True,True,CDU,32.560
+08417013,"Burladingen, Stadt","Burladingen, Stadt",True,True,CDU,32.735
+08417014,Dautmergen,"Dautmergen, Gemeinde",True,True,CDU,36.822
+08417015,Dormettingen,"Dormettingen, Gemeinde",True,True,CDU,38.567
+08417016,Dotternhausen,"Dotternhausen, Gemeinde",True,True,CDU,34.235
+08417022,"Geislingen, Stadt","Geislingen, Stadt",True,True,CDU,38.774
+08417023,Grosselfingen,"Grosselfingen, Gemeinde",True,True,AfD,34.037
+08417025,"Haigerloch, Stadt","Haigerloch, Stadt",True,True,CDU,34.890
+08417029,Hausen am Tann,"Hausen am Tann, Gemeinde",True,True,CDU,34.100
+08417031,"Hechingen, Stadt","Hechingen, Stadt",True,True,CDU,30.137
+08417036,Jungingen,"Jungingen, Gemeinde",True,True,CDU,32.094
+08417044,"Meßstetten, Stadt","Meßstetten, Stadt",True,True,CDU,36.478
+08417045,Nusplingen,"Nusplingen, Gemeinde",True,True,CDU,48.998
+08417047,Obernheim,"Obernheim, Gemeinde",True,True,CDU,38.129
+08417051,Rangendingen,"Rangendingen, Gemeinde",True,True,CDU,35.732
+08417052,Ratshausen,"Ratshausen, Gemeinde",True,True,CDU,32.743
+08417054,"Rosenfeld, Stadt","Rosenfeld, Stadt",True,True,CDU,33.104
+08417057,"Schömberg, Stadt","Schömberg, Stadt",True,True,CDU,38.549
+08417063,Straßberg,"Straßberg, Gemeinde",True,True,CDU,38.102
+08417071,Weilen unter den Rinnen,"Weilen unter den Rinnen, Gemeinde",True,True,CDU,39.946
+08417075,Winterlingen,"Winterlingen, Gemeinde",True,True,CDU,37.005
+08417078,Zimmern unter der Burg,"Zimmern unter der Burg, Gemeinde",True,True,CDU,35.664
+08417079,"Albstadt, Stadt","Albstadt, Stadt",True,True,CDU,31.572
+08421000,"Ulm, Universitätsstadt","Ulm, Stadt",True,True,GRÜNE,40.959
+08425002,Allmendingen,"Allmendingen, Gemeinde",True,True,CDU,45.349
+08425004,Altheim,"Altheim, Gemeinde",True,True,CDU,51.636
+08425005,Altheim (Alb),"Altheim (Alb), Gemeinde",True,True,CDU,40.173
+08425008,Amstetten,"Amstetten, Gemeinde",True,True,CDU,38.713
+08425011,Asselfingen,"Asselfingen, Gemeinde",True,True,CDU,40.189
+08425013,Ballendorf,"Ballendorf, Gemeinde",True,True,CDU,53.618
+08425014,Beimerstetten,"Beimerstetten, Gemeinde",True,True,GRÜNE,32.155
+08425017,Berghülen,"Berghülen, Gemeinde",True,True,CDU,43.124
+08425019,Bernstadt,"Bernstadt, Gemeinde",True,True,CDU,38.406
+08425020,"Blaubeuren, Stadt","Blaubeuren, Stadt",True,True,CDU,33.577
+08425022,Börslingen,"Börslingen, Gemeinde",True,True,CDU,42.857
+08425024,Breitingen,"Breitingen, Gemeinde",True,True,CDU,33.099
+08425028,"Dietenheim, Stadt","Dietenheim, Stadt",True,True,CDU,35.268
+08425031,Dornstadt,"Dornstadt, Gemeinde",True,True,CDU,37.152
+08425033,"Ehingen (Donau), Stadt","Ehingen (Donau), Stadt",True,True,CDU,45.732
+08425035,Emeringen,"Emeringen, Gemeinde",True,True,CDU,55.660
+08425036,Emerkingen,"Emerkingen, Gemeinde",True,True,CDU,58.005
+08425039,"Erbach, Stadt","Erbach, Stadt",True,True,CDU,37.765
+08425050,Griesingen,"Griesingen, Gemeinde",True,True,CDU,49.260
+08425052,Grundsheim,"Grundsheim, Gemeinde",True,True,CDU,63.359
+08425055,Hausen am Bussen,"Hausen am Bussen, Gemeinde",True,True,CDU,53.521
+08425062,Holzkirch,"Holzkirch, Gemeinde",True,True,CDU,60.000
+08425064,Hüttisheim,"Hüttisheim, Gemeinde",True,True,CDU,39.381
+08425066,Illerrieden,"Illerrieden, Gemeinde",True,True,CDU,39.557
+08425071,"Laichingen, Stadt","Laichingen, Stadt",True,True,CDU,39.821
+08425072,"Langenau, Stadt","Langenau, Stadt",True,True,CDU,32.397
+08425073,Lauterach,"Lauterach, Gemeinde",True,True,CDU,51.673
+08425075,Lonsee,"Lonsee, Gemeinde",True,True,CDU,36.681
+08425079,Merklingen,"Merklingen, Gemeinde",True,True,CDU,39.235
+08425081,"Munderkingen, Stadt","Munderkingen, Stadt",True,True,CDU,43.260
+08425083,Neenstetten,"Neenstetten, Gemeinde",True,True,CDU,44.471
+08425084,Nellingen,"Nellingen, Gemeinde",True,True,CDU,44.163
+08425085,Nerenstetten,"Nerenstetten, Gemeinde",True,True,CDU,41.146
+08425088,Oberdischingen,"Oberdischingen, Gemeinde",True,True,CDU,43.069
+08425090,Obermarchtal,"Obermarchtal, Gemeinde",True,True,CDU,49.567
+08425091,Oberstadion,"Oberstadion, Gemeinde",True,True,CDU,46.298
+08425092,Öllingen,"Öllingen, Gemeinde",True,True,CDU,41.057
+08425093,Öpfingen,"Öpfingen, Gemeinde",True,True,CDU,45.000
+08425097,Rammingen,"Rammingen, Gemeinde",True,True,CDU,39.005
+08425098,Rechtenstein,"Rechtenstein, Gemeinde",True,True,CDU,48.299
+08425104,Rottenacker,"Rottenacker, Gemeinde",True,True,CDU,38.525
+08425108,"Schelklingen, Stadt","Schelklingen, Stadt",True,True,CDU,39.871
+08425110,Schnürpflingen,"Schnürpflingen, Gemeinde",True,True,CDU,39.586
+08425112,Setzingen,"Setzingen, Gemeinde",True,True,CDU,44.868
+08425123,Untermarchtal,"Untermarchtal, Gemeinde",True,True,CDU,44.136
+08425124,Unterstadion,"Unterstadion, Gemeinde",True,True,CDU,55.730
+08425125,Unterwachingen,"Unterwachingen, Gemeinde",True,True,CDU,53.906
+08425130,Weidenstetten,"Weidenstetten, Gemeinde",True,True,CDU,36.256
+08425134,Westerheim,"Westerheim, Gemeinde",True,True,CDU,47.329
+08425135,Westerstetten,"Westerstetten, Gemeinde",True,True,CDU,41.190
+08425137,Illerkirchberg,"Illerkirchberg, Gemeinde",True,True,CDU,33.642
+08425138,Staig,"Staig, Gemeinde",True,True,CDU,37.765
+08425139,Heroldstatt,"Heroldstatt, Gemeinde",True,True,CDU,40.289
+08425140,Balzheim,"Balzheim, Gemeinde",True,True,CDU,36.033
+08425141,"Blaustein, Stadt","Blaustein, Stadt",True,True,GRÜNE,33.266
+08425991,Briefwahl für mehrere Gemeinden,,False,False,,
+08426001,Achstetten,"Achstetten, Gemeinde",True,True,CDU,41.638
+08426005,Alleshausen,"Alleshausen, Gemeinde",True,True,CDU,55.944
+08426006,Allmannsweiler,"Allmannsweiler, Gemeinde",True,True,CDU,42.857
+08426008,Altheim,"Altheim, Gemeinde",True,True,CDU,41.374
+08426011,Attenweiler,"Attenweiler, Gemeinde",True,True,CDU,46.021
+08426013,"Bad Buchau, Stadt","Bad Buchau, Stadt",True,True,CDU,41.787
+08426014,"Bad Schussenried, Stadt","Bad Schussenried, Stadt",True,True,CDU,38.253
+08426019,Berkheim,"Berkheim, Gemeinde",True,True,CDU,37.136
+08426020,Betzenweiler,"Betzenweiler, Gemeinde",True,True,CDU,51.792
+08426021,"Biberach an der Riß, Stadt","Biberach an der Riß, Stadt",True,True,GRÜNE,34.576
+08426028,Burgrieden,"Burgrieden, Gemeinde",True,True,CDU,35.678
+08426031,Dettingen an der Iller,"Dettingen an der Iller, Gemeinde",True,True,CDU,34.819
+08426035,Dürmentingen,"Dürmentingen, Gemeinde",True,True,CDU,46.757
+08426036,Dürnau,"Dürnau, Gemeinde",True,True,CDU,42.211
+08426038,Eberhardzell,"Eberhardzell, Gemeinde",True,True,CDU,48.194
+08426043,Erlenmoos,"Erlenmoos, Gemeinde",True,True,CDU,43.575
+08426044,Erolzheim,"Erolzheim, Gemeinde",True,True,CDU,40.478
+08426045,Ertingen,"Ertingen, Gemeinde",True,True,CDU,38.507
+08426058,Hochdorf,"Hochdorf, Gemeinde",True,True,CDU,43.202
+08426062,Ingoldingen,"Ingoldingen, Gemeinde",True,True,CDU,47.059
+08426064,Kanzach,"Kanzach, Gemeinde",True,True,CDU,42.041
+08426065,Kirchberg an der Iller,"Kirchberg an der Iller, Gemeinde",True,True,CDU,39.944
+08426066,Kirchdorf an der Iller,"Kirchdorf an der Iller, Gemeinde",True,True,CDU,37.089
+08426067,Langenenslingen,"Langenenslingen, Gemeinde",True,True,CDU,41.456
+08426070,"Laupheim, Stadt","Laupheim, Stadt",True,True,CDU,36.668
+08426071,Maselheim,"Maselheim, Gemeinde",True,True,CDU,44.516
+08426073,Mietingen,"Mietingen, Gemeinde",True,True,CDU,45.803
+08426074,Mittelbiberach,"Mittelbiberach, Gemeinde",True,True,CDU,36.304
+08426078,Moosburg,"Moosburg, Gemeinde",True,True,CDU,44.615
+08426087,"Ochsenhausen, Stadt","Ochsenhausen, Stadt",True,True,CDU,39.952
+08426090,Oggelshausen,"Oggelshausen, Gemeinde",True,True,CDU,40.190
+08426097,"Riedlingen, Stadt","Riedlingen, Stadt",True,True,CDU,35.160
+08426100,Rot an der Rot,"Rot an der Rot, Gemeinde",True,True,CDU,43.412
+08426108,Schwendi,"Schwendi, Gemeinde",True,True,CDU,41.504
+08426109,Seekirch,"Seekirch, Gemeinde",True,True,CDU,52.518
+08426113,Steinhausen an der Rottum,"Steinhausen an der Rottum, Gemeinde",True,True,CDU,41.075
+08426117,Tannheim,"Tannheim, Gemeinde",True,True,CDU,36.478
+08426118,Tiefenbach,"Tiefenbach, Gemeinde",True,True,CDU,35.586
+08426120,Ummendorf,"Ummendorf, Gemeinde",True,True,CDU,39.156
+08426121,Unlingen,"Unlingen, Gemeinde",True,True,CDU,45.209
+08426124,Uttenweiler,"Uttenweiler, Gemeinde",True,True,CDU,48.147
+08426125,Wain,"Wain, Gemeinde",True,True,CDU,41.270
+08426128,Warthausen,"Warthausen, Gemeinde",True,True,CDU,36.216
+08426134,Schemmerhofen,"Schemmerhofen, Gemeinde",True,True,CDU,44.383
+08426135,Gutenzell-Hürbel,"Gutenzell-Hürbel, Gemeinde",True,True,CDU,43.437
+08435005,Bermatingen,"Bermatingen, Gemeinde",True,True,GRÜNE,31.407
+08435010,Daisendorf,"Daisendorf, Gemeinde",True,True,GRÜNE,36.968
+08435013,Eriskirch,"Eriskirch, Gemeinde",True,True,CDU,34.200
+08435015,Frickingen,"Frickingen, Gemeinde",True,True,CDU,30.922
+08435016,"Friedrichshafen, Stadt","Friedrichshafen, Stadt",True,True,CDU,30.061
+08435018,Hagnau am Bodensee,"Hagnau am Bodensee, Gemeinde",True,True,CDU,42.188
+08435020,Heiligenberg,"Heiligenberg, Gemeinde",True,True,GRÜNE,33.471
+08435024,Immenstaad am Bodensee,"Immenstaad am Bodensee, Gemeinde",True,True,GRÜNE,34.345
+08435029,Kressbronn am Bodensee,"Kressbronn am Bodensee, Gemeinde",True,True,CDU,36.739
+08435030,Langenargen,"Langenargen, Gemeinde",True,True,CDU,35.114
+08435034,"Markdorf, Stadt","Markdorf, Stadt",True,True,GRÜNE,33.011
+08435035,Meckenbeuren,"Meckenbeuren, Gemeinde",True,True,CDU,35.503
+08435036,"Meersburg, Stadt","Meersburg, Stadt",True,True,GRÜNE,34.424
+08435042,Neukirch,"Neukirch, Gemeinde",True,True,CDU,38.326
+08435045,Oberteuringen,"Oberteuringen, Gemeinde",True,True,CDU,33.939
+08435047,Owingen,"Owingen, Gemeinde",True,True,CDU,30.775
+08435052,Salem,"Salem, Gemeinde",True,True,GRÜNE,33.954
+08435053,Sipplingen,"Sipplingen, Gemeinde",True,True,CDU,35.260
+08435054,Stetten,"Stetten, Gemeinde",True,True,GRÜNE,35.233
+08435057,"Tettnang, Stadt","Tettnang, Stadt",True,True,CDU,34.749
+08435059,"Überlingen, Stadt","Überlingen, Stadt",True,True,GRÜNE,36.076
+08435066,Uhldingen-Mühlhofen,"Uhldingen-Mühlhofen, Gemeinde",True,True,GRÜNE,35.284
+08435067,Deggenhausertal,"Deggenhausertal, Gemeinde",True,True,CDU,33.710
+08436001,Achberg,"Achberg, Gemeinde",True,True,CDU,31.002
+08436003,Aichstetten,"Aichstetten, Gemeinde",True,True,CDU,39.852
+08436004,Aitrach,"Aitrach, Gemeinde",True,True,CDU,35.849
+08436005,Altshausen,"Altshausen, Gemeinde",True,True,CDU,40.120
+08436006,Amtzell,"Amtzell, Gemeinde",True,True,CDU,36.877
+08436008,"Aulendorf, Stadt","Aulendorf, Stadt",True,True,CDU,30.266
+08436009,"Bad Waldsee, Stadt","Bad Waldsee, Stadt",True,True,CDU,37.167
+08436010,"Bad Wurzach, Stadt","Bad Wurzach, Stadt",True,True,CDU,40.723
+08436011,Baienfurt,"Baienfurt, Gemeinde",True,True,CDU,36.037
+08436012,Baindt,"Baindt, Gemeinde",True,True,CDU,35.160
+08436013,Berg,"Berg, Gemeinde",True,True,CDU,37.860
+08436014,Bergatreute,"Bergatreute, Gemeinde",True,True,CDU,36.911
+08436018,Bodnegg,"Bodnegg, Gemeinde",True,True,CDU,34.317
+08436019,Boms,"Boms, Gemeinde",True,True,CDU,33.166
+08436024,Ebenweiler,"Ebenweiler, Gemeinde",True,True,CDU,32.379
+08436027,Eichstegen,"Eichstegen, Gemeinde",True,True,CDU,42.812
+08436032,Fleischwangen,"Fleischwangen, Gemeinde",True,True,CDU,43.095
+08436039,Grünkraut,"Grünkraut, Gemeinde",True,True,GRÜNE,32.385
+08436040,Guggenhausen,"Guggenhausen, Gemeinde",True,True,CDU,37.895
+08436047,Hoßkirch,"Hoßkirch, Gemeinde",True,True,CDU,40.487
+08436049,"Isny im Allgäu, Stadt","Isny im Allgäu, Stadt",True,True,CDU,32.572
+08436052,Kißlegg,"Kißlegg, Gemeinde",True,True,CDU,39.235
+08436053,Königseggwald,"Königseggwald, Gemeinde",True,True,CDU,43.541
+08436055,"Leutkirch im Allgäu, Stadt","Leutkirch im Allgäu, Stadt",True,True,CDU,36.779
+08436064,"Ravensburg, Stadt","Ravensburg, Stadt",True,True,GRÜNE,35.807
+08436067,Riedhausen,"Riedhausen, Gemeinde",True,True,CDU,41.447
+08436069,Schlier,"Schlier, Gemeinde",True,True,CDU,33.594
+08436077,Unterwaldhausen,"Unterwaldhausen, Gemeinde",True,True,GRÜNE,32.374
+08436078,Vogt,"Vogt, Gemeinde",True,True,CDU,32.501
+08436079,Waldburg,"Waldburg, Gemeinde",True,True,CDU,34.300
+08436081,"Wangen im Allgäu, Stadt","Wangen im Allgäu, Stadt",True,True,CDU,33.934
+08436082,"Weingarten, Stadt","Weingarten, Stadt",True,True,GRÜNE,31.030
+08436083,Wilhelmsdorf,"Wilhelmsdorf, Gemeinde",True,True,GRÜNE,32.095
+08436085,Wolfegg,"Wolfegg, Gemeinde",True,True,CDU,35.721
+08436087,Wolpertswende,"Wolpertswende, Gemeinde",True,True,CDU,37.610
+08436093,Ebersbach-Musbach,"Ebersbach-Musbach, Gemeinde",True,True,CDU,37.209
+08436094,Argenbühl,"Argenbühl, Gemeinde",True,True,CDU,42.266
+08436095,Horgenzell,"Horgenzell, Gemeinde",True,True,CDU,37.569
+08436096,Fronreute,"Fronreute, Gemeinde",True,True,CDU,38.205
+08436991,Briefwahl für mehrere Gemeinden,,False,False,,
+08437005,Beuron,"Beuron, Gemeinde",True,True,GRÜNE,32.234
+08437008,Bingen,"Bingen, Gemeinde",True,True,CDU,36.742
+08437031,"Gammertingen, Stadt","Gammertingen, Stadt",True,True,CDU,33.967
+08437044,Herbertingen,"Herbertingen, Gemeinde",True,True,CDU,39.618
+08437047,"Hettingen, Stadt","Hettingen, Stadt",True,True,CDU,47.639
+08437053,Hohentengen,"Hohentengen, Gemeinde",True,True,CDU,42.289
+08437056,Illmensee,"Illmensee, Gemeinde",True,True,CDU,33.145
+08437059,Inzigkofen,"Inzigkofen, Gemeinde",True,True,CDU,38.377
+08437065,Krauchenwies,"Krauchenwies, Gemeinde",True,True,CDU,40.259
+08437072,Leibertingen,"Leibertingen, Gemeinde",True,True,CDU,38.258
+08437076,"Mengen, Stadt","Mengen, Stadt",True,True,CDU,38.008
+08437078,"Meßkirch, Stadt","Meßkirch, Stadt",True,True,CDU,35.987
+08437082,Neufra,"Neufra, Gemeinde",True,True,CDU,36.100
+08437086,Ostrach,"Ostrach, Gemeinde",True,True,CDU,38.420
+08437088,"Pfullendorf, Stadt","Pfullendorf, Stadt",True,True,CDU,36.675
+08437100,"Bad Saulgau, Stadt","Bad Saulgau, Stadt",True,True,CDU,36.366
+08437101,"Scheer, Stadt","Scheer, Stadt",True,True,CDU,38.233
+08437102,Schwenningen,"Schwenningen, Gemeinde",True,True,CDU,39.623
+08437104,"Sigmaringen, Stadt","Sigmaringen, Stadt",True,True,CDU,30.548
+08437105,Sigmaringendorf,"Sigmaringendorf, Gemeinde",True,True,CDU,34.523
+08437107,Stetten am kalten Markt,"Stetten am kalten Markt, Gemeinde",True,True,CDU,36.892
+08437114,"Veringenstadt, Stadt","Veringenstadt, Stadt",True,True,CDU,35.757
+08437118,Wald,"Wald, Gemeinde",True,True,CDU,38.200
+08437123,Sauldorf,"Sauldorf, Gemeinde",True,True,CDU,42.231
+08437124,Herdwangen-Schönach,"Herdwangen-Schönach, Gemeinde",True,True,GRÜNE,29.256

@@ -1,1 +1,1105 @@
 ags,municipality_name,status,reported_precincts,total_precincts,voters_total,valid_votes,invalid_votes,source_timestamp,payload_hash,error_message
+08111000,Stuttgart-Landeshauptstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115001,Aidlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115002,Altdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115003,Böblingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115004,Bondorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115010,Deckenpfronn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115013,Ehningen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115015,Gärtringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115016,Gäufelden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115021,Herrenberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115022,Hildrizhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115024,Holzgerlingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115028,Leonberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115029,Magstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115034,Mötzingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115037,Nufringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115041,Renningen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115042,Rutesheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115044,Schönaich,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115045,Sindelfingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115046,Steinenbronn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115048,Waldenbuch-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115050,Weil der Stadt-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115051,Weil im Schönbuch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115052,Weissach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115053,Jettingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08115054,Grafenau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116004,Altbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116005,Altdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116006,Altenriet,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116007,Baltmannsweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116008,Bempflingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116011,Beuren,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116012,Bissingen an der Teck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116014,Deizisau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116015,Denkendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116016,Dettingen unter Teck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116018,Erkenbrechtsweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116019,Esslingen am Neckar-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116020,Frickenhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116022,Großbettlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116027,Hochdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116029,Holzmaden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116033,Kirchheim unter Teck-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116035,Köngen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116036,Kohlberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116037,Lichtenwald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116041,Neckartailfingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116042,Neckartenzlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116043,Neidlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116046,Neuffen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116047,Neuhausen auf den Fildern,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116048,Notzingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116049,Nürtingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116050,Oberboihingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116053,Ohmden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116054,Owen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116056,Plochingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116058,Reichenbach an der Fils,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116063,Schlaitdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116068,Unterensingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116070,Weilheim an der Teck-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116071,Wendlingen am Neckar-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116072,Wernau (Neckar)-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116073,Wolfschlugen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116076,Aichwald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116077,Filderstadt-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116078,Leinfelden-Echterdingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116079,Lenningen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116080,Ostfildern-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08116081,Aichtal-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117001,Adelberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117002,Aichelberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117003,Albershausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117006,Bad Ditzenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117007,Bad Überkingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117009,Birenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117010,Böhmenkirch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117011,Börtlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117012,Bad Boll,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117014,Deggingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117015,Donzdorf-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117016,Drackenstein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117017,Dürnau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117018,Ebersbach an der Fils-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117019,Eislingen/Fils-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117020,Eschenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117023,Gammelshausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117024,Geislingen an der Steige-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117025,Gingen an der Fils,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117026,Göppingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117028,Gruibingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117029,Hattenhofen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117030,Heiningen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117031,Hohenstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117033,Kuchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117035,Mühlhausen im Täle,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117037,Ottenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117038,Rechberghausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117042,Salach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117043,Schlat,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117044,Schlierbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117049,Süßen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117051,Uhingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117053,Wäschenbeuren,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117055,Wangen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117058,Wiesensteig-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117060,Zell unter Aichelberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08117061,Lauterstein-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118001,Affalterbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118003,Asperg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118006,Benningen am Neckar,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118007,Besigheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118010,Bönnigheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118011,Ditzingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118012,Eberdingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118014,Erdmannhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118015,Erligheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118016,Freudental,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118018,Gemmrigheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118019,Gerlingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118021,Großbottwar-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118027,Hemmingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118028,Hessigheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118040,Kirchheim am Neckar,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118046,Kornwestheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118047,Löchgau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118048,Ludwigsburg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118049,Marbach am Neckar-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118050,Markgröningen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118051,Möglingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118053,Mundelsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118054,Murr,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118059,Oberriexingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118060,Oberstenfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118063,Pleidelsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118067,Schwieberdingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118068,Sersheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118070,Steinheim an der Murr-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118071,Tamm-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118073,Vaihingen an der Enz-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118074,Walheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118076,Sachsenheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118077,Ingersheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118078,Freiberg am Neckar-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118079,Bietigheim-Bissingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118080,Korntal-Münchingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08118081,Remseck am Neckar-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119001,Alfdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119003,Allmersbach im Tal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119004,Althütte,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119006,Auenwald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119008,Backnang-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119018,Burgstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119020,Fellbach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119024,Großerlach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119037,Kaisersbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119038,Kirchberg an der Murr,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119041,Korb,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119042,Leutenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119044,Murrhardt-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119053,Oppenweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119055,Plüderhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119061,Rudersberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119067,Schorndorf-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119068,Schwaikheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119069,Spiegelberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119075,Sulzbach an der Murr,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119076,Urbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119079,Waiblingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119083,Weissach im Tal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119084,Welzheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119085,Winnenden-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119086,Winterbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119087,Aspach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119089,Berglen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119090,Remshalden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119091,Weinstadt-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08119093,Kernen im Remstal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08121000,Heilbronn-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125001,Abstatt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125005,Bad Friedrichshall-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125006,Bad Rappenau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125007,Bad Wimpfen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125008,Beilstein-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125013,Brackenheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125017,Cleebronn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125021,Eberstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125024,Ellhofen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125026,Eppingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125027,Erlenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125030,Flein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125034,Gemmingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125038,Güglingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125039,Gundelsheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125046,Ilsfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125047,Ittlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125048,Jagsthausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125049,Kirchardt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125056,Lauffen am Neckar-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125057,Lehrensteinsfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125058,Leingarten-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125059,Löwenstein-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125061,Massenbachhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125063,Möckmühl-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125065,Neckarsulm-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125066,Neckarwestheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125068,Neudenau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125069,Neuenstadt am Kocher-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125074,Nordheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125078,Oedheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125079,Offenau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125081,Pfaffenhofen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125084,Roigheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125086,Schwaigern-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125087,Siegelsbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125094,Talheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125096,Untereisesheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125098,Untergruppenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125102,Weinsberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125103,Widdern-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125107,Wüstenrot,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125108,Zaberfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125110,Obersulm,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125111,Hardthausen am Kocher,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08125113,Langenbrettach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126011,Bretzfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126020,Dörzbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126028,Forchtenberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126039,Ingelfingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126045,Krautheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126046,Künzelsau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126047,Kupferzell,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126056,Mulfingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126058,Neuenstein-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126060,Niedernhall-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126066,Öhringen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126069,Pfedelbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126072,Schöntal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126085,Waldenburg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126086,Weißbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08126094,Zweiflingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127008,Blaufelden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127009,Braunsbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127012,Bühlertann,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127013,Bühlerzell,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127014,Crailsheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127023,Fichtenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127025,Gaildorf-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127032,Gerabronn-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127043,Ilshofen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127046,Kirchberg an der Jagst-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127047,Langenburg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127052,Mainhardt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127056,Michelbach an der Bilz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127059,Michelfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127062,Oberrot,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127063,Obersontheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127071,Rot am See,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127073,Satteldorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127075,Schrozberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127076,Schwäbisch Hall-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127079,Sulzbach-Laufen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127086,Untermünkheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127089,Vellberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127091,Wallhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127099,Wolpertshausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127100,Rosengarten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127101,Kreßberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127102,Fichtenau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127103,Frankenhardt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08127104,Stimpfach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128006,Assamstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128007,Bad Mergentheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128014,Boxberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128020,Creglingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128039,Freudenberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128045,Großrinderfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128047,Grünsfeld-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128058,Igersheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128061,Königheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128064,Külsheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128082,Niederstetten-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128115,Tauberbischofsheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128126,Weikersheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128128,Werbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128131,Wertheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128137,Wittighausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128138,Ahorn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08128139,Lauda-Königshofen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08135010,Dischingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08135015,Gerstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08135016,Giengen an der Brenz-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08135019,Heidenheim an der Brenz-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08135020,Herbrechtingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08135021,Hermaringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08135025,Königsbronn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08135026,Nattheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08135027,Niederstotzingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08135031,Sontheim an der Brenz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08135032,Steinheim am Albuch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136002,Abtsgmünd,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136003,Adelmannsfelden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136007,Bartholomä,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136009,Böbingen an der Rems,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136010,Bopfingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136015,Durlangen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136018,Ellenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136019,Ellwangen (Jagst)-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136020,Eschach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136021,Essingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136024,Göggingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136027,Gschwend,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136028,Heubach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136029,Heuchlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136033,Hüttlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136034,Iggingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136035,Jagstzell,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136037,Kirchheim am Ries,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136038,Lauchheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136040,Leinzell,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136042,Lorch-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136043,Mögglingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136044,Mutlangen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136045,Neresheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136046,Neuler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136049,Obergröningen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136050,Oberkochen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136060,Rosenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136061,Ruppertshofen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136062,Schechingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136065,Schwäbisch Gmünd-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136066,Spraitbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136068,Stödtlen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136070,Täferrot,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136071,Tannhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136075,Unterschneidheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136079,Waldstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136082,Westhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136084,Wört,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136087,Riesbürg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136088,Aalen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08136089,Rainau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08211000,Baden-Baden-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08212000,Karlsruhe-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215007,Bretten-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215009,Bruchsal-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215017,Ettlingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215021,Forst,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215025,Gondelsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215029,Hambrücken,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215039,Kronau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215040,Kürnbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215046,Malsch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215047,Marxzell,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215059,Oberderdingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215064,Östringen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215066,Philippsburg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215082,Sulzfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215084,Ubstadt-Weiher,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215089,Walzbachtal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215090,Weingarten (Baden),NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215094,Zaisenhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215096,Karlsbad,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215097,Kraichtal-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215099,Graben-Neudorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215100,Bad Schönborn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215101,Pfinztal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215102,Eggenstein-Leopoldshafen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215103,Karlsdorf-Neuthard,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215105,Linkenheim-Hochstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215106,Waghäusel-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215107,Oberhausen-Rheinhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215108,Rheinstetten-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215109,Stutensee-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215110,Waldbronn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08215111,Dettenheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216002,Gemeinde Au am Rhein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216005,Gemeinde Bietigheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216006,Gemeinde Bischweier,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216007,Stadt Bühl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216008,Gemeinde Bühlertal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216009,Gemeinde Durmersheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216012,Gemeinde Elchesheim-Illingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216013,Gemeinde Forbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216015,Stadt Gaggenau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216017,Stadt Gernsbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216022,Gemeinde Hügelsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216023,Gemeinde Iffezheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216024,Stadt Kuppenheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216028,Stadt Lichtenau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216029,Gemeinde Loffenau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216033,Gemeinde Muggensturm,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216039,Gemeinde Ötigheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216041,Gemeinde Ottersweier,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216043,Stadt Rastatt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216049,Gemeinde Sinzheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216052,Gemeinde Steinmauern,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216059,Gemeinde Weisenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08216063,Gemeinde Rheinmünster,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08221000,Heidelberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08222000,Mannheim-Universitätsstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225001,Adelsheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225002,Aglasterhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225009,Billigheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225010,Binau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225014,Buchen (Odenwald)-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225024,Fahrenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225032,Hardheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225033,Haßmersheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225039,Höpfingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225042,Hüffenhardt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225052,Limbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225058,Mosbach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225060,Mudau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225064,Neckargerach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225067,Neckarzimmern,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225068,Neunkirchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225074,Obrigheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225075,Osterburken-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225082,Rosenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225091,Seckach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225109,Walldürn-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225113,Zwingenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225114,Ravenstein-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225115,Schefflenz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225116,Schwarzach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225117,Elztal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08225118,Waldbrunn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226003,Altlußheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226006,Bammental,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226009,Brühl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226010,Dielheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226012,Dossenheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226013,Eberbach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226017,Epfenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226018,Eppelheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226020,Eschelbronn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226022,Gaiberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226027,Heddesbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226028,Heddesheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226029,Heiligkreuzsteinach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226031,Hemsbach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226032,Hockenheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226036,Ilvesheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226037,Ketsch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226038,Ladenburg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226040,Laudenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226041,Leimen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226046,Malsch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226048,Mauer,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226049,Meckesheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226054,Mühlhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226055,Neckarbischofsheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226056,Neckargemünd-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226058,Neidenstein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226059,Neulußheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226060,Nußloch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226062,Oftersheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226063,Plankstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226065,Rauenberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226066,Reichartshausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226068,Reilingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226076,Sandhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226080,Schönau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226081,Schönbrunn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226082,Schriesheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226084,Schwetzingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226085,Sinsheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226086,Spechbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226091,Waibstadt-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226095,Walldorf-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226096,Weinheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226097,Wiesenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226098,Wiesloch-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226099,Wilhelmsfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226101,Zuzenhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226102,Angelbachtal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226103,St. Leon-Rot,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226104,Lobbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226105,Edingen-Neckarhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226106,Helmstadt-Bargen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08226107,Hirschberg an der Bergstraße,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08231000,Pforzheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235006,Altensteig-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235007,Althengstett,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235008,Bad Liebenzell-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235018,Dobel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235020,Ebhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235022,Egenhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235025,Enzklösterle,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235029,Gechingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235032,Haiterbach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235033,Bad Herrenalb-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235035,Höfen an der Enz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235046,Nagold-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235047,Neubulach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235050,Neuweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235055,Oberreichenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235057,Ostelsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235060,Rohrdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235065,Schömberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235066,Simmersfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235067,Simmozheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235073,Unterreichenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235079,Bad Wildbad-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235080,Wildberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235084,Bad Teinach-Zavelstein-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08235085,Calw-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236004,Birkenfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236011,Eisingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236013,Engelsbrand,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236019,Friolzheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236025,Heimsheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236028,Illingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236030,Ispringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236031,Kieselbronn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236033,Knittlingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236038,Maulbronn-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236039,Mönsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236040,Mühlacker-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236043,Neuenbürg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236044,Neuhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236046,Niefern-Öschelbronn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236050,Ötisheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236061,Sternenfels,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236062,Tiefenbronn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236065,Wiernsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236067,Wimsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236068,Wurmberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236070,Keltern,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236071,Remchingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236072,Straubenhardt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236073,Neulingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236074,Kämpfelbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236075,Ölbronn-Dürrn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08236076,Königsbach-Stein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237002,Alpirsbach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237004,Baiersbronn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237019,Dornstetten-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237024,Empfingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237027,Eutingen im Gäu,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237028,Freudenstadt-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237030,Glatten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237032,Grömbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237040,Horb am Neckar-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237045,Loßburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237054,Pfalzgrafenweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237061,Schopfloch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237072,Wörnersberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237073,Seewald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237074,Waldachtal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08237075,Bad Rippoldsau-Schapbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08311000,Freiburg im Breisgau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315003,Au,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315004,Auggen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315006,Bad Krozingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315007,Badenweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315008,Ballrechten-Dottingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315013,Bötzingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315014,Bollschweil,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315015,Breisach am Rhein-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315016,Breitnau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315020,Buchenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315022,Buggingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315028,Ebringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315030,Eichstetten am Kaiserstuhl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315031,Eisenbach (Hochschwarzwald),NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315033,Eschbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315037,Feldberg (Schwarzwald),NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315039,Friedenweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315041,Glottertal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315043,Gottenheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315047,Gundelfingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315048,Hartheim am Rhein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315050,Heitersheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315051,Heuweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315052,Hinterzarten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315056,Horben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315059,Ihringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315064,Kirchzarten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315068,Lenzkirch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315070,Löffingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315072,Merdingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315073,Merzhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315074,Müllheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315076,Neuenburg am Rhein-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315084,Oberried,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315089,Pfaffenweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315094,St. Märgen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315095,St. Peter,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315098,Schallstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315102,Schluchsee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315107,Sölden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315108,Staufen im Breisgau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315109,Stegen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315111,Sulzburg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315113,Titisee-Neustadt-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315115,Umkirch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315125,Wittnau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315130,Münstertal/Schwarzwald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315131,Ehrenkirchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315132,March,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08315133,Vogtsburg im Kaiserstuhl-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316002,Bahlingen am Kaiserstuhl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316003,Biederbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316009,Denzlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316010,Elzach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316011,Emmendingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316012,Endingen am Kaiserstuhl-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316013,Forchheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316014,Gutach im Breisgau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316017,Herbolzheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316020,Kenzingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316024,Malterdingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316036,Reute,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316037,Riegel am Kaiserstuhl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316038,Sasbach am Kaiserstuhl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316039,Sexau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316042,Simonswald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316043,Teningen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316045,Vörstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316049,Weisweil,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316051,Wyhl am Kaiserstuhl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316053,Rheinhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316054,Freiamt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316055,Winden im Elztal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08316056,Waldkirch-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317001,Achern-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317005,Appenweier,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317008,Bad Peterstal-Griesbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317009,Berghaupten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317011,Biberach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317021,Durbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317026,Ettenheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317029,Fischerbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317031,Friesenheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317034,Gengenbach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317039,Gutach (Schwarzwaldbahn),NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317040,Haslach im Kinzigtal-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317041,Hausach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317046,Hofstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317047,Hohberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317051,Hornberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317056,Kappelrodeck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317057,Kehl-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317059,Kippenheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317065,Lahr/Schwarzwald-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317067,Lautenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317068,Lauf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317073,Mahlberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317075,Meißenheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317078,Mühlenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317085,Nordrach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317088,Oberharmersbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317089,Oberkirch-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317093,Oberwolfach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317096,Offenburg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317097,Ohlsbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317098,Oppenau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317100,Ortenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317102,Ottenhöfen im Schwarzwald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317110,Renchen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317113,Ringsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317114,Rust,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317116,Sasbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317118,Sasbachwalden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317121,Schuttertal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317122,Schutterwald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317126,Seebach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317127,Seelbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317129,Steinach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317141,Willstätt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317145,Wolfach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317146,Zell am Harmersbach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317150,Schwanau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317151,Neuried,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317152,Kappel-Grafenhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08317153,Rheinau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325001,Aichhalden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325009,Bösingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325011,Dietingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325012,Dornhan-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325014,Dunningen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325015,Epfendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325024,Hardt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325036,Lauterbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325045,Oberndorf am Neckar-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325049,Rottweil-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325050,Schenkenzell,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325051,Schiltach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325053,Schramberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325057,Sulz am Neckar-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325060,Villingendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325061,Vöhringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325064,Wellendingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325069,Zimmern ob Rottweil,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325070,Fluorn-Winzeln,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325071,Eschbronn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08325072,Deißlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326003,Bad Dürrheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326005,Blumberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326006,Bräunlingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326010,Dauchingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326012,Donaueschingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326017,Furtwangen im Schwarzwald-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326020,Gütenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326027,Hüfingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326031,Königsfeld im Schwarzwald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326037,Mönchweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326041,Niedereschach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326052,St. Georgen im Schwarzwald-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326054,Schönwald im Schwarzwald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326055,Schonach im Schwarzwald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326060,Triberg im Schwarzwald-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326061,Tuningen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326065,Unterkirnach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326068,Vöhrenbach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326074,Villingen-Schwenningen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08326075,Brigachtal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327002,Aldingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327004,Bärenthal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327005,Balgheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327006,Böttingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327007,Bubsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327008,Buchheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327009,Deilingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327010,Denkingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327011,Dürbheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327012,Durchhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327013,Egesheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327016,Fridingen an der Donau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327017,Frittlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327018,Geisingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327019,Gosheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327020,Gunningen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327023,Hausen ob Verena,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327025,Immendingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327027,Irndorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327029,Königsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327030,Kolbingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327033,Mahlstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327036,Mühlheim an der Donau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327038,Neuhausen ob Eck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327040,Reichenbach am Heuberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327041,Renquishausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327046,Spaichingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327048,Talheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327049,Trossingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327050,Tuttlingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327051,Wehingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327054,Wurmlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327055,Seitingen-Oberflacht,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327056,Rietheim-Weilheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08327057,Emmingen-Liptingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335001,Aach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335002,Allensbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335015,Büsingen am Hochrhein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335021,Eigeltingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335022,Engen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335025,Gaienhofen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335026,Gailingen am Hochrhein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335028,Gottmadingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335035,Hilzingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335043,Konstanz-Universitätsstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335055,Moos,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335057,Mühlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335061,Öhningen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335063,Radolfzell am Bodensee-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335066,Reichenau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335075,Singen (Hohentwiel)-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335077,Steißlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335079,Stockach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335080,Tengen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335081,Volkertshausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335096,Hohenfels,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335097,Mühlhausen-Ehingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335098,Bodman-Ludwigshafen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335099,Orsingen-Nenzingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08335100,Rielasingen-Worblingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336004,Aitern,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336006,Bad Bellingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336008,Binzen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336010,Böllen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336014,Efringen-Kirchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336019,Eimeldingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336024,Fischingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336025,Fröhnd,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336034,Hasel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336036,Hausen im Wiesental,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336043,Inzlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336045,Kandern-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336050,Lörrach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336057,Maulburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336069,Rheinfelden (Baden)-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336073,Rümmingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336075,Schallbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336078,Schliengen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336079,Schönau im Schwarzwald-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336080,Schönenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336081,Schopfheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336082,Schwörstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336084,Steinen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336087,Todtnau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336089,Tunau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336090,Utzenfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336091,Weil am Rhein-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336094,Wembach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336096,Wieden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336100,Wittlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336103,Zell im Wiesental-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336104,Malsburg-Marzell,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336105,Grenzach-Wyhlen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336106,Häg-Ehrsberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336107,Kleines Wiesental,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08336991,Briefwahl für mehrere Gemeinden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337002,Albbruck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337013,Bernau im Schwarzwald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337022,Bonndorf im Schwarzwald-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337027,Dachsberg (Südschwarzwald),NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337030,Dettighofen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337032,Dogern,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337038,Görwihl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337039,Grafenhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337045,Häusern,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337049,Herrischried,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337051,Höchenschwand,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337053,Hohentengen am Hochrhein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337059,Ibach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337060,Jestetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337062,Klettgau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337065,Lauchringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337066,Laufenburg (Baden)-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337070,Lottstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337076,Murg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337090,Rickenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337096,Bad Säckingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337097,St. Blasien-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337106,Stühlingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337108,Todtmoos,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337116,Wehr-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337118,Weilheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337123,Wutöschingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337124,Eggingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337125,Küssaberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337126,Waldshut-Tiengen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337127,Wutach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08337128,Ühlingen-Birkendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415014,Dettingen an der Erms,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415019,Eningen unter Achalm,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415027,Gomadingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415028,Grabenstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415029,Grafenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415034,Hayingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415039,Hülben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415048,Mehrstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415050,Metzingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415053,Münsingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415058,Pfronstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415059,Pfullingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415060,Pliezhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415061,Reutlingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415062,Riederich,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415073,Trochtelfingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415078,Bad Urach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415080,Wannweil,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415085,Zwiefalten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415087,Walddorfhäslach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415088,Römerstein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415089,Engstingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415090,Hohenstein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415091,Sonnenbühl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415092,Lichtenstein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08415093,St. Johann,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416006,Bodelshausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416009,Dettenhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416011,Dußlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416015,Gomaringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416018,Hirrlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416022,Kirchentellinsfurt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416023,Kusterdingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416025,Mössingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416026,Nehren,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416031,Ofterdingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416036,Rottenburg am Neckar-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416041,Tübingen-Universitätsstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416048,Ammerbuch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416049,Neustetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08416050,Starzach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417002,Balingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417008,Bisingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417010,Bitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417013,Burladingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417014,Dautmergen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417015,Dormettingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417016,Dotternhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417022,Geislingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417023,Grosselfingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417025,Haigerloch-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417029,Hausen am Tann,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417031,Hechingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417036,Jungingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417044,Meßstetten-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417045,Nusplingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417047,Obernheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417051,Rangendingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417052,Ratshausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417054,Rosenfeld-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417057,Schömberg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417063,Straßberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417071,Weilen unter den Rinnen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417075,Winterlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417078,Zimmern unter der Burg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08417079,Albstadt-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08421000,Ulm-Universitätsstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425002,Allmendingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425004,Altheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425005,Altheim (Alb),NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425008,Amstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425011,Asselfingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425013,Ballendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425014,Beimerstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425017,Berghülen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425019,Bernstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425020,Blaubeuren-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425022,Börslingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425024,Breitingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425028,Dietenheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425031,Dornstadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425033,Ehingen (Donau)-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425035,Emeringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425036,Emerkingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425039,Erbach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425050,Griesingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425052,Grundsheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425055,Hausen am Bussen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425062,Holzkirch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425064,Hüttisheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425066,Illerrieden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425071,Laichingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425072,Langenau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425073,Lauterach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425075,Lonsee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425079,Merklingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425081,Munderkingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425083,Neenstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425084,Nellingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425085,Nerenstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425088,Oberdischingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425090,Obermarchtal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425091,Oberstadion,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425092,Öllingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425093,Öpfingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425097,Rammingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425098,Rechtenstein,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425104,Rottenacker,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425108,Schelklingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425110,Schnürpflingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425112,Setzingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425123,Untermarchtal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425124,Unterstadion,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425125,Unterwachingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425130,Weidenstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425134,Westerheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425135,Westerstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425137,Illerkirchberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425138,Staig,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425139,Heroldstatt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425140,Balzheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425141,Blaustein-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08425991,Briefwahl für mehrere Gemeinden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426001,Achstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426005,Alleshausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426006,Allmannsweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426008,Altheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426011,Attenweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426013,Bad Buchau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426014,Bad Schussenried-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426019,Berkheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426020,Betzenweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426021,Biberach an der Riß-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426028,Burgrieden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426031,Dettingen an der Iller,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426035,Dürmentingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426036,Dürnau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426038,Eberhardzell,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426043,Erlenmoos,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426044,Erolzheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426045,Ertingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426058,Hochdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426062,Ingoldingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426064,Kanzach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426065,Kirchberg an der Iller,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426066,Kirchdorf an der Iller,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426067,Langenenslingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426070,Laupheim-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426071,Maselheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426073,Mietingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426074,Mittelbiberach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426078,Moosburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426087,Ochsenhausen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426090,Oggelshausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426097,Riedlingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426100,Rot an der Rot,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426108,Schwendi,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426109,Seekirch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426113,Steinhausen an der Rottum,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426117,Tannheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426118,Tiefenbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426120,Ummendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426121,Unlingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426124,Uttenweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426125,Wain,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426128,Warthausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426134,Schemmerhofen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08426135,Gutenzell-Hürbel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435005,Bermatingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435010,Daisendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435013,Eriskirch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435015,Frickingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435016,Friedrichshafen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435018,Hagnau am Bodensee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435020,Heiligenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435024,Immenstaad am Bodensee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435029,Kressbronn am Bodensee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435030,Langenargen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435034,Markdorf-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435035,Meckenbeuren,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435036,Meersburg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435042,Neukirch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435045,Oberteuringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435047,Owingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435052,Salem,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435053,Sipplingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435054,Stetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435057,Tettnang-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435059,Überlingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435066,Uhldingen-Mühlhofen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08435067,Deggenhausertal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436001,Achberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436003,Aichstetten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436004,Aitrach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436005,Altshausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436006,Amtzell,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436008,Aulendorf-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436009,Bad Waldsee-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436010,Bad Wurzach-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436011,Baienfurt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436012,Baindt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436013,Berg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436014,Bergatreute,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436018,Bodnegg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436019,Boms,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436024,Ebenweiler,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436027,Eichstegen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436032,Fleischwangen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436039,Grünkraut,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436040,Guggenhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436047,Hoßkirch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436049,Isny im Allgäu-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436052,Kißlegg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436053,Königseggwald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436055,Leutkirch im Allgäu-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436064,Ravensburg-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436067,Riedhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436069,Schlier,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436077,Unterwaldhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436078,Vogt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436079,Waldburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436081,Wangen im Allgäu-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436082,Weingarten-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436083,Wilhelmsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436085,Wolfegg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436087,Wolpertswende,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436093,Ebersbach-Musbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436094,Argenbühl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436095,Horgenzell,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436096,Fronreute,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08436991,Briefwahl für mehrere Gemeinden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437005,Beuron,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437008,Bingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437031,Gammertingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437044,Herbertingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437047,Hettingen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437053,Hohentengen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437056,Illmensee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437059,Inzigkofen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437065,Krauchenwies,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437072,Leibertingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437076,Mengen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437078,Meßkirch-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437082,Neufra,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437086,Ostrach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437088,Pfullendorf-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437100,Bad Saulgau-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437101,Scheer-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437102,Schwenningen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437104,Sigmaringen-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437105,Sigmaringendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437107,Stetten am kalten Markt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437114,Veringenstadt-Stadt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437118,Wald,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437123,Sauldorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+08437124,Herdwangen-Schönach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone

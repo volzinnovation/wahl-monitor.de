@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wahlergebnisse Baden-Württemberg – Live-Tracking und Detailseiten für alle Wahlkreise, Gemeinden und Wahlbezirke.">
+  <title>Straubenhardt - 2026-bw</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f0f2f5;
+      --panel: #ffffff;
+      --ink: #1a1a2e;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #003366;
+      --accent-light: #0055a4;
+      --accent-hover: #004080;
+      --success: #16a34a;
+      --warning: #d97706;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 30px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* ── Header ── */
+    .site-header {
+      background: var(--accent);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.01em;
+    }
+    .header-brand:hover { opacity: 0.9; text-decoration: none; }
+    .header-icon { font-size: 22px; }
+    .header-label {
+      font-size: 13px;
+      opacity: 0.8;
+      font-weight: 400;
+    }
+    /* ── Main ── */
+    main { max-width: 1400px; margin: 0 auto; padding: 28px 24px 64px; }
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.15s ease; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+    .topbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      align-items: center;
+    }
+    .topbar a {
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(0,51,102,0.06);
+      font-weight: 500;
+      transition: background 0.15s ease;
+    }
+    .topbar a:hover { background: rgba(0,51,102,0.12); text-decoration: none; }
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, rgba(0,51,102,0.07) 0%, rgba(255,255,255,0.95) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+    }
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 6px;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+    }
+    .hero p { margin: 0; }
+    /* ── Grid & Panels ── */
+    .grid { display: grid; gap: 20px; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s ease;
+      -webkit-overflow-scrolling: touch;
+    }
+    .panel:hover { box-shadow: var(--shadow-md); }
+    .panel h2 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 0 0 14px;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 700px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 10px;
+      vertical-align: top;
+      text-align: right;
+    }
+    th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--panel); z-index: 1; }
+    thead th {
+      background: #f8f9fb;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+    }
+    tbody tr { transition: background 0.12s ease; }
+    tbody tr:hover td { background: #f0f4ff; }
+    .party-chip { display: inline-flex; align-items: center; gap: 6px; }
+    .party-dot { width: 10px; height: 10px; border-radius: 999px; display: inline-block; border: 1px solid rgba(0,0,0,0.08); }
+    .vote-abs { font-variant-numeric: tabular-nums; font-weight: 600; }
+    .vote-rel { font-size: 11px; color: var(--muted); }
+    .muted { color: var(--muted); }
+    /* ── Stat Cards ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .stat {
+      padding: 16px 16px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .stat:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+    .stat-value {
+      font-size: 22px;
+      margin-top: 6px;
+      font-weight: 700;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+    /* ── Links & Lists ── */
+    ul.linklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+    ul.linklist li a {
+      display: block;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: #f8f9fb;
+      font-weight: 500;
+      transition: background 0.15s ease, transform 0.1s ease;
+      border: 1px solid transparent;
+    }
+    ul.linklist li a:hover {
+      background: #eef2ff;
+      border-color: rgba(0,85,164,0.15);
+      text-decoration: none;
+      transform: translateX(3px);
+    }
+    .small { font-size: 12px; color: var(--muted); }
+    details { border-top: 1px solid var(--line); padding-top: 12px; }
+    details + details { margin-top: 10px; }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 6px 0;
+      transition: color 0.15s ease;
+    }
+    summary:hover { color: var(--accent-light); }
+    /* ── Map ── */
+    .dashboard-map svg { width: 100%; height: auto; display: block; border-radius: 8px; }
+    .dashboard-map a:hover path { stroke-width: 1.6; filter: brightness(0.97); }
+    .dashboard-map path { transition: stroke-width 120ms ease, filter 120ms ease; }
+    .history-chart { width: 100%; height: auto; display: block; margin-top: 14px; }
+    .history-axis-label {
+      fill: var(--muted);
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+    }
+    .history-end-label {
+      font-size: 12px;
+      font-weight: 700;
+      paint-order: stroke;
+      stroke: #fbfdff;
+      stroke-width: 4px;
+      stroke-linejoin: round;
+    }
+    .history-legend-label {
+      fill: var(--ink);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .inline-list { margin: 0; padding-left: 18px; }
+    .inline-list li { margin-bottom: 4px; }
+    .compact td, .compact th { padding: 8px 7px; }
+    /* ── Footer ── */
+    .site-footer {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+    }
+    .footer-inner {
+      border-top: 2px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 32px;
+    }
+    .footer-inner strong {
+      color: var(--ink);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .footer-inner p {
+      margin: 4px 0 0;
+      line-height: 1.5;
+    }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { font-weight: 500; }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      main { padding: 20px 16px 48px; }
+      .hero { padding: 20px; }
+      .hero h1 { font-size: 22px; }
+      .site-footer { padding: 0 16px 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+      .header-label { display: none; }
+      .stats { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+      .stat-value { font-size: 18px; }
+    }
+    @media (max-width: 600px) {
+      .header-inner { padding: 0 14px; height: 50px; }
+      .header-brand { font-size: 15px; }
+      main { padding: 14px 12px 40px; }
+      .hero { padding: 16px; border-radius: 10px; }
+      .hero h1 { font-size: 19px; }
+      .panel { padding: 16px; border-radius: 10px; }
+      table { min-width: auto; font-size: 12px; }
+      th, td { padding: 8px 6px; }
+      .stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .stat { padding: 12px; }
+      .stat-value { font-size: 16px; }
+      ul.linklist li a { padding: 10px 12px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'><div class='header-inner'><a href='../index.html' class='header-brand'><span class='header-icon' aria-hidden='true'>🗳️</span><span class='header-title'>wahl-monitor.de</span></a><span class='header-label'>Wahlergebnisse Baden-Württemberg</span></div></header>
+  <main><div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span><a href='../wahlkreis/44-enz.html'>Wahlkreis</a><span>/</span><a href='../../index.html'>Alle Wahlen</a></div><h1>Straubenhardt</h1><p class='muted'>Gemeindedetail mit Drill-down zu Wahlbezirken und Verweisen auf die Struktur von 2021.</p><div class='stats'><div class='stat'><div class='stat-label'>AGS</div><div class='stat-value'>08236072</div></div><div class='stat'><div class='stat-label'>Wahlkreis</div><div class='stat-value'>44</div></div><div class='stat'><div class='stat-label'>Gültige Erststimmen</div><div class='stat-value'>6,125</div></div><div class='stat'><div class='stat-label'>Gültige Zweitstimmen</div><div class='stat-value'>6,141</div></div></div></div><div class='panel'><h2>Wahlbezirke</h2><table><thead><tr><th>Wahlbezirk</th><th>Typ</th><th>Status</th><th>Gemeldete Bezirke</th><th>Gültige Zweitstimmen</th><th>Wahllokal 2021</th></tr></thead><tbody><tr><td><a href='../booth/08236072-urn-08236072-00101.html'>Straubenhardt</a></td><td>URNENWAHLBEZIRK</td><td>vollständig</td><td>1/1</td><td>603</td><td></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00201.html'>Straubenhardt</a></td><td>URNENWAHLBEZIRK</td><td>vollständig</td><td>1/1</td><td>356</td><td></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00301.html'>Straubenhardt</a></td><td>URNENWAHLBEZIRK</td><td>vollständig</td><td>1/1</td><td>551</td><td></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00401.html'>Straubenhardt</a></td><td>URNENWAHLBEZIRK</td><td>vollständig</td><td>1/1</td><td>480</td><td></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00402.html'>Straubenhardt</a></td><td>URNENWAHLBEZIRK</td><td>vollständig</td><td>1/1</td><td>433</td><td></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00501.html'>Straubenhardt</a></td><td>URNENWAHLBEZIRK</td><td>vollständig</td><td>1/1</td><td>367</td><td></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00502.html'>Straubenhardt</a></td><td>URNENWAHLBEZIRK</td><td>vollständig</td><td>1/1</td><td>446</td><td></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00601.html'>Straubenhardt</a></td><td>URNENWAHLBEZIRK</td><td>vollständig</td><td>1/1</td><td>500</td><td></td></tr><tr><td><a href='../booth/08236072-brief-08236072-90001.html'>Straubenhardt</a></td><td>BRIEFWAHLBEZIRK</td><td>vollständig</td><td>1/1</td><td>803</td><td></td></tr><tr><td><a href='../booth/08236072-brief-08236072-90002.html'>Straubenhardt</a></td><td>BRIEFWAHLBEZIRK</td><td>vollständig</td><td>1/1</td><td>678</td><td></td></tr><tr><td><a href='../booth/08236072-brief-08236072-90003.html'>Straubenhardt</a></td><td>BRIEFWAHLBEZIRK</td><td>vollständig</td><td>1/1</td><td>924</td><td></td></tr></tbody></table></div><div class='panel'><h2>Wahlbezirkstabelle: Erststimmen</h2><p class='small'>Anteile beziehen sich auf die bisher gemeldeten gültigen Stimmen des jeweiligen Gebiets.</p><table><thead><tr><th>Gebiet</th><th>Status</th><th>Gemeldete Bezirke</th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#008939'></span>GRÜNE</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#2d3c4b'></span>CDU</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#e3000f'></span>SPD</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#ffed00'></span>FDP</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00ccff'></span>AfD</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#e6007b'></span>Die Linke</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#F29204'></span>FREIE WÄHLER</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#b91023'></span>Die PARTEI</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00cdd8'></span>dieBasis</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#ffa338'></span>ÖDP</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#502379'></span>Volt</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00529c'></span>Bündnis C</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#a21749'></span>BSW</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#d4d0d3'></span>Die Gerechtigkeitspartei</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#018787'></span>Tierschutzpartei</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#646464'></span>Werteunion</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#eeeeee'></span>Anderer Kreiswahlvorschlag</span></th><th>Gültige Stimmen</th></tr></thead><tbody><tr><td><a href='../booth/08236072-urn-08236072-00101.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>137</div><div class='vote-rel'>22.76%</div></td><td><div class='vote-abs'>164</div><div class='vote-rel'>27.24%</div></td><td><div class='vote-abs'>28</div><div class='vote-rel'>4.65%</div></td><td><div class='vote-abs'>54</div><div class='vote-rel'>8.97%</div></td><td><div class='vote-abs'>187</div><div class='vote-rel'>31.06%</div></td><td><div class='vote-abs'>17</div><div class='vote-rel'>2.82%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>15</div><div class='vote-rel'>2.49%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>602</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00201.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>81</div><div class='vote-rel'>22.69%</div></td><td><div class='vote-abs'>111</div><div class='vote-rel'>31.09%</div></td><td><div class='vote-abs'>25</div><div class='vote-rel'>7.00%</div></td><td><div class='vote-abs'>26</div><div class='vote-rel'>7.28%</div></td><td><div class='vote-abs'>94</div><div class='vote-rel'>26.33%</div></td><td><div class='vote-abs'>13</div><div class='vote-rel'>3.64%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>7</div><div class='vote-rel'>1.96%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>357</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00301.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>119</div><div class='vote-rel'>21.68%</div></td><td><div class='vote-abs'>197</div><div class='vote-rel'>35.88%</div></td><td><div class='vote-abs'>31</div><div class='vote-rel'>5.65%</div></td><td><div class='vote-abs'>56</div><div class='vote-rel'>10.20%</div></td><td><div class='vote-abs'>121</div><div class='vote-rel'>22.04%</div></td><td><div class='vote-abs'>19</div><div class='vote-rel'>3.46%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>1.09%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>549</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00401.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>97</div><div class='vote-rel'>20.17%</div></td><td><div class='vote-abs'>129</div><div class='vote-rel'>26.82%</div></td><td><div class='vote-abs'>43</div><div class='vote-rel'>8.94%</div></td><td><div class='vote-abs'>50</div><div class='vote-rel'>10.40%</div></td><td><div class='vote-abs'>132</div><div class='vote-rel'>27.44%</div></td><td><div class='vote-abs'>25</div><div class='vote-rel'>5.20%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>1.04%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>481</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00402.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>89</div><div class='vote-rel'>20.75%</div></td><td><div class='vote-abs'>138</div><div class='vote-rel'>32.17%</div></td><td><div class='vote-abs'>28</div><div class='vote-rel'>6.53%</div></td><td><div class='vote-abs'>44</div><div class='vote-rel'>10.26%</div></td><td><div class='vote-abs'>108</div><div class='vote-rel'>25.17%</div></td><td><div class='vote-abs'>18</div><div class='vote-rel'>4.20%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.93%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>429</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00501.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>71</div><div class='vote-rel'>19.35%</div></td><td><div class='vote-abs'>109</div><div class='vote-rel'>29.70%</div></td><td><div class='vote-abs'>36</div><div class='vote-rel'>9.81%</div></td><td><div class='vote-abs'>24</div><div class='vote-rel'>6.54%</div></td><td><div class='vote-abs'>103</div><div class='vote-rel'>28.07%</div></td><td><div class='vote-abs'>16</div><div class='vote-rel'>4.36%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>8</div><div class='vote-rel'>2.18%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>367</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00502.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>83</div><div class='vote-rel'>18.74%</div></td><td><div class='vote-abs'>141</div><div class='vote-rel'>31.83%</div></td><td><div class='vote-abs'>43</div><div class='vote-rel'>9.71%</div></td><td><div class='vote-abs'>33</div><div class='vote-rel'>7.45%</div></td><td><div class='vote-abs'>114</div><div class='vote-rel'>25.73%</div></td><td><div class='vote-abs'>23</div><div class='vote-rel'>5.19%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>1.35%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>443</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00601.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>96</div><div class='vote-rel'>19.24%</div></td><td><div class='vote-abs'>152</div><div class='vote-rel'>30.46%</div></td><td><div class='vote-abs'>29</div><div class='vote-rel'>5.81%</div></td><td><div class='vote-abs'>31</div><div class='vote-rel'>6.21%</div></td><td><div class='vote-abs'>174</div><div class='vote-rel'>34.87%</div></td><td><div class='vote-abs'>11</div><div class='vote-rel'>2.20%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>1.20%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>499</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-brief-08236072-90001.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>179</div><div class='vote-rel'>22.38%</div></td><td><div class='vote-abs'>290</div><div class='vote-rel'>36.25%</div></td><td><div class='vote-abs'>66</div><div class='vote-rel'>8.25%</div></td><td><div class='vote-abs'>89</div><div class='vote-rel'>11.12%</div></td><td><div class='vote-abs'>117</div><div class='vote-rel'>14.62%</div></td><td><div class='vote-abs'>39</div><div class='vote-rel'>4.88%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>20</div><div class='vote-rel'>2.50%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>800</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-brief-08236072-90002.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>172</div><div class='vote-rel'>25.41%</div></td><td><div class='vote-abs'>203</div><div class='vote-rel'>29.99%</div></td><td><div class='vote-abs'>60</div><div class='vote-rel'>8.86%</div></td><td><div class='vote-abs'>107</div><div class='vote-rel'>15.81%</div></td><td><div class='vote-abs'>74</div><div class='vote-rel'>10.93%</div></td><td><div class='vote-abs'>36</div><div class='vote-rel'>5.32%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>25</div><div class='vote-rel'>3.69%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>677</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-brief-08236072-90003.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>225</div><div class='vote-rel'>24.43%</div></td><td><div class='vote-abs'>294</div><div class='vote-rel'>31.92%</div></td><td><div class='vote-abs'>74</div><div class='vote-rel'>8.03%</div></td><td><div class='vote-abs'>121</div><div class='vote-rel'>13.14%</div></td><td><div class='vote-abs'>129</div><div class='vote-rel'>14.01%</div></td><td><div class='vote-abs'>56</div><div class='vote-rel'>6.08%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>22</div><div class='vote-rel'>2.39%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>921</div><div class='vote-rel'>100.00%</div></td></tr></tbody><tfoot><tr><td><strong>Gesamt</strong></td><td><strong>vollständig</strong></td><td><strong>11/11</strong></td><td><strong><div class='vote-abs'>1,349</div><div class='vote-rel'>22.02%</div></strong></td><td><strong><div class='vote-abs'>1,928</div><div class='vote-rel'>31.48%</div></strong></td><td><strong><div class='vote-abs'>463</div><div class='vote-rel'>7.56%</div></strong></td><td><strong><div class='vote-abs'>635</div><div class='vote-rel'>10.37%</div></strong></td><td><strong><div class='vote-abs'>1,353</div><div class='vote-rel'>22.09%</div></strong></td><td><strong><div class='vote-abs'>273</div><div class='vote-rel'>4.46%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>124</div><div class='vote-rel'>2.02%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>6,125</div><div class='vote-rel'>100.00%</div></strong></td></tr></tfoot></table></div><div class='panel'><h2>Wahlbezirkstabelle: Zweitstimmen</h2><p class='small'>Anteile beziehen sich auf die bisher gemeldeten gültigen Stimmen des jeweiligen Gebiets.</p><table><thead><tr><th>Gebiet</th><th>Status</th><th>Gemeldete Bezirke</th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#008939'></span>GRÜNE</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#2d3c4b'></span>CDU</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#e3000f'></span>SPD</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#ffed00'></span>FDP</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00ccff'></span>AfD</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#e6007b'></span>Die Linke</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#F29204'></span>FREIE WÄHLER</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#b91023'></span>Die PARTEI</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00cdd8'></span>dieBasis</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#e1ede0'></span>KlimalisteBW</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#ffa338'></span>ÖDP</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#502379'></span>Volt</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00529c'></span>Bündnis C</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#ededed'></span>PDH</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#b5b2b4'></span>Verjüngungsforschung</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#a21749'></span>BSW</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#d4d0d3'></span>Die Gerechtigkeitspartei</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#7e68b0'></span>PDR</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#FFB27F'></span>PdF</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#018787'></span>Tierschutzpartei</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#646464'></span>Werteunion</span></th><th>Gültige Stimmen</th></tr></thead><tbody><tr><td><a href='../booth/08236072-urn-08236072-00101.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>142</div><div class='vote-rel'>23.55%</div></td><td><div class='vote-abs'>155</div><div class='vote-rel'>25.70%</div></td><td><div class='vote-abs'>21</div><div class='vote-rel'>3.48%</div></td><td><div class='vote-abs'>21</div><div class='vote-rel'>3.48%</div></td><td><div class='vote-abs'>183</div><div class='vote-rel'>30.35%</div></td><td><div class='vote-abs'>18</div><div class='vote-rel'>2.99%</div></td><td><div class='vote-abs'>20</div><div class='vote-rel'>3.32%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.50%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.66%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.50%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.50%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>0.83%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.17%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>1.00%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.17%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.33%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>8</div><div class='vote-rel'>1.33%</div></td><td><div class='vote-abs'>7</div><div class='vote-rel'>1.16%</div></td><td><div class='vote-abs'>603</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00201.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>101</div><div class='vote-rel'>28.37%</div></td><td><div class='vote-abs'>85</div><div class='vote-rel'>23.88%</div></td><td><div class='vote-abs'>18</div><div class='vote-rel'>5.06%</div></td><td><div class='vote-abs'>19</div><div class='vote-rel'>5.34%</div></td><td><div class='vote-abs'>90</div><div class='vote-rel'>25.28%</div></td><td><div class='vote-abs'>14</div><div class='vote-rel'>3.93%</div></td><td><div class='vote-abs'>8</div><div class='vote-rel'>2.25%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.28%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.28%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.28%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.84%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.56%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>8</div><div class='vote-rel'>2.25%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>1.12%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.28%</div></td><td><div class='vote-abs'>356</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00301.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>161</div><div class='vote-rel'>29.22%</div></td><td><div class='vote-abs'>165</div><div class='vote-rel'>29.95%</div></td><td><div class='vote-abs'>18</div><div class='vote-rel'>3.27%</div></td><td><div class='vote-abs'>36</div><div class='vote-rel'>6.53%</div></td><td><div class='vote-abs'>113</div><div class='vote-rel'>20.51%</div></td><td><div class='vote-abs'>13</div><div class='vote-rel'>2.36%</div></td><td><div class='vote-abs'>11</div><div class='vote-rel'>2.00%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.36%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.36%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.18%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.36%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>15</div><div class='vote-rel'>2.72%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.18%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>8</div><div class='vote-rel'>1.45%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.54%</div></td><td><div class='vote-abs'>551</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00401.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>131</div><div class='vote-rel'>27.29%</div></td><td><div class='vote-abs'>120</div><div class='vote-rel'>25.00%</div></td><td><div class='vote-abs'>37</div><div class='vote-rel'>7.71%</div></td><td><div class='vote-abs'>29</div><div class='vote-rel'>6.04%</div></td><td><div class='vote-abs'>121</div><div class='vote-rel'>25.21%</div></td><td><div class='vote-abs'>14</div><div class='vote-rel'>2.92%</div></td><td><div class='vote-abs'>10</div><div class='vote-rel'>2.08%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.21%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.42%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.21%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>1.88%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.83%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.21%</div></td><td><div class='vote-abs'>480</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00402.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>120</div><div class='vote-rel'>27.71%</div></td><td><div class='vote-abs'>123</div><div class='vote-rel'>28.41%</div></td><td><div class='vote-abs'>19</div><div class='vote-rel'>4.39%</div></td><td><div class='vote-abs'>22</div><div class='vote-rel'>5.08%</div></td><td><div class='vote-abs'>109</div><div class='vote-rel'>25.17%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>2.08%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>2.08%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.46%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.69%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.23%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.92%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.23%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.23%</div></td><td><div class='vote-abs'>7</div><div class='vote-rel'>1.62%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.69%</div></td><td><div class='vote-abs'>433</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00501.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>89</div><div class='vote-rel'>24.25%</div></td><td><div class='vote-abs'>103</div><div class='vote-rel'>28.07%</div></td><td><div class='vote-abs'>24</div><div class='vote-rel'>6.54%</div></td><td><div class='vote-abs'>17</div><div class='vote-rel'>4.63%</div></td><td><div class='vote-abs'>101</div><div class='vote-rel'>27.52%</div></td><td><div class='vote-abs'>15</div><div class='vote-rel'>4.09%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.82%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.27%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.54%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.27%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>1.36%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>1.09%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.54%</div></td><td><div class='vote-abs'>367</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00502.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>112</div><div class='vote-rel'>25.11%</div></td><td><div class='vote-abs'>119</div><div class='vote-rel'>26.68%</div></td><td><div class='vote-abs'>21</div><div class='vote-rel'>4.71%</div></td><td><div class='vote-abs'>37</div><div class='vote-rel'>8.30%</div></td><td><div class='vote-abs'>110</div><div class='vote-rel'>24.66%</div></td><td><div class='vote-abs'>16</div><div class='vote-rel'>3.59%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>1.12%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.45%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.22%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>1.12%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.45%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.22%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>2.02%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>1.12%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.22%</div></td><td><div class='vote-abs'>446</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-urn-08236072-00601.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>100</div><div class='vote-rel'>20.00%</div></td><td><div class='vote-abs'>145</div><div class='vote-rel'>29.00%</div></td><td><div class='vote-abs'>26</div><div class='vote-rel'>5.20%</div></td><td><div class='vote-abs'>23</div><div class='vote-rel'>4.60%</div></td><td><div class='vote-abs'>159</div><div class='vote-rel'>31.80%</div></td><td><div class='vote-abs'>13</div><div class='vote-rel'>2.60%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>1.20%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.20%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.20%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>1.00%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.40%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>1.80%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>1.80%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.20%</div></td><td><div class='vote-abs'>500</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-brief-08236072-90001.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>212</div><div class='vote-rel'>26.40%</div></td><td><div class='vote-abs'>277</div><div class='vote-rel'>34.50%</div></td><td><div class='vote-abs'>60</div><div class='vote-rel'>7.47%</div></td><td><div class='vote-abs'>52</div><div class='vote-rel'>6.48%</div></td><td><div class='vote-abs'>114</div><div class='vote-rel'>14.20%</div></td><td><div class='vote-abs'>35</div><div class='vote-rel'>4.36%</div></td><td><div class='vote-abs'>20</div><div class='vote-rel'>2.49%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.12%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.12%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.25%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>1.12%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.12%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.50%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.25%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>12</div><div class='vote-rel'>1.49%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.12%</div></td><td><div class='vote-abs'>803</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-brief-08236072-90002.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>228</div><div class='vote-rel'>33.63%</div></td><td><div class='vote-abs'>198</div><div class='vote-rel'>29.20%</div></td><td><div class='vote-abs'>48</div><div class='vote-rel'>7.08%</div></td><td><div class='vote-abs'>51</div><div class='vote-rel'>7.52%</div></td><td><div class='vote-abs'>75</div><div class='vote-rel'>11.06%</div></td><td><div class='vote-abs'>26</div><div class='vote-rel'>3.83%</div></td><td><div class='vote-abs'>15</div><div class='vote-rel'>2.21%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.29%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.29%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.44%</div></td><td><div class='vote-abs'>7</div><div class='vote-rel'>1.03%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.15%</div></td><td><div class='vote-abs'>8</div><div class='vote-rel'>1.18%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.44%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.15%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>1.33%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.15%</div></td><td><div class='vote-abs'>678</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../booth/08236072-brief-08236072-90003.html'>Straubenhardt</a></td><td>vollständig</td><td>1/1</td><td><div class='vote-abs'>274</div><div class='vote-rel'>29.65%</div></td><td><div class='vote-abs'>290</div><div class='vote-rel'>31.39%</div></td><td><div class='vote-abs'>56</div><div class='vote-rel'>6.06%</div></td><td><div class='vote-abs'>66</div><div class='vote-rel'>7.14%</div></td><td><div class='vote-abs'>119</div><div class='vote-rel'>12.88%</div></td><td><div class='vote-abs'>45</div><div class='vote-rel'>4.87%</div></td><td><div class='vote-abs'>23</div><div class='vote-rel'>2.49%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.43%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.22%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>14</div><div class='vote-rel'>1.52%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>0.65%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>0.65%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.32%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.22%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>0.97%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>0.54%</div></td><td><div class='vote-abs'>924</div><div class='vote-rel'>100.00%</div></td></tr></tbody><tfoot><tr><td><strong>Gesamt</strong></td><td><strong>vollständig</strong></td><td><strong>11/11</strong></td><td><strong><div class='vote-abs'>1,670</div><div class='vote-rel'>27.19%</div></strong></td><td><strong><div class='vote-abs'>1,780</div><div class='vote-rel'>28.99%</div></strong></td><td><strong><div class='vote-abs'>348</div><div class='vote-rel'>5.67%</div></strong></td><td><strong><div class='vote-abs'>373</div><div class='vote-rel'>6.07%</div></strong></td><td><strong><div class='vote-abs'>1,294</div><div class='vote-rel'>21.07%</div></strong></td><td><strong><div class='vote-abs'>218</div><div class='vote-rel'>3.55%</div></strong></td><td><strong><div class='vote-abs'>130</div><div class='vote-rel'>2.12%</div></strong></td><td><strong><div class='vote-abs'>17</div><div class='vote-rel'>0.28%</div></strong></td><td><strong><div class='vote-abs'>13</div><div class='vote-rel'>0.21%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>13</div><div class='vote-rel'>0.21%</div></strong></td><td><strong><div class='vote-abs'>54</div><div class='vote-rel'>0.88%</div></strong></td><td><strong><div class='vote-abs'>22</div><div class='vote-rel'>0.36%</div></strong></td><td><strong><div class='vote-abs'>2</div><div class='vote-rel'>0.03%</div></strong></td><td><strong><div class='vote-abs'>2</div><div class='vote-rel'>0.03%</div></strong></td><td><strong><div class='vote-abs'>83</div><div class='vote-rel'>1.35%</div></strong></td><td><strong><div class='vote-abs'>1</div><div class='vote-rel'>0.02%</div></strong></td><td><strong><div class='vote-abs'>12</div><div class='vote-rel'>0.20%</div></strong></td><td><strong><div class='vote-abs'>4</div><div class='vote-rel'>0.07%</div></strong></td><td><strong><div class='vote-abs'>79</div><div class='vote-rel'>1.29%</div></strong></td><td><strong><div class='vote-abs'>26</div><div class='vote-rel'>0.42%</div></strong></td><td><strong><div class='vote-abs'>6,141</div><div class='vote-rel'>100.00%</div></strong></td></tr></tfoot></table></div></main>
+  <footer class='site-footer'><div class='footer-inner'><div class='footer-grid'><div><strong>wahl-monitor.de</strong><p>Unabhängiges Open-Source-Projekt zur transparenten Darstellung von Wahlergebnissen.</p></div><div><strong>Impressum</strong><p>Open Source &amp; Open Data</p><p class='footer-links'><a href='https://github.com/volzinnovation/wahl-monitor.de'>GitHub</a></p></div></div></div></footer>
+</body>
+</html>

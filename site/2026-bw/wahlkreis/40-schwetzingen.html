@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wahlergebnisse Baden-Württemberg – Live-Tracking und Detailseiten für alle Wahlkreise, Gemeinden und Wahlbezirke.">
+  <title>Schwetzingen - 2026-bw</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f0f2f5;
+      --panel: #ffffff;
+      --ink: #1a1a2e;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #003366;
+      --accent-light: #0055a4;
+      --accent-hover: #004080;
+      --success: #16a34a;
+      --warning: #d97706;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 30px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* ── Header ── */
+    .site-header {
+      background: var(--accent);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.01em;
+    }
+    .header-brand:hover { opacity: 0.9; text-decoration: none; }
+    .header-icon { font-size: 22px; }
+    .header-label {
+      font-size: 13px;
+      opacity: 0.8;
+      font-weight: 400;
+    }
+    /* ── Main ── */
+    main { max-width: 1400px; margin: 0 auto; padding: 28px 24px 64px; }
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.15s ease; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+    .topbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      align-items: center;
+    }
+    .topbar a {
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(0,51,102,0.06);
+      font-weight: 500;
+      transition: background 0.15s ease;
+    }
+    .topbar a:hover { background: rgba(0,51,102,0.12); text-decoration: none; }
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, rgba(0,51,102,0.07) 0%, rgba(255,255,255,0.95) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+    }
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 6px;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+    }
+    .hero p { margin: 0; }
+    /* ── Grid & Panels ── */
+    .grid { display: grid; gap: 20px; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s ease;
+      -webkit-overflow-scrolling: touch;
+    }
+    .panel:hover { box-shadow: var(--shadow-md); }
+    .panel h2 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 0 0 14px;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 700px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 10px;
+      vertical-align: top;
+      text-align: right;
+    }
+    th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--panel); z-index: 1; }
+    thead th {
+      background: #f8f9fb;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+    }
+    tbody tr { transition: background 0.12s ease; }
+    tbody tr:hover td { background: #f0f4ff; }
+    .party-chip { display: inline-flex; align-items: center; gap: 6px; }
+    .party-dot { width: 10px; height: 10px; border-radius: 999px; display: inline-block; border: 1px solid rgba(0,0,0,0.08); }
+    .vote-abs { font-variant-numeric: tabular-nums; font-weight: 600; }
+    .vote-rel { font-size: 11px; color: var(--muted); }
+    .muted { color: var(--muted); }
+    /* ── Stat Cards ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .stat {
+      padding: 16px 16px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .stat:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+    .stat-value {
+      font-size: 22px;
+      margin-top: 6px;
+      font-weight: 700;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+    /* ── Links & Lists ── */
+    ul.linklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+    ul.linklist li a {
+      display: block;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: #f8f9fb;
+      font-weight: 500;
+      transition: background 0.15s ease, transform 0.1s ease;
+      border: 1px solid transparent;
+    }
+    ul.linklist li a:hover {
+      background: #eef2ff;
+      border-color: rgba(0,85,164,0.15);
+      text-decoration: none;
+      transform: translateX(3px);
+    }
+    .small { font-size: 12px; color: var(--muted); }
+    details { border-top: 1px solid var(--line); padding-top: 12px; }
+    details + details { margin-top: 10px; }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 6px 0;
+      transition: color 0.15s ease;
+    }
+    summary:hover { color: var(--accent-light); }
+    /* ── Map ── */
+    .dashboard-map svg { width: 100%; height: auto; display: block; border-radius: 8px; }
+    .dashboard-map a:hover path { stroke-width: 1.6; filter: brightness(0.97); }
+    .dashboard-map path { transition: stroke-width 120ms ease, filter 120ms ease; }
+    .history-chart { width: 100%; height: auto; display: block; margin-top: 14px; }
+    .history-axis-label {
+      fill: var(--muted);
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+    }
+    .history-end-label {
+      font-size: 12px;
+      font-weight: 700;
+      paint-order: stroke;
+      stroke: #fbfdff;
+      stroke-width: 4px;
+      stroke-linejoin: round;
+    }
+    .history-legend-label {
+      fill: var(--ink);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .inline-list { margin: 0; padding-left: 18px; }
+    .inline-list li { margin-bottom: 4px; }
+    .compact td, .compact th { padding: 8px 7px; }
+    /* ── Footer ── */
+    .site-footer {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+    }
+    .footer-inner {
+      border-top: 2px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 32px;
+    }
+    .footer-inner strong {
+      color: var(--ink);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .footer-inner p {
+      margin: 4px 0 0;
+      line-height: 1.5;
+    }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { font-weight: 500; }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      main { padding: 20px 16px 48px; }
+      .hero { padding: 20px; }
+      .hero h1 { font-size: 22px; }
+      .site-footer { padding: 0 16px 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+      .header-label { display: none; }
+      .stats { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+      .stat-value { font-size: 18px; }
+    }
+    @media (max-width: 600px) {
+      .header-inner { padding: 0 14px; height: 50px; }
+      .header-brand { font-size: 15px; }
+      main { padding: 14px 12px 40px; }
+      .hero { padding: 16px; border-radius: 10px; }
+      .hero h1 { font-size: 19px; }
+      .panel { padding: 16px; border-radius: 10px; }
+      table { min-width: auto; font-size: 12px; }
+      th, td { padding: 8px 6px; }
+      .stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .stat { padding: 12px; }
+      .stat-value { font-size: 16px; }
+      ul.linklist li a { padding: 10px 12px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class='site-header'><div class='header-inner'><a href='../index.html' class='header-brand'><span class='header-icon' aria-hidden='true'>🗳️</span><span class='header-title'>wahl-monitor.de</span></a><span class='header-label'>Wahlergebnisse Baden-Württemberg</span></div></header>
+  <main><div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span><a href='../../index.html'>Alle Wahlen</a></div><h1>40 - Schwetzingen</h1><p class='muted'>Gemeinden als Zeilen, Parteien als Spalten. Jede Zelle zeigt absolute Stimmen und den Zeilenanteil.</p></div><div class='panel'><h2>Erststimmen</h2><p class='small'>Anteile beziehen sich auf die bisher gemeldeten gültigen Stimmen des jeweiligen Gebiets.</p><table><thead><tr><th>Gebiet</th><th>Status</th><th>Gemeldete Bezirke</th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#008939'></span>GRÜNE</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#2d3c4b'></span>CDU</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#e3000f'></span>SPD</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#ffed00'></span>FDP</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00ccff'></span>AfD</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#e6007b'></span>Die Linke</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#F29204'></span>FREIE WÄHLER</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#b91023'></span>Die PARTEI</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00cdd8'></span>dieBasis</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#ffa338'></span>ÖDP</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#502379'></span>Volt</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00529c'></span>Bündnis C</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#a21749'></span>BSW</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#d4d0d3'></span>Die Gerechtigkeitspartei</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#018787'></span>Tierschutzpartei</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#646464'></span>Werteunion</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#eeeeee'></span>Anderer Kreiswahlvorschlag</span></th><th>Gültige Stimmen</th></tr></thead><tbody><tr><td><a href='../municipality/08226003-altluheim.html'>Altlußheim</a></td><td>vollständig</td><td>9/9</td><td><div class='vote-abs'>652</div><div class='vote-rel'>22.31%</div></td><td><div class='vote-abs'>1,110</div><div class='vote-rel'>37.97%</div></td><td><div class='vote-abs'>265</div><div class='vote-rel'>9.07%</div></td><td><div class='vote-abs'>78</div><div class='vote-rel'>2.67%</div></td><td><div class='vote-abs'>625</div><div class='vote-rel'>21.38%</div></td><td><div class='vote-abs'>119</div><div class='vote-rel'>4.07%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>58</div><div class='vote-rel'>1.98%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>16</div><div class='vote-rel'>0.55%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>2,923</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226009-bruhl.html'>Brühl</a></td><td>vollständig</td><td>12/12</td><td><div class='vote-abs'>1,636</div><div class='vote-rel'>22.65%</div></td><td><div class='vote-abs'>2,428</div><div class='vote-rel'>33.61%</div></td><td><div class='vote-abs'>770</div><div class='vote-rel'>10.66%</div></td><td><div class='vote-abs'>291</div><div class='vote-rel'>4.03%</div></td><td><div class='vote-abs'>1,622</div><div class='vote-rel'>22.46%</div></td><td><div class='vote-abs'>312</div><div class='vote-rel'>4.32%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>120</div><div class='vote-rel'>1.66%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>44</div><div class='vote-rel'>0.61%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>7,223</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226018-eppelheim-stadt.html'>Eppelheim, Stadt</a></td><td>vollständig</td><td>12/12</td><td><div class='vote-abs'>2,244</div><div class='vote-rel'>33.32%</div></td><td><div class='vote-abs'>1,837</div><div class='vote-rel'>27.28%</div></td><td><div class='vote-abs'>744</div><div class='vote-rel'>11.05%</div></td><td><div class='vote-abs'>216</div><div class='vote-rel'>3.21%</div></td><td><div class='vote-abs'>944</div><div class='vote-rel'>14.02%</div></td><td><div class='vote-abs'>559</div><div class='vote-rel'>8.30%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>157</div><div class='vote-rel'>2.33%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>34</div><div class='vote-rel'>0.50%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>6,735</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226032-hockenheim-stadt.html'>Hockenheim, Stadt</a></td><td>vollständig</td><td>16/16</td><td><div class='vote-abs'>2,038</div><div class='vote-rel'>21.71%</div></td><td><div class='vote-abs'>3,427</div><div class='vote-rel'>36.50%</div></td><td><div class='vote-abs'>903</div><div class='vote-rel'>9.62%</div></td><td><div class='vote-abs'>311</div><div class='vote-rel'>3.31%</div></td><td><div class='vote-abs'>1,946</div><div class='vote-rel'>20.73%</div></td><td><div class='vote-abs'>433</div><div class='vote-rel'>4.61%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>275</div><div class='vote-rel'>2.93%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>56</div><div class='vote-rel'>0.60%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>9,389</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226037-ketsch.html'>Ketsch</a></td><td>vollständig</td><td>11/11</td><td><div class='vote-abs'>1,420</div><div class='vote-rel'>21.41%</div></td><td><div class='vote-abs'>2,447</div><div class='vote-rel'>36.90%</div></td><td><div class='vote-abs'>618</div><div class='vote-rel'>9.32%</div></td><td><div class='vote-abs'>245</div><div class='vote-rel'>3.69%</div></td><td><div class='vote-abs'>1,495</div><div class='vote-rel'>22.55%</div></td><td><div class='vote-abs'>244</div><div class='vote-rel'>3.68%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>108</div><div class='vote-rel'>1.63%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>54</div><div class='vote-rel'>0.81%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>6,631</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226059-neuluheim.html'>Neulußheim</a></td><td>vollständig</td><td>9/9</td><td><div class='vote-abs'>711</div><div class='vote-rel'>20.86%</div></td><td><div class='vote-abs'>1,277</div><div class='vote-rel'>37.47%</div></td><td><div class='vote-abs'>299</div><div class='vote-rel'>8.77%</div></td><td><div class='vote-abs'>135</div><div class='vote-rel'>3.96%</div></td><td><div class='vote-abs'>727</div><div class='vote-rel'>21.33%</div></td><td><div class='vote-abs'>170</div><div class='vote-rel'>4.99%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>70</div><div class='vote-rel'>2.05%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>19</div><div class='vote-rel'>0.56%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>3,408</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226062-oftersheim.html'>Oftersheim</a></td><td>vollständig</td><td>13/13</td><td><div class='vote-abs'>1,712</div><div class='vote-rel'>28.19%</div></td><td><div class='vote-abs'>1,879</div><div class='vote-rel'>30.94%</div></td><td><div class='vote-abs'>581</div><div class='vote-rel'>9.57%</div></td><td><div class='vote-abs'>359</div><div class='vote-rel'>5.91%</div></td><td><div class='vote-abs'>1,113</div><div class='vote-rel'>18.33%</div></td><td><div class='vote-abs'>260</div><div class='vote-rel'>4.28%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>126</div><div class='vote-rel'>2.07%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>43</div><div class='vote-rel'>0.71%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>6,073</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226063-plankstadt.html'>Plankstadt</a></td><td>vollständig</td><td>15/15</td><td><div class='vote-abs'>1,408</div><div class='vote-rel'>25.77%</div></td><td><div class='vote-abs'>1,893</div><div class='vote-rel'>34.64%</div></td><td><div class='vote-abs'>446</div><div class='vote-rel'>8.16%</div></td><td><div class='vote-abs'>224</div><div class='vote-rel'>4.10%</div></td><td><div class='vote-abs'>991</div><div class='vote-rel'>18.14%</div></td><td><div class='vote-abs'>232</div><div class='vote-rel'>4.25%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>95</div><div class='vote-rel'>1.74%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>175</div><div class='vote-rel'>3.20%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>5,464</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226068-reilingen.html'>Reilingen</a></td><td>vollständig</td><td>10/10</td><td><div class='vote-abs'>915</div><div class='vote-rel'>22.00%</div></td><td><div class='vote-abs'>1,552</div><div class='vote-rel'>37.32%</div></td><td><div class='vote-abs'>351</div><div class='vote-rel'>8.44%</div></td><td><div class='vote-abs'>217</div><div class='vote-rel'>5.22%</div></td><td><div class='vote-abs'>872</div><div class='vote-rel'>20.97%</div></td><td><div class='vote-abs'>160</div><div class='vote-rel'>3.85%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>68</div><div class='vote-rel'>1.64%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>24</div><div class='vote-rel'>0.58%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>4,159</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226084-schwetzingen-stadt.html'>Schwetzingen, Stadt</a></td><td>vollständig</td><td>21/21</td><td><div class='vote-abs'>2,937</div><div class='vote-rel'>30.45%</div></td><td><div class='vote-abs'>3,177</div><div class='vote-rel'>32.94%</div></td><td><div class='vote-abs'>745</div><div class='vote-rel'>7.72%</div></td><td><div class='vote-abs'>379</div><div class='vote-rel'>3.93%</div></td><td><div class='vote-abs'>1,591</div><div class='vote-rel'>16.49%</div></td><td><div class='vote-abs'>535</div><div class='vote-rel'>5.55%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>219</div><div class='vote-rel'>2.27%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>63</div><div class='vote-rel'>0.65%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>9,646</div><div class='vote-rel'>100.00%</div></td></tr></tbody><tfoot><tr><td><strong>Gesamt</strong></td><td><strong>vollständig</strong></td><td><strong>128/128</strong></td><td><strong><div class='vote-abs'>15,673</div><div class='vote-rel'>25.42%</div></strong></td><td><strong><div class='vote-abs'>21,027</div><div class='vote-rel'>34.11%</div></strong></td><td><strong><div class='vote-abs'>5,722</div><div class='vote-rel'>9.28%</div></strong></td><td><strong><div class='vote-abs'>2,455</div><div class='vote-rel'>3.98%</div></strong></td><td><strong><div class='vote-abs'>11,926</div><div class='vote-rel'>19.34%</div></strong></td><td><strong><div class='vote-abs'>3,024</div><div class='vote-rel'>4.91%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>1,296</div><div class='vote-rel'>2.10%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>528</div><div class='vote-rel'>0.86%</div></strong></td><td><strong><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></strong></td><td><strong><div class='vote-abs'>61,651</div><div class='vote-rel'>100.00%</div></strong></td></tr></tfoot></table></div><div class='panel'><h2>Zweitstimmen</h2><p class='small'>Anteile beziehen sich auf die bisher gemeldeten gültigen Stimmen des jeweiligen Gebiets.</p><table><thead><tr><th>Gebiet</th><th>Status</th><th>Gemeldete Bezirke</th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#008939'></span>GRÜNE</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#2d3c4b'></span>CDU</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#e3000f'></span>SPD</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#ffed00'></span>FDP</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00ccff'></span>AfD</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#e6007b'></span>Die Linke</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#F29204'></span>FREIE WÄHLER</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#b91023'></span>Die PARTEI</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00cdd8'></span>dieBasis</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#e1ede0'></span>KlimalisteBW</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#ffa338'></span>ÖDP</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#502379'></span>Volt</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#00529c'></span>Bündnis C</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#ededed'></span>PDH</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#b5b2b4'></span>Verjüngungsforschung</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#a21749'></span>BSW</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#d4d0d3'></span>Die Gerechtigkeitspartei</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#7e68b0'></span>PDR</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#FFB27F'></span>PdF</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#018787'></span>Tierschutzpartei</span></th><th class='party-col'><span class='party-chip'><span class='party-dot' style='background:#646464'></span>Werteunion</span></th><th>Gültige Stimmen</th></tr></thead><tbody><tr><td><a href='../municipality/08226003-altluheim.html'>Altlußheim</a></td><td>vollständig</td><td>9/9</td><td><div class='vote-abs'>792</div><div class='vote-rel'>26.96%</div></td><td><div class='vote-abs'>809</div><div class='vote-rel'>27.54%</div></td><td><div class='vote-abs'>238</div><div class='vote-rel'>8.10%</div></td><td><div class='vote-abs'>93</div><div class='vote-rel'>3.17%</div></td><td><div class='vote-abs'>640</div><div class='vote-rel'>21.78%</div></td><td><div class='vote-abs'>86</div><div class='vote-rel'>2.93%</div></td><td><div class='vote-abs'>84</div><div class='vote-rel'>2.86%</div></td><td><div class='vote-abs'>21</div><div class='vote-rel'>0.71%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>0.17%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.10%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.14%</div></td><td><div class='vote-abs'>25</div><div class='vote-rel'>0.85%</div></td><td><div class='vote-abs'>8</div><div class='vote-rel'>0.27%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.03%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.07%</div></td><td><div class='vote-abs'>43</div><div class='vote-rel'>1.46%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.03%</div></td><td><div class='vote-abs'>12</div><div class='vote-rel'>0.41%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>63</div><div class='vote-rel'>2.14%</div></td><td><div class='vote-abs'>8</div><div class='vote-rel'>0.27%</div></td><td><div class='vote-abs'>2,938</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226009-bruhl.html'>Brühl</a></td><td>vollständig</td><td>12/12</td><td><div class='vote-abs'>1,871</div><div class='vote-rel'>25.84%</div></td><td><div class='vote-abs'>2,057</div><div class='vote-rel'>28.41%</div></td><td><div class='vote-abs'>600</div><div class='vote-rel'>8.29%</div></td><td><div class='vote-abs'>291</div><div class='vote-rel'>4.02%</div></td><td><div class='vote-abs'>1,594</div><div class='vote-rel'>22.02%</div></td><td><div class='vote-abs'>247</div><div class='vote-rel'>3.41%</div></td><td><div class='vote-abs'>162</div><div class='vote-rel'>2.24%</div></td><td><div class='vote-abs'>40</div><div class='vote-rel'>0.55%</div></td><td><div class='vote-abs'>17</div><div class='vote-rel'>0.23%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.06%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.06%</div></td><td><div class='vote-abs'>71</div><div class='vote-rel'>0.98%</div></td><td><div class='vote-abs'>7</div><div class='vote-rel'>0.10%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.06%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>0.08%</div></td><td><div class='vote-abs'>106</div><div class='vote-rel'>1.46%</div></td><td><div class='vote-abs'>7</div><div class='vote-rel'>0.10%</div></td><td><div class='vote-abs'>20</div><div class='vote-rel'>0.28%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>0.07%</div></td><td><div class='vote-abs'>98</div><div class='vote-rel'>1.35%</div></td><td><div class='vote-abs'>29</div><div class='vote-rel'>0.40%</div></td><td><div class='vote-abs'>7,240</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226018-eppelheim-stadt.html'>Eppelheim, Stadt</a></td><td>vollständig</td><td>12/12</td><td><div class='vote-abs'>2,457</div><div class='vote-rel'>36.37%</div></td><td><div class='vote-abs'>1,549</div><div class='vote-rel'>22.93%</div></td><td><div class='vote-abs'>602</div><div class='vote-rel'>8.91%</div></td><td><div class='vote-abs'>254</div><div class='vote-rel'>3.76%</div></td><td><div class='vote-abs'>940</div><div class='vote-rel'>13.91%</div></td><td><div class='vote-abs'>488</div><div class='vote-rel'>7.22%</div></td><td><div class='vote-abs'>60</div><div class='vote-rel'>0.89%</div></td><td><div class='vote-abs'>42</div><div class='vote-rel'>0.62%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>0.13%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.04%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.04%</div></td><td><div class='vote-abs'>107</div><div class='vote-rel'>1.58%</div></td><td><div class='vote-abs'>10</div><div class='vote-rel'>0.15%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.06%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>0.07%</div></td><td><div class='vote-abs'>109</div><div class='vote-rel'>1.61%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>0.09%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>0.13%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.03%</div></td><td><div class='vote-abs'>78</div><div class='vote-rel'>1.15%</div></td><td><div class='vote-abs'>19</div><div class='vote-rel'>0.28%</div></td><td><div class='vote-abs'>6,756</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226032-hockenheim-stadt.html'>Hockenheim, Stadt</a></td><td>vollständig</td><td>16/16</td><td><div class='vote-abs'>2,544</div><div class='vote-rel'>27.04%</div></td><td><div class='vote-abs'>2,658</div><div class='vote-rel'>28.25%</div></td><td><div class='vote-abs'>669</div><div class='vote-rel'>7.11%</div></td><td><div class='vote-abs'>367</div><div class='vote-rel'>3.90%</div></td><td><div class='vote-abs'>1,937</div><div class='vote-rel'>20.59%</div></td><td><div class='vote-abs'>372</div><div class='vote-rel'>3.95%</div></td><td><div class='vote-abs'>267</div><div class='vote-rel'>2.84%</div></td><td><div class='vote-abs'>43</div><div class='vote-rel'>0.46%</div></td><td><div class='vote-abs'>24</div><div class='vote-rel'>0.26%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.04%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>0.06%</div></td><td><div class='vote-abs'>141</div><div class='vote-rel'>1.50%</div></td><td><div class='vote-abs'>11</div><div class='vote-rel'>0.12%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>0.10%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.04%</div></td><td><div class='vote-abs'>142</div><div class='vote-rel'>1.51%</div></td><td><div class='vote-abs'>15</div><div class='vote-rel'>0.16%</div></td><td><div class='vote-abs'>19</div><div class='vote-rel'>0.20%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.03%</div></td><td><div class='vote-abs'>131</div><div class='vote-rel'>1.39%</div></td><td><div class='vote-abs'>43</div><div class='vote-rel'>0.46%</div></td><td><div class='vote-abs'>9,409</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226037-ketsch.html'>Ketsch</a></td><td>vollständig</td><td>11/11</td><td><div class='vote-abs'>1,633</div><div class='vote-rel'>24.57%</div></td><td><div class='vote-abs'>2,066</div><div class='vote-rel'>31.09%</div></td><td><div class='vote-abs'>501</div><div class='vote-rel'>7.54%</div></td><td><div class='vote-abs'>243</div><div class='vote-rel'>3.66%</div></td><td><div class='vote-abs'>1,507</div><div class='vote-rel'>22.68%</div></td><td><div class='vote-abs'>206</div><div class='vote-rel'>3.10%</div></td><td><div class='vote-abs'>144</div><div class='vote-rel'>2.17%</div></td><td><div class='vote-abs'>32</div><div class='vote-rel'>0.48%</div></td><td><div class='vote-abs'>10</div><div class='vote-rel'>0.15%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.03%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>0.09%</div></td><td><div class='vote-abs'>68</div><div class='vote-rel'>1.02%</div></td><td><div class='vote-abs'>10</div><div class='vote-rel'>0.15%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.03%</div></td><td><div class='vote-abs'>72</div><div class='vote-rel'>1.08%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>0.14%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>0.14%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.06%</div></td><td><div class='vote-abs'>87</div><div class='vote-rel'>1.31%</div></td><td><div class='vote-abs'>35</div><div class='vote-rel'>0.53%</div></td><td><div class='vote-abs'>6,646</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226059-neuluheim.html'>Neulußheim</a></td><td>vollständig</td><td>9/9</td><td><div class='vote-abs'>889</div><div class='vote-rel'>25.99%</div></td><td><div class='vote-abs'>937</div><div class='vote-rel'>27.39%</div></td><td><div class='vote-abs'>260</div><div class='vote-rel'>7.60%</div></td><td><div class='vote-abs'>149</div><div class='vote-rel'>4.36%</div></td><td><div class='vote-abs'>759</div><div class='vote-rel'>22.19%</div></td><td><div class='vote-abs'>131</div><div class='vote-rel'>3.83%</div></td><td><div class='vote-abs'>95</div><div class='vote-rel'>2.78%</div></td><td><div class='vote-abs'>15</div><div class='vote-rel'>0.44%</div></td><td><div class='vote-abs'>8</div><div class='vote-rel'>0.23%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.06%</div></td><td><div class='vote-abs'>32</div><div class='vote-rel'>0.94%</div></td><td><div class='vote-abs'>12</div><div class='vote-rel'>0.35%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.06%</div></td><td><div class='vote-abs'>52</div><div class='vote-rel'>1.52%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.03%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.09%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.06%</div></td><td><div class='vote-abs'>65</div><div class='vote-rel'>1.90%</div></td><td><div class='vote-abs'>7</div><div class='vote-rel'>0.20%</div></td><td><div class='vote-abs'>3,421</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226062-oftersheim.html'>Oftersheim</a></td><td>vollständig</td><td>13/13</td><td><div class='vote-abs'>1,802</div><div class='vote-rel'>29.57%</div></td><td><div class='vote-abs'>1,583</div><div class='vote-rel'>25.98%</div></td><td><div class='vote-abs'>518</div><div class='vote-rel'>8.50%</div></td><td><div class='vote-abs'>272</div><div class='vote-rel'>4.46%</div></td><td><div class='vote-abs'>1,132</div><div class='vote-rel'>18.58%</div></td><td><div class='vote-abs'>248</div><div class='vote-rel'>4.07%</div></td><td><div class='vote-abs'>182</div><div class='vote-rel'>2.99%</div></td><td><div class='vote-abs'>29</div><div class='vote-rel'>0.48%</div></td><td><div class='vote-abs'>10</div><div class='vote-rel'>0.16%</div></td><td><div class='vote-abs'>3</div><div class='vote-rel'>0.05%</div></td><td><div class='vote-abs'>8</div><div class='vote-rel'>0.13%</div></td><td><div class='vote-abs'>72</div><div class='vote-rel'>1.18%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>0.10%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.02%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.02%</div></td><td><div class='vote-abs'>84</div><div class='vote-rel'>1.38%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>0.10%</div></td><td><div class='vote-abs'>20</div><div class='vote-rel'>0.33%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.03%</div></td><td><div class='vote-abs'>88</div><div class='vote-rel'>1.44%</div></td><td><div class='vote-abs'>27</div><div class='vote-rel'>0.44%</div></td><td><div class='vote-abs'>6,094</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226063-plankstadt.html'>Plankstadt</a></td><td>vollständig</td><td>15/15</td><td><div class='vote-abs'>1,555</div><div class='vote-rel'>28.36%</div></td><td><div class='vote-abs'>1,614</div><div class='vote-rel'>29.44%</div></td><td><div class='vote-abs'>366</div><div class='vote-rel'>6.68%</div></td><td><div class='vote-abs'>245</div><div class='vote-rel'>4.47%</div></td><td><div class='vote-abs'>985</div><div class='vote-rel'>17.96%</div></td><td><div class='vote-abs'>194</div><div class='vote-rel'>3.54%</div></td><td><div class='vote-abs'>123</div><div class='vote-rel'>2.24%</div></td><td><div class='vote-abs'>26</div><div class='vote-rel'>0.47%</div></td><td><div class='vote-abs'>7</div><div class='vote-rel'>0.13%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>0.09%</div></td><td><div class='vote-abs'>7</div><div class='vote-rel'>0.13%</div></td><td><div class='vote-abs'>56</div><div class='vote-rel'>1.02%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.04%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.04%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.02%</div></td><td><div class='vote-abs'>83</div><div class='vote-rel'>1.51%</div></td><td><div class='vote-abs'>10</div><div class='vote-rel'>0.18%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>0.11%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.07%</div></td><td><div class='vote-abs'>86</div><div class='vote-rel'>1.57%</div></td><td><div class='vote-abs'>106</div><div class='vote-rel'>1.93%</div></td><td><div class='vote-abs'>5,483</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226068-reilingen.html'>Reilingen</a></td><td>vollständig</td><td>10/10</td><td><div class='vote-abs'>1,082</div><div class='vote-rel'>25.93%</div></td><td><div class='vote-abs'>1,217</div><div class='vote-rel'>29.17%</div></td><td><div class='vote-abs'>289</div><div class='vote-rel'>6.93%</div></td><td><div class='vote-abs'>206</div><div class='vote-rel'>4.94%</div></td><td><div class='vote-abs'>884</div><div class='vote-rel'>21.19%</div></td><td><div class='vote-abs'>132</div><div class='vote-rel'>3.16%</div></td><td><div class='vote-abs'>118</div><div class='vote-rel'>2.83%</div></td><td><div class='vote-abs'>26</div><div class='vote-rel'>0.62%</div></td><td><div class='vote-abs'>15</div><div class='vote-rel'>0.36%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.10%</div></td><td><div class='vote-abs'>39</div><div class='vote-rel'>0.93%</div></td><td><div class='vote-abs'>7</div><div class='vote-rel'>0.17%</div></td><td><div class='vote-abs'>1</div><div class='vote-rel'>0.02%</div></td><td><div class='vote-abs'>5</div><div class='vote-rel'>0.12%</div></td><td><div class='vote-abs'>58</div><div class='vote-rel'>1.39%</div></td><td><div class='vote-abs'>2</div><div class='vote-rel'>0.05%</div></td><td><div class='vote-abs'>9</div><div class='vote-rel'>0.22%</div></td><td><div class='vote-abs'>0</div><div class='vote-rel'>0.00%</div></td><td><div class='vote-abs'>61</div><div class='vote-rel'>1.46%</div></td><td><div class='vote-abs'>17</div><div class='vote-rel'>0.41%</div></td><td><div class='vote-abs'>4,172</div><div class='vote-rel'>100.00%</div></td></tr><tr><td><a href='../municipality/08226084-schwetzingen-stadt.html'>Schwetzingen, Stadt</a></td><td>vollständig</td><td>21/21</td><td><div class='vote-abs'>3,138</div><div class='vote-rel'>32.41%</div></td><td><div class='vote-abs'>2,662</div><div class='vote-rel'>27.50%</div></td><td><div class='vote-abs'>675</div><div class='vote-rel'>6.97%</div></td><td><div class='vote-abs'>361</div><div class='vote-rel'>3.73%</div></td><td><div class='vote-abs'>1,613</div><div class='vote-rel'>16.66%</div></td><td><div class='vote-abs'>469</div><div class='vote-rel'>4.84%</div></td><td><div class='vote-abs'>216</div><div class='vote-rel'>2.23%</div></td><td><div class='vote-abs'>56</div><div class='vote-rel'>0.58%</div></td><td><div class='vote-abs'>16</div><div class='vote-rel'>0.17%</div></td><td><div class='vote-abs'>7</div><div class='vote-rel'>0.07%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>0.06%</div></td><td><div class='vote-abs'>124</div><div class='vote-rel'>1.28%</div></td><td><div class='vote-abs'>10</div><div class='vote-rel'>0.10%</div></td><td><div class='vote-abs'>12</div><div class='vote-rel'>0.12%</div></td><td><div class='vote-abs'>6</div><div class='vote-rel'>0.06%</div></td><td><div class='vote-abs'>131</div><div class='vote-rel'>1.35%</div></td><td><div class='vote-abs'>10</div><div class='vote-rel'>0.10%</div></td><td><div class='vote-abs'>22</div><div class='vote-rel'>0.23%</div></td><td><div class='vote-abs'>4</div><div class='vote-rel'>0.04%</div></td><td><div class='vote-abs'>115</div><div class='vote-rel'>1.19%</div></td><td><div class='vote-abs'>28</div><div class='vote-rel'>0.29%</div></td><td><div class='vote-abs'>9,681</div><div class='vote-rel'>100.00%</div></td></tr></tbody><tfoot><tr><td><strong>Gesamt</strong></td><td><strong>vollständig</strong></td><td><strong>128/128</strong></td><td><strong><div class='vote-abs'>17,763</div><div class='vote-rel'>28.72%</div></strong></td><td><strong><div class='vote-abs'>17,152</div><div class='vote-rel'>27.74%</div></strong></td><td><strong><div class='vote-abs'>4,718</div><div class='vote-rel'>7.63%</div></strong></td><td><strong><div class='vote-abs'>2,481</div><div class='vote-rel'>4.01%</div></strong></td><td><strong><div class='vote-abs'>11,991</div><div class='vote-rel'>19.39%</div></strong></td><td><strong><div class='vote-abs'>2,573</div><div class='vote-rel'>4.16%</div></strong></td><td><strong><div class='vote-abs'>1,451</div><div class='vote-rel'>2.35%</div></strong></td><td><strong><div class='vote-abs'>330</div><div class='vote-rel'>0.53%</div></strong></td><td><strong><div class='vote-abs'>121</div><div class='vote-rel'>0.20%</div></strong></td><td><strong><div class='vote-abs'>31</div><div class='vote-rel'>0.05%</div></strong></td><td><strong><div class='vote-abs'>50</div><div class='vote-rel'>0.08%</div></strong></td><td><strong><div class='vote-abs'>735</div><div class='vote-rel'>1.19%</div></strong></td><td><strong><div class='vote-abs'>83</div><div class='vote-rel'>0.13%</div></strong></td><td><strong><div class='vote-abs'>34</div><div class='vote-rel'>0.05%</div></strong></td><td><strong><div class='vote-abs'>34</div><div class='vote-rel'>0.05%</div></strong></td><td><strong><div class='vote-abs'>880</div><div class='vote-rel'>1.42%</div></strong></td><td><strong><div class='vote-abs'>67</div><div class='vote-rel'>0.11%</div></strong></td><td><strong><div class='vote-abs'>129</div><div class='vote-rel'>0.21%</div></strong></td><td><strong><div class='vote-abs'>26</div><div class='vote-rel'>0.04%</div></strong></td><td><strong><div class='vote-abs'>872</div><div class='vote-rel'>1.41%</div></strong></td><td><strong><div class='vote-abs'>319</div><div class='vote-rel'>0.52%</div></strong></td><td><strong><div class='vote-abs'>61,840</div><div class='vote-rel'>100.00%</div></strong></td></tr></tfoot></table></div></main>
+  <footer class='site-footer'><div class='footer-inner'><div class='footer-grid'><div><strong>wahl-monitor.de</strong><p>Unabhängiges Open-Source-Projekt zur transparenten Darstellung von Wahlergebnissen.</p></div><div><strong>Impressum</strong><p>Open Source &amp; Open Data</p><p class='footer-links'><a href='https://github.com/volzinnovation/wahl-monitor.de'>GitHub</a></p></div></div></div></footer>
+</body>
+</html>

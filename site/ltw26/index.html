@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="LTW26 – Statische Detailseiten für Wahlkreise, Gemeinden und Wahlbezirke der Landtagswahl Baden-Württemberg 2026."
+    />
+    <title>LTW26 Detailseiten – wahl-monitor.de</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f0f2f5;
+        --panel: #ffffff;
+        --ink: #1a1a2e;
+        --muted: #6b7280;
+        --line: #e5e7eb;
+        --accent: #003366;
+        --accent-light: #0055a4;
+        --accent-hover: #004080;
+        --radius: 12px;
+        --shadow-sm:
+          0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+        --shadow-md:
+          0 4px 14px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      .site-header {
+        background: var(--accent);
+        color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+      .header-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .header-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 17px;
+        letter-spacing: -0.01em;
+      }
+      .header-brand:hover {
+        opacity: 0.9;
+        text-decoration: none;
+      }
+      .header-icon {
+        font-size: 22px;
+      }
+      .header-label {
+        font-size: 13px;
+        opacity: 0.8;
+        font-weight: 400;
+      }
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 28px 24px 64px;
+      }
+      a {
+        color: var(--accent-light);
+        text-decoration: none;
+        transition: color 0.15s ease;
+      }
+      a:hover {
+        color: var(--accent-hover);
+        text-decoration: underline;
+      }
+      .topbar {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+        color: var(--muted);
+        font-size: 13px;
+        align-items: center;
+      }
+      .topbar a {
+        padding: 4px 10px;
+        border-radius: 6px;
+        background: rgba(0, 51, 102, 0.06);
+        font-weight: 500;
+        transition: background 0.15s ease;
+      }
+      .topbar a:hover {
+        background: rgba(0, 51, 102, 0.12);
+        text-decoration: none;
+      }
+      .hero {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 51, 102, 0.07) 0%,
+          rgba(255, 255, 255, 0.95) 100%
+        );
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px 28px 24px;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow-md);
+      }
+      .hero h1 {
+        font-size: 26px;
+        font-weight: 700;
+        margin: 0 0 6px;
+        letter-spacing: -0.02em;
+        color: var(--accent);
+      }
+      .hero p {
+        margin: 0;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: var(--shadow-sm);
+        transition: box-shadow 0.2s ease;
+      }
+      .panel:hover {
+        box-shadow: var(--shadow-md);
+      }
+      .panel h2 {
+        font-size: 17px;
+        font-weight: 600;
+        margin: 0 0 14px;
+        color: var(--accent);
+      }
+      ul.linklist {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 6px;
+      }
+      ul.linklist li a {
+        display: block;
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: #f8f9fb;
+        font-weight: 500;
+        transition:
+          background 0.15s ease,
+          transform 0.1s ease;
+        border: 1px solid transparent;
+      }
+      ul.linklist li a:hover {
+        background: #eef2ff;
+        border-color: rgba(0, 85, 164, 0.15);
+        text-decoration: none;
+        transform: translateX(3px);
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .site-footer {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 24px 40px;
+      }
+      .footer-inner {
+        border-top: 2px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+        padding-top: 24px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 32px;
+      }
+      .footer-inner strong {
+        color: var(--ink);
+        display: block;
+        margin-bottom: 4px;
+        font-size: 14px;
+      }
+      .footer-inner p {
+        margin: 4px 0 0;
+        line-height: 1.5;
+      }
+      .footer-links {
+        display: flex;
+        gap: 16px;
+      }
+      .footer-links a {
+        font-weight: 500;
+      }
+      @media (max-width: 900px) {
+        main {
+          padding: 20px 16px 48px;
+        }
+        .hero {
+          padding: 20px;
+        }
+        .hero h1 {
+          font-size: 22px;
+        }
+        .site-footer {
+          padding: 0 16px 28px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .header-label {
+          display: none;
+        }
+      }
+      @media (max-width: 600px) {
+        .header-inner {
+          padding: 0 14px;
+          height: 50px;
+        }
+        .header-brand {
+          font-size: 15px;
+        }
+        main {
+          padding: 14px 12px 40px;
+        }
+        .hero {
+          padding: 16px;
+          border-radius: 10px;
+        }
+        .hero h1 {
+          font-size: 19px;
+        }
+        .panel {
+          padding: 16px;
+          border-radius: 10px;
+        }
+        ul.linklist li a {
+          padding: 10px 12px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="../index.html" class="header-brand">
+          <span class="header-icon" aria-hidden="true">🗳️</span>
+          <span class="header-title">wahl-monitor.de</span>
+        </a>
+        <span class="header-label">Wahlergebnisse Baden-Württemberg</span>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="topbar">
+          <a href="../index.html">← Alle Wahlen</a>
+        </div>
+        <h1>LTW26 Detailseiten</h1>
+        <p class="muted">
+          Statische Drill-Down-Seiten von Wahlkreis zu Gemeinde und Wahlbezirk.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h2>Wahlkreise</h2>
+        <ul class="linklist">
+          <li><a href="wahlkreis/01-stuttgart-i.html">01 – Stuttgart I</a></li>
+          <li>
+            <a href="wahlkreis/02-stuttgart-ii.html">02 – Stuttgart II</a>
+          </li>
+          <li>
+            <a href="wahlkreis/03-stuttgart-iii.html">03 – Stuttgart III</a>
+          </li>
+          <li>
+            <a href="wahlkreis/04-stuttgart-iv.html">04 – Stuttgart IV</a>
+          </li>
+          <li><a href="wahlkreis/05-boblingen.html">05 – Böblingen</a></li>
+          <li><a href="wahlkreis/06-leonberg.html">06 – Leonberg</a></li>
+          <li><a href="wahlkreis/07-esslingen.html">07 – Esslingen</a></li>
+          <li><a href="wahlkreis/08-kirchheim.html">08 – Kirchheim</a></li>
+          <li><a href="wahlkreis/09-nurtingen.html">09 – Nürtingen</a></li>
+          <li><a href="wahlkreis/10-goppingen.html">10 – Göppingen</a></li>
+          <li><a href="wahlkreis/11-geislingen.html">11 – Geislingen</a></li>
+          <li><a href="wahlkreis/12-ludwigsburg.html">12 – Ludwigsburg</a></li>
+          <li><a href="wahlkreis/13-vaihingen.html">13 – Vaihingen</a></li>
+          <li>
+            <a href="wahlkreis/14-bietigheim-bissingen.html"
+              >14 – Bietigheim-Bissingen</a
+            >
+          </li>
+          <li><a href="wahlkreis/15-waiblingen.html">15 – Waiblingen</a></li>
+          <li><a href="wahlkreis/16-schorndorf.html">16 – Schorndorf</a></li>
+          <li><a href="wahlkreis/17-backnang.html">17 – Backnang</a></li>
+          <li><a href="wahlkreis/18-heilbronn.html">18 – Heilbronn</a></li>
+          <li><a href="wahlkreis/19-eppingen.html">19 – Eppingen</a></li>
+          <li><a href="wahlkreis/20-neckarsulm.html">20 – Neckarsulm</a></li>
+          <li><a href="wahlkreis/21-hohenlohe.html">21 – Hohenlohe</a></li>
+          <li>
+            <a href="wahlkreis/22-schwabisch-hall.html">22 – Schwäbisch Hall</a>
+          </li>
+          <li><a href="wahlkreis/23-main-tauber.html">23 – Main-Tauber</a></li>
+          <li><a href="wahlkreis/24-heidenheim.html">24 – Heidenheim</a></li>
+          <li>
+            <a href="wahlkreis/25-schwabisch-gmund.html"
+              >25 – Schwäbisch Gmünd</a
+            >
+          </li>
+          <li><a href="wahlkreis/26-aalen.html">26 – Aalen</a></li>
+          <li><a href="wahlkreis/27-karlsruhe-i.html">27 – Karlsruhe I</a></li>
+          <li>
+            <a href="wahlkreis/28-karlsruhe-ii.html">28 – Karlsruhe II</a>
+          </li>
+          <li><a href="wahlkreis/29-bruchsal.html">29 – Bruchsal</a></li>
+          <li><a href="wahlkreis/30-bretten.html">30 – Bretten</a></li>
+          <li><a href="wahlkreis/31-ettlingen.html">31 – Ettlingen</a></li>
+          <li><a href="wahlkreis/32-rastatt.html">32 – Rastatt</a></li>
+          <li><a href="wahlkreis/33-baden-baden.html">33 – Baden-Baden</a></li>
+          <li><a href="wahlkreis/34-heidelberg.html">34 – Heidelberg</a></li>
+          <li><a href="wahlkreis/35-mannheim-i.html">35 – Mannheim I</a></li>
+          <li><a href="wahlkreis/36-mannheim-ii.html">36 – Mannheim II</a></li>
+          <li><a href="wahlkreis/37-wiesloch.html">37 – Wiesloch</a></li>
+          <li>
+            <a href="wahlkreis/38-neckar-odenwald.html">38 – Neckar-Odenwald</a>
+          </li>
+          <li><a href="wahlkreis/39-weinheim.html">39 – Weinheim</a></li>
+          <li>
+            <a href="wahlkreis/40-schwetzingen.html">40 – Schwetzingen</a>
+          </li>
+          <li><a href="wahlkreis/41-sinsheim.html">41 – Sinsheim</a></li>
+          <li><a href="wahlkreis/42-pforzheim.html">42 – Pforzheim</a></li>
+          <li><a href="wahlkreis/43-calw.html">43 – Calw</a></li>
+          <li><a href="wahlkreis/44-enz.html">44 – Enz</a></li>
+          <li>
+            <a href="wahlkreis/45-freudenstadt.html">45 – Freudenstadt</a>
+          </li>
+          <li><a href="wahlkreis/46-freiburg-i.html">46 – Freiburg I</a></li>
+          <li><a href="wahlkreis/47-freiburg-ii.html">47 – Freiburg II</a></li>
+          <li><a href="wahlkreis/48-breisgau.html">48 – Breisgau</a></li>
+          <li><a href="wahlkreis/49-emmendingen.html">49 – Emmendingen</a></li>
+          <li><a href="wahlkreis/50-lahr.html">50 – Lahr</a></li>
+          <li><a href="wahlkreis/51-offenburg.html">51 – Offenburg</a></li>
+          <li><a href="wahlkreis/52-kehl.html">52 – Kehl</a></li>
+          <li><a href="wahlkreis/53-rottweil.html">53 – Rottweil</a></li>
+          <li>
+            <a href="wahlkreis/54-villingen-schwenningen.html"
+              >54 – Villingen-Schwenningen</a
+            >
+          </li>
+          <li>
+            <a href="wahlkreis/55-tuttlingen-donaueschingen.html"
+              >55 – Tuttlingen-Donaueschingen</a
+            >
+          </li>
+          <li><a href="wahlkreis/56-konstanz.html">56 – Konstanz</a></li>
+          <li><a href="wahlkreis/57-singen.html">57 – Singen</a></li>
+          <li><a href="wahlkreis/58-lorrach.html">58 – Lörrach</a></li>
+          <li><a href="wahlkreis/59-waldshut.html">59 – Waldshut</a></li>
+          <li><a href="wahlkreis/60-reutlingen.html">60 – Reutlingen</a></li>
+          <li>
+            <a href="wahlkreis/61-hechingen-munsingen.html"
+              >61 – Hechingen-Münsingen</a
+            >
+          </li>
+          <li><a href="wahlkreis/62-tubingen.html">62 – Tübingen</a></li>
+          <li><a href="wahlkreis/63-balingen.html">63 – Balingen</a></li>
+          <li><a href="wahlkreis/64-ulm.html">64 – Ulm</a></li>
+          <li><a href="wahlkreis/65-ehingen.html">65 – Ehingen</a></li>
+          <li><a href="wahlkreis/66-biberach.html">66 – Biberach</a></li>
+          <li><a href="wahlkreis/67-bodensee.html">67 – Bodensee</a></li>
+          <li><a href="wahlkreis/68-wangen.html">68 – Wangen</a></li>
+          <li><a href="wahlkreis/69-ravensburg.html">69 – Ravensburg</a></li>
+          <li><a href="wahlkreis/70-sigmaringen.html">70 – Sigmaringen</a></li>
+        </ul>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div>
+            <strong>wahl-monitor.de</strong>
+            <p>
+              Unabhängiges Open-Source-Projekt zur transparenten Darstellung von
+              Wahlergebnissen.
+            </p>
+          </div>
+          <div>
+            <strong>Impressum</strong>
+            <p>Open Source &amp; Open Data</p>
+            <p class="footer-links">
+              <a href="https://github.com/volzinnovation/wahl-monitor.de"
+                >GitHub</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

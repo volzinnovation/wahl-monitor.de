@@ -16,6 +16,8 @@ jobs:
   poll:
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    env:
+      PUSH_TOKEN: ${{ secrets.WORKFLOW_WRITE_TOKEN != '' && secrets.WORKFLOW_WRITE_TOKEN || github.token }}
 
     steps:
       - name: Checkout repository
@@ -62,6 +64,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
+          git remote set-url origin "https://x-access-token:${PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git fetch origin main
           git checkout -B main origin/main
           rm -rf data/2026-bw/latest
@@ -72,11 +75,15 @@ jobs:
           cp /tmp/poll-output/data/2026-bw/metadata/wahlkreis-status.csv data/2026-bw/metadata/
           cp /tmp/poll-output/data/2026-bw/reports/latest_events.csv data/2026-bw/reports/
           cp /tmp/poll-output/data/2026-bw/reports/latest_source_diff.csv data/2026-bw/reports/
+          python scripts/maybe_disable_poll_schedule.py \
+            --status-csv /tmp/poll-output/data/2026-bw/metadata/wahlkreis-status.csv \
+            --workflow-path .github/workflows/poll.yml
           git add data/2026-bw/latest
           git add data/2026-bw/metadata/municipalities.csv
           git add data/2026-bw/metadata/wahlkreis-status.csv
           git add data/2026-bw/reports/latest_events.csv
           git add data/2026-bw/reports/latest_source_diff.csv
+          git add .github/workflows/poll.yml
           git diff --cached --quiet && exit 0
           git commit -m "2026-bw poll $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
           git push origin HEAD:main

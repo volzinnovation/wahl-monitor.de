@@ -1,8 +1,8 @@
 {
-  "run_label": "",
-  "generated_at_utc": null,
-  "statla_mode": "UNAVAILABLE",
-  "statla_url": "",
+  "generated_at_utc": "2026-03-08T12:18:59.918473+00:00",
+  "kommone_municipalities_polled": 1104,
+  "run_label": "2026-03-08-13-18-54",
   "statla_error": null,
-  "kommone_municipalities_polled": 0
+  "statla_mode": "DUMMY",
+  "statla_url": "/Users/raphaelvolz/Github/ltw26-bw-wahlergebnis/data/ltw26/metadata/2026021_LTW26-Dummy-Datei.csv"
 }
