@@ -15,6 +15,7 @@
   "local_dummy_statla_csv_filename": "2026021_LTW26-Dummy-Datei.csv",
   "local_wahlkreise_geojson_filename": "LTWahlkreise2026-BW.geojson",
   "local_wahlkreise_mapping_csv_filename": "LTWahlkreise2026-BW-wkr_kr_gem.csv",
+  "publish_source_comparison": false,
   "request_timeout_seconds": 300,
   "max_workers": 48
 }

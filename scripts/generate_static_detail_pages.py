@@ -92,6 +92,8 @@ def parse_args() -> argparse.Namespace:
 
 
 def read_csv_rows(path: Path) -> List[Dict[str, str]]:
+    if not path.exists():
+        return []
     with path.open("r", encoding="utf-8", newline="") as handle:
         return list(csv.DictReader(handle))
 
@@ -1384,9 +1386,10 @@ def render_source_diff_summary(diff_rows: List[Dict[str, Any]]) -> str:
     )
 
 
-def statla_wahlkreis_zweit_winner_map(
+def statla_wahlkreis_winner_map(
     statla_snapshots: List[Dict[str, Any]],
     party_votes_by_row_key: Dict[str, Dict[str, Dict[str, int]]],
+    vote_type: str,
 ) -> Dict[str, Dict[str, Any]]:
     winners: Dict[str, Dict[str, Any]] = {}
     for row in statla_snapshots:
@@ -1395,17 +1398,17 @@ def statla_wahlkreis_zweit_winner_map(
         wk = core.normalize_wahlkreis_nummer(row.get("gebietsnummer") or row.get("row_key"))
         if not wk:
             continue
-        zweit_votes = party_votes_by_row_key.get(str(row.get("row_key") or ""), {}).get("Zweitstimmen", {})
-        if not zweit_votes:
+        vote_totals = party_votes_by_row_key.get(str(row.get("row_key") or ""), {}).get(vote_type, {})
+        if not vote_totals:
             continue
         winner_party, winner_votes = max(
-            zweit_votes.items(),
+            vote_totals.items(),
             key=lambda item: (int(item[1]), str(item[0])),
         )
         winners[wk] = {
             "winner_party": winner_party,
             "winner_votes": int(winner_votes or 0),
-            "winner_total_votes": sum(int(v or 0) for v in zweit_votes.values()),
+            "winner_total_votes": sum(int(v or 0) for v in vote_totals.values()),
         }
     return winners
 
@@ -1427,16 +1430,14 @@ def render_wahlkreis_overview_table(
             "<tr>"
             f"<td>{linked_label}</td>"
             f"<td>{html.escape(status_label(str(row['status'])))}</td>"
-            f"<td>{html.escape(str(row.get('winner_party') or ''))}</td>"
+            f"<td>{html.escape(str(row.get('winner_party_erst') or ''))}</td>"
+            f"<td>{html.escape(str(row.get('winner_party_zweit') or ''))}</td>"
             f"<td>{rep_total}</td>"
-            f"<td>{int(row.get('municipalities_complete') or 0)}</td>"
-            f"<td>{int(row.get('municipalities_pending') or 0)}</td>"
-            f"<td>{int(row.get('municipalities_no_data') or 0)}</td>"
             "</tr>"
         )
     return (
         "<div class='panel'><h2>Wahlkreisstatus</h2>"
-        "<table class='compact'><thead><tr><th>Wahlkreis</th><th>Status</th><th>Führend (StatLA Zweitstimmen)</th><th>Gemeldete Bezirke</th><th>Vollständig</th><th>Ausstehend</th><th>Keine Daten</th></tr></thead>"
+        "<table class='compact'><thead><tr><th>Wahlkreis</th><th>Status</th><th>Führend Erststimmen</th><th>Führend Zweitstimmen</th><th>Gemeldete Bezirke</th></tr></thead>"
         f"<tbody>{''.join(rows_html)}</tbody></table></div>"
     )
 
@@ -1618,24 +1619,16 @@ def render_index_page(
     if statla_mode == "DUMMY" and Path(statla_url).is_absolute():
         statla_url = config.statla_dummy_csv_url
 
-    status_counts = {"complete": 0, "pending": 0, "no_data": 0}
-    for snapshot in latest_kommone_snapshots:
-        status_counts[core.municipality_status(snapshot)] = status_counts.get(core.municipality_status(snapshot), 0) + 1
-
     wahlkreis_counts = {"prestart": 0, "no_data": 0, "pending": 0, "complete": 0}
     for row in wahlkreis_status_rows:
         wahlkreis_counts[str(row["status"])] = wahlkreis_counts.get(str(row["status"]), 0) + 1
 
-    vote_type_summary = core.party_summary_by_vote_type_sources(latest_kommone_party_rows, statla_party_rows)
     summary_by_vote_type: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
-    for row in vote_type_summary:
-        summary_by_vote_type[str(row["vote_type"] or "Unbekannt")].append(row)
+    if config.publish_source_comparison:
+        vote_type_summary = core.party_summary_by_vote_type_sources(latest_kommone_party_rows, statla_party_rows)
+        for row in vote_type_summary:
+            summary_by_vote_type[str(row["vote_type"] or "Unbekannt")].append(row)
 
-    party_summary, party_details = core.party_dashboard_rows(latest_kommone_snapshots, latest_kommone_party_rows)
-    pending_rows = [
-        row for row in sorted(latest_kommone_snapshots, key=lambda item: (item["municipality_name"], item["ags"]))
-        if core.municipality_status(row) != "complete"
-    ]
     features = core.load_wahlkreis_features()
     operations = [
         f"`python scripts/poll_election.py --election-key {config.election_key}`",
@@ -1660,16 +1653,18 @@ def render_index_page(
         f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk)}</div>"
         f"{render_vote_share_history_panel(config)}"
         f"{render_wahlkreis_overview_table(wahlkreis_status_rows, wahlkreis_link_by_wk)}"
-        + "".join(
+        + (
+            "".join(
             render_vote_type_summary_table(vote_type, rows)
             for vote_type, rows in sorted(
                 summary_by_vote_type.items(),
                 key=lambda item: {"Erststimmen": 0, "Zweitstimmen": 1}.get(item[0], 99),
             )
         )
-        + render_party_dashboard(party_summary, party_details, municipality_link_by_ags)
-        + render_pending_results(pending_rows, municipality_link_by_ags)
-        + render_source_diff_summary(diff_rows)
+            if config.publish_source_comparison
+            else ""
+        )
+        + (render_source_diff_summary(diff_rows) if config.publish_source_comparison else "")
         + "<div class='panel'><h2>Datenquellen</h2>"
         + "<ul class='inline-list'>"
         + "<li>`komm.one`-Gemeindeseiten in der aktuellen HTML-Struktur</li>"
@@ -1679,9 +1674,6 @@ def render_index_page(
         + "".join(f"<li>{item}</li>" for item in operations)
         + "</ul></div>"
         + "<div class='panel'><h2>Abdeckung</h2><ul class='inline-list'>"
-        + f"<li>`komm.one` vollständig: <strong>{status_counts['complete']}</strong></li>"
-        + f"<li>`komm.one` ausstehend: <strong>{status_counts['pending']}</strong></li>"
-        + f"<li>`komm.one` keine Daten: <strong>{status_counts['no_data']}</strong></li>"
         + f"<li>Wahlkreise vollständig: <strong>{wahlkreis_counts['complete']}</strong></li>"
         + f"<li>Wahlkreise ausstehend: <strong>{wahlkreis_counts['pending']}</strong></li>"
         + f"<li>Wahlkreise ohne Daten: <strong>{wahlkreis_counts['no_data']}</strong></li>"
@@ -1692,18 +1684,35 @@ def render_index_page(
 
 
 def render_site_root_index(site_root: Path, current_config: core.Config) -> None:
-    entries: List[Tuple[str, str]] = []
-    for config_path in sorted((core.ROOT / "config").glob("*.json")):
-        election_key = config_path.stem
-        election_index = site_root / election_key / "index.html"
+    entries_by_key: Dict[str, str] = {}
+    for site_dir in sorted(path for path in site_root.iterdir() if path.is_dir()):
+        election_key = site_dir.name
+        election_index = site_dir / "index.html"
         if not election_index.exists():
             continue
-        try:
-            config_data = json.loads(config_path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            continue
-        label = str(config_data.get("election_name") or election_key)
-        entries.append((election_key, label))
+
+        label = ""
+        config_path = core.ROOT / "config" / f"{election_key}.json"
+        if config_path.exists():
+            try:
+                config_data = json.loads(config_path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                config_data = {}
+            label = str(config_data.get("election_name") or "").strip()
+
+        if not label:
+            manifest_path = core.ROOT / "data" / election_key / "metadata" / "setup_manifest.json"
+            if manifest_path.exists():
+                try:
+                    manifest_data = json.loads(manifest_path.read_text(encoding="utf-8"))
+                except json.JSONDecodeError:
+                    manifest_data = {}
+                label = str(manifest_data.get("election_name") or "").strip()
+
+        if label:
+            entries_by_key[election_key] = label
+
+    entries = sorted(entries_by_key.items())
 
     if not entries:
         entries.append((current_config.election_key, current_config.election_name))
@@ -1751,7 +1760,11 @@ def main() -> int:
 
     latest_kommone_snapshots = [row for row in load_latest_kommone_snapshots() if row["ags"] in selected_ags]
     latest_kommone_party_rows = [row for row in load_latest_kommone_party_rows() if row["ags"] in selected_ags]
-    latest_source_diffs = [row for row in load_latest_source_diffs() if row["ags"] in selected_ags]
+    latest_source_diffs = (
+        [row for row in load_latest_source_diffs() if row["ags"] in selected_ags]
+        if config.publish_source_comparison
+        else []
+    )
 
     city_entities = build_city_entities(snapshots, raw_by_row_key, mapping, selected_ags)
 
@@ -1906,12 +1919,17 @@ def main() -> int:
         statla_snapshots=snapshots,
         prestart=False,
     )
-    statla_zweit_winners = statla_wahlkreis_zweit_winner_map(snapshots, party_votes)
+    statla_erst_winners = statla_wahlkreis_winner_map(snapshots, party_votes, "Erststimmen")
+    statla_zweit_winners = statla_wahlkreis_winner_map(snapshots, party_votes, "Zweitstimmen")
     for row in wahlkreis_status_rows:
         wk = str(row.get("wahlkreisnummer") or "").strip()
-        winner = statla_zweit_winners.get(wk)
-        if winner:
-            row.update(winner)
+        erst_winner = statla_erst_winners.get(wk)
+        zweit_winner = statla_zweit_winners.get(wk)
+        if erst_winner:
+            row["winner_party_erst"] = erst_winner.get("winner_party")
+        if zweit_winner:
+            row["winner_party_zweit"] = zweit_winner.get("winner_party")
+            row.update(zweit_winner)
 
     render_index_page(
         config,

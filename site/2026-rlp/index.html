@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Landtagswahl Rheinland-Pfalz 2026 – Vorbereitungsseite mit bestätigten Quellen, Strukturhinweisen und Split-Gemeinden.">
+  <title>Landtagswahl Rheinland-Pfalz 2026 (2026-rlp)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f3ef;
+      --panel: rgba(255, 255, 255, 0.92);
+      --ink: #1f1b18;
+      --muted: #6b635d;
+      --line: #dfd7cf;
+      --accent: #8d2332;
+      --accent-light: #b63549;
+      --accent-hover: #6f1c28;
+      --accent-soft: rgba(141, 35, 50, 0.08);
+      --success: #136f4b;
+      --warning: #b76e1b;
+      --radius: 14px;
+      --shadow-sm: 0 1px 2px rgba(31, 27, 24, 0.06), 0 3px 12px rgba(31, 27, 24, 0.04);
+      --shadow-md: 0 10px 30px rgba(31, 27, 24, 0.08), 0 4px 14px rgba(31, 27, 24, 0.05);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(182, 53, 73, 0.12), transparent 35%),
+        radial-gradient(circle at top right, rgba(183, 110, 27, 0.10), transparent 28%),
+        linear-gradient(180deg, #faf7f3 0%, #f1ebe3 100%);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .site-header {
+      background: linear-gradient(135deg, #5d1621 0%, #8d2332 100%);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(31, 27, 24, 0.18);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.01em;
+    }
+    .header-brand:hover { opacity: 0.92; text-decoration: none; }
+    .header-icon { font-size: 22px; }
+    .header-label {
+      font-size: 13px;
+      opacity: 0.82;
+      font-weight: 500;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 24px 64px;
+    }
+    a {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+    .topbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      align-items: center;
+    }
+    .topbar a {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(141, 35, 50, 0.12);
+      font-weight: 600;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .topbar a:hover {
+      background: rgba(255, 255, 255, 0.88);
+      border-color: rgba(141, 35, 50, 0.24);
+      text-decoration: none;
+    }
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(141, 35, 50, 0.08), rgba(255, 255, 255, 0.88)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 240, 0.95));
+      border: 1px solid rgba(141, 35, 50, 0.14);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-size: 30px;
+      font-weight: 700;
+      margin: 0 0 6px;
+      letter-spacing: -0.03em;
+      color: var(--accent);
+      max-width: 780px;
+    }
+    .hero p { margin: 0; max-width: 760px; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .stat {
+      padding: 16px 16px 14px;
+      border: 1px solid rgba(141, 35, 50, 0.1);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-sm);
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+    .stat-value {
+      font-size: 22px;
+      margin-top: 6px;
+      font-weight: 700;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 20px;
+    }
+    .stack { display: grid; gap: 20px; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .panel h2 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .panel p { margin: 0 0 10px; }
+    .small { font-size: 12px; color: var(--muted); }
+    .notice {
+      border-left: 4px solid var(--warning);
+      background: rgba(183, 110, 27, 0.08);
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin-top: 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    thead th {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      background: rgba(141, 35, 50, 0.03);
+    }
+    tbody tr:last-child td { border-bottom: 0; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .tag-ready {
+      color: var(--success);
+      background: rgba(19, 111, 75, 0.08);
+      border-color: rgba(19, 111, 75, 0.15);
+    }
+    .tag-partial {
+      color: var(--warning);
+      background: rgba(183, 110, 27, 0.08);
+      border-color: rgba(183, 110, 27, 0.15);
+    }
+    .tag-missing {
+      color: var(--accent);
+      background: rgba(141, 35, 50, 0.08);
+      border-color: rgba(141, 35, 50, 0.15);
+    }
+    ul.linklist, ul.inline-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+    ul.linklist li, ul.inline-list li { margin-bottom: 6px; }
+    .site-footer {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+    }
+    .footer-inner {
+      border-top: 2px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 32px;
+    }
+    .footer-inner strong {
+      color: var(--ink);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .footer-inner p {
+      margin: 4px 0 0;
+      line-height: 1.5;
+    }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { font-weight: 600; }
+    @media (max-width: 920px) {
+      main { padding: 20px 16px 48px; }
+      .grid { grid-template-columns: 1fr; }
+      .header-label { display: none; }
+      .site-footer { padding: 0 16px 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+    @media (max-width: 600px) {
+      .header-inner { padding: 0 14px; height: 50px; }
+      .header-brand { font-size: 15px; }
+      main { padding: 14px 12px 40px; }
+      .hero { padding: 18px 16px; }
+      .hero h1 { font-size: 22px; }
+      .panel { padding: 16px; }
+      .stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .stat { padding: 12px; }
+      .stat-value { font-size: 16px; }
+      table { font-size: 12px; }
+      th, td { padding: 8px 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-brand">
+        <span class="header-icon" aria-hidden="true">🗳️</span>
+        <span class="header-title">wahl-monitor.de</span>
+      </a>
+      <span class="header-label">Rheinland-Pfalz 2026 Vorbereitung</span>
+    </div>
+  </header>
+  <main>
+    <div class="hero">
+      <div class="topbar">
+        <a href="../index.html">Alle Wahlen</a>
+      </div>
+      <div class="eyebrow">Vorbereitungspaket</div>
+      <h1>Landtagswahl Rheinland-Pfalz 2026</h1>
+      <p>Diese Seite bündelt die bestätigten Quellen und Strukturhinweise für den Wahltag am 22. März 2026. Sie zeigt bewusst nur vorbereitete Metadaten und keinen Live-Stand.</p>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-label">Wahltag</div>
+          <div class="stat-value">22.03.2026</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Portalstart</div>
+          <div class="stat-value">ca. 18:30</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Gemeinden</div>
+          <div class="stat-value">2.283</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Split-AGS</div>
+          <div class="stat-value">5</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="stack">
+        <div class="panel">
+          <h2>Status</h2>
+          <p>Die offizielle RLP-Wahlseite bestätigt das Ergebnisportal für Land, Wahlkreise, Landkreise, Verbandsgemeinden und Ortsgemeinden. Für die zwölf kreisfreien Städte sollen zusätzlich Stadtteilergebnisse veröffentlicht werden.</p>
+          <div class="notice">
+            Noch kein Live-Dashboard: Der aktuelle Polling-Kern im Repo ist weiterhin auf das Baden-Württemberg-Modell zugeschnitten. Diese Seite ist deshalb absichtlich eine belastbare Vorbereitungsansicht.
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Strukturell Geteilte Städte</h2>
+          <p class="small">Nur diese fünf AGS tauchen im offiziellen 2021-Landesportal in mehr als einem Wahlkreis auf.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>AGS</th>
+                <th>Gemeinde</th>
+                <th>Wahlkreise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>11100000</td><td>Koblenz</td><td>108, 109</td></tr>
+              <tr><td>21100000</td><td>Trier</td><td>224, 225</td></tr>
+              <tr><td>31200000</td><td>Kaiserslautern</td><td>444, 445</td></tr>
+              <tr><td>31400000</td><td>Ludwigshafen am Rhein</td><td>336, 337</td></tr>
+              <tr><td>31500000</td><td>Mainz</td><td>327, 328, 329</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <h2>Bestätigte Stadtquellen</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Stadt</th>
+                <th>Status</th>
+                <th>Quelle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mainz</td>
+                <td><span class="tag tag-ready">bestätigt</span></td>
+                <td><a href="https://wahl.mainz.de/wahlapp/ltw2021wk27.html">wahl.mainz.de</a></td>
+              </tr>
+              <tr>
+                <td>Trier</td>
+                <td><span class="tag tag-ready">bestätigt</span></td>
+                <td><a href="https://www.trier.de/systemstatic/Wahlen/ltw2021/ltw2021zweit.html">systemstatic/Wahlen/ltw2021</a></td>
+              </tr>
+              <tr>
+                <td>Kaiserslautern</td>
+                <td><span class="tag tag-ready">bestätigt</span></td>
+                <td><a href="https://wahlen.kaiserslautern.de/ltw202144_app.html">wahlen.kaiserslautern.de</a></td>
+              </tr>
+              <tr>
+                <td>Worms</td>
+                <td><span class="tag tag-ready">bestätigt</span></td>
+                <td><a href="https://wahlen.worms.de/webapp/ltw2021.html">wahlen.worms.de</a></td>
+              </tr>
+              <tr>
+                <td>Speyer</td>
+                <td><span class="tag tag-ready">bestätigt</span></td>
+                <td><a href="http://chamaeleon-hosting.de/sv_speyer/wahlen/app/ltw2021.html">chamaeleon-hosting.de</a></td>
+              </tr>
+              <tr>
+                <td>Koblenz</td>
+                <td><span class="tag tag-partial">teilweise</span></td>
+                <td><a href="https://wahlen.koblenz.de/wahlpraesentation/landtagswahlen/">Archiv- und PDF-Seite</a></td>
+              </tr>
+              <tr>
+                <td>Ludwigshafen</td>
+                <td><span class="tag tag-missing">offen</span></td>
+                <td>kein separates 2021-Portal in diesem Durchlauf bestätigt</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="panel">
+          <h2>Offizielle Quellen</h2>
+          <ul class="linklist">
+            <li><a href="https://landtag-rlp.de/de/wahl-2026.htm">Landtag Rheinland-Pfalz: Wahl 2026</a></li>
+            <li><a href="https://www.wahlen.rlp.de/landtagswahl/ergebnisse">Landeswahlleiter: Ergebnisse</a></li>
+            <li><a href="https://wahlen.rlp-ltw-2021.23degrees.eu/wk/0000000000000/overview">Offizielles 2021-Ergebnisportal</a></li>
+            <li><a href="https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Shapefiles/Geodaten_LW2026_RP.zip">Geodaten Landtagswahl 2026</a></li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h2>Was Vorbereitet Ist</h2>
+          <ul class="inline-list">
+            <li>Gemeindeverzeichnis aus dem offiziellen 2021-Landesportal abgeleitet</li>
+            <li>Split-Gemeinden für Wahlkreis- und Stadtteilüberschneidungen markiert</li>
+            <li>Sekundärquellen pro Stadt vorab recherchiert</li>
+            <li>Offizielle 2026-Geodatenquelle identifiziert</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h2>Nächste Technische Schritte</h2>
+          <ul class="inline-list">
+            <li>RLP-spezifisches Live-Quellmodell in den Poller integrieren</li>
+            <li>23degrees-Struktur für 2026 nach Portalstart gegen die Prognose prüfen</li>
+            <li>Stadtteil- und Split-Stadt-Fallbacks nur für die fünf kritischen AGS aktivieren</li>
+            <li>Danach erst das echte Drill-down unter `site/2026-rlp/` generieren</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h2>Hinweis</h2>
+          <p class="small">Diese Seite ist absichtlich klein gehalten: sie soll auf GitHub Pages sofort funktionieren und klar zeigen, welche Teile schon belastbar vorbereitet sind.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <strong>wahl-monitor.de</strong>
+          <p>Unabhängiges Open-Source-Projekt zur transparenten Darstellung von Wahlergebnissen und belastbarer Vorbereitung vor dem Wahltag.</p>
+        </div>
+        <div>
+          <strong>Links</strong>
+          <p class="footer-links"><a href="https://github.com/volzinnovation/wahl-monitor.de">GitHub</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -72,7 +72,11 @@ def main() -> None:
 
     kommone_snapshots = load_latest_kommone_snapshots()
     kommone_party_rows = load_latest_kommone_party_rows()
-    diff_rows = core.compute_source_diffs(0, kommone_snapshots, statla["snapshots"])
+    diff_rows = (
+        core.compute_source_diffs(0, kommone_snapshots, statla["snapshots"])
+        if config.publish_source_comparison
+        else []
+    )
     events_rows = core.read_csv_rows_from_file(core.REPORT_DIR / "latest_events.csv", delimiter=",")
     label_file, _label_human = core.time_labels(config.timezone)
 

@@ -160,6 +160,7 @@ class Config:
     local_dummy_statla_csv_filename: str
     local_wahlkreise_geojson_filename: str
     local_wahlkreise_mapping_csv_filename: str
+    publish_source_comparison: bool
     request_timeout_seconds: int
     max_workers: int
 
@@ -265,6 +266,13 @@ def ensure_directories() -> None:
         directory.mkdir(parents=True, exist_ok=True)
 
 
+def unlink_if_exists(path: Path) -> None:
+    try:
+        path.unlink()
+    except FileNotFoundError:
+        return
+
+
 def load_config() -> Config:
     data = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     dummy_filename = data.get("local_dummy_statla_csv_filename")
@@ -288,6 +296,7 @@ def load_config() -> Config:
         local_dummy_statla_csv_filename=dummy_filename,
         local_wahlkreise_geojson_filename=data.get("local_wahlkreise_geojson_filename", "wahlkreise.geojson"),
         local_wahlkreise_mapping_csv_filename=data.get("local_wahlkreise_mapping_csv_filename", "wahlkreis-mapping.csv"),
+        publish_source_comparison=bool(data.get("publish_source_comparison", True)),
         request_timeout_seconds=int(data.get("request_timeout_seconds", 4)),
         max_workers=int(data.get("max_workers", 48)),
     )
@@ -3294,19 +3303,6 @@ def generate_readme(
     status_counts["no_data"] += len(missing_ags)
 
     party_summary, party_details = party_dashboard_rows(kommone_snapshots, party_rows)
-    vote_type_summary = party_summary_by_vote_type_sources(
-        kommone_party_rows=party_rows,
-        statla_party_rows=statla_party_rows,
-    )
-
-    statla_diff_summary: Dict[str, Dict[str, float]] = {}
-    for row in diff_rows:
-        metric = row["metric"]
-        bucket = statla_diff_summary.setdefault(metric, {"count_with_delta": 0, "abs_delta_sum": 0.0})
-        if isinstance(row.get("delta"), (int, float)):
-            bucket["count_with_delta"] += 1
-            bucket["abs_delta_sum"] += abs(float(row["delta"]))
-
     pending_rows_all = sorted(
         kommone_snapshots,
         key=lambda item: (
@@ -3380,7 +3376,12 @@ def generate_readme(
     lines.append(f"- Geometry source ZIP: `{config.wahlkreise_geojson_zip_url}`")
     lines.append(f"- SHP source ZIP: `{config.wahlkreise_shp_zip_url}`")
     lines.append("")
-    append_party_totals_tables(lines, vote_type_summary)
+    if config.publish_source_comparison:
+        vote_type_summary = party_summary_by_vote_type_sources(
+            kommone_party_rows=party_rows,
+            statla_party_rows=statla_party_rows,
+        )
+        append_party_totals_tables(lines, vote_type_summary)
     lines.append("## Party Dashboard (Municipality Drill-Down)")
     lines.append("")
     if not party_summary:
@@ -3434,16 +3435,25 @@ def generate_readme(
     lines.append("</details>")
     lines.append("")
 
-    lines.append("## Source Difference Summary")
-    lines.append("")
-    lines.append("| Metric | Rows with Delta | Sum(|delta|) |")
-    lines.append("|---|---:|---:|")
-    for metric in ["reported_precincts", "total_precincts", "voters_total", "valid_votes"]:
-        bucket = statla_diff_summary.get(metric, {"count_with_delta": 0, "abs_delta_sum": 0.0})
-        lines.append(
-            f"| {metric} | {int(bucket['count_with_delta'])} | {bucket['abs_delta_sum']:.2f} |"
-        )
-    lines.append("")
+    if config.publish_source_comparison:
+        statla_diff_summary: Dict[str, Dict[str, float]] = {}
+        for row in diff_rows:
+            metric = row["metric"]
+            bucket = statla_diff_summary.setdefault(metric, {"count_with_delta": 0, "abs_delta_sum": 0.0})
+            if isinstance(row.get("delta"), (int, float)):
+                bucket["count_with_delta"] += 1
+                bucket["abs_delta_sum"] += abs(float(row["delta"]))
+
+        lines.append("## Source Difference Summary")
+        lines.append("")
+        lines.append("| Metric | Rows with Delta | Sum(|delta|) |")
+        lines.append("|---|---:|---:|")
+        for metric in ["reported_precincts", "total_precincts", "voters_total", "valid_votes"]:
+            bucket = statla_diff_summary.get(metric, {"count_with_delta": 0, "abs_delta_sum": 0.0})
+            lines.append(
+                f"| {metric} | {int(bucket['count_with_delta'])} | {bucket['abs_delta_sum']:.2f} |"
+            )
+        lines.append("")
 
     lines.append("## Notes")
     lines.append("")
@@ -3493,7 +3503,8 @@ def write_prestart_readme(config: Config) -> None:
         f"Map file and status table are prepared from official published geometry in `{metadata_dir_rel}/`."
     )
     lines.append("")
-    append_party_totals_tables(lines, party_summary_by_vote_type_sources([], []))
+    if config.publish_source_comparison:
+        append_party_totals_tables(lines, party_summary_by_vote_type_sources([], []))
     lines.append("## Operations")
     lines.append("")
     lines.append(f"- Local run after start: `python scripts/poll_election.py --election-key {config.election_key}`")
@@ -3527,10 +3538,7 @@ def persist_files(
     diff_rows: List[Dict[str, Any]],
     events_rows: List[Dict[str, Any]],
 ) -> None:
-    vote_type_summary = party_summary_by_vote_type_sources(
-        kommone_party_rows=kommone_party_rows,
-        statla_party_rows=statla.get("party_rows", []),
-    )
+    comparison_enabled = load_config().publish_source_comparison
 
     # Raw snapshots
     write_json(RAW_KOMMONE_DIR / f"{label_file}-kommone.json", {"snapshots": kommone_snapshots, "party_rows": kommone_party_rows})
@@ -3560,21 +3568,28 @@ def persist_files(
         ["ags", "municipality_name", "vote_type", "party", "votes", "percent"],
         kommone_party_rows,
     )
-    write_csv(
-        LATEST_DIR / "party_vote_type_summary.csv",
-        [
-            "row_type",
-            "vote_type",
-            "party",
-            "kommone_votes",
-            "kommone_share_percent",
-            "statla_votes",
-            "statla_share_percent",
-            "delta_votes",
-            "delta_share_percent",
-        ],
-        vote_type_summary,
-    )
+    if comparison_enabled:
+        vote_type_summary = party_summary_by_vote_type_sources(
+            kommone_party_rows=kommone_party_rows,
+            statla_party_rows=statla.get("party_rows", []),
+        )
+        write_csv(
+            LATEST_DIR / "party_vote_type_summary.csv",
+            [
+                "row_type",
+                "vote_type",
+                "party",
+                "kommone_votes",
+                "kommone_share_percent",
+                "statla_votes",
+                "statla_share_percent",
+                "delta_votes",
+                "delta_share_percent",
+            ],
+            vote_type_summary,
+        )
+    else:
+        unlink_if_exists(LATEST_DIR / "party_vote_type_summary.csv")
     write_csv(
         LATEST_DIR / "statla_snapshots.csv",
         [
@@ -3599,11 +3614,14 @@ def persist_files(
         statla.get("party_rows", []),
     )
 
-    write_csv(
-        REPORT_DIR / "latest_source_diff.csv",
-        ["poll_id", "ags", "municipality_name", "metric", "kommone_value", "statla_value", "delta"],
-        diff_rows,
-    )
+    if comparison_enabled:
+        write_csv(
+            REPORT_DIR / "latest_source_diff.csv",
+            ["poll_id", "ags", "municipality_name", "metric", "kommone_value", "statla_value", "delta"],
+            diff_rows,
+        )
+    else:
+        unlink_if_exists(REPORT_DIR / "latest_source_diff.csv")
     write_csv(
         REPORT_DIR / "latest_events.csv",
         ["event_time_utc", "source", "ags", "municipality_name", "event_type", "details_json"],
@@ -3762,7 +3780,11 @@ def main() -> None:
             prestart=False,
         )
 
-        diffs = compute_source_diffs(poll_id, kommone["snapshots"], statla["snapshots"])
+        diffs = (
+            compute_source_diffs(poll_id, kommone["snapshots"], statla["snapshots"])
+            if config.publish_source_comparison
+            else []
+        )
         store_source_diffs(conn, diffs)
         events = read_recent_events(conn, poll_id)
 

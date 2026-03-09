@@ -1,8 +1,6 @@
 name: Election Poll
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -58,7 +56,6 @@ jobs:
           cp data/2026-bw/metadata/municipalities.csv /tmp/poll-output/data/2026-bw/metadata/
           cp data/2026-bw/metadata/wahlkreis-status.csv /tmp/poll-output/data/2026-bw/metadata/
           cp data/2026-bw/reports/latest_events.csv /tmp/poll-output/data/2026-bw/reports/
-          cp data/2026-bw/reports/latest_source_diff.csv /tmp/poll-output/data/2026-bw/reports/
 
       - name: Commit and push updates
         run: |
@@ -70,20 +67,16 @@ jobs:
           rm -rf data/2026-bw/latest
           mkdir -p data/2026-bw/metadata
           mkdir -p data/2026-bw/reports
+          rm -f data/2026-bw/reports/latest_source_diff.csv
           cp -R /tmp/poll-output/data/2026-bw/latest data/2026-bw/
           cp /tmp/poll-output/data/2026-bw/metadata/municipalities.csv data/2026-bw/metadata/
           cp /tmp/poll-output/data/2026-bw/metadata/wahlkreis-status.csv data/2026-bw/metadata/
           cp /tmp/poll-output/data/2026-bw/reports/latest_events.csv data/2026-bw/reports/
-          cp /tmp/poll-output/data/2026-bw/reports/latest_source_diff.csv data/2026-bw/reports/
-          python scripts/maybe_disable_poll_schedule.py \
-            --status-csv /tmp/poll-output/data/2026-bw/metadata/wahlkreis-status.csv \
-            --workflow-path .github/workflows/poll.yml
           git add data/2026-bw/latest
           git add data/2026-bw/metadata/municipalities.csv
           git add data/2026-bw/metadata/wahlkreis-status.csv
           git add data/2026-bw/reports/latest_events.csv
           git add data/2026-bw/reports/latest_source_diff.csv
-          git add .github/workflows/poll.yml
           git diff --cached --quiet && exit 0
           git commit -m "2026-bw poll $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
           git push origin HEAD:main
