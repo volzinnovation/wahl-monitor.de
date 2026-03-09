@@ -1,0 +1,27 @@
+{
+  "election_key": "2026-rlp",
+  "election_name": "Landtagswahl Rheinland-Pfalz 2026",
+  "election_date": "2026-03-22",
+  "tracking_start_local": "2026-03-22T18:30:00",
+  "timezone": "Europe/Berlin",
+  "official_sources": {
+    "election_info_url": "https://landtag-rlp.de/de/wahl-2026.htm",
+    "results_page_url": "https://www.wahlen.rlp.de/landtagswahl/ergebnisse",
+    "predicted_result_portal_url": "https://wahlen.rlp-ltw-2026.23degrees.eu/wk/0000000000000/overview",
+    "historical_tree_url_2021": "https://wahlen.rlp-ltw-2021.23degrees.eu/assets/wk-vec-tree.json",
+    "historical_global_url_2021": "https://wahlen.rlp-ltw-2021.23degrees.eu/assets/json/global.json",
+    "historical_results_xlsx_url_2021": "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/btw/csv/2021/LW_2021_GESAMT.xlsx",
+    "geodata_zip_url_2026": "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Shapefiles/Geodaten_LW2026_RP.zip"
+  },
+  "historical_portal_2021": {
+    "timestamp": "2022-03-14T12:18:55.336Z",
+    "state": "zwischenergebnis",
+    "counted_node_count": 2661
+  },
+  "derived_counts": {
+    "municipality_count": 2283,
+    "split_municipality_count": 5,
+    "city_source_inventory_count": 8,
+    "split_municipalities_with_verified_secondary_source": 3
+  }
+}

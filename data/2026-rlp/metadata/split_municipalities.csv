@@ -1,0 +1,6 @@
+ags,municipality_name,wahlkreis_count,wahlkreis_ids,reason
+11100000,Koblenz,2,108|109,leaf nodes from the official 2021 state portal appear in more than one Wahlkreis
+21100000,Trier,2,224|225,leaf nodes from the official 2021 state portal appear in more than one Wahlkreis
+31200000,Kaiserslautern,2,444|445,leaf nodes from the official 2021 state portal appear in more than one Wahlkreis
+31400000,Ludwigshafen am Rhein,2,336|337,leaf nodes from the official 2021 state portal appear in more than one Wahlkreis
+31500000,Mainz,3,327|328|329,leaf nodes from the official 2021 state portal appear in more than one Wahlkreis
