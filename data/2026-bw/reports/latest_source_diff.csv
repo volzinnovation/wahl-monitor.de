@@ -71,10 +71,10 @@ poll_id,ags,municipality_name,metric,kommone_value,statla_value,delta
 2,08115042,"Rutesheim, Stadt",total_precincts,,11,
 2,08115042,"Rutesheim, Stadt",voters_total,5886,5886,0.0
 2,08115042,"Rutesheim, Stadt",valid_votes,5850,5865,-15.0
-2,08115044,Schönaich,reported_precincts,,9,
+2,08115044,Schönaich,reported_precincts,,10,
 2,08115044,Schönaich,total_precincts,,10,
-2,08115044,Schönaich,voters_total,5259,4492,767.0
-2,08115044,Schönaich,valid_votes,5225,4473,752.0
+2,08115044,Schönaich,voters_total,5259,5259,0.0
+2,08115044,Schönaich,valid_votes,5225,5236,-11.0
 2,08115045,"Sindelfingen, Stadt",reported_precincts,,63,
 2,08115045,"Sindelfingen, Stadt",total_precincts,,63,
 2,08115045,"Sindelfingen, Stadt",voters_total,23516,23516,0.0
