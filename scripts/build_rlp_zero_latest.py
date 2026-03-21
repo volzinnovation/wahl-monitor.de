@@ -47,10 +47,26 @@ SNAPSHOT_HEADERS = [
     "voters_total",
     "valid_votes_erst",
     "valid_votes_zweit",
+    "voters_total_2021",
+    "valid_votes_erst_2021",
+    "valid_votes_zweit_2021",
+    "delta_voters_total_vs_2021",
+    "delta_valid_votes_erst_vs_2021",
+    "delta_valid_votes_zweit_vs_2021",
     "payload_hash",
     "is_municipality_summary",
 ]
-PARTY_HEADERS = ["row_key", "vote_type", "party_key", "party_name", "votes"]
+PARTY_HEADERS = [
+    "row_key",
+    "vote_type",
+    "party_key",
+    "party_name",
+    "votes",
+    "votes_2021",
+    "share_percent_2021",
+    "delta_votes_vs_2021",
+    "delta_share_percent_vs_2021",
+]
 MAPPING_HEADERS = ["Wahlkreisnummer", "Wahlkreisname", "Gemeindekennziffer", "Gemeindename"]
 
 NS = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
@@ -146,6 +162,30 @@ def workbook_party_names(header: Sequence[str]) -> Tuple[List[str], List[str]]:
     return first_parties, second_parties
 
 
+def workbook_party_columns(header: Sequence[str]) -> Tuple[List[Tuple[str, int]], List[Tuple[str, int]], int, int, int]:
+    invalid_indices = [index for index, value in enumerate(header) if value.strip() == "ungültige"]
+    valid_indices = [index for index, value in enumerate(header) if value.strip() == "Gültige"]
+    if len(invalid_indices) < 2 or len(valid_indices) < 2:
+        raise RuntimeError("Unexpected 2021 workbook header shape for RLP party columns")
+    try:
+        voters_index = header.index("Wähler")
+    except ValueError as exc:
+        raise RuntimeError("Unexpected 2021 workbook header shape for RLP turnout column") from exc
+    first_party_columns = [
+        (header[index].strip(), index)
+        for index in range(valid_indices[0] + 2, invalid_indices[1], 2)
+        if header[index].strip()
+    ]
+    second_party_columns = [
+        (header[index].strip(), index)
+        for index in range(valid_indices[1] + 2, len(header), 2)
+        if header[index].strip()
+    ]
+    if not first_party_columns or not second_party_columns:
+        raise RuntimeError("Could not derive first/second vote party columns from workbook header")
+    return first_party_columns, second_party_columns, voters_index, valid_indices[0], valid_indices[1]
+
+
 def wk_from_id(identifier: str) -> str:
     digits = "".join(ch for ch in str(identifier or "") if ch.isdigit())
     return str(int(digits[:3])) if len(digits) >= 3 and digits[:3] != "000" else ""
@@ -153,7 +193,78 @@ def wk_from_id(identifier: str) -> str:
 
 def ags_from_id(identifier: str) -> str:
     digits = "".join(ch for ch in str(identifier or "") if ch.isdigit())
-    return digits[3:11] if len(digits) >= 11 else ""
+    if len(digits) < 11:
+        return ""
+    ags = digits[3:11]
+    return "" if ags == "00000000" else ags
+
+
+def parse_workbook_int(value: Any) -> int:
+    text = str(value or "").strip()
+    if not text:
+        return 0
+    return int(float(text))
+
+
+def share_percent(votes: int, total: int) -> float:
+    if total <= 0:
+        return 0.0
+    return round((votes / total) * 100.0, 6)
+
+
+def workbook_history_row(
+    values: Sequence[str],
+    first_party_columns: Sequence[Tuple[str, int]],
+    second_party_columns: Sequence[Tuple[str, int]],
+    voters_index: int,
+    valid_votes_erst_index: int,
+    valid_votes_zweit_index: int,
+) -> Dict[str, Any]:
+    return {
+        "voters_total": parse_workbook_int(values[voters_index] if len(values) > voters_index else ""),
+        "valid_votes_erst": parse_workbook_int(values[valid_votes_erst_index] if len(values) > valid_votes_erst_index else ""),
+        "valid_votes_zweit": parse_workbook_int(values[valid_votes_zweit_index] if len(values) > valid_votes_zweit_index else ""),
+        "party_votes": {
+            "Erststimmen": {
+                party_name: parse_workbook_int(values[index] if len(values) > index else "")
+                for party_name, index in first_party_columns
+            },
+            "Zweitstimmen": {
+                party_name: parse_workbook_int(values[index] if len(values) > index else "")
+                for party_name, index in second_party_columns
+            },
+        },
+    }
+
+
+def combine_history_rows(rows: Sequence[Dict[str, Any]]) -> Dict[str, Any] | None:
+    if not rows:
+        return None
+    combined = {
+        "voters_total": 0,
+        "valid_votes_erst": 0,
+        "valid_votes_zweit": 0,
+        "party_votes": {
+            "Erststimmen": defaultdict(int),
+            "Zweitstimmen": defaultdict(int),
+        },
+    }
+    for row in rows:
+        combined["voters_total"] += int(row.get("voters_total") or 0)
+        combined["valid_votes_erst"] += int(row.get("valid_votes_erst") or 0)
+        combined["valid_votes_zweit"] += int(row.get("valid_votes_zweit") or 0)
+        for vote_type in ("Erststimmen", "Zweitstimmen"):
+            for party_name, votes in (row.get("party_votes", {}).get(vote_type, {}) or {}).items():
+                combined["party_votes"][vote_type][party_name] += int(votes or 0)
+    return {
+        "voters_total": combined["voters_total"],
+        "valid_votes_erst": combined["valid_votes_erst"],
+        "valid_votes_zweit": combined["valid_votes_zweit"],
+        "party_votes": {
+            "Erststimmen": dict(combined["party_votes"]["Erststimmen"]),
+            "Zweitstimmen": dict(combined["party_votes"]["Zweitstimmen"]),
+        },
+    }
 
 
 def clean_municipality_name(label: str) -> str:
@@ -174,16 +285,24 @@ def clean_municipality_name(label: str) -> str:
 def parse_workbook_context(
     workbook_path: Path,
     municipality_name_by_ags: Dict[str, str],
-) -> Tuple[List[str], List[str], List[Dict[str, str]], Dict[str, str], Dict[str, List[str]]]:
+) -> Tuple[List[str], List[str], List[Dict[str, str]], Dict[str, str], Dict[str, List[str]], Dict[str, Any]]:
     rows = load_xlsx_rows(workbook_path)
     if not rows:
         raise RuntimeError("Official 2021 workbook did not contain any rows")
     header = rows[0]
     first_parties, second_parties = workbook_party_names(header)
+    first_party_columns, second_party_columns, voters_index, valid_votes_erst_index, valid_votes_zweit_index = workbook_party_columns(header)
 
     booths: List[Dict[str, str]] = []
     summary_name_by_ags: Dict[str, str] = {}
     observed_wks_by_ags: Dict[str, set[str]] = defaultdict(set)
+    history: Dict[str, Any] = {
+        "land": None,
+        "wahlkreis": {},
+        "municipality": {},
+        "wahlkreis_teil": {},
+        "booth": {},
+    }
     for raw_values in rows[1:]:
         values = list(raw_values) + [""] * max(0, len(header) - len(raw_values))
         identifier = values[0].strip()
@@ -194,17 +313,37 @@ def parse_workbook_context(
             continue
         ags = ags_from_id(identifier)
         wk = wk_from_id(identifier)
+        history_row = workbook_history_row(
+            values,
+            first_party_columns,
+            second_party_columns,
+            voters_index,
+            valid_votes_erst_index,
+            valid_votes_zweit_index,
+        )
+        is_aggregate_row = identifier.endswith("0000")
         if not ags:
+            if stimmbezirk == "00000" and guw == "G":
+                if wk:
+                    history["wahlkreis"][wk] = history_row
+                else:
+                    history["land"] = history_row
             continue
         if stimmbezirk == "00000":
             if guw == "G":
                 cleaned_name = clean_municipality_name(label)
                 if cleaned_name and len(cleaned_name) > len(summary_name_by_ags.get(ags, "")):
                     summary_name_by_ags[ags] = cleaned_name
+                if wk:
+                    if is_aggregate_row:
+                        history["wahlkreis_teil"][(ags, wk)] = history_row
+                elif is_aggregate_row:
+                    history["municipality"][ags] = history_row
             continue
         if not stimmbezirk or guw not in {"U", "W"} or not wk:
             continue
         observed_wks_by_ags[ags].add(wk)
+        gebietsart = "URNENWAHLBEZIRK" if guw == "U" else "BRIEFWAHLBEZIRK"
         booths.append(
             {
                 "ags": ags,
@@ -212,15 +351,17 @@ def parse_workbook_context(
                 "municipality_name": municipality_name_by_ags.get(ags, "") or summary_name_by_ags.get(ags, ""),
                 "booth_code": stimmbezirk,
                 "label": label or stimmbezirk,
-                "gebietsart": "URNENWAHLBEZIRK" if guw == "U" else "BRIEFWAHLBEZIRK",
+                "gebietsart": gebietsart,
             }
         )
+        history["booth"][(ags, wk, stimmbezirk, gebietsart)] = history_row
     return (
         first_parties,
         second_parties,
         booths,
         summary_name_by_ags,
         {ags: sorted(wks, key=int) for ags, wks in observed_wks_by_ags.items()},
+        history,
     )
 
 
@@ -442,8 +583,12 @@ def append_snapshot(
     first_parties: Sequence[str],
     second_parties: Sequence[str],
     is_municipality_summary: bool,
+    historical_result: Dict[str, Any] | None,
 ) -> None:
     row_key = make_row_key(len(snapshots), gebietsnummer, bezirksnummer, ags, gebietsart)
+    historical_voters = "" if historical_result is None else int(historical_result.get("voters_total") or 0)
+    historical_valid_erst = "" if historical_result is None else int(historical_result.get("valid_votes_erst") or 0)
+    historical_valid_zweit = "" if historical_result is None else int(historical_result.get("valid_votes_zweit") or 0)
     snapshots.append(
         {
             "row_key": row_key,
@@ -456,6 +601,12 @@ def append_snapshot(
             "voters_total": 0,
             "valid_votes_erst": 0,
             "valid_votes_zweit": 0,
+            "voters_total_2021": historical_voters,
+            "valid_votes_erst_2021": historical_valid_erst,
+            "valid_votes_zweit_2021": historical_valid_zweit,
+            "delta_voters_total_vs_2021": "" if historical_result is None else -int(historical_result.get("voters_total") or 0),
+            "delta_valid_votes_erst_vs_2021": "" if historical_result is None else -int(historical_result.get("valid_votes_erst") or 0),
+            "delta_valid_votes_zweit_vs_2021": "" if historical_result is None else -int(historical_result.get("valid_votes_zweit") or 0),
             "payload_hash": f"prep-zero:{row_key}",
             "is_municipality_summary": "true" if is_municipality_summary else "false",
         }
@@ -472,6 +623,8 @@ def append_snapshot(
         }
     )
     for party_name in first_parties:
+        historical_votes = 0 if historical_result is None else int(historical_result.get("party_votes", {}).get("Erststimmen", {}).get(party_name, 0) or 0)
+        historical_total = 0 if historical_result is None else int(historical_result.get("valid_votes_erst") or 0)
         party_rows.append(
             {
                 "row_key": row_key,
@@ -479,9 +632,15 @@ def append_snapshot(
                 "party_key": party_name,
                 "party_name": party_name,
                 "votes": 0,
+                "votes_2021": "" if historical_result is None else historical_votes,
+                "share_percent_2021": "" if historical_result is None else share_percent(historical_votes, historical_total),
+                "delta_votes_vs_2021": "" if historical_result is None else -historical_votes,
+                "delta_share_percent_vs_2021": "" if historical_result is None else -share_percent(historical_votes, historical_total),
             }
         )
     for party_name in second_parties:
+        historical_votes = 0 if historical_result is None else int(historical_result.get("party_votes", {}).get("Zweitstimmen", {}).get(party_name, 0) or 0)
+        historical_total = 0 if historical_result is None else int(historical_result.get("valid_votes_zweit") or 0)
         party_rows.append(
             {
                 "row_key": row_key,
@@ -489,6 +648,10 @@ def append_snapshot(
                 "party_key": party_name,
                 "party_name": party_name,
                 "votes": 0,
+                "votes_2021": "" if historical_result is None else historical_votes,
+                "share_percent_2021": "" if historical_result is None else share_percent(historical_votes, historical_total),
+                "delta_votes_vs_2021": "" if historical_result is None else -historical_votes,
+                "delta_share_percent_vs_2021": "" if historical_result is None else -share_percent(historical_votes, historical_total),
             }
         )
 
@@ -500,6 +663,7 @@ def build_zero_exports(
     booths: Sequence[Dict[str, str]],
     first_parties: Sequence[str],
     second_parties: Sequence[str],
+    history: Dict[str, Any],
 ) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
     booth_count_by_ags = Counter(booth["ags"] for booth in booths)
     booth_count_by_wk = Counter(booth["wahlkreisnummer"] for booth in booths)
@@ -524,6 +688,7 @@ def build_zero_exports(
         first_parties=first_parties,
         second_parties=second_parties,
         is_municipality_summary=False,
+        historical_result=history.get("land"),
     )
 
     for wk, wk_name in sorted(wk_name_by_id.items(), key=lambda item: int(item[0])):
@@ -542,11 +707,21 @@ def build_zero_exports(
             first_parties=first_parties,
             second_parties=second_parties,
             is_municipality_summary=False,
+            historical_result=history.get("wahlkreis", {}).get(wk),
         )
 
     municipality_name_by_ags = {row["ags"]: row["municipality_name"] for row in municipalities}
     for ags, municipality_name in sorted(municipality_name_by_ags.items()):
         wk_candidates = wks_by_ags.get(ags, [])
+        municipality_history = history.get("municipality", {}).get(ags)
+        if municipality_history is None:
+            municipality_history = combine_history_rows(
+                [
+                    history.get("wahlkreis_teil", {}).get((ags, wk))
+                    for wk in wk_candidates
+                    if history.get("wahlkreis_teil", {}).get((ags, wk)) is not None
+                ]
+            )
         append_snapshot(
             snapshots,
             raw_rows,
@@ -562,6 +737,7 @@ def build_zero_exports(
             first_parties=first_parties,
             second_parties=second_parties,
             is_municipality_summary=True,
+            historical_result=municipality_history,
         )
         if len(wk_candidates) <= 1:
             continue
@@ -581,6 +757,7 @@ def build_zero_exports(
                 first_parties=first_parties,
                 second_parties=second_parties,
                 is_municipality_summary=False,
+                historical_result=history.get("wahlkreis_teil", {}).get((ags, wk)),
             )
 
     for booth in sorted(
@@ -608,6 +785,14 @@ def build_zero_exports(
             first_parties=first_parties,
             second_parties=second_parties,
             is_municipality_summary=False,
+            historical_result=history.get("booth", {}).get(
+                (
+                    booth["ags"],
+                    booth["wahlkreisnummer"],
+                    booth["booth_code"],
+                    booth["gebietsart"],
+                )
+            ),
         )
 
     return snapshots, party_rows, raw_rows
@@ -636,7 +821,7 @@ def main() -> int:
     fragment_rows = read_csv_rows(META_DIR / "municipality_fragments_2021.csv")
     municipality_name_by_ags = {row["ags"]: row["municipality_name"] for row in municipality_rows}
     mapping_rows, wk_name_by_id, _base_wks_by_ags = mapping_rows_from_fragments(fragment_rows)
-    first_parties, second_parties, booth_rows, summary_name_by_ags, observed_wks_by_ags = parse_workbook_context(
+    first_parties, second_parties, booth_rows, summary_name_by_ags, observed_wks_by_ags, history = parse_workbook_context(
         workbook_path,
         municipality_name_by_ags,
     )
@@ -652,6 +837,7 @@ def main() -> int:
         booth_rows,
         first_parties,
         second_parties,
+        history,
     )
 
     wahlkreis_geojson = build_wahlkreis_geojson(geodata_path, wk_name_by_id)

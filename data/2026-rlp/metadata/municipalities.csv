@@ -1,7 +1,9 @@
 ags,municipality_name,source,fragment_count,wahlkreis_count,wahlkreis_ids
 11100000,Koblenz,official-state-portal-2021-tree,29,2,108|109
+13100007,Bad Neuenahr-Ahrweiler,official-workbook-2021-summary,0,1,114
 13100070,Remagen,official-state-portal-2021-tree,6,1,113
 13100077,Sinzig,official-state-portal-2021-tree,6,1,113
+13100090,Grafschaft,official-workbook-2021-summary,0,1,114
 13101001,Adenau,official-state-portal-2021-tree,1,1,114
 13101004,Antweiler,official-state-portal-2021-tree,1,1,114
 13101005,Aremberg,official-state-portal-2021-tree,1,1,114
@@ -779,6 +781,7 @@ ags,municipality_name,source,fragment_count,wahlkreis_count,wahlkreis_ids
 14009161,Wiebelsheim,official-state-portal-2021-tree,1,1,216
 14009201,Beulich,official-state-portal-2021-tree,1,1,216
 14009205,Morshausen,official-state-portal-2021-tree,1,1,216
+14100075,Lahnstein,official-workbook-2021-summary,0,1,108
 14103002,Altendiez,official-state-portal-2021-tree,1,1,107
 14103005,Aull,official-state-portal-2021-tree,1,1,107
 14103014,Birlenbach,official-state-portal-2021-tree,1,1,107
@@ -1108,6 +1111,7 @@ ags,municipality_name,source,fragment_count,wahlkreis_count,wahlkreis_ids
 14310081,Wirges,official-state-portal-2021-tree,1,1,106
 14310275,Niedersayn,official-state-portal-2021-tree,1,1,106
 21100000,Trier,official-state-portal-2021-tree,19,2,224|225
+23100134,Wittlich,official-workbook-2021-summary,0,1,222
 23100502,Morbach,official-state-portal-2021-tree,13,1,223
 23101008,Bernkastel-Kues,official-state-portal-2021-tree,1,1,223
 23101012,Brauneberg,official-state-portal-2021-tree,1,1,223
@@ -1213,6 +1217,7 @@ ags,municipality_name,source,fragment_count,wahlkreis_count,wahlkreis_ids
 23109132,Willwerscheid,official-state-portal-2021-tree,1,1,222
 23109206,Lötzbeuren,official-state-portal-2021-tree,1,1,222
 23109501,Irmenach,official-state-portal-2021-tree,1,1,222
+23200018,Bitburg,official-workbook-2021-summary,0,1,221
 23201201,Arzfeld,official-state-portal-2021-tree,1,1,221
 23201211,Dackscheid,official-state-portal-2021-tree,1,1,221
 23201212,Dahnen,official-state-portal-2021-tree,1,1,221
@@ -1659,13 +1664,17 @@ ags,municipality_name,source,fragment_count,wahlkreis_count,wahlkreis_ids
 23508149,Wincheringen,official-state-portal-2021-tree,1,1,226
 23508152,Zerf,official-state-portal-2021-tree,1,1,226
 23508154,Merzkirchen,official-state-portal-2021-tree,1,1,226
+31100000,Frankenthal (Pfalz),official-workbook-2021-summary,0,1,335
 31200000,Kaiserslautern,official-state-portal-2021-tree,18,2,444|445
 31300000,Landau in der Pfalz,official-state-portal-2021-tree,9,1,450
 31400000,Ludwigshafen am Rhein,official-state-portal-2021-tree,14,2,336|337
 31500000,Mainz,official-state-portal-2021-tree,15,3,327|328|329
+31600000,Neustadt an der Weinstraße,official-workbook-2021-summary,0,1,443
+31700000,Pirmasens,official-workbook-2021-summary,0,1,448
 31800000,Speyer,official-state-portal-2021-tree,12,1,339
 31900000,Worms,official-state-portal-2021-tree,19,1,333
 32000000,Zweibruecken,official-state-portal-2021-tree,10,1,447
+33100003,Alzey,official-workbook-2021-summary,0,1,334
 33101001,Albig,official-state-portal-2021-tree,1,1,334
 33101005,Bechenheim,official-state-portal-2021-tree,1,1,334
 33101007,Bechtolsheim,official-state-portal-2021-tree,1,1,334
@@ -1735,6 +1744,8 @@ ags,municipality_name,source,fragment_count,wahlkreis_count,wahlkreis_ids
 33107055,"Osthofen, Stadt",official-state-portal-2021-tree,1,1,332
 33107071,Westhofen,official-state-portal-2021-tree,1,1,332
 33200002,Bad Dürkheim,official-state-portal-2021-tree,11,1,442
+33200024,Grünstadt,official-workbook-2021-summary,0,1,442
+33200025,Haßloch,official-workbook-2021-summary,0,1,443
 33201009,Deidesheim,official-state-portal-2021-tree,1,1,442
 33201017,Forst an der Weinstrasse,official-state-portal-2021-tree,1,1,442
 33201035,Meckenheim,official-state-portal-2021-tree,1,1,442
@@ -2115,6 +2126,11 @@ ags,municipality_name,source,fragment_count,wahlkreis_count,wahlkreis_ids
 33707023,Essingen,official-state-portal-2021-tree,1,1,451
 33707041,Hochstadt (Pfalz),official-state-portal-2021-tree,1,1,451
 33707061,Offenbach an der Queich,official-state-portal-2021-tree,1,1,451
+33800004,Bobenheim-Roxheim,official-workbook-2021-summary,0,1,335
+33800005,Böhl-Iggelheim,official-workbook-2021-summary,0,1,338
+33800017,Limburgerhof,official-workbook-2021-summary,0,1,338
+33800019,Mutterstadt,official-workbook-2021-summary,0,1,338
+33800025,Schifferstadt,official-workbook-2021-summary,0,1,339
 33801006,Dannstadt-Schauernheim,official-state-portal-2021-tree,1,1,338
 33801014,Hochdorf-Assenheim,official-state-portal-2021-tree,1,1,338
 33801022,Rödersheim-Gronau,official-state-portal-2021-tree,1,1,338
@@ -2136,6 +2152,7 @@ ags,municipality_name,source,fragment_count,wahlkreis_count,wahlkreis_ids
 33808021,Otterstadt,official-state-portal-2021-tree,1,1,338
 33808026,Waldsee,official-state-portal-2021-tree,1,1,338
 33900005,Bingen,official-state-portal-2021-tree,8,1,330
+33900009,Budenheim,official-workbook-2021-summary,0,1,331
 33900030,Ingelheim,official-state-portal-2021-tree,8,1,331
 33901003,Bacharach,official-state-portal-2021-tree,1,1,330
 33901007,Breitscheid,official-state-portal-2021-tree,1,1,330

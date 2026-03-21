@@ -274,6 +274,12 @@ def load_latest_statla_snapshots() -> List[Dict[str, Any]]:
                 "voters_total": core.parse_int(row.get("voters_total")),
                 "valid_votes_erst": core.parse_int(row.get("valid_votes_erst")),
                 "valid_votes_zweit": core.parse_int(row.get("valid_votes_zweit")),
+                "voters_total_2021": core.parse_int(row.get("voters_total_2021")),
+                "valid_votes_erst_2021": core.parse_int(row.get("valid_votes_erst_2021")),
+                "valid_votes_zweit_2021": core.parse_int(row.get("valid_votes_zweit_2021")),
+                "delta_voters_total_vs_2021": core.parse_int(row.get("delta_voters_total_vs_2021")),
+                "delta_valid_votes_erst_vs_2021": core.parse_int(row.get("delta_valid_votes_erst_vs_2021")),
+                "delta_valid_votes_zweit_vs_2021": core.parse_int(row.get("delta_valid_votes_zweit_vs_2021")),
                 "payload_hash": str(row.get("payload_hash") or ""),
                 "is_municipality_summary": str(row.get("is_municipality_summary") or ""),
             }
@@ -297,13 +303,19 @@ def load_latest_party_rows() -> List[Dict[str, Any]]:
     rows = read_csv_rows(core.LATEST_DIR / "statla_party_results.csv")
     normalized: List[Dict[str, Any]] = []
     for row in rows:
+        vote_type = core.canonical_vote_type(str(row.get("vote_type") or ""))
+        party_name = core.canonical_party_name(str(row.get("party_name") or ""), vote_type)
         normalized.append(
             {
                 "row_key": str(row.get("row_key") or ""),
-                "vote_type": str(row.get("vote_type") or ""),
+                "vote_type": vote_type,
                 "party_key": str(row.get("party_key") or ""),
-                "party_name": str(row.get("party_name") or ""),
+                "party_name": party_name,
                 "votes": core.parse_int(row.get("votes")),
+                "votes_2021": core.parse_int(row.get("votes_2021")),
+                "share_percent_2021": parse_float(row.get("share_percent_2021")),
+                "delta_votes_vs_2021": core.parse_int(row.get("delta_votes_vs_2021")),
+                "delta_share_percent_vs_2021": parse_float(row.get("delta_share_percent_vs_2021")),
             }
         )
     return normalized
@@ -661,6 +673,18 @@ def build_party_votes_by_row_key(party_rows: List[Dict[str, str]]) -> Dict[str, 
     return out
 
 
+def build_party_row_details_by_row_key(party_rows: List[Dict[str, Any]]) -> Dict[str, Dict[str, Dict[str, Dict[str, Any]]]]:
+    out: Dict[str, Dict[str, Dict[str, Dict[str, Any]]]] = defaultdict(lambda: defaultdict(dict))
+    for row in party_rows:
+        row_key = str(row.get("row_key") or "")
+        vote_type = core.canonical_vote_type(str(row.get("vote_type") or ""))
+        party = core.canonical_party_name(str(row.get("party_name") or ""), vote_type)
+        if not row_key or not vote_type or not party:
+            continue
+        out[row_key][vote_type][party] = row
+    return out
+
+
 def group_rows_by_ags(snapshots: List[Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]]:
     rows_by_ags: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for row in snapshots:
@@ -689,6 +713,19 @@ def vote_total_for_snapshot(snapshot: Dict[str, Any], vote_type: str) -> int:
     if vote_type == "Erststimmen":
         return core.parse_int(snapshot.get("valid_votes_erst")) or 0
     return core.parse_int(snapshot.get("valid_votes_zweit")) or 0
+
+
+def historical_vote_total_for_snapshot(snapshot: Dict[str, Any], vote_type: str) -> Optional[int]:
+    if vote_type == "Erststimmen":
+        return core.parse_int(snapshot.get("valid_votes_erst_2021"))
+    return core.parse_int(snapshot.get("valid_votes_zweit_2021"))
+
+
+def historical_comparison_available(snapshot: Dict[str, Any]) -> bool:
+    return any(
+        snapshot.get(field) is not None
+        for field in ("voters_total_2021", "valid_votes_erst_2021", "valid_votes_zweit_2021")
+    )
 
 
 def reporting_counts(snapshot: Dict[str, Any]) -> Tuple[int, int]:
@@ -1272,6 +1309,97 @@ def render_vote_table(
     )
 
 
+def render_historical_comparison_panel(
+    snapshot: Dict[str, Any],
+    party_row_details_by_row_key: Dict[str, Dict[str, Dict[str, Dict[str, Any]]]],
+    vote_type: str,
+    parties: List[str],
+) -> str:
+    historical_total = historical_vote_total_for_snapshot(snapshot, vote_type)
+    if historical_total is None:
+        return ""
+
+    row_key = str(snapshot.get("row_key") or "")
+    current_total = vote_total_for_snapshot(snapshot, vote_type)
+    party_rows = party_row_details_by_row_key.get(row_key, {}).get(vote_type, {})
+    body_rows: List[str] = []
+    for party in parties:
+        row = party_rows.get(party)
+        current_votes = core.parse_int(row.get("votes")) if row else 0
+        current_votes = current_votes or 0
+        historical_votes = core.parse_int(row.get("votes_2021")) if row else None
+        historical_share = parse_float(row.get("share_percent_2021")) if row else None
+        if historical_share is None and historical_votes is not None:
+            historical_share = (historical_votes / historical_total) * 100.0 if historical_total > 0 else 0.0
+        if historical_votes is None and current_votes <= 0:
+            continue
+        current_share = (current_votes / current_total) * 100.0 if current_total > 0 else 0.0
+        delta_votes = core.parse_int(row.get("delta_votes_vs_2021")) if row else None
+        if delta_votes is None and historical_votes is not None:
+            delta_votes = current_votes - historical_votes
+        delta_share = parse_float(row.get("delta_share_percent_vs_2021")) if row else None
+        if delta_share is None and historical_share is not None:
+            delta_share = current_share - historical_share
+        historical_votes_cell = "" if historical_votes is None else f"{historical_votes:,}"
+        historical_share_cell = "" if historical_share is None else f"{historical_share:.2f}%"
+        delta_votes_cell = "" if delta_votes is None else f"{delta_votes:+d}"
+        delta_share_cell = "" if delta_share is None else f"{delta_share:+.2f}%"
+        body_rows.append(
+            "<tr>"
+            f"<td>{html.escape(party)}</td>"
+            f"<td>{current_votes:,}</td>"
+            f"<td>{current_share:.2f}%</td>"
+            f"<td>{historical_votes_cell}</td>"
+            f"<td>{historical_share_cell}</td>"
+            f"<td>{delta_votes_cell}</td>"
+            f"<td>{delta_share_cell}</td>"
+            "</tr>"
+        )
+
+    delta_total = current_total - historical_total
+    current_total_share = "100.00%" if current_total > 0 else "0.00%"
+    historical_total_share = "100.00%" if historical_total > 0 else "0.00%"
+    total_row = (
+        "<tr>"
+        "<td><strong>Gültige Stimmen</strong></td>"
+        f"<td><strong>{current_total:,}</strong></td>"
+        f"<td><strong>{current_total_share}</strong></td>"
+        f"<td><strong>{historical_total:,}</strong></td>"
+        f"<td><strong>{historical_total_share}</strong></td>"
+        f"<td><strong>{delta_total:+d}</strong></td>"
+        "<td><strong>+0.00%</strong></td>"
+        "</tr>"
+    )
+
+    return (
+        f"<div class='panel'><h2>Vergleich 2026 vs 2021: {html.escape(vote_type_label(vote_type))}</h2>"
+        "<p class='small'>Vergleich mit den amtlichen Endergebnissen der Landtagswahl Rheinland-Pfalz vom 14. März 2021.</p>"
+        "<table class='compact'><thead><tr>"
+        "<th>Partei</th><th>2026 Stimmen</th><th>2026 Anteil</th>"
+        "<th>2021 Stimmen</th><th>2021 Anteil</th><th>Differenz Stimmen</th><th>Differenz Anteil</th>"
+        f"</tr></thead><tbody>{''.join(body_rows)}{total_row}</tbody></table></div>"
+    )
+
+
+def render_historical_comparison_section(
+    snapshot: Dict[str, Any],
+    party_row_details_by_row_key: Dict[str, Dict[str, Dict[str, Dict[str, Any]]]],
+    party_order: Dict[str, List[str]],
+) -> str:
+    if not historical_comparison_available(snapshot):
+        return ""
+    parts = [
+        render_historical_comparison_panel(
+            snapshot,
+            party_row_details_by_row_key,
+            vote_type,
+            party_order.get(vote_type, []),
+        )
+        for vote_type in ("Erststimmen", "Zweitstimmen")
+    ]
+    return "".join(part for part in parts if part)
+
+
 def render_booth_list(
     booths: List[Dict[str, Any]],
     booth_local_links: Dict[str, str],
@@ -1651,7 +1779,10 @@ def render_index_page(
     municipality_link_by_ags: Dict[str, str],
     latest_kommone_snapshots: List[Dict[str, Any]],
     latest_kommone_party_rows: List[Dict[str, Any]],
+    statla_snapshots: List[Dict[str, Any]],
     statla_party_rows: List[Dict[str, Any]],
+    party_order: Dict[str, List[str]],
+    party_row_details_by_row_key: Dict[str, Dict[str, Dict[str, Dict[str, Any]]]],
     diff_rows: List[Dict[str, Any]],
 ) -> None:
     run_metadata = json.loads((core.LATEST_DIR / "run_metadata.json").read_text(encoding="utf-8"))
@@ -1676,6 +1807,10 @@ def render_index_page(
         vote_type_summary = core.party_summary_by_vote_type_sources(latest_kommone_party_rows, statla_party_rows)
         for row in vote_type_summary:
             summary_by_vote_type[str(row["vote_type"] or "Unbekannt")].append(row)
+    land_snapshot = next(
+        (row for row in statla_snapshots if str(row.get("gebietsart") or "").strip().upper() == "LAND"),
+        {},
+    )
 
     features = core.load_wahlkreis_features()
     operations = [f"`python scripts/generate_static_detail_pages.py --election-key {config.election_key}`"]
@@ -1699,6 +1834,7 @@ def render_index_page(
         "<div class='panel dashboard-map'><h2>Klickbare Wahlkreiskarte</h2>"
         "<p class='small'>Jeder Wahlkreis führt direkt zur Detailseite.</p>"
         f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk)}</div>"
+        f"{render_historical_comparison_section(land_snapshot, party_row_details_by_row_key, party_order)}"
         f"{render_vote_share_history_panel(config)}"
         f"{render_wahlkreis_overview_table(wahlkreis_status_rows, wahlkreis_link_by_wk)}"
         + (
@@ -1800,9 +1936,16 @@ def main() -> int:
     snapshots, raw_by_row_key = load_statla_dataset()
     statla_party_rows = load_latest_party_rows()
     party_votes = build_party_votes_by_row_key(statla_party_rows)
+    party_row_details = build_party_row_details_by_row_key(statla_party_rows)
     party_order = derive_party_order_from_rows(statla_party_rows)
     mapping = core.load_wahlkreis_mapping()
     site_root = output_root.parent
+    wahlkreis_snapshots_by_wk = {
+        core.normalize_wahlkreis_nummer(row.get("gebietsnummer") or row.get("row_key")): row
+        for row in snapshots
+        if str(row.get("gebietsart") or "").strip().upper() == "WAHLKREIS"
+        and core.normalize_wahlkreis_nummer(row.get("gebietsnummer") or row.get("row_key"))
+    }
 
     ags_in_scope = sorted(
         {
@@ -1873,10 +2016,16 @@ def main() -> int:
 
         first_table = render_vote_table(rows_for_table, party_votes, "Erststimmen", party_order["Erststimmen"], link_lookup)
         second_table = render_vote_table(rows_for_table, party_votes, "Zweitstimmen", party_order["Zweitstimmen"], link_lookup)
+        comparison_section = render_historical_comparison_section(
+            wahlkreis_snapshots_by_wk.get(wk, {}),
+            party_row_details,
+            party_order,
+        )
         body = (
             f"<div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
             f"<a href='../../index.html'>Alle Wahlen</a></div><h1>{html.escape(wk.zfill(2))} - {html.escape(wk_name)}</h1>"
             "<p class='muted'>Gemeinden als Zeilen, Parteien als Spalten. Jede Zelle zeigt absolute Stimmen und den Zeilenanteil.</p></div>"
+            f"{comparison_section}"
             f"<div class='panel'><h2>{html.escape(vote_type_label('Erststimmen'))}</h2>{first_table}</div>"
             f"<div class='panel'><h2>{html.escape(vote_type_label('Zweitstimmen'))}</h2>{second_table}</div>"
         )
@@ -1924,6 +2073,7 @@ def main() -> int:
             f"<div class='stat'><div class='stat-label'>Gültige {html.escape(vote_type_label('Erststimmen'))}</div><div class='stat-value'>{vote_total_for_snapshot(municipality_row, 'Erststimmen'):,}</div></div>"
             f"<div class='stat'><div class='stat-label'>Gültige {html.escape(vote_type_label('Zweitstimmen'))}</div><div class='stat-value'>{vote_total_for_snapshot(municipality_row, 'Zweitstimmen'):,}</div></div>"
             "</div></div>"
+            f"{render_historical_comparison_section(municipality_row, party_row_details, party_order)}"
             f"<div class='panel'><h2>Wahlbezirke</h2>{render_booth_list(booth_rows, booth_local_links)}</div>"
             f"<div class='panel'><h2>Wahlbezirkstabelle: {html.escape(vote_type_label('Erststimmen'))}</h2>{first_table}</div>"
             f"<div class='panel'><h2>Wahlbezirkstabelle: {html.escape(vote_type_label('Zweitstimmen'))}</h2>{second_table}</div>"
@@ -1967,6 +2117,7 @@ def main() -> int:
                 f"<h1>{html.escape(booth['display_name'])}</h1>"
                 f"<p class='muted'>{html.escape(booth['gebietsart'])} in {html.escape(name)}</p>"
                 f"{detail_link}{location_link}</div>"
+                f"{render_historical_comparison_section(booth, party_row_details, party_order)}"
                 f"<div class='panel'><h2>{html.escape(vote_type_label('Erststimmen'))}</h2>{render_detail_list(first_votes, 'Erststimmen')}</div>"
                 f"<div class='panel'><h2>{html.escape(vote_type_label('Zweitstimmen'))}</h2>{render_detail_list(second_votes, 'Zweitstimmen')}</div>"
             )
@@ -2000,7 +2151,10 @@ def main() -> int:
         municipality_index_links,
         latest_kommone_snapshots,
         latest_kommone_party_rows,
+        snapshots,
         statla_party_rows,
+        party_order,
+        party_row_details,
         latest_source_diffs,
     )
     render_site_root_index(site_root, config)
