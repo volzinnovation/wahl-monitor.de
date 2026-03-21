@@ -20,11 +20,15 @@ OUT_DIR = ROOT / "data" / "2026-rlp" / "metadata"
 
 ELECTION_INFO_URL = "https://landtag-rlp.de/de/wahl-2026.htm"
 RESULTS_PAGE_URL = "https://www.wahlen.rlp.de/landtagswahl/ergebnisse"
+RESULTS_FAQ_URL = "https://www.wahlen.rlp.de/landtagswahl/ergebnisse/fragen-zu-den-ergebnissen"
 RESULT_PORTAL_URL_2026 = "https://wahlen.rlp-ltw-2026.23degrees.eu/wk/0000000000000/overview"
 TREE_URL_2021 = "https://wahlen.rlp-ltw-2021.23degrees.eu/assets/wk-vec-tree.json"
 GLOBAL_URL_2021 = "https://wahlen.rlp-ltw-2021.23degrees.eu/assets/json/global.json"
 RESULTS_XLSX_URL_2021 = (
     "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/btw/csv/2021/LW_2021_GESAMT.xlsx"
+)
+RESULTS_DATASET_DESCRIPTION_URL_2026 = (
+    "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/PDF/Datensatzbeschreibung_LTW_2026.pdf"
 )
 GEODATA_URL_2026 = (
     "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Shapefiles/Geodaten_LW2026_RP.zip"
@@ -61,13 +65,13 @@ CITY_SOURCE_RECORDS = [
     CitySourceRecord(
         ags="11100000",
         verification_status="partial",
-        source_type="municipal-landing-page",
-        source_scope="city archive and PDF reports",
-        url="https://wahlen.koblenz.de/wahlpraesentation/landtagswahlen/",
-        verified_from="city elections page",
+        source_type="municipal-election-site",
+        source_scope="active city election portal plus archive/result presentation section",
+        url="https://wahlen.koblenz.de/",
+        verified_from="city election portal",
         notes=(
-            "Verified archive landing page and 2021 PDF reports. "
-            "No separate 2021 live HTML result app confirmed in this pass."
+            "The 2026 portal is live and says Koblenz results will appear on Sunday 22 March from 18:30. "
+            "The same portal also exposes archived landtag result pages under /wahlpraesentation/landtagswahlen/."
         ),
     ),
     CitySourceRecord(
@@ -96,14 +100,14 @@ CITY_SOURCE_RECORDS = [
     ),
     CitySourceRecord(
         ags="31400000",
-        verification_status="not_found",
-        source_type="unknown",
-        source_scope="split city follow-up needed",
-        url="",
-        verified_from="web search result summary",
+        verification_status="partial",
+        source_type="municipal-election-site",
+        source_scope="active split-city election information page",
+        url="https://ludwigshafen.de/verwaltung-politik/landtagswahl-2026",
+        verified_from="city election page",
         notes=(
-            "Ludwigshafen is split across two Wahlkreise in the official tree, "
-            "but this pass did not confirm a separate municipal 2021 result portal."
+            "The city now publishes a dedicated 2026 election page with FAQ and Bekanntmachungen. "
+            "A separate municipal live result app was not confirmed in this pass."
         ),
     ),
     CitySourceRecord(
@@ -139,13 +143,14 @@ CITY_SOURCE_RECORDS = [
     ),
     CitySourceRecord(
         ags="32000000",
-        verification_status="candidate",
-        source_type="municipal-result-app",
-        source_scope="citywide candidate URL",
-        url="https://wahlen.zweibruecken.de/2021/ltw2021.html",
-        verified_from="search result only",
+        verification_status="found",
+        source_type="municipal-election-site",
+        source_scope="active city election page shared with the 2026 mayoral vote",
+        url="https://www.zweibruecken.de/de/verwaltung/politik-wahlen/wahlen/landtags-und-oberbuergermeisterwahl-2026/",
+        verified_from="city election page",
         notes=(
-            "Search results indicated a city portal, but certificate/path verification failed from this environment."
+            "The city now has a live 2026 election hub with Bekanntmachungen, Landeswahlleiter links, "
+            "and brief-vote information."
         ),
     ),
 ]
@@ -370,11 +375,20 @@ def write_setup_manifest(global_config: Dict[str, Any], municipality_rows: List[
         "official_sources": {
             "election_info_url": ELECTION_INFO_URL,
             "results_page_url": RESULTS_PAGE_URL,
+            "results_faq_url": RESULTS_FAQ_URL,
             "predicted_result_portal_url": RESULT_PORTAL_URL_2026,
             "historical_tree_url_2021": TREE_URL_2021,
             "historical_global_url_2021": GLOBAL_URL_2021,
             "historical_results_xlsx_url_2021": RESULTS_XLSX_URL_2021,
+            "dataset_description_pdf_url_2026": RESULTS_DATASET_DESCRIPTION_URL_2026,
             "geodata_zip_url_2026": GEODATA_URL_2026,
+        },
+        "published_timing": {
+            "official_result_portal_start_local": "2026-03-22T18:45:00",
+            "expected_first_results_window_start_local": "2026-03-22T18:30:00",
+            "expected_first_results_window_end_local": "2026-03-22T18:45:00",
+            "results_refresh_interval_minutes": 3,
+            "final_results_committee_time_local": "2026-04-02T10:00:00",
         },
         "historical_portal_2021": {
             "timestamp": global_config.get("timestamp"),
@@ -403,7 +417,10 @@ def write_source_inventory_md(split_rows: List[Dict[str, Any]], city_source_rows
         "## Official Published Inputs",
         f"- Election date: `2026-03-22` from [{ELECTION_INFO_URL}]({ELECTION_INFO_URL}).",
         f"- Official results landing page: [{RESULTS_PAGE_URL}]({RESULTS_PAGE_URL}).",
-        f"- Official page says the detailed result portal starts about 30 minutes after polls close; a predictable portal pattern is [{RESULT_PORTAL_URL_2026}]({RESULT_PORTAL_URL_2026}).",
+        f"- Official FAQ for the result portal: [{RESULTS_FAQ_URL}]({RESULTS_FAQ_URL}). It says the portal can be followed live from `2026-03-22 18:45 CET`, with first visible results expected between `18:30` and `18:45`.",
+        f"- Official FAQ says interim results are refreshed every three minutes. The portal pattern still matches [{RESULT_PORTAL_URL_2026}]({RESULT_PORTAL_URL_2026}).",
+        f"- Official FAQ says current counts can be downloaded as CSV from the portal menu and links the 2026 dataset description PDF: [{RESULTS_DATASET_DESCRIPTION_URL_2026}]({RESULTS_DATASET_DESCRIPTION_URL_2026}).",
+        "- Official FAQ says the final Stimmbezirk-level CSV will be published after the final result is established on `2026-04-02 10:00 CET`.",
         f"- Official 2026 geodata ZIP: [{GEODATA_URL_2026}]({GEODATA_URL_2026}).",
         f"- Official 2021 machine-readable tree: [{TREE_URL_2021}]({TREE_URL_2021}).",
         f"- Official 2021 state workbook download: [{RESULTS_XLSX_URL_2021}]({RESULTS_XLSX_URL_2021}).",
