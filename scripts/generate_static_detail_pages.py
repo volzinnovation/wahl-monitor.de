@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import poll_election_core as core
+import rlp_wahlkreis_structure as wk_structure
 
 
 OUTPUT_ROOT = None
@@ -51,6 +52,22 @@ WAHL_PARTY_COLORS = {
     "PdF": "#FFB27F",
     "Anderer Kreiswahlvorschlag": "#eeeeee",
 }
+
+STRUCTURE_PROFILE_COLORS = {
+    key: value["color"]
+    for key, value in wk_structure.STRUCTURE_PROFILE_METADATA.items()
+}
+STRUCTURE_METRIC_BY_KEY = {
+    spec.key: spec
+    for spec in wk_structure.STRUCTURE_METRICS
+}
+
+STRUCTURE_PROFILE_ORDER = [
+    "urban_services",
+    "growth_belt",
+    "industrial_space",
+    "aging_space",
+]
 
 WOKAL_ROW_RE = re.compile(
     r'<td><a href="(?P<href>Strassenverzeichnis_[^"]+\.html)"[^>]*>(?P<location>.*?)</a></td>\s*'
@@ -111,6 +128,36 @@ def parse_float(value: Any) -> Optional[float]:
         return float(text.replace(",", "."))
     except ValueError:
         return None
+
+
+def format_decimal(value: Any, decimals: int = 1) -> str:
+    parsed = parse_float(value)
+    if parsed is None:
+        return ""
+    if decimals == 0:
+        return f"{int(round(parsed)):,}".replace(",", ".")
+    return f"{parsed:,.{decimals}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def format_percent(value: Any, decimals: int = 1, *, signed: bool = False) -> str:
+    parsed = parse_float(value)
+    if parsed is None:
+        return ""
+    sign = "+" if signed and parsed > 0 else ""
+    return f"{sign}{format_decimal(parsed, decimals)} %"
+
+
+def format_metric(value: Any, unit: str, decimals: int = 1, *, signed: bool = False) -> str:
+    if unit == "%":
+        return format_percent(value, decimals, signed=signed)
+    formatted = format_decimal(value, decimals)
+    if not formatted:
+        return ""
+    if signed:
+        parsed = parse_float(value)
+        if parsed is not None and parsed > 0:
+            formatted = "+" + formatted
+    return f"{formatted} {unit}".strip()
 
 
 def status_label(status: str) -> str:
@@ -900,7 +947,258 @@ def build_wahlkreis_groups_from_entities(
     return out
 
 
+def build_wahlkreis_feature_lookup(features: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    lookup: Dict[str, Dict[str, Any]] = {}
+    for feature in features:
+        wk = core.normalize_wahlkreis_nummer((feature.get("properties") or {}).get("Nummer"))
+        if wk:
+            lookup[wk] = feature
+    return lookup
+
+
+def compute_wahlkreis_map_projection(features: List[Dict[str, Any]]) -> Optional[Dict[str, float]]:
+    all_points: List[Tuple[float, float]] = []
+    for feature in features:
+        for ring in core.iter_exterior_rings(feature.get("geometry") or {}):
+            for point in ring:
+                if len(point) >= 2:
+                    all_points.append((float(point[0]), float(point[1])))
+    if not all_points:
+        return None
+
+    min_lon = min(p[0] for p in all_points)
+    max_lon = max(p[0] for p in all_points)
+    min_lat = min(p[1] for p in all_points)
+    max_lat = max(p[1] for p in all_points)
+    width = 1000.0
+    height = 1300.0
+    pad = 40.0
+    scale_x = (width - 2 * pad) / max(max_lon - min_lon, 1e-9)
+    scale_y = (height - 2 * pad) / max(max_lat - min_lat, 1e-9)
+    scale = min(scale_x, scale_y)
+    return {
+        "min_lon": min_lon,
+        "min_lat": min_lat,
+        "scale": scale,
+        "width": width,
+        "height": height,
+        "pad": pad,
+    }
+
+
+def build_projected_wahlkreis_path(feature: Dict[str, Any], projection: Dict[str, float]) -> str:
+    d_parts: List[str] = []
+    for ring in core.iter_exterior_rings(feature.get("geometry") or {}):
+        if len(ring) < 3:
+            continue
+        projected = [
+            core.project_point(
+                float(pt[0]),
+                float(pt[1]),
+                min_lon=projection["min_lon"],
+                min_lat=projection["min_lat"],
+                scale=projection["scale"],
+                pad=projection["pad"],
+                height=projection["height"],
+            )
+            for pt in ring
+        ]
+        d_parts.append("M " + " L ".join(f"{x:.2f} {y:.2f}" for x, y in projected) + " Z")
+    return " ".join(d_parts)
+
+
+def structure_rows_from_features(features: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    rows: List[Dict[str, Any]] = []
+    for feature in features:
+        props = dict(feature.get("properties") or {})
+        if str(props.get("structure_profile_key") or "").strip():
+            rows.append(props)
+    rows.sort(key=lambda row: int(str(row.get("wahlkreisnummer") or row.get("Nummer") or 0)))
+    return rows
+
+
+def top_structure_rows(
+    structure_rows: List[Dict[str, Any]],
+    score_key: str,
+    *,
+    limit: int = 3,
+) -> List[Dict[str, Any]]:
+    sortable: List[Tuple[float, Dict[str, Any]]] = []
+    for row in structure_rows:
+        score = parse_float(row.get(score_key))
+        if score is None:
+            continue
+        sortable.append((score, row))
+    sortable.sort(key=lambda item: item[0], reverse=True)
+    return [row for _score, row in sortable[:limit]]
+
+
+def render_structure_profile_map(
+    features: List[Dict[str, Any]],
+    link_by_wk: Dict[str, str],
+) -> str:
+    if not features:
+        return "<p class='muted'>Keine Wahlkreis-Geometrie verfügbar.</p>"
+
+    projection = compute_wahlkreis_map_projection(features)
+    if projection is None:
+        return "<p class='muted'>Keine Wahlkreis-Geometrie verfügbar.</p>"
+
+    path_nodes: List[str] = []
+    for feature in features:
+        props = feature.get("properties") or {}
+        wk = core.normalize_wahlkreis_nummer(props.get("Nummer"))
+        if not wk:
+            continue
+        profile_key = str(props.get("structure_profile_key") or "").strip()
+        profile_label = str(props.get("structure_profile_label") or "").strip()
+        color = STRUCTURE_PROFILE_COLORS.get(profile_key, "#cbd5e1")
+        name = display_text(props.get("WK Name") or props.get("wahlkreisname") or f"Wahlkreis {wk}")
+        density = format_metric(props.get("population_density_per_km2"), "EW/km²", 0)
+        growth = format_metric(props.get("population_growth_2014_2024_percent"), "%", 1, signed=True)
+        aging = format_metric(props.get("old_age_dependency_ratio"), "", 1)
+        title_parts = [f"{wk.zfill(2)} {name}"]
+        if profile_label:
+            title_parts.append(profile_label)
+        if density:
+            title_parts.append(f"Dichte {density}")
+        if growth:
+            title_parts.append(f"Wachstum {growth}")
+        if aging:
+            title_parts.append(f"Altenquotient {aging}")
+        path_d = build_projected_wahlkreis_path(feature, projection)
+        if not path_d:
+            continue
+        title = html.escape(" | ".join(title_parts))
+        path_markup = f"<path d=\"{path_d}\" fill=\"{color}\" stroke=\"#111827\" stroke-width=\"0.8\"><title>{title}</title></path>"
+        href = link_by_wk.get(wk)
+        if href:
+            path_nodes.append(f"<a href='{html.escape(href)}'>{path_markup}</a>")
+        else:
+            path_nodes.append(path_markup)
+
+    return (
+        f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {int(projection['width'])} {int(projection['height'])}'>"
+        "<rect width='100%' height='100%' fill='#ffffff'/>"
+        f"{''.join(path_nodes)}"
+        "</svg>"
+    )
+
+
+def render_structure_profile_panel(
+    features: List[Dict[str, Any]],
+    link_by_wk: Dict[str, str],
+) -> str:
+    structure_rows = structure_rows_from_features(features)
+    if not structure_rows:
+        return ""
+
+    counts: Dict[str, int] = defaultdict(int)
+    for row in structure_rows:
+        counts[str(row.get("structure_profile_key") or "")] += 1
+
+    legend_items: List[str] = []
+    for key in STRUCTURE_PROFILE_ORDER:
+        meta = wk_structure.STRUCTURE_PROFILE_METADATA[key]
+        legend_items.append(
+            "<div class='structure-legend-item'>"
+            f"<span class='structure-swatch' style='background:{html.escape(meta['color'])}'></span>"
+            f"<div><strong>{html.escape(meta['label'])}</strong><br><span class='small'>{html.escape(meta['description'])} ({counts.get(key, 0)} Wahlkreise)</span></div>"
+            "</div>"
+        )
+
+    def render_leader_list(title: str, score_key: str) -> str:
+        items = []
+        for row in top_structure_rows(structure_rows, score_key):
+            wk = str(row.get("wahlkreisnummer") or "")
+            name = str(row.get("wahlkreisname") or row.get("WK Name") or "")
+            href = link_by_wk.get(wk)
+            label = f"{wk.zfill(2)} - {name}" if wk else name
+            text = f"<a href='{html.escape(href)}'>{html.escape(label)}</a>" if href else html.escape(label)
+            items.append(f"<li>{text}</li>")
+        return f"<div><strong>{html.escape(title)}</strong><ul class='inline-list'>{''.join(items)}</ul></div>"
+
+    return (
+        "<div class='panel dashboard-map'><h2>Strukturprofil der Wahlkreise</h2>"
+        "<p class='small'>Ableitung aus Dichte, Altersstruktur, Bevoelkerungsdynamik, Kinderbetreuung, Branchenmix und Pendlersaldo. Die Karte bleibt klickbar und fuehrt zu den Wahlkreisdetailseiten.</p>"
+        f"{render_structure_profile_map(features, link_by_wk)}"
+        f"<div class='structure-legend'>{''.join(legend_items)}</div>"
+        "<div class='structure-highlights'>"
+        f"{render_leader_list('Hoechste Urbanitaet', 'urbanity_score')}"
+        f"{render_leader_list('Staerkste Wachstumsdynamik', 'growth_score')}"
+        f"{render_leader_list('Hoechster Alterungsdruck', 'aging_score')}"
+        "</div></div>"
+    )
+
+
+def render_wahlkreis_structure_panel(feature: Optional[Dict[str, Any]]) -> str:
+    props = dict((feature or {}).get("properties") or {})
+    if not props or not str(props.get("structure_profile_key") or "").strip():
+        return ""
+
+    profile_key = str(props.get("structure_profile_key") or "")
+    profile_label = str(props.get("structure_profile_label") or "")
+    profile_color = STRUCTURE_PROFILE_COLORS.get(profile_key, "#cbd5e1")
+    summary = str(props.get("structure_summary") or "")
+    stat_specs = [
+        ("population_total", "Bevoelkerung"),
+        ("population_density_per_km2", "Dichte"),
+        ("population_growth_2014_2024_percent", "Wachstum 2014-2024"),
+        ("old_age_dependency_ratio", "Altenquotient"),
+        ("foreign_share_percent", "Auslaenderanteil"),
+        ("childcare_rate_u3_percent", "U3-Betreuung"),
+    ]
+    stat_cards: List[str] = []
+    for key, label in stat_specs:
+        spec = STRUCTURE_METRIC_BY_KEY[key]
+        value = format_metric(props.get(key), spec.unit, spec.decimals, signed="growth" in key)
+        stat_cards.append(
+            f"<div class='stat'><div class='stat-label'>{html.escape(label)}</div><div class='stat-value stat-value-small'>{html.escape(value or '-')}</div></div>"
+        )
+
+    metric_keys = [
+        "area_km2",
+        "share_u18_percent",
+        "share_80_plus_percent",
+        "population_forecast_2020_2040_percent",
+        "employment_manufacturing_share_percent",
+        "employment_services_share_percent",
+        "commuter_balance_per_1000",
+        "debt_total_per_capita_eur",
+    ]
+    metric_rows = []
+    for key in metric_keys:
+        if key == "commuter_balance_per_1000":
+            label = "Pendlersaldo je 1.000 Einwohner"
+            value = format_metric(props.get(key), "", 1, signed=True)
+        else:
+            spec = STRUCTURE_METRIC_BY_KEY[key]
+            label = spec.label
+            value = format_metric(props.get(key), spec.unit, spec.decimals, signed="growth" in key)
+        metric_rows.append(f"<tr><th>{html.escape(label)}</th><td>{html.escape(value or '-')}</td></tr>")
+
+    return (
+        "<div class='panel'>"
+        "<h2>Strukturprofil</h2>"
+        f"<div class='profile-badge'><span class='structure-swatch' style='background:{html.escape(profile_color)}'></span>{html.escape(profile_label)}</div>"
+        f"<p class='small structure-summary'>{html.escape(summary)}</p>"
+        f"<div class='stats'>{''.join(stat_cards)}</div>"
+        "<table class='compact metric-table'><tbody>"
+        f"{''.join(metric_rows)}"
+        "</tbody></table></div>"
+    )
+
+
 def render_page(title: str, body: str, root_path: str = "../") -> str:
+    footer_data_source = ""
+    if CURRENT_CONFIG is not None and CURRENT_CONFIG.election_key == "2026-rlp":
+        footer_data_source = (
+            "<p class='footer-data-source'>"
+            "Datenquelle Strukturprofil: "
+            f"<a href='{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}'>"
+            "Offizieller Wahlkreis-Strukturbericht Rheinland-Pfalz 2026</a>"
+            "</p>"
+        )
     header = (
         "<header class='site-header'>"
         "<div class='header-inner'>"
@@ -923,6 +1221,7 @@ def render_page(title: str, body: str, root_path: str = "../") -> str:
         "<div>"
         "<strong>Impressum</strong>"
         "<p>Open Source &amp; Open Data</p>"
+        f"{footer_data_source}"
         "<p class='footer-links'>"
         "<a href='https://github.com/volzinnovation/wahl-monitor.de'>GitHub</a>"
         "</p>"
@@ -1142,6 +1441,55 @@ def render_page(title: str, body: str, root_path: str = "../") -> str:
       transform: translateX(3px);
     }}
     .small {{ font-size: 12px; color: var(--muted); }}
+    .stat-value-small {{ font-size: 18px; }}
+    .profile-badge {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #f8f9fb;
+      border: 1px solid var(--line);
+      font-weight: 600;
+    }}
+    .structure-summary {{ margin-bottom: 18px; }}
+    .structure-legend {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }}
+    .structure-legend-item {{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f8f9fb;
+    }}
+    .structure-swatch {{
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      display: inline-block;
+      flex: 0 0 12px;
+      margin-top: 4px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }}
+    .structure-highlights {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }}
+    .structure-highlights strong {{ display: block; margin-bottom: 6px; }}
+    .metric-table {{ min-width: 0; margin-top: 18px; }}
+    .metric-table th, .metric-table td {{ position: static; background: transparent; }}
+    .metric-table th {{ width: 68%; }}
     details {{ border-top: 1px solid var(--line); padding-top: 12px; }}
     details + details {{ margin-top: 10px; }}
     summary {{
@@ -1182,6 +1530,11 @@ def render_page(title: str, body: str, root_path: str = "../") -> str:
       max-width: 1400px;
       margin: 0 auto;
       padding: 0 24px 40px;
+    }}
+    .footer-data-source {{
+      margin: 8px 0 0;
+      font-size: 13px;
+      color: var(--muted);
     }}
     .footer-inner {{
       border-top: 2px solid var(--line);
@@ -1634,25 +1987,9 @@ def render_clickable_wahlkreis_map(
         "complete": "#16a34a",
     }
 
-    all_points: List[Tuple[float, float]] = []
-    for feature in features:
-        for ring in core.iter_exterior_rings(feature.get("geometry") or {}):
-            for point in ring:
-                if len(point) >= 2:
-                    all_points.append((float(point[0]), float(point[1])))
-    if not all_points:
+    projection = compute_wahlkreis_map_projection(features)
+    if projection is None:
         return "<p class='muted'>Keine Wahlkreis-Geometrie verfügbar.</p>"
-
-    min_lon = min(p[0] for p in all_points)
-    max_lon = max(p[0] for p in all_points)
-    min_lat = min(p[1] for p in all_points)
-    max_lat = max(p[1] for p in all_points)
-    width = 1000.0
-    height = 1300.0
-    pad = 40.0
-    scale_x = (width - 2 * pad) / max(max_lon - min_lon, 1e-9)
-    scale_y = (height - 2 * pad) / max(max_lat - min_lat, 1e-9)
-    scale = min(scale_x, scale_y)
 
     path_nodes: List[str] = []
     for feature in features:
@@ -1663,32 +2000,16 @@ def render_clickable_wahlkreis_map(
         row = status_by_wk.get(wk, {})
         status = str(row.get("status") or "no_data")
         name = display_text(props.get("WK Name") or row.get("wahlkreisname") or f"Wahlkreis {wk}")
-        winner_party = str(row.get("winner_party") or "").strip()
+        winner_party = str(row.get("winner_party_zweit") or "").strip()
         fill = WAHL_PARTY_COLORS.get(winner_party, colors.get(status, colors["no_data"]))
-        d_parts: List[str] = []
-        for ring in core.iter_exterior_rings(feature.get("geometry") or {}):
-            if len(ring) < 3:
-                continue
-            projected = [
-                core.project_point(
-                    float(pt[0]),
-                    float(pt[1]),
-                    min_lon=min_lon,
-                    min_lat=min_lat,
-                    scale=scale,
-                    pad=pad,
-                    height=height,
-                )
-                for pt in ring
-            ]
-            d_parts.append("M " + " L ".join(f"{x:.2f} {y:.2f}" for x, y in projected) + " Z")
-        if not d_parts:
+        path_d = build_projected_wahlkreis_path(feature, projection)
+        if not path_d:
             continue
         title_text = f"{wk.zfill(2)} {name} ({status_label(status)})"
         if winner_party:
             title_text += f" - {vote_type_label('Zweitstimmen')}: {winner_party}"
         title = html.escape(title_text)
-        path_markup = f"<path d=\"{' '.join(d_parts)}\" fill=\"{fill}\" stroke=\"#111827\" stroke-width=\"0.8\"><title>{title}</title></path>"
+        path_markup = f"<path d=\"{path_d}\" fill=\"{fill}\" stroke=\"#111827\" stroke-width=\"0.8\"><title>{title}</title></path>"
         href = link_by_wk.get(wk)
         if href:
             path_nodes.append(f"<a href='{html.escape(href)}'>{path_markup}</a>")
@@ -1696,7 +2017,7 @@ def render_clickable_wahlkreis_map(
             path_nodes.append(path_markup)
 
     return (
-        f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {int(width)} {int(height)}'>"
+        f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {int(projection['width'])} {int(projection['height'])}'>"
         "<rect width='100%' height='100%' fill='#ffffff'/>"
         f"{''.join(path_nodes)}"
         "</svg>"
@@ -1773,6 +2094,7 @@ def enrich_booths_for_municipality(
 def render_index_page(
     config: core.Config,
     output_root: Path,
+    features: List[Dict[str, Any]],
     wahlkreis_pages: List[Tuple[str, str, str]],
     wahlkreis_status_rows: List[Dict[str, Any]],
     wahlkreis_link_by_wk: Dict[str, str],
@@ -1812,7 +2134,6 @@ def render_index_page(
         {},
     )
 
-    features = core.load_wahlkreis_features()
     operations = [f"`python scripts/generate_static_detail_pages.py --election-key {config.election_key}`"]
     if config.kommone_base_url_template:
         operations.insert(0, f"`python scripts/poll_election.py --election-key {config.election_key}`")
@@ -1834,6 +2155,7 @@ def render_index_page(
         "<div class='panel dashboard-map'><h2>Klickbare Wahlkreiskarte</h2>"
         "<p class='small'>Jeder Wahlkreis führt direkt zur Detailseite.</p>"
         f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk)}</div>"
+        f"{render_structure_profile_panel(features, wahlkreis_link_by_wk)}"
         f"{render_historical_comparison_section(land_snapshot, party_row_details_by_row_key, party_order)}"
         f"{render_vote_share_history_panel(config)}"
         f"{render_wahlkreis_overview_table(wahlkreis_status_rows, wahlkreis_link_by_wk)}"
@@ -1861,6 +2183,7 @@ def render_index_page(
             if statla_url
             else ""
         )
+        + f"<li>Offizieller Wahlkreis-Strukturbericht 2026: <a href='{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}'>{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}</a></li>"
         + "</ul></div>"
         + "<div class='panel'><h2>Betrieb</h2><ul class='inline-list'>"
         + "".join(f"<li>{item}</li>" for item in operations)
@@ -1939,6 +2262,8 @@ def main() -> int:
     party_row_details = build_party_row_details_by_row_key(statla_party_rows)
     party_order = derive_party_order_from_rows(statla_party_rows)
     mapping = core.load_wahlkreis_mapping()
+    features = core.load_wahlkreis_features()
+    wahlkreis_features_by_wk = build_wahlkreis_feature_lookup(features)
     site_root = output_root.parent
     wahlkreis_snapshots_by_wk = {
         core.normalize_wahlkreis_nummer(row.get("gebietsnummer") or row.get("row_key")): row
@@ -2021,10 +2346,12 @@ def main() -> int:
             party_row_details,
             party_order,
         )
+        structure_section = render_wahlkreis_structure_panel(wahlkreis_features_by_wk.get(wk))
         body = (
             f"<div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
             f"<a href='../../index.html'>Alle Wahlen</a></div><h1>{html.escape(wk.zfill(2))} - {html.escape(wk_name)}</h1>"
             "<p class='muted'>Gemeinden als Zeilen, Parteien als Spalten. Jede Zelle zeigt absolute Stimmen und den Zeilenanteil.</p></div>"
+            f"{structure_section}"
             f"{comparison_section}"
             f"<div class='panel'><h2>{html.escape(vote_type_label('Erststimmen'))}</h2>{first_table}</div>"
             f"<div class='panel'><h2>{html.escape(vote_type_label('Zweitstimmen'))}</h2>{second_table}</div>"
@@ -2145,6 +2472,7 @@ def main() -> int:
     render_index_page(
         config,
         output_root,
+        features,
         wahlkreis_pages,
         wahlkreis_status_rows,
         wahlkreis_link_by_wk,

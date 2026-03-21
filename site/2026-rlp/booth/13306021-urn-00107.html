@@ -209,6 +209,55 @@
       transform: translateX(3px);
     }
     .small { font-size: 12px; color: var(--muted); }
+    .stat-value-small { font-size: 18px; }
+    .profile-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #f8f9fb;
+      border: 1px solid var(--line);
+      font-weight: 600;
+    }
+    .structure-summary { margin-bottom: 18px; }
+    .structure-legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .structure-legend-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f8f9fb;
+    }
+    .structure-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      display: inline-block;
+      flex: 0 0 12px;
+      margin-top: 4px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .structure-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .structure-highlights strong { display: block; margin-bottom: 6px; }
+    .metric-table { min-width: 0; margin-top: 18px; }
+    .metric-table th, .metric-table td { position: static; background: transparent; }
+    .metric-table th { width: 68%; }
     details { border-top: 1px solid var(--line); padding-top: 12px; }
     details + details { margin-top: 10px; }
     summary {
@@ -249,6 +298,11 @@
       max-width: 1400px;
       margin: 0 auto;
       padding: 0 24px 40px;
+    }
+    .footer-data-source {
+      margin: 8px 0 0;
+      font-size: 13px;
+      color: var(--muted);
     }
     .footer-inner {
       border-top: 2px solid var(--line);
@@ -303,6 +357,6 @@
 <body>
   <header class='site-header'><div class='header-inner'><a href='../index.html' class='header-brand'><span class='header-icon' aria-hidden='true'>🗳️</span><span class='header-title'>wahl-monitor.de</span></a><span class='header-label'>Statisches Wahldashboard</span></div></header>
   <main><div class='hero'><div class='topbar'><a href='../municipality/13306021-dalberg.html'>Dalberg</a><span>/</span><a href='../index.html'>Startseite dieser Wahl</a><span>/</span><a href='../../index.html'>Alle Wahlen</a></div><h1>Dalberg</h1><p class='muted'>URNENWAHLBEZIRK in Dalberg</p></div><div class='panel'><h2>Vergleich 2026 vs 2021: Wahlkreisstimmen</h2><p class='small'>Vergleich mit den amtlichen Endergebnissen der Landtagswahl Rheinland-Pfalz vom 14. März 2021.</p><table class='compact'><thead><tr><th>Partei</th><th>2026 Stimmen</th><th>2026 Anteil</th><th>2021 Stimmen</th><th>2021 Anteil</th><th>Differenz Stimmen</th><th>Differenz Anteil</th></tr></thead><tbody><tr><td>SPD</td><td>0</td><td>0.00%</td><td>31</td><td>21.38%</td><td>-31</td><td>-21.38%</td></tr><tr><td>CDU</td><td>0</td><td>0.00%</td><td>69</td><td>47.59%</td><td>-69</td><td>-47.59%</td></tr><tr><td>AfD</td><td>0</td><td>0.00%</td><td>18</td><td>12.41%</td><td>-18</td><td>-12.41%</td></tr><tr><td>FDP</td><td>0</td><td>0.00%</td><td>4</td><td>2.76%</td><td>-4</td><td>-2.76%</td></tr><tr><td>GRÜNE</td><td>0</td><td>0.00%</td><td>12</td><td>8.28%</td><td>-12</td><td>-8.28%</td></tr><tr><td>Die Linke</td><td>0</td><td>0.00%</td><td>2</td><td>1.38%</td><td>-2</td><td>-1.38%</td></tr><tr><td>FREIE WÄHLER</td><td>0</td><td>0.00%</td><td>9</td><td>6.21%</td><td>-9</td><td>-6.21%</td></tr><tr><td>PIRATEN</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>ÖDP</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>Klimaliste</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>Die PARTEI</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>Tierschutzpartei</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>Volt</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>Basisdemokratie</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>Dr. Moritz</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>SIGGI WÄHLEN</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td><strong>Gültige Stimmen</strong></td><td><strong>0</strong></td><td><strong>0.00%</strong></td><td><strong>145</strong></td><td><strong>100.00%</strong></td><td><strong>-145</strong></td><td><strong>+0.00%</strong></td></tr></tbody></table></div><div class='panel'><h2>Vergleich 2026 vs 2021: Landesstimmen</h2><p class='small'>Vergleich mit den amtlichen Endergebnissen der Landtagswahl Rheinland-Pfalz vom 14. März 2021.</p><table class='compact'><thead><tr><th>Partei</th><th>2026 Stimmen</th><th>2026 Anteil</th><th>2021 Stimmen</th><th>2021 Anteil</th><th>Differenz Stimmen</th><th>Differenz Anteil</th></tr></thead><tbody><tr><td>SPD</td><td>0</td><td>0.00%</td><td>26</td><td>18.06%</td><td>-26</td><td>-18.06%</td></tr><tr><td>CDU</td><td>0</td><td>0.00%</td><td>68</td><td>47.22%</td><td>-68</td><td>-47.22%</td></tr><tr><td>AfD</td><td>0</td><td>0.00%</td><td>19</td><td>13.19%</td><td>-19</td><td>-13.19%</td></tr><tr><td>FDP</td><td>0</td><td>0.00%</td><td>8</td><td>5.56%</td><td>-8</td><td>-5.56%</td></tr><tr><td>GRÜNE</td><td>0</td><td>0.00%</td><td>10</td><td>6.94%</td><td>-10</td><td>-6.94%</td></tr><tr><td>Die Linke</td><td>0</td><td>0.00%</td><td>2</td><td>1.39%</td><td>-2</td><td>-1.39%</td></tr><tr><td>FREIE WÄHLER</td><td>0</td><td>0.00%</td><td>5</td><td>3.47%</td><td>-5</td><td>-3.47%</td></tr><tr><td>PIRATEN</td><td>0</td><td>0.00%</td><td>1</td><td>0.69%</td><td>-1</td><td>-0.69%</td></tr><tr><td>ÖDP</td><td>0</td><td>0.00%</td><td>1</td><td>0.69%</td><td>-1</td><td>-0.69%</td></tr><tr><td>Klimaliste</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>Die PARTEI</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>Tierschutzpartei</td><td>0</td><td>0.00%</td><td>2</td><td>1.39%</td><td>-2</td><td>-1.39%</td></tr><tr><td>Volt</td><td>0</td><td>0.00%</td><td>2</td><td>1.39%</td><td>-2</td><td>-1.39%</td></tr><tr><td>Basisdemokratie</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>Dr. Moritz</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td>SIGGI WÄHLEN</td><td>0</td><td>0.00%</td><td>0</td><td>0.00%</td><td>+0</td><td>+0.00%</td></tr><tr><td><strong>Gültige Stimmen</strong></td><td><strong>0</strong></td><td><strong>0.00%</strong></td><td><strong>144</strong></td><td><strong>100.00%</strong></td><td><strong>-144</strong></td><td><strong>+0.00%</strong></td></tr></tbody></table></div><div class='panel'><h2>Wahlkreisstimmen</h2><table><thead><tr><th>Partei</th><th>Stimmen</th><th>Anteil</th></tr></thead><tbody><tr><td>SPD</td><td>0</td><td>0.00%</td></tr><tr><td>CDU</td><td>0</td><td>0.00%</td></tr><tr><td>AfD</td><td>0</td><td>0.00%</td></tr><tr><td>FDP</td><td>0</td><td>0.00%</td></tr><tr><td>GRÜNE</td><td>0</td><td>0.00%</td></tr><tr><td>Die Linke</td><td>0</td><td>0.00%</td></tr><tr><td>FREIE WÄHLER</td><td>0</td><td>0.00%</td></tr><tr><td>PIRATEN</td><td>0</td><td>0.00%</td></tr><tr><td>ÖDP</td><td>0</td><td>0.00%</td></tr><tr><td>Klimaliste</td><td>0</td><td>0.00%</td></tr><tr><td>Die PARTEI</td><td>0</td><td>0.00%</td></tr><tr><td>Tierschutzpartei</td><td>0</td><td>0.00%</td></tr><tr><td>Volt</td><td>0</td><td>0.00%</td></tr><tr><td>Basisdemokratie</td><td>0</td><td>0.00%</td></tr><tr><td>Dr. Moritz</td><td>0</td><td>0.00%</td></tr><tr><td>SIGGI WÄHLEN</td><td>0</td><td>0.00%</td></tr><tr><td>dieBasis</td><td>0</td><td>0.00%</td></tr><tr><td>Bündnis C</td><td>0</td><td>0.00%</td></tr><tr><td>BSW</td><td>0</td><td>0.00%</td></tr><tr><td>Die Gerechtigkeitspartei</td><td>0</td><td>0.00%</td></tr><tr><td>Werteunion</td><td>0</td><td>0.00%</td></tr><tr><td>Anderer Kreiswahlvorschlag</td><td>0</td><td>0.00%</td></tr></tbody></table></div><div class='panel'><h2>Landesstimmen</h2><table><thead><tr><th>Partei</th><th>Stimmen</th><th>Anteil</th></tr></thead><tbody><tr><td>SPD</td><td>0</td><td>0.00%</td></tr><tr><td>CDU</td><td>0</td><td>0.00%</td></tr><tr><td>AfD</td><td>0</td><td>0.00%</td></tr><tr><td>FDP</td><td>0</td><td>0.00%</td></tr><tr><td>GRÜNE</td><td>0</td><td>0.00%</td></tr><tr><td>Die Linke</td><td>0</td><td>0.00%</td></tr><tr><td>FREIE WÄHLER</td><td>0</td><td>0.00%</td></tr><tr><td>PIRATEN</td><td>0</td><td>0.00%</td></tr><tr><td>ÖDP</td><td>0</td><td>0.00%</td></tr><tr><td>Klimaliste</td><td>0</td><td>0.00%</td></tr><tr><td>Die PARTEI</td><td>0</td><td>0.00%</td></tr><tr><td>Tierschutzpartei</td><td>0</td><td>0.00%</td></tr><tr><td>Volt</td><td>0</td><td>0.00%</td></tr><tr><td>Basisdemokratie</td><td>0</td><td>0.00%</td></tr><tr><td>Dr. Moritz</td><td>0</td><td>0.00%</td></tr><tr><td>SIGGI WÄHLEN</td><td>0</td><td>0.00%</td></tr><tr><td>dieBasis</td><td>0</td><td>0.00%</td></tr><tr><td>KlimalisteBW</td><td>0</td><td>0.00%</td></tr><tr><td>Bündnis C</td><td>0</td><td>0.00%</td></tr><tr><td>PDH</td><td>0</td><td>0.00%</td></tr><tr><td>Verjüngungsforschung</td><td>0</td><td>0.00%</td></tr><tr><td>BSW</td><td>0</td><td>0.00%</td></tr><tr><td>Die Gerechtigkeitspartei</td><td>0</td><td>0.00%</td></tr><tr><td>PDR</td><td>0</td><td>0.00%</td></tr><tr><td>PdF</td><td>0</td><td>0.00%</td></tr><tr><td>Werteunion</td><td>0</td><td>0.00%</td></tr></tbody></table></div></main>
-  <footer class='site-footer'><div class='footer-inner'><div class='footer-grid'><div><strong>wahl-monitor.de</strong><p>Unabhängiges Open-Source-Projekt zur transparenten Darstellung von Wahlergebnissen.</p></div><div><strong>Impressum</strong><p>Open Source &amp; Open Data</p><p class='footer-links'><a href='https://github.com/volzinnovation/wahl-monitor.de'>GitHub</a></p></div></div></div></footer>
+  <footer class='site-footer'><div class='footer-inner'><div class='footer-grid'><div><strong>wahl-monitor.de</strong><p>Unabhängiges Open-Source-Projekt zur transparenten Darstellung von Wahlergebnissen.</p></div><div><strong>Impressum</strong><p>Open Source &amp; Open Data</p><p class='footer-data-source'>Datenquelle Strukturprofil: <a href='https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/LW_2026_Strukturbericht_Wahlkreise.xlsx'>Offizieller Wahlkreis-Strukturbericht Rheinland-Pfalz 2026</a></p><p class='footer-links'><a href='https://github.com/volzinnovation/wahl-monitor.de'>GitHub</a></p></div></div></div></footer>
 </body>
 </html>

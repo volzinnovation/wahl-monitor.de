@@ -13,6 +13,7 @@
     "historical_global_url_2021": "https://wahlen.rlp-ltw-2021.23degrees.eu/assets/json/global.json",
     "historical_results_xlsx_url_2021": "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/btw/csv/2021/LW_2021_GESAMT.xlsx",
     "dataset_description_pdf_url_2026": "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/PDF/Datensatzbeschreibung_LTW_2026.pdf",
+    "structure_report_xlsx_url_2026": "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/LW_2026_Strukturbericht_Wahlkreise.xlsx",
     "geodata_zip_url_2026": "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Shapefiles/Geodaten_LW2026_RP.zip"
   },
   "published_timing": {

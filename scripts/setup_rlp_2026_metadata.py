@@ -30,6 +30,9 @@ RESULTS_XLSX_URL_2021 = (
 RESULTS_DATASET_DESCRIPTION_URL_2026 = (
     "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/PDF/Datensatzbeschreibung_LTW_2026.pdf"
 )
+STRUCTURE_REPORT_XLSX_URL_2026 = (
+    "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/LW_2026_Strukturbericht_Wahlkreise.xlsx"
+)
 GEODATA_URL_2026 = (
     "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Shapefiles/Geodaten_LW2026_RP.zip"
 )
@@ -381,6 +384,7 @@ def write_setup_manifest(global_config: Dict[str, Any], municipality_rows: List[
             "historical_global_url_2021": GLOBAL_URL_2021,
             "historical_results_xlsx_url_2021": RESULTS_XLSX_URL_2021,
             "dataset_description_pdf_url_2026": RESULTS_DATASET_DESCRIPTION_URL_2026,
+            "structure_report_xlsx_url_2026": STRUCTURE_REPORT_XLSX_URL_2026,
             "geodata_zip_url_2026": GEODATA_URL_2026,
         },
         "published_timing": {
@@ -422,6 +426,7 @@ def write_source_inventory_md(split_rows: List[Dict[str, Any]], city_source_rows
         f"- Official FAQ says current counts can be downloaded as CSV from the portal menu and links the 2026 dataset description PDF: [{RESULTS_DATASET_DESCRIPTION_URL_2026}]({RESULTS_DATASET_DESCRIPTION_URL_2026}).",
         "- Official FAQ says the final Stimmbezirk-level CSV will be published after the final result is established on `2026-04-02 10:00 CET`.",
         f"- Official 2026 geodata ZIP: [{GEODATA_URL_2026}]({GEODATA_URL_2026}).",
+        f"- Official 2026 Strukturbericht workbook: [{STRUCTURE_REPORT_XLSX_URL_2026}]({STRUCTURE_REPORT_XLSX_URL_2026}).",
         f"- Official 2021 machine-readable tree: [{TREE_URL_2021}]({TREE_URL_2021}).",
         f"- Official 2021 state workbook download: [{RESULTS_XLSX_URL_2021}]({RESULTS_XLSX_URL_2021}).",
         "",

@@ -8,6 +8,7 @@
 - Official FAQ says current counts can be downloaded as CSV from the portal menu and links the 2026 dataset description PDF: [https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/PDF/Datensatzbeschreibung_LTW_2026.pdf](https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/PDF/Datensatzbeschreibung_LTW_2026.pdf).
 - Official FAQ says the final Stimmbezirk-level CSV will be published after the final result is established on `2026-04-02 10:00 CET`.
 - Official 2026 geodata ZIP: [https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Shapefiles/Geodaten_LW2026_RP.zip](https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Shapefiles/Geodaten_LW2026_RP.zip).
+- Official 2026 Strukturbericht workbook: [https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/LW_2026_Strukturbericht_Wahlkreise.xlsx](https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/LW_2026_Strukturbericht_Wahlkreise.xlsx).
 - Official 2021 machine-readable tree: [https://wahlen.rlp-ltw-2021.23degrees.eu/assets/wk-vec-tree.json](https://wahlen.rlp-ltw-2021.23degrees.eu/assets/wk-vec-tree.json).
 - Official 2021 state workbook download: [https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/btw/csv/2021/LW_2021_GESAMT.xlsx](https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/btw/csv/2021/LW_2021_GESAMT.xlsx).
 

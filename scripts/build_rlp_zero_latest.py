@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Sequence, Tuple
 from xml.etree import ElementTree as ET
 
+import rlp_wahlkreis_structure as wk_structure
 
 ROOT = Path(__file__).resolve().parents[1]
 ELECTION_KEY = "2026-rlp"
@@ -26,6 +27,7 @@ TMP_DIR = Path("/tmp")
 
 WORKBOOK_CACHE_PATH = TMP_DIR / "LW_2021_GESAMT.xlsx"
 GEODATA_CACHE_PATH = TMP_DIR / "Geodaten_LW2026_RP.zip"
+STRUCTURE_WORKBOOK_CACHE_PATH = TMP_DIR / "LW_2026_Strukturbericht_Wahlkreise.xlsx"
 
 RAW_HEADERS = [
     "Wahlkreisnummer",
@@ -816,6 +818,11 @@ def main() -> int:
     official_sources = manifest_data.get("official_sources", {})
     workbook_path = ensure_download(str(official_sources.get("historical_results_xlsx_url_2021") or ""), WORKBOOK_CACHE_PATH)
     geodata_path = ensure_download(str(official_sources.get("geodata_zip_url_2026") or ""), GEODATA_CACHE_PATH)
+    structure_workbook_url = str(
+        official_sources.get("structure_report_xlsx_url_2026")
+        or wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL
+    )
+    structure_workbook_path = ensure_download(structure_workbook_url, STRUCTURE_WORKBOOK_CACHE_PATH)
 
     municipality_rows = read_csv_rows(META_DIR / "municipalities.csv")
     fragment_rows = read_csv_rows(META_DIR / "municipality_fragments_2021.csv")
@@ -840,7 +847,21 @@ def main() -> int:
         history,
     )
 
-    wahlkreis_geojson = build_wahlkreis_geojson(geodata_path, wk_name_by_id)
+    base_wahlkreis_geojson = build_wahlkreis_geojson(geodata_path, wk_name_by_id)
+    official_wahlkreisnummer_by_name = {
+        wk_structure.canonical_wahlkreis_name((feature.get("properties") or {}).get("WK Name")):
+        wk_structure.normalize_wahlkreis_nummer((feature.get("properties") or {}).get("Nummer"))
+        for feature in base_wahlkreis_geojson.get("features", []) or []
+        if wk_structure.normalize_wahlkreis_nummer((feature.get("properties") or {}).get("Nummer"))
+    }
+    structure_rows = wk_structure.derive_structure_rows(
+        structure_workbook_path,
+        official_wahlkreisnummer_by_name,
+    )
+    wahlkreis_geojson = wk_structure.enrich_geojson_with_structure(
+        base_wahlkreis_geojson,
+        structure_rows,
+    )
 
     LATEST_DIR.mkdir(parents=True, exist_ok=True)
     RAW_STATLA_DIR.mkdir(parents=True, exist_ok=True)
@@ -851,6 +872,7 @@ def main() -> int:
         municipality_rows,
     )
     write_csv(META_DIR / "wahlkreis-mapping.csv", MAPPING_HEADERS, mapping_rows, delimiter=";")
+    write_csv(META_DIR / "wahlkreis-structure.csv", wk_structure.CSV_FIELDNAMES, structure_rows)
     (META_DIR / "wahlkreise.geojson").write_text(json.dumps(wahlkreis_geojson, ensure_ascii=False), encoding="utf-8")
     write_csv(LATEST_DIR / "statla_snapshots.csv", SNAPSHOT_HEADERS, snapshots)
     write_csv(LATEST_DIR / "statla_party_results.csv", PARTY_HEADERS, party_rows)
@@ -862,6 +884,7 @@ def main() -> int:
     print(f"Party rows: {len(party_rows)}")
     print(f"Booths: {len(booth_rows)}")
     print(f"Wahlkreise: {len(wk_name_by_id)}")
+    print(f"Structure rows: {len(structure_rows)}")
     print(f"Municipalities: {len(municipality_rows)}")
     return 0
 
