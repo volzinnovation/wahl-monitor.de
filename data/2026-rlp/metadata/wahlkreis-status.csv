@@ -15,7 +15,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 114,"Bad Neuenahr-Ahrweiler, Wahlkreis",pending,85,89,51,0,0,51
 215,"Cochem-Zell, Wahlkreis",complete,107,107,89,0,0,89
 216,"Rhein-Hunsrück, Wahlkreis",complete,149,149,97,0,0,97
-217,"Bad Kreuznach, Wahlkreis",pending,56,59,36,0,0,36
+217,"Bad Kreuznach, Wahlkreis",pending,58,59,36,0,0,36
 218,"Kirn / Bad Sobernheim, Wahlkreis",complete,101,101,82,0,0,82
 219,"Birkenfeld, Wahlkreis",pending,134,135,96,0,0,96
 220,"Vulkaneifel, Wahlkreis",pending,143,144,109,0,0,109
@@ -28,20 +28,20 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 327,"Mainz I, Wahlkreis",complete,79,79,1,0,0,1
 328,"Mainz II, Wahlkreis",pending,78,79,1,0,0,1
 329,"Mainz III, Wahlkreis",pending,60,63,6,0,0,6
-330,"Bingen am Rhein, Wahlkreis",pending,71,76,29,0,0,29
+330,"Bingen am Rhein, Wahlkreis",pending,72,76,29,0,0,29
 331,"Ingelheim am Rhein, Wahlkreis",pending,103,106,10,0,0,10
 332,"Rhein-Selz / Wonnegau, Wahlkreis",pending,68,70,43,0,0,43
-333,"Worms, Wahlkreis",pending,81,82,1,0,0,1
+333,"Worms, Wahlkreis",complete,82,82,1,0,0,1
 334,"Alzey, Wahlkreis",complete,88,88,46,0,0,46
 335,"Frankenthal (Pfalz), Wahlkreis",pending,74,75,8,0,0,8
 336,"Ludwigshafen am Rhein I, Wahlkreis",complete,66,66,1,0,0,1
 337,"Ludwigshafen am Rhein II, Wahlkreis",complete,79,79,1,0,0,1
 338,"Mutterstadt, Wahlkreis",complete,67,67,13,0,0,13
 339,"Speyer, Wahlkreis",complete,61,61,6,0,0,6
-440,"Donnersberg, Wahlkreis",pending,112,113,86,0,0,86
-441,"Kusel, Wahlkreis",pending,109,112,98,0,0,98
+440,"Donnersberg, Wahlkreis",complete,113,113,86,0,0,86
+441,"Kusel, Wahlkreis",pending,110,112,98,0,0,98
 442,"Bad Dürkheim, Wahlkreis",pending,70,71,35,0,0,35
-443,"Neustadt an der Weinstraße, Wahlkreis",pending,78,80,9,0,0,9
+443,"Neustadt an der Weinstraße, Wahlkreis",pending,79,80,9,0,0,9
 444,"Kaiserslautern I, Wahlkreis",complete,54,54,1,0,0,1
 445,"Kaiserslautern II, Wahlkreis",complete,83,83,21,0,0,21
 446,"Kaiserslautern-Land, Wahlkreis",complete,69,69,30,0,0,30
