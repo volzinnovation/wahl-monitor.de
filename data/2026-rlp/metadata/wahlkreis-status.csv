@@ -2,7 +2,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 101,"Betzdorf / Kirchen (Sieg), Wahlkreis",pending,95,96,44,0,0,44
 102,"Altenkirchen (Westerwald), Wahlkreis",complete,101,101,97,0,0,97
 103,"Linz am Rhein / Rengsdorf, Wahlkreis",complete,102,102,39,0,0,39
-104,"Neuwied, Wahlkreis",pending,92,93,23,0,0,23
+104,"Neuwied, Wahlkreis",complete,93,93,23,0,0,23
 105,"Bad Marienberg (Westerwald) / Westerburg, Wahlkreis",complete,116,116,96,0,0,96
 106,"Montabaur, Wahlkreis",complete,92,92,69,0,0,69
 107,"Diez / Nassau, Wahlkreis",pending,131,132,105,0,0,105
@@ -18,17 +18,17 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 217,"Bad Kreuznach, Wahlkreis",pending,58,59,36,0,0,36
 218,"Kirn / Bad Sobernheim, Wahlkreis",complete,101,101,82,0,0,82
 219,"Birkenfeld, Wahlkreis",pending,134,135,96,0,0,96
-220,"Vulkaneifel, Wahlkreis",pending,143,144,109,0,0,109
+220,"Vulkaneifel, Wahlkreis",complete,144,144,109,0,0,109
 221,"Bitburg-Prüm, Wahlkreis",complete,213,213,234,0,0,234
 222,"Wittlich, Wahlkreis",complete,81,81,61,0,0,61
 223,Bernkastel-Kues / Morbach / Kirchberg (Hunsrück),complete,123,123,85,0,0,85
-224,"Trier / Schweich, Wahlkreis",pending,97,98,51,0,0,51
+224,"Trier / Schweich, Wahlkreis",complete,98,98,51,0,0,51
 225,"Trier, Wahlkreis",complete,97,97,1,0,0,1
 226,"Konz / Saarburg, Wahlkreis",complete,97,97,54,0,0,54
 327,"Mainz I, Wahlkreis",complete,79,79,1,0,0,1
 328,"Mainz II, Wahlkreis",pending,78,79,1,0,0,1
 329,"Mainz III, Wahlkreis",pending,61,63,6,0,0,6
-330,"Bingen am Rhein, Wahlkreis",pending,73,76,29,0,0,29
+330,"Bingen am Rhein, Wahlkreis",pending,74,76,29,0,0,29
 331,"Ingelheim am Rhein, Wahlkreis",pending,103,106,10,0,0,10
 332,"Rhein-Selz / Wonnegau, Wahlkreis",pending,68,70,43,0,0,43
 333,"Worms, Wahlkreis",complete,82,82,1,0,0,1
@@ -41,7 +41,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 440,"Donnersberg, Wahlkreis",complete,113,113,86,0,0,86
 441,"Kusel, Wahlkreis",pending,110,112,98,0,0,98
 442,"Bad Dürkheim, Wahlkreis",pending,70,71,35,0,0,35
-443,"Neustadt an der Weinstraße, Wahlkreis",pending,79,80,9,0,0,9
+443,"Neustadt an der Weinstraße, Wahlkreis",complete,80,80,9,0,0,9
 444,"Kaiserslautern I, Wahlkreis",complete,54,54,1,0,0,1
 445,"Kaiserslautern II, Wahlkreis",complete,83,83,21,0,0,21
 446,"Kaiserslautern-Land, Wahlkreis",complete,69,69,30,0,0,30
