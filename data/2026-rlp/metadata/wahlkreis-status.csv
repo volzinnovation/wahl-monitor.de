@@ -28,8 +28,8 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 327,"Mainz I, Wahlkreis",complete,79,79,1,0,0,1
 328,"Mainz II, Wahlkreis",pending,78,79,1,0,0,1
 329,"Mainz III, Wahlkreis",pending,61,63,6,0,0,6
-330,"Bingen am Rhein, Wahlkreis",pending,74,76,29,0,0,29
-331,"Ingelheim am Rhein, Wahlkreis",pending,105,106,10,0,0,10
+330,"Bingen am Rhein, Wahlkreis",pending,75,76,29,0,0,29
+331,"Ingelheim am Rhein, Wahlkreis",complete,106,106,10,0,0,10
 332,"Rhein-Selz / Wonnegau, Wahlkreis",pending,69,70,43,0,0,43
 333,"Worms, Wahlkreis",complete,82,82,1,0,0,1
 334,"Alzey, Wahlkreis",complete,88,88,46,0,0,46
@@ -39,7 +39,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 338,"Mutterstadt, Wahlkreis",complete,67,67,13,0,0,13
 339,"Speyer, Wahlkreis",complete,61,61,6,0,0,6
 440,"Donnersberg, Wahlkreis",complete,113,113,86,0,0,86
-441,"Kusel, Wahlkreis",pending,110,112,98,0,0,98
+441,"Kusel, Wahlkreis",pending,111,112,98,0,0,98
 442,"Bad Dürkheim, Wahlkreis",pending,70,71,35,0,0,35
 443,"Neustadt an der Weinstraße, Wahlkreis",complete,80,80,9,0,0,9
 444,"Kaiserslautern I, Wahlkreis",complete,54,54,1,0,0,1
