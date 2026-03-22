@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-03-22T19:17:58.740557+00:00",
+  "generated_at_utc": "2026-03-22T19:20:12.033201+00:00",
   "kommone_municipalities_polled": 2300,
   "official_source_error": null,
   "official_source_status_code": 200,
   "official_source_url": "https://rlp-ltw26.wahlen.23degrees.eu/assets/Wahlergebnisse_Landtagswahl_2026.csv",
-  "run_label": "2026-03-22-20-17-02",
+  "run_label": "2026-03-22-20-19-27",
   "statla_error": "Official CSV URL did not return CSV content",
   "statla_mode": "LIVE_JSON_23DEGREES",
   "statla_url": "https://rlp-ltw26.wahlen.23degrees.eu/wk/0000000000000/overview"
