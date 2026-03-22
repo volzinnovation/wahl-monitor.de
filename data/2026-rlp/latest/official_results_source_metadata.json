@@ -1,7 +1,7 @@
 {
-  "content_hash": "ca198c69afe2f8b2a1979ee651b7d7bf2e1dfc605ca5280feea55aff8301d84c",
+  "content_hash": "35ab18efbbc1d2e1f3658344bf122054b06ae874986b9966a6598b4c7d66cc46",
   "error_message": null,
-  "fetched_at_utc": "2026-03-22T21:18:13.645061+00:00",
+  "fetched_at_utc": "2026-03-22T21:33:26.564348+00:00",
   "status_code": 200,
   "url": "https://rlp-ltw26.wahlen.23degrees.eu/assets/Wahlergebnisse_Landtagswahl_2026.csv"
 }
