@@ -26,8 +26,8 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 225,"Trier, Wahlkreis",complete,97,97,1,0,0,1
 226,"Konz / Saarburg, Wahlkreis",complete,97,97,54,0,0,54
 327,"Mainz I, Wahlkreis",complete,79,79,1,0,0,1
-328,"Mainz II, Wahlkreis",pending,78,79,1,0,0,1
-329,"Mainz III, Wahlkreis",pending,61,63,6,0,0,6
+328,"Mainz II, Wahlkreis",complete,78,78,1,0,0,1
+329,"Mainz III, Wahlkreis",pending,61,62,6,0,0,6
 330,"Bingen am Rhein, Wahlkreis",pending,75,76,29,0,0,29
 331,"Ingelheim am Rhein, Wahlkreis",complete,106,106,10,0,0,10
 332,"Rhein-Selz / Wonnegau, Wahlkreis",pending,69,70,43,0,0,43
