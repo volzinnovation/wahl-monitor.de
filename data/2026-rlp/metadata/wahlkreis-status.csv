@@ -1,53 +1,53 @@
 wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipalities_total,municipalities_complete,municipalities_pending,municipalities_no_data
-101,"Betzdorf / Kirchen (Sieg), Wahlkreis",pending,88,96,44,0,0,44
+101,"Betzdorf / Kirchen (Sieg), Wahlkreis",pending,90,96,44,0,0,44
 102,"Altenkirchen (Westerwald), Wahlkreis",pending,100,101,97,0,0,97
-103,"Linz am Rhein / Rengsdorf, Wahlkreis",pending,93,102,39,0,0,39
-104,"Neuwied, Wahlkreis",pending,76,93,23,0,0,23
-105,"Bad Marienberg (Westerwald) / Westerburg, Wahlkreis",pending,112,116,96,0,0,96
+103,"Linz am Rhein / Rengsdorf, Wahlkreis",pending,95,102,39,0,0,39
+104,"Neuwied, Wahlkreis",pending,77,93,23,0,0,23
+105,"Bad Marienberg (Westerwald) / Westerburg, Wahlkreis",pending,113,116,96,0,0,96
 106,"Montabaur, Wahlkreis",pending,87,92,69,0,0,69
-107,"Diez / Nassau, Wahlkreis",pending,121,132,105,0,0,105
+107,"Diez / Nassau, Wahlkreis",pending,125,132,105,0,0,105
 108,"Koblenz / Lahnstein, Wahlkreis",pending,71,74,33,0,0,33
-109,"Koblenz, Wahlkreis",pending,89,95,1,0,0,1
-110,"Bendorf / Weißenthurm, Wahlkreis",pending,59,64,16,0,0,16
+109,"Koblenz, Wahlkreis",pending,91,95,1,0,0,1
+110,"Bendorf / Weißenthurm, Wahlkreis",pending,60,64,16,0,0,16
 111,"Andernach, Wahlkreis",pending,62,63,11,0,0,11
-112,"Mayen, Wahlkreis",pending,89,104,64,0,0,64
-113,"Remagen / Sinzig, Wahlkreis",pending,42,56,23,0,0,23
-114,"Bad Neuenahr-Ahrweiler, Wahlkreis",pending,70,89,51,0,0,51
-215,"Cochem-Zell, Wahlkreis",pending,105,107,89,0,0,89
+112,"Mayen, Wahlkreis",pending,91,104,64,0,0,64
+113,"Remagen / Sinzig, Wahlkreis",pending,43,56,23,0,0,23
+114,"Bad Neuenahr-Ahrweiler, Wahlkreis",pending,73,89,51,0,0,51
+215,"Cochem-Zell, Wahlkreis",pending,106,107,89,0,0,89
 216,"Rhein-Hunsrück, Wahlkreis",pending,143,149,97,0,0,97
-217,"Bad Kreuznach, Wahlkreis",pending,48,59,36,0,0,36
-218,"Kirn / Bad Sobernheim, Wahlkreis",pending,95,101,82,0,0,82
-219,"Birkenfeld, Wahlkreis",pending,119,135,96,0,0,96
-220,"Vulkaneifel, Wahlkreis",pending,137,144,109,0,0,109
+217,"Bad Kreuznach, Wahlkreis",pending,49,59,36,0,0,36
+218,"Kirn / Bad Sobernheim, Wahlkreis",pending,96,101,82,0,0,82
+219,"Birkenfeld, Wahlkreis",pending,123,135,96,0,0,96
+220,"Vulkaneifel, Wahlkreis",pending,138,144,109,0,0,109
 221,"Bitburg-Prüm, Wahlkreis",pending,209,213,234,0,0,234
-222,"Wittlich, Wahlkreis",pending,67,81,61,0,0,61
+222,"Wittlich, Wahlkreis",pending,71,81,61,0,0,61
 223,Bernkastel-Kues / Morbach / Kirchberg (Hunsrück),pending,115,123,85,0,0,85
-224,"Trier / Schweich, Wahlkreis",pending,89,98,51,0,0,51
-225,"Trier, Wahlkreis",pending,83,97,1,0,0,1
-226,"Konz / Saarburg, Wahlkreis",pending,62,97,54,0,0,54
-327,"Mainz I, Wahlkreis",pending,66,79,1,0,0,1
-328,"Mainz II, Wahlkreis",pending,70,79,1,0,0,1
-329,"Mainz III, Wahlkreis",pending,51,63,6,0,0,6
-330,"Bingen am Rhein, Wahlkreis",pending,62,76,29,0,0,29
-331,"Ingelheim am Rhein, Wahlkreis",pending,88,106,10,0,0,10
-332,"Rhein-Selz / Wonnegau, Wahlkreis",pending,52,70,43,0,0,43
+224,"Trier / Schweich, Wahlkreis",pending,90,98,51,0,0,51
+225,"Trier, Wahlkreis",pending,85,97,1,0,0,1
+226,"Konz / Saarburg, Wahlkreis",pending,68,97,54,0,0,54
+327,"Mainz I, Wahlkreis",pending,68,79,1,0,0,1
+328,"Mainz II, Wahlkreis",pending,72,79,1,0,0,1
+329,"Mainz III, Wahlkreis",pending,54,63,6,0,0,6
+330,"Bingen am Rhein, Wahlkreis",pending,64,76,29,0,0,29
+331,"Ingelheim am Rhein, Wahlkreis",pending,90,106,10,0,0,10
+332,"Rhein-Selz / Wonnegau, Wahlkreis",pending,57,70,43,0,0,43
 333,"Worms, Wahlkreis",pending,73,82,1,0,0,1
-334,"Alzey, Wahlkreis",pending,80,88,46,0,0,46
+334,"Alzey, Wahlkreis",pending,81,88,46,0,0,46
 335,"Frankenthal (Pfalz), Wahlkreis",pending,72,75,8,0,0,8
-336,"Ludwigshafen am Rhein I, Wahlkreis",pending,65,66,1,0,0,1
+336,"Ludwigshafen am Rhein I, Wahlkreis",complete,66,66,1,0,0,1
 337,"Ludwigshafen am Rhein II, Wahlkreis",pending,77,79,1,0,0,1
 338,"Mutterstadt, Wahlkreis",pending,63,67,13,0,0,13
-339,"Speyer, Wahlkreis",pending,50,61,6,0,0,6
+339,"Speyer, Wahlkreis",pending,52,61,6,0,0,6
 440,"Donnersberg, Wahlkreis",pending,110,113,86,0,0,86
 441,"Kusel, Wahlkreis",pending,106,112,98,0,0,98
-442,"Bad Dürkheim, Wahlkreis",pending,60,71,35,0,0,35
+442,"Bad Dürkheim, Wahlkreis",pending,61,71,35,0,0,35
 443,"Neustadt an der Weinstraße, Wahlkreis",pending,71,80,9,0,0,9
-444,"Kaiserslautern I, Wahlkreis",pending,48,54,1,0,0,1
-445,"Kaiserslautern II, Wahlkreis",pending,79,83,21,0,0,21
+444,"Kaiserslautern I, Wahlkreis",pending,49,54,1,0,0,1
+445,"Kaiserslautern II, Wahlkreis",pending,80,83,21,0,0,21
 446,"Kaiserslautern-Land, Wahlkreis",pending,67,69,30,0,0,30
-447,"Zweibrücken, Wahlkreis",pending,85,93,46,0,0,46
+447,"Zweibrücken, Wahlkreis",pending,89,93,46,0,0,46
 448,"Pirmasens, Wahlkreis",pending,98,104,40,0,0,40
 449,"Südliche Weinstraße, Wahlkreis",pending,76,86,59,0,0,59
-450,"Landau in der Pfalz, Wahlkreis",pending,63,67,20,0,0,20
+450,"Landau in der Pfalz, Wahlkreis",pending,64,67,20,0,0,20
 451,"Germersheim, Wahlkreis",pending,33,39,15,0,0,15
 452,"Wörth am Rhein, Wahlkreis",pending,45,51,13,0,0,13
