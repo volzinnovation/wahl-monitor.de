@@ -1,5 +1,5 @@
 wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipalities_total,municipalities_complete,municipalities_pending,municipalities_no_data
-101,"Betzdorf / Kirchen (Sieg), Wahlkreis",pending,95,96,44,0,0,44
+101,"Betzdorf / Kirchen (Sieg), Wahlkreis",complete,96,96,44,0,0,44
 102,"Altenkirchen (Westerwald), Wahlkreis",complete,101,101,97,0,0,97
 103,"Linz am Rhein / Rengsdorf, Wahlkreis",complete,102,102,39,0,0,39
 104,"Neuwied, Wahlkreis",complete,93,93,23,0,0,23
@@ -10,9 +10,9 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 109,"Koblenz, Wahlkreis",complete,95,95,1,0,0,1
 110,"Bendorf / Weißenthurm, Wahlkreis",complete,64,64,16,0,0,16
 111,"Andernach, Wahlkreis",complete,63,63,11,0,0,11
-112,"Mayen, Wahlkreis",pending,101,104,64,0,0,64
-113,"Remagen / Sinzig, Wahlkreis",pending,52,56,23,0,0,23
-114,"Bad Neuenahr-Ahrweiler, Wahlkreis",pending,86,89,51,0,0,51
+112,"Mayen, Wahlkreis",pending,102,104,64,0,0,64
+113,"Remagen / Sinzig, Wahlkreis",pending,53,56,23,0,0,23
+114,"Bad Neuenahr-Ahrweiler, Wahlkreis",pending,87,89,51,0,0,51
 215,"Cochem-Zell, Wahlkreis",complete,107,107,89,0,0,89
 216,"Rhein-Hunsrück, Wahlkreis",complete,149,149,97,0,0,97
 217,"Bad Kreuznach, Wahlkreis",pending,58,59,36,0,0,36
@@ -29,8 +29,8 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 328,"Mainz II, Wahlkreis",pending,78,79,1,0,0,1
 329,"Mainz III, Wahlkreis",pending,61,63,6,0,0,6
 330,"Bingen am Rhein, Wahlkreis",pending,74,76,29,0,0,29
-331,"Ingelheim am Rhein, Wahlkreis",pending,103,106,10,0,0,10
-332,"Rhein-Selz / Wonnegau, Wahlkreis",pending,68,70,43,0,0,43
+331,"Ingelheim am Rhein, Wahlkreis",pending,105,106,10,0,0,10
+332,"Rhein-Selz / Wonnegau, Wahlkreis",pending,69,70,43,0,0,43
 333,"Worms, Wahlkreis",complete,82,82,1,0,0,1
 334,"Alzey, Wahlkreis",complete,88,88,46,0,0,46
 335,"Frankenthal (Pfalz), Wahlkreis",pending,74,75,8,0,0,8
