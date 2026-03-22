@@ -365,6 +365,16 @@ def normalize_text(value: str) -> str:
     return re.sub(r"\s+", " ", normalized.strip().lower())
 
 
+def is_voters_total_label(label: str) -> bool:
+    normalized = normalize_text(label)
+    if not normalized:
+        return False
+    for prefix in ("wahler", "waehler", "wahlerinnen", "waehlerinnen"):
+        if normalized == prefix or normalized.startswith(f"{prefix}/") or normalized.startswith(f"{prefix} "):
+            return True
+    return False
+
+
 def parse_bool_flag(value: Any) -> bool:
     if isinstance(value, bool):
         return value
@@ -1204,7 +1214,7 @@ def parse_kommone_info_rows(info_rows: List[Dict[str, Any]]) -> Dict[str, Option
         value = parse_int((row or {}).get("zahl"))
         if not label:
             continue
-        if "wahler" in label or "wahlerinnen" in label or "waehler" in label:
+        if is_voters_total_label(label):
             out["voters_total"] = value
         elif "ungultig" in label and "stimmen" in label:
             out["invalid_votes"] = value
@@ -1352,7 +1362,7 @@ def parse_kommone_footer_values(section_html: str) -> Dict[str, Optional[int]]:
         second_value = parse_int(cells[5]) if len(cells) > 5 else None
         values = [value for value in [first_value, second_value] if isinstance(value, int)]
         best_value = max(values) if values else None
-        if "wahler" in label or "waehler" in label:
+        if is_voters_total_label(label):
             info["voters_total"] = best_value
         elif "ungultig" in label and "stimmen" in label:
             info["invalid_votes"] = best_value
@@ -1808,6 +1818,22 @@ def merge_party_rows_for_output_row(
         merged_row["votes"] = parse_int((current or {}).get("votes"))
         if merged_row["votes"] is None:
             merged_row["votes"] = 0
+        if current is not None:
+            current_share_delta = parse_float_value(current.get("delta_share_percent_vs_2021"))
+            if current_share_delta is not None:
+                merged_row["delta_share_percent_vs_2021"] = current_share_delta
+            if merged_row.get("votes_2021") in (None, ""):
+                historical_votes = parse_int(current.get("votes_2021"))
+                if historical_votes is not None:
+                    merged_row["votes_2021"] = historical_votes
+            if merged_row.get("share_percent_2021") in (None, ""):
+                historical_share = parse_float_value(current.get("share_percent_2021"))
+                if historical_share is not None:
+                    merged_row["share_percent_2021"] = historical_share
+        else:
+            historical_share = parse_float_value(merged_row.get("share_percent_2021"))
+            if historical_share is not None:
+                merged_row["delta_share_percent_vs_2021"] = -historical_share
         historical_votes = parse_int(merged_row.get("votes_2021"))
         if historical_votes is not None:
             merged_row["delta_votes_vs_2021"] = int(merged_row["votes"]) - historical_votes
@@ -2516,7 +2542,7 @@ def parse_rlp_json_snapshot(
             historical_share = parse_float_value(row.get("pP"))
             current_share = parse_float_value(row.get("p"))
 
-            if "wahler" in normalized_label or "waehler" in normalized_label:
+            if is_voters_total_label(normalized_label):
                 metrics["voters_total"] = current_value
                 metrics["voters_total_2021"] = historical_value
                 continue
