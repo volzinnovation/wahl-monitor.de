@@ -1,19 +1,21 @@
 name: Election Poll
 
 on:
+  schedule:
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: 2026-bw-minute-poll
+  group: 2026-rlp-minute-poll
   cancel-in-progress: false
 
 jobs:
   poll:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 60
     env:
       PUSH_TOKEN: ${{ secrets.WORKFLOW_WRITE_TOKEN != '' && secrets.WORKFLOW_WRITE_TOKEN || github.token }}
 
@@ -34,7 +36,7 @@ jobs:
 
           while [ "$attempt" -le "$max_attempts" ]; do
             echo "Starting poll attempt $attempt/$max_attempts"
-            if python scripts/poll_election.py --election-key 2026-bw; then
+            if python scripts/poll_election.py --election-key 2026-rlp --skip-kommone; then
               exit 0
             fi
 
@@ -50,12 +52,12 @@ jobs:
 
       - name: Snapshot generated outputs
         run: |
-          mkdir -p /tmp/poll-output/data/2026-bw/metadata
-          mkdir -p /tmp/poll-output/data/2026-bw/reports
-          cp -R data/2026-bw/latest /tmp/poll-output/data/2026-bw/
-          cp data/2026-bw/metadata/municipalities.csv /tmp/poll-output/data/2026-bw/metadata/
-          cp data/2026-bw/metadata/wahlkreis-status.csv /tmp/poll-output/data/2026-bw/metadata/
-          cp data/2026-bw/reports/latest_events.csv /tmp/poll-output/data/2026-bw/reports/
+          mkdir -p /tmp/poll-output/data/2026-rlp/metadata
+          mkdir -p /tmp/poll-output/data/2026-rlp/reports
+          cp -R data/2026-rlp/latest /tmp/poll-output/data/2026-rlp/
+          cp data/2026-rlp/metadata/municipalities.csv /tmp/poll-output/data/2026-rlp/metadata/
+          cp data/2026-rlp/metadata/wahlkreis-status.csv /tmp/poll-output/data/2026-rlp/metadata/
+          cp data/2026-rlp/reports/latest_events.csv /tmp/poll-output/data/2026-rlp/reports/
 
       - name: Commit and push updates
         run: |
@@ -64,19 +66,19 @@ jobs:
           git remote set-url origin "https://x-access-token:${PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git fetch origin main
           git checkout -B main origin/main
-          rm -rf data/2026-bw/latest
-          mkdir -p data/2026-bw/metadata
-          mkdir -p data/2026-bw/reports
-          rm -f data/2026-bw/reports/latest_source_diff.csv
-          cp -R /tmp/poll-output/data/2026-bw/latest data/2026-bw/
-          cp /tmp/poll-output/data/2026-bw/metadata/municipalities.csv data/2026-bw/metadata/
-          cp /tmp/poll-output/data/2026-bw/metadata/wahlkreis-status.csv data/2026-bw/metadata/
-          cp /tmp/poll-output/data/2026-bw/reports/latest_events.csv data/2026-bw/reports/
-          git add data/2026-bw/latest
-          git add data/2026-bw/metadata/municipalities.csv
-          git add data/2026-bw/metadata/wahlkreis-status.csv
-          git add data/2026-bw/reports/latest_events.csv
-          git add data/2026-bw/reports/latest_source_diff.csv
+          rm -rf data/2026-rlp/latest
+          mkdir -p data/2026-rlp/metadata
+          mkdir -p data/2026-rlp/reports
+          rm -f data/2026-rlp/reports/latest_source_diff.csv
+          cp -R /tmp/poll-output/data/2026-rlp/latest data/2026-rlp/
+          cp /tmp/poll-output/data/2026-rlp/metadata/municipalities.csv data/2026-rlp/metadata/
+          cp /tmp/poll-output/data/2026-rlp/metadata/wahlkreis-status.csv data/2026-rlp/metadata/
+          cp /tmp/poll-output/data/2026-rlp/reports/latest_events.csv data/2026-rlp/reports/
+          git add data/2026-rlp/latest
+          git add data/2026-rlp/metadata/municipalities.csv
+          git add data/2026-rlp/metadata/wahlkreis-status.csv
+          git add data/2026-rlp/reports/latest_events.csv
+          git add data/2026-rlp/reports/latest_source_diff.csv
           git diff --cached --quiet && exit 0
-          git commit -m "2026-bw poll $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          git commit -m "2026-rlp poll $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
           git push origin HEAD:main

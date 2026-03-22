@@ -94,7 +94,7 @@ def main() -> None:
         events_rows=events_rows,
     )
 
-    land_row = next((row for row in statla["snapshots"] if row["row_key"] == "000000:BW:-:-:LAND"), None)
+    land_row = next((row for row in statla["snapshots"] if core.is_land_snapshot_row(row)), None)
     print(f"mode={statla['mode']}")
     print(f"url={statla['url']}")
     print(f"snapshots={len(statla['snapshots'])}")

@@ -422,7 +422,7 @@ def load_git_vote_share_history(config: core.Config) -> List[Dict[str, Any]]:
         snapshots = read_csv_rows_from_text(snapshot_result.stdout)
         party_rows = read_csv_rows_from_text(party_result.stdout)
 
-        land_snapshot = next((row for row in snapshots if str(row.get("row_key") or "") == "000000:BW:-:-:LAND"), None)
+        land_snapshot = next((row for row in snapshots if core.is_land_snapshot_row(row)), None)
         if land_snapshot is None:
             continue
         valid_votes = core.parse_int(land_snapshot.get("valid_votes_zweit")) or 0
@@ -431,7 +431,7 @@ def load_git_vote_share_history(config: core.Config) -> List[Dict[str, Any]]:
 
         party_votes: Dict[str, int] = {}
         for row in party_rows:
-            if str(row.get("row_key") or "") != "000000:BW:-:-:LAND":
+            if not core.is_land_snapshot_row(row):
                 continue
             if core.canonical_vote_type(row.get("vote_type")) != "Zweitstimmen":
                 continue

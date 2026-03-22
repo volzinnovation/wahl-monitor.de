@@ -365,6 +365,13 @@ def normalize_text(value: str) -> str:
     return re.sub(r"\s+", " ", normalized.strip().lower())
 
 
+def parse_bool_flag(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    normalized = normalize_text(str(value or ""))
+    return normalized in {"1", "true", "yes", "ja"}
+
+
 def statla_party_name_from_code(vote_type: str, code: str) -> str:
     key = str(code).strip()
     for party_code, party_name in STATLA_PARTY_CODEBOOK.get(vote_type, []):
@@ -1119,33 +1126,35 @@ def build_municipality_master(config: Config, timeout_seconds: int) -> List[Dict
         except Exception:  # pylint: disable=broad-except
             pass
 
-    dummy_result = http_get(config.statla_dummy_csv_url, timeout_seconds)
-    if dummy_result.status_code == 200 and dummy_result.content:
-        dummy_text = decode_bytes(dummy_result.content)
-        for row in csv_rows_from_text(dummy_text, delimiter=";"):
-            ags = canonical_ags(row.get("AGS", ""))
-            name = canonical_municipality_name(row.get("Gemeindename", ""))
-            gebietsart = str(row.get("Gebietsart", "")).strip().upper()
-            bezirksnummer = str(row.get("Bezirksnummer", "")).strip()
-            if not ags or not name:
-                continue
-            if bezirksnummer:
-                continue
-            if gebietsart in STATLA_EXCLUDED_GEBIETSART:
-                continue
-            merged[ags] = {
-                "ags": ags,
-                "municipality_name": name,
-                "source": "statla-dummy",
-            }
+    if config.statla_dummy_csv_url:
+        dummy_result = http_get(config.statla_dummy_csv_url, timeout_seconds)
+        if dummy_result.status_code == 200 and dummy_result.content:
+            dummy_text = decode_bytes(dummy_result.content)
+            for row in csv_rows_from_text(dummy_text, delimiter=";"):
+                ags = canonical_ags(row.get("AGS", ""))
+                name = canonical_municipality_name(row.get("Gemeindename", ""))
+                gebietsart = str(row.get("Gebietsart", "")).strip().upper()
+                bezirksnummer = str(row.get("Bezirksnummer", "")).strip()
+                if not ags or not name:
+                    continue
+                if bezirksnummer:
+                    continue
+                if gebietsart in STATLA_EXCLUDED_GEBIETSART:
+                    continue
+                merged[ags] = {
+                    "ags": ags,
+                    "municipality_name": name,
+                    "source": "statla-dummy",
+                }
 
     municipalities = sorted(merged.values(), key=lambda item: item["ags"])
     output_path = META_DIR / "municipalities.csv"
-    write_csv(
-        output_path,
-        ["ags", "municipality_name", "source"],
-        municipalities,
-    )
+    if not legacy_path.exists() or output_path.resolve() != legacy_path.resolve():
+        write_csv(
+            output_path,
+            ["ags", "municipality_name", "source"],
+            municipalities,
+        )
     return municipalities
 
 
@@ -1681,8 +1690,14 @@ def normalize_latest_statla_snapshots(rows: List[Dict[str, Any]]) -> List[Dict[s
                 "voters_total": parse_int(row.get("voters_total")),
                 "valid_votes_erst": parse_int(row.get("valid_votes_erst")),
                 "valid_votes_zweit": parse_int(row.get("valid_votes_zweit")),
+                "voters_total_2021": parse_int(row.get("voters_total_2021")),
+                "valid_votes_erst_2021": parse_int(row.get("valid_votes_erst_2021")),
+                "valid_votes_zweit_2021": parse_int(row.get("valid_votes_zweit_2021")),
+                "delta_voters_total_vs_2021": parse_int(row.get("delta_voters_total_vs_2021")),
+                "delta_valid_votes_erst_vs_2021": parse_int(row.get("delta_valid_votes_erst_vs_2021")),
+                "delta_valid_votes_zweit_vs_2021": parse_int(row.get("delta_valid_votes_zweit_vs_2021")),
                 "payload_hash": str(row.get("payload_hash") or ""),
-                "is_municipality_summary": str(row.get("is_municipality_summary") or ""),
+                "is_municipality_summary": parse_bool_flag(row.get("is_municipality_summary")),
             }
         )
     return normalized
@@ -1698,6 +1713,10 @@ def normalize_latest_statla_party_rows(rows: List[Dict[str, Any]]) -> List[Dict[
                 "party_key": str(row.get("party_key") or ""),
                 "party_name": str(row.get("party_name") or ""),
                 "votes": parse_int(row.get("votes")),
+                "votes_2021": parse_int(row.get("votes_2021")),
+                "share_percent_2021": parse_float_value(row.get("share_percent_2021")),
+                "delta_votes_vs_2021": parse_int(row.get("delta_votes_vs_2021")),
+                "delta_share_percent_vs_2021": parse_float_value(row.get("delta_share_percent_vs_2021")),
             }
         )
     return normalized
@@ -1712,6 +1731,181 @@ def load_latest_statla_exports() -> Dict[str, Any]:
         "snapshots": normalize_latest_statla_snapshots(read_csv_rows_from_file(snapshots_path, delimiter=",")),
         "party_rows": normalize_latest_statla_party_rows(read_csv_rows_from_file(party_path, delimiter=",")),
     }
+
+
+STATLA_SNAPSHOT_HISTORICAL_FIELDS = (
+    "voters_total_2021",
+    "valid_votes_erst_2021",
+    "valid_votes_zweit_2021",
+    "delta_voters_total_vs_2021",
+    "delta_valid_votes_erst_vs_2021",
+    "delta_valid_votes_zweit_vs_2021",
+)
+STATLA_PARTY_HISTORICAL_FIELDS = (
+    "votes_2021",
+    "share_percent_2021",
+    "delta_votes_vs_2021",
+    "delta_share_percent_vs_2021",
+)
+
+
+def is_land_snapshot_row(row: Dict[str, Any]) -> bool:
+    return str(row.get("gebietsart") or "").strip().upper() == "LAND" or str(row.get("row_key") or "").endswith(":LAND")
+
+
+def snapshot_is_municipality_summary(row: Dict[str, Any]) -> bool:
+    return parse_bool_flag(row.get("is_municipality_summary"))
+
+
+def statla_snapshot_match_key(row: Dict[str, Any]) -> Tuple[str, str]:
+    if is_land_snapshot_row(row):
+        return ("LAND", "000000")
+
+    gebietsart = str(row.get("gebietsart") or "").strip().upper()
+    if gebietsart == "WAHLKREIS":
+        wk = normalize_wahlkreis_nummer(row.get("gebietsnummer") or row.get("row_key"))
+        if wk:
+            return ("WAHLKREIS", wk)
+
+    ags = canonical_ags(row.get("ags"))
+    if ags and snapshot_is_municipality_summary(row):
+        return ("GEMEINDE", ags)
+
+    return ("ROW", str(row.get("row_key") or ""))
+
+
+def merge_party_rows_for_output_row(
+    previous_rows: List[Dict[str, Any]],
+    current_rows: List[Dict[str, Any]],
+    output_row_key: str,
+) -> List[Dict[str, Any]]:
+    current_index: Dict[Tuple[str, str], Dict[str, Any]] = {}
+    current_order: List[Tuple[str, str]] = []
+    for row in current_rows:
+        vote_type = canonical_vote_type(str(row.get("vote_type") or ""))
+        party_name = canonical_party_name(str(row.get("party_name") or ""), vote_type)
+        if not vote_type or not party_name:
+            continue
+        key = (vote_type, party_name)
+        current_index[key] = dict(row)
+        current_order.append(key)
+
+    merged: List[Dict[str, Any]] = []
+    seen: set[Tuple[str, str]] = set()
+
+    for previous in previous_rows:
+        vote_type = canonical_vote_type(str(previous.get("vote_type") or ""))
+        party_name = canonical_party_name(str(previous.get("party_name") or ""), vote_type)
+        if not vote_type or not party_name:
+            continue
+        key = (vote_type, party_name)
+        current = current_index.get(key)
+        merged_row = dict(previous)
+        merged_row["row_key"] = output_row_key
+        merged_row["vote_type"] = vote_type
+        merged_row["party_name"] = party_name
+        merged_row["party_key"] = str((current or {}).get("party_key") or merged_row.get("party_key") or party_name)
+        merged_row["votes"] = parse_int((current or {}).get("votes"))
+        if merged_row["votes"] is None:
+            merged_row["votes"] = 0
+        historical_votes = parse_int(merged_row.get("votes_2021"))
+        if historical_votes is not None:
+            merged_row["delta_votes_vs_2021"] = int(merged_row["votes"]) - historical_votes
+        seen.add(key)
+        merged.append(merged_row)
+
+    for key in current_order:
+        if key in seen:
+            continue
+        current = dict(current_index[key])
+        current["row_key"] = output_row_key
+        current["vote_type"] = key[0]
+        current["party_name"] = key[1]
+        current["party_key"] = str(current.get("party_key") or key[1])
+        current["votes"] = parse_int(current.get("votes")) or 0
+        merged.append(current)
+
+    return merged
+
+
+def merge_statla_rows_with_previous_latest(
+    current_snapshots: List[Dict[str, Any]],
+    current_party_rows: List[Dict[str, Any]],
+    previous_latest: Dict[str, Any],
+) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    previous_snapshots = previous_latest.get("snapshots", [])
+    previous_party_rows = previous_latest.get("party_rows", [])
+    if not previous_snapshots:
+        return current_snapshots, current_party_rows
+
+    previous_snapshot_by_match_key: Dict[Tuple[str, str], Dict[str, Any]] = {}
+    output_snapshots_by_row_key: Dict[str, Dict[str, Any]] = {}
+    for row in previous_snapshots:
+        row_key = str(row.get("row_key") or "")
+        if row_key:
+            output_snapshots_by_row_key[row_key] = dict(row)
+        match_key = statla_snapshot_match_key(row)
+        if match_key[0] != "ROW":
+            previous_snapshot_by_match_key.setdefault(match_key, row)
+
+    current_party_rows_by_row_key: Dict[str, List[Dict[str, Any]]] = {}
+    for row in current_party_rows:
+        current_party_rows_by_row_key.setdefault(str(row.get("row_key") or ""), []).append(dict(row))
+
+    previous_party_rows_by_row_key: Dict[str, List[Dict[str, Any]]] = {}
+    for row in previous_party_rows:
+        previous_party_rows_by_row_key.setdefault(str(row.get("row_key") or ""), []).append(dict(row))
+
+    matched_previous_row_keys: set[str] = set()
+    replacement_party_groups: List[List[Dict[str, Any]]] = []
+
+    for current in current_snapshots:
+        current_row_key = str(current.get("row_key") or "")
+        match_key = statla_snapshot_match_key(current)
+        previous = previous_snapshot_by_match_key.get(match_key)
+        if previous is not None:
+            output_row_key = str(previous.get("row_key") or current_row_key)
+            merged_snapshot = dict(previous)
+            merged_snapshot.update(current)
+            merged_snapshot["row_key"] = output_row_key
+            for current_field, historical_field, delta_field in (
+                ("voters_total", "voters_total_2021", "delta_voters_total_vs_2021"),
+                ("valid_votes_erst", "valid_votes_erst_2021", "delta_valid_votes_erst_vs_2021"),
+                ("valid_votes_zweit", "valid_votes_zweit_2021", "delta_valid_votes_zweit_vs_2021"),
+            ):
+                current_value = parse_int(merged_snapshot.get(current_field))
+                historical_value = parse_int(merged_snapshot.get(historical_field))
+                if current_value is not None and historical_value is not None:
+                    merged_snapshot[delta_field] = current_value - historical_value
+            output_snapshots_by_row_key[output_row_key] = merged_snapshot
+            matched_previous_row_keys.add(output_row_key)
+            replacement_party_groups.append(
+                merge_party_rows_for_output_row(
+                    previous_party_rows_by_row_key.get(output_row_key, []),
+                    current_party_rows_by_row_key.get(current_row_key, []),
+                    output_row_key,
+                )
+            )
+            continue
+
+        output_snapshots_by_row_key[current_row_key] = dict(current)
+        replacement_party_groups.append(
+            merge_party_rows_for_output_row(
+                [],
+                current_party_rows_by_row_key.get(current_row_key, []),
+                current_row_key,
+            )
+        )
+
+    merged_party_rows = [
+        dict(row)
+        for row in previous_party_rows
+        if str(row.get("row_key") or "") not in matched_previous_row_keys
+    ]
+    for group in replacement_party_groups:
+        merged_party_rows.extend(group)
+
+    return list(output_snapshots_by_row_key.values()), merged_party_rows
 
 
 def statla_snapshot_shape_stats(rows: List[Dict[str, Any]]) -> Dict[str, int]:
@@ -1976,7 +2170,7 @@ def fetch_statla_presentation_fallback(
     if not previous_snapshots or not previous_party_rows:
         return None
 
-    land_previous = next((row for row in previous_snapshots if str(row.get("row_key") or "") == "000000:BW:-:-:LAND"), None)
+    land_previous = next((row for row in previous_snapshots if is_land_snapshot_row(row)), None)
     if land_previous is None:
         return None
 
@@ -2007,7 +2201,7 @@ def fetch_statla_presentation_fallback(
         ags=land_previous.get("ags"),
         municipality_name=land_previous.get("municipality_name"),
         gebietsart="LAND",
-        gebietsnummer="BW",
+        gebietsnummer=str(land_previous.get("gebietsnummer") or "000000"),
         is_municipality_summary=False,
     )
     if land_result is None:
@@ -2164,6 +2358,399 @@ def fetch_statla_presentation_fallback(
     }
 
 
+def looks_like_html_document(text: str) -> bool:
+    snippet = str(text or "")[:512].lower()
+    return "<!doctype html" in snippet or "<html" in snippet or "<app-root" in snippet
+
+
+def looks_like_statla_csv(text: str) -> bool:
+    content = str(text or "")
+    if not content.strip():
+        return False
+    if looks_like_html_document(content):
+        return False
+
+    nonempty_lines = [line for line in content.splitlines() if line.strip()]
+    for line in nonempty_lines[:3]:
+        try:
+            header = next(csv.reader([line], delimiter=";"))
+        except Exception:  # pylint: disable=broad-except
+            continue
+        normalized = {normalize_text(cell) for cell in header if str(cell).strip()}
+        if "gebietsart" in normalized and "gebietsnummer" in normalized and ("ags" in normalized or "gemeindename" in normalized):
+            return True
+    return False
+
+
+def rlp_portal_base_url(config: Config) -> str:
+    parts = urlsplit(config.statla_live_csv_url)
+    path = parts.path or ""
+    if "/assets/" in path:
+        path = path.split("/assets/", 1)[0]
+    else:
+        path = path.rsplit("/", 1)[0]
+    scheme = parts.scheme or "https"
+    return f"{scheme}://{parts.netloc}{path}".rstrip("/")
+
+
+def fetch_json_payload(url: str, timeout_seconds: int) -> Tuple[Optional[Any], HttpResult]:
+    result = html_fetch_result(url, timeout_seconds)
+    if result.status_code != 200 or not result.content:
+        return None, result
+    try:
+        return json.loads(decode_bytes(result.content)), result
+    except json.JSONDecodeError as exc:
+        return None, HttpResult(
+            url=url,
+            status_code=result.status_code,
+            content=result.content,
+            error_message=f"JSON decode failed: {exc}",
+        )
+
+
+def choose_best_rlp_municipality_nodes(
+    nodes: List[Dict[str, Any]],
+    previous_municipalities: Dict[str, Dict[str, Any]],
+) -> Dict[str, Dict[str, Any]]:
+    candidates_by_ags: Dict[str, List[Dict[str, Any]]] = {}
+    for node in nodes:
+        node_id = str(node.get("bezeichnung") or "")
+        if len(node_id) != 13:
+            continue
+        ags = canonical_ags(node_id[3:11])
+        if not ags or ags not in previous_municipalities:
+            continue
+        candidates_by_ags.setdefault(ags, []).append(node)
+
+    selected: Dict[str, Dict[str, Any]] = {}
+    for ags, previous in previous_municipalities.items():
+        candidates = candidates_by_ags.get(ags, [])
+        if not candidates:
+            continue
+        expected_name = normalize_text(str(previous.get("municipality_name") or ""))
+
+        def sort_key(node: Dict[str, Any]) -> Tuple[int, int, int, int, str]:
+            node_id = str(node.get("bezeichnung") or "")
+            node_name = normalize_text(str(node.get("name") or ""))
+            level = int(node.get("level") or 99)
+            suffix = node_id[11:]
+            return (
+                0 if node_name == expected_name else 1,
+                0 if level in {1, 2, 3} else 1,
+                0 if suffix == "00" else 1,
+                level,
+                node_id,
+            )
+
+        selected[ags] = min(candidates, key=sort_key)
+    return selected
+
+
+def rlp_vote_type_from_mode(mode: Any) -> str:
+    normalized = normalize_text(str(mode or ""))
+    if "erst" in normalized:
+        return "Erststimmen"
+    if "zweit" in normalized:
+        return "Zweitstimmen"
+    return ""
+
+
+def parse_rlp_json_snapshot(
+    node_id: str,
+    payload: Dict[str, Any],
+    previous_snapshot: Optional[Dict[str, Any]],
+) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
+    if previous_snapshot is not None:
+        row_key = str(previous_snapshot.get("row_key") or f"rlpjson:{node_id}")
+        ags = canonical_ags(previous_snapshot.get("ags"))
+        municipality_name = canonical_municipality_name(previous_snapshot.get("municipality_name"))
+        gebietsart = str(previous_snapshot.get("gebietsart") or "").strip()
+        gebietsnummer = str(previous_snapshot.get("gebietsnummer") or "").strip()
+        is_municipality_summary = snapshot_is_municipality_summary(previous_snapshot)
+    else:
+        prefix = node_id[:3]
+        ags = canonical_ags(node_id[3:11])
+        row_key = f"rlpjson:{node_id}"
+        municipality_name = canonical_municipality_name(payload.get("name"))
+        if node_id == "0000000000000":
+            gebietsart = "LAND"
+            gebietsnummer = "000000"
+            ags = ""
+            is_municipality_summary = False
+        elif prefix != "000":
+            gebietsart = "WAHLKREIS"
+            gebietsnummer = normalize_wahlkreis_nummer(prefix)
+            ags = ""
+            is_municipality_summary = False
+        else:
+            gebietsart = "GEMEINDE"
+            gebietsnummer = ags
+            is_municipality_summary = True
+
+    metrics: Dict[str, Optional[int]] = {
+        "voters_total": None,
+        "valid_votes_erst": None,
+        "valid_votes_zweit": None,
+        "voters_total_2021": None,
+        "valid_votes_erst_2021": None,
+        "valid_votes_zweit_2021": None,
+    }
+    party_rows: List[Dict[str, Any]] = []
+
+    for table in payload.get("tables", []):
+        if str(table.get("page") or "") != "details":
+            continue
+        vote_type = rlp_vote_type_from_mode(table.get("mode"))
+        if not vote_type:
+            continue
+        valid_current_key = "valid_votes_erst" if vote_type == "Erststimmen" else "valid_votes_zweit"
+        valid_historical_key = f"{valid_current_key}_2021"
+
+        for row in table.get("data", []):
+            label = str(row.get("rowHeader") or "").strip()
+            if not label:
+                continue
+            normalized_label = normalize_text(label)
+            current_value = parse_int(row.get("a"))
+            historical_value = parse_int(row.get("pA"))
+            historical_share = parse_float_value(row.get("pP"))
+            current_share = parse_float_value(row.get("p"))
+
+            if "wahler" in normalized_label or "waehler" in normalized_label:
+                metrics["voters_total"] = current_value
+                metrics["voters_total_2021"] = historical_value
+                continue
+            if "gultige" in normalized_label and ("wahlkreisstimmen" in normalized_label or "landesstimmen" in normalized_label):
+                metrics[valid_current_key] = current_value
+                metrics[valid_historical_key] = historical_value
+                continue
+            if normalized_label.startswith("wahlberechtigte") or "ungultige" in normalized_label:
+                continue
+
+            party_name = canonical_party_name(label, vote_type)
+            if not party_name:
+                continue
+            votes = current_value if current_value is not None else 0
+            party_row: Dict[str, Any] = {
+                "row_key": row_key,
+                "vote_type": vote_type,
+                "party_key": party_name,
+                "party_name": party_name,
+                "votes": votes,
+            }
+            if historical_value is not None:
+                party_row["votes_2021"] = historical_value
+                party_row["delta_votes_vs_2021"] = votes - historical_value
+            if historical_share is not None:
+                party_row["share_percent_2021"] = historical_share
+                if current_share is not None:
+                    party_row["delta_share_percent_vs_2021"] = current_share - historical_share
+            party_rows.append(party_row)
+
+    payload_hash = sha256_bytes(json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8"))
+    snapshot: Dict[str, Any] = {
+        "row_key": row_key,
+        "ags": ags,
+        "municipality_name": municipality_name,
+        "gebietsart": gebietsart,
+        "gebietsnummer": gebietsnummer,
+        "reported_precincts": parse_int(payload.get("counted")),
+        "total_precincts": parse_int(payload.get("toCount")),
+        "voters_total": metrics.get("voters_total"),
+        "valid_votes_erst": metrics.get("valid_votes_erst"),
+        "valid_votes_zweit": metrics.get("valid_votes_zweit"),
+        "voters_total_2021": metrics.get("voters_total_2021"),
+        "valid_votes_erst_2021": metrics.get("valid_votes_erst_2021"),
+        "valid_votes_zweit_2021": metrics.get("valid_votes_zweit_2021"),
+        "delta_voters_total_vs_2021": None,
+        "delta_valid_votes_erst_vs_2021": None,
+        "delta_valid_votes_zweit_vs_2021": None,
+        "payload_hash": payload_hash,
+        "is_municipality_summary": is_municipality_summary,
+    }
+    for current_field, historical_field, delta_field in (
+        ("voters_total", "voters_total_2021", "delta_voters_total_vs_2021"),
+        ("valid_votes_erst", "valid_votes_erst_2021", "delta_valid_votes_erst_vs_2021"),
+        ("valid_votes_zweit", "valid_votes_zweit_2021", "delta_valid_votes_zweit_vs_2021"),
+    ):
+        current_value = parse_int(snapshot.get(current_field))
+        historical_value = parse_int(snapshot.get(historical_field))
+        if current_value is not None and historical_value is not None:
+            snapshot[delta_field] = current_value - historical_value
+    return snapshot, party_rows
+
+
+def fetch_rlp_json_fallback(
+    config: Config,
+    timeout_seconds: int,
+    previous_latest: Dict[str, Any],
+    *,
+    base_error: Optional[str],
+    source_copy_fetch: HttpResult,
+) -> Optional[Dict[str, Any]]:
+    previous_snapshots = previous_latest.get("snapshots", [])
+    if not previous_snapshots:
+        return None
+
+    land_previous = next((row for row in previous_snapshots if is_land_snapshot_row(row)), None)
+    if land_previous is None:
+        return None
+
+    previous_wahlkreise: Dict[str, Dict[str, Any]] = {}
+    previous_municipalities: Dict[str, Dict[str, Any]] = {}
+    for row in previous_snapshots:
+        if str(row.get("gebietsart") or "").strip().upper() == "WAHLKREIS":
+            wk = normalize_wahlkreis_nummer(row.get("gebietsnummer") or row.get("row_key"))
+            if wk:
+                previous_wahlkreise[wk] = row
+        if snapshot_is_municipality_summary(row):
+            ags = canonical_ags(row.get("ags"))
+            if ags:
+                previous_municipalities[ags] = row
+
+    portal_base = rlp_portal_base_url(config)
+    global_payload, global_result = fetch_json_payload(f"{portal_base}/assets/json/global.json", timeout_seconds)
+    wk_tree_payload, wk_tree_result = fetch_json_payload(f"{portal_base}/assets/wk-vec-tree.json", timeout_seconds)
+    lk_tree_payload, lk_tree_result = fetch_json_payload(f"{portal_base}/assets/lk-vec-tree.json", timeout_seconds)
+    if global_payload is None or wk_tree_payload is None or lk_tree_payload is None:
+        return None
+
+    wk_tree_nodes = wk_tree_payload if isinstance(wk_tree_payload, list) else []
+    lk_tree_nodes = lk_tree_payload if isinstance(lk_tree_payload, list) else []
+    wahlkreis_children = []
+    if wk_tree_nodes:
+        wahlkreis_children = list((wk_tree_nodes[0] or {}).get("children") or [])
+    municipality_nodes_by_ags = choose_best_rlp_municipality_nodes(lk_tree_nodes, previous_municipalities)
+
+    fetch_targets: List[Tuple[str, Optional[str], Optional[Dict[str, Any]]]] = [("0000000000000", None, land_previous)]
+    for child in wahlkreis_children:
+        node_id = str(child.get("bezeichnung") or "")
+        wk = normalize_wahlkreis_nummer(node_id[:3])
+        previous_snapshot = previous_wahlkreise.get(wk)
+        if node_id and previous_snapshot is not None:
+            fetch_targets.append((node_id, None, previous_snapshot))
+    for ags, node in municipality_nodes_by_ags.items():
+        node_id = str(node.get("bezeichnung") or "")
+        previous_snapshot = previous_municipalities.get(ags)
+        if node_id and previous_snapshot is not None:
+            fetch_targets.append((node_id, ags, previous_snapshot))
+
+    current_snapshots: List[Dict[str, Any]] = []
+    current_party_rows: List[Dict[str, Any]] = []
+    combined_hash_parts: List[Tuple[str, str]] = []
+    total_bytes = len(global_result.content) + len(wk_tree_result.content) + len(lk_tree_result.content)
+    worker_count = max(4, min(config.max_workers, 32))
+
+    def fetch_target(node_id: str, ags: Optional[str], previous_snapshot: Optional[Dict[str, Any]]) -> Tuple[str, Optional[str], Optional[Dict[str, Any]], Optional[Dict[str, Any]], List[Dict[str, Any]], HttpResult]:
+        node_url = (
+            f"{portal_base}/assets/json/wk/{node_id}.json"
+            if node_id == "0000000000000"
+            else f"{portal_base}/assets/json/{node_id}.json"
+        )
+        payload, result = fetch_json_payload(node_url, timeout_seconds)
+        if payload is None or not isinstance(payload, dict):
+            return node_id, ags, previous_snapshot, None, [], result
+        snapshot, party_rows = parse_rlp_json_snapshot(node_id, payload, previous_snapshot)
+        return node_id, ags, previous_snapshot, snapshot, party_rows, result
+
+    failed_targets: List[str] = []
+    with ThreadPoolExecutor(max_workers=worker_count) as executor:
+        futures = {
+            executor.submit(fetch_target, node_id, ags, previous_snapshot): (node_id, ags)
+            for node_id, ags, previous_snapshot in fetch_targets
+        }
+        for future in as_completed(futures):
+            node_id, ags = futures[future]
+            fetched_node_id, _ags, _previous_snapshot, snapshot, party_rows, result = future.result()
+            total_bytes += len(result.content)
+            if snapshot is None:
+                failed_targets.append(ags or node_id)
+                continue
+            current_snapshots.append(snapshot)
+            current_party_rows.extend(party_rows)
+            combined_hash_parts.append((fetched_node_id, snapshot.get("payload_hash") or ""))
+
+    if not any(is_land_snapshot_row(row) for row in current_snapshots):
+        return None
+
+    merged_snapshots, merged_party_rows = merge_statla_rows_with_previous_latest(
+        current_snapshots=current_snapshots,
+        current_party_rows=current_party_rows,
+        previous_latest=previous_latest,
+    )
+    combined_hash = sha256_bytes(
+        json.dumps(
+            {
+                "global_hash": sha256_bytes(global_result.content),
+                "wk_tree_hash": sha256_bytes(wk_tree_result.content),
+                "lk_tree_hash": sha256_bytes(lk_tree_result.content),
+                "node_hashes": sorted(combined_hash_parts),
+            },
+            sort_keys=True,
+            ensure_ascii=False,
+        ).encode("utf-8")
+    )
+
+    fetches = [
+        {
+            "source": "statla-source-copy",
+            "url": source_copy_fetch.url,
+            "status_code": source_copy_fetch.status_code,
+            "content_hash": sha256_bytes(source_copy_fetch.content) if source_copy_fetch.content else None,
+            "byte_count": len(source_copy_fetch.content),
+            "error_message": source_copy_fetch.error_message,
+        },
+        {
+            "source": "statla-json-meta",
+            "url": global_result.url,
+            "status_code": global_result.status_code,
+            "content_hash": sha256_bytes(global_result.content),
+            "byte_count": len(global_result.content),
+            "error_message": global_result.error_message,
+        },
+        {
+            "source": "statla-json-meta",
+            "url": wk_tree_result.url,
+            "status_code": wk_tree_result.status_code,
+            "content_hash": sha256_bytes(wk_tree_result.content),
+            "byte_count": len(wk_tree_result.content),
+            "error_message": wk_tree_result.error_message,
+        },
+        {
+            "source": "statla-json-meta",
+            "url": lk_tree_result.url,
+            "status_code": lk_tree_result.status_code,
+            "content_hash": sha256_bytes(lk_tree_result.content),
+            "byte_count": len(lk_tree_result.content),
+            "error_message": lk_tree_result.error_message,
+        },
+        {
+            "source": "statla",
+            "url": f"{portal_base}/assets/json/{{node-id}}.json",
+            "status_code": 200,
+            "content_hash": combined_hash,
+            "byte_count": total_bytes,
+            "error_message": None if not failed_targets else f"Kept previous rows for failed targets: {', '.join(sorted(failed_targets)[:20])}",
+        },
+    ]
+    return {
+        "mode": "LIVE_JSON_23DEGREES",
+        "url": f"{portal_base}/wk/0000000000000/overview",
+        "status_code": 200,
+        "content_hash": combined_hash,
+        "raw_csv": "",
+        "source_copy_text": decode_bytes(source_copy_fetch.content) if source_copy_fetch.content else "",
+        "source_copy_url": source_copy_fetch.url,
+        "source_copy_status_code": source_copy_fetch.status_code,
+        "source_copy_error": source_copy_fetch.error_message,
+        "source_copy_hash": sha256_bytes(source_copy_fetch.content) if source_copy_fetch.content else None,
+        "snapshots": merged_snapshots,
+        "party_rows": merged_party_rows,
+        "fetches": fetches,
+        "error_message": base_error,
+    }
+
+
 def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False) -> Dict[str, Any]:
     cli_note(f"Fetching StatLA live CSV from {config.statla_live_csv_url}")
     live_result = statla_http_get(
@@ -2182,15 +2769,23 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
     fallback_used = False
 
     if force_dummy or live_result.status_code != 200 or not live_result.content:
-        cli_note(f"Falling back to StatLA dummy CSV from {config.statla_dummy_csv_url}")
-        selected_result = statla_http_get(
-            config.statla_dummy_csv_url,
-            timeout_seconds,
-            show_progress=False,
-        )
-        selected_mode = "DUMMY"
-        selected_url = config.statla_dummy_csv_url
-        fallback_used = True
+        if config.statla_dummy_csv_url:
+            cli_note(f"Falling back to StatLA dummy CSV from {config.statla_dummy_csv_url}")
+            selected_result = statla_http_get(
+                config.statla_dummy_csv_url,
+                timeout_seconds,
+                show_progress=False,
+            )
+            selected_mode = "DUMMY"
+            selected_url = config.statla_dummy_csv_url
+            fallback_used = True
+        else:
+            selected_result = HttpResult(
+                url=config.statla_dummy_csv_url,
+                status_code=None,
+                content=b"",
+                error_message="No dummy CSV URL configured",
+            )
 
     fetches = [
         {
@@ -2228,6 +2823,20 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
             selected_url = str(local_dummy)
 
     if selected_result.status_code != 200 or not selected_result.content:
+        if config.election_key == "2026-rlp":
+            json_fallback = fetch_rlp_json_fallback(
+                config,
+                timeout_seconds,
+                load_latest_statla_exports(),
+                base_error=selected_result.error_message or "No CSV available",
+                source_copy_fetch=live_result,
+            )
+            if json_fallback is not None:
+                cli_note(
+                    "Recovered StatLA from official 23degrees JSON: "
+                    f"rows={len(json_fallback['snapshots'])} party_rows={len(json_fallback['party_rows'])}"
+                )
+                return json_fallback
         if not force_dummy:
             cli_note("StatLA CSV unavailable, trying official result presentation HTML fallback")
             presentation_fallback = fetch_statla_presentation_fallback(
@@ -2250,6 +2859,11 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
             "status_code": selected_result.status_code,
             "content_hash": None,
             "raw_csv": "",
+            "source_copy_text": decode_bytes(live_result.content) if live_result.content else "",
+            "source_copy_url": live_result.url,
+            "source_copy_status_code": live_result.status_code,
+            "source_copy_error": live_result.error_message,
+            "source_copy_hash": sha256_bytes(live_result.content) if live_result.content else None,
             "snapshots": [],
             "party_rows": [],
             "fetches": fetches,
@@ -2257,7 +2871,29 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
         }
 
     csv_text = decode_bytes(selected_result.content)
+    if not looks_like_statla_csv(csv_text) and config.election_key == "2026-rlp":
+        json_fallback = fetch_rlp_json_fallback(
+            config,
+            timeout_seconds,
+            load_latest_statla_exports(),
+            base_error="Official CSV URL did not return CSV content",
+            source_copy_fetch=live_result,
+        )
+        if json_fallback is not None:
+            cli_note(
+                "Recovered StatLA from official 23degrees JSON because the CSV URL did not return CSV: "
+                f"rows={len(json_fallback['snapshots'])} party_rows={len(json_fallback['party_rows'])}"
+            )
+            return json_fallback
+
     snapshots, party_rows = parse_statla_csv_rows(csv_text)
+    previous_latest = load_latest_statla_exports()
+    if config.election_key == "2026-rlp":
+        snapshots, party_rows = merge_statla_rows_with_previous_latest(
+            current_snapshots=snapshots,
+            current_party_rows=party_rows,
+            previous_latest=previous_latest,
+        )
     current_shape = statla_snapshot_shape_stats(snapshots)
     cli_note(
         "Parsed StatLA CSV: "
@@ -2265,7 +2901,6 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
         f"wahlkreise={current_shape['wahlkreis_count']} "
         f"ags={current_shape['ags_count']}"
     )
-    previous_latest = load_latest_statla_exports()
     regression_error = should_reject_statla_snapshot_regression(snapshots, previous_latest.get("snapshots", []))
     if regression_error:
         cli_note(regression_error)
@@ -2289,6 +2924,11 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
             "status_code": selected_result.status_code,
             "content_hash": sha256_bytes(selected_result.content),
             "raw_csv": "",
+            "source_copy_text": decode_bytes(live_result.content) if live_result.content else "",
+            "source_copy_url": live_result.url,
+            "source_copy_status_code": live_result.status_code,
+            "source_copy_error": live_result.error_message,
+            "source_copy_hash": sha256_bytes(live_result.content) if live_result.content else None,
             "snapshots": previous_latest.get("snapshots", []),
             "party_rows": previous_latest.get("party_rows", []),
             "fetches": fetches,
@@ -2300,6 +2940,11 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
         "status_code": selected_result.status_code,
         "content_hash": sha256_bytes(selected_result.content),
         "raw_csv": csv_text,
+        "source_copy_text": decode_bytes(live_result.content) if live_result.content else "",
+        "source_copy_url": live_result.url,
+        "source_copy_status_code": live_result.status_code,
+        "source_copy_error": live_result.error_message,
+        "source_copy_hash": sha256_bytes(live_result.content) if live_result.content else None,
         "snapshots": snapshots,
         "party_rows": party_rows,
         "fetches": fetches,
@@ -2606,7 +3251,7 @@ def store_statla(
 def latest_statla_municipality_rows(snapshots: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
     by_ags: Dict[str, Dict[str, Any]] = {}
     for row in snapshots:
-        if not row.get("is_municipality_summary"):
+        if not snapshot_is_municipality_summary(row):
             continue
         ags = row.get("ags")
         if not ags:
@@ -3548,6 +4193,20 @@ def persist_files(
     write_json(RAW_KOMMONE_DIR / f"{label_file}-kommone.json", {"snapshots": kommone_snapshots, "party_rows": kommone_party_rows})
     if statla.get("raw_csv"):
         (RAW_STATLA_DIR / f"{label_file}-statla.csv").write_text(statla["raw_csv"], encoding="utf-8")
+    if statla.get("source_copy_text"):
+        source_copy_text = str(statla.get("source_copy_text") or "")
+        (RAW_STATLA_DIR / f"{label_file}-official-results-source.csv").write_text(source_copy_text, encoding="utf-8")
+        (LATEST_DIR / "official_results_source.csv").write_text(source_copy_text, encoding="utf-8")
+        write_json(
+            LATEST_DIR / "official_results_source_metadata.json",
+            {
+                "fetched_at_utc": now_utc().isoformat(),
+                "url": statla.get("source_copy_url"),
+                "status_code": statla.get("source_copy_status_code"),
+                "content_hash": statla.get("source_copy_hash"),
+                "error_message": statla.get("source_copy_error"),
+            },
+        )
 
     # Latest normalized views
     write_csv(
@@ -3607,6 +4266,12 @@ def persist_files(
             "voters_total",
             "valid_votes_erst",
             "valid_votes_zweit",
+            "voters_total_2021",
+            "valid_votes_erst_2021",
+            "valid_votes_zweit_2021",
+            "delta_voters_total_vs_2021",
+            "delta_valid_votes_erst_vs_2021",
+            "delta_valid_votes_zweit_vs_2021",
             "payload_hash",
             "is_municipality_summary",
         ],
@@ -3614,7 +4279,17 @@ def persist_files(
     )
     write_csv(
         LATEST_DIR / "statla_party_results.csv",
-        ["row_key", "vote_type", "party_key", "party_name", "votes"],
+        [
+            "row_key",
+            "vote_type",
+            "party_key",
+            "party_name",
+            "votes",
+            "votes_2021",
+            "share_percent_2021",
+            "delta_votes_vs_2021",
+            "delta_share_percent_vs_2021",
+        ],
         statla.get("party_rows", []),
     )
 
@@ -3640,6 +4315,9 @@ def persist_files(
             "statla_mode": statla.get("mode"),
             "statla_url": statla.get("url"),
             "statla_error": statla.get("error_message"),
+            "official_source_url": statla.get("source_copy_url"),
+            "official_source_status_code": statla.get("source_copy_status_code"),
+            "official_source_error": statla.get("source_copy_error"),
             "kommone_municipalities_polled": len(kommone_snapshots),
         },
     )
@@ -3731,7 +4409,8 @@ def main() -> None:
         cli_note(f"Municipality master contains {len(municipalities)} entries")
         store_municipalities(conn, municipalities)
 
-        if args.skip_kommone:
+        skip_kommone = args.skip_kommone or not config.kommone_wahltermin or not config.kommone_base_url_template
+        if skip_kommone:
             selected_municipalities = municipalities[: args.limit_ags] if args.limit_ags is not None else municipalities
             cli_note(f"Skipping komm.one polling; creating placeholder rows for {len(selected_municipalities)} municipalities")
             kommone = {
@@ -3800,10 +4479,7 @@ def main() -> None:
             diff_rows=diffs,
             events_rows=events,
         )
-        land_snapshot = next(
-            (row for row in statla.get("snapshots", []) if str(row.get("row_key") or "") == "000000:BW:-:-:LAND"),
-            None,
-        )
+        land_snapshot = next((row for row in statla.get("snapshots", []) if is_land_snapshot_row(row)), None)
         if land_snapshot is not None:
             cli_note(
                 "Finished poll: "

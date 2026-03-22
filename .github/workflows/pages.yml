@@ -40,6 +40,7 @@ jobs:
       - name: Build static election site
         run: |
           python scripts/generate_static_detail_pages.py --election-key 2026-bw
+          python scripts/generate_static_detail_pages.py --election-key 2026-rlp
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

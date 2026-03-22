@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="de"><head>
+    <meta charset="utf-8">
+    <title>Rheinland-Pfalz Wahlergebnis - Landtagswahl 2026</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=libre-franklin:500,600,700" rel="stylesheet">
+  <style>:root{--green:#6fbc46;--red:#e24f3f;--orange:#eeb333;--neutral:#333;--light-bg:#f8f8f8;--light-border-color:#babfc7;--grey:#b8b8b8;--highlight-color:#871d33;--on-highlight-color:#fff;--bg-color:#fff;--on-bg-color:#000000ce;--header-height:42px;--mobile-map-height:65vh;--chart-bars-gap:10px;}body:not(.touch-device)::-webkit-scrollbar{width:.5em;}body:not(.touch-device)::-webkit-scrollbar-thumb{background-color:#a9a9a9;outline:1px solid transparent;border-radius:20px;}body:not(.touch-device) ::-webkit-scrollbar{width:.5em;height:.5em;}body:not(.touch-device) ::-webkit-scrollbar-thumb{background-color:#a9a9a9;outline:1px solid transparent;border-radius:20px;}body:not(.iframed){overflow-y:scroll;}body,html{margin:0;padding:0;background-color:#fff;background-color:var(--bg-color);color:#000000ce;color:var(--on-bg-color);height:100%;}body{margin:0;font-family:Libre Franklin,Helvetica Neue,sans-serif;}</style><link rel="stylesheet" href="styles.b84d2a9731fee1232472.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.b84d2a9731fee1232472.css"></noscript></head>
+  <body>
+    <app-root></app-root>
+  <script src="runtime-es2017.3f4a9707b93df46d4c05.js" type="module"></script><script src="runtime-es5.3f4a9707b93df46d4c05.js" nomodule defer></script><script src="polyfills-es5.010f89040f5d66b44522.js" nomodule defer></script><script src="polyfills-es2017.42f6bc72b26f1e9d9826.js" type="module"></script><script src="main-es2017.51c223134e1fb59e4441.js" type="module"></script><script src="main-es5.51c223134e1fb59e4441.js" nomodule defer></script>
+  <script>
+    var timer;
+    var interval = 300000;
+    window.onload = function () {
+      if (!timer) {
+        timer = setTimeout(function () {
+          location.reload();
+        }, interval);
+      }
+    };
+  </script>
+
+</body></html>
