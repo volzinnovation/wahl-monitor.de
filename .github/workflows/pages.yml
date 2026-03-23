@@ -1,11 +1,6 @@
 name: Deploy GitHub Pages
 
 on:
-  workflow_run:
-    workflows:
-      - Election Poll
-    types:
-      - completed
   workflow_dispatch:
 
 permissions:
@@ -19,7 +14,6 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -28,18 +22,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Build static RLP election site
+      - name: Build static election sites
         run: |
+          python scripts/generate_static_detail_pages.py --election-key 2026-bw
           python scripts/generate_static_detail_pages.py --election-key 2026-rlp
+          python scripts/generate_static_detail_pages.py --election-key 2026-lsa
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
