@@ -8,6 +8,7 @@ import csv
 import html
 import json
 import math
+import os
 import re
 import subprocess
 import unicodedata
@@ -16,7 +17,9 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
+import calculate_seats as bw_seats
 import poll_election_core as core
+import rlp_seat_allocation
 import rlp_wahlkreis_structure as wk_structure
 
 
@@ -473,7 +476,7 @@ def render_vote_share_history_panel(config: core.Config) -> str:
     margin_left = 58.0
     margin_right = 88.0
     margin_top = 24.0
-    margin_bottom = 52.0
+    margin_bottom = 96.0
     plot_width = width - margin_left - margin_right
     plot_height = height - margin_top - margin_bottom
 
@@ -520,8 +523,10 @@ def render_vote_share_history_panel(config: core.Config) -> str:
             f"<line x1='{x:.2f}' y1='{margin_top + plot_height:.2f}' x2='{x:.2f}' y2='{margin_top + plot_height + 6:.2f}' "
             "stroke='#7c8a9a' stroke-width='1'/>"
         )
+        label_y = height - 18.0
         x_ticks.append(
-            f"<text x='{x:.2f}' y='{height - 16:.2f}' text-anchor='middle' class='history-axis-label'>"
+            f"<text x='{x:.2f}' y='{label_y:.2f}' text-anchor='start' "
+            f"transform='rotate(90 {x:.2f} {label_y:.2f})' class='history-axis-label'>"
             f"{html.escape(str(item['label']))}</text>"
         )
 
@@ -609,6 +614,266 @@ def render_vote_share_history_panel(config: core.Config) -> str:
         "<div class='panel'><h2>Verlauf der Stimmanteile am Wahlabend</h2>"
         f"<p class='small'>{html.escape(subtitle)}</p>"
         f"{chart}</div>"
+    )
+
+
+def relative_href(from_dir: Path, target: Path) -> str:
+    return Path(os.path.relpath(target, start=from_dir)).as_posix()
+
+
+def render_report_figure_panel(
+    output_root: Path,
+    *,
+    title: str,
+    image_path: Path,
+    image_alt: str,
+    description: str,
+    data_links: Optional[List[Tuple[str, Path]]] = None,
+) -> str:
+    if not image_path.exists():
+        return ""
+
+    image_href = relative_href(output_root, image_path)
+    links: List[str] = []
+    for label, path in data_links or []:
+        if not path.exists():
+            continue
+        links.append(f"<a href='{html.escape(relative_href(output_root, path))}'>{html.escape(label)}</a>")
+    links_html = ""
+    if links:
+        links_html = f"<p class='small figure-links'>{' · '.join(links)}</p>"
+
+    return (
+        f"<div class='panel'><h2>{html.escape(title)}</h2>"
+        f"<p class='small'>{html.escape(description)}</p>"
+        f"<img class='report-figure' src='{html.escape(image_href)}' alt='{html.escape(image_alt)}'/>"
+        f"{links_html}</div>"
+    )
+
+
+def estimate_rlp_seat_summary() -> Dict[str, Any]:
+    source_path = core.LATEST_DIR / "official_results_source.csv"
+    if not source_path.exists():
+        raise FileNotFoundError(f"Missing official RLP source CSV: {source_path}")
+
+    with source_path.open("r", encoding="utf-8-sig", newline="") as handle:
+        reader = csv.reader(handle, delimiter=";")
+        header = next(reader)
+        rows = list(reader)
+
+    idx_id = header.index("Identifikationsschlüssel")
+    idx_winner_party = header.index("Partei des Kandidaten")
+    idx_valid_votes = header.index("gültige Landesstimmen")
+    party_columns = [
+        (column_index, core.canonical_party_name(header[column_index], "Zweitstimmen"))
+        for column_index in range(117, 129)
+        if header[column_index]
+    ]
+    by_id = {row[idx_id]: row for row in rows}
+
+    direct_by_district_and_party: Dict[str, Dict[str, int]] = defaultdict(lambda: defaultdict(int))
+    for row_id, row in by_id.items():
+        if len(row_id) != 13 or row_id[3:] != "0000000000" or row_id[:3] in {"000", "100", "200", "300", "400"}:
+            continue
+        winner_party = core.canonical_party_name(row[idx_winner_party], "Erststimmen")
+        if winner_party:
+            direct_by_district_and_party[row_id[0]][winner_party] += 1
+
+    payload = {
+        "source_label": str(source_path),
+        "valid_list_votes": core.parse_int(by_id["0000000000000"][idx_valid_votes]) or 0,
+        "base_seats": 101,
+        "parties": [],
+    }
+    for column_index, party in sorted(party_columns, key=lambda item: item[1]):
+        payload["parties"].append(
+            {
+                "party": party,
+                "list_type": "district",
+                "lists": [
+                    {
+                        "list_id": district_id,
+                        "label": f"Bezirk {district_id}",
+                        "district_id": district_id,
+                        "district_name": f"Bezirk {district_id}",
+                        "votes": core.parse_int(by_id[f"{district_id}000000000000"][column_index]) or 0,
+                        "direct_mandates": direct_by_district_and_party[district_id].get(party, 0),
+                    }
+                    for district_id in ["1", "2", "3", "4"]
+                ],
+            }
+        )
+
+    result = rlp_seat_allocation.calculate_rlp_seats(payload)
+    if result.get("status") != "ok":
+        raise RuntimeError("RLP seat calculation did not return an allocatable result")
+
+    return {
+        "title": "Sitzberechnung",
+        "subtitle": "Berechnung aus den offiziellen Landesstimmen und den direkt gewonnenen Wahlkreisen, verteilt auf die vier Bezirke.",
+        "base_seats": int(result["base_seats"]),
+        "total_seats": int(result["total_seats"]),
+        "extra_seats": int(result["balance_seats"]),
+        "rows": [
+            {
+                "party": str(row["party"]),
+                "seats": int(row["total_seats"]),
+                "direct_seats": int(row["direct_mandates"]),
+                "list_seats": int(row["list_seats"]),
+                "share_percent": float(row["vote_share_valid_percent"]),
+            }
+            for row in result["party_rows"]
+            if int(row["total_seats"]) > 0
+        ],
+        "footnote": (
+            "Direktmandate dunkel, Listenmandate hell. "
+            f"Ausgangsbasis {int(result['base_seats'])} Sitze, Ausgleich {int(result['balance_seats'])}."
+        ),
+    }
+
+
+def estimate_bw_seat_summary(
+    statla_snapshots: List[Dict[str, Any]],
+    statla_party_rows: List[Dict[str, Any]],
+) -> Dict[str, Any]:
+    result = bw_seats.estimate_bw_seats(
+        {
+            "mode": "LATEST",
+            "url": str(core.LATEST_DIR / "statla_snapshots.csv"),
+            "snapshots": statla_snapshots,
+            "party_rows": statla_party_rows,
+            "error_message": None,
+        }
+    )
+    return {
+        "title": "Sitzberechnung",
+        "subtitle": "Schätzung aus den aktuellen Erst- und Zweitstimmen nach dem BW-Zweistimmenrecht.",
+        "base_seats": int(result["base_seats"]),
+        "total_seats": int(result["total_seats"]),
+        "extra_seats": int(result["compensation_seats"]),
+        "rows": [
+            {
+                "party": str(row["party"]),
+                "seats": int(row["seats"]),
+                "direct_seats": int(row["direct_seats"]),
+                "list_seats": int(row["list_seats"]),
+                "share_percent": float(row["second_vote_share_valid"]),
+            }
+            for row in result["party_rows"]
+            if int(row["seats"]) > 0
+        ],
+        "footnote": (
+            "Direktmandate dunkel, Listenmandate hell. "
+            f"Ausgangsbasis {int(result['base_seats'])} Sitze, Ausgleich {int(result['compensation_seats'])}."
+        ),
+    }
+
+
+def render_seat_calculation_panel(
+    config: core.Config,
+    statla_snapshots: List[Dict[str, Any]],
+    statla_party_rows: List[Dict[str, Any]],
+) -> str:
+    state_code = config.election_key.rsplit("-", 1)[-1].lower()
+    try:
+        if state_code == "bw":
+            summary = estimate_bw_seat_summary(statla_snapshots, statla_party_rows)
+        elif state_code == "rlp":
+            summary = estimate_rlp_seat_summary()
+        else:
+            return ""
+    except Exception as exc:
+        return (
+            "<div class='panel'><h2>Sitzberechnung</h2>"
+            f"<p class='muted'>Sitzberechnung derzeit nicht verfügbar: {html.escape(str(exc))}</p></div>"
+        )
+
+    rows = summary["rows"]
+    if not rows:
+        return ""
+
+    width = 880.0
+    row_height = 34.0
+    chart_top = 58.0
+    chart_bottom = 28.0
+    height = chart_top + chart_bottom + (len(rows) * row_height)
+    label_width = 154.0
+    right_width = 148.0
+    bar_left = label_width
+    bar_width = width - label_width - right_width
+    max_seats = max(int(row["seats"]) for row in rows)
+
+    def bar_length(seats: int) -> float:
+        if max_seats <= 0:
+            return 0.0
+        return (seats / max_seats) * bar_width
+
+    axis_nodes: List[str] = []
+    tick_step = 10 if max_seats > 60 else 5
+    tick_values = list(range(0, max_seats + tick_step, tick_step))
+    if tick_values[-1] != max_seats:
+        tick_values.append(max_seats)
+    for tick in tick_values:
+        x = bar_left + bar_length(tick)
+        axis_nodes.append(
+            f"<line x1='{x:.2f}' y1='{chart_top - 10:.2f}' x2='{x:.2f}' y2='{height - chart_bottom + 2:.2f}' "
+            "stroke='#e2e8f0' stroke-width='1'/>"
+        )
+        axis_nodes.append(
+            f"<text x='{x:.2f}' y='{chart_top - 18:.2f}' text-anchor='middle' class='seat-axis-label'>{tick}</text>"
+        )
+
+    row_nodes: List[str] = []
+    for index, row in enumerate(rows):
+        y = chart_top + (index * row_height)
+        color = WAHL_PARTY_COLORS.get(str(row["party"]), "#64748b")
+        total_length = bar_length(int(row["seats"]))
+        direct_length = bar_length(int(row["direct_seats"]))
+        list_length = max(total_length - direct_length, 0.0)
+        bar_y = y - 12.0
+
+        row_nodes.append(
+            f"<text x='{label_width - 12:.2f}' y='{y + 4:.2f}' text-anchor='end' class='seat-party-label'>"
+            f"{html.escape(str(row['party']))}</text>"
+        )
+        row_nodes.append(
+            f"<rect x='{bar_left:.2f}' y='{bar_y:.2f}' width='{bar_width:.2f}' height='20' rx='8' fill='#eef2f7'/>"
+        )
+        if list_length > 0:
+            row_nodes.append(
+                f"<rect x='{bar_left + direct_length:.2f}' y='{bar_y:.2f}' width='{list_length:.2f}' height='20' rx='8' "
+                f"fill='{color}' fill-opacity='0.35'/>"
+            )
+        if direct_length > 0:
+            row_nodes.append(
+                f"<rect x='{bar_left:.2f}' y='{bar_y:.2f}' width='{direct_length:.2f}' height='20' rx='8' fill='{color}'/>"
+            )
+        row_nodes.append(
+            f"<text x='{width - right_width + 8:.2f}' y='{y + 4:.2f}' text-anchor='start' class='seat-value-label'>"
+            f"{int(row['seats'])} Sitze · {int(row['direct_seats'])} direkt · {int(row['list_seats'])} Liste · {float(row['share_percent']):.1f}%</text>"
+        )
+
+    chart = (
+        f"<svg class='seat-chart' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {int(width)} {int(height)}' "
+        f"role='img' aria-label='Sitzberechnung nach Parteien'>"
+        f"<rect x='0' y='0' width='{width:.2f}' height='{height:.2f}' rx='14' fill='#fbfdff'/>"
+        f"{''.join(axis_nodes)}"
+        f"{''.join(row_nodes)}"
+        "</svg>"
+    )
+    summary_stats = (
+        "<div class='stats seat-stats'>"
+        f"<div class='stat'><div class='stat-label'>Ausgangsbasis</div><div class='stat-value stat-value-small'>{int(summary['base_seats'])}</div></div>"
+        f"<div class='stat'><div class='stat-label'>Gesamtsitze</div><div class='stat-value stat-value-small'>{int(summary['total_seats'])}</div></div>"
+        f"<div class='stat'><div class='stat-label'>Zusätzliche Sitze</div><div class='stat-value stat-value-small'>{int(summary['extra_seats'])}</div></div>"
+        "</div>"
+    )
+    return (
+        f"<div class='panel'><h2>{html.escape(str(summary['title']))}</h2>"
+        f"<p class='small'>{html.escape(str(summary['subtitle']))}</p>"
+        f"{summary_stats}"
+        f"{chart}"
+        f"<p class='small'>{html.escape(str(summary['footnote']))}</p></div>"
     )
 
 
@@ -1503,12 +1768,39 @@ def render_page(title: str, body: str, root_path: str = "../") -> str:
     .dashboard-map svg {{ width: 100%; height: auto; display: block; border-radius: 8px; }}
     .dashboard-map a:hover path {{ stroke-width: 1.6; filter: brightness(0.97); }}
     .dashboard-map path {{ transition: stroke-width 120ms ease, filter 120ms ease; }}
+    .report-figure {{
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }}
+    .figure-links {{ margin-top: 10px; }}
     .history-chart {{ width: 100%; height: auto; display: block; margin-top: 14px; }}
     .history-axis-label {{
       fill: var(--muted);
       font-size: 11px;
       font-variant-numeric: tabular-nums;
     }}
+    .seat-chart {{ width: 100%; height: auto; display: block; margin-top: 14px; }}
+    .seat-axis-label {{
+      fill: var(--muted);
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+    }}
+    .seat-party-label {{
+      fill: var(--ink);
+      font-size: 12px;
+      font-weight: 600;
+    }}
+    .seat-value-label {{
+      fill: var(--ink);
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+    }}
+    .seat-stats {{ margin-top: 14px; }}
     .history-end-label {{
       font-size: 12px;
       font-weight: 700;
@@ -2157,7 +2449,9 @@ def render_index_page(
         f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk)}</div>"
         f"{render_structure_profile_panel(features, wahlkreis_link_by_wk)}"
         f"{render_historical_comparison_section(land_snapshot, party_row_details_by_row_key, party_order)}"
+        f"{render_report_figure_panel(output_root, title='Politische Repräsentation', image_path=core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png', image_alt='Politische Repräsentation der Stimmenanteile', description='Reportgrafik zur politischen Repräsentation der Landes- bzw. Zweitstimmen.', data_links=[('PNG', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png'), ('CSV', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.csv')])}"
         f"{render_vote_share_history_panel(config)}"
+        f"{render_seat_calculation_panel(config, statla_snapshots, statla_party_rows)}"
         f"{render_wahlkreis_overview_table(wahlkreis_status_rows, wahlkreis_link_by_wk)}"
         + (
             "".join(
