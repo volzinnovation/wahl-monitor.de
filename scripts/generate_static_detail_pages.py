@@ -20,7 +20,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import calculate_seats as bw_seats
 import poll_election_core as core
-import rlp_seat_allocation
+import rlp_interim_seat_summary
 import rlp_wahlkreis_structure as wk_structure
 
 
@@ -667,84 +667,7 @@ def render_report_figure_panel(
 
 
 def estimate_rlp_seat_summary() -> Dict[str, Any]:
-    source_path = core.LATEST_DIR / "official_results_source.csv"
-    if not source_path.exists():
-        raise FileNotFoundError(f"Missing official RLP source CSV: {source_path}")
-
-    with source_path.open("r", encoding="utf-8-sig", newline="") as handle:
-        reader = csv.reader(handle, delimiter=";")
-        header = next(reader)
-        rows = list(reader)
-
-    idx_id = header.index("Identifikationsschlüssel")
-    idx_winner_party = header.index("Partei des Kandidaten")
-    idx_valid_votes = header.index("gültige Landesstimmen")
-    party_columns = [
-        (column_index, core.canonical_party_name(header[column_index], "Zweitstimmen"))
-        for column_index in range(117, 129)
-        if header[column_index]
-    ]
-    by_id = {row[idx_id]: row for row in rows}
-
-    direct_by_district_and_party: Dict[str, Dict[str, int]] = defaultdict(lambda: defaultdict(int))
-    for row_id, row in by_id.items():
-        if len(row_id) != 13 or row_id[3:] != "0000000000" or row_id[:3] in {"000", "100", "200", "300", "400"}:
-            continue
-        winner_party = core.canonical_party_name(row[idx_winner_party], "Erststimmen")
-        if winner_party:
-            direct_by_district_and_party[row_id[0]][winner_party] += 1
-
-    payload = {
-        "source_label": str(source_path),
-        "valid_list_votes": core.parse_int(by_id["0000000000000"][idx_valid_votes]) or 0,
-        "base_seats": 101,
-        "parties": [],
-    }
-    for column_index, party in sorted(party_columns, key=lambda item: item[1]):
-        payload["parties"].append(
-            {
-                "party": party,
-                "list_type": "district",
-                "lists": [
-                    {
-                        "list_id": district_id,
-                        "label": f"Bezirk {district_id}",
-                        "district_id": district_id,
-                        "district_name": f"Bezirk {district_id}",
-                        "votes": core.parse_int(by_id[f"{district_id}000000000000"][column_index]) or 0,
-                        "direct_mandates": direct_by_district_and_party[district_id].get(party, 0),
-                    }
-                    for district_id in ["1", "2", "3", "4"]
-                ],
-            }
-        )
-
-    result = rlp_seat_allocation.calculate_rlp_seats(payload)
-    if result.get("status") != "ok":
-        raise RuntimeError("RLP seat calculation did not return an allocatable result")
-
-    return {
-        "title": "Sitzberechnung",
-        "subtitle": "Berechnung aus den offiziellen Landesstimmen und den direkt gewonnenen Wahlkreisen, verteilt auf die vier Bezirke.",
-        "base_seats": int(result["base_seats"]),
-        "total_seats": int(result["total_seats"]),
-        "extra_seats": int(result["balance_seats"]),
-        "rows": [
-            {
-                "party": str(row["party"]),
-                "seats": int(row["total_seats"]),
-                "direct_seats": int(row["direct_mandates"]),
-                "list_seats": int(row["list_seats"]),
-                "share_percent": float(row["vote_share_valid_percent"]),
-            }
-            for row in result["party_rows"]
-            if int(row["total_seats"]) > 0
-        ],
-        "footnote": (
-            "Direktmandate dunkel, Listenmandate hell. "
-            f"Ausgangsbasis {int(result['base_seats'])} Sitze, Ausgleich {int(result['balance_seats'])}."
-        ),
-    }
+    return rlp_interim_seat_summary.official_interim_seat_summary()
 
 
 def estimate_bw_seat_summary(

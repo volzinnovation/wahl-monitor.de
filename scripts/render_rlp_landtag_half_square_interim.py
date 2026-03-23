@@ -8,19 +8,26 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 
+from rlp_interim_seat_summary import RLP_INTERIM_SEAT_ROWS, RLP_INTERIM_TOTAL_SEATS
+
 
 TITLE = "Sitzverteilung im Landtag von RLP"
 NOTE = "Zwischenstand"
-TOTAL_SEATS = 105
+TOTAL_SEATS = RLP_INTERIM_TOTAL_SEATS
 ROW_LENGTHS = [21, 19, 17, 15, 13, 11, 9]
 OUTPUT_DIR = Path("data/2026-rlp/reports")
 OUTPUT_STEM = "rlp-landtag-half-square-interim"
 
+PARTY_ORDER = ["GRÜNE", "SPD", "CDU", "AfD"]
 PARTIES = [
-    {"name": "GRÜNE", "seats": 10, "color": "#008939"},
-    {"name": "SPD", "seats": 32, "color": "#E3000F"},
-    {"name": "CDU", "seats": 39, "color": "#2D3C4B"},
-    {"name": "AfD", "seats": 24, "color": "#00CCFF"},
+    {
+        "name": str(row["party"]),
+        "seats": int(row["seats"]),
+        "color": str(row["color"]),
+    }
+    for party in PARTY_ORDER
+    for row in RLP_INTERIM_SEAT_ROWS
+    if str(row["party"]) == party
 ]
 
 BG = "#F2EDE2"
