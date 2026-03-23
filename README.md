@@ -1,6 +1,10 @@
 # wahl-monitor.de
 
-Static election tracking, analysis, and publishing pipeline for German state elections.
+- A open source and open data project by Prof. Dr. Raphael Volz (University of Pforzheim)
+- Contributors are welcome, Contact: raphael.volz@hs-pforzheim.de
+
+## Purpose
+Static election tracking, analysis, and publishing pipeline for German (state and federal) elections.
 
 The repository is organized by election key in the form `<year>-<state>`, for example `2026-bw`. Each election gets its own config, metadata, latest normalized exports, reports, and generated static site output.
 
@@ -10,14 +14,12 @@ The repository is organized by election key in the form `<year>-<state>`, for ex
 - Landtagswahl Baden-Württemberg 2026: `https://wahl-monitor.de/2026-bw/`
 - Landtagswahl Rheinland-Pfalz 2026: `https://wahl-monitor.de/2026-rlp/`
 - Landtagswahl Sachsen-Anhalt 2026: `https://wahl-monitor.de/2026-lsa/`
-- Past elections archive: `https://wahl-monitor.de/ltw26/`
 
 ## Available Elections
 
 - `2026-bw`: Landtagswahl Baden-Württemberg 2026
 - `2026-rlp`: Landtagswahl Rheinland-Pfalz 2026
 - `2026-lsa`: Landtagswahl Sachsen-Anhalt 2026
-- `ltw26`: legacy published archive on `wahl-monitor.de`
 
 Current operational status:
 
