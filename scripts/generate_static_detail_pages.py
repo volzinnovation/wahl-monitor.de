@@ -10,6 +10,7 @@ import json
 import math
 import os
 import re
+import shutil
 import subprocess
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -621,6 +622,16 @@ def relative_href(from_dir: Path, target: Path) -> str:
     return Path(os.path.relpath(target, start=from_dir)).as_posix()
 
 
+def publish_site_asset(output_root: Path, source_path: Path) -> Optional[Path]:
+    if not source_path.exists():
+        return None
+    target_dir = output_root / "_assets" / "reports"
+    target_dir.mkdir(parents=True, exist_ok=True)
+    target_path = target_dir / source_path.name
+    shutil.copy2(source_path, target_path)
+    return target_path
+
+
 def render_report_figure_panel(
     output_root: Path,
     *,
@@ -633,12 +644,16 @@ def render_report_figure_panel(
     if not image_path.exists():
         return ""
 
-    image_href = relative_href(output_root, image_path)
+    published_image_path = publish_site_asset(output_root, image_path)
+    if published_image_path is None:
+        return ""
+    image_href = relative_href(output_root, published_image_path)
     links: List[str] = []
     for label, path in data_links or []:
-        if not path.exists():
+        published_path = publish_site_asset(output_root, path)
+        if published_path is None:
             continue
-        links.append(f"<a href='{html.escape(relative_href(output_root, path))}'>{html.escape(label)}</a>")
+        links.append(f"<a href='{html.escape(relative_href(output_root, published_path))}'>{html.escape(label)}</a>")
     links_html = ""
     if links:
         links_html = f"<p class='small figure-links'>{' · '.join(links)}</p>"
