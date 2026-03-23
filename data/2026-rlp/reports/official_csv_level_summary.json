@@ -1,0 +1,142 @@
+{
+  "source_file": "/Users/raphaelvolz/Github/ltw26-bw-wahlergebnis/data/2026-rlp/latest/official_results_source.csv",
+  "row_count": 2878,
+  "kind_counts": {
+    "LAND": 1,
+    "BEZIRK": 4,
+    "WAHLKREIS": 52,
+    "GEMEINDE": 2509,
+    "GEMEINDE_TEIL": 312
+  },
+  "finest_real_level": "GEMEINDE_TEIL",
+  "finest_real_level_row_count": 312,
+  "ags_with_finest_rows": 31,
+  "top_split_municipalities": [
+    {
+      "ags": "11100000",
+      "part_count": 29,
+      "parent_municipality": "Koblenz, Kreisfreie Stadt"
+    },
+    {
+      "ags": "21100000",
+      "part_count": 19,
+      "parent_municipality": "Trier, Kreisfreie Stadt"
+    },
+    {
+      "ags": "31900000",
+      "part_count": 19,
+      "parent_municipality": "Worms, Kreisfreie Stadt"
+    },
+    {
+      "ags": "31200000",
+      "part_count": 18,
+      "parent_municipality": "Kaiserslautern, Kreisfreie Stadt"
+    },
+    {
+      "ags": "31600000",
+      "part_count": 16,
+      "parent_municipality": "Neustadt an der Weinstraße, Kreisfreie Stadt"
+    },
+    {
+      "ags": "31500000",
+      "part_count": 15,
+      "parent_municipality": "Mainz, Kreisfreie Stadt"
+    },
+    {
+      "ags": "13800045",
+      "part_count": 14,
+      "parent_municipality": "Neuwied, Verbandsfreie Gemeinde"
+    },
+    {
+      "ags": "31400000",
+      "part_count": 14,
+      "parent_municipality": "Ludwigshafen am Rhein, Kreisfreie Stadt"
+    },
+    {
+      "ags": "13400045",
+      "part_count": 13,
+      "parent_municipality": "Idar-Oberstein, Verbandsfreie Gemeinde"
+    },
+    {
+      "ags": "31800000",
+      "part_count": 12,
+      "parent_municipality": "Speyer, Kreisfreie Stadt"
+    },
+    {
+      "ags": "33200002",
+      "part_count": 11,
+      "parent_municipality": "Bad Dürkheim, Verbandsfreie Gemeinde"
+    },
+    {
+      "ags": "13100007",
+      "part_count": 10,
+      "parent_municipality": "Bad Neuenahr-Ahrweiler, Verbandsfreie Gemeinde"
+    },
+    {
+      "ags": "14000501",
+      "part_count": 10,
+      "parent_municipality": "Boppard, Verbandsfreie Gemeinde"
+    },
+    {
+      "ags": "32000000",
+      "part_count": 10,
+      "parent_municipality": "Zweibrücken, Kreisfreie Stadt"
+    },
+    {
+      "ags": "23301501",
+      "part_count": 9,
+      "parent_municipality": "Daun"
+    },
+    {
+      "ags": "31100000",
+      "part_count": 9,
+      "parent_municipality": "Frankenthal (Pfalz), Kreisfreie Stadt"
+    },
+    {
+      "ags": "31300000",
+      "part_count": 9,
+      "parent_municipality": "Landau in der Pfalz, Kreisfreie Stadt"
+    },
+    {
+      "ags": "33900005",
+      "part_count": 8,
+      "parent_municipality": "Bingen am Rhein, Verbandsfreie Gemeinde"
+    },
+    {
+      "ags": "31700000",
+      "part_count": 8,
+      "parent_municipality": "Pirmasens, Kreisfreie Stadt"
+    },
+    {
+      "ags": "33900030",
+      "part_count": 7,
+      "parent_municipality": "Ingelheim am Rhein, Verbandsfreie Gemeinde"
+    },
+    {
+      "ags": "13100070",
+      "part_count": 6,
+      "parent_municipality": "Remagen, Verbandsfreie Gemeinde"
+    },
+    {
+      "ags": "13100077",
+      "part_count": 6,
+      "parent_municipality": "Sinzig, Verbandsfreie Gemeinde"
+    },
+    {
+      "ags": "13300006",
+      "part_count": 6,
+      "parent_municipality": "Bad Kreuznach, Verbandsfreie Gemeinde"
+    },
+    {
+      "ags": "13700003",
+      "part_count": 5,
+      "parent_municipality": "Andernach, Verbandsfreie Gemeinde"
+    },
+    {
+      "ags": "13700068",
+      "part_count": 5,
+      "parent_municipality": "Mayen, Verbandsfreie Gemeinde"
+    }
+  ],
+  "output_csv": "/Users/raphaelvolz/Github/ltw26-bw-wahlergebnis/data/2026-rlp/reports/official_csv_finest_real_level_rows.csv"
+}

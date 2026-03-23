@@ -1,0 +1,313 @@
+official_id,kind,wahlkreis_nummer,ags,suffix,parent_municipality,label,reported_precincts,total_precincts,last_changed
+1041380004510,GEMEINDE_TEIL,104,13800045,10,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Altwied,2,2,2026-03-22 19:02:51
+1041380004511,GEMEINDE_TEIL,104,13800045,11,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Block,2,2,2026-03-22 20:27:44
+1041380004512,GEMEINDE_TEIL,104,13800045,12,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Engers,4,4,2026-03-22 20:59:39
+1041380004513,GEMEINDE_TEIL,104,13800045,13,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Feldkirchen,6,6,2026-03-22 20:19:11
+1041380004514,GEMEINDE_TEIL,104,13800045,14,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Gladbach,4,4,2026-03-22 20:41:26
+1041380004515,GEMEINDE_TEIL,104,13800045,15,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Heddesdorf,12,12,2026-03-22 20:44:44
+1041380004516,GEMEINDE_TEIL,104,13800045,16,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Heimbach-Weis,6,6,2026-03-22 20:52:32
+1041380004517,GEMEINDE_TEIL,104,13800045,17,"Neuwied, Verbandsfreie Gemeinde",Neuwied / Innenstadt,9,9,2026-03-22 20:39:23
+1041380004518,GEMEINDE_TEIL,104,13800045,18,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Irlich,4,4,2026-03-22 21:22:20
+1041380004519,GEMEINDE_TEIL,104,13800045,19,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Niederbieber,4,4,2026-03-22 19:49:51
+1041380004520,GEMEINDE_TEIL,104,13800045,20,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Oberbieber,4,4,2026-03-22 20:50:19
+1041380004521,GEMEINDE_TEIL,104,13800045,21,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Rodenbach,2,2,2026-03-22 20:34:22
+1041380004522,GEMEINDE_TEIL,104,13800045,22,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Segendorf,2,2,2026-03-22 19:22:16
+1041380004523,GEMEINDE_TEIL,104,13800045,23,"Neuwied, Verbandsfreie Gemeinde",Neuwied/Torney,2,2,2026-03-22 19:16:57
+1081110000070,GEMEINDE_TEIL,108,11100000,70,"Koblenz, Kreisfreie Stadt",Koblenz/Ehrenbreitstein,2,2,2026-03-22 19:25:31
+1081110000071,GEMEINDE_TEIL,108,11100000,71,"Koblenz, Kreisfreie Stadt",Koblenz/Niederberg,4,4,2026-03-22 19:39:41
+1081110000072,GEMEINDE_TEIL,108,11100000,72,"Koblenz, Kreisfreie Stadt",Koblenz/Asterstein,3,3,2026-03-22 19:37:55
+1081110000073,GEMEINDE_TEIL,108,11100000,73,"Koblenz, Kreisfreie Stadt",Koblenz/Pfaffendorf,3,3,2026-03-22 19:47:51
+1081110000074,GEMEINDE_TEIL,108,11100000,74,"Koblenz, Kreisfreie Stadt",Koblenz/Pfaffendorfer Höhe,2,2,2026-03-22 19:55:08
+1081110000075,GEMEINDE_TEIL,108,11100000,75,"Koblenz, Kreisfreie Stadt",Koblenz/Horchheim,3,3,2026-03-22 20:32:33
+1081110000076,GEMEINDE_TEIL,108,11100000,76,"Koblenz, Kreisfreie Stadt",Koblenz/Horchheimer Höhe,2,2,2026-03-22 19:49:16
+1081110000080,GEMEINDE_TEIL,108,11100000,80,"Koblenz, Kreisfreie Stadt",Koblenz/Arzheim,3,3,2026-03-22 19:41:09
+1081110000081,GEMEINDE_TEIL,108,11100000,81,"Koblenz, Kreisfreie Stadt",Koblenz/Arenberg,5,5,2026-03-22 20:10:40
+1091110000010,GEMEINDE_TEIL,109,11100000,10,"Koblenz, Kreisfreie Stadt",Koblenz/Altstadt,6,6,2026-03-22 20:29:35
+1091110000011,GEMEINDE_TEIL,109,11100000,11,"Koblenz, Kreisfreie Stadt",Koblenz/Mitte,5,5,2026-03-22 19:28:17
+1091110000012,GEMEINDE_TEIL,109,11100000,12,"Koblenz, Kreisfreie Stadt",Koblenz/Süd,7,7,2026-03-22 19:32:43
+1091110000013,GEMEINDE_TEIL,109,11100000,13,"Koblenz, Kreisfreie Stadt",Koblenz/Oberwerth,2,2,2026-03-22 19:09:15
+1091110000014,GEMEINDE_TEIL,109,11100000,14,"Koblenz, Kreisfreie Stadt",Koblenz/Karthause Nord,3,3,2026-03-22 20:06:32
+1091110000015,GEMEINDE_TEIL,109,11100000,15,"Koblenz, Kreisfreie Stadt",Koblenz/Karthäuserhofgelände,3,3,2026-03-22 19:33:53
+1091110000016,GEMEINDE_TEIL,109,11100000,16,"Koblenz, Kreisfreie Stadt",Koblenz/Karthause Flugfeld,6,6,2026-03-22 19:32:43
+1091110000017,GEMEINDE_TEIL,109,11100000,17,"Koblenz, Kreisfreie Stadt",Koblenz/Goldgrube,5,5,2026-03-22 19:46:01
+1091110000018,GEMEINDE_TEIL,109,11100000,18,"Koblenz, Kreisfreie Stadt",Koblenz/Rauental,5,5,2026-03-22 19:41:31
+1091110000019,GEMEINDE_TEIL,109,11100000,19,"Koblenz, Kreisfreie Stadt",Koblenz/Moselweiß,3,3,2026-03-22 20:06:32
+1091110000020,GEMEINDE_TEIL,109,11100000,20,"Koblenz, Kreisfreie Stadt",Koblenz/Stolzenfels,2,2,2026-03-22 18:29:41
+1091110000021,GEMEINDE_TEIL,109,11100000,21,"Koblenz, Kreisfreie Stadt",Koblenz/Lay,2,2,2026-03-22 19:12:12
+1091110000040,GEMEINDE_TEIL,109,11100000,40,"Koblenz, Kreisfreie Stadt",Koblenz/Lützel,10,10,2026-03-22 19:37:20
+1091110000041,GEMEINDE_TEIL,109,11100000,41,"Koblenz, Kreisfreie Stadt",Koblenz/Metternich,11,11,2026-03-22 20:26:16
+1091110000043,GEMEINDE_TEIL,109,11100000,43,"Koblenz, Kreisfreie Stadt",Koblenz/Neuendorf,5,5,2026-03-22 19:29:03
+1091110000044,GEMEINDE_TEIL,109,11100000,44,"Koblenz, Kreisfreie Stadt",Koblenz/Wallersheim,3,3,2026-03-22 19:13:47
+1091110000050,GEMEINDE_TEIL,109,11100000,50,"Koblenz, Kreisfreie Stadt",Koblenz/Kesselheim,3,3,2026-03-22 19:38:36
+1091110000051,GEMEINDE_TEIL,109,11100000,51,"Koblenz, Kreisfreie Stadt",Koblenz/Güls,6,6,2026-03-22 20:34:10
+1091110000052,GEMEINDE_TEIL,109,11100000,52,"Koblenz, Kreisfreie Stadt",Koblenz/Rübenach,6,6,2026-03-22 20:12:47
+1091110000053,GEMEINDE_TEIL,109,11100000,53,"Koblenz, Kreisfreie Stadt",Koblenz/Bubenheim,2,2,2026-03-22 19:19:52
+1101370020301,GEMEINDE_TEIL,110,13700203,01,"Bendorf, Verbandsfreie Gemeinde",Bendorf/Stadt,5,5,2026-03-22 19:17:34
+1101370020302,GEMEINDE_TEIL,110,13700203,02,"Bendorf, Verbandsfreie Gemeinde",Bendorf/Sayn,3,3,2026-03-22 19:40:40
+1101370020303,GEMEINDE_TEIL,110,13700203,03,"Bendorf, Verbandsfreie Gemeinde",Bendorf/Mülhofen,1,1,2026-03-22 18:58:59
+1101370020304,GEMEINDE_TEIL,110,13700203,04,"Bendorf, Verbandsfreie Gemeinde",Bendorf/Stromberg,1,1,2026-03-22 19:01:36
+1111370000301,GEMEINDE_TEIL,111,13700003,01,"Andernach, Verbandsfreie Gemeinde",Andernach/Kernstadt,11,11,2026-03-22 20:41:18
+1111370000302,GEMEINDE_TEIL,111,13700003,02,"Andernach, Verbandsfreie Gemeinde",Andernach/Eich,1,1,2026-03-22 19:32:06
+1111370000303,GEMEINDE_TEIL,111,13700003,03,"Andernach, Verbandsfreie Gemeinde",Andernach/Kell,1,1,2026-03-22 19:02:46
+1111370000304,GEMEINDE_TEIL,111,13700003,04,"Andernach, Verbandsfreie Gemeinde",Andernach/Miesenheim,2,2,2026-03-22 19:53:47
+1111370000305,GEMEINDE_TEIL,111,13700003,05,"Andernach, Verbandsfreie Gemeinde",Andernach/Namedy,1,1,2026-03-22 19:29:54
+1121370006801,GEMEINDE_TEIL,112,13700068,01,"Mayen, Verbandsfreie Gemeinde",Mayen/Kernstadt,10,10,2026-03-22 21:41:25
+1121370006802,GEMEINDE_TEIL,112,13700068,02,"Mayen, Verbandsfreie Gemeinde",Mayen/Alzheim,1,1,2026-03-22 19:59:06
+1121370006803,GEMEINDE_TEIL,112,13700068,03,"Mayen, Verbandsfreie Gemeinde",Mayen/Hausen,1,1,2026-03-22 19:39:55
+1121370006804,GEMEINDE_TEIL,112,13700068,04,"Mayen, Verbandsfreie Gemeinde",Mayen/Kürrenberg,1,1,2026-03-22 19:26:47
+1121370006805,GEMEINDE_TEIL,112,13700068,05,"Mayen, Verbandsfreie Gemeinde",Mayen/Nitztal,1,1,2026-03-22 19:54:50
+1131310007001,GEMEINDE_TEIL,113,13100070,01,"Remagen, Verbandsfreie Gemeinde",Remagen/Kripp,2,2,2026-03-22 21:17:31
+1131310007002,GEMEINDE_TEIL,113,13100070,02,"Remagen, Verbandsfreie Gemeinde",Remagen/Stadt,3,3,2026-03-22 22:02:16
+1131310007003,GEMEINDE_TEIL,113,13100070,03,"Remagen, Verbandsfreie Gemeinde",Remagen/Oberwinter,2,2,2026-03-22 21:29:57
+1131310007004,GEMEINDE_TEIL,113,13100070,04,"Remagen, Verbandsfreie Gemeinde",Remagen/Oedingen,1,1,2026-03-22 19:45:13
+1131310007005,GEMEINDE_TEIL,113,13100070,05,"Remagen, Verbandsfreie Gemeinde",Remagen/Rolandswerth,1,1,2026-03-22 18:52:39
+1131310007006,GEMEINDE_TEIL,113,13100070,06,"Remagen, Verbandsfreie Gemeinde",Remagen/Unkelbach,1,1,2026-03-22 19:41:46
+1131310007710,GEMEINDE_TEIL,113,13100077,10,"Sinzig, Verbandsfreie Gemeinde",Sinzig / Bad Bodendorf,2,2,2026-03-22 20:15:20
+1131310007720,GEMEINDE_TEIL,113,13100077,20,"Sinzig, Verbandsfreie Gemeinde",Sinzig / Franken,1,1,2026-03-22 18:58:50
+1131310007730,GEMEINDE_TEIL,113,13100077,30,"Sinzig, Verbandsfreie Gemeinde",Sinzig / Koisdorf,1,1,2026-03-22 19:16:34
+1131310007740,GEMEINDE_TEIL,113,13100077,40,"Sinzig, Verbandsfreie Gemeinde",Sinzig / Löhndorf,1,1,2026-03-22 20:17:20
+1131310007750,GEMEINDE_TEIL,113,13100077,50,"Sinzig, Verbandsfreie Gemeinde",Sinzig,4,4,2026-03-22 20:52:08
+1131310007760,GEMEINDE_TEIL,113,13100077,60,"Sinzig, Verbandsfreie Gemeinde",Sinzig / Westum,1,1,2026-03-22 19:57:10
+1141310000711,GEMEINDE_TEIL,114,13100007,11,"Bad Neuenahr-Ahrweiler, Verbandsfreie Gemeinde",Ahrweiler,6,6,2026-03-22 21:57:47
+1141310000712,GEMEINDE_TEIL,114,13100007,12,"Bad Neuenahr-Ahrweiler, Verbandsfreie Gemeinde",Walporzheim,1,1,2026-03-22 19:38:16
+1141310000713,GEMEINDE_TEIL,114,13100007,13,"Bad Neuenahr-Ahrweiler, Verbandsfreie Gemeinde",Bachem,1,1,2026-03-22 20:35:54
+1141310000714,GEMEINDE_TEIL,114,13100007,14,"Bad Neuenahr-Ahrweiler, Verbandsfreie Gemeinde",Ramersbach,1,1,2026-03-22 19:15:18
+1141310000720,GEMEINDE_TEIL,114,13100007,20,"Bad Neuenahr-Ahrweiler, Verbandsfreie Gemeinde",Bad Neuenahr,9,9,2026-03-22 21:15:41
+1141310000730,GEMEINDE_TEIL,114,13100007,30,"Bad Neuenahr-Ahrweiler, Verbandsfreie Gemeinde",Heimersheim,2,2,2026-03-22 20:52:33
+1141310000731,GEMEINDE_TEIL,114,13100007,31,"Bad Neuenahr-Ahrweiler, Verbandsfreie Gemeinde",Heppingen,1,1,2026-03-22 20:55:08
+1141310000732,GEMEINDE_TEIL,114,13100007,32,"Bad Neuenahr-Ahrweiler, Verbandsfreie Gemeinde",Gimmigen,1,1,2026-03-22 19:39:05
+1141310000733,GEMEINDE_TEIL,114,13100007,33,"Bad Neuenahr-Ahrweiler, Verbandsfreie Gemeinde",Lohrsdorf,1,1,2026-03-22 20:03:45
+1141310000734,GEMEINDE_TEIL,114,13100007,34,"Bad Neuenahr-Ahrweiler, Verbandsfreie Gemeinde",Kirchdaun,1,1,2026-03-22 19:04:21
+2151350102001,GEMEINDE_TEIL,215,13501020,01,"Cochem, St",Cochem,2,2,2026-03-22 20:15:16
+2151350102002,GEMEINDE_TEIL,215,13501020,02,"Cochem, St",Cochem/Cond,1,1,2026-03-22 20:08:01
+2151350102003,GEMEINDE_TEIL,215,13501020,03,"Cochem, St",Cochem/Sehl,1,1,2026-03-22 20:16:06
+2151350102004,GEMEINDE_TEIL,215,13501020,04,"Cochem, St",Cochem/Brauheck,1,1,2026-03-22 20:16:15
+2161400050101,GEMEINDE_TEIL,216,14000501,01,"Boppard, Verbandsfreie Gemeinde",Boppard/Boppard,6,6,2026-03-22 20:36:57
+2161400050102,GEMEINDE_TEIL,216,14000501,02,"Boppard, Verbandsfreie Gemeinde",Boppard/Bad Salzig,2,2,2026-03-22 20:24:08
+2161400050103,GEMEINDE_TEIL,216,14000501,03,"Boppard, Verbandsfreie Gemeinde",Boppard/Buchholz,2,2,2026-03-22 21:01:20
+2161400050104,GEMEINDE_TEIL,216,14000501,04,"Boppard, Verbandsfreie Gemeinde",Boppard/Herschwiesen,1,1,2026-03-22 18:53:40
+2161400050105,GEMEINDE_TEIL,216,14000501,05,"Boppard, Verbandsfreie Gemeinde",Boppard/Hirzenach,1,1,2026-03-22 20:12:46
+2161400050106,GEMEINDE_TEIL,216,14000501,06,"Boppard, Verbandsfreie Gemeinde",Boppard/Holzfeld,1,1,2026-03-22 18:46:29
+2161400050107,GEMEINDE_TEIL,216,14000501,07,"Boppard, Verbandsfreie Gemeinde",Boppard/Oppenhausen,1,1,2026-03-22 19:17:13
+2161400050108,GEMEINDE_TEIL,216,14000501,08,"Boppard, Verbandsfreie Gemeinde",Boppard/Rheinbay,1,1,2026-03-22 18:36:39
+2161400050109,GEMEINDE_TEIL,216,14000501,09,"Boppard, Verbandsfreie Gemeinde",Boppard/Udenhausen,1,1,2026-03-22 19:11:38
+2161400050110,GEMEINDE_TEIL,216,14000501,10,"Boppard, Verbandsfreie Gemeinde",Boppard/Weiler,1,1,2026-03-22 19:20:54
+2171330000601,GEMEINDE_TEIL,217,13300006,01,"Bad Kreuznach, Verbandsfreie Gemeinde",Bad Kreuznach/Planig,1,1,2026-03-22 19:08:20
+2171330000602,GEMEINDE_TEIL,217,13300006,02,"Bad Kreuznach, Verbandsfreie Gemeinde",Bad Kreuznach/Bosenheim,1,1,2026-03-22 19:01:07
+2171330000603,GEMEINDE_TEIL,217,13300006,03,"Bad Kreuznach, Verbandsfreie Gemeinde",Bad Kreuznach/Ippesheim,1,1,2026-03-22 18:48:21
+2171330000604,GEMEINDE_TEIL,217,13300006,04,"Bad Kreuznach, Verbandsfreie Gemeinde",Bad Kreuznach/Winzenheim,2,2,2026-03-22 20:07:14
+2171330000605,GEMEINDE_TEIL,217,13300006,05,"Bad Kreuznach, Verbandsfreie Gemeinde",Bad Kreuznach/Kernstadt,19,19,2026-03-22 20:27:47
+2171330000607,GEMEINDE_TEIL,217,13300006,07,"Bad Kreuznach, Verbandsfreie Gemeinde",Bad Münster am Stein Ebernburg,2,2,2026-03-22 19:51:35
+2191340004501,GEMEINDE_TEIL,219,13400045,01,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Oberstein,4,4,2026-03-22 19:16:30
+2191340004502,GEMEINDE_TEIL,219,13400045,02,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Idar,5,5,2026-03-22 19:33:50
+2191340004503,GEMEINDE_TEIL,219,13400045,03,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Tiefenstein,2,2,2026-03-22 18:58:39
+2191340004504,GEMEINDE_TEIL,219,13400045,04,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Algenrodt,1,1,2026-03-22 19:13:00
+2191340004505,GEMEINDE_TEIL,219,13400045,05,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Enzweiler,1,1,2026-03-22 18:25:14
+2191340004506,GEMEINDE_TEIL,219,13400045,06,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Hammerstein,1,1,2026-03-22 18:31:03
+2191340004507,GEMEINDE_TEIL,219,13400045,07,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Kirchenbollenbach,1,1,2026-03-22 18:36:40
+2191340004508,GEMEINDE_TEIL,219,13400045,08,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Mittelbollenbach,1,1,2026-03-22 18:52:28
+2191340004509,GEMEINDE_TEIL,219,13400045,09,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Nahbollenbach,1,1,2026-03-22 19:09:13
+2191340004510,GEMEINDE_TEIL,219,13400045,10,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Weierbach,2,2,2026-03-22 20:37:18
+2191340004511,GEMEINDE_TEIL,219,13400045,11,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Georg-Weierbach,1,1,2026-03-22 18:43:35
+2191340004512,GEMEINDE_TEIL,219,13400045,12,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Göttschied,2,2,2026-03-22 19:50:07
+2191340004513,GEMEINDE_TEIL,219,13400045,13,"Idar-Oberstein, Verbandsfreie Gemeinde",Idar-Oberstein/Regulshausen,1,1,2026-03-22 18:47:35
+2202330150110,GEMEINDE_TEIL,220,23301501,10,Daun,Daun-Stadt,3,3,2026-03-22 19:59:45
+2202330150120,GEMEINDE_TEIL,220,23301501,20,Daun,Daun-Boverath,1,1,2026-03-22 18:35:30
+2202330150130,GEMEINDE_TEIL,220,23301501,30,Daun,Daun-Gemünden,1,1,2026-03-22 18:35:43
+2202330150140,GEMEINDE_TEIL,220,23301501,40,Daun,Daun-Neunkirchen,1,1,2026-03-22 19:11:29
+2202330150150,GEMEINDE_TEIL,220,23301501,50,Daun,Daun-Pützborn,1,1,2026-03-22 19:03:33
+2202330150160,GEMEINDE_TEIL,220,23301501,60,Daun,Daun-Rengen,1,1,2026-03-22 18:53:30
+2202330150170,GEMEINDE_TEIL,220,23301501,70,Daun,Daun-Steinborn,1,1,2026-03-22 18:54:38
+2202330150180,GEMEINDE_TEIL,220,23301501,80,Daun,Daun-Waldkönigen,1,1,2026-03-22 19:55:29
+2202330150190,GEMEINDE_TEIL,220,23301501,90,Daun,Daun-Weiersbach,1,1,2026-03-22 18:48:51
+2242110000021,GEMEINDE_TEIL,224,21100000,21,"Trier, Kreisfreie Stadt",Trier/Ehrang-Quint,8,8,2026-03-22 20:18:34
+2242110000022,GEMEINDE_TEIL,224,21100000,22,"Trier, Kreisfreie Stadt",Trier/Pfalzel,4,4,2026-03-22 21:19:04
+2242110000023,GEMEINDE_TEIL,224,21100000,23,"Trier, Kreisfreie Stadt",Trier/Biewer,2,2,2026-03-22 19:47:16
+2242110000024,GEMEINDE_TEIL,224,21100000,24,"Trier, Kreisfreie Stadt",Trier/Ruwer-Eitelsbach,4,4,2026-03-22 19:34:21
+2252110000011,GEMEINDE_TEIL,225,21100000,11,"Trier, Kreisfreie Stadt",Trier/Mitte-Gartenfeld,13,13,2026-03-22 20:19:19
+2252110000012,GEMEINDE_TEIL,225,21100000,12,"Trier, Kreisfreie Stadt",Trier/Nord,16,16,2026-03-22 19:59:22
+2252110000013,GEMEINDE_TEIL,225,21100000,13,"Trier, Kreisfreie Stadt",Trier/Süd,9,9,2026-03-22 20:53:53
+2252110000031,GEMEINDE_TEIL,225,21100000,31,"Trier, Kreisfreie Stadt",Trier/Trier-West-Pallien,8,8,2026-03-22 20:01:26
+2252110000032,GEMEINDE_TEIL,225,21100000,32,"Trier, Kreisfreie Stadt",Trier/Euren,4,4,2026-03-22 20:17:27
+2252110000033,GEMEINDE_TEIL,225,21100000,33,"Trier, Kreisfreie Stadt",Trier/Zewen,4,4,2026-03-22 19:44:39
+2252110000041,GEMEINDE_TEIL,225,21100000,41,"Trier, Kreisfreie Stadt",Trier/Olewig,4,4,2026-03-22 20:01:11
+2252110000042,GEMEINDE_TEIL,225,21100000,42,"Trier, Kreisfreie Stadt",Trier/Kürenz,9,9,2026-03-22 20:07:01
+2252110000043,GEMEINDE_TEIL,225,21100000,43,"Trier, Kreisfreie Stadt",Trier/Tarforst,6,6,2026-03-22 19:54:51
+2252110000044,GEMEINDE_TEIL,225,21100000,44,"Trier, Kreisfreie Stadt",Trier/Filsch,2,2,2026-03-22 19:42:25
+2252110000045,GEMEINDE_TEIL,225,21100000,45,"Trier, Kreisfreie Stadt",Trier/Irsch,2,2,2026-03-22 20:34:57
+2252110000046,GEMEINDE_TEIL,225,21100000,46,"Trier, Kreisfreie Stadt",Trier/Kernscheid,2,2,2026-03-22 19:14:49
+2252110000051,GEMEINDE_TEIL,225,21100000,51,"Trier, Kreisfreie Stadt",Trier/Feyen-Weismark,8,8,2026-03-22 20:55:56
+2252110000052,GEMEINDE_TEIL,225,21100000,52,"Trier, Kreisfreie Stadt",Trier/Heiligkreuz,6,6,2026-03-22 20:53:05
+2252110000053,GEMEINDE_TEIL,225,21100000,53,"Trier, Kreisfreie Stadt",Trier/Mariahof,4,4,2026-03-22 19:25:44
+3273150000015,GEMEINDE_TEIL,327,31500000,15,"Mainz, Kreisfreie Stadt",Mainz/Altstadt,17,17,2026-03-22 21:07:01
+3273150000016,GEMEINDE_TEIL,327,31500000,16,"Mainz, Kreisfreie Stadt",Mainz/Neustadt,26,26,2026-03-22 20:20:22
+3273150000024,GEMEINDE_TEIL,327,31500000,24,"Mainz, Kreisfreie Stadt",Mainz/Oberstadt,20,20,2026-03-22 20:47:18
+3273150000025,GEMEINDE_TEIL,327,31500000,25,"Mainz, Kreisfreie Stadt",Mainz/Hartenberg/Münchfeld,16,16,2026-03-22 20:12:50
+3283150000031,GEMEINDE_TEIL,328,31500000,31,"Mainz, Kreisfreie Stadt",Mainz/Mombach,11,11,2026-03-22 19:53:52
+3283150000041,GEMEINDE_TEIL,328,31500000,41,"Mainz, Kreisfreie Stadt",Mainz/Gonsenheim,21,21,2026-03-22 20:41:06
+3283150000051,GEMEINDE_TEIL,328,31500000,51,"Mainz, Kreisfreie Stadt",Mainz/Bretzenheim,19,19,2026-03-22 20:10:55
+3283150000061,GEMEINDE_TEIL,328,31500000,61,"Mainz, Kreisfreie Stadt",Mainz/Hechtsheim,14,14,2026-03-22 20:17:44
+3283150000071,GEMEINDE_TEIL,328,31500000,71,"Mainz, Kreisfreie Stadt",Mainz/Weisenau,13,13,2026-03-22 19:57:46
+3293150000042,GEMEINDE_TEIL,329,31500000,42,"Mainz, Kreisfreie Stadt",Mainz/Finthen,13,13,2026-03-22 21:19:56
+3293150000052,GEMEINDE_TEIL,329,31500000,52,"Mainz, Kreisfreie Stadt",Mainz/Marienborn,5,5,2026-03-22 19:34:00
+3293150000053,GEMEINDE_TEIL,329,31500000,53,"Mainz, Kreisfreie Stadt",Mainz/Lerchenberg,5,5,2026-03-22 20:08:35
+3293150000054,GEMEINDE_TEIL,329,31500000,54,"Mainz, Kreisfreie Stadt",Mainz/Drais,3,3,2026-03-22 19:51:54
+3293150000062,GEMEINDE_TEIL,329,31500000,62,"Mainz, Kreisfreie Stadt",Mainz/Ebersheim,6,6,2026-03-22 20:07:12
+3293150000072,GEMEINDE_TEIL,329,31500000,72,"Mainz, Kreisfreie Stadt",Mainz/Laubenheim,10,10,2026-03-22 20:03:12
+3303390000501,GEMEINDE_TEIL,330,33900005,01,"Bingen am Rhein, Verbandsfreie Gemeinde",Bingen/Stadt,4,4,2026-03-22 19:46:59
+3303390000502,GEMEINDE_TEIL,330,33900005,02,"Bingen am Rhein, Verbandsfreie Gemeinde",Bingen/Bingerbrück,2,2,2026-03-22 20:28:27
+3303390000503,GEMEINDE_TEIL,330,33900005,03,"Bingen am Rhein, Verbandsfreie Gemeinde",Bingen/Büdesheim,4,4,2026-03-22 19:50:46
+3303390000504,GEMEINDE_TEIL,330,33900005,04,"Bingen am Rhein, Verbandsfreie Gemeinde",Bingen/Dietersheim,1,1,2026-03-22 18:54:19
+3303390000505,GEMEINDE_TEIL,330,33900005,05,"Bingen am Rhein, Verbandsfreie Gemeinde",Bingen/Dromersheim,1,1,2026-03-22 20:23:30
+3303390000506,GEMEINDE_TEIL,330,33900005,06,"Bingen am Rhein, Verbandsfreie Gemeinde",Bingen/Gaulsheim,1,1,2026-03-22 18:50:42
+3303390000507,GEMEINDE_TEIL,330,33900005,07,"Bingen am Rhein, Verbandsfreie Gemeinde",Bingen/Kempten,1,1,2026-03-22 19:01:37
+3303390000508,GEMEINDE_TEIL,330,33900005,08,"Bingen am Rhein, Verbandsfreie Gemeinde",Bingen/Sponsheim,1,1,2026-03-22 20:26:38
+3313390003001,GEMEINDE_TEIL,331,33900030,01,"Ingelheim am Rhein, Verbandsfreie Gemeinde",Ingelheim/Mitte,14,14,2026-03-22 20:54:26
+3313390003002,GEMEINDE_TEIL,331,33900030,02,"Ingelheim am Rhein, Verbandsfreie Gemeinde",Ingelheim/Süd,8,8,2026-03-22 20:18:07
+3313390003003,GEMEINDE_TEIL,331,33900030,03,"Ingelheim am Rhein, Verbandsfreie Gemeinde",Ingelheim/Nord,10,10,2026-03-22 20:24:38
+3313390003004,GEMEINDE_TEIL,331,33900030,04,"Ingelheim am Rhein, Verbandsfreie Gemeinde",Ingelheim/West,10,10,2026-03-22 20:23:04
+3313390003006,GEMEINDE_TEIL,331,33900030,06,"Ingelheim am Rhein, Verbandsfreie Gemeinde",Ingelheim/Großwinternheim,2,2,2026-03-22 20:00:11
+3313390003007,GEMEINDE_TEIL,331,33900030,07,"Ingelheim am Rhein, Verbandsfreie Gemeinde",Heidesheim,10,10,2026-03-22 21:28:33
+3313390003008,GEMEINDE_TEIL,331,33900030,08,"Ingelheim am Rhein, Verbandsfreie Gemeinde",Wackernheim,4,4,2026-03-22 21:01:35
+3333190000001,GEMEINDE_TEIL,333,31900000,01,"Worms, Kreisfreie Stadt",Worms/Stadtzentrum,5,5,2026-03-22 21:11:01
+3333190000011,GEMEINDE_TEIL,333,31900000,11,"Worms, Kreisfreie Stadt",Worms/Süd,3,3,2026-03-22 19:44:48
+3333190000012,GEMEINDE_TEIL,333,31900000,12,"Worms, Kreisfreie Stadt",Worms/Karl-Marx-Siedlung,2,2,2026-03-22 19:46:22
+3333190000021,GEMEINDE_TEIL,333,31900000,21,"Worms, Kreisfreie Stadt",Worms/Nord,6,6,2026-03-22 19:39:09
+3333190000031,GEMEINDE_TEIL,333,31900000,31,"Worms, Kreisfreie Stadt",Worms/West,9,9,2026-03-22 21:18:23
+3333190000032,GEMEINDE_TEIL,333,31900000,32,"Worms, Kreisfreie Stadt",Worms/Südwest,2,2,2026-03-22 20:14:11
+3333190000041,GEMEINDE_TEIL,333,31900000,41,"Worms, Kreisfreie Stadt",Worms/Pfiffligheim,4,4,2026-03-22 19:51:37
+3333190000042,GEMEINDE_TEIL,333,31900000,42,"Worms, Kreisfreie Stadt",Worms/Hochheim,4,4,2026-03-22 21:07:42
+3333190000043,GEMEINDE_TEIL,333,31900000,43,"Worms, Kreisfreie Stadt",Worms/Neuhausen,10,10,2026-03-22 19:40:52
+3333190000044,GEMEINDE_TEIL,333,31900000,44,"Worms, Kreisfreie Stadt",Worms/Herrnsheim,6,6,2026-03-22 20:30:45
+3333190000045,GEMEINDE_TEIL,333,31900000,45,"Worms, Kreisfreie Stadt",Worms/Leiselheim,2,2,2026-03-22 19:37:13
+3333190000051,GEMEINDE_TEIL,333,31900000,51,"Worms, Kreisfreie Stadt",Worms/Horchheim,5,5,2026-03-22 20:16:30
+3333190000052,GEMEINDE_TEIL,333,31900000,52,"Worms, Kreisfreie Stadt",Worms/Weinsheim,2,2,2026-03-22 19:40:16
+3333190000053,GEMEINDE_TEIL,333,31900000,53,"Worms, Kreisfreie Stadt",Worms/Wiesoppenheim,2,2,2026-03-22 19:21:33
+3333190000054,GEMEINDE_TEIL,333,31900000,54,"Worms, Kreisfreie Stadt",Worms/Heppenheim,2,2,2026-03-22 20:50:31
+3333190000061,GEMEINDE_TEIL,333,31900000,61,"Worms, Kreisfreie Stadt",Worms/Pfeddersheim,9,9,2026-03-22 19:33:46
+3333190000062,GEMEINDE_TEIL,333,31900000,62,"Worms, Kreisfreie Stadt",Worms/Abenheim,4,4,2026-03-22 20:16:06
+3333190000071,GEMEINDE_TEIL,333,31900000,71,"Worms, Kreisfreie Stadt",Worms/Rheindürkheim,3,3,2026-03-22 20:24:03
+3333190000072,GEMEINDE_TEIL,333,31900000,72,"Worms, Kreisfreie Stadt",Worms/Ibersheim,2,2,2026-03-22 19:57:25
+3343310000301,GEMEINDE_TEIL,334,33100003,01,"Alzey, Verbandsfreie Gemeinde",Stadt,10,10,2026-03-22 19:58:15
+3343310000302,GEMEINDE_TEIL,334,33100003,02,"Alzey, Verbandsfreie Gemeinde",Dautenheim,1,1,2026-03-22 19:03:47
+3343310000303,GEMEINDE_TEIL,334,33100003,03,"Alzey, Verbandsfreie Gemeinde",Schafhausen,1,1,2026-03-22 18:42:07
+3343310000304,GEMEINDE_TEIL,334,33100003,04,"Alzey, Verbandsfreie Gemeinde",Heimersheim,1,1,2026-03-22 19:21:20
+3343310000305,GEMEINDE_TEIL,334,33100003,05,"Alzey, Verbandsfreie Gemeinde",Weinheim,2,2,2026-03-22 19:36:34
+3353110000010,GEMEINDE_TEIL,335,31100000,10,"Frankenthal (Pfalz), Kreisfreie Stadt",Frankenthal - Mitte,6,6,2026-03-22 19:20:03
+3353110000020,GEMEINDE_TEIL,335,31100000,20,"Frankenthal (Pfalz), Kreisfreie Stadt",Frankenthal - Nord,7,7,2026-03-22 19:36:01
+3353110000030,GEMEINDE_TEIL,335,31100000,30,"Frankenthal (Pfalz), Kreisfreie Stadt",Frankenthal - Ost,5,5,2026-03-22 19:36:19
+3353110000040,GEMEINDE_TEIL,335,31100000,40,"Frankenthal (Pfalz), Kreisfreie Stadt",Frankenthal - Süd,15,15,2026-03-22 20:13:00
+3353110000050,GEMEINDE_TEIL,335,31100000,50,"Frankenthal (Pfalz), Kreisfreie Stadt",Frankenthal - West,8,8,2026-03-22 19:34:54
+3353110000060,GEMEINDE_TEIL,335,31100000,60,"Frankenthal (Pfalz), Kreisfreie Stadt",Frankenthal - Mörsch,4,4,2026-03-22 19:38:48
+3353110000070,GEMEINDE_TEIL,335,31100000,70,"Frankenthal (Pfalz), Kreisfreie Stadt",Frankenthal - Studernheim,3,3,2026-03-22 19:21:04
+3353110000080,GEMEINDE_TEIL,335,31100000,80,"Frankenthal (Pfalz), Kreisfreie Stadt",Frankenthal - Eppstein,3,3,2026-03-22 19:37:46
+3353110000090,GEMEINDE_TEIL,335,31100000,90,"Frankenthal (Pfalz), Kreisfreie Stadt",Frankenthal - Flomersheim,4,4,2026-03-22 19:17:55
+3363140000011,GEMEINDE_TEIL,336,31400000,11,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Mitte,5,5,2026-03-22 19:05:00
+3363140000012,GEMEINDE_TEIL,336,31400000,12,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Süd,15,15,2026-03-22 19:58:11
+3363140000013,GEMEINDE_TEIL,336,31400000,13,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Nord,9,9,2026-03-22 19:19:32
+3363140000014,GEMEINDE_TEIL,336,31400000,14,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/West,2,2,2026-03-22 19:23:29
+3363140000015,GEMEINDE_TEIL,336,31400000,15,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Friesenheim,17,17,2026-03-22 19:30:15
+3363140000051,GEMEINDE_TEIL,336,31400000,51,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Mundenheim,9,9,2026-03-22 20:09:12
+3363140000052,GEMEINDE_TEIL,336,31400000,52,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Rheingönheim,9,9,2026-03-22 19:57:22
+3373140000021,GEMEINDE_TEIL,337,31400000,21,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Oppau,9,9,2026-03-22 19:18:34
+3373140000022,GEMEINDE_TEIL,337,31400000,22,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Edigheim,10,10,2026-03-22 19:42:13
+3373140000023,GEMEINDE_TEIL,337,31400000,23,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Pfingstweide,5,5,2026-03-22 19:08:41
+3373140000031,GEMEINDE_TEIL,337,31400000,31,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Oggersheim,24,24,2026-03-22 20:38:23
+3373140000035,GEMEINDE_TEIL,337,31400000,35,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Ruchheim,6,6,2026-03-22 19:32:11
+3373140000041,GEMEINDE_TEIL,337,31400000,41,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Gartenstadt,18,18,2026-03-22 19:43:48
+3373140000042,GEMEINDE_TEIL,337,31400000,42,"Ludwigshafen am Rhein, Kreisfreie Stadt",Ludwigshafen/Maudach,7,7,2026-03-22 20:12:10
+3393180000011,GEMEINDE_TEIL,339,31800000,11,"Speyer, Kreisfreie Stadt",Speyer/Kernstadt-Nord,6,6,2026-03-22 19:55:30
+3393180000012,GEMEINDE_TEIL,339,31800000,12,"Speyer, Kreisfreie Stadt",Speyer/Kernstadt-Süd,3,3,2026-03-22 19:34:56
+3393180000013,GEMEINDE_TEIL,339,31800000,13,"Speyer, Kreisfreie Stadt",Speyer/Süd,5,5,2026-03-22 20:00:05
+3393180000014,GEMEINDE_TEIL,339,31800000,14,"Speyer, Kreisfreie Stadt",Speyer/Süd-West,2,2,2026-03-22 19:32:01
+3393180000015,GEMEINDE_TEIL,339,31800000,15,"Speyer, Kreisfreie Stadt",Speyer/West,6,6,2026-03-22 19:49:20
+3393180000016,GEMEINDE_TEIL,339,31800000,16,"Speyer, Kreisfreie Stadt",Speyer/Im Erlich,6,6,2026-03-22 19:51:31
+3393180000017,GEMEINDE_TEIL,339,31800000,17,"Speyer, Kreisfreie Stadt",Speyer/Nord-West,1,1,2026-03-22 19:06:49
+3393180000018,GEMEINDE_TEIL,339,31800000,18,"Speyer, Kreisfreie Stadt",Speyer/Nord-Ost,4,4,2026-03-22 20:08:13
+3393180000021,GEMEINDE_TEIL,339,31800000,21,"Speyer, Kreisfreie Stadt",Speyer/Neuland,2,2,2026-03-22 19:13:55
+3393180000022,GEMEINDE_TEIL,339,31800000,22,"Speyer, Kreisfreie Stadt",Speyer/Im Vogelgesang,2,2,2026-03-22 19:51:27
+3393180000027,GEMEINDE_TEIL,339,31800000,27,"Speyer, Kreisfreie Stadt",Speyer/Speyer-Nord,6,6,2026-03-22 19:47:50
+3393180000028,GEMEINDE_TEIL,339,31800000,28,"Speyer, Kreisfreie Stadt",Speyer/Nördlich der Autobahn,1,1,2026-03-22 19:54:33
+4423320000201,GEMEINDE_TEIL,442,33200002,01,"Bad Dürkheim, Verbandsfreie Gemeinde",Bad Dürkheim/Mitte,2,2,2026-03-22 19:48:31
+4423320000202,GEMEINDE_TEIL,442,33200002,02,"Bad Dürkheim, Verbandsfreie Gemeinde",Bad Dürkheim/Nord,1,1,2026-03-22 19:43:48
+4423320000203,GEMEINDE_TEIL,442,33200002,03,"Bad Dürkheim, Verbandsfreie Gemeinde",Bad Dürkheim/Ost,2,2,2026-03-22 20:29:12
+4423320000204,GEMEINDE_TEIL,442,33200002,04,"Bad Dürkheim, Verbandsfreie Gemeinde",Bad Dürkheim/Süd,2,2,2026-03-22 19:29:05
+4423320000205,GEMEINDE_TEIL,442,33200002,05,"Bad Dürkheim, Verbandsfreie Gemeinde",Bad Dürkheim/Nordwest,1,1,2026-03-22 19:40:33
+4423320000206,GEMEINDE_TEIL,442,33200002,06,"Bad Dürkheim, Verbandsfreie Gemeinde",Bad Dürkheim/West,1,1,2026-03-22 19:37:57
+4423320000207,GEMEINDE_TEIL,442,33200002,07,"Bad Dürkheim, Verbandsfreie Gemeinde",Bad Dürkheim/Seebach,1,1,2026-03-22 20:31:29
+4423320000208,GEMEINDE_TEIL,442,33200002,08,"Bad Dürkheim, Verbandsfreie Gemeinde",Bad Dürkheim/Grethen,2,2,2026-03-22 19:34:49
+4423320000209,GEMEINDE_TEIL,442,33200002,09,"Bad Dürkheim, Verbandsfreie Gemeinde",Bad Dürkheim/Hardenburg,1,1,2026-03-22 19:16:15
+4423320000210,GEMEINDE_TEIL,442,33200002,10,"Bad Dürkheim, Verbandsfreie Gemeinde",Bad Dürkheim/Leistadt,1,1,2026-03-22 19:20:31
+4423320000211,GEMEINDE_TEIL,442,33200002,11,"Bad Dürkheim, Verbandsfreie Gemeinde",Bad Dürkheim/Ungstein,1,1,2026-03-22 19:50:56
+4433160000010,GEMEINDE_TEIL,443,31600000,10,"Neustadt an der Weinstraße, Kreisfreie Stadt",Innenstadt,3,3,2026-03-22 20:01:57
+4433160000011,GEMEINDE_TEIL,443,31600000,11,"Neustadt an der Weinstraße, Kreisfreie Stadt",Diedesfeld,3,3,2026-03-22 19:38:03
+4433160000020,GEMEINDE_TEIL,443,31600000,20,"Neustadt an der Weinstraße, Kreisfreie Stadt",Hambacher Höhe,5,5,2026-03-22 20:13:20
+4433160000022,GEMEINDE_TEIL,443,31600000,22,"Neustadt an der Weinstraße, Kreisfreie Stadt",Geinsheim,3,3,2026-03-22 19:25:25
+4433160000030,GEMEINDE_TEIL,443,31600000,30,"Neustadt an der Weinstraße, Kreisfreie Stadt",Vorstadt,2,2,2026-03-22 19:43:54
+4433160000033,GEMEINDE_TEIL,443,31600000,33,"Neustadt an der Weinstraße, Kreisfreie Stadt",Gimmeldingen,3,3,2026-03-22 20:13:44
+4433160000040,GEMEINDE_TEIL,443,31600000,40,"Neustadt an der Weinstraße, Kreisfreie Stadt",Schöntal,3,3,2026-03-22 19:34:22
+4433160000044,GEMEINDE_TEIL,443,31600000,44,"Neustadt an der Weinstraße, Kreisfreie Stadt",Haardt,3,3,2026-03-22 19:37:31
+4433160000050,GEMEINDE_TEIL,443,31600000,50,"Neustadt an der Weinstraße, Kreisfreie Stadt",Winzingen,4,4,2026-03-22 20:03:54
+4433160000055,GEMEINDE_TEIL,443,31600000,55,"Neustadt an der Weinstraße, Kreisfreie Stadt",Hambach,6,6,2026-03-22 19:35:29
+4433160000060,GEMEINDE_TEIL,443,31600000,60,"Neustadt an der Weinstraße, Kreisfreie Stadt",Böbig,2,2,2026-03-22 19:23:42
+4433160000066,GEMEINDE_TEIL,443,31600000,66,"Neustadt an der Weinstraße, Kreisfreie Stadt",Königsbach,2,2,2026-03-22 19:30:52
+4433160000070,GEMEINDE_TEIL,443,31600000,70,"Neustadt an der Weinstraße, Kreisfreie Stadt",Oststadt,6,6,2026-03-22 19:39:36
+4433160000077,GEMEINDE_TEIL,443,31600000,77,"Neustadt an der Weinstraße, Kreisfreie Stadt",Lachen-Speyerdorf,6,6,2026-03-22 20:44:14
+4433160000088,GEMEINDE_TEIL,443,31600000,88,"Neustadt an der Weinstraße, Kreisfreie Stadt",Mußbach,4,4,2026-03-22 19:43:22
+4433160000099,GEMEINDE_TEIL,443,31600000,99,"Neustadt an der Weinstraße, Kreisfreie Stadt",Duttweiler,2,2,2026-03-22 19:33:40
+4443120000001,GEMEINDE_TEIL,444,31200000,01,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Innenstadt Ost,8,8,2026-03-22 20:54:33
+4443120000002,GEMEINDE_TEIL,444,31200000,02,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Innenstadt-Südwest,6,6,2026-03-22 20:07:31
+4443120000003,GEMEINDE_TEIL,444,31200000,03,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Innenstadt West/Kotten,7,7,2026-03-22 19:59:31
+4443120000004,GEMEINDE_TEIL,444,31200000,04,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Innenstadt Nord/Kaiserberg,8,8,2026-03-22 20:33:07
+4443120000005,GEMEINDE_TEIL,444,31200000,05,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Grübentälchen/Volkspark,7,7,2026-03-22 20:03:29
+4443120000008,GEMEINDE_TEIL,444,31200000,08,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Bännjerrück/Karl-Pfaff-Siedlung,6,6,2026-03-22 20:15:21
+4443120000009,GEMEINDE_TEIL,444,31200000,09,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern-West,5,5,2026-03-22 20:38:26
+4443120000010,GEMEINDE_TEIL,444,31200000,10,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Erzhütten/Wiesenthalerhof,3,3,2026-03-22 20:20:21
+4443120000016,GEMEINDE_TEIL,444,31200000,16,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Hohenecken,4,4,2026-03-22 19:41:35
+4453120000006,GEMEINDE_TEIL,445,31200000,06,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Betzenberg,4,4,2026-03-22 20:08:56
+4453120000007,GEMEINDE_TEIL,445,31200000,07,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Lämmchesberg/Uniwohnstadt,9,9,2026-03-22 19:48:22
+4453120000011,GEMEINDE_TEIL,445,31200000,11,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Einsiedlerhof,2,2,2026-03-22 19:50:44
+4453120000012,GEMEINDE_TEIL,445,31200000,12,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Morlautern,3,3,2026-03-22 19:39:54
+4453120000013,GEMEINDE_TEIL,445,31200000,13,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Erlenbach,3,3,2026-03-22 19:16:33
+4453120000014,GEMEINDE_TEIL,445,31200000,14,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Mölschbach,2,2,2026-03-22 19:32:50
+4453120000015,GEMEINDE_TEIL,445,31200000,15,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Dansenberg,3,3,2026-03-22 19:58:11
+4453120000017,GEMEINDE_TEIL,445,31200000,17,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Siegelbach,3,3,2026-03-22 20:00:50
+4453120000018,GEMEINDE_TEIL,445,31200000,18,"Kaiserslautern, Kreisfreie Stadt",Kaiserslautern/Erfenbach,3,3,2026-03-22 20:02:21
+4463350100301,GEMEINDE_TEIL,446,33501003,01,Bruchmühlbach-Miesau,Bruchmühlbach-Miesau/Bruchmühlbach,2,2,2026-03-22 19:39:37
+4463350100302,GEMEINDE_TEIL,446,33501003,02,Bruchmühlbach-Miesau,Bruchmühlbach-Miesau/Miesau,2,2,2026-03-22 19:34:07
+4463350100303,GEMEINDE_TEIL,446,33501003,03,Bruchmühlbach-Miesau,Bruchmühlbach-Miesau/Elschbach,1,1,2026-03-22 18:49:28
+4463350100304,GEMEINDE_TEIL,446,33501003,04,Bruchmühlbach-Miesau,Bruchmühlbach-Miesau/Vogelbach,1,1,2026-03-22 19:09:40
+4463350100305,GEMEINDE_TEIL,446,33501003,05,Bruchmühlbach-Miesau,Bruchmühlbach-Miesau/Buchholz,1,1,2026-03-22 19:10:59
+4473200000010,GEMEINDE_TEIL,447,32000000,10,"Zweibrücken, Kreisfreie Stadt",Zweibrücken/Stadtmitte,11,11,2026-03-22 20:25:58
+4473200000011,GEMEINDE_TEIL,447,32000000,11,"Zweibrücken, Kreisfreie Stadt",Zweibrücken/Bubenhausen,3,3,2026-03-22 19:24:03
+4473200000012,GEMEINDE_TEIL,447,32000000,12,"Zweibrücken, Kreisfreie Stadt",Zweibrücken/Ernstweiler,2,2,2026-03-22 19:26:54
+4473200000013,GEMEINDE_TEIL,447,32000000,13,"Zweibrücken, Kreisfreie Stadt",Zweibrücken/Ixheim,5,5,2026-03-22 19:47:47
+4473200000014,GEMEINDE_TEIL,447,32000000,14,"Zweibrücken, Kreisfreie Stadt",Zweibrücken/Mittelbach,2,2,2026-03-22 20:50:21
+4473200000015,GEMEINDE_TEIL,447,32000000,15,"Zweibrücken, Kreisfreie Stadt",Zweibrücken/Mörsbach,2,2,2026-03-22 19:03:30
+4473200000016,GEMEINDE_TEIL,447,32000000,16,"Zweibrücken, Kreisfreie Stadt",Zweibrücken/Niederauerbach,3,3,2026-03-22 20:05:26
+4473200000017,GEMEINDE_TEIL,447,32000000,17,"Zweibrücken, Kreisfreie Stadt",Zweibrücken/Oberauerbach,2,2,2026-03-22 19:26:47
+4473200000018,GEMEINDE_TEIL,447,32000000,18,"Zweibrücken, Kreisfreie Stadt",Zweibrücken/Rimschweiler,2,2,2026-03-22 19:43:11
+4473200000019,GEMEINDE_TEIL,447,32000000,19,"Zweibrücken, Kreisfreie Stadt",Zweibrücken/Wattweiler,2,2,2026-03-22 19:37:43
+4483170000021,GEMEINDE_TEIL,448,31700000,21,"Pirmasens, Kreisfreie Stadt",Pirmasens,34,34,2026-03-22 20:04:19
+4483170000022,GEMEINDE_TEIL,448,31700000,22,"Pirmasens, Kreisfreie Stadt",Erlenbrunn,2,2,2026-03-22 19:34:34
+4483170000023,GEMEINDE_TEIL,448,31700000,23,"Pirmasens, Kreisfreie Stadt",Fehrbach,2,2,2026-03-22 19:11:46
+4483170000024,GEMEINDE_TEIL,448,31700000,24,"Pirmasens, Kreisfreie Stadt",Hengsberg,1,1,2026-03-22 18:33:39
+4483170000025,GEMEINDE_TEIL,448,31700000,25,"Pirmasens, Kreisfreie Stadt",Niedersimten,1,1,2026-03-22 18:38:52
+4483170000026,GEMEINDE_TEIL,448,31700000,26,"Pirmasens, Kreisfreie Stadt",Winzeln,2,2,2026-03-22 19:40:29
+4483170000027,GEMEINDE_TEIL,448,31700000,27,"Pirmasens, Kreisfreie Stadt",Gersbach,2,2,2026-03-22 20:35:18
+4483170000028,GEMEINDE_TEIL,448,31700000,28,"Pirmasens, Kreisfreie Stadt",Windsberg,1,1,2026-03-22 18:32:32
+4503130000001,GEMEINDE_TEIL,450,31300000,01,"Landau in der Pfalz, Kreisfreie Stadt",Landau/Queichheim,3,3,2026-03-22 19:12:09
+4503130000002,GEMEINDE_TEIL,450,31300000,02,"Landau in der Pfalz, Kreisfreie Stadt",Landau/Mörlheim,2,2,2026-03-22 19:24:05
+4503130000003,GEMEINDE_TEIL,450,31300000,03,"Landau in der Pfalz, Kreisfreie Stadt",Landau/Arzheim,2,2,2026-03-22 19:14:54
+4503130000004,GEMEINDE_TEIL,450,31300000,04,"Landau in der Pfalz, Kreisfreie Stadt",Landau/Dammheim,2,2,2026-03-22 18:50:12
+4503130000005,GEMEINDE_TEIL,450,31300000,05,"Landau in der Pfalz, Kreisfreie Stadt",Landau/Godramstein,3,3,2026-03-22 18:58:39
+4503130000006,GEMEINDE_TEIL,450,31300000,06,"Landau in der Pfalz, Kreisfreie Stadt",Landau/Mörzheim,2,2,2026-03-22 19:14:22
+4503130000007,GEMEINDE_TEIL,450,31300000,07,"Landau in der Pfalz, Kreisfreie Stadt",Landau/Nußdorf,2,2,2026-03-22 19:16:52
+4503130000008,GEMEINDE_TEIL,450,31300000,08,"Landau in der Pfalz, Kreisfreie Stadt",Landau/Wollmesheim,2,2,2026-03-22 19:20:11
+4503130000009,GEMEINDE_TEIL,450,31300000,09,"Landau in der Pfalz, Kreisfreie Stadt",Landau/Landau,24,24,2026-03-22 20:29:44
+4513340000701,GEMEINDE_TEIL,451,33400007,01,"Germersheim, Verbandsfreie Gemeinde",Germersheim/Germersheim,11,11,2026-03-22 20:21:34
+4513340000702,GEMEINDE_TEIL,451,33400007,02,"Germersheim, Verbandsfreie Gemeinde",Germersheim/Sondernheim,4,4,2026-03-22 20:02:34
+4523340050101,GEMEINDE_TEIL,452,33400501,01,"Wörth am Rhein, Verbandsfreie Gemeinde",Wörth am Rhein/Wörth,10,10,2026-03-22 19:23:50
+4523340050102,GEMEINDE_TEIL,452,33400501,02,"Wörth am Rhein, Verbandsfreie Gemeinde",Wörth am Rhein/Maximiliansau,8,8,2026-03-22 19:22:16
+4523340050103,GEMEINDE_TEIL,452,33400501,03,"Wörth am Rhein, Verbandsfreie Gemeinde",Wörth am Rhein/Schaidt,2,2,2026-03-22 19:24:50
+4523340050104,GEMEINDE_TEIL,452,33400501,04,"Wörth am Rhein, Verbandsfreie Gemeinde",Wörth am Rhein/Büchelberg,2,2,2026-03-22 18:58:31
