@@ -6,7 +6,7 @@
   "timezone": "Europe/Berlin",
   "kommone_wahltermin": "",
   "kommone_base_url_template": "",
-  "statla_live_csv_url": "https://rlp-ltw26.wahlen.23degrees.eu/assets/Wahlergebnisse_Landtagswahl_2026.csv",
+  "statla_live_csv_url": "https://rlp-ltw26.wahlen.23degrees.eu/assets/json/Wahlergebnisse_Landtagswahl_2026.csv",
   "statla_dummy_csv_url": "",
   "wahlkreise_geojson_zip_url": "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Shapefiles/Geodaten_LW2026_RP.zip",
   "wahlkreise_shp_zip_url": "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Shapefiles/Geodaten_LW2026_RP.zip",

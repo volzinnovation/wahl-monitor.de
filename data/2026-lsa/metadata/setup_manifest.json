@@ -1,0 +1,32 @@
+{
+  "election_key": "2026-lsa",
+  "election_name": "Landtagswahl Sachsen-Anhalt 2026",
+  "election_date": "2026-09-06",
+  "tracking_start_local": "2026-09-06T18:00:00",
+  "timezone": "Europe/Berlin",
+  "official_sources": {
+    "election_info_url": "https://wahlen.sachsen-anhalt.de/zu-den-wahlen/landtagswahl",
+    "faq_url": "https://wahlen.sachsen-anhalt.de/zu-den-wahlen/landtagswahl/faqs-zur-landtagswahl-2026",
+    "election_date_notice_pdf_url": "https://wahlen.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/MI/wahlen/PDF/2025_09_29_Bek_der_Landeswahlleiterin_nach___28_Abs_2_LWO.pdf",
+    "wahlkreiseinteilung_pdf_url": "https://wahlen.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/MI/wahlen/PDF/2026_Wahlkreiseinteilung_fuer_Landtagswahlen_in_Sachsen_Anhalt.pdf",
+    "wahlkreiskarte_pdf_url": "https://wahlen.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/MI/wahlen/PDF/2026_Landtagswahl_Wahlkreiskarte.pdf",
+    "results_portal_root_url": "https://wahlergebnisse.sachsen-anhalt.de/",
+    "historical_results_overview_url_2021": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/index.php",
+    "historical_results_download_page_url_2021": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php"
+  },
+  "population_reference": {
+    "estimated_population_2025": 2120100,
+    "estimated_population_date": "2025-12-31",
+    "estimated_population_source_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Daten_und_Veroeffentlichungen/Veroeffentlichungen/Statistisches_Jahrbuch/6Z001_2025-A.pdf",
+    "official_population_2024": 2135597,
+    "official_population_date": "2024-12-31",
+    "official_population_source_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Daten_und_Veroeffentlichungen/Veroeffentlichungen/Statistisches_Jahrbuch/6Z001_2025-A.pdf"
+  },
+  "research_status": {
+    "live_results_portal_confirmed": false,
+    "live_results_csv_confirmed": false,
+    "wahlkreis_geojson_confirmed": false,
+    "wahlkreis_mapping_confirmed": false,
+    "municipality_seed_complete": false
+  }
+}

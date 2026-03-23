@@ -1,0 +1,14 @@
+order,label,type,role,amount,signed_amount,start,end,approximate
+1,Einwohner,total,start_total,4122500,4122500,0,4122500,True
+2,Nichtwahlberechtigte,delta,exclusion,1135272,-1135272,4122500,2987228,True
+3,Wahlberechtigte,total,subtotal,2987228,2987228,0,2987228,False
+4,Nichtwähler,delta,exclusion,940130,-940130,2987228,2047098,False
+5,Wählende,total,subtotal,2047098,2047098,0,2047098,False
+6,Ungültige Landesstimmen,delta,exclusion,18915,-18915,2047098,2028183,False
+7,Gültige Landesstimmen,total,subtotal,2028183,2028183,0,2028183,False
+8,Parteien < 5 %,delta,exclusion,319724,-319724,2028183,1708459,False
+9,Repräsentierte Landesstimmen,total,represented_total,1708459,1708459,0,1708459,False
+10,CDU,delta,represented_party,627909,-627909,1708459,1080550,False
+11,SPD,delta,represented_party,525680,-525680,1080550,554870,False
+12,AfD,delta,represented_party,394803,-394803,554870,160067,False
+13,GRÜNE,delta,represented_party,160067,-160067,160067,0,False

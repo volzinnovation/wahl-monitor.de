@@ -5,10 +5,10 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import math
 import textwrap
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List
+from typing import Any, Dict, List
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
@@ -16,33 +16,21 @@ from matplotlib.ticker import FuncFormatter, MaxNLocator
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LAND_ROW_KEY = "000000:BW:-:-:LAND"
 SECOND_VOTE_THRESHOLD = 0.05
-
-# Latest official population figure available on 2026-03-10.
-# Source: Statistisches Landesamt Baden-Wuerttemberg, Pressemitteilung 25/2026,
-# "Baden-Wuerttemberg: Maenner sind leicht in der Unterzahl", published 2026-02-11.
-POPULATION_TOTAL = 11_240_000
-POPULATION_REFERENCE_DATE = "2025-09-30"
-POPULATION_SOURCE_URL = (
-    "https://www.statistik-bw.de/presse/pressemitteilungen/pressemitteilung/"
-    "baden-wuerttemberg-maenner-sind-leicht-in-der-unterzahl/"
-)
-
-# Official statewide election baseline.
-# Source: Innenministerium Baden-Wuerttemberg, Anlage zur PM vom 2026-03-09,
-# "Vorlaeufiges Ergebnis der Wahl zum 18. Landtag von Baden-Wuerttemberg".
-ELIGIBLE_VOTERS_TOTAL = 7_773_341
-ELIGIBLE_VOTERS_SOURCE_URL = (
-    "https://im.baden-wuerttemberg.de/fileadmin/redaktion/m-im/intern/dateien/pdf/"
-    "20260309_Anlage_PM_vorlaeufiges_Wahlergebnis.pdf"
-)
 
 PARTY_COLORS = {
     "GRÜNE": "#008939",
     "CDU": "#2D3C4B",
     "AfD": "#00CCFF",
     "SPD": "#E3000F",
+    "FDP": "#FFED00",
+    "FREIE WÄHLER": "#F58220",
+    "Die Linke": "#BE3075",
+    "BSW": "#7A1F5C",
+    "Volt": "#502379",
+    "Tierschutzpartei": "#3D7A57",
+    "ÖDP": "#F58220",
+    "PdH": "#E84A5F",
 }
 
 CHART_COLORS = {
@@ -57,23 +45,72 @@ CHART_COLORS = {
     "approx_edge": "#7B8794",
 }
 
-DEFAULT_TITLE = "Landtagswahl 2026 Baden-Württemberg. Politische Repräsentation."
+DEFAULT_SECOND_VOTE_LABEL = "Zweitstimmen"
 LABEL_BREAKS = {
     "Nichtwahlberechtigte": "Nichtwahl-\nberechtigte",
     "Wahlberechtigte": "Wahl-\nberechtigte",
     "Ungültige Zweitstimmen": "Ungültige\nZweitstimmen",
+    "Ungültige Landesstimmen": "Ungültige\nLandesstimmen",
     "Gültige Zweitstimmen": "Gültige\nZweitstimmen",
+    "Gültige Landesstimmen": "Gültige\nLandesstimmen",
     "Parteien < 5 %": "Parteien\n< 5 %",
     "Repräsentierte Zweitstimmen": "Repräsentierte\nZweitstimmen",
+    "Repräsentierte Landesstimmen": "Repräsentierte\nLandesstimmen",
+}
+
+
+@dataclass(frozen=True)
+class ElectionBaseline:
+    population_total: int
+    population_summary: str
+    population_source_url: str
+    eligible_voters_total: int
+    eligible_voters_summary: str
+    eligible_voters_source_url: str
+
+
+ELECTION_BASELINES: Dict[str, ElectionBaseline] = {
+    "2026-bw": ElectionBaseline(
+        population_total=11_240_000,
+        population_summary="Statistisches Landesamt Baden-Württemberg, Ende September 2025, rund 11,24 Mio.",
+        population_source_url=(
+            "https://www.statistik-bw.de/presse/pressemitteilungen/pressemitteilung/"
+            "baden-wuerttemberg-maenner-sind-leicht-in-der-unterzahl/"
+        ),
+        eligible_voters_total=7_773_341,
+        eligible_voters_summary=(
+            "vorläufiges amtliches Endergebnis der Landtagswahl vom 8. März 2026"
+        ),
+        eligible_voters_source_url=(
+            "https://im.baden-wuerttemberg.de/fileadmin/redaktion/m-im/intern/dateien/pdf/"
+            "20260309_Anlage_PM_vorlaeufiges_Wahlergebnis.pdf"
+        ),
+    ),
+    "2026-rlp": ElectionBaseline(
+        population_total=4_122_500,
+        population_summary=(
+            "Statistisches Landesamt Rheinland-Pfalz, vorläufige Schätzung zum 31. Dezember 2025, rund 4,12 Mio."
+        ),
+        population_source_url=(
+            "https://www.statistik.rlp.de/nachrichten/nachichtendetailseite/"
+            "nahezu-stagnierende-bevoelkerungszahl-in-2025"
+        ),
+        eligible_voters_total=2_987_228,
+        eligible_voters_summary=(
+            "vorläufiges amtliches Endergebnis der Landtagswahl vom 22. März 2026"
+        ),
+        eligible_voters_source_url="https://rlp-ltw26.wahlen.23degrees.eu/wk/0000000000000/details",
+    ),
 }
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--election-key", default="2026-bw")
+    parser.add_argument("--config-path")
     parser.add_argument("--output-csv")
     parser.add_argument("--output-png")
-    parser.add_argument("--title", default=DEFAULT_TITLE)
+    parser.add_argument("--title")
     return parser.parse_args()
 
 
@@ -118,23 +155,45 @@ def label_color_for_fill(color: str) -> str:
     return "#FFFFFF" if luminance < 0.48 else CHART_COLORS["text"]
 
 
+def load_config(election_key: str, config_path: str | None) -> Dict[str, Any]:
+    path = Path(config_path) if config_path else ROOT / "config" / f"{election_key}.json"
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def get_election_baseline(election_key: str) -> ElectionBaseline:
+    baseline = ELECTION_BASELINES.get(election_key)
+    if baseline is None:
+        supported = ", ".join(sorted(ELECTION_BASELINES))
+        raise RuntimeError(f"Unsupported election key {election_key!r}. Supported keys: {supported}.")
+    return baseline
+
+
+def get_default_title(config: Dict[str, Any], election_key: str) -> str:
+    election_name = str(config.get("election_name") or election_key)
+    return f"{election_name}. Politische Repräsentation."
+
+
+def get_second_vote_label(config: Dict[str, Any]) -> str:
+    return str(config.get("second_vote_label") or DEFAULT_SECOND_VOTE_LABEL)
+
+
 def load_land_snapshot(election_key: str) -> Dict[str, str]:
     path = ROOT / "data" / election_key / "latest" / "statla_snapshots.csv"
     with path.open(encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
         for row in reader:
-            if row.get("row_key") == LAND_ROW_KEY:
+            if (row.get("gebietsart") or "").strip() == "LAND":
                 return row
     raise RuntimeError(f"LAND row missing in {path}")
 
 
-def load_second_vote_party_totals(election_key: str) -> Dict[str, int]:
+def load_second_vote_party_totals(election_key: str, land_row_key: str) -> Dict[str, int]:
     path = ROOT / "data" / election_key / "latest" / "statla_party_results.csv"
     party_votes: Dict[str, int] = {}
     with path.open(encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
         for row in reader:
-            if row.get("row_key") != LAND_ROW_KEY:
+            if row.get("row_key") != land_row_key:
                 continue
             if (row.get("vote_type") or "").strip() != "Zweitstimmen":
                 continue
@@ -146,9 +205,12 @@ def load_second_vote_party_totals(election_key: str) -> Dict[str, int]:
     return party_votes
 
 
-def build_chart_rows(election_key: str) -> List[Dict[str, object]]:
+def build_chart_rows(election_key: str, baseline: ElectionBaseline, second_vote_label: str) -> List[Dict[str, object]]:
     land_snapshot = load_land_snapshot(election_key)
-    party_votes = load_second_vote_party_totals(election_key)
+    land_row_key = str(land_snapshot.get("row_key") or "").strip()
+    if not land_row_key:
+        raise RuntimeError("LAND snapshot row is missing row_key.")
+    party_votes = load_second_vote_party_totals(election_key, land_row_key)
 
     voters_total = int(str(land_snapshot.get("voters_total") or "0").strip() or "0")
     valid_second_votes = int(str(land_snapshot.get("valid_votes_zweit") or "0").strip() or "0")
@@ -158,9 +220,9 @@ def build_chart_rows(election_key: str) -> List[Dict[str, object]]:
         raise RuntimeError("Statewide vote totals are empty.")
     if invalid_second_votes < 0:
         raise RuntimeError("Invalid second votes computed as negative.")
-    if ELIGIBLE_VOTERS_TOTAL < voters_total:
+    if baseline.eligible_voters_total < voters_total:
         raise RuntimeError("Eligible-voter baseline is lower than voters total.")
-    if POPULATION_TOTAL < ELIGIBLE_VOTERS_TOTAL:
+    if baseline.population_total < baseline.eligible_voters_total:
         raise RuntimeError("Population baseline is lower than eligible voters.")
 
     qualifying_parties = sorted(
@@ -217,10 +279,14 @@ def build_chart_rows(election_key: str) -> List[Dict[str, object]]:
         )
         return current_after
 
-    current = POPULATION_TOTAL
+    valid_label = f"Gültige {second_vote_label}"
+    invalid_label = f"Ungültige {second_vote_label}"
+    represented_label = f"Repräsentierte {second_vote_label}"
+
+    current = baseline.population_total
     add_total("Einwohner", current, CHART_COLORS["start_total"], approximate=True, role="start_total")
 
-    non_eligible = POPULATION_TOTAL - ELIGIBLE_VOTERS_TOTAL
+    non_eligible = baseline.population_total - baseline.eligible_voters_total
     current = add_delta(
         "Nichtwahlberechtigte",
         non_eligible,
@@ -231,21 +297,21 @@ def build_chart_rows(election_key: str) -> List[Dict[str, object]]:
     )
     add_total("Wahlberechtigte", current, CHART_COLORS["subtotal"])
 
-    non_voters = ELIGIBLE_VOTERS_TOTAL - voters_total
+    non_voters = baseline.eligible_voters_total - voters_total
     current = add_delta("Nichtwähler", non_voters, current, CHART_COLORS["exclusion"], role="exclusion")
     add_total("Wählende", current, CHART_COLORS["subtotal"])
 
     current = add_delta(
-        "Ungültige Zweitstimmen",
+        invalid_label,
         invalid_second_votes,
         current,
         CHART_COLORS["exclusion"],
         role="exclusion",
     )
-    add_total("Gültige Zweitstimmen", current, CHART_COLORS["subtotal"])
+    add_total(valid_label, current, CHART_COLORS["subtotal"])
 
     current = add_delta("Parteien < 5 %", below_threshold_votes, current, CHART_COLORS["exclusion"], role="exclusion")
-    add_total("Repräsentierte Zweitstimmen", current, CHART_COLORS["represented_total"], role="represented_total")
+    add_total(represented_label, current, CHART_COLORS["represented_total"], role="represented_total")
 
     for party in qualifying_parties:
         party_name = str(party["party"])
@@ -300,7 +366,13 @@ def write_csv_report(path: Path, rows: List[Dict[str, object]]) -> None:
             )
 
 
-def write_png_report(path: Path, rows: List[Dict[str, object]], title: str) -> None:
+def write_png_report(
+    path: Path,
+    rows: List[Dict[str, object]],
+    title: str,
+    baseline: ElectionBaseline,
+    second_vote_label: str,
+) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     plt.style.use("seaborn-v0_8-whitegrid")
 
@@ -408,16 +480,23 @@ def write_png_report(path: Path, rows: List[Dict[str, object]], title: str) -> N
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
 
+    party_legend_rows = [row for row in rows if str(row["role"]) == "represented_party"]
     legend_items = [
         Patch(facecolor=CHART_COLORS["start_total"], edgecolor=CHART_COLORS["start_total"], label="Ausgangswert / Zwischensumme"),
         Patch(facecolor=CHART_COLORS["exclusion"], edgecolor=CHART_COLORS["exclusion"], label="Nicht repräsentiert"),
-        Patch(facecolor=CHART_COLORS["represented_total"], edgecolor=CHART_COLORS["represented_total"], label="Repräsentierte Zweitstimmen"),
-        Patch(facecolor=PARTY_COLORS["GRÜNE"], edgecolor=PARTY_COLORS["GRÜNE"], label="GRÜNE"),
-        Patch(facecolor=PARTY_COLORS["CDU"], edgecolor=PARTY_COLORS["CDU"], label="CDU"),
-        Patch(facecolor=PARTY_COLORS["AfD"], edgecolor=PARTY_COLORS["AfD"], label="AfD"),
-        Patch(facecolor=PARTY_COLORS["SPD"], edgecolor=PARTY_COLORS["SPD"], label="SPD"),
-        Patch(facecolor=CHART_COLORS["start_total"], edgecolor=CHART_COLORS["approx_edge"], hatch="///", label="Gerundeter Bevölkerungswert"),
+        Patch(
+            facecolor=CHART_COLORS["represented_total"],
+            edgecolor=CHART_COLORS["represented_total"],
+            label=f"Repräsentierte {second_vote_label}",
+        ),
     ]
+    legend_items.extend(
+        Patch(facecolor=str(row["color"]), edgecolor=str(row["color"]), label=str(row["label"]))
+        for row in party_legend_rows
+    )
+    legend_items.append(
+        Patch(facecolor=CHART_COLORS["start_total"], edgecolor=CHART_COLORS["approx_edge"], hatch="///", label="Gerundeter Bevölkerungswert"),
+    )
     ax.legend(
         handles=legend_items,
         loc="upper right",
@@ -427,13 +506,11 @@ def write_png_report(path: Path, rows: List[Dict[str, object]], title: str) -> N
     )
 
     footnote = (
-        "Einwohner: Statistisches Landesamt Baden-Württemberg, Ende September 2025, rund 11,24 Mio. "
-        "Wahlberechtigte und Zweitstimmen: vorläufiges amtliches Endergebnis der Landtagswahl vom 8. März 2026. "
+        f"Einwohner: {baseline.population_summary}. "
+        f"Wahlberechtigte und {second_vote_label}: {baseline.eligible_voters_summary}. "
         "Die Balken für Einwohner und Nichtwahlberechtigte sind deshalb gerundet."
     )
-    sources = (
-        f"Quellen: {POPULATION_SOURCE_URL} | {ELIGIBLE_VOTERS_SOURCE_URL}"
-    )
+    sources = f"Quellen: {baseline.population_source_url} | {baseline.eligible_voters_source_url}"
     fig.text(0.01, 0.045, footnote, ha="left", va="bottom", fontsize=9, color=CHART_COLORS["muted"])
     fig.text(0.01, 0.02, sources, ha="left", va="bottom", fontsize=8.5, color=CHART_COLORS["muted"])
 
@@ -444,24 +521,30 @@ def write_png_report(path: Path, rows: List[Dict[str, object]], title: str) -> N
 
 def main() -> None:
     args = parse_args()
+    config = load_config(args.election_key, args.config_path)
+    baseline = get_election_baseline(args.election_key)
+    second_vote_label = get_second_vote_label(config)
+    title = args.title or get_default_title(config, args.election_key)
 
     report_dir = ROOT / "data" / args.election_key / "reports"
     output_csv = Path(args.output_csv) if args.output_csv else report_dir / "statla_second_vote_representation_waterfall.csv"
     output_png = Path(args.output_png) if args.output_png else report_dir / "statla_second_vote_representation_waterfall.png"
 
-    rows = build_chart_rows(args.election_key)
+    rows = build_chart_rows(args.election_key, baseline, second_vote_label)
     write_csv_report(output_csv, rows)
-    write_png_report(output_png, rows, args.title)
+    write_png_report(output_png, rows, title, baseline, second_vote_label)
 
-    represented_total = next(int(row["amount"]) for row in rows if row["label"] == "Repräsentierte Zweitstimmen")
+    represented_label = f"Repräsentierte {second_vote_label}"
+    represented_total = next(int(row["amount"]) for row in rows if row["label"] == represented_label)
     print(
         json.dumps(
             {
+                "election_key": args.election_key,
                 "csv": str(output_csv),
                 "png": str(output_png),
                 "represented_second_votes": represented_total,
-                "eligible_voters": ELIGIBLE_VOTERS_TOTAL,
-                "population_total": POPULATION_TOTAL,
+                "eligible_voters": baseline.eligible_voters_total,
+                "population_total": baseline.population_total,
             },
             ensure_ascii=False,
         )
