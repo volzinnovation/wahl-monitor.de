@@ -301,11 +301,87 @@ def maybe_refresh_structure_cache(
 
 
 def current_raw_statla_csv_path() -> Optional[Path]:
-    metadata = json.loads((core.LATEST_DIR / "run_metadata.json").read_text(encoding="utf-8"))
+    metadata = load_run_metadata()
     run_label = str(metadata.get("run_label") or "").strip()
     candidate = core.RAW_STATLA_DIR / f"{run_label}-statla.csv"
     if candidate.exists():
         return candidate
+    return None
+
+
+def load_run_metadata() -> Dict[str, Any]:
+    path = core.LATEST_DIR / "run_metadata.json"
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+
+
+def current_result_label(metadata: Dict[str, Any]) -> str:
+    explicit_label = str(metadata.get("result_label") or "").strip()
+    if explicit_label:
+        return explicit_label
+    result_status = str(metadata.get("result_status") or "").strip().upper()
+    if result_status == "OFFICIAL_FINAL":
+        return "Endgültiges Ergebnis"
+    if result_status == "OFFICIAL_INTERIM":
+        return "Amtliches Zwischenergebnis"
+    if str(metadata.get("statla_mode") or "").strip().upper() == "DUMMY":
+        return "Dummy-Daten"
+    return ""
+
+
+def result_badge_class(metadata: Dict[str, Any]) -> str:
+    result_status = str(metadata.get("result_status") or "").strip().upper()
+    if result_status == "OFFICIAL_FINAL":
+        return "result-badge-final"
+    if result_status == "OFFICIAL_INTERIM":
+        return "result-badge-official"
+    return "result-badge-neutral"
+
+
+def render_result_context(metadata: Dict[str, Any], *, include_timestamp: bool = False) -> str:
+    label = current_result_label(metadata)
+    generated_at = core.parse_iso_datetime(str(metadata.get("generated_at_utc") or ""))
+    context_bits: List[str] = []
+    if label:
+        context_bits.append(
+            f"<span class='result-badge {html.escape(result_badge_class(metadata))}'>{html.escape(label)}</span>"
+        )
+    if include_timestamp and generated_at is not None and CURRENT_CONFIG is not None:
+        local_timestamp = generated_at.astimezone(core.ZoneInfo(CURRENT_CONFIG.timezone)).strftime("%Y-%m-%d %H:%M:%S %Z")
+        context_bits.append(f"<span class='result-meta'>Stand: {html.escape(local_timestamp)}</span>")
+    if not context_bits:
+        return ""
+    return f"<div class='result-context'>{''.join(context_bits)}</div>"
+
+
+def resolved_statla_source_url(metadata: Dict[str, Any], config: core.Config) -> str:
+    statla_mode = str(metadata.get("statla_mode") or "-")
+    statla_url = str(metadata.get("statla_url") or config.statla_live_csv_url)
+    if statla_mode == "DUMMY" and Path(statla_url).is_absolute():
+        return config.statla_dummy_csv_url
+    return statla_url
+
+
+def render_statla_source_label(metadata: Dict[str, Any]) -> str:
+    parts: List[str] = []
+    result_label = current_result_label(metadata)
+    if result_label:
+        parts.append(f"<strong>{html.escape(result_label)}</strong>")
+    statla_mode = str(metadata.get("statla_mode") or "").strip()
+    if statla_mode:
+        parts.append(f"Modus: <strong>{html.escape(statla_mode)}</strong>")
+    if not parts:
+        return "Offizielle Ergebnisquelle"
+    return f"Offizielle Ergebnisquelle ({', '.join(parts)})"
+
+
+def official_structure_source(config: core.Config) -> Optional[Tuple[str, str]]:
+    if config.election_key == "2026-rlp":
+        return ("Offizieller Wahlkreis-Strukturbericht 2026", wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)
     return None
 
 
@@ -1543,6 +1619,44 @@ def render_page(title: str, body: str, root_path: str = "../") -> str:
       color: var(--accent);
     }}
     .hero p {{ margin: 0; }}
+    .result-context {{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0 14px;
+    }}
+    .result-badge {{
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      line-height: 1;
+    }}
+    .result-badge-final {{
+      background: #dcfce7;
+      border-color: #86efac;
+      color: #166534;
+    }}
+    .result-badge-official {{
+      background: #dbeafe;
+      border-color: #93c5fd;
+      color: #1d4ed8;
+    }}
+    .result-badge-neutral {{
+      background: #f3f4f6;
+      border-color: #d1d5db;
+      color: #374151;
+    }}
+    .result-meta {{
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+    }}
     /* ── Grid & Panels ── */
     .grid {{ display: grid; gap: 20px; }}
     .panel {{
@@ -2323,6 +2437,7 @@ def enrich_booths_for_municipality(
 
 def render_index_page(
     config: core.Config,
+    run_metadata: Dict[str, Any],
     output_root: Path,
     features: List[Dict[str, Any]],
     wahlkreis_pages: List[Tuple[str, str, str]],
@@ -2337,7 +2452,6 @@ def render_index_page(
     party_row_details_by_row_key: Dict[str, Dict[str, Dict[str, Dict[str, Any]]]],
     diff_rows: List[Dict[str, Any]],
 ) -> None:
-    run_metadata = json.loads((core.LATEST_DIR / "run_metadata.json").read_text(encoding="utf-8"))
     polled_at = core.parse_iso_datetime(str(run_metadata.get("generated_at_utc") or ""))
     if polled_at is not None:
         polled_at_local = polled_at.astimezone(core.ZoneInfo(config.timezone)).strftime("%Y-%m-%d %H:%M:%S %Z")
@@ -2345,10 +2459,11 @@ def render_index_page(
         polled_at_local = "-"
 
     tracking_start = core.format_local_dt(core.tracking_start_local_dt(config))
-    statla_mode = str(run_metadata.get("statla_mode") or "-")
-    statla_url = str(run_metadata.get("statla_url") or config.statla_live_csv_url)
-    if statla_mode == "DUMMY" and Path(statla_url).is_absolute():
-        statla_url = config.statla_dummy_csv_url
+    statla_url = resolved_statla_source_url(run_metadata, config)
+    result_label = current_result_label(run_metadata)
+    result_context = render_result_context(run_metadata, include_timestamp=True)
+    structure_source = official_structure_source(config)
+    update_label = "Letztes Update" if result_label else "Letzter Poll"
 
     wahlkreis_counts = {"prestart": 0, "no_data": 0, "pending": 0, "complete": 0}
     for row in wahlkreis_status_rows:
@@ -2371,15 +2486,44 @@ def render_index_page(
         operations.insert(2, f"`python scripts/run_local_mock_poll.py --election-key {config.election_key} --iterations 1 --limit-ags 10`")
     if config.statla_dummy_csv_url and config.kommone_base_url_template:
         operations.append(f"`python scripts/validate_dummy_statla_result.py --election-key {config.election_key}`")
+    result_status_stat = (
+        f"<div class='stat'><div class='stat-label'>Ergebnisstatus</div><div class='stat-value stat-value-small'>{html.escape(result_label)}</div></div>"
+        if result_label
+        else ""
+    )
+    vote_type_summary_html = (
+        "".join(
+            render_vote_type_summary_table(vote_type, rows)
+            for vote_type, rows in sorted(
+                summary_by_vote_type.items(),
+                key=lambda item: {"Erststimmen": 0, "Zweitstimmen": 1}.get(item[0], 99),
+            )
+        )
+        if config.publish_source_comparison
+        else ""
+    )
+    source_diff_html = render_source_diff_summary(diff_rows) if config.publish_source_comparison else ""
+    statla_source_item = (
+        f"<li>{render_statla_source_label(run_metadata)}: <a href='{html.escape(statla_url)}'>{html.escape(statla_url)}</a></li>"
+        if statla_url
+        else ""
+    )
+    structure_source_item = (
+        f"<li>{html.escape(structure_source[0])}: <a href='{html.escape(structure_source[1])}'>{html.escape(structure_source[1])}</a></li>"
+        if structure_source
+        else ""
+    )
     body = (
         "<div class='hero'><div class='topbar'><a href='../index.html'>Alle Wahlen</a></div>"
         f"<h1>{html.escape(config.election_name)} ({html.escape(config.election_key)})</h1>"
+        f"{result_context}"
         "<p class='muted'>Statische Übersicht mit Drill-down von Wahlkreis zu Gemeinde und Wahlbezirk.</p>"
         f"<div class='stats'>"
-        f"<div class='stat'><div class='stat-label'>Letzter Poll</div><div class='stat-value'>{html.escape(polled_at_local)}</div></div>"
+        f"<div class='stat'><div class='stat-label'>{html.escape(update_label)}</div><div class='stat-value'>{html.escape(polled_at_local)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Trackingstart</div><div class='stat-value'>{html.escape(tracking_start)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Gemeinden</div><div class='stat-value'>{len(municipality_link_by_ags):,}</div></div>"
         f"<div class='stat'><div class='stat-label'>Wahlkreise vollständig</div><div class='stat-value'>{wahlkreis_counts['complete']}</div></div>"
+        f"{result_status_stat}"
         "</div></div>"
         "<div class='grid'>"
         "<div class='panel dashboard-map'><h2>Klickbare Wahlkreiskarte</h2>"
@@ -2391,18 +2535,8 @@ def render_index_page(
         f"{render_vote_share_history_panel(config)}"
         f"{render_seat_calculation_panel(config, statla_snapshots, statla_party_rows)}"
         f"{render_wahlkreis_overview_table(wahlkreis_status_rows, wahlkreis_link_by_wk)}"
-        + (
-            "".join(
-            render_vote_type_summary_table(vote_type, rows)
-            for vote_type, rows in sorted(
-                summary_by_vote_type.items(),
-                key=lambda item: {"Erststimmen": 0, "Zweitstimmen": 1}.get(item[0], 99),
-            )
-        )
-            if config.publish_source_comparison
-            else ""
-        )
-        + (render_source_diff_summary(diff_rows) if config.publish_source_comparison else "")
+        f"{vote_type_summary_html}"
+        f"{source_diff_html}"
         + "<div class='panel'><h2>Datenquellen</h2>"
         + "<ul class='inline-list'>"
         + (
@@ -2410,12 +2544,8 @@ def render_index_page(
             if config.kommone_base_url_template
             else ""
         )
-        + (
-            f"<li>Offizielle Ergebnisquelle (Modus: <strong>{html.escape(statla_mode)}</strong>): <a href='{html.escape(statla_url)}'>{html.escape(statla_url)}</a></li>"
-            if statla_url
-            else ""
-        )
-        + f"<li>Offizieller Wahlkreis-Strukturbericht 2026: <a href='{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}'>{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}</a></li>"
+        + statla_source_item
+        + structure_source_item
         + "</ul></div>"
         + "<div class='panel'><h2>Betrieb</h2><ul class='inline-list'>"
         + "".join(f"<li>{item}</li>" for item in operations)
@@ -2484,6 +2614,8 @@ def main() -> int:
     config = core.load_config()
     global CURRENT_CONFIG
     CURRENT_CONFIG = config
+    run_metadata = load_run_metadata()
+    result_context_html = render_result_context(run_metadata)
     output_root = args.output_root or (core.ROOT / "site" / config.election_key)
     output_root.mkdir(parents=True, exist_ok=True)
     prepare_output_dirs(output_root)
@@ -2582,6 +2714,7 @@ def main() -> int:
         body = (
             f"<div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
             f"<a href='../../index.html'>Alle Wahlen</a></div><h1>{html.escape(wk.zfill(2))} - {html.escape(wk_name)}</h1>"
+            f"{result_context_html}"
             "<p class='muted'>Gemeinden als Zeilen, Parteien als Spalten. Jede Zelle zeigt absolute Stimmen und den Zeilenanteil.</p></div>"
             f"{structure_section}"
             f"{comparison_section}"
@@ -2625,7 +2758,7 @@ def main() -> int:
             f"<div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
             f"<a href='../wahlkreis/{html.escape(wahlkreis_link)}'>Wahlkreis</a><span>/</span>"
             "<a href='../../index.html'>Alle Wahlen</a></div>"
-            f"<h1>{html.escape(name)}</h1><p class='muted'>Gemeindedetail mit Drill-down zu Wahlbezirken und Verweisen auf die Struktur von 2021.</p>"
+            f"<h1>{html.escape(name)}</h1>{result_context_html}<p class='muted'>Gemeindedetail mit Drill-down zu Wahlbezirken und Verweisen auf die Struktur von 2021.</p>"
             "<div class='stats'>"
             f"<div class='stat'><div class='stat-label'>AGS</div><div class='stat-value'>{html.escape(ags)}</div></div>"
             f"{wk_stat}"
@@ -2674,6 +2807,7 @@ def main() -> int:
                 "<span>/</span><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
                 "<a href='../../index.html'>Alle Wahlen</a></div>"
                 f"<h1>{html.escape(booth['display_name'])}</h1>"
+                f"{result_context_html}"
                 f"<p class='muted'>{html.escape(booth['gebietsart'])} in {html.escape(name)}</p>"
                 f"{detail_link}{location_link}</div>"
                 f"{render_historical_comparison_section(booth, party_row_details, party_order)}"
@@ -2703,6 +2837,7 @@ def main() -> int:
 
     render_index_page(
         config,
+        run_metadata,
         output_root,
         features,
         wahlkreis_pages,

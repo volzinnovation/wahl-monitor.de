@@ -2,13 +2,13 @@ order,label,type,role,amount,signed_amount,start,end,approximate
 1,Einwohner,total,start_total,11240000,11240000,0,11240000,True
 2,Nichtwahlberechtigte,delta,exclusion,3466659,-3466659,11240000,7773341,True
 3,Wahlberechtigte,total,subtotal,7773341,7773341,0,7773341,False
-4,Nichtwähler,delta,exclusion,2366489,-2366489,7773341,5406852,False
-5,Wählende,total,subtotal,5406852,5406852,0,5406852,False
-6,Ungültige Zweitstimmen,delta,exclusion,32018,-32018,5406852,5374834,False
-7,Gültige Zweitstimmen,total,subtotal,5374834,5374834,0,5374834,False
-8,Parteien < 5 %,delta,exclusion,847107,-847107,5374834,4527727,False
-9,Repräsentierte Zweitstimmen,total,represented_total,4527727,4527727,0,4527727,False
-10,GRÜNE,delta,represented_party,1623156,-1623156,4527727,2904571,False
-11,CDU,delta,represented_party,1595844,-1595844,2904571,1308727,False
-12,AfD,delta,represented_party,1010449,-1010449,1308727,298278,False
-13,SPD,delta,represented_party,298278,-298278,298278,0,False
+4,Nichtwähler,delta,exclusion,2366604,-2366604,7773341,5406737,False
+5,Wählende,total,subtotal,5406737,5406737,0,5406737,False
+6,Ungültige Zweitstimmen,delta,exclusion,31628,-31628,5406737,5375109,False
+7,Gültige Zweitstimmen,total,subtotal,5375109,5375109,0,5375109,False
+8,Parteien < 5 %,delta,exclusion,847101,-847101,5375109,4528008,False
+9,Repräsentierte Zweitstimmen,total,represented_total,4528008,4528008,0,4528008,False
+10,GRÜNE,delta,represented_party,1623208,-1623208,4528008,2904800,False
+11,CDU,delta,represented_party,1595929,-1595929,2904800,1308871,False
+12,AfD,delta,represented_party,1010574,-1010574,1308871,298297,False
+13,SPD,delta,represented_party,298297,-298297,298297,0,False

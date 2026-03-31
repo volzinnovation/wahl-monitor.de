@@ -4338,6 +4338,8 @@ def persist_files(
         {
             "run_label": label_file,
             "generated_at_utc": now_utc().isoformat(),
+            "result_status": statla.get("result_status"),
+            "result_label": statla.get("result_label"),
             "statla_mode": statla.get("mode"),
             "statla_url": statla.get("url"),
             "statla_error": statla.get("error_message"),
