@@ -1,0 +1,5 @@
+wk,ags,node_id,node_name,node_level,unit_type,precincts,valid_zweit,cdu_zweit,cdu_share_zweit,child_row_count,child_precincts,child_valid_zweit,child_cdu_zweit
+111,13700003,1111370000300,"Andernach, Verbandsfreie Gemeinde",2,parent_residual,16,6364,2207,0.34679446888749216,5,16,6810,1660
+330,33900005,3303390000500,"Bingen am Rhein, Verbandsfreie Gemeinde",2,parent_residual,10,5552,1944,0.35014409221902015,8,15,6796,1767
+219,13400045,2191340004500,"Idar-Oberstein, Verbandsfreie Gemeinde",2,parent_residual,7,5789,1974,0.34099153567110035,13,23,7186,1632
+110,13700203,1101370020300,"Bendorf, Verbandsfreie Gemeinde",2,parent_residual,5,3389,1207,0.35615225730303923,4,10,3951,1013

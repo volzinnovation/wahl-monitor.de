@@ -1,0 +1,28 @@
+{
+  "download_page_url": "https://www.wahlen.rlp.de/landtagswahl/ergebnisse",
+  "final_csv": {
+    "url": "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Ergebnisdateien/2026/LW_2026_Endergebnis_Stimmbezirksebene.csv",
+    "path": "/Users/raphaelvolz/Github/ltw26-bw-wahlergebnis/data/2026-rlp/raw/official-final-booths/LW_2026_Endergebnis_Stimmbezirksebene.csv",
+    "status_code": 200,
+    "sha256": "788eb62584181bc559b8dbc042788ef79a351ab5d4c3cc6c68bff89f3ce085a2",
+    "byte_count": 3000452
+  },
+  "final_xlsx": {
+    "url": "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Ergebnisdateien/2026/LW_2026_Endergebnis_Stimmbezirksebene.xlsx",
+    "path": "/Users/raphaelvolz/Github/ltw26-bw-wahlergebnis/data/2026-rlp/raw/official-final-booths/LW_2026_Endergebnis_Stimmbezirksebene.xlsx",
+    "status_code": 200,
+    "sha256": "56aa1e2da02954e8c138be597a93949758e6e60d3f4640c66974de94fa8178d4",
+    "byte_count": 2432706
+  },
+  "final_description_url": "https://www.wahlen.rlp.de/fileadmin/wahlen.rlp.de/dokumente-wahlen/ltw/Ergebnisdateien/2026/SatzbeschreibungErgebnisseGesamtLW_2026.pdf",
+  "preliminary_source": {
+    "content_hash": "0d5b8a87e1681b8bd178a59de9178bad3d51ed7543a89726c713d747ffec85db",
+    "error_message": null,
+    "fetched_at_utc": "2026-03-23T07:58:29.693059+00:00",
+    "status_code": 200,
+    "url": "https://rlp-ltw26.wahlen.23degrees.eu/assets/json/Wahlergebnisse_Landtagswahl_2026.csv"
+  },
+  "preliminary_row_count": 2878,
+  "final_aggregate_row_count": 2878,
+  "final_structural_booth_row_count": 4751
+}

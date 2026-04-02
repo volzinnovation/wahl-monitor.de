@@ -1,0 +1,53 @@
+wahlkreis_nummer,label,booth_count,aggregate_valid_second,booth_sum_valid_second,delta_valid_second,aggregate_cdu_second_votes,booth_sum_cdu_second_votes,delta_cdu_second_votes
+101,"Betzdorf / Kirchen (Sieg), Wahlkreis",96,41641,41641,0,15196,15196,0
+102,"Altenkirchen (Westerwald), Wahlkreis",101,30794,30794,0,10198,10198,0
+103,"Linz am Rhein / Rengsdorf, Wahlkreis",102,46476,46476,0,17489,17489,0
+104,"Neuwied, Wahlkreis",93,38769,38769,0,11266,11266,0
+105,"Bad Marienberg (Westerwald) / Westerburg, Wahlkreis",116,43007,43007,0,13544,13544,0
+106,"Montabaur, Wahlkreis",92,46819,46819,0,18149,18149,0
+107,"Diez / Nassau, Wahlkreis",132,45299,45299,0,12875,12875,0
+108,"Koblenz / Lahnstein, Wahlkreis",74,30094,30094,0,9862,9862,0
+109,"Koblenz, Wahlkreis",95,37166,37166,0,11209,11209,0
+110,"Bendorf / Weißenthurm, Wahlkreis",64,36981,36981,0,13020,13020,0
+111,"Andernach, Wahlkreis",63,29025,29025,0,9096,9096,0
+112,"Mayen, Wahlkreis",104,46974,46974,0,17548,17548,0
+113,"Remagen / Sinzig, Wahlkreis",56,32384,32384,0,11575,11575,0
+114,"Bad Neuenahr-Ahrweiler, Wahlkreis",89,33337,33337,0,14390,14390,0
+215,"Cochem-Zell, Wahlkreis",107,33448,33448,0,13770,13770,0
+216,"Rhein-Hunsrück, Wahlkreis",149,46730,46730,0,16165,16165,0
+217,"Bad Kreuznach, Wahlkreis",59,39764,39764,0,12441,12441,0
+218,"Kirn / Bad Sobernheim, Wahlkreis",101,39052,39052,0,11589,11589,0
+219,"Birkenfeld, Wahlkreis",135,40279,40279,0,11147,11147,0
+220,"Vulkaneifel, Wahlkreis",144,32429,32429,0,15095,15095,0
+221,"Bitburg-Prüm, Wahlkreis",213,49058,49058,0,18382,18382,0
+222,"Wittlich, Wahlkreis",81,33724,33724,0,13377,13377,0
+223,Bernkastel-Kues / Morbach / Kirchberg (Hunsrück),123,35159,35159,0,12149,12149,0
+224,"Trier / Schweich, Wahlkreis",98,45624,45624,0,16342,16342,0
+225,"Trier, Wahlkreis",97,40643,40643,0,11143,11143,0
+226,"Konz / Saarburg, Wahlkreis",97,40008,40008,0,14355,14355,0
+327,"Mainz I, Wahlkreis",79,42764,42764,0,7583,7583,0
+328,"Mainz II, Wahlkreis",78,41517,41517,0,11105,11105,0
+329,"Mainz III, Wahlkreis",62,32705,32705,0,10401,10401,0
+330,"Bingen am Rhein, Wahlkreis",76,37897,37897,0,11429,11429,0
+331,"Ingelheim am Rhein, Wahlkreis",106,40750,40750,0,12759,12759,0
+332,"Rhein-Selz / Wonnegau, Wahlkreis",70,47732,47732,0,12817,12817,0
+333,"Worms, Wahlkreis",82,34022,34022,0,8656,8656,0
+334,"Alzey, Wahlkreis",88,45785,45785,0,11935,11935,0
+335,"Frankenthal (Pfalz), Wahlkreis",75,33438,33438,0,9717,9717,0
+336,"Ludwigshafen am Rhein I, Wahlkreis",66,21937,21937,0,5227,5227,0
+337,"Ludwigshafen am Rhein II, Wahlkreis",79,28663,28663,0,7395,7395,0
+338,"Mutterstadt, Wahlkreis",67,45826,45826,0,13991,13991,0
+339,"Speyer, Wahlkreis",61,44720,44720,0,13008,13008,0
+440,"Donnersberg, Wahlkreis",113,40531,40531,0,9887,9887,0
+441,"Kusel, Wahlkreis",112,37332,37332,0,9009,9009,0
+442,"Bad Dürkheim, Wahlkreis",71,50336,50336,0,15267,15267,0
+443,"Neustadt an der Weinstraße, Wahlkreis",80,45922,45922,0,13253,13253,0
+444,"Kaiserslautern I, Wahlkreis",54,26090,26090,0,5417,5417,0
+445,"Kaiserslautern II, Wahlkreis",83,42450,42450,0,10378,10378,0
+446,"Kaiserslautern-Land, Wahlkreis",69,33018,33018,0,9973,9973,0
+447,"Zweibrücken, Wahlkreis",93,41854,41854,0,12214,12214,0
+448,"Pirmasens, Wahlkreis",104,45390,45390,0,13466,13466,0
+449,"Südliche Weinstraße, Wahlkreis",86,48789,48789,0,12586,12586,0
+450,"Landau in der Pfalz, Wahlkreis",67,41717,41717,0,11205,11205,0
+451,"Germersheim, Wahlkreis",39,30070,30070,0,7847,7847,0
+452,"Wörth am Rhein, Wahlkreis",51,32291,32291,0,10057,10057,0

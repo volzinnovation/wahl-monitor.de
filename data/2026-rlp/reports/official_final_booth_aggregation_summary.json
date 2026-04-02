@@ -1,0 +1,18 @@
+{
+  "structural_booth_rows": 4751,
+  "effective_individual_booth_results": 4692,
+  "aggregated_away_booth_rows": 59,
+  "aggregation_receiver_booth_rows": 41,
+  "blank_booth_rows_without_merge_marker": 0,
+  "effective_by_guw": {
+    "U": 3987,
+    "W": 705
+  },
+  "aggregated_donor_reasons": {
+    "PARAGRAPH_10_3_LWAHLG": 43,
+    "PARAGRAPH_57_2_LWO": 16
+  },
+  "preliminary_land_precinct_count": 4692,
+  "effective_minus_preliminary_land_precincts": 0,
+  "structural_minus_effective_booths": 59
+}
