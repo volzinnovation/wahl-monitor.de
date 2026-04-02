@@ -1,0 +1,119 @@
+{
+  "matched_rows": 2878,
+  "preliminary_rows": 2878,
+  "final_aggregate_rows": 2878,
+  "only_in_preliminary": [],
+  "only_in_final": [],
+  "by_code": [
+    {
+      "code": "BZ",
+      "level_group": "BEZIRK",
+      "matched_rows": 4,
+      "rows_with_any_change": 4,
+      "sum_abs_delta_voters_total": 556,
+      "sum_abs_delta_valid_second": 71,
+      "sum_abs_delta_cdu_second_votes": 59,
+      "max_abs_delta_cdu_second_share_pp": 0.0063366457815376975
+    },
+    {
+      "code": "GD",
+      "level_group": "KOMMUNE",
+      "matched_rows": 2259,
+      "rows_with_any_change": 160,
+      "sum_abs_delta_voters_total": 634,
+      "sum_abs_delta_valid_second": 80,
+      "sum_abs_delta_cdu_second_votes": 73,
+      "max_abs_delta_cdu_second_share_pp": 1.3817602634310475
+    },
+    {
+      "code": "VF",
+      "level_group": "KOMMUNE",
+      "matched_rows": 29,
+      "rows_with_any_change": 9,
+      "sum_abs_delta_voters_total": 28,
+      "sum_abs_delta_valid_second": 6,
+      "sum_abs_delta_cdu_second_votes": 13,
+      "max_abs_delta_cdu_second_share_pp": 0.0809847748623227
+    },
+    {
+      "code": "VG",
+      "level_group": "KOMMUNE",
+      "matched_rows": 129,
+      "rows_with_any_change": 64,
+      "sum_abs_delta_voters_total": 582,
+      "sum_abs_delta_valid_second": 78,
+      "sum_abs_delta_cdu_second_votes": 67,
+      "max_abs_delta_cdu_second_share_pp": 0.4563726748210932
+    },
+    {
+      "code": "ST",
+      "level_group": "KOMMUNENTEIL",
+      "matched_rows": 312,
+      "rows_with_any_change": 24,
+      "sum_abs_delta_voters_total": 123,
+      "sum_abs_delta_valid_second": 29,
+      "sum_abs_delta_cdu_second_votes": 20,
+      "max_abs_delta_cdu_second_share_pp": 2.044989775051125
+    },
+    {
+      "code": "KS",
+      "level_group": "KREIS_ODER_STADT",
+      "matched_rows": 12,
+      "rows_with_any_change": 8,
+      "sum_abs_delta_voters_total": 106,
+      "sum_abs_delta_valid_second": 21,
+      "sum_abs_delta_cdu_second_votes": 9,
+      "max_abs_delta_cdu_second_share_pp": 0.007322576814168258
+    },
+    {
+      "code": "LK",
+      "level_group": "KREIS_ODER_STADT",
+      "matched_rows": 24,
+      "rows_with_any_change": 23,
+      "sum_abs_delta_voters_total": 526,
+      "sum_abs_delta_valid_second": 72,
+      "sum_abs_delta_cdu_second_votes": 66,
+      "max_abs_delta_cdu_second_share_pp": 0.03564921936851562
+    },
+    {
+      "code": "LD",
+      "level_group": "LAND",
+      "matched_rows": 1,
+      "rows_with_any_change": 1,
+      "sum_abs_delta_voters_total": 556,
+      "sum_abs_delta_valid_second": 47,
+      "sum_abs_delta_cdu_second_votes": 45,
+      "max_abs_delta_cdu_second_share_pp": 0.0015012686608919523
+    },
+    {
+      "code": "WK",
+      "level_group": "WAHLKREIS",
+      "matched_rows": 52,
+      "rows_with_any_change": 42,
+      "sum_abs_delta_voters_total": 658,
+      "sum_abs_delta_valid_second": 93,
+      "sum_abs_delta_cdu_second_votes": 81,
+      "max_abs_delta_cdu_second_share_pp": 0.13571422013977497
+    },
+    {
+      "code": "TK",
+      "level_group": "WAHLKREIS_TEIL",
+      "matched_rows": 45,
+      "rows_with_any_change": 33,
+      "sum_abs_delta_voters_total": 442,
+      "sum_abs_delta_valid_second": 67,
+      "sum_abs_delta_cdu_second_votes": 70,
+      "max_abs_delta_cdu_second_share_pp": 0.13571422013977497
+    },
+    {
+      "code": "TS",
+      "level_group": "WAHLKREIS_TEIL",
+      "matched_rows": 11,
+      "rows_with_any_change": 6,
+      "sum_abs_delta_voters_total": 96,
+      "sum_abs_delta_valid_second": 18,
+      "sum_abs_delta_cdu_second_votes": 9,
+      "max_abs_delta_cdu_second_share_pp": 0.03754052225178128
+    }
+  ]
+}
