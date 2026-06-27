@@ -15,6 +15,7 @@ import subprocess
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
@@ -26,6 +27,7 @@ import rlp_wahlkreis_structure as wk_structure
 
 OUTPUT_ROOT = None
 CURRENT_CONFIG: Optional[core.Config] = None
+SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://wahl-monitor.de").rstrip("/")
 STRUCTURE_DATE = "20210314"
 STRUCTURE_BASE_URL = "https://wahlergebnisse.komm.one/01/produktion/wahltermin-20210314"
 REMOTE_TIMEOUT_SECONDS = 20
@@ -189,6 +191,86 @@ def slugify(text: str) -> str:
     normalized = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii").lower()
     normalized = re.sub(r"[^a-z0-9]+", "-", normalized).strip("-")
     return normalized or "item"
+
+
+def compact_text(text: str) -> str:
+    return re.sub(r"\s+", " ", str(text or "")).strip()
+
+
+def truncate_meta(text: str, max_length: int = 160) -> str:
+    compacted = compact_text(text)
+    if len(compacted) <= max_length:
+        return compacted
+    cutoff = compacted.rfind(" ", 0, max_length - 1)
+    if cutoff < max_length // 2:
+        cutoff = max_length - 1
+    return compacted[:cutoff].rstrip(" .,;:") + "..."
+
+
+def site_root_path() -> Path:
+    return core.ROOT / "site"
+
+
+def canonical_url_for_path(path: Path) -> str:
+    try:
+        rel_path = path.resolve().relative_to(site_root_path().resolve())
+    except ValueError:
+        rel_path = path.name
+    if isinstance(rel_path, Path):
+        if rel_path.name == "index.html":
+            parent = rel_path.parent.as_posix().strip(".")
+            return f"{SITE_BASE_URL}/{parent + '/' if parent else ''}"
+        return f"{SITE_BASE_URL}/{rel_path.as_posix()}"
+    return f"{SITE_BASE_URL}/{rel_path}"
+
+
+def absolute_site_url(path_or_url: str) -> str:
+    text = str(path_or_url or "").strip()
+    if text.startswith(("https://", "http://")):
+        return text
+    return f"{SITE_BASE_URL}/{text.lstrip('/')}"
+
+
+def build_webpage_structured_data(
+    title: str,
+    description: str,
+    canonical_url: str,
+    breadcrumbs: Optional[List[Tuple[str, str]]] = None,
+) -> Dict[str, Any]:
+    graph: List[Dict[str, Any]] = [
+        {
+            "@type": "WebPage",
+            "@id": f"{canonical_url}#webpage",
+            "url": canonical_url,
+            "name": title,
+            "description": description,
+            "inLanguage": "de",
+            "isPartOf": {"@id": f"{SITE_BASE_URL}/#website"},
+        },
+        {
+            "@type": "WebSite",
+            "@id": f"{SITE_BASE_URL}/#website",
+            "url": f"{SITE_BASE_URL}/",
+            "name": "wahl-monitor.de",
+            "inLanguage": "de",
+        },
+    ]
+    if breadcrumbs:
+        graph.append(
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": index,
+                        "name": name,
+                        "item": absolute_site_url(url),
+                    }
+                    for index, (name, url) in enumerate(breadcrumbs, start=1)
+                ],
+            }
+        )
+    return {"@context": "https://schema.org", "@graph": graph}
 
 
 def html_text(fragment: str) -> str:
@@ -995,6 +1077,10 @@ def reporting_status_label(snapshot: Dict[str, Any]) -> str:
     return "teilweise"
 
 
+def has_meaningful_result(snapshot: Dict[str, Any]) -> bool:
+    return vote_total_for_snapshot(snapshot, "Erststimmen") > 0 or vote_total_for_snapshot(snapshot, "Zweitstimmen") > 0
+
+
 def pct(value: int, total: int) -> str:
     if total <= 0:
         return "0.00%"
@@ -1051,10 +1137,15 @@ def fallback_raw_row(snapshot: Dict[str, Any]) -> Dict[str, str]:
     wahlkreisnummer = ""
     if gebietsart.upper() == "WAHLKREIS":
         wahlkreisnummer = core.normalize_wahlkreis_nummer(gebietsnummer)
+    is_booth = gebietsart.upper() in {"URNENWAHLBEZIRK", "BRIEFWAHLBEZIRK"}
+    if is_booth:
+        fallback_name = gebietsnummer or str(snapshot.get("row_key") or "")
+    else:
+        fallback_name = municipality_name or gebietsnummer or str(snapshot.get("row_key") or "")
     return {
         "Wahlkreisnummer": wahlkreisnummer,
         "Gemeindename": municipality_name,
-        "Gebietsname": municipality_name or gebietsnummer or str(snapshot.get("row_key") or ""),
+        "Gebietsname": fallback_name,
         "Gebietsnummer": gebietsnummer,
         "Bezirksnummer": gebietsnummer,
     }
@@ -1392,7 +1483,34 @@ def render_wahlkreis_structure_panel(feature: Optional[Dict[str, Any]]) -> str:
     )
 
 
-def render_page(title: str, body: str, root_path: str = "../") -> str:
+def render_page(
+    title: str,
+    body: str,
+    root_path: str = "../",
+    *,
+    description: str,
+    canonical_url: Optional[str] = None,
+    robots: Optional[str] = None,
+    structured_data: Optional[Dict[str, Any]] = None,
+) -> str:
+    description = truncate_meta(description)
+    canonical_markup = ""
+    if canonical_url:
+        canonical_markup = f'  <link rel="canonical" href="{html.escape(canonical_url, quote=True)}">\n'
+    robots_markup = ""
+    if robots:
+        robots_markup = f'  <meta name="robots" content="{html.escape(robots, quote=True)}">\n'
+    og_url_markup = ""
+    if canonical_url:
+        og_url_markup = f'  <meta property="og:url" content="{html.escape(canonical_url, quote=True)}">\n'
+    structured_data_markup = ""
+    if structured_data:
+        structured_data_json = json.dumps(
+            structured_data,
+            ensure_ascii=False,
+            separators=(",", ":"),
+        ).replace("</", "<\\/")
+        structured_data_markup = f'  <script type="application/ld+json">{structured_data_json}</script>\n'
     footer_data_source = ""
     if CURRENT_CONFIG is not None and CURRENT_CONFIG.election_key == "2026-rlp":
         footer_data_source = (
@@ -1438,8 +1556,16 @@ def render_page(title: str, body: str, root_path: str = "../") -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Statisches Wahldashboard mit Detailseiten für Wahlkreise, Gemeinden und Wahlbezirke.">
-  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description, quote=True)}">
+{robots_markup}{canonical_markup}  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="wahl-monitor.de">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{html.escape(title, quote=True)}">
+  <meta property="og:description" content="{html.escape(description, quote=True)}">
+{og_url_markup}  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{html.escape(title, quote=True)}">
+  <meta name="twitter:description" content="{html.escape(description, quote=True)}">
+{structured_data_markup}  <title>{html.escape(title)}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1829,9 +1955,36 @@ def tracking_start_hhmm(config: core.Config) -> str:
     return core.tracking_start_local_dt(config).strftime("%H:%M")
 
 
-def write_page(path: Path, title: str, body: str) -> None:
+def write_page(
+    path: Path,
+    title: str,
+    body: str,
+    *,
+    description: Optional[str] = None,
+    robots: Optional[str] = None,
+    breadcrumbs: Optional[List[Tuple[str, str]]] = None,
+    structured_data: Optional[Dict[str, Any]] = None,
+) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(render_page(title, body), encoding="utf-8")
+    canonical_url = canonical_url_for_path(path)
+    description = description or "Statisches Wahldashboard mit Detailseiten für Wahlkreise, Gemeinden und Wahlbezirke."
+    structured_data = structured_data or build_webpage_structured_data(
+        title,
+        truncate_meta(description),
+        canonical_url,
+        breadcrumbs,
+    )
+    path.write_text(
+        render_page(
+            title,
+            body,
+            description=description,
+            canonical_url=canonical_url,
+            robots=robots,
+            structured_data=structured_data,
+        ),
+        encoding="utf-8",
+    )
 
 
 def prepare_output_dirs(output_root: Path) -> None:
@@ -2427,7 +2580,21 @@ def render_index_page(
         + "</ul></div>"
         + "</div>"
     )
-    write_page(output_root / "index.html", f"{config.election_name} ({config.election_key})", body)
+    page_title = f"{config.election_name}: Ergebnisse, Karte und Wahlkreise | wahl-monitor.de"
+    description = (
+        f"Aktuelle Ergebnisse zur {config.election_name}: Wahlkreiskarte, Gemeinden, "
+        f"Wahlbezirke, {vote_type_label('Erststimmen')} und {vote_type_label('Zweitstimmen')}."
+    )
+    write_page(
+        output_root / "index.html",
+        page_title,
+        body,
+        description=description,
+        breadcrumbs=[
+            ("wahl-monitor.de", "/"),
+            (config.election_name, f"/{config.election_key}/"),
+        ],
+    )
 
 
 def render_site_root_index(site_root: Path, current_config: core.Config) -> None:
@@ -2475,7 +2642,52 @@ def render_site_root_index(site_root: Path, current_config: core.Config) -> None
         "</div>"
         f"<div class='panel'><h2>Verfügbare Wahlen</h2><ul class='linklist'>{links}</ul></div>"
     )
-    write_page(site_root / "index.html", "wahl-monitor.de", body)
+    description = (
+        "wahl-monitor.de bündelt transparente Wahlergebnis-Dashboards mit Detailseiten "
+        "für Landtagswahlen, Wahlkreise, Gemeinden und Wahlbezirke."
+    )
+    write_page(
+        site_root / "index.html",
+        "wahl-monitor.de",
+        body,
+        description=description,
+        breadcrumbs=[("wahl-monitor.de", "/")],
+    )
+
+
+def page_has_noindex(path: Path) -> bool:
+    head = path.read_text(encoding="utf-8", errors="ignore")[:8000].lower()
+    return 'name="robots"' in head and "noindex" in head
+
+
+def write_crawl_files(site_root: Path) -> None:
+    site_root.mkdir(parents=True, exist_ok=True)
+    (site_root / ".nojekyll").write_text("", encoding="utf-8")
+    (site_root / "robots.txt").write_text(
+        "User-agent: *\n"
+        "Allow: /\n\n"
+        f"Sitemap: {SITE_BASE_URL}/sitemap.xml\n",
+        encoding="utf-8",
+    )
+
+    url_entries: List[str] = []
+    for path in sorted(site_root.rglob("*.html")):
+        if page_has_noindex(path):
+            continue
+        lastmod = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).date().isoformat()
+        url_entries.append(
+            "  <url>\n"
+            f"    <loc>{html.escape(canonical_url_for_path(path))}</loc>\n"
+            f"    <lastmod>{lastmod}</lastmod>\n"
+            "  </url>"
+        )
+    sitemap = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(url_entries)
+        + "\n</urlset>\n"
+    )
+    (site_root / "sitemap.xml").write_text(sitemap, encoding="utf-8")
 
 
 def main() -> int:
@@ -2582,13 +2794,30 @@ def main() -> int:
         body = (
             f"<div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
             f"<a href='../../index.html'>Alle Wahlen</a></div><h1>{html.escape(wk.zfill(2))} - {html.escape(wk_name)}</h1>"
-            "<p class='muted'>Gemeinden als Zeilen, Parteien als Spalten. Jede Zelle zeigt absolute Stimmen und den Zeilenanteil.</p></div>"
+            f"<p class='muted'>Wahlergebnis im Wahlkreis {html.escape(wk.zfill(2))} {html.escape(wk_name)} "
+            f"zur {html.escape(config.election_name)} mit Gemeinden, {html.escape(vote_type_label('Erststimmen'))} "
+            f"und {html.escape(vote_type_label('Zweitstimmen'))}.</p></div>"
             f"{structure_section}"
             f"{comparison_section}"
             f"<div class='panel'><h2>{html.escape(vote_type_label('Erststimmen'))}</h2>{first_table}</div>"
             f"<div class='panel'><h2>{html.escape(vote_type_label('Zweitstimmen'))}</h2>{second_table}</div>"
         )
-        write_page(output_root / "wahlkreis" / filename, f"{wk_name} - {config.election_key}", body)
+        page_title = f"Wahlergebnis {wk_name} | {config.election_name}"
+        description = (
+            f"Wahlergebnis im Wahlkreis {wk.zfill(2)} {wk_name} zur {config.election_name}: "
+            f"Gemeinden, {vote_type_label('Erststimmen')}, {vote_type_label('Zweitstimmen')} und Meldestatus."
+        )
+        write_page(
+            output_root / "wahlkreis" / filename,
+            page_title,
+            body,
+            description=description,
+            breadcrumbs=[
+                ("wahl-monitor.de", "/"),
+                (config.election_name, f"/{config.election_key}/"),
+                (f"Wahlkreis {wk.zfill(2)} {wk_name}", f"/{config.election_key}/wahlkreis/{filename}"),
+            ],
+        )
 
     for entity in city_entities:
         ags = entity["ags"]
@@ -2621,11 +2850,14 @@ def main() -> int:
         wk_stat = ""
         if wk:
             wk_stat = f"<div class='stat'><div class='stat-label'>Wahlkreis</div><div class='stat-value'>{html.escape(wk.zfill(2))}</div></div>"
+        wk_text = f" im Wahlkreis {wk.zfill(2)}" if wk else ""
         body = (
             f"<div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
             f"<a href='../wahlkreis/{html.escape(wahlkreis_link)}'>Wahlkreis</a><span>/</span>"
             "<a href='../../index.html'>Alle Wahlen</a></div>"
-            f"<h1>{html.escape(name)}</h1><p class='muted'>Gemeindedetail mit Drill-down zu Wahlbezirken und Verweisen auf die Struktur von 2021.</p>"
+            f"<h1>{html.escape(name)}</h1><p class='muted'>Wahlergebnis für {html.escape(name)}{html.escape(wk_text)} "
+            f"zur {html.escape(config.election_name)} mit Wahlbezirken, {html.escape(vote_type_label('Erststimmen'))} "
+            f"und {html.escape(vote_type_label('Zweitstimmen'))}.</p>"
             "<div class='stats'>"
             f"<div class='stat'><div class='stat-label'>AGS</div><div class='stat-value'>{html.escape(ags)}</div></div>"
             f"{wk_stat}"
@@ -2637,7 +2869,23 @@ def main() -> int:
             f"<div class='panel'><h2>Wahlbezirkstabelle: {html.escape(vote_type_label('Erststimmen'))}</h2>{first_table}</div>"
             f"<div class='panel'><h2>Wahlbezirkstabelle: {html.escape(vote_type_label('Zweitstimmen'))}</h2>{second_table}</div>"
         )
-        write_page(output_root / "municipality" / filename, f"{name} - {config.election_key}", body)
+        title_wk = f" (Wahlkreis {wk.zfill(2)})" if entity["is_split_city"] and wk else ""
+        page_title = f"Wahlergebnis {name}{title_wk} | {config.election_name}"
+        description = (
+            f"Wahlergebnis für {name}{wk_text} zur {config.election_name}: Wahlbezirke, "
+            f"{vote_type_label('Erststimmen')}, {vote_type_label('Zweitstimmen')} und Meldestatus. AGS {ags}."
+        )
+        write_page(
+            output_root / "municipality" / filename,
+            page_title,
+            body,
+            description=description,
+            breadcrumbs=[
+                ("wahl-monitor.de", "/"),
+                (config.election_name, f"/{config.election_key}/"),
+                (name, f"/{config.election_key}/municipality/{filename}"),
+            ],
+        )
 
         for booth in booth_rows:
             raw_row = raw_row_for_snapshot(raw_by_row_key, booth)
@@ -2674,13 +2922,32 @@ def main() -> int:
                 "<span>/</span><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
                 "<a href='../../index.html'>Alle Wahlen</a></div>"
                 f"<h1>{html.escape(booth['display_name'])}</h1>"
-                f"<p class='muted'>{html.escape(booth['gebietsart'])} in {html.escape(name)}</p>"
+                f"<p class='muted'>Wahlergebnis für {html.escape(booth['display_name'])} in {html.escape(name)} "
+                f"zur {html.escape(config.election_name)}. Typ: {html.escape(booth['gebietsart'])}.</p>"
                 f"{detail_link}{location_link}</div>"
                 f"{render_historical_comparison_section(booth, party_row_details, party_order)}"
                 f"<div class='panel'><h2>{html.escape(vote_type_label('Erststimmen'))}</h2>{render_detail_list(first_votes, 'Erststimmen')}</div>"
                 f"<div class='panel'><h2>{html.escape(vote_type_label('Zweitstimmen'))}</h2>{render_detail_list(second_votes, 'Zweitstimmen')}</div>"
             )
-            write_page(output_root / "booth" / booth_filename, f"{booth['display_name']} - {config.election_key}", body)
+            booth_name = str(booth["display_name"])
+            page_title = f"Wahlergebnis {booth_name}, {name} | {config.election_name}"
+            description = (
+                f"Wahlergebnis für den Wahlbezirk {booth_name} in {name} zur {config.election_name}: "
+                f"{booth['gebietsart']}, {vote_type_label('Erststimmen')} und {vote_type_label('Zweitstimmen')}."
+            )
+            write_page(
+                output_root / "booth" / booth_filename,
+                page_title,
+                body,
+                description=description,
+                robots=None if has_meaningful_result(booth) else "noindex,follow",
+                breadcrumbs=[
+                    ("wahl-monitor.de", "/"),
+                    (config.election_name, f"/{config.election_key}/"),
+                    (name, f"/{config.election_key}/municipality/{filename}"),
+                    (booth_name, f"/{config.election_key}/booth/{booth_filename}"),
+                ],
+            )
 
     wahlkreis_status_rows = core.compute_wahlkreis_status_rows(
         features=core.load_wahlkreis_features(),
@@ -2718,6 +2985,7 @@ def main() -> int:
         latest_source_diffs,
     )
     render_site_root_index(site_root, config)
+    write_crawl_files(site_root)
     print(f"Generated static site at {output_root}")
     print(f"Wahlkreis pages: {len(wahlkreis_pages)}")
     print(f"Municipality pages: {len(city_entities)}")

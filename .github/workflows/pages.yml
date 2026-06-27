@@ -30,6 +30,9 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Clean static site output
+        run: rm -rf site
+
       - name: Build static election sites
         run: |
           python scripts/generate_static_detail_pages.py --election-key 2026-bw
