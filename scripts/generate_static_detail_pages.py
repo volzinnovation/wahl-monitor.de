@@ -207,6 +207,18 @@ def truncate_meta(text: str, max_length: int = 160) -> str:
     return compacted[:cutoff].rstrip(" .,;:") + "..."
 
 
+def normalize_search_text(*values: Any) -> str:
+    pieces: List[str] = []
+    for value in values:
+        text = display_text(value).lower()
+        if not text:
+            continue
+        pieces.append(text)
+        pieces.append(text.translate(str.maketrans({"ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss"})))
+    normalized = unicodedata.normalize("NFKD", " ".join(pieces)).encode("ascii", "ignore").decode("ascii")
+    return compact_text(re.sub(r"[^a-z0-9]+", " ", normalized))
+
+
 def site_root_path() -> Path:
     return core.ROOT / "site"
 
@@ -1566,6 +1578,7 @@ def render_page(
   <meta name="twitter:title" content="{html.escape(title, quote=True)}">
   <meta name="twitter:description" content="{html.escape(description, quote=True)}">
 {structured_data_markup}  <title>{html.escape(title)}</title>
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1769,6 +1782,90 @@ def render_page(
       text-decoration: none;
       transform: translateX(3px);
     }}
+    .search-form {{
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: stretch;
+      margin-top: 18px;
+    }}
+    .search-input {{
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0 14px;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      outline: none;
+    }}
+    .search-input:focus {{
+      border-color: var(--accent-light);
+      box-shadow: 0 0 0 3px rgba(0,85,164,0.12);
+    }}
+    .search-button {{
+      min-height: 48px;
+      border: 0;
+      border-radius: 10px;
+      padding: 0 18px;
+      font: inherit;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent);
+      cursor: pointer;
+    }}
+    .search-button:hover {{ background: var(--accent-hover); }}
+    .search-meta {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }}
+    .search-badge {{
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #f8f9fb;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+    }}
+    .search-results {{
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }}
+    .search-result {{
+      display: block;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f8f9fb;
+      color: var(--ink);
+      text-decoration: none;
+    }}
+    .search-result:hover {{
+      border-color: rgba(0,85,164,0.22);
+      background: #eef2ff;
+      text-decoration: none;
+    }}
+    .search-result-title {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      font-weight: 700;
+      color: var(--accent);
+    }}
+    .search-result-subtitle {{
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }}
     .small {{ font-size: 12px; color: var(--muted); }}
     .stat-value-small {{ font-size: 18px; }}
     .profile-badge {{
@@ -1939,6 +2036,8 @@ def render_page(
       .stat {{ padding: 12px; }}
       .stat-value {{ font-size: 16px; }}
       ul.linklist li a {{ padding: 10px 12px; font-size: 14px; }}
+      .search-form {{ grid-template-columns: 1fr; }}
+      .search-button {{ width: 100%; }}
     }}
   </style>
 </head>
@@ -1984,6 +2083,234 @@ def write_page(
             structured_data=structured_data,
         ),
         encoding="utf-8",
+    )
+
+
+SEARCH_TYPE_LABELS = {
+    "election": "Wahl",
+    "wahlkreis": "Wahlkreis",
+    "municipality": "Gemeinde",
+    "booth": "Wahlbezirk",
+}
+
+SEARCH_TYPE_ORDER = {
+    "election": 0,
+    "wahlkreis": 1,
+    "municipality": 2,
+    "booth": 3,
+}
+
+
+def append_search_entry(
+    entries: List[Dict[str, Any]],
+    *,
+    kind: str,
+    title: str,
+    href: str,
+    subtitle: str = "",
+    search_fields: Optional[List[Any]] = None,
+    snapshot: Optional[Dict[str, Any]] = None,
+    sort_key: str = "",
+) -> None:
+    title = display_text(title)
+    subtitle = display_text(subtitle)
+    search_fields = search_fields or []
+    entry: Dict[str, Any] = {
+        "type": kind,
+        "typeLabel": SEARCH_TYPE_LABELS.get(kind, kind),
+        "title": title,
+        "subtitle": subtitle,
+        "href": href,
+        "tokens": normalize_search_text(kind, SEARCH_TYPE_LABELS.get(kind, kind), title, subtitle, href, *search_fields),
+        "sort": sort_key or normalize_search_text(title),
+    }
+    if snapshot:
+        reported, total = reporting_counts(snapshot)
+        entry["reportedPrecincts"] = reported
+        entry["totalPrecincts"] = total
+        entry["status"] = reporting_status_label(snapshot)
+    entries.append(entry)
+
+
+def ordered_search_entries(entries: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    unique_entries: Dict[Tuple[str, str], Dict[str, Any]] = {}
+    for entry in entries:
+        key = (str(entry.get("type") or ""), str(entry.get("href") or ""))
+        if key not in unique_entries:
+            unique_entries[key] = entry
+    return sorted(
+        unique_entries.values(),
+        key=lambda item: (
+            SEARCH_TYPE_ORDER.get(str(item.get("type") or ""), 99),
+            str(item.get("sort") or ""),
+            str(item.get("title") or ""),
+        ),
+    )
+
+
+def render_search_page(config: core.Config, output_root: Path, entries: List[Dict[str, Any]]) -> None:
+    ordered_entries = ordered_search_entries(entries)
+    public_entries = [
+        {key: value for key, value in entry.items() if key != "sort"}
+        for entry in ordered_entries
+    ]
+    run_metadata_path = core.LATEST_DIR / "run_metadata.json"
+    run_metadata: Dict[str, Any] = {}
+    if run_metadata_path.exists():
+        try:
+            run_metadata = json.loads(run_metadata_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            run_metadata = {}
+
+    payload = {
+        "electionKey": config.election_key,
+        "electionName": config.election_name,
+        "generatedAtUtc": run_metadata.get("generated_at_utc"),
+        "entryCount": len(public_entries),
+        "entries": public_entries,
+    }
+    (output_root / "search.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    counts_by_type: Dict[str, int] = defaultdict(int)
+    for entry in ordered_entries:
+        counts_by_type[str(entry.get("type") or "")] += 1
+    counts_html = "".join(
+        f"<span class='search-badge'>{html.escape(SEARCH_TYPE_LABELS.get(kind, kind))}: {count:,}</span>"
+        for kind, count in sorted(counts_by_type.items(), key=lambda item: SEARCH_TYPE_ORDER.get(item[0], 99))
+    )
+    search_script = r"""
+<script>
+(function () {
+  const form = document.querySelector("[data-search-form]");
+  const input = document.querySelector("[data-search-input]");
+  const resultCount = document.querySelector("[data-search-count]");
+  const results = document.querySelector("[data-search-results]");
+  let entries = [];
+
+  function normalize(value) {
+    return String(value || "")
+      .toLowerCase()
+      .replace(/ä/g, "ae")
+      .replace(/ö/g, "oe")
+      .replace(/ü/g, "ue")
+      .replace(/ß/g, "ss")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+  }
+
+  function resultSubtitle(entry) {
+    const parts = [];
+    if (entry.subtitle) parts.push(entry.subtitle);
+    if (entry.status && entry.totalPrecincts) {
+      parts.push(`${entry.status} (${entry.reportedPrecincts}/${entry.totalPrecincts})`);
+    }
+    return parts.join(" · ");
+  }
+
+  function appendResult(entry) {
+    const link = document.createElement("a");
+    link.className = "search-result";
+    link.href = entry.href;
+
+    const title = document.createElement("div");
+    title.className = "search-result-title";
+
+    const badge = document.createElement("span");
+    badge.className = "search-badge";
+    badge.textContent = entry.typeLabel || entry.type || "Treffer";
+    title.appendChild(badge);
+
+    const titleText = document.createElement("span");
+    titleText.textContent = entry.title;
+    title.appendChild(titleText);
+    link.appendChild(title);
+
+    const subtitleText = resultSubtitle(entry);
+    if (subtitleText) {
+      const subtitle = document.createElement("div");
+      subtitle.className = "search-result-subtitle";
+      subtitle.textContent = subtitleText;
+      link.appendChild(subtitle);
+    }
+    results.appendChild(link);
+  }
+
+  function render() {
+    const query = normalize(input.value);
+    const terms = query.split(/\s+/).filter(Boolean);
+    const matches = terms.length
+      ? entries.filter((entry) => terms.every((term) => String(entry.tokens || "").includes(term)))
+      : entries.filter((entry) => entry.type === "election" || entry.type === "wahlkreis").slice(0, 12);
+
+    results.replaceChildren();
+    matches.slice(0, 60).forEach(appendResult);
+    const suffix = matches.length === 1 ? "Treffer" : "Treffer";
+    resultCount.textContent = `${matches.length.toLocaleString("de-DE")} ${suffix}`;
+    if (!matches.length) {
+      const empty = document.createElement("p");
+      empty.className = "muted";
+      empty.textContent = "Keine Treffer.";
+      results.appendChild(empty);
+    }
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    render();
+  });
+  input.addEventListener("input", render);
+
+  fetch("search.json")
+    .then((response) => response.json())
+    .then((payload) => {
+      entries = Array.isArray(payload.entries) ? payload.entries : [];
+      render();
+      input.focus({ preventScroll: true });
+    })
+    .catch(() => {
+      resultCount.textContent = "Suchindex nicht geladen";
+      results.replaceChildren();
+      const error = document.createElement("p");
+      error.className = "muted";
+      error.textContent = "Der Suchindex konnte nicht geladen werden.";
+      results.appendChild(error);
+    });
+})();
+</script>
+"""
+    body = (
+        "<div class='hero'><div class='topbar'><a href='index.html'>Startseite dieser Wahl</a><span>/</span>"
+        "<a href='../index.html'>Alle Wahlen</a></div>"
+        f"<h1>Suche: {html.escape(config.election_name)}</h1>"
+        "<p class='muted'>Gemeinde, Wahlkreis, AGS oder Wahlbezirk eingeben.</p>"
+        "<form class='search-form' data-search-form>"
+        "<input class='search-input' data-search-input type='search' autocomplete='off' "
+        "name='q' aria-label='Wahldaten durchsuchen' placeholder='z. B. Stuttgart, 8111000, Wahlkreis 01'>"
+        "<button class='search-button' type='submit'>Suchen</button>"
+        "</form>"
+        f"<div class='search-meta'>{counts_html}</div>"
+        "</div>"
+        "<div class='panel'><h2>Treffer</h2>"
+        "<p class='small' data-search-count>Suchindex wird geladen...</p>"
+        "<div class='search-results' data-search-results></div>"
+        "</div>"
+        f"{search_script}"
+    )
+    write_page(
+        output_root / "search.html",
+        f"Suche {config.election_name} | wahl-monitor.de",
+        body,
+        description=(
+            f"Schnellsuche für {config.election_name}: Wahlkreise, Gemeinden, AGS, "
+            "Wahlbezirke und Ergebnisseiten direkt öffnen."
+        ),
+        breadcrumbs=[
+            ("wahl-monitor.de", "/"),
+            (config.election_name, f"/{config.election_key}/"),
+            ("Suche", f"/{config.election_key}/search.html"),
+        ],
     )
 
 
@@ -2525,7 +2852,8 @@ def render_index_page(
     if config.statla_dummy_csv_url and config.kommone_base_url_template:
         operations.append(f"`python scripts/validate_dummy_statla_result.py --election-key {config.election_key}`")
     body = (
-        "<div class='hero'><div class='topbar'><a href='../index.html'>Alle Wahlen</a></div>"
+        "<div class='hero'><div class='topbar'><a href='search.html'>Suche</a><span>/</span>"
+        "<a href='../index.html'>Alle Wahlen</a></div>"
         f"<h1>{html.escape(config.election_name)} ({html.escape(config.election_key)})</h1>"
         "<p class='muted'>Statische Übersicht mit Drill-down von Wahlkreis zu Gemeinde und Wahlbezirk.</p>"
         f"<div class='stats'>"
@@ -2760,6 +3088,16 @@ def main() -> int:
     wahlkreis_pages: List[Tuple[str, str, str]] = []
     wahlkreis_link_by_wk: Dict[str, str] = {}
     entity_to_wahlkreis_filename: Dict[str, str] = {}
+    search_entries: List[Dict[str, Any]] = []
+    append_search_entry(
+        search_entries,
+        kind="election",
+        title=config.election_name,
+        href="index.html",
+        subtitle=config.election_key,
+        search_fields=[config.election_key, config.election_date],
+        sort_key="0",
+    )
 
     for entity in city_entities:
         slug = municipality_detail_slug(
@@ -2793,6 +3131,7 @@ def main() -> int:
         structure_section = render_wahlkreis_structure_panel(wahlkreis_features_by_wk.get(wk))
         body = (
             f"<div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
+            "<a href='../search.html'>Suche</a><span>/</span>"
             f"<a href='../../index.html'>Alle Wahlen</a></div><h1>{html.escape(wk.zfill(2))} - {html.escape(wk_name)}</h1>"
             f"<p class='muted'>Wahlergebnis im Wahlkreis {html.escape(wk.zfill(2))} {html.escape(wk_name)} "
             f"zur {html.escape(config.election_name)} mit Gemeinden, {html.escape(vote_type_label('Erststimmen'))} "
@@ -2854,6 +3193,7 @@ def main() -> int:
         body = (
             f"<div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
             f"<a href='../wahlkreis/{html.escape(wahlkreis_link)}'>Wahlkreis</a><span>/</span>"
+            "<a href='../search.html'>Suche</a><span>/</span>"
             "<a href='../../index.html'>Alle Wahlen</a></div>"
             f"<h1>{html.escape(name)}</h1><p class='muted'>Wahlergebnis für {html.escape(name)}{html.escape(wk_text)} "
             f"zur {html.escape(config.election_name)} mit Wahlbezirken, {html.escape(vote_type_label('Erststimmen'))} "
@@ -2885,6 +3225,23 @@ def main() -> int:
                 (config.election_name, f"/{config.election_key}/"),
                 (name, f"/{config.election_key}/municipality/{filename}"),
             ],
+        )
+        append_search_entry(
+            search_entries,
+            kind="municipality",
+            title=name,
+            href=f"municipality/{filename}",
+            subtitle=f"AGS {ags}" + (f" · Wahlkreis {wk.zfill(2)}" if wk else ""),
+            search_fields=[
+                ags,
+                wk,
+                f"Wahlkreis {wk.zfill(2)}" if wk else "",
+                entity.get("entity_key"),
+                entity.get("raw_row", {}).get("Gebietsnummer"),
+                entity.get("raw_row", {}).get("Gemeindename"),
+            ],
+            snapshot=municipality_row,
+            sort_key=f"{name} {ags}",
         )
 
         for booth in booth_rows:
@@ -2920,6 +3277,7 @@ def main() -> int:
             body = (
                 f"<div class='hero'><div class='topbar'><a href='../municipality/{html.escape(filename)}'>{html.escape(name)}</a>"
                 "<span>/</span><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
+                "<a href='../search.html'>Suche</a><span>/</span>"
                 "<a href='../../index.html'>Alle Wahlen</a></div>"
                 f"<h1>{html.escape(booth['display_name'])}</h1>"
                 f"<p class='muted'>Wahlergebnis für {html.escape(booth['display_name'])} in {html.escape(name)} "
@@ -2948,6 +3306,26 @@ def main() -> int:
                     (booth_name, f"/{config.election_key}/booth/{booth_filename}"),
                 ],
             )
+            append_search_entry(
+                search_entries,
+                kind="booth",
+                title=booth_name,
+                href=f"booth/{booth_filename}",
+                subtitle=f"{name} · AGS {ags}" + (f" · Wahlkreis {wk.zfill(2)}" if wk else ""),
+                search_fields=[
+                    name,
+                    ags,
+                    wk,
+                    booth.get("row_key"),
+                    booth.get("gebietsart"),
+                    raw_row.get("Gebietsnummer"),
+                    raw_row.get("Bezirksnummer"),
+                    raw_row.get("Gebietsname"),
+                    raw_row.get("Gemeindename"),
+                ],
+                snapshot=booth,
+                sort_key=f"{name} {booth_name}",
+            )
 
     wahlkreis_status_rows = core.compute_wahlkreis_status_rows(
         features=core.load_wahlkreis_features(),
@@ -2967,6 +3345,21 @@ def main() -> int:
         if zweit_winner:
             row["winner_party_zweit"] = zweit_winner.get("winner_party")
             row.update(zweit_winner)
+    wahlkreis_status_by_wk = {
+        str(row.get("wahlkreisnummer") or "").strip(): row
+        for row in wahlkreis_status_rows
+    }
+    for wk, wk_name, filename in wahlkreis_pages:
+        append_search_entry(
+            search_entries,
+            kind="wahlkreis",
+            title=f"{wk.zfill(2)} - {wk_name}",
+            href=f"wahlkreis/{filename}",
+            subtitle=f"Wahlkreis {wk.zfill(2)}",
+            search_fields=[wk, wk.zfill(2), f"Wahlkreis {wk.zfill(2)}", wk_name],
+            snapshot=wahlkreis_status_by_wk.get(wk),
+            sort_key=wk.zfill(2),
+        )
 
     render_index_page(
         config,
@@ -2984,6 +3377,7 @@ def main() -> int:
         party_row_details,
         latest_source_diffs,
     )
+    render_search_page(config, output_root, search_entries)
     render_site_root_index(site_root, config)
     write_crawl_files(site_root)
     print(f"Generated static site at {output_root}")

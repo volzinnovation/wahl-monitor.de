@@ -12,8 +12,11 @@ The repository is organized by election key in the form `<year>-<state>`, for ex
 
 - Overview: `https://wahl-monitor.de/`
 - Landtagswahl Baden-Württemberg 2026: `https://wahl-monitor.de/2026-bw/`
+- Search Baden-Württemberg 2026: `https://wahl-monitor.de/2026-bw/search.html`
 - Landtagswahl Rheinland-Pfalz 2026: `https://wahl-monitor.de/2026-rlp/`
+- Search Rheinland-Pfalz 2026: `https://wahl-monitor.de/2026-rlp/search.html`
 - Landtagswahl Sachsen-Anhalt 2026: `https://wahl-monitor.de/2026-lsa/`
+- Search Sachsen-Anhalt 2026: `https://wahl-monitor.de/2026-lsa/search.html`
 
 ## Available Elections
 
@@ -37,6 +40,7 @@ Current operational status:
 - `data/<election-key>/raw`: raw fetch payloads for local inspection
 - `data/<election-key>/history.sqlite`: local history cache, intentionally not committed
 - `site/<election-key>`: generated static pages for GitHub Pages
+- `site/<election-key>/search.html` and `search.json`: generated client-side search surface for Wahlkreise, Gemeinden, AGS, and Wahlbezirke
 - `site/index.html`: generated overview page for published elections
 - `.github/workflows/`: active manual or CI workflows
 - `.github/workflows-disabled/`: archived workflows, including old polling schedules
@@ -55,7 +59,7 @@ Current operational status:
 
 ### Static Site and Publishing
 
-- `scripts/generate_static_detail_pages.py`: main static-site generator for election overview, Wahlkreis, municipality, and booth pages
+- `scripts/generate_static_detail_pages.py`: main static-site generator for election overview, search, Wahlkreis, municipality, and booth pages
 - `scripts/render_readme_html.py`: renders `README.md` to HTML with project styling
 
 ### Election Setup and Metadata
@@ -153,14 +157,17 @@ Then open:
 
 - `http://localhost:8000/site/index.html`
 - `http://localhost:8000/site/2026-bw/index.html`
+- `http://localhost:8000/site/2026-bw/search.html`
 - `http://localhost:8000/site/2026-rlp/index.html`
+- `http://localhost:8000/site/2026-rlp/search.html`
 - `http://localhost:8000/site/2026-lsa/index.html`
+- `http://localhost:8000/site/2026-lsa/search.html`
 
 ## GitHub Pages Procedure
 
 1. Generate `site/` locally with `python3 scripts/generate_static_detail_pages.py --election-key <election-key>`.
-2. Inspect `site/<election-key>/index.html` locally.
-3. Trigger `.github/workflows/pages.yml` manually on GitHub to rebuild and deploy the static site.
+2. Inspect `site/<election-key>/index.html` and `site/<election-key>/search.html` locally.
+3. Trigger `.github/workflows/pages.yml` manually on GitHub to rebuild, validate generated search indexes, and deploy the static site.
 
 ## Adding Another Election
 

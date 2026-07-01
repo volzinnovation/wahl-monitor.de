@@ -21,12 +21,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
@@ -39,14 +39,39 @@ jobs:
           python scripts/generate_static_detail_pages.py --election-key 2026-rlp
           python scripts/generate_static_detail_pages.py --election-key 2026-lsa
 
+      - name: Verify generated search indexes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          for election_key in ("2026-bw", "2026-rlp", "2026-lsa"):
+              root = Path("site") / election_key
+              search_html = root / "search.html"
+              search_json = root / "search.json"
+              if not search_html.exists():
+                  raise SystemExit(f"Missing {search_html}")
+              payload = json.loads(search_json.read_text(encoding="utf-8"))
+              entries = payload.get("entries") or []
+              if payload.get("electionKey") != election_key:
+                  raise SystemExit(f"Unexpected electionKey in {search_json}")
+              if payload.get("entryCount") != len(entries):
+                  raise SystemExit(f"entryCount mismatch in {search_json}")
+              if not any(entry.get("type") == "election" for entry in entries):
+                  raise SystemExit(f"No election entry in {search_json}")
+              missing = [entry.get("href") for entry in entries if not (root / str(entry.get("href"))).exists()]
+              if missing:
+                  raise SystemExit(f"Broken search hrefs in {search_json}: {missing[:3]}")
+          PY
+
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
