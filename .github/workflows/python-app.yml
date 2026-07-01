@@ -30,8 +30,11 @@ jobs:
             scripts/poll_election.py \
             scripts/poll_election_core.py \
             scripts/generate_static_detail_pages.py \
+            scripts/election_status.py \
             scripts/rlp_seat_allocation.py \
             scripts/test_rlp_seat_allocation.py
+      - name: Print election artifact status
+        run: python scripts/election_status.py --format json
       - name: Run RLP seat allocation self-tests
         run: python scripts/test_rlp_seat_allocation.py
       - name: Run poller in limited mode

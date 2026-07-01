@@ -118,6 +118,13 @@ Validate the dummy dataset integration:
 python3 scripts/validate_dummy_statla_result.py --election-key 2026-bw
 ```
 
+Print a read-only artifact status snapshot:
+
+```bash
+python3 scripts/election_status.py
+python3 scripts/election_status.py --election-key 2026-bw --format json
+```
+
 Generate the static drill-down site:
 
 ```bash
