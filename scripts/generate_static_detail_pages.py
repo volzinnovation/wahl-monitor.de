@@ -23,6 +23,7 @@ import calculate_seats as bw_seats
 import poll_election_core as core
 import rlp_interim_seat_summary
 import rlp_wahlkreis_structure as wk_structure
+import scenario_page
 
 
 OUTPUT_ROOT = None
@@ -2088,6 +2089,7 @@ def write_page(
 
 SEARCH_TYPE_LABELS = {
     "election": "Wahl",
+    "scenario": "Szenario",
     "wahlkreis": "Wahlkreis",
     "municipality": "Gemeinde",
     "booth": "Wahlbezirk",
@@ -2095,9 +2097,10 @@ SEARCH_TYPE_LABELS = {
 
 SEARCH_TYPE_ORDER = {
     "election": 0,
-    "wahlkreis": 1,
-    "municipality": 2,
-    "booth": 3,
+    "scenario": 1,
+    "wahlkreis": 2,
+    "municipality": 3,
+    "booth": 4,
 }
 
 
@@ -2853,6 +2856,7 @@ def render_index_page(
         operations.append(f"`python scripts/validate_dummy_statla_result.py --election-key {config.election_key}`")
     body = (
         "<div class='hero'><div class='topbar'><a href='search.html'>Suche</a><span>/</span>"
+        "<a href='scenario.html'>Szenario</a><span>/</span>"
         "<a href='../index.html'>Alle Wahlen</a></div>"
         f"<h1>{html.escape(config.election_name)} ({html.escape(config.election_key)})</h1>"
         "<p class='muted'>Statische Übersicht mit Drill-down von Wahlkreis zu Gemeinde und Wahlbezirk.</p>"
@@ -2863,6 +2867,9 @@ def render_index_page(
         f"<div class='stat'><div class='stat-label'>Wahlkreise vollständig</div><div class='stat-value'>{wahlkreis_counts['complete']}</div></div>"
         "</div></div>"
         "<div class='grid'>"
+        "<div class='panel'><h2>Was-waere-wenn-Szenario</h2>"
+        "<p class='small'>Stimmenanteile verschieben, 5-Prozent-Schwelle pruefen und Koalitionsmehrheiten als teilbaren Link simulieren.</p>"
+        "<ul class='linklist'><li><a href='scenario.html'>Szenario oeffnen</a></li></ul></div>"
         "<div class='panel dashboard-map'><h2>Klickbare Wahlkreiskarte</h2>"
         "<p class='small'>Jeder Wahlkreis führt direkt zur Detailseite.</p>"
         f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk)}</div>"
@@ -3097,6 +3104,15 @@ def main() -> int:
         subtitle=config.election_key,
         search_fields=[config.election_key, config.election_date],
         sort_key="0",
+    )
+    append_search_entry(
+        search_entries,
+        kind="scenario",
+        title=f"Was-waere-wenn-Szenario {config.election_name}",
+        href="scenario.html",
+        subtitle="Swing-Rechner, Schwelle, Sitze und Koalitionen",
+        search_fields=["szenario", "simulation", "koalition", "sitze", "swing", config.election_key],
+        sort_key="0a",
     )
 
     for entity in city_entities:
@@ -3377,6 +3393,7 @@ def main() -> int:
         party_row_details,
         latest_source_diffs,
     )
+    scenario_page.render_scenario_page(config, output_root, write_page, WAHL_PARTY_COLORS)
     render_search_page(config, output_root, search_entries)
     render_site_root_index(site_root, config)
     write_crawl_files(site_root)

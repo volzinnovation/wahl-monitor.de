@@ -41,6 +41,7 @@ Current operational status:
 - `data/<election-key>/history.sqlite`: local history cache, intentionally not committed
 - `site/<election-key>`: generated static pages for GitHub Pages
 - `site/<election-key>/search.html` and `search.json`: generated client-side search surface for Wahlkreise, Gemeinden, AGS, and Wahlbezirke
+- `site/<election-key>/scenario.html` and `scenario-data.json`: generated what-if swing simulator with threshold, seat approximation, and coalition badges
 - `site/index.html`: generated overview page for published elections
 - `.github/workflows/`: active manual or CI workflows
 - `.github/workflows-disabled/`: archived workflows, including old polling schedules

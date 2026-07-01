@@ -30,6 +30,7 @@ jobs:
             scripts/poll_election.py \
             scripts/poll_election_core.py \
             scripts/generate_static_detail_pages.py \
+            scripts/scenario_page.py \
             scripts/election_status.py \
             scripts/rlp_seat_allocation.py \
             scripts/test_rlp_seat_allocation.py
