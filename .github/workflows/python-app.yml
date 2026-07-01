@@ -2,6 +2,12 @@ name: Election Poller Smoke Test
 
 on:
   workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "config/**"
+      - "scripts/**"
+      - ".github/workflows/python-app.yml"
   pull_request:
     branches: ["main"]
 
@@ -14,10 +20,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.11
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+      - name: Compile core scripts
+        run: |
+          python -m py_compile \
+            scripts/poll_election.py \
+            scripts/poll_election_core.py \
+            scripts/generate_static_detail_pages.py \
+            scripts/rlp_seat_allocation.py \
+            scripts/test_rlp_seat_allocation.py
+      - name: Run RLP seat allocation self-tests
+        run: python scripts/test_rlp_seat_allocation.py
       - name: Run poller in limited mode
         run: |
           python scripts/poll_election.py --election-key 2026-bw --force-run --use-dummy-statla --skip-kommone --limit-ags 50
