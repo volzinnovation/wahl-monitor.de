@@ -122,8 +122,8 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         "parties": baseline["parties"],
         "coalitions": coalition_presets(config.election_key),
         "notes": [
-            "Scenario seats use a proportional Sainte-Lague model with a 5 percent threshold.",
-            "Direct mandates, overhang seats, majority safeguards, and official tie decisions are not simulated here.",
+            "Die Sitzverteilung nutzt ein proportionales Sainte-Laguë-Modell mit 5-Prozent-Schwelle.",
+            "Direktmandate, Überhangmandate, Mehrheitssicherungen und amtliche Losentscheide werden hier nicht simuliert.",
         ],
     }
 
@@ -350,7 +350,7 @@ def scenario_script() -> str:
     });
     parties.sort((a, b) => b.seats - a.seats || b.adjustedShare - a.adjustedShare || a.party.localeCompare(b.party));
     const majority = Math.floor(payload.baseSeats / 2) + 1;
-    summary.textContent = `${payload.baseSeats} Sitze, Mehrheit ab ${majority}. Modell: 5%-Schwelle und Sainte-Lague.`;
+    summary.textContent = `${payload.baseSeats} Sitze, Mehrheit ab ${majority}. Modell: 5%-Schwelle und Sainte-Laguë.`;
 
     seatsRoot.replaceChildren();
     parties.filter((party) => party.seats > 0).forEach((party) => {
@@ -437,7 +437,7 @@ def scenario_script() -> str:
     .then((data) => {
       payload = data;
       if (!Array.isArray(payload.parties) || payload.parties.length === 0) {
-        summary.textContent = "Keine belastbare Baseline fuer ein Szenario vorhanden.";
+        summary.textContent = "Keine belastbaren Ausgangsdaten für ein Szenario vorhanden.";
         return;
       }
       buildControls();
@@ -464,46 +464,46 @@ def render_scenario_page(
         encoding="utf-8",
     )
     baseline_note = {
-        "current": "Baseline aus dem aktuellen landesweiten Ergebnis.",
-        "reference_2021": "Baseline aus der 2021-Referenz, weil noch keine positiven aktuellen Landesstimmen vorliegen.",
-        "none": "Noch keine Baseline-Daten vorhanden.",
-    }.get(str(payload["baselineMode"]), "Baseline aus den neuesten verfuegbaren Daten.")
+        "current": "Ausgangsdaten aus dem aktuellen landesweiten Ergebnis.",
+        "reference_2021": "Ausgangsdaten aus der 2021-Referenz, weil noch keine positiven aktuellen Landesstimmen vorliegen.",
+        "none": "Noch keine Ausgangsdaten vorhanden.",
+    }.get(str(payload["baselineMode"]), "Ausgangsdaten aus den neuesten verfügbaren Daten.")
     body = (
         f"{scenario_css()}"
         "<div class='hero'><div class='topbar'><a href='index.html'>Startseite dieser Wahl</a><span>/</span>"
         "<a href='search.html'>Suche</a><span>/</span><a href='../index.html'>Alle Wahlen</a></div>"
-        f"<h1>Was-waere-wenn: {html.escape(config.election_name)}</h1>"
-        f"<p class='muted'>Interaktiver Stimmen-Swing fuer {html.escape(str(payload['voteLabel']))}, "
-        "Schwelle, Sitznaeherung und Koalitionsmehrheiten.</p></div>"
+        f"<h1>Was-wäre-wenn: {html.escape(config.election_name)}</h1>"
+        f"<p class='muted'>Interaktive Stimmenverschiebung für {html.escape(str(payload['voteLabel']))}, "
+        "Schwelle, Sitznäherung und Koalitionsmehrheiten.</p></div>"
         "<div class='scenario-shell'>"
         f"<div class='scenario-alert'>{html.escape(baseline_note)} "
-        "Die Sitznaeherung ist ein transparentes Rechenmodell, kein amtliches Ergebnis.</div>"
+        "Die Sitznäherung ist ein transparentes Rechenmodell, kein amtliches Ergebnis.</div>"
         "<div class='scenario-workspace'>"
         "<div class='panel'><h2>Stimmen verschieben</h2>"
         "<div class='scenario-controls' data-scenario-controls></div>"
-        "<div class='scenario-actions'><button type='button' data-reset>Zuruecksetzen</button>"
+        "<div class='scenario-actions'><button type='button' data-reset>Zurücksetzen</button>"
         "<button class='secondary' type='button' data-copy>Link kopieren</button></div></div>"
-        "<div class='panel'><h2>Sitznaeherung</h2><p class='small' data-scenario-summary>Lade Szenario...</p>"
+        "<div class='panel'><h2>Sitznäherung</h2><p class='small' data-scenario-summary>Lade Szenario...</p>"
         "<div class='seat-bars' data-seat-bars></div></div>"
         "</div>"
         "<div class='panel'><h2>Koalitionsmehrheiten</h2><div class='coalition-grid' data-coalitions></div></div>"
         "<div class='panel scenario-table'><h2>Parteien im Szenario</h2>"
-        "<table><thead><tr><th>Partei</th><th>Baseline</th><th>Swing</th><th>Szenario</th><th>5 %</th><th>Sitze</th></tr></thead>"
+        "<table><thead><tr><th>Partei</th><th>Ausgangswert</th><th>Verschiebung</th><th>Szenario</th><th>5 %</th><th>Sitze</th></tr></thead>"
         "<tbody data-scenario-table></tbody></table></div>"
         "</div>"
         f"{scenario_script()}"
     )
     write_page(
         output_root / "scenario.html",
-        f"Was-waere-wenn-Szenario {config.election_name} | wahl-monitor.de",
+        f"Was-wäre-wenn-Szenario {config.election_name} | wahl-monitor.de",
         body,
         description=(
-            f"Interaktives Was-waere-wenn-Szenario zur {config.election_name}: "
-            "Stimmenanteile verschieben, 5-Prozent-Schwelle pruefen und Sitznaeherung vergleichen."
+            f"Interaktives Was-wäre-wenn-Szenario zur {config.election_name}: "
+            "Stimmenanteile verschieben, 5-Prozent-Schwelle prüfen und Sitznäherung vergleichen."
         ),
         breadcrumbs=[
             ("wahl-monitor.de", "/"),
             (config.election_name, f"/{config.election_key}/"),
-            ("Was-waere-wenn-Szenario", f"/{config.election_key}/scenario.html"),
+            ("Was-wäre-wenn-Szenario", f"/{config.election_key}/scenario.html"),
         ],
     )

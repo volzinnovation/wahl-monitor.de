@@ -2861,15 +2861,15 @@ def render_index_page(
         f"<h1>{html.escape(config.election_name)} ({html.escape(config.election_key)})</h1>"
         "<p class='muted'>Statische Übersicht mit Drill-down von Wahlkreis zu Gemeinde und Wahlbezirk.</p>"
         f"<div class='stats'>"
-        f"<div class='stat'><div class='stat-label'>Letzter Poll</div><div class='stat-value'>{html.escape(polled_at_local)}</div></div>"
+        f"<div class='stat'><div class='stat-label'>Letzte Abfrage</div><div class='stat-value'>{html.escape(polled_at_local)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Trackingstart</div><div class='stat-value'>{html.escape(tracking_start)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Gemeinden</div><div class='stat-value'>{len(municipality_link_by_ags):,}</div></div>"
         f"<div class='stat'><div class='stat-label'>Wahlkreise vollständig</div><div class='stat-value'>{wahlkreis_counts['complete']}</div></div>"
         "</div></div>"
         "<div class='grid'>"
-        "<div class='panel'><h2>Was-waere-wenn-Szenario</h2>"
-        "<p class='small'>Stimmenanteile verschieben, 5-Prozent-Schwelle pruefen und Koalitionsmehrheiten als teilbaren Link simulieren.</p>"
-        "<ul class='linklist'><li><a href='scenario.html'>Szenario oeffnen</a></li></ul></div>"
+        "<div class='panel'><h2>Was-wäre-wenn-Szenario</h2>"
+        "<p class='small'>Stimmenanteile verschieben, 5-Prozent-Schwelle prüfen und Koalitionsmehrheiten als teilbaren Link simulieren.</p>"
+        "<ul class='linklist'><li><a href='scenario.html'>Szenario öffnen</a></li></ul></div>"
         "<div class='panel dashboard-map'><h2>Klickbare Wahlkreiskarte</h2>"
         "<p class='small'>Jeder Wahlkreis führt direkt zur Detailseite.</p>"
         f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk)}</div>"
@@ -3108,9 +3108,9 @@ def main() -> int:
     append_search_entry(
         search_entries,
         kind="scenario",
-        title=f"Was-waere-wenn-Szenario {config.election_name}",
+        title=f"Was-wäre-wenn-Szenario {config.election_name}",
         href="scenario.html",
-        subtitle="Swing-Rechner, Schwelle, Sitze und Koalitionen",
+        subtitle="Stimmenverschiebung, Schwelle, Sitze und Koalitionen",
         search_fields=["szenario", "simulation", "koalition", "sitze", "swing", config.election_key],
         sort_key="0a",
     )
