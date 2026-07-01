@@ -1414,13 +1414,13 @@ def render_structure_profile_panel(
 
     return (
         "<div class='panel dashboard-map'><h2>Strukturprofil der Wahlkreise</h2>"
-        "<p class='small'>Ableitung aus Dichte, Altersstruktur, Bevoelkerungsdynamik, Kinderbetreuung, Branchenmix und Pendlersaldo. Die Karte bleibt klickbar und fuehrt zu den Wahlkreisdetailseiten.</p>"
+        "<p class='small'>Ableitung aus Dichte, Altersstruktur, Bevölkerungsdynamik, Kinderbetreuung, Branchenmix und Pendlersaldo. Die Karte bleibt klickbar und führt zu den Wahlkreisdetailseiten.</p>"
         f"{render_structure_profile_map(features, link_by_wk)}"
         f"<div class='structure-legend'>{''.join(legend_items)}</div>"
         "<div class='structure-highlights'>"
-        f"{render_leader_list('Hoechste Urbanitaet', 'urbanity_score')}"
-        f"{render_leader_list('Staerkste Wachstumsdynamik', 'growth_score')}"
-        f"{render_leader_list('Hoechster Alterungsdruck', 'aging_score')}"
+        f"{render_leader_list('Höchste Urbanität', 'urbanity_score')}"
+        f"{render_leader_list('Stärkste Wachstumsdynamik', 'growth_score')}"
+        f"{render_leader_list('Höchster Alterungsdruck', 'aging_score')}"
         "</div></div>"
     )
 
@@ -1435,11 +1435,11 @@ def render_wahlkreis_structure_panel(feature: Optional[Dict[str, Any]]) -> str:
     profile_color = STRUCTURE_PROFILE_COLORS.get(profile_key, "#cbd5e1")
     summary = str(props.get("structure_summary") or "")
     stat_specs = [
-        ("population_total", "Bevoelkerung"),
+        ("population_total", "Bevölkerung"),
         ("population_density_per_km2", "Dichte"),
         ("population_growth_2014_2024_percent", "Wachstum 2014-2024"),
         ("old_age_dependency_ratio", "Altenquotient"),
-        ("foreign_share_percent", "Auslaenderanteil"),
+        ("foreign_share_percent", "Ausländeranteil"),
         ("childcare_rate_u3_percent", "U3-Betreuung"),
     ]
     stat_cards: List[str] = []

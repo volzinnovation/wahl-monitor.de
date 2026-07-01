@@ -1,11 +1,9 @@
 {
-  "generated_at_utc": "2026-03-23T07:58:30.227694+00:00",
-  "kommone_municipalities_polled": 2300,
-  "official_source_error": null,
-  "official_source_status_code": 200,
-  "official_source_url": "https://rlp-ltw26.wahlen.23degrees.eu/assets/json/Wahlergebnisse_Landtagswahl_2026.csv",
-  "run_label": "2026-03-23-08-58-15",
-  "statla_error": "Official CSV URL did not return CSV content",
-  "statla_mode": "LIVE_JSON_23DEGREES",
-  "statla_url": "https://rlp-ltw26.wahlen.23degrees.eu/wk/0000000000000/overview"
+  "generated_at_utc": "2026-04-02T16:02:05.519594+00:00",
+  "generated_by": "scripts/build_rlp_zero_latest.py",
+  "run_label": "prep-zero-rlp",
+  "statla_mode": "PREP_ZERO",
+  "statla_url": "https://www.wahlen.rlp.de/landtagswahl/ergebnisse",
+  "statla_error": "",
+  "kommone_municipalities_polled": 0
 }

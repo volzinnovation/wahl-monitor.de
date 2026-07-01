@@ -245,11 +245,11 @@ def build_profile_summary(row: Mapping[str, Any]) -> str:
     if key == "urban_services":
         return (
             f"Dichte ({density} EW/km²), Dienstleistungsanteil ({services}) und Ausländeranteil "
-            f"({foreign_share}) liegen klar ueber dem Landesmittel."
+            f"({foreign_share}) liegen klar über dem Landesmittel."
         )
     if key == "growth_belt":
         return (
-            f"Bevoelkerung waechst ueberdurchschnittlich ({growth} seit 2014, {forecast} bis 2040) "
+            f"Bevölkerung wächst überdurchschnittlich ({growth} seit 2014, {forecast} bis 2040) "
             f"bei hohem U18-Anteil ({youth}) und solider U3-Betreuung ({childcare})."
         )
     if key == "industrial_space":
@@ -259,8 +259,8 @@ def build_profile_summary(row: Mapping[str, Any]) -> str:
         )
     if key == "aging_space":
         return (
-            f"Hoher Altenquotient ({aging}) und ueberdurchschnittlicher 80+-Anteil ({eighty_plus}) "
-            f"treffen auf verhaltene Bevoelkerungsdynamik."
+            f"Hoher Altenquotient ({aging}) und überdurchschnittlicher 80+-Anteil ({eighty_plus}) "
+            f"treffen auf verhaltene Bevölkerungsdynamik."
         )
     return ""
 
