@@ -7,10 +7,20 @@
   "official_sources": {
     "election_info_url": "https://wahlen.sachsen-anhalt.de/zu-den-wahlen/landtagswahl",
     "faq_url": "https://wahlen.sachsen-anhalt.de/zu-den-wahlen/landtagswahl/faqs-zur-landtagswahl-2026",
+    "statistical_election_page_url": "https://statistik.sachsen-anhalt.de/themen/gebiet-und-wahlen/wahlen/landtagswahl-2026",
+    "wahlkreise_overview_url": "https://statistik.sachsen-anhalt.de/themen/gebiet-und-wahlen/wahlen/landtagswahl-2026-2/uebersicht-wahlkreiseinteilung",
     "election_date_notice_pdf_url": "https://wahlen.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/MI/wahlen/PDF/2025_09_29_Bek_der_Landeswahlleiterin_nach___28_Abs_2_LWO.pdf",
     "wahlkreiseinteilung_pdf_url": "https://wahlen.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/MI/wahlen/PDF/2026_Wahlkreiseinteilung_fuer_Landtagswahlen_in_Sachsen_Anhalt.pdf",
     "wahlkreiskarte_pdf_url": "https://wahlen.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/MI/wahlen/PDF/2026_Landtagswahl_Wahlkreiskarte.pdf",
     "results_portal_root_url": "https://wahlergebnisse.sachsen-anhalt.de/",
+    "results_portal_url_2026": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/",
+    "results_presentation_land_url_2026": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/erg_land.html",
+    "results_downloads_url_2026": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads.html",
+    "wahlkreise_geojson_zip_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Wahlkreise/Wahlkreise_LTW_2026_geosjon-Datei.zip",
+    "wahlkreise_shp_zip_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Wahlkreise/Wahlkreise_LTW_2026.zip",
+    "wahlkreise_municipality_xlsx_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Wahlkreise/Landtagswahl_2026_-_Wahlkreise___Gemeinden.xlsx",
+    "comparable_results_xlsx_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Vergleichbare_Wahlergebnisse/15000_Tabelle.xlsx",
+    "comparable_seat_distribution_xlsx_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Vergleichbare_Wahlergebnisse/15_Vergleichbare_Wahlergebnisse_Sitzverteilung.xlsx",
     "historical_results_overview_url_2021": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/index.php",
     "historical_results_download_page_url_2021": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php"
   },
@@ -23,10 +33,20 @@
     "official_population_source_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Daten_und_Veroeffentlichungen/Veroeffentlichungen/Statistisches_Jahrbuch/6Z001_2025-A.pdf"
   },
   "research_status": {
-    "live_results_portal_confirmed": false,
+    "live_results_portal_confirmed": true,
+    "live_results_presentation_confirmed": true,
     "live_results_csv_confirmed": false,
-    "wahlkreis_geojson_confirmed": false,
-    "wahlkreis_mapping_confirmed": false,
-    "municipality_seed_complete": false
+    "empty_csv_downloads_expected_second_half_august": true,
+    "wahlkreis_geojson_confirmed": true,
+    "wahlkreis_shapefile_confirmed": true,
+    "wahlkreis_mapping_confirmed": true,
+    "municipality_seed_complete": true,
+    "split_municipality_assignments_complete": false
+  },
+  "derived_counts": {
+    "wahlkreis_count": 41,
+    "wahlkreis_municipality_relationship_count": 227,
+    "municipality_count": 218,
+    "split_municipality_count": 5
   }
 }

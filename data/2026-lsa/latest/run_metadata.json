@@ -1,11 +1,11 @@
 {
   "run_label": "initial-setup",
   "generated_at_utc": null,
-  "statla_mode": null,
-  "statla_url": "",
-  "statla_error": "Initial setup only. The official 2026 Sachsen-Anhalt live results endpoint is not confirmed yet.",
-  "official_source_url": "",
+  "statla_mode": "LIVE_PRESENTATION_CONFIGURED",
+  "statla_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/erg_land.html",
+  "statla_error": "Initial setup only. The official result presentation is configured; the portal says empty CSV downloads will be published in the second half of August.",
+  "official_source_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/erg_land.html",
   "official_source_status_code": null,
-  "official_source_error": "Initial setup only. No official source snapshot has been fetched yet.",
+  "official_source_error": "Initial setup only. No official results snapshot has been fetched yet.",
   "kommone_municipalities_polled": 0
 }

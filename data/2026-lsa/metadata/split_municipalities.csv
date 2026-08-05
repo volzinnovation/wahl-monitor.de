@@ -1,0 +1,6 @@
+ags,municipality_name,wahlkreis_count,wahlkreis_ids,assignment_detail,source
+15001000,"Dessau-Roßlau, Stadt",2,26|27,Municipality split across Wahlkreise 26 and 27; the workbook does not publish the city-part assignment.,official-statla-election-page
+15002000,"Halle (Saale), Stadt",4,35|36|37|38,Municipality split across Wahlkreise 35 to 38; the workbook does not publish the city-part assignment.,official-statla-election-page
+15003000,"Magdeburg, Landeshauptstadt",4,10|11|12|13,Municipality split across Wahlkreise 10 to 13; the workbook does not publish the city-part assignment.,official-statla-election-page
+15088205,"Leuna, Stadt",2,33|34,"Wahlkreis 33: city of Leuna without the districts Friedensdorf, Günthersdorf, Horburg-Maßlau, Kötzschlitz, Kötzschau, Kreypau, Rodden, Spergau, Zöschen, Zweimen. Wahlkreis 34: those districts.",official-statla-wahlkreise-gemeinden-xlsx
+15088295,Petersberg,2,29|34,Wahlkreis 29: municipality of Petersberg without the district Brachstedt. Wahlkreis 34: district Brachstedt.,official-statla-wahlkreise-gemeinden-xlsx

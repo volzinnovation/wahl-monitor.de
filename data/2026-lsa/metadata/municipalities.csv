@@ -1,1 +1,219 @@
-ags,municipality_name,source,fragment_count,wahlkreis_count,wahlkreis_ids
+ags,municipality_name,source
+15001000,"Dessau-Roßlau, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15002000,"Halle (Saale), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15003000,"Magdeburg, Landeshauptstadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15081026,"Apenburg-Winterfeld, Flecken",official-statla-2026-wahlkreise-gemeinden-xlsx
+15081030,"Arendsee (Altmark), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15081045,Beetzendorf,official-statla-2026-wahlkreise-gemeinden-xlsx
+15081095,Dähre,official-statla-2026-wahlkreise-gemeinden-xlsx
+15081105,"Diesdorf, Flecken",official-statla-2026-wahlkreise-gemeinden-xlsx
+15081135,"Gardelegen, Hansestadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15081225,Jübar,official-statla-2026-wahlkreise-gemeinden-xlsx
+15081240,"Kalbe (Milde), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15081280,"Klötze, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15081290,Kuhfelde,official-statla-2026-wahlkreise-gemeinden-xlsx
+15081440,Rohrberg,official-statla-2026-wahlkreise-gemeinden-xlsx
+15081455,"Salzwedel, Hansestadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15081545,Wallstawe,official-statla-2026-wahlkreise-gemeinden-xlsx
+15082005,"Aken (Elbe), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15082015,"Bitterfeld-Wolfen, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15082180,"Köthen (Anhalt), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15082241,Muldestausee,official-statla-2026-wahlkreise-gemeinden-xlsx
+15082256,Osternienburger Land,official-statla-2026-wahlkreise-gemeinden-xlsx
+15082301,"Raguhn-Jeßnitz, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15082340,"Sandersdorf-Brehna, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15082377,"Südliches Anhalt, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15082430,"Zerbst/Anhalt, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15082440,"Zörbig, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15083020,Altenhausen,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083025,Am Großen Bruch,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083030,Angern,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083035,Ausleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083040,Barleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083060,Beendorf,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083115,Bülstringen,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083120,Burgstall,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083125,Calvörde,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083130,Colbitz,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083190,Eilsleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083205,Erxleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083230,Flechtingen,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083245,"Gröningen, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15083270,"Haldensleben, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15083275,Harbke,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083298,Hohe Börde,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083320,Hötensleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083323,Ingersleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083355,"Kroppenstedt, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15083361,Loitsche-Heinrichsberg,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083390,Niedere Börde,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083411,"Oebisfelde-Weferlingen, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15083415,"Oschersleben (Bode), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15083440,Rogätz,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083485,Sommersdorf,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083490,Sülzetal,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083505,Ummendorf,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083515,Völpke,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083531,"Wanzleben-Börde, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15083535,Wefensleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083557,Westheide,official-statla-2026-wahlkreise-gemeinden-xlsx
+15083565,"Wolmirstedt, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15083580,Zielitz,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084012,An der Poststraße,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084013,Meineweh,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084015,"Bad Bibra, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084025,Balgstädt,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084115,Droyßig,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084125,"Eckartsberga, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084130,Elsteraue,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084132,Finne,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084133,Finneland,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084135,"Freyburg (Unstrut), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084150,Gleina,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084170,Goseck,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084207,Gutenborn,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084235,"Hohenmölsen, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084246,Kaiserpfalz,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084250,Karsdorf,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084275,Kretzschau,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084282,Lanitz-Hassel-Tal,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084285,"Laucha an der Unstrut, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084315,"Lützen, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084335,Mertendorf,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084341,Molauer Land,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084355,"Naumburg (Saale), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084360,"Nebra (Unstrut), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084375,"Osterfeld, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084442,Schnaudertal,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084445,Schönburg,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084470,"Stößen, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084490,"Teuchern, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084550,"Weißenfels, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15084560,Wethau,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084565,Wetterzeube,official-statla-2026-wahlkreise-gemeinden-xlsx
+15084590,"Zeitz, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085040,"Ballenstedt, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085055,"Blankenburg (Harz), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085090,Ditfurt,official-statla-2026-wahlkreise-gemeinden-xlsx
+15085110,"Falkenstein/Harz, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085125,Groß Quenstedt,official-statla-2026-wahlkreise-gemeinden-xlsx
+15085135,"Halberstadt, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085140,Harsleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15085145,"Harzgerode, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085160,Hedersleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15085185,Huy,official-statla-2026-wahlkreise-gemeinden-xlsx
+15085190,"Ilsenburg (Harz), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085227,Nordharz,official-statla-2026-wahlkreise-gemeinden-xlsx
+15085228,"Oberharz am Brocken, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085230,"Osterwieck, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085235,"Quedlinburg, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085285,"Schwanebeck, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085287,Selke-Aue,official-statla-2026-wahlkreise-gemeinden-xlsx
+15085330,"Thale, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085365,"Wegeleben, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15085370,"Wernigerode, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15086005,Biederitz,official-statla-2026-wahlkreise-gemeinden-xlsx
+15086015,"Burg, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15086035,Elbe-Parey,official-statla-2026-wahlkreise-gemeinden-xlsx
+15086040,"Genthin, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15086055,"Gommern, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15086080,"Jerichow, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15086140,"Möckern, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15086145,Möser,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087010,Ahlsdorf,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087015,"Allstedt, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15087031,"Arnstein, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15087045,Benndorf,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087055,Berga,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087070,Blankenheim,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087075,Bornstedt,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087101,Brücken-Hackpfüffel,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087125,Edersleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087130,"Eisleben, Lutherstadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15087165,"Gerbstedt, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15087205,Helbra,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087210,Hergisdorf,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087220,"Hettstedt, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15087250,"Kelbra (Kyffhäuser), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15087260,Klostermansfeld,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087275,"Mansfeld, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15087370,"Sangerhausen, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15087386,Seegebiet Mansfelder Land,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087412,Südharz,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087440,Wallhausen,official-statla-2026-wahlkreise-gemeinden-xlsx
+15087470,Wimmelburg,official-statla-2026-wahlkreise-gemeinden-xlsx
+15088020,"Bad Dürrenberg, Solestadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15088025,"Bad Lauchstädt, Goethestadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15088030,Barnstädt,official-statla-2026-wahlkreise-gemeinden-xlsx
+15088065,"Braunsbedra, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15088100,Farnstädt,official-statla-2026-wahlkreise-gemeinden-xlsx
+15088150,Kabelsketal,official-statla-2026-wahlkreise-gemeinden-xlsx
+15088195,"Landsberg, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15088205,"Leuna, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15088216,"Wettin-Löbejün, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15088220,"Merseburg, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15088235,"Mücheln (Geiseltal), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15088250,Nemsdorf-Göhrendorf,official-statla-2026-wahlkreise-gemeinden-xlsx
+15088265,Obhausen,official-statla-2026-wahlkreise-gemeinden-xlsx
+15088295,Petersberg,official-statla-2026-wahlkreise-gemeinden-xlsx
+15088305,"Querfurt, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15088319,Salzatal,official-statla-2026-wahlkreise-gemeinden-xlsx
+15088330,Schkopau,official-statla-2026-wahlkreise-gemeinden-xlsx
+15088340,"Schraplau, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15088355,Steigra,official-statla-2026-wahlkreise-gemeinden-xlsx
+15088365,Teutschenthal,official-statla-2026-wahlkreise-gemeinden-xlsx
+15089005,"Alsleben (Saale), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089015,"Aschersleben, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089026,"Barby, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089030,"Bernburg (Saale), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089041,Bördeaue,official-statla-2026-wahlkreise-gemeinden-xlsx
+15089042,Bördeland,official-statla-2026-wahlkreise-gemeinden-xlsx
+15089043,Börde-Hakel,official-statla-2026-wahlkreise-gemeinden-xlsx
+15089045,Borne,official-statla-2026-wahlkreise-gemeinden-xlsx
+15089055,"Calbe (Saale), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089075,"Egeln, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089130,Giersleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15089165,"Güsten, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089175,"Hecklingen, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089185,Ilberstedt,official-statla-2026-wahlkreise-gemeinden-xlsx
+15089195,"Könnern, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089235,"Nienburg (Saale), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089245,Plötzkau,official-statla-2026-wahlkreise-gemeinden-xlsx
+15089305,"Schönebeck (Elbe), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089307,"Seeland, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089310,"Staßfurt, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15089365,Wolmirsleben,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090003,Aland,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090007,Altmärkische Höhe,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090008,Altmärkische Wische,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090010,"Arneburg, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15090070,"Bismark (Altmark), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15090135,Eichstedt (Altmark),official-statla-2026-wahlkreise-gemeinden-xlsx
+15090180,Goldbeck,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090220,Hassel,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090225,"Havelberg, Hansestadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15090245,Hohenberg-Krusemark,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090270,Iden,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090285,Kamern,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090310,Klietz,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090415,"Osterburg (Altmark), Hansestadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15090435,Rochau,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090445,"Sandau (Elbe), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15090485,Schollene,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090500,Schönhausen (Elbe),official-statla-2026-wahlkreise-gemeinden-xlsx
+15090520,"Seehausen (Altmark), Hansestadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15090535,"Stendal, Hansestadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15090546,"Tangerhütte, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15090550,"Tangermünde, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15090610,"Werben (Elbe), Hansestadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15090631,Wust-Fischbeck,official-statla-2026-wahlkreise-gemeinden-xlsx
+15090635,Zehrental,official-statla-2026-wahlkreise-gemeinden-xlsx
+15091010,"Annaburg, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15091020,"Bad Schmiedeberg, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15091060,"Coswig (Anhalt), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15091110,"Gräfenhainichen, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15091145,"Jessen (Elster), Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15091160,"Kemberg, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15091241,"Oranienbaum-Wörlitz, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15091375,"Wittenberg, Lutherstadt",official-statla-2026-wahlkreise-gemeinden-xlsx
+15091391,"Zahna-Elster, Stadt",official-statla-2026-wahlkreise-gemeinden-xlsx

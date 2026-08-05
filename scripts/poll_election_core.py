@@ -36,7 +36,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, List, Optional, Tuple
 from urllib import error, request
-from urllib.parse import urlsplit
+from urllib.parse import urljoin, urlsplit
 
 try:
     import requests
@@ -153,6 +153,7 @@ class Config:
     kommone_base_url_template: str
     statla_live_csv_url: str
     statla_dummy_csv_url: str
+    statla_downloads_url: str
     wahlkreise_geojson_zip_url: str
     wahlkreise_shp_zip_url: str
     wahlkreise_mapping_csv_url: str
@@ -291,6 +292,7 @@ def load_config() -> Config:
         kommone_base_url_template=data["kommone_base_url_template"],
         statla_live_csv_url=data["statla_live_csv_url"],
         statla_dummy_csv_url=data["statla_dummy_csv_url"],
+        statla_downloads_url=data.get("statla_downloads_url", ""),
         wahlkreise_geojson_zip_url=data["wahlkreise_geojson_zip_url"],
         wahlkreise_shp_zip_url=data["wahlkreise_shp_zip_url"],
         wahlkreise_mapping_csv_url=data["wahlkreise_mapping_csv_url"],
@@ -2408,6 +2410,57 @@ def looks_like_statla_csv(text: str) -> bool:
     return False
 
 
+def discover_statla_csv_download(
+    config: Config,
+    timeout_seconds: int,
+) -> Tuple[Optional[HttpResult], Optional[str]]:
+    """Find the best available result CSV linked from the official downloads page."""
+    downloads_url = str(config.statla_downloads_url or "").strip()
+    if not downloads_url:
+        return None, "No official downloads page configured"
+
+    page_result = html_fetch_result(downloads_url, timeout_seconds)
+    if page_result.status_code != 200 or not page_result.content:
+        return None, page_result.error_message or f"Downloads page HTTP {page_result.status_code}"
+
+    page_text = decode_bytes(page_result.content)
+    hrefs = re.findall(r"href\s*=\s*[\"']([^\"']+)[\"']", page_text, flags=re.IGNORECASE)
+    csv_urls = []
+    for href in hrefs:
+        absolute_url = urljoin(downloads_url, html.unescape(href).strip())
+        if urlsplit(absolute_url).path.lower().endswith(".csv"):
+            if absolute_url not in csv_urls:
+                csv_urls.append(absolute_url)
+
+    if not csv_urls:
+        return None, "The official downloads page has not published a CSV link yet"
+
+    best_result: Optional[HttpResult] = None
+    best_score: Optional[Tuple[int, int, int, int]] = None
+    for csv_url in csv_urls:
+        result = statla_http_get(csv_url, timeout_seconds, show_progress=False)
+        if result.status_code != 200 or not result.content:
+            continue
+        csv_text = decode_bytes(result.content)
+        if not looks_like_statla_csv(csv_text):
+            continue
+        snapshots, _party_rows = parse_statla_csv_rows(csv_text)
+        shape = statla_snapshot_shape_stats(snapshots)
+        score = (
+            shape["wahlkreis_count"],
+            shape["ags_count"],
+            shape["row_count"],
+            len(result.content),
+        )
+        if best_score is None or score > best_score:
+            best_result = result
+            best_score = score
+
+    if best_result is None:
+        return None, "The downloads page listed no CSV matching the expected StatLA schema"
+    return best_result, None
+
+
 def rlp_portal_base_url(config: Config) -> str:
     parts = urlsplit(config.statla_live_csv_url)
     path = parts.path or ""
@@ -2793,6 +2846,24 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
     selected_mode = "LIVE"
     selected_url = config.statla_live_csv_url
     fallback_used = False
+    discovered_download: Optional[HttpResult] = None
+    download_discovery_error: Optional[str] = None
+
+    if (
+        not force_dummy
+        and live_result.status_code == 200
+        and live_result.content
+        and looks_like_html_document(decode_bytes(live_result.content))
+    ):
+        discovered_download, download_discovery_error = discover_statla_csv_download(
+            config,
+            timeout_seconds,
+        )
+        if discovered_download is not None:
+            selected_result = discovered_download
+            selected_mode = "LIVE_CSV_DOWNLOAD"
+            selected_url = discovered_download.url
+            cli_note(f"Using StatLA CSV discovered from downloads page: {discovered_download.url}")
 
     if force_dummy or live_result.status_code != 200 or not live_result.content:
         if config.statla_dummy_csv_url:
@@ -2832,6 +2903,17 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
                 "content_hash": sha256_bytes(selected_result.content) if selected_result.content else None,
                 "byte_count": len(selected_result.content),
                 "error_message": selected_result.error_message,
+            }
+        )
+    if discovered_download is not None:
+        fetches.append(
+            {
+                "source": "statla-download",
+                "url": discovered_download.url,
+                "status_code": discovered_download.status_code,
+                "content_hash": sha256_bytes(discovered_download.content) if discovered_download.content else None,
+                "byte_count": len(discovered_download.content),
+                "error_message": discovered_download.error_message,
             }
         )
 
@@ -2897,6 +2979,23 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
         }
 
     csv_text = decode_bytes(selected_result.content)
+    if looks_like_html_document(csv_text):
+        return {
+            "mode": "LIVE_HTML_ONLY",
+            "url": selected_url,
+            "status_code": selected_result.status_code,
+            "content_hash": sha256_bytes(selected_result.content),
+            "raw_csv": "",
+            "source_copy_text": decode_bytes(live_result.content) if live_result.content else "",
+            "source_copy_url": live_result.url,
+            "source_copy_status_code": live_result.status_code,
+            "source_copy_error": live_result.error_message,
+            "source_copy_hash": sha256_bytes(live_result.content) if live_result.content else None,
+            "snapshots": [],
+            "party_rows": [],
+            "fetches": fetches,
+            "error_message": download_discovery_error or "Official live source returned HTML instead of CSV data",
+        }
     if not looks_like_statla_csv(csv_text) and config.election_key == "2026-rlp":
         json_fallback = fetch_rlp_json_fallback(
             config,
@@ -3911,7 +4010,7 @@ def render_wahlkreis_svg(features: List[Dict[str, Any]], status_rows: List[Dict[
         "<g>"
         f"{''.join(legend_nodes)}"
         "</g>"
-        f"<text x='20' y='1245' font-size='11' fill='#374151'>Source: Statistik BW {html.escape(WAHLKREIS_GEOJSON_PATH.name)} geometry</text>"
+        f"<text x='20' y='1245' font-size='11' fill='#374151'>Source: official Wahlkreis geometry {html.escape(WAHLKREIS_GEOJSON_PATH.name)}</text>"
         "</svg>"
     )
     WAHLKREIS_STATUS_MAP_PATH.write_text(svg, encoding="utf-8")
@@ -4005,7 +4104,9 @@ def generate_readme(
     lines.append("## Data Sources")
     lines.append("")
     lines.append("- `komm.one` municipality result pages (current 2026 HTML structure, discovered recursively per county/wahlkreis)")
-    lines.append(f"- Statistik BW single CSV (current mode: **{statla_mode}**) at `{statla_url}`")
+    lines.append(f"- Official results source (current mode: **{statla_mode}**) at `{statla_url}`")
+    if config.statla_downloads_url:
+        lines.append(f"- Official results downloads page: `{config.statla_downloads_url}`")
     lines.append("")
     lines.append("## Operations")
     lines.append("")
@@ -4164,9 +4265,11 @@ def write_prestart_readme(config: Config) -> None:
     lines.append("## Data Sources (Planned)")
     lines.append("")
     lines.append("- `komm.one` municipality result pages (current 2026 HTML structure, discovered recursively per county/wahlkreis)")
-    lines.append(
-        f"- Statistik BW single CSV: `{config.statla_live_csv_url}` (fallback: `{config.statla_dummy_csv_url}`)"
-    )
+    lines.append(f"- Official results source: `{config.statla_live_csv_url}`")
+    if config.statla_downloads_url:
+        lines.append(f"- Official results downloads page: `{config.statla_downloads_url}`")
+    if config.statla_dummy_csv_url:
+        lines.append(f"- Official dummy CSV: `{config.statla_dummy_csv_url}`")
     lines.append(f"- Wahlkreis geometry (GeoJSON ZIP): `{config.wahlkreise_geojson_zip_url}`")
     lines.append(f"- Wahlkreis geometry (SHP ZIP): `{config.wahlkreise_shp_zip_url}`")
     lines.append("")

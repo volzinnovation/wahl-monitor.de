@@ -1,1 +1,228 @@
 Wahlkreisnummer;Wahlkreisname;Gemeindekennziffer;Gemeindename
+1;Salzwedel;15081026;Apenburg-Winterfeld, Flecken
+1;Salzwedel;15081030;Arendsee (Altmark), Stadt
+1;Salzwedel;15081045;Beetzendorf
+1;Salzwedel;15081095;Dähre
+1;Salzwedel;15081105;Diesdorf, Flecken
+1;Salzwedel;15081225;Jübar
+1;Salzwedel;15081290;Kuhfelde
+1;Salzwedel;15081440;Rohrberg
+1;Salzwedel;15081455;Salzwedel, Hansestadt
+1;Salzwedel;15081545;Wallstawe
+2;Gardelegen-Klötze;15081135;Gardelegen, Hansestadt
+2;Gardelegen-Klötze;15081240;Kalbe (Milde), Stadt
+2;Gardelegen-Klötze;15081280;Klötze, Stadt
+2;Gardelegen-Klötze;15083411;Oebisfelde-Weferlingen, Stadt
+3;Havelberg-Osterburg;15090003;Aland
+3;Havelberg-Osterburg;15090007;Altmärkische Höhe
+3;Havelberg-Osterburg;15090008;Altmärkische Wische
+3;Havelberg-Osterburg;15090010;Arneburg, Stadt
+3;Havelberg-Osterburg;15090135;Eichstedt (Altmark)
+3;Havelberg-Osterburg;15090180;Goldbeck
+3;Havelberg-Osterburg;15090220;Hassel
+3;Havelberg-Osterburg;15090225;Havelberg, Hansestadt
+3;Havelberg-Osterburg;15090245;Hohenberg-Krusemark
+3;Havelberg-Osterburg;15090270;Iden
+3;Havelberg-Osterburg;15090285;Kamern
+3;Havelberg-Osterburg;15090310;Klietz
+3;Havelberg-Osterburg;15090415;Osterburg (Altmark), Hansestadt
+3;Havelberg-Osterburg;15090435;Rochau
+3;Havelberg-Osterburg;15090445;Sandau (Elbe), Stadt
+3;Havelberg-Osterburg;15090485;Schollene
+3;Havelberg-Osterburg;15090500;Schönhausen (Elbe)
+3;Havelberg-Osterburg;15090520;Seehausen (Altmark), Hansestadt
+3;Havelberg-Osterburg;15090610;Werben (Elbe), Hansestadt
+3;Havelberg-Osterburg;15090631;Wust-Fischbeck
+3;Havelberg-Osterburg;15090635;Zehrental
+4;Stendal;15090070;Bismark (Altmark), Stadt
+4;Stendal;15090535;Stendal, Hansestadt
+5;Genthin;15086035;Elbe-Parey
+5;Genthin;15086040;Genthin, Stadt
+5;Genthin;15086080;Jerichow, Stadt
+5;Genthin;15090546;Tangerhütte, Stadt
+5;Genthin;15090550;Tangermünde, Stadt
+6;Burg;15086005;Biederitz
+6;Burg;15086015;Burg, Stadt
+6;Burg;15086140;Möckern, Stadt
+6;Burg;15086145;Möser
+7;Haldensleben;15083020;Altenhausen
+7;Haldensleben;15083060;Beendorf
+7;Haldensleben;15083115;Bülstringen
+7;Haldensleben;15083125;Calvörde
+7;Haldensleben;15083190;Eilsleben
+7;Haldensleben;15083205;Erxleben
+7;Haldensleben;15083230;Flechtingen
+7;Haldensleben;15083270;Haldensleben, Stadt
+7;Haldensleben;15083275;Harbke
+7;Haldensleben;15083320;Hötensleben
+7;Haldensleben;15083323;Ingersleben
+7;Haldensleben;15083390;Niedere Börde
+7;Haldensleben;15083485;Sommersdorf
+7;Haldensleben;15083505;Ummendorf
+7;Haldensleben;15083515;Völpke
+7;Haldensleben;15083535;Wefensleben
+8;Wolmirstedt;15083030;Angern
+8;Wolmirstedt;15083040;Barleben
+8;Wolmirstedt;15083120;Burgstall
+8;Wolmirstedt;15083130;Colbitz
+8;Wolmirstedt;15083298;Hohe Börde
+8;Wolmirstedt;15083361;Loitsche-Heinrichsberg
+8;Wolmirstedt;15083440;Rogätz
+8;Wolmirstedt;15083557;Westheide
+8;Wolmirstedt;15083565;Wolmirstedt, Stadt
+8;Wolmirstedt;15083580;Zielitz
+9;Oschersleben-Wanzleben;15083025;Am Großen Bruch
+9;Oschersleben-Wanzleben;15083035;Ausleben
+9;Oschersleben-Wanzleben;15083245;Gröningen, Stadt
+9;Oschersleben-Wanzleben;15083355;Kroppenstedt, Stadt
+9;Oschersleben-Wanzleben;15083415;Oschersleben (Bode), Stadt
+9;Oschersleben-Wanzleben;15083490;Sülzetal
+9;Oschersleben-Wanzleben;15083531;Wanzleben-Börde, Stadt
+10;Magdeburg I;15003000;Magdeburg, Landeshauptstadt
+11;Magdeburg II;15003000;Magdeburg, Landeshauptstadt
+12;Magdeburg III;15003000;Magdeburg, Landeshauptstadt
+13;Magdeburg IV;15003000;Magdeburg, Landeshauptstadt
+14;Halberstadt;15085125;Groß Quenstedt
+14;Halberstadt;15085135;Halberstadt, Stadt
+14;Halberstadt;15085185;Huy
+14;Halberstadt;15085285;Schwanebeck, Stadt
+15;Blankenburg;15085055;Blankenburg (Harz), Stadt
+15;Blankenburg;15085190;Ilsenburg (Harz), Stadt
+15;Blankenburg;15085227;Nordharz
+15;Blankenburg;15085230;Osterwieck, Stadt
+16;Wernigerode;15085145;Harzgerode, Stadt
+16;Wernigerode;15085228;Oberharz am Brocken, Stadt
+16;Wernigerode;15085370;Wernigerode, Stadt
+17;Quedlinburg;15085040;Ballenstedt, Stadt
+17;Quedlinburg;15085090;Ditfurt
+17;Quedlinburg;15085140;Harsleben
+17;Quedlinburg;15085160;Hedersleben
+17;Quedlinburg;15085235;Quedlinburg, Stadt
+17;Quedlinburg;15085287;Selke-Aue
+17;Quedlinburg;15085330;Thale, Stadt
+17;Quedlinburg;15085365;Wegeleben, Stadt
+18;Aschersleben;15085110;Falkenstein/Harz, Stadt
+18;Aschersleben;15087031;Arnstein, Stadt
+18;Aschersleben;15089015;Aschersleben, Stadt
+18;Aschersleben;15089307;Seeland, Stadt
+19;Staßfurt;15089041;Bördeaue
+19;Staßfurt;15089043;Börde-Hakel
+19;Staßfurt;15089045;Borne
+19;Staßfurt;15089075;Egeln, Stadt
+19;Staßfurt;15089175;Hecklingen, Stadt
+19;Staßfurt;15089310;Staßfurt, Stadt
+19;Staßfurt;15089365;Wolmirsleben
+20;Schönebeck;15089026;Barby, Stadt
+20;Schönebeck;15089042;Bördeland
+20;Schönebeck;15089055;Calbe (Saale), Stadt
+20;Schönebeck;15089305;Schönebeck (Elbe), Stadt
+21;Bernburg;15089005;Alsleben (Saale), Stadt
+21;Bernburg;15089030;Bernburg (Saale), Stadt
+21;Bernburg;15089130;Giersleben
+21;Bernburg;15089165;Güsten, Stadt
+21;Bernburg;15089185;Ilberstedt
+21;Bernburg;15089195;Könnern, Stadt
+21;Bernburg;15089235;Nienburg (Saale), Stadt
+21;Bernburg;15089245;Plötzkau
+22;Köthen;15082180;Köthen (Anhalt), Stadt
+22;Köthen;15082241;Muldestausee
+22;Köthen;15082301;Raguhn-Jeßnitz, Stadt
+22;Köthen;15082377;Südliches Anhalt, Stadt
+23;Zerbst;15082005;Aken (Elbe), Stadt
+23;Zerbst;15082256;Osternienburger Land
+23;Zerbst;15082430;Zerbst/Anhalt, Stadt
+23;Zerbst;15086055;Gommern, Stadt
+24;Wittenberg;15091375;Wittenberg, Lutherstadt
+24;Wittenberg;15091391;Zahna-Elster, Stadt
+25;Jessen;15091010;Annaburg, Stadt
+25;Jessen;15091020;Bad Schmiedeberg, Stadt
+25;Jessen;15091110;Gräfenhainichen, Stadt
+25;Jessen;15091145;Jessen (Elster), Stadt
+25;Jessen;15091160;Kemberg, Stadt
+26;Dessau-Roßlau;15001000;Dessau-Roßlau, Stadt
+27;Dessau-Roßlau-Wittenberg;15001000;Dessau-Roßlau, Stadt
+27;Dessau-Roßlau-Wittenberg;15091060;Coswig (Anhalt), Stadt
+27;Dessau-Roßlau-Wittenberg;15091241;Oranienbaum-Wörlitz, Stadt
+28;Bitterfeld-Wolfen;15082015;Bitterfeld-Wolfen, Stadt
+28;Bitterfeld-Wolfen;15082340;Sandersdorf-Brehna, Stadt
+28;Bitterfeld-Wolfen;15082440;Zörbig, Stadt
+29;Saalekreis;15087386;Seegebiet Mansfelder Land
+29;Saalekreis;15088216;Wettin-Löbejün, Stadt
+29;Saalekreis;15088295;Petersberg
+29;Saalekreis;15088319;Salzatal
+29;Saalekreis;15088365;Teutschenthal
+30;Eisleben;15087010;Ahlsdorf
+30;Eisleben;15087045;Benndorf
+30;Eisleben;15087070;Blankenheim
+30;Eisleben;15087075;Bornstedt
+30;Eisleben;15087130;Eisleben, Lutherstadt
+30;Eisleben;15087165;Gerbstedt, Stadt
+30;Eisleben;15087205;Helbra
+30;Eisleben;15087210;Hergisdorf
+30;Eisleben;15087220;Hettstedt, Stadt
+30;Eisleben;15087260;Klostermansfeld
+30;Eisleben;15087470;Wimmelburg
+31;Sangerhausen;15087055;Berga
+31;Sangerhausen;15087101;Brücken-Hackpfüffel
+31;Sangerhausen;15087125;Edersleben
+31;Sangerhausen;15087250;Kelbra (Kyffhäuser), Stadt
+31;Sangerhausen;15087275;Mansfeld, Stadt
+31;Sangerhausen;15087370;Sangerhausen, Stadt
+31;Sangerhausen;15087412;Südharz
+31;Sangerhausen;15087440;Wallhausen
+32;Querfurt;15084012;An der Poststraße
+32;Querfurt;15084015;Bad Bibra, Stadt
+32;Querfurt;15084125;Eckartsberga, Stadt
+32;Querfurt;15084132;Finne
+32;Querfurt;15084133;Finneland
+32;Querfurt;15084246;Kaiserpfalz
+32;Querfurt;15084282;Lanitz-Hassel-Tal
+32;Querfurt;15087015;Allstedt, Stadt
+32;Querfurt;15088025;Bad Lauchstädt, Goethestadt
+32;Querfurt;15088030;Barnstädt
+32;Querfurt;15088100;Farnstädt
+32;Querfurt;15088235;Mücheln (Geiseltal), Stadt
+32;Querfurt;15088250;Nemsdorf-Göhrendorf
+32;Querfurt;15088265;Obhausen
+32;Querfurt;15088305;Querfurt, Stadt
+32;Querfurt;15088340;Schraplau, Stadt
+32;Querfurt;15088355;Steigra
+33;Merseburg;15088065;Braunsbedra, Stadt
+33;Merseburg;15088205;Leuna, Stadt
+33;Merseburg;15088220;Merseburg, Stadt
+34;Bad Dürrenberg-Saalekreis;15088020;Bad Dürrenberg, Solestadt
+34;Bad Dürrenberg-Saalekreis;15088150;Kabelsketal
+34;Bad Dürrenberg-Saalekreis;15088195;Landsberg, Stadt
+34;Bad Dürrenberg-Saalekreis;15088205;Leuna, Stadt
+34;Bad Dürrenberg-Saalekreis;15088295;Petersberg
+34;Bad Dürrenberg-Saalekreis;15088330;Schkopau
+35;Halle I;15002000;Halle (Saale), Stadt
+36;Halle II;15002000;Halle (Saale), Stadt
+37;Halle III;15002000;Halle (Saale), Stadt
+38;Halle IV;15002000;Halle (Saale), Stadt
+39;Weißenfels;15084315;Lützen, Stadt
+39;Weißenfels;15084490;Teuchern, Stadt
+39;Weißenfels;15084550;Weißenfels, Stadt
+40;Naumburg;15084013;Meineweh
+40;Naumburg;15084025;Balgstädt
+40;Naumburg;15084135;Freyburg (Unstrut), Stadt
+40;Naumburg;15084150;Gleina
+40;Naumburg;15084170;Goseck
+40;Naumburg;15084250;Karsdorf
+40;Naumburg;15084285;Laucha an der Unstrut, Stadt
+40;Naumburg;15084335;Mertendorf
+40;Naumburg;15084341;Molauer Land
+40;Naumburg;15084355;Naumburg (Saale), Stadt
+40;Naumburg;15084360;Nebra (Unstrut), Stadt
+40;Naumburg;15084375;Osterfeld, Stadt
+40;Naumburg;15084445;Schönburg
+40;Naumburg;15084470;Stößen, Stadt
+40;Naumburg;15084560;Wethau
+41;Zeitz;15084115;Droyßig
+41;Zeitz;15084130;Elsteraue
+41;Zeitz;15084207;Gutenborn
+41;Zeitz;15084235;Hohenmölsen, Stadt
+41;Zeitz;15084275;Kretzschau
+41;Zeitz;15084442;Schnaudertal
+41;Zeitz;15084565;Wetterzeube
+41;Zeitz;15084590;Zeitz, Stadt
