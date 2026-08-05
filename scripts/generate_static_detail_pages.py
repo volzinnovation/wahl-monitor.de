@@ -1874,6 +1874,9 @@ def render_page(
     /* ── Grid & Panels ── */
     .grid {{ display: grid; gap: 20px; }}
     .reference-columns {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; align-items: start; }}
+    .reference-columns > div {{ min-width: 0; overflow: hidden; }}
+    .reference-columns table {{ min-width: 0; table-layout: fixed; }}
+    .reference-columns th:first-child, .reference-columns td:first-child {{ position: static; background: transparent; z-index: auto; }}
     .reference-columns h3 {{ color: var(--accent); font-size: 14px; margin: 8px 0 10px; }}
     .panel {{
       background: var(--panel);
