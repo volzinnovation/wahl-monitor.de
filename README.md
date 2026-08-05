@@ -37,6 +37,7 @@ Current operational status:
 - `data/<election-key>/metadata`: static inputs such as municipality mappings, dummy CSVs, geometry, and cached structure data
 - `data/<election-key>/latest`: latest normalized exports committed to git
 - `data/<election-key>/reports`: derived reports, charts, and event summaries
+- `data/<election-key>/reference`: normalized historical reference data used before live results exist
 - `data/<election-key>/raw`: raw fetch payloads for local inspection
 - `data/<election-key>/history.sqlite`: local history cache, intentionally not committed
 - `site/<election-key>`: generated static pages for GitHub Pages
@@ -61,6 +62,7 @@ Current operational status:
 ### Static Site and Publishing
 
 - `scripts/generate_static_detail_pages.py`: main static-site generator for election overview, search, Wahlkreis, municipality, and booth pages
+- `scripts/prepare_lsa_2021_reference.py`: normalizes the official Sachsen-Anhalt 2021 result downloads for the 2026 reference view
 - `scripts/render_readme_html.py`: renders `README.md` to HTML with project styling
 
 ### Election Setup and Metadata

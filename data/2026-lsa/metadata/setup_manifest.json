@@ -22,7 +22,20 @@
     "comparable_results_xlsx_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Vergleichbare_Wahlergebnisse/15000_Tabelle.xlsx",
     "comparable_seat_distribution_xlsx_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Vergleichbare_Wahlergebnisse/15_Vergleichbare_Wahlergebnisse_Sitzverteilung.xlsx",
     "historical_results_overview_url_2021": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/index.php",
-    "historical_results_download_page_url_2021": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php"
+    "historical_results_download_page_url_2021": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php",
+    "historical_results_land_wahlkreise_csv_url_2021": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/erg/csv/lt21dat1.csv",
+    "historical_results_municipalities_csv_url_2021": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/erg/csv/lt21dat2.csv",
+    "historical_results_seat_distribution_csv_url_2021": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/sitz/sitzverteilung.csv"
+  },
+  "reference_2021": {
+    "prepared_directory": "data/2026-lsa/reference/2021",
+    "areas_csv": "data/2026-lsa/reference/2021/areas.csv",
+    "party_results_csv": "data/2026-lsa/reference/2021/party_results.csv",
+    "wahlkreis_summary_csv": "data/2026-lsa/reference/2021/wahlkreis_summary.csv",
+    "seat_distribution_csv": "data/2026-lsa/reference/2021/seats.csv",
+    "wahlkreis_count": 41,
+    "municipality_count": 218,
+    "note": "The 2021 result is shown as a reference; the landing-page map uses the 2026 Wahlkreis geometry and colors each district by its 2021 second-vote winner."
   },
   "population_reference": {
     "estimated_population_2025": 2120100,

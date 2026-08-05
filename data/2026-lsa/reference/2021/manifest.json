@@ -1,0 +1,24 @@
+{
+  "election": "Landtagswahl Sachsen-Anhalt 2021",
+  "election_date": "2021-06-06",
+  "sources": {
+    "land_and_wahlkreise": {
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/erg/csv/lt21dat1.csv",
+      "sha256": "a2904509e0f48d79534d0afc65359a9c1294e26ebfce564d82b43882d2b8281c"
+    },
+    "municipalities": {
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/erg/csv/lt21dat2.csv",
+      "sha256": "62854fd4413f326284298fbeb491d86d107c41e3b77ecda5650d4aa8a2509663"
+    },
+    "seat_distribution": {
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/sitz/sitzverteilung.csv",
+      "sha256": "5d8b59d9c07dab9f2036906c9d3fbbd5fe943a66508bef0b97cf2bfd64806b65"
+    }
+  },
+  "counts": {
+    "land_and_wahlkreis_rows": 56,
+    "municipality_rows": 218,
+    "party_result_rows": 10960,
+    "wahlkreis_summary_rows": 41
+  }
+}

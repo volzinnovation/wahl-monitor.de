@@ -22,12 +22,17 @@ Last checked: `2026-08-05`.
 - The downloads page currently states that empty files will be provided from the second half of August; it will publish interim results on election day and the preliminary result overnight.
 - Verified historical 2021 results portal: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/index.php>
 - Verified historical 2021 download page: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php>
+- Official 2021 land and Wahlkreis final results CSV: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/erg/csv/lt21dat1.csv>
+- Official 2021 municipality final results CSV: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/erg/csv/lt21dat2.csv>
+- Official 2021 seat distribution CSV: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/sitz/sitzverteilung.csv>
 
 ## Confirmed setup inputs
 - The statistical office publishes 41 Wahlkreis geometries in both GeoJSON and ESRI Shapefile ZIPs.
 - The municipality assignment workbook contains 227 Wahlkreis–municipality relationships covering 218 unique AGS.
 - The local derived files are `wahlkreise.geojson`, `wahlkreis-mapping.csv`, and `municipalities.csv`.
 - The five split municipalities are recorded separately in `split_municipalities.csv`. The official page identifies the split municipality and Wahlkreis ranges; the workbook gives the exact district-level split only for Leuna and Petersberg.
+- The normalized 2021 reference tables are in `data/2026-lsa/reference/2021/`. They cover the land, 14 districts, 41 Wahlkreise, and 218 municipalities, with long party-result rows and a compact Wahlkreis winner table.
+- The 2026 landing-page map uses the official 2026 Wahlkreis geometry and colors each district by the 2021 official Zweitstimmen winner until 2026 results arrive.
 
 ## Population Reference
 - Latest available official estimate used for preparation: `2,120,100` inhabitants on `2025-12-31`.

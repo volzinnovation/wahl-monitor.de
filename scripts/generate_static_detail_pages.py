@@ -467,6 +467,160 @@ def load_latest_party_rows() -> List[Dict[str, Any]]:
     return normalized
 
 
+def load_seed_municipalities() -> Dict[str, str]:
+    """Load official municipality names so pre-election pages have drill-down links."""
+    path = core.META_DIR / "municipalities.csv"
+    rows = read_csv_rows(path)
+    return {
+        str(row.get("ags") or "").strip(): str(row.get("municipality_name") or "").strip()
+        for row in rows
+        if str(row.get("ags") or "").strip()
+    }
+
+
+def reference_2021_dir(config: core.Config) -> Path:
+    return core.ROOT / "data" / config.election_key / "reference" / "2021"
+
+
+def load_lsa_reference_2021(config: core.Config) -> Dict[str, Any]:
+    """Load the normalized official 2021 Sachsen-Anhalt reference tables."""
+    reference_dir = reference_2021_dir(config)
+    if not reference_dir.exists():
+        return {}
+
+    areas = read_csv_rows(reference_dir / "areas.csv")
+    party_rows = read_csv_rows(reference_dir / "party_results.csv")
+    wahlkreis_rows = read_csv_rows(reference_dir / "wahlkreis_summary.csv")
+    seats = read_csv_rows(reference_dir / "seats.csv")
+    land_area = next((row for row in areas if row.get("area_level") == "LAND"), {})
+
+    state_parties: Dict[str, Dict[str, Any]] = {}
+    for row in party_rows:
+        if row.get("area_level") != "LAND" or row.get("vote_type") != "Zweitstimmen":
+            continue
+        party = core.canonical_party_name(str(row.get("party_name") or ""), "Zweitstimmen")
+        if not party:
+            continue
+        bucket = state_parties.setdefault(
+            party,
+            {
+                "party": party,
+                "votes": 0,
+                "valid_votes": core.parse_int(row.get("valid_votes")) or 0,
+            },
+        )
+        bucket["votes"] += core.parse_int(row.get("votes")) or 0
+        bucket["valid_votes"] = core.parse_int(row.get("valid_votes")) or bucket["valid_votes"]
+    state_party_rows = []
+    for row in state_parties.values():
+        valid_votes = int(row["valid_votes"] or 0)
+        votes = int(row["votes"] or 0)
+        state_party_rows.append(
+            {
+                **row,
+                "share_percent": (votes / valid_votes) * 100.0 if valid_votes else 0.0,
+            }
+        )
+    state_party_rows.sort(key=lambda row: (-int(row["votes"]), str(row["party"])))
+
+    winners: Dict[str, Dict[str, Any]] = {}
+    for row in wahlkreis_rows:
+        wk = core.normalize_wahlkreis_nummer(row.get("wahlkreisnummer"))
+        if wk:
+            winners[wk] = {
+                "winner_party": core.canonical_party_name(str(row.get("winner_second") or ""), "Zweitstimmen"),
+                "winner_votes": core.parse_int(row.get("winner_second_votes")) or 0,
+                "winner_total_votes": core.parse_int(row.get("valid_second_votes")) or 0,
+                "winner_share_percent": parse_float(row.get("winner_second_share_percent")) or 0.0,
+            }
+
+    return {
+        "areas": areas,
+        "party_rows": party_rows,
+        "state_party_rows": state_party_rows,
+        "wahlkreis_rows": wahlkreis_rows,
+        "winners": winners,
+        "seats": seats,
+        "land_area": land_area,
+        "source_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php",
+    }
+
+
+def render_reference_2021_panel(reference: Dict[str, Any]) -> str:
+    if not reference:
+        return ""
+    land = reference.get("land_area") or {}
+    valid_second = core.parse_int(land.get("valid_second_votes")) or 0
+    turnout = ""
+    eligible = core.parse_int(land.get("eligible_voters")) or 0
+    voters = core.parse_int(land.get("voters")) or 0
+    if eligible:
+        turnout = f"{(voters / eligible) * 100.0:.1f} %"
+
+    metric_cells = "".join(
+        f"<div class='stat'><div class='stat-label'>{html.escape(label)}</div><div class='stat-value'>{html.escape(value)}</div></div>"
+        for label, value in (
+            ("Wahlberechtigte", format_decimal(eligible, 0)),
+            ("Wähler", format_decimal(voters, 0)),
+            ("Wahlbeteiligung", turnout or "-"),
+            ("Gültige Zweitstimmen", format_decimal(valid_second, 0)),
+        )
+    )
+    party_rows = []
+    for row in (reference.get("state_party_rows") or [])[:10]:
+        party_rows.append(
+            "<tr>"
+            f"<td><span class='party-chip'><span class='party-dot' style='background:{WAHL_PARTY_COLORS.get(row['party'], '#94a3b8')}'></span>{html.escape(str(row['party']))}</span></td>"
+            f"<td>{format_decimal(row['votes'], 0)}</td>"
+            f"<td>{float(row['share_percent']):.2f} %</td>"
+            "</tr>"
+        )
+    seat_rows = []
+    for row in reference.get("seats") or []:
+        if not str(row.get("Partei") or "").strip() or str(row.get("Partei") or "").strip() == "Insgesamt":
+            continue
+        party = core.canonical_party_name(str(row.get("Partei") or ""))
+        seat_rows.append(
+            "<tr>"
+            f"<td><span class='party-chip'><span class='party-dot' style='background:{WAHL_PARTY_COLORS.get(party, '#94a3b8')}'></span>{html.escape(party)}</span></td>"
+            f"<td>{html.escape(str(row.get('Sitze gesamt') or ''))}</td>"
+            f"<td>{html.escape(str(row.get('Kreiswahlvorschlaege') or ''))}</td>"
+            f"<td>{html.escape(str(row.get('Landeswahlvorschlaege') or ''))}</td>"
+            "</tr>"
+        )
+    return (
+        "<div class='panel'><h2>2021 als Referenz</h2>"
+        "<p class='small'>Amtliches Endergebnis der Landtagswahl vom 6. Juni 2021. Die Referenzwerte sind separat gespeichert und bleiben sichtbar, solange noch keine 2026-Ergebnisse vorliegen.</p>"
+        f"<div class='stats'>{metric_cells}</div>"
+        "<div class='reference-columns'>"
+        "<div><h3>Landesweite Zweitstimmen</h3>"
+        "<table class='compact'><thead><tr><th>Partei</th><th>Stimmen</th><th>Anteil</th></tr></thead>"
+        f"<tbody>{''.join(party_rows)}</tbody></table></div>"
+        "<div><h3>Sitzverteilung 2021</h3>"
+        "<table class='compact'><thead><tr><th>Partei</th><th>Sitze</th><th>Direkt</th><th>Liste</th></tr></thead>"
+        f"<tbody>{''.join(seat_rows)}</tbody></table></div>"
+        "</div>"
+        "<p class='small'>Quelle: <a href='https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php'>offizielle Downloads der Landtagswahl 2021</a>. Die Karte darüber nutzt die Wahlkreiseinteilung 2026 und färbt sie nach dem Zweitstimmen-Sieger von 2021.</p>"
+        "</div>"
+    )
+
+
+def render_reference_map_legend(reference: Dict[str, Any]) -> str:
+    counts: Dict[str, int] = defaultdict(int)
+    for winner in (reference.get("winners") or {}).values():
+        party = core.canonical_party_name(str(winner.get("winner_party") or ""), "Zweitstimmen")
+        if party:
+            counts[party] += 1
+    if not counts:
+        return ""
+    items = []
+    for party, count in sorted(counts.items(), key=lambda item: (-item[1], item[0])):
+        items.append(
+            f"<span class='party-chip'><span class='party-dot' style='background:{WAHL_PARTY_COLORS.get(party, '#94a3b8')}'></span>{html.escape(party)}: {count}</span>"
+        )
+    return "<p class='small map-legend'><strong>2021 Zweitstimmen-Sieger:</strong> " + " · ".join(items) + " Wahlkreise.</p>"
+
+
 def load_git_vote_share_history(config: core.Config) -> List[Dict[str, Any]]:
     snapshots_rel = core.repo_relative_path(core.LATEST_DIR / "statla_snapshots.csv")
     metadata_rel = core.repo_relative_path(core.LATEST_DIR / "run_metadata.json")
@@ -1177,6 +1331,7 @@ def build_city_entities(
     raw_by_row_key: Dict[str, Dict[str, str]],
     mapping: Dict[str, Dict[str, Any]],
     selected_ags: List[str],
+    seed_municipalities: Optional[Dict[str, str]] = None,
 ) -> List[Dict[str, Any]]:
     ags_to_wahlkreise: Dict[str, set[str]] = defaultdict(set)
     for wk, item in mapping.items():
@@ -1194,6 +1349,39 @@ def build_city_entities(
         ags_rows = rows_by_ags.get(ags, [])
         municipality_rows = [row for row in ags_rows if str(row.get("is_municipality_summary")).lower() == "true"]
         split_wahlkreise = ags_to_wahlkreise.get(ags, set())
+
+        if not ags_rows and split_wahlkreise:
+            municipality_name = (seed_municipalities or {}).get(ags, ags)
+            is_split_city = len(split_wahlkreise) > 1
+            for wk in sorted(split_wahlkreise, key=lambda value: int(value)):
+                row_key = f"PRESTART:{ags}:WK:{wk}" if is_split_city else f"PRESTART:{ags}"
+                snapshot = {
+                    "row_key": row_key,
+                    "ags": ags,
+                    "municipality_name": municipality_name,
+                    "gebietsart": "WAHLKREIS_TEIL" if is_split_city else "GEMEINDE",
+                    "gebietsnummer": wk if is_split_city else ags,
+                    "reported_precincts": 0,
+                    "total_precincts": 0,
+                    "voters_total": 0,
+                    "valid_votes_erst": 0,
+                    "valid_votes_zweit": 0,
+                    "is_municipality_summary": "true",
+                }
+                raw_row = fallback_raw_row(snapshot)
+                raw_row["Wahlkreisnummer"] = wk
+                entities.append(
+                    {
+                        "entity_key": row_key,
+                        "ags": ags,
+                        "municipality_name": municipality_name,
+                        "wahlkreisnummer": wk,
+                        "snapshot": snapshot,
+                        "raw_row": raw_row,
+                        "is_split_city": is_split_city,
+                    }
+                )
+            continue
 
         if municipality_rows and len(split_wahlkreise) <= 1:
             snapshot = municipality_rows[0]
@@ -1685,6 +1873,8 @@ def render_page(
     .hero p {{ margin: 0; }}
     /* ── Grid & Panels ── */
     .grid {{ display: grid; gap: 20px; }}
+    .reference-columns {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; align-items: start; }}
+    .reference-columns h3 {{ color: var(--accent); font-size: 14px; margin: 8px 0 10px; }}
     .panel {{
       background: var(--panel);
       border: 1px solid var(--line);
@@ -2688,6 +2878,8 @@ def render_clickable_wahlkreis_map(
     features: List[Dict[str, Any]],
     status_rows: List[Dict[str, Any]],
     link_by_wk: Dict[str, str],
+    reference_winners: Optional[Dict[str, Dict[str, Any]]] = None,
+    reference_mode: bool = False,
 ) -> str:
     if not features:
         return "<p class='muted'>Keine Wahlkreis-Geometrie verfügbar.</p>"
@@ -2714,13 +2906,24 @@ def render_clickable_wahlkreis_map(
         status = str(row.get("status") or "no_data")
         name = display_text(props.get("WK Name") or row.get("wahlkreisname") or f"Wahlkreis {wk}")
         winner_party = str(row.get("winner_party_zweit") or "").strip()
-        fill = WAHL_PARTY_COLORS.get(winner_party, colors.get(status, colors["no_data"]))
+        title_prefix = ""
+        if reference_mode and reference_winners and wk in reference_winners:
+            reference_winner = reference_winners[wk]
+            winner_party = str(reference_winner.get("winner_party") or "").strip()
+            winner_party = core.canonical_party_name(winner_party, "Zweitstimmen")
+            title_prefix = "2021 Zweitstimmen"
+        fill = WAHL_PARTY_COLORS.get(
+            winner_party,
+            colors.get(status, colors["no_data"]),
+        )
         path_d = build_projected_wahlkreis_path(feature, projection)
         if not path_d:
             continue
         title_text = f"{wk.zfill(2)} {name} ({status_label(status)})"
         if winner_party:
-            title_text += f" - {vote_type_label('Zweitstimmen')}: {winner_party}"
+            title_text += f" - {title_prefix + ': ' if title_prefix else vote_type_label('Zweitstimmen') + ': '}{winner_party}"
+            if reference_mode and reference_winners and wk in reference_winners:
+                title_text += f" ({float(reference_winners[wk].get('winner_share_percent') or 0.0):.1f} %)"
         title = html.escape(title_text)
         path_markup = f"<path d=\"{path_d}\" fill=\"{fill}\" stroke=\"#111827\" stroke-width=\"0.8\"><title>{title}</title></path>"
         href = link_by_wk.get(wk)
@@ -2846,6 +3049,14 @@ def render_index_page(
         (row for row in statla_snapshots if str(row.get("gebietsart") or "").strip().upper() == "LAND"),
         {},
     )
+    reference_2021 = load_lsa_reference_2021(config) if config.election_key.endswith("-lsa") else {}
+    reference_map_mode = bool(reference_2021) and not statla_snapshots
+    map_heading = "Wahlkreiskarte · 2021 Referenz" if reference_map_mode else "Klickbare Wahlkreiskarte"
+    map_note = (
+        "Farbe = Zweitstimmen-Sieger der Landtagswahl 2021; die Geometrie zeigt die Wahlkreiseinteilung 2026. Jeder Wahlkreis führt zur Detailseite."
+        if reference_map_mode
+        else "Jeder Wahlkreis führt direkt zur Detailseite."
+    )
 
     operations = [f"`python scripts/generate_static_detail_pages.py --election-key {config.election_key}`"]
     if config.kommone_base_url_template:
@@ -2865,15 +3076,18 @@ def render_index_page(
         f"<div class='stat'><div class='stat-label'>Trackingstart</div><div class='stat-value'>{html.escape(tracking_start)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Gemeinden</div><div class='stat-value'>{len(municipality_link_by_ags):,}</div></div>"
         f"<div class='stat'><div class='stat-label'>Wahlkreise vollständig</div><div class='stat-value'>{wahlkreis_counts['complete']}</div></div>"
+        f"<div class='stat'><div class='stat-label'>Wahlkreise vor Start</div><div class='stat-value'>{wahlkreis_counts['prestart']}</div></div>"
         "</div></div>"
         "<div class='grid'>"
         "<div class='panel'><h2>Was-wäre-wenn-Szenario</h2>"
         "<p class='small'>Stimmenanteile verschieben, 5-Prozent-Schwelle prüfen und Koalitionsmehrheiten als teilbaren Link simulieren.</p>"
         "<ul class='linklist'><li><a href='scenario.html'>Szenario öffnen</a></li></ul></div>"
-        "<div class='panel dashboard-map'><h2>Klickbare Wahlkreiskarte</h2>"
-        "<p class='small'>Jeder Wahlkreis führt direkt zur Detailseite.</p>"
-        f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk)}</div>"
+        f"<div class='panel dashboard-map'><h2>{map_heading}</h2>"
+        f"<p class='small'>{map_note}</p>"
+        f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk, reference_2021.get('winners'), reference_map_mode)}"
+        f"{render_reference_map_legend(reference_2021) if reference_map_mode else ''}</div>"
         f"{render_structure_profile_panel(features, wahlkreis_link_by_wk)}"
+        f"{render_reference_2021_panel(reference_2021)}"
         f"{render_historical_comparison_section(land_snapshot, party_row_details_by_row_key, party_order)}"
         f"{render_report_figure_panel(output_root, title='Politische Repräsentation', image_path=core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png', image_alt='Politische Repräsentation der Stimmenanteile', description='Reportgrafik zur politischen Repräsentation der Landes- bzw. Zweitstimmen.', data_links=[('PNG', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png'), ('CSV', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.csv')])}"
         f"{render_vote_share_history_panel(config)}"
@@ -2903,7 +3117,16 @@ def render_index_page(
             if statla_url
             else ""
         )
-        + f"<li>Offizieller Wahlkreis-Strukturbericht 2026: <a href='{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}'>{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}</a></li>"
+        + (
+            "<li>2026 Wahlkreisgeometrie und Gemeindezuordnung: <a href='https://statistik.sachsen-anhalt.de/themen/gebiet-und-wahlen/wahlen/landtagswahl-2026-2/uebersicht-wahlkreiseinteilung'>Statistisches Landesamt Sachsen-Anhalt</a></li>"
+            if config.election_key.endswith("-lsa")
+            else f"<li>Offizieller Wahlkreis-Strukturbericht 2026: <a href='{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}'>{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}</a></li>"
+        )
+        + (
+            "<li>2021 Endergebnisse: <a href='https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php'>Wahlergebnisportal Sachsen-Anhalt</a></li>"
+            if reference_2021
+            else ""
+        )
         + "</ul></div>"
         + "<div class='panel'><h2>Betrieb</h2><ul class='inline-list'>"
         + "".join(f"<li>{item}</li>" for item in operations)
@@ -2912,6 +3135,7 @@ def render_index_page(
         + f"<li>Wahlkreise vollständig: <strong>{wahlkreis_counts['complete']}</strong></li>"
         + f"<li>Wahlkreise ausstehend: <strong>{wahlkreis_counts['pending']}</strong></li>"
         + f"<li>Wahlkreise ohne Daten: <strong>{wahlkreis_counts['no_data']}</strong></li>"
+        + f"<li>Wahlkreise vor Start: <strong>{wahlkreis_counts['prestart']}</strong></li>"
         + "</ul></div>"
         + "</div>"
     )
@@ -3041,6 +3265,7 @@ def main() -> int:
     party_row_details = build_party_row_details_by_row_key(statla_party_rows)
     party_order = derive_party_order_from_rows(statla_party_rows)
     mapping = core.load_wahlkreis_mapping()
+    seed_municipalities = load_seed_municipalities()
     features = core.load_wahlkreis_features()
     wahlkreis_features_by_wk = build_wahlkreis_feature_lookup(features)
     site_root = output_root.parent
@@ -3051,11 +3276,13 @@ def main() -> int:
         and core.normalize_wahlkreis_nummer(row.get("gebietsnummer") or row.get("row_key"))
     }
 
+    mapped_ags = {ags for item in mapping.values() for ags in item.get("ags_set", set())}
     ags_in_scope = sorted(
-        {
+        mapped_ags
+        | {
             str(row.get("ags") or "")
             for row in snapshots
-            if str(row.get("ags") or "") and str(row.get("ags") or "") in {ags for item in mapping.values() for ags in item.get("ags_set", set())}
+            if str(row.get("ags") or "")
         }
     )
     if args.limit_ags is not None:
@@ -3071,7 +3298,13 @@ def main() -> int:
         else []
     )
 
-    city_entities = build_city_entities(snapshots, raw_by_row_key, mapping, selected_ags)
+    city_entities = build_city_entities(
+        snapshots,
+        raw_by_row_key,
+        mapping,
+        selected_ags,
+        seed_municipalities=seed_municipalities,
+    )
 
     booth_rows_by_ags: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for row in snapshots:
@@ -3343,12 +3576,13 @@ def main() -> int:
                 sort_key=f"{name} {booth_name}",
             )
 
+    prestart = not snapshots and core.now_utc() < core.tracking_start_local_dt(config)
     wahlkreis_status_rows = core.compute_wahlkreis_status_rows(
         features=core.load_wahlkreis_features(),
         mapping=mapping,
         kommone_snapshots=latest_kommone_snapshots,
         statla_snapshots=snapshots,
-        prestart=False,
+        prestart=prestart,
     )
     statla_erst_winners = statla_wahlkreis_winner_map(snapshots, party_votes, "Erststimmen")
     statla_zweit_winners = statla_wahlkreis_winner_map(snapshots, party_votes, "Zweitstimmen")

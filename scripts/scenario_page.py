@@ -40,7 +40,7 @@ def state_code(election_key: str) -> str:
 
 
 def seat_count_for(election_key: str) -> int:
-    return {"bw": 120, "rlp": 101}.get(state_code(election_key), 100)
+    return {"bw": 120, "rlp": 101, "lsa": 97}.get(state_code(election_key), 100)
 
 
 def slug_for_party(party: str) -> str:
@@ -72,13 +72,32 @@ def load_party_baseline(config: core.Config, party_colors: dict[str, str]) -> di
     current_total = core.parse_int(snapshot.get("valid_votes_zweit")) or 0
     reference_total = core.parse_int(snapshot.get("valid_votes_zweit_2021")) or 0
     use_reference = current_total <= 0 and reference_total > 0
+    if not second_vote_rows and state_code(config.election_key) == "lsa":
+        reference_path = core.ROOT / "data" / config.election_key / "reference" / "2021" / "party_results.csv"
+        reference_rows = read_csv_rows(reference_path)
+        second_vote_rows = [
+            row
+            for row in reference_rows
+            if str(row.get("area_level") or "") == "LAND"
+            and core.canonical_vote_type(str(row.get("vote_type") or "")) == "Zweitstimmen"
+        ]
+        reference_total = next(
+            (
+                core.parse_int(row.get("valid_votes")) or 0
+                for row in second_vote_rows
+                if core.parse_int(row.get("valid_votes")) is not None
+            ),
+            0,
+        )
+        use_reference = bool(second_vote_rows and reference_total > 0)
 
     parties: list[dict[str, Any]] = []
     for row in second_vote_rows:
         party = core.canonical_party_name(str(row.get("party_name") or row.get("party_key") or ""), "Zweitstimmen")
         if not party:
             continue
-        votes = core.parse_int(row.get("votes_2021" if use_reference else "votes")) or 0
+        vote_field = "votes" if state_code(config.election_key) == "lsa" and use_reference else ("votes_2021" if use_reference else "votes")
+        votes = core.parse_int(row.get(vote_field)) or 0
         if votes <= 0:
             continue
         parties.append(
@@ -129,6 +148,13 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
 
 
 def coalition_presets(election_key: str) -> list[dict[str, Any]]:
+    if state_code(election_key) == "lsa":
+        return [
+            {"label": "CDU + SPD", "parties": ["CDU", "SPD"]},
+            {"label": "CDU + AfD", "parties": ["CDU", "AfD"]},
+            {"label": "CDU + FDP", "parties": ["CDU", "FDP"]},
+            {"label": "SPD + GRÜNE + Die Linke", "parties": ["SPD", "GRÜNE", "Die Linke"]},
+        ]
     if state_code(election_key) == "rlp":
         return [
             {"label": "Ampel", "parties": ["SPD", "GRÜNE", "FDP"]},
