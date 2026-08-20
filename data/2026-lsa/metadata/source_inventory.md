@@ -1,6 +1,6 @@
 # Sachsen-Anhalt 2026 Setup Notes
 
-Last checked: `2026-08-05`.
+Last checked: `2026-08-20`.
 
 ## Official Published Inputs
 - Election information hub: <https://wahlen.sachsen-anhalt.de/zu-den-wahlen/landtagswahl>
@@ -16,10 +16,11 @@ Last checked: `2026-08-05`.
 - Official comparable historical results, XLSX: <https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Vergleichbare_Wahlergebnisse/15000_Tabelle.xlsx>
 - Official comparable seat distribution, XLSX: <https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Vergleichbare_Wahlergebnisse/15_Vergleichbare_Wahlergebnisse_Sitzverteilung.xlsx>
 - Official results portal root: <https://wahlergebnisse.sachsen-anhalt.de/>
-- Published 2026 results portal: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/>
-- Published 2026 land result presentation: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/erg_land.html>
+- Published 2026 results portal/presentation: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/index.html>
 - Published 2026 downloads page: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads.html>
-- The downloads page currently states that empty files will be provided from the second half of August; it will publish interim results on election day and the preliminary result overnight.
+- The downloads page now publishes two UTF-8 empty CSVs: land/districts/Wahlkreise and municipalities. They contain the complete structural rows, but all current vote values are zero until election day.
+- Direct files: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Land_RKR_WKR_LT_2026.csv> and <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Gemeinden_LT_2026.csv>
+- The former `erg_land.html` path currently returns HTTP 404; the current portal entry point is `lt26/index.html`.
 - Verified historical 2021 results portal: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/index.php>
 - Verified historical 2021 download page: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php>
 - Official 2021 land and Wahlkreis final results CSV: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/erg/csv/lt21dat1.csv>
@@ -33,6 +34,7 @@ Last checked: `2026-08-05`.
 - The five split municipalities are recorded separately in `split_municipalities.csv`. The official page identifies the split municipality and Wahlkreis ranges; the workbook gives the exact district-level split only for Leuna and Petersberg.
 - The normalized 2021 reference tables are in `data/2026-lsa/reference/2021/`. They cover the land, 14 districts, 41 Wahlkreise, and 218 municipalities, with long party-result rows and a compact Wahlkreis winner table.
 - The 2026 landing-page map uses the official 2026 Wahlkreis geometry and colors each district by the 2021 official Zweitstimmen winner until 2026 results arrive.
+- The current 2026 result drill-down therefore has four published levels: `LAND`, `KREIS`, `WAHLKREIS` and `GEMEINDE`. Individual `WAHLBEZIRK` rows are not included in the official LSA downloads; the static site exposes Landkreis pages and preserves all municipality-to-Wahlkreis links, including the five split municipalities.
 
 ## Population Reference
 - Latest available official estimate used for preparation: `2,120,100` inhabitants on `2025-12-31`.
@@ -40,6 +42,6 @@ Last checked: `2026-08-05`.
 - Source for both figures: Statistisches Jahrbuch Sachsen-Anhalt 2025, <https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Daten_und_Veroeffentlichungen/Veroeffentlichungen/Statistisches_Jahrbuch/6Z001_2025-A.pdf>
 
 ## Next Local Tasks
-- The poller now checks the downloads page automatically and selects the best CSV matching the expected StatLA schema once the empty file(s) are published.
+- The poller checks the downloads page automatically, combines both published LSA CSVs, and normalizes the current `Satzart`/`Schlüsselnummer`/`F01.CDU` schema into the existing result model.
 - Resolve the municipal subareas for the split city administrations if the live source needs municipality-level reconstruction.
 - Verify the eventual live result schema and party codebook before election night.

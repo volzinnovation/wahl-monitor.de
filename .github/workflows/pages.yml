@@ -33,6 +33,9 @@ jobs:
       - name: Clean static site output
         run: rm -rf site
 
+      - name: Verify LSA result schema
+        run: python scripts/test_lsa_statla_csv.py
+
       - name: Build static election sites
         run: |
           python scripts/generate_static_detail_pages.py --election-key 2026-bw
@@ -73,6 +76,20 @@ jobs:
               missing = [entry.get("href") for entry in entries if not (root / str(entry.get("href"))).exists()]
               if missing:
                   raise SystemExit(f"Broken search hrefs in {search_json}: {missing[:3]}")
+
+          lsa_root = Path("site") / "2026-lsa"
+          expected_lsa_pages = {"landkreis": 14, "wahlkreis": 41}
+          for subdir, expected_count in expected_lsa_pages.items():
+              actual_count = len(list((lsa_root / subdir).glob("*.html")))
+              if actual_count != expected_count:
+                  raise SystemExit(
+                      f"Unexpected LSA {subdir} page count: {actual_count} != {expected_count}"
+                  )
+          municipality_count = len(list((lsa_root / "municipality").glob("*.html")))
+          if not 218 <= municipality_count <= 227:
+              raise SystemExit(
+                  f"Unexpected LSA municipality page count: {municipality_count} (expected 218–227)"
+              )
           PY
 
       - name: Configure GitHub Pages

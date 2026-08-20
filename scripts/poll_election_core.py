@@ -1586,6 +1586,9 @@ def extract_statla_parties(row: Dict[str, str]) -> List[Dict[str, Any]]:
         if value is None:
             continue
 
+        if is_lsa_download_row(row) and not re.fullmatch(r"[DF]\d+\..+", str(key).strip()):
+            continue
+
         if re.fullmatch(r"D\d+", key):
             vote_type = "Erststimmen"
             parties.append(
@@ -1593,6 +1596,25 @@ def extract_statla_parties(row: Dict[str, str]) -> List[Dict[str, Any]]:
                     "vote_type": vote_type,
                     "party_key": key,
                     "party_name": canonical_party_name(statla_party_name_from_code(vote_type, key), vote_type),
+                    "votes": value,
+                }
+            )
+            continue
+
+        # Sachsen-Anhalt's 2026 download uses columns such as
+        # ``F01.CDU`` and ``D02.AfD`` rather than the older ``F01``/``D01``
+        # code-only columns.  Keep the normalized output identical.
+        match = re.fullmatch(r"([DF])(\d+)\.(.+)", str(key).strip())
+        if match:
+            vote_type = "Erststimmen" if match.group(1) == "D" else "Zweitstimmen"
+            party_label = match.group(3).strip()
+            if normalize_text(party_label) == "eb":
+                party_label = "Anderer Kreiswahlvorschlag"
+            parties.append(
+                {
+                    "vote_type": vote_type,
+                    "party_key": f"{match.group(1)}{int(match.group(2))}",
+                    "party_name": canonical_party_name(party_label, vote_type),
                     "votes": value,
                 }
             )
@@ -1633,6 +1655,12 @@ def extract_statla_parties(row: Dict[str, str]) -> List[Dict[str, Any]]:
 
 
 def is_statla_municipality_row(row: Dict[str, str]) -> bool:
+    if is_lsa_download_row(row):
+        return (
+            str(row.get("Satzart") or "").strip().upper() == "GEM"
+            and not str(row.get("Wahllokal") or "").strip()
+        )
+
     ags = canonical_ags(row.get("AGS"))
     if not ags:
         return False
@@ -1651,32 +1679,83 @@ def is_statla_municipality_row(row: Dict[str, str]) -> bool:
     return True
 
 
+def is_lsa_download_row(row: Dict[str, str]) -> bool:
+    return "Satzart" in row and "Schlüsselnummer" in row
+
+
+def statla_area_type(row: Dict[str, str]) -> str:
+    if is_lsa_download_row(row):
+        return {
+            "LAN": "LAND",
+            "KRS": "KREIS",
+            "WKR": "WAHLKREIS",
+            "GEM": "GEMEINDE",
+        }.get(str(row.get("Satzart") or "").strip().upper(), str(row.get("Satzart") or "").strip())
+    return str(row.get("Gebietsart") or "").strip()
+
+
+def statla_area_number(row: Dict[str, str]) -> str:
+    if is_lsa_download_row(row):
+        return str(row.get("Schlüsselnummer") or "").strip()
+    return str(row.get("Gebietsnummer") or "").strip()
+
+
+def statla_ags(row: Dict[str, str]) -> str:
+    if is_lsa_download_row(row):
+        area_type = str(row.get("Satzart") or "").strip().upper()
+        area_number = statla_area_number(row)
+        return canonical_ags(area_number) if area_type == "GEM" else ""
+    return canonical_ags(row.get("AGS"))
+
+
+def statla_municipality_name(row: Dict[str, str]) -> str:
+    if is_lsa_download_row(row):
+        return canonical_municipality_name(row.get("Name"))
+    return canonical_municipality_name(row.get("Gemeindename"))
+
+
+def statla_summary_row(row: Dict[str, str]) -> bool:
+    """Use the combined U/B/total row from the LSA download."""
+    if not is_lsa_download_row(row):
+        return True
+    return not str(row.get("Wahllokal") or "").strip()
+
+
+def statla_metric(row: Dict[str, str], new_key: str, old_key: str) -> Optional[int]:
+    return parse_int(row.get(new_key if is_lsa_download_row(row) else old_key))
+
+
 def parse_statla_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     snapshots: List[Dict[str, Any]] = []
     party_rows: List[Dict[str, Any]] = []
     for idx, raw_row in enumerate(csv_rows_from_text(csv_text, delimiter=";")):
         row = dict(raw_row)
+        if not statla_summary_row(row):
+            continue
         canonical_row_json = json.dumps(row, sort_keys=True, ensure_ascii=False).encode("utf-8")
         row_hash = sha256_bytes(canonical_row_json)
 
-        row_key = (
-            f"{idx:06d}:"
-            f"{str(row.get('Gebietsnummer', '')).strip() or '-'}:"
-            f"{str(row.get('Bezirksnummer', '')).strip() or '-'}:"
-            f"{canonical_ags(row.get('AGS')) or '-'}:"
-            f"{str(row.get('Gebietsart', '')).strip() or '-'}"
-        )
+        if is_lsa_download_row(row):
+            row_key = f"lsa:{statla_area_type(row)}:{statla_area_number(row) or '-'}"
+        else:
+            row_key = (
+                f"{idx:06d}:"
+                f"{str(row.get('Gebietsnummer', '')).strip() or '-'}:"
+                f"{str(row.get('Bezirksnummer', '')).strip() or '-'}:"
+                f"{canonical_ags(row.get('AGS')) or '-'}:"
+                f"{str(row.get('Gebietsart', '')).strip() or '-'}"
+            )
         snapshot = {
             "row_key": row_key,
-            "ags": canonical_ags(row.get("AGS")),
-            "municipality_name": canonical_municipality_name(row.get("Gemeindename")),
-            "gebietsart": str(row.get("Gebietsart", "")).strip(),
-            "gebietsnummer": str(row.get("Gebietsnummer", "")).strip(),
-            "reported_precincts": parse_int(row.get("gemeldete Wahlbezirke")),
-            "total_precincts": parse_int(row.get("Anzahl Wahlbezirke")),
-            "voters_total": parse_int(row.get("Waehler gesamt (B)")),
-            "valid_votes_erst": parse_int(row.get("Erststimmen gueltige (D)")),
-            "valid_votes_zweit": parse_int(row.get("Zweitstimmen gueltige (F)")),
+            "ags": statla_ags(row),
+            "municipality_name": statla_municipality_name(row),
+            "gebietsart": statla_area_type(row),
+            "gebietsnummer": statla_area_number(row),
+            "reported_precincts": statla_metric(row, "Ist.Wahlbezirke", "gemeldete Wahlbezirke"),
+            "total_precincts": statla_metric(row, "Soll.Wahlbezirke", "Anzahl Wahlbezirke"),
+            "voters_total": statla_metric(row, "B.Wähler", "Waehler gesamt (B)"),
+            "valid_votes_erst": statla_metric(row, "D.Gültige.Erststimmen", "Erststimmen gueltige (D)"),
+            "valid_votes_zweit": statla_metric(row, "F.Gültige.Zweitstimmen", "Zweitstimmen gueltige (F)"),
             "payload_hash": row_hash,
             "is_municipality_summary": is_statla_municipality_row(row),
         }
@@ -2405,7 +2484,20 @@ def looks_like_statla_csv(text: str) -> bool:
         except Exception:  # pylint: disable=broad-except
             continue
         normalized = {normalize_text(cell) for cell in header if str(cell).strip()}
-        if "gebietsart" in normalized and "gebietsnummer" in normalized and ("ags" in normalized or "gemeindename" in normalized):
+        old_schema = (
+            "gebietsart" in normalized
+            and "gebietsnummer" in normalized
+            and ("ags" in normalized or "gemeindename" in normalized)
+        )
+        lsa_schema = {
+            "satzart",
+            "schlusselnummer",
+            "name",
+            "a.wahlberechtigte",
+            "f.gultige.zweitstimmen",
+            "d.gultige.erststimmen",
+        }.issubset(normalized)
+        if old_schema or lsa_schema:
             return True
     return False
 
@@ -2435,8 +2527,7 @@ def discover_statla_csv_download(
     if not csv_urls:
         return None, "The official downloads page has not published a CSV link yet"
 
-    best_result: Optional[HttpResult] = None
-    best_score: Optional[Tuple[int, int, int, int]] = None
+    matching_results: List[Tuple[Tuple[int, int, int, int], HttpResult]] = []
     for csv_url in csv_urls:
         result = statla_http_get(csv_url, timeout_seconds, show_progress=False)
         if result.status_code != 200 or not result.content:
@@ -2452,13 +2543,30 @@ def discover_statla_csv_download(
             shape["row_count"],
             len(result.content),
         )
-        if best_score is None or score > best_score:
-            best_result = result
-            best_score = score
+        matching_results.append((score, result))
 
-    if best_result is None:
+    if not matching_results:
         return None, "The downloads page listed no CSV matching the expected StatLA schema"
-    return best_result, None
+
+    # LSA publishes separate land/Wahlkreis and municipality files.  Combine
+    # all matching files into one CSV so the normalizer retains both levels.
+    matching_results.sort(key=lambda item: item[1].url)
+    decoded_files = [decode_bytes(result.content).splitlines() for _score, result in matching_results]
+    header = decoded_files[0][0]
+    combined_lines = [header]
+    for lines in decoded_files:
+        if not lines:
+            continue
+        combined_lines.extend(lines[1:])
+    return (
+        HttpResult(
+            url=";".join(result.url for _score, result in matching_results),
+            status_code=200,
+            content=("\r\n".join(combined_lines) + "\r\n").encode("utf-8"),
+            error_message=None,
+        ),
+        None,
+    )
 
 
 def rlp_portal_base_url(config: Config) -> str:
@@ -2849,12 +2957,8 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
     discovered_download: Optional[HttpResult] = None
     download_discovery_error: Optional[str] = None
 
-    if (
-        not force_dummy
-        and live_result.status_code == 200
-        and live_result.content
-        and looks_like_html_document(decode_bytes(live_result.content))
-    ):
+    live_is_csv = live_result.status_code == 200 and live_result.content and looks_like_statla_csv(decode_bytes(live_result.content))
+    if not force_dummy and not live_is_csv:
         discovered_download, download_discovery_error = discover_statla_csv_download(
             config,
             timeout_seconds,
@@ -2865,7 +2969,7 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
             selected_url = discovered_download.url
             cli_note(f"Using StatLA CSV discovered from downloads page: {discovered_download.url}")
 
-    if force_dummy or live_result.status_code != 200 or not live_result.content:
+    if force_dummy or selected_result.status_code != 200 or not selected_result.content:
         if config.statla_dummy_csv_url:
             cli_note(f"Falling back to StatLA dummy CSV from {config.statla_dummy_csv_url}")
             selected_result = statla_http_get(

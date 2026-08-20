@@ -1,1 +1,219 @@
 ags,municipality_name,status,reported_precincts,total_precincts,voters_total,valid_votes,invalid_votes,source_timestamp,payload_hash,error_message
+15001000,"Dessau-Roßlau, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15002000,"Halle (Saale), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15003000,"Magdeburg, Landeshauptstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081026,"Apenburg-Winterfeld, Flecken",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081030,"Arendsee (Altmark), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081045,Beetzendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081095,Dähre,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081105,"Diesdorf, Flecken",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081135,"Gardelegen, Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081225,Jübar,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081240,"Kalbe (Milde), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081280,"Klötze, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081290,Kuhfelde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081440,Rohrberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081455,"Salzwedel, Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15081545,Wallstawe,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15082005,"Aken (Elbe), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15082015,"Bitterfeld-Wolfen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15082180,"Köthen (Anhalt), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15082241,Muldestausee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15082256,Osternienburger Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15082301,"Raguhn-Jeßnitz, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15082340,"Sandersdorf-Brehna, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15082377,"Südliches Anhalt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15082430,"Zerbst/Anhalt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15082440,"Zörbig, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083020,Altenhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083025,Am Großen Bruch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083030,Angern,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083035,Ausleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083040,Barleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083060,Beendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083115,Bülstringen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083120,Burgstall,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083125,Calvörde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083130,Colbitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083190,Eilsleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083205,Erxleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083230,Flechtingen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083245,"Gröningen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083270,"Haldensleben, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083275,Harbke,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083298,Hohe Börde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083320,Hötensleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083323,Ingersleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083355,"Kroppenstedt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083361,Loitsche-Heinrichsberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083390,Niedere Börde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083411,"Oebisfelde-Weferlingen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083415,"Oschersleben (Bode), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083440,Rogätz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083485,Sommersdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083490,Sülzetal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083505,Ummendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083515,Völpke,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083531,"Wanzleben-Börde, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083535,Wefensleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083557,Westheide,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083565,"Wolmirstedt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15083580,Zielitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084012,An der Poststraße,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084013,Meineweh,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084015,"Bad Bibra, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084025,Balgstädt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084115,Droyßig,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084125,"Eckartsberga, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084130,Elsteraue,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084132,Finne,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084133,Finneland,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084135,"Freyburg (Unstrut), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084150,Gleina,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084170,Goseck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084207,Gutenborn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084235,"Hohenmölsen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084246,Kaiserpfalz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084250,Karsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084275,Kretzschau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084282,Lanitz-Hassel-Tal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084285,"Laucha an der Unstrut, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084315,"Lützen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084335,Mertendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084341,Molauer Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084355,"Naumburg (Saale), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084360,"Nebra (Unstrut), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084375,"Osterfeld, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084442,Schnaudertal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084445,Schönburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084470,"Stößen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084490,"Teuchern, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084550,"Weißenfels, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084560,Wethau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084565,Wetterzeube,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15084590,"Zeitz, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085040,"Ballenstedt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085055,"Blankenburg (Harz), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085090,Ditfurt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085110,"Falkenstein/Harz, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085125,Groß Quenstedt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085135,"Halberstadt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085140,Harsleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085145,"Harzgerode, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085160,Hedersleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085185,Huy,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085190,"Ilsenburg (Harz), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085227,Nordharz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085228,"Oberharz am Brocken, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085230,"Osterwieck, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085235,"Quedlinburg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085285,"Schwanebeck, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085287,Selke-Aue,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085330,"Thale, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085365,"Wegeleben, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15085370,"Wernigerode, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15086005,Biederitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15086015,"Burg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15086035,Elbe-Parey,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15086040,"Genthin, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15086055,"Gommern, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15086080,"Jerichow, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15086140,"Möckern, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15086145,Möser,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087010,Ahlsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087015,"Allstedt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087031,"Arnstein, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087045,Benndorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087055,Berga,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087070,Blankenheim,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087075,Bornstedt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087101,Brücken-Hackpfüffel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087125,Edersleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087130,"Eisleben, Lutherstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087165,"Gerbstedt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087205,Helbra,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087210,Hergisdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087220,"Hettstedt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087250,"Kelbra (Kyffhäuser), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087260,Klostermansfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087275,"Mansfeld, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087370,"Sangerhausen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087386,Seegebiet Mansfelder Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087412,Südharz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087440,Wallhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15087470,Wimmelburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088020,"Bad Dürrenberg, Solestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088025,"Bad Lauchstädt, Goethestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088030,Barnstädt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088065,"Braunsbedra, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088100,Farnstädt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088150,Kabelsketal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088195,"Landsberg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088205,"Leuna, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088216,"Wettin-Löbejün, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088220,"Merseburg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088235,"Mücheln (Geiseltal), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088250,Nemsdorf-Göhrendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088265,Obhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088295,Petersberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088305,"Querfurt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088319,Salzatal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088330,Schkopau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088340,"Schraplau, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088355,Steigra,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15088365,Teutschenthal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089005,"Alsleben (Saale), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089015,"Aschersleben, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089026,"Barby, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089030,"Bernburg (Saale), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089041,Bördeaue,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089042,Bördeland,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089043,Börde-Hakel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089045,Borne,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089055,"Calbe (Saale), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089075,"Egeln, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089130,Giersleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089165,"Güsten, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089175,"Hecklingen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089185,Ilberstedt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089195,"Könnern, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089235,"Nienburg (Saale), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089245,Plötzkau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089305,"Schönebeck (Elbe), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089307,"Seeland, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089310,"Staßfurt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15089365,Wolmirsleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090003,Aland,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090007,Altmärkische Höhe,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090008,Altmärkische Wische,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090010,"Arneburg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090070,"Bismark (Altmark), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090135,Eichstedt (Altmark),NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090180,Goldbeck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090220,Hassel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090225,"Havelberg, Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090245,Hohenberg-Krusemark,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090270,Iden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090285,Kamern,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090310,Klietz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090415,"Osterburg (Altmark), Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090435,Rochau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090445,"Sandau (Elbe), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090485,Schollene,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090500,Schönhausen (Elbe),NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090520,"Seehausen (Altmark), Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090535,"Stendal, Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090546,"Tangerhütte, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090550,"Tangermünde, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090610,"Werben (Elbe), Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090631,Wust-Fischbeck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15090635,Zehrental,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15091010,"Annaburg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15091020,"Bad Schmiedeberg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15091060,"Coswig (Anhalt), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15091110,"Gräfenhainichen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15091145,"Jessen (Elster), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15091160,"Kemberg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15091241,"Oranienbaum-Wörlitz, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15091375,"Wittenberg, Lutherstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+15091391,"Zahna-Elster, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone

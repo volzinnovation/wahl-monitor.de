@@ -13,9 +13,11 @@
     "wahlkreiseinteilung_pdf_url": "https://wahlen.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/MI/wahlen/PDF/2026_Wahlkreiseinteilung_fuer_Landtagswahlen_in_Sachsen_Anhalt.pdf",
     "wahlkreiskarte_pdf_url": "https://wahlen.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/MI/wahlen/PDF/2026_Landtagswahl_Wahlkreiskarte.pdf",
     "results_portal_root_url": "https://wahlergebnisse.sachsen-anhalt.de/",
-    "results_portal_url_2026": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/",
-    "results_presentation_land_url_2026": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/erg_land.html",
+    "results_portal_url_2026": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/index.html",
+    "results_presentation_land_url_2026": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/index.html",
     "results_downloads_url_2026": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads.html",
+    "results_land_wahlkreise_csv_url_2026": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Land_RKR_WKR_LT_2026.csv",
+    "results_municipalities_csv_url_2026": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Gemeinden_LT_2026.csv",
     "wahlkreise_geojson_zip_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Wahlkreise/Wahlkreise_LTW_2026_geosjon-Datei.zip",
     "wahlkreise_shp_zip_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Wahlkreise/Wahlkreise_LTW_2026.zip",
     "wahlkreise_municipality_xlsx_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Wahlkreise/Landtagswahl_2026_-_Wahlkreise___Gemeinden.xlsx",
@@ -48,13 +50,21 @@
   "research_status": {
     "live_results_portal_confirmed": true,
     "live_results_presentation_confirmed": true,
-    "live_results_csv_confirmed": false,
-    "empty_csv_downloads_expected_second_half_august": true,
+    "live_results_csv_confirmed": true,
+    "empty_csv_downloads_published": true,
+    "empty_csv_downloads_expected_second_half_august": false,
     "wahlkreis_geojson_confirmed": true,
     "wahlkreis_shapefile_confirmed": true,
     "wahlkreis_mapping_confirmed": true,
     "municipality_seed_complete": true,
     "split_municipality_assignments_complete": false
+  },
+  "available_drilldown_levels_2026": {
+    "published_result_levels": ["LAND", "KREIS", "WAHLKREIS", "GEMEINDE"],
+    "navigation_pages": ["landkreis", "wahlkreis", "municipality"],
+    "individual_wahlbezirke_published": false,
+    "note": "The current official LSA CSV downloads publish structural totals for Land, Kreis, Wahlkreis and Gemeinde. Individual Wahlbezirke are not included; the site keeps the municipality-to-Wahlkreis links for split municipalities.",
+    "source_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads.html"
   },
   "derived_counts": {
     "wahlkreis_count": 41,

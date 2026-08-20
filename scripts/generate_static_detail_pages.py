@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate static detail pages for wahlkreise, municipalities, and booths."""
+"""Generate static detail pages for electoral areas, municipalities, and booths."""
 
 from __future__ import annotations
 
@@ -476,6 +476,32 @@ def load_seed_municipalities() -> Dict[str, str]:
         for row in rows
         if str(row.get("ags") or "").strip()
     }
+
+
+def load_lsa_landkreis_names(
+    config: core.Config,
+    snapshots: List[Dict[str, Any]],
+) -> Dict[str, str]:
+    """Use current StatLA Kreis names, with the 2021 reference as pre-election fallback."""
+    names: Dict[str, str] = {}
+    for row in snapshots:
+        if str(row.get("gebietsart") or "").strip().upper() != "KREIS":
+            continue
+        landkreis_id = landkreis_id_for_ags(row.get("gebietsnummer"))
+        name = display_text(row.get("municipality_name"))
+        if landkreis_id and name:
+            names[landkreis_id] = name
+
+    reference = load_lsa_reference_2021(config) if config.election_key.endswith("-lsa") else {}
+    for row in reference.get("areas", []):
+        if str(row.get("area_level") or "").strip().upper() != "KREIS":
+            continue
+        landkreis_id = landkreis_id_for_ags(row.get("area_id"))
+        name = display_text(row.get("area_name"))
+        if landkreis_id and name:
+            names.setdefault(landkreis_id, name)
+
+    return dict(sorted(names.items(), key=lambda item: (item[0], item[1])))
 
 
 def reference_2021_dir(config: core.Config) -> Path:
@@ -1283,6 +1309,16 @@ def municipality_slug(ags: str, name: str) -> str:
     return f"{ags}-{slugify(name)}"
 
 
+def landkreis_id_for_ags(ags: Any) -> str:
+    """Return the five-digit Kreiskennung used by the StatLA result files."""
+    digits = re.sub(r"\D", "", str(ags or ""))
+    return digits[:5] if len(digits) >= 5 else ""
+
+
+def landkreis_slug(landkreis_id: str, name: str) -> str:
+    return f"{landkreis_id}-{slugify(name)}"
+
+
 def wahlkreis_slug(wk: str, name: str) -> str:
     return f"{wk.zfill(2)}-{slugify(name)}"
 
@@ -1383,10 +1419,18 @@ def build_city_entities(
                 )
             continue
 
-        if municipality_rows and len(split_wahlkreise) <= 1:
+        has_split_rows = any(
+            str(row.get("gebietsart") or "").strip().upper() in {"WAHLKREIS", "WAHLKREIS_TEIL"}
+            for row in ags_rows
+        )
+
+        # The current LSA download contains one GEM total for municipalities
+        # that are divided across several Wahlkreise.  Keep that official
+        # aggregate navigable until the portal publishes true WK-part rows.
+        if municipality_rows and (len(split_wahlkreise) <= 1 or not has_split_rows):
             snapshot = municipality_rows[0]
             raw_row = raw_row_for_snapshot(raw_by_row_key, snapshot)
-            wk = next(iter(split_wahlkreise), wahlkreis_number_from_raw_row(raw_row))
+            wk = next(iter(split_wahlkreise), wahlkreis_number_from_raw_row(raw_row)) if len(split_wahlkreise) <= 1 else ""
             name = municipality_name_for_snapshot(snapshot, raw_row)
             entities.append(
                 {
@@ -2283,6 +2327,7 @@ def write_page(
 SEARCH_TYPE_LABELS = {
     "election": "Wahl",
     "scenario": "Szenario",
+    "landkreis": "Landkreis",
     "wahlkreis": "Wahlkreis",
     "municipality": "Gemeinde",
     "booth": "Wahlbezirk",
@@ -2291,9 +2336,10 @@ SEARCH_TYPE_LABELS = {
 SEARCH_TYPE_ORDER = {
     "election": 0,
     "scenario": 1,
-    "wahlkreis": 2,
-    "municipality": 3,
-    "booth": 4,
+    "landkreis": 2,
+    "wahlkreis": 3,
+    "municipality": 4,
+    "booth": 5,
 }
 
 
@@ -2511,7 +2557,7 @@ def render_search_page(config: core.Config, output_root: Path, entries: List[Dic
 
 
 def prepare_output_dirs(output_root: Path) -> None:
-    for subdir_name in ["wahlkreis", "municipality", "booth"]:
+    for subdir_name in ["landkreis", "wahlkreis", "municipality", "booth"]:
         subdir = output_root / subdir_name
         subdir.mkdir(parents=True, exist_ok=True)
         for path in subdir.glob("*.html"):
@@ -2877,6 +2923,103 @@ def render_wahlkreis_overview_table(
     )
 
 
+def render_landkreis_overview_table(
+    rows: List[Dict[str, Any]],
+    link_by_landkreis: Dict[str, str],
+) -> str:
+    """Render the county level on the election landing page."""
+    body_rows: List[str] = []
+    for row in rows:
+        landkreis_id = str(row.get("landkreis_id") or "")
+        name = str(row.get("name") or landkreis_id)
+        href = link_by_landkreis.get(landkreis_id)
+        label = f"{landkreis_id} – {name}" if landkreis_id else name
+        linked_label = f"<a href='{html.escape(href)}'>{html.escape(label)}</a>" if href else html.escape(label)
+        snapshot = row.get("snapshot") or {}
+        reported, total = reporting_counts(snapshot)
+        rep_total = f"{reported}/{total}" if total else "–"
+        body_rows.append(
+            "<tr>"
+            f"<td>{linked_label}</td>"
+            f"<td>{int(row.get('municipality_count') or 0)}</td>"
+            f"<td>{int(row.get('wahlkreis_count') or 0)}</td>"
+            f"<td>{html.escape(reporting_status_label(snapshot) if snapshot else 'vor Start')}</td>"
+            f"<td>{html.escape(rep_total)}</td>"
+            "</tr>"
+        )
+    return (
+        "<div class='panel'><h2>Landkreise und kreisfreie Städte</h2>"
+        "<p class='small'>Land → Landkreis/kreisfreie Stadt → Wahlkreis → Gemeinde. Jede Zeile öffnet die Landkreis-Detailseite.</p>"
+        "<table class='compact'><thead><tr><th>Landkreis / kreisfreie Stadt</th><th>Gemeinden</th><th>Wahlkreise</th><th>Status</th><th>Gemeldet/gesamt</th></tr></thead>"
+        f"<tbody>{''.join(body_rows)}</tbody></table></div>"
+    )
+
+
+def render_landkreis_entity_table(
+    entities: List[Dict[str, Any]],
+    municipality_link_by_ags: Dict[str, str],
+    mapping: Dict[str, Dict[str, Any]],
+    wahlkreis_link_by_wk: Dict[str, str],
+    link_prefix: str = "../",
+) -> str:
+    """List every municipality once and expose all of its assigned Wahlkreise."""
+    by_ags: Dict[str, Dict[str, Any]] = {}
+    for entity in entities:
+        by_ags.setdefault(str(entity.get("ags") or ""), entity)
+
+    rows: List[str] = []
+    for ags, entity in sorted(by_ags.items(), key=lambda item: (str(item[1].get("municipality_name") or ""), item[0])):
+        if not ags:
+            continue
+        assigned_wks = sorted(
+            (wk for wk, item in mapping.items() if ags in item.get("ags_set", set())),
+            key=lambda value: int(value),
+        )
+        wahlkreis_links = []
+        for wk in assigned_wks:
+            href = wahlkreis_link_by_wk.get(wk)
+            label = f"Wahlkreis {wk.zfill(2)}"
+            if href:
+                wahlkreis_links.append(f"<a href='{html.escape(link_prefix + href)}'>{html.escape(label)}</a>")
+            else:
+                wahlkreis_links.append(html.escape(label))
+        municipality_href = municipality_link_by_ags.get(ags)
+        municipality_label = html.escape(str(entity.get("municipality_name") or ags))
+        if municipality_href:
+            municipality_label = f"<a href='{html.escape(link_prefix + municipality_href)}'>{municipality_label}</a>"
+        rows.append(
+            "<tr>"
+            f"<td>{html.escape(ags)}</td>"
+            f"<td>{municipality_label}</td>"
+            f"<td>{' · '.join(wahlkreis_links) or '–'}</td>"
+            "</tr>"
+        )
+    return (
+        "<table class='compact'><thead><tr><th>AGS</th><th>Gemeinde</th><th>Zuordnung zu Wahlkreisen</th></tr></thead>"
+        f"<tbody>{''.join(rows)}</tbody></table>"
+    )
+
+
+def render_wahlkreis_municipality_link_table(
+    wk: str,
+    mapping: Dict[str, Dict[str, Any]],
+    municipality_link_by_ags: Dict[str, str],
+    seed_municipalities: Dict[str, str],
+) -> str:
+    """Provide navigation even when StatLA only supplies a Kreis/GEM total."""
+    item = mapping.get(wk, {})
+    rows: List[str] = []
+    for ags in sorted(item.get("ags_set", set())):
+        name = seed_municipalities.get(ags, ags)
+        href = municipality_link_by_ags.get(ags)
+        label = f"<a href='../{html.escape(href)}'>{html.escape(name)}</a>" if href else html.escape(name)
+        rows.append(f"<tr><td>{html.escape(ags)}</td><td>{label}</td></tr>")
+    return (
+        "<table class='compact'><thead><tr><th>AGS</th><th>Gemeinde</th></tr></thead>"
+        f"<tbody>{''.join(rows)}</tbody></table>"
+    )
+
+
 def render_clickable_wahlkreis_map(
     features: List[Dict[str, Any]],
     status_rows: List[Dict[str, Any]],
@@ -3014,6 +3157,9 @@ def render_index_page(
     config: core.Config,
     output_root: Path,
     features: List[Dict[str, Any]],
+    landkreis_pages: List[Tuple[str, str, str]],
+    landkreis_overview_rows: List[Dict[str, Any]],
+    landkreis_link_by_id: Dict[str, str],
     wahlkreis_pages: List[Tuple[str, str, str]],
     wahlkreis_status_rows: List[Dict[str, Any]],
     wahlkreis_link_by_wk: Dict[str, str],
@@ -3038,6 +3184,11 @@ def render_index_page(
     statla_url = str(run_metadata.get("statla_url") or config.statla_live_csv_url)
     if statla_mode == "DUMMY" and Path(statla_url).is_absolute():
         statla_url = config.statla_dummy_csv_url
+    statla_urls = [url.strip() for url in statla_url.split(";") if url.strip()]
+    statla_source_links = " · ".join(
+        f"<a href='{html.escape(url)}'>{html.escape(url)}</a>"
+        for url in statla_urls
+    )
 
     wahlkreis_counts = {"prestart": 0, "no_data": 0, "pending": 0, "complete": 0}
     for row in wahlkreis_status_rows:
@@ -3073,11 +3224,13 @@ def render_index_page(
         "<a href='scenario.html'>Szenario</a><span>/</span>"
         "<a href='../index.html'>Alle Wahlen</a></div>"
         f"<h1>{html.escape(config.election_name)} ({html.escape(config.election_key)})</h1>"
-        "<p class='muted'>Statische Übersicht mit Drill-down von Wahlkreis zu Gemeinde und Wahlbezirk.</p>"
+        "<p class='muted'>Statische Übersicht mit Drill-down von Land zu Landkreis, Wahlkreis, Gemeinde und – sofern veröffentlicht – Wahlbezirk.</p>"
+        "<p class='small'>Aktuell veröffentlichte LSA-Ergebnisebenen: Land, Landkreis/kreisfreie Stadt, Wahlkreis und Gemeinde. Einzelne Wahlbezirke sind in den offiziellen 2026-CSV-Dateien derzeit nicht enthalten.</p>"
         f"<div class='stats'>"
         f"<div class='stat'><div class='stat-label'>Letzte Abfrage</div><div class='stat-value'>{html.escape(polled_at_local)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Trackingstart</div><div class='stat-value'>{html.escape(tracking_start)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Gemeinden</div><div class='stat-value'>{len(municipality_link_by_ags):,}</div></div>"
+        f"<div class='stat'><div class='stat-label'>Landkreise</div><div class='stat-value'>{len(landkreis_pages)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Wahlkreise vollständig</div><div class='stat-value'>{wahlkreis_counts['complete']}</div></div>"
         f"<div class='stat'><div class='stat-label'>Wahlkreise vor Start</div><div class='stat-value'>{wahlkreis_counts['prestart']}</div></div>"
         "</div></div>"
@@ -3091,6 +3244,7 @@ def render_index_page(
         f"{render_reference_map_legend(reference_2021) if reference_map_mode else ''}</div>"
         f"{render_structure_profile_panel(features, wahlkreis_link_by_wk)}"
         f"{render_reference_2021_panel(reference_2021)}"
+        f"{render_landkreis_overview_table(landkreis_overview_rows, landkreis_link_by_id)}"
         f"{render_historical_comparison_section(land_snapshot, party_row_details_by_row_key, party_order)}"
         f"{render_report_figure_panel(output_root, title='Politische Repräsentation', image_path=core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png', image_alt='Politische Repräsentation der Stimmenanteile', description='Reportgrafik zur politischen Repräsentation der Landes- bzw. Zweitstimmen.', data_links=[('PNG', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png'), ('CSV', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.csv')])}"
         f"{render_vote_share_history_panel(config)}"
@@ -3116,8 +3270,8 @@ def render_index_page(
             else ""
         )
         + (
-            f"<li>Offizielle Ergebnisquelle (Modus: <strong>{html.escape(statla_mode)}</strong>): <a href='{html.escape(statla_url)}'>{html.escape(statla_url)}</a></li>"
-            if statla_url
+            f"<li>Offizielle Ergebnisquelle (Modus: <strong>{html.escape(statla_mode)}</strong>): {statla_source_links}</li>"
+            if statla_source_links
             else ""
         )
         + (
@@ -3308,6 +3462,18 @@ def main() -> int:
         selected_ags,
         seed_municipalities=seed_municipalities,
     )
+    landkreis_names = load_lsa_landkreis_names(config, snapshots)
+    landkreis_snapshots_by_id = {
+        landkreis_id_for_ags(row.get("gebietsnummer")): row
+        for row in snapshots
+        if str(row.get("gebietsart") or "").strip().upper() == "KREIS"
+        and landkreis_id_for_ags(row.get("gebietsnummer"))
+    }
+    landkreis_entities_by_id: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+    for entity in city_entities:
+        landkreis_id = landkreis_id_for_ags(entity.get("ags"))
+        if landkreis_id:
+            landkreis_entities_by_id[landkreis_id].append(entity)
 
     booth_rows_by_ags: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for row in snapshots:
@@ -3328,6 +3494,8 @@ def main() -> int:
     municipality_pages: Dict[str, str] = {}
     municipality_index_links: Dict[str, str] = {}
     booth_pages: Dict[str, str] = {}
+    landkreis_pages: List[Tuple[str, str, str]] = []
+    landkreis_link_by_id: Dict[str, str] = {}
     wahlkreis_pages: List[Tuple[str, str, str]] = []
     wahlkreis_link_by_wk: Dict[str, str] = {}
     entity_to_wahlkreis_filename: Dict[str, str] = {}
@@ -3362,11 +3530,116 @@ def main() -> int:
 
     wahlkreis_groups = build_wahlkreis_groups_from_entities(city_entities)
 
-    for wk, municipalities in sorted(wahlkreis_groups.items(), key=lambda item: int(item[0])):
-        wk_name = mapping.get(wk, {}).get("wahlkreis_name", f"Wahlkreis {wk}")
+    # Build links for every statutory Wahlkreis, including a pre-start page
+    # whose municipality table may still be empty for a split city.
+    for wk, item in sorted(mapping.items(), key=lambda pair: int(pair[0])):
+        wk_name = item.get("wahlkreis_name", f"Wahlkreis {wk}")
         filename = f"{wahlkreis_slug(wk, wk_name)}.html"
         wahlkreis_pages.append((wk, wk_name, filename))
         wahlkreis_link_by_wk[wk] = f"wahlkreis/{filename}"
+
+    for landkreis_id, name in landkreis_names.items():
+        filename = f"{landkreis_slug(landkreis_id, name)}.html"
+        landkreis_pages.append((landkreis_id, name, filename))
+        landkreis_link_by_id[landkreis_id] = f"landkreis/{filename}"
+
+    landkreis_overview_rows = [
+        {
+            "landkreis_id": landkreis_id,
+            "name": name,
+            "snapshot": landkreis_snapshots_by_id.get(landkreis_id, {}),
+            "municipality_count": len({entity.get("ags") for entity in landkreis_entities_by_id.get(landkreis_id, [])}),
+            "wahlkreis_count": len({
+                wk for wk, item in mapping.items()
+                if any(ags in item.get("ags_set", set()) for ags in {
+                    entity.get("ags") for entity in landkreis_entities_by_id.get(landkreis_id, [])
+                })
+            }),
+        }
+        for landkreis_id, name in landkreis_names.items()
+    ]
+
+    # Landkreis pages are the parent navigation for both WKR and municipality
+    # pages.  They use the same vote table component as the other levels.
+    for landkreis_id, name, filename in landkreis_pages:
+        county_entities = landkreis_entities_by_id.get(landkreis_id, [])
+        county_snapshot = landkreis_snapshots_by_id.get(landkreis_id, {})
+        county_rows = []
+        county_link_lookup: Dict[str, str] = {}
+        if county_snapshot:
+            county_rows = [(name, county_snapshot["row_key"], county_snapshot)]
+            county_link_lookup[county_snapshot["row_key"]] = f"../landkreis/{filename}"
+        county_first_table = render_vote_table(
+            county_rows,
+            party_votes,
+            "Erststimmen",
+            party_order["Erststimmen"],
+            county_link_lookup,
+        ) if county_rows else "<p class='muted'>Für diesen Landkreis liegen noch keine Ergebniszeilen vor.</p>"
+        county_second_table = render_vote_table(
+            county_rows,
+            party_votes,
+            "Zweitstimmen",
+            party_order["Zweitstimmen"],
+            county_link_lookup,
+        ) if county_rows else ""
+        related_wahlkreise = sorted(
+            {
+                wk for wk, item in mapping.items()
+                if any(entity.get("ags") in item.get("ags_set", set()) for entity in county_entities)
+            },
+            key=lambda value: int(value),
+        )
+        wahlkreis_links = []
+        for wk in related_wahlkreise:
+            href = wahlkreis_link_by_wk.get(wk)
+            if href:
+                wahlkreis_links.append(f"<a href='../{html.escape(href)}'>Wahlkreis {html.escape(wk.zfill(2))}</a>")
+        related_panel = (
+            "<div class='panel'><h2>Zugeordnete Wahlkreise</h2>"
+            f"<p class='linklist'>{' · '.join(wahlkreis_links) or '–'}</p></div>"
+        )
+        body = (
+            f"<div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
+            "<a href='../search.html'>Suche</a><span>/</span>"
+            "<a href='../../index.html'>Alle Wahlen</a></div>"
+            f"<h1>{html.escape(name)}</h1>"
+            f"<p class='muted'>Landkreis-/Kreisfreie-Stadt-Ebene der {html.escape(config.election_name)}. Von hier führen die Links zu allen zugeordneten Wahlkreisen und Gemeinden.</p>"
+            "<div class='stats'>"
+            f"<div class='stat'><div class='stat-label'>Kreiskennung</div><div class='stat-value'>{html.escape(landkreis_id)}</div></div>"
+            f"<div class='stat'><div class='stat-label'>Gemeinden</div><div class='stat-value'>{len({entity.get('ags') for entity in county_entities})}</div></div>"
+            f"<div class='stat'><div class='stat-label'>Wahlkreise</div><div class='stat-value'>{len(related_wahlkreise)}</div></div>"
+            f"<div class='stat'><div class='stat-label'>Gültige Zweitstimmen</div><div class='stat-value'>{vote_total_for_snapshot(county_snapshot, 'Zweitstimmen'):,}</div></div>"
+            "</div></div>"
+            f"{related_panel}"
+            f"<div class='panel'><h2>Gemeinden</h2>{render_landkreis_entity_table(county_entities, municipality_index_links, mapping, wahlkreis_link_by_wk)}</div>"
+            f"<div class='panel'><h2>{html.escape(vote_type_label('Erststimmen'))}</h2>{county_first_table}</div>"
+            f"<div class='panel'><h2>{html.escape(vote_type_label('Zweitstimmen'))}</h2>{county_second_table}</div>"
+        )
+        write_page(
+            output_root / "landkreis" / filename,
+            f"{name} | {config.election_name}",
+            body,
+            description=f"Wahlergebnisse für {name} zur {config.election_name}: Gemeinden und Wahlkreise.",
+            breadcrumbs=[
+                ("wahl-monitor.de", "/"),
+                (config.election_name, f"/{config.election_key}/"),
+                (name, f"/{config.election_key}/landkreis/{filename}"),
+            ],
+        )
+        append_search_entry(
+            search_entries,
+            kind="landkreis",
+            title=name,
+            href=f"landkreis/{filename}",
+            subtitle=f"Landkreis/Kreisfreie Stadt · {landkreis_id}",
+            search_fields=[landkreis_id, "Landkreis", "Kreisfreie Stadt", name],
+            snapshot=county_snapshot,
+            sort_key=landkreis_id,
+        )
+
+    for wk, wk_name, filename in wahlkreis_pages:
+        municipalities = wahlkreis_groups.get(wk, [])
         for entity in municipalities:
             entity_to_wahlkreis_filename[entity["entity_key"]] = filename
 
@@ -3381,8 +3654,25 @@ def main() -> int:
             party_order,
         )
         structure_section = render_wahlkreis_structure_panel(wahlkreis_features_by_wk.get(wk))
+        assigned_ags = set(mapping.get(wk, {}).get("ags_set", set()))
+        listed_ags = {str(entity.get("ags") or "") for entity in municipalities}
+        missing_ags = assigned_ags - listed_ags
+        navigation_section = ""
+        if missing_ags:
+            navigation_section = (
+                "<div class='panel'><h2>Zugeordnete Gemeinden</h2>"
+                "<p class='small'>Die amtliche LSA-Datei liefert für geteilte Gemeinden zunächst nur einen GEM-Gesamtwert; der Link bleibt trotzdem auf der richtigen Gemeindeebene erreichbar.</p>"
+                f"{render_wahlkreis_municipality_link_table(wk, mapping, municipality_index_links, seed_municipalities)}</div>"
+            )
+        landkreis_id = landkreis_id_for_ags(next(iter(sorted(assigned_ags)), ""))
+        landkreis_href = landkreis_link_by_id.get(landkreis_id)
+        landkreis_topbar = (
+            f"<a href='../{html.escape(landkreis_href)}'>Landkreis</a><span>/</span>"
+            if landkreis_href else ""
+        )
         body = (
             f"<div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
+            f"{landkreis_topbar}"
             "<a href='../search.html'>Suche</a><span>/</span>"
             f"<a href='../../index.html'>Alle Wahlen</a></div><h1>{html.escape(wk.zfill(2))} - {html.escape(wk_name)}</h1>"
             f"<p class='muted'>Wahlergebnis im Wahlkreis {html.escape(wk.zfill(2))} {html.escape(wk_name)} "
@@ -3390,6 +3680,7 @@ def main() -> int:
             f"und {html.escape(vote_type_label('Zweitstimmen'))}.</p></div>"
             f"{structure_section}"
             f"{comparison_section}"
+            f"{navigation_section}"
             f"<div class='panel'><h2>{html.escape(vote_type_label('Erststimmen'))}</h2>{first_table}</div>"
             f"<div class='panel'><h2>{html.escape(vote_type_label('Zweitstimmen'))}</h2>{second_table}</div>"
         )
@@ -3437,14 +3728,39 @@ def main() -> int:
         rows_for_table = [(booth["display_name"], booth["row_key"], booth) for booth in booth_rows]
         first_table = render_vote_table(rows_for_table, party_votes, "Erststimmen", party_order["Erststimmen"], row_links)
         second_table = render_vote_table(rows_for_table, party_votes, "Zweitstimmen", party_order["Zweitstimmen"], row_links)
-        wahlkreis_link = entity_to_wahlkreis_filename.get(entity["entity_key"], "../index.html")
+        wahlkreis_link = entity_to_wahlkreis_filename.get(entity["entity_key"], "")
+        landkreis_id = landkreis_id_for_ags(ags)
+        landkreis_link = landkreis_link_by_id.get(landkreis_id, "")
+        assigned_wks = sorted(
+            (wk_id for wk_id, item in mapping.items() if ags in item.get("ags_set", set())),
+            key=lambda value: int(value),
+        )
+        assigned_wk_links = []
+        for wk_id in assigned_wks:
+            href = wahlkreis_link_by_wk.get(wk_id)
+            if href:
+                assigned_wk_links.append(f"<a href='../{html.escape(href)}'>Wahlkreis {html.escape(wk_id.zfill(2))}</a>")
+        assignment_panel = (
+            "<div class='panel'><h2>Gebietszuordnung</h2>"
+            f"<p>Landkreis: <a href='../{html.escape(landkreis_link)}'>{html.escape(landkreis_names.get(landkreis_id, landkreis_id))}</a></p>"
+            f"<p>Wahlkreise: {' · '.join(assigned_wk_links) or '–'}</p></div>"
+            if landkreis_link else ""
+        )
         wk_stat = ""
         if wk:
             wk_stat = f"<div class='stat'><div class='stat-label'>Wahlkreis</div><div class='stat-value'>{html.escape(wk.zfill(2))}</div></div>"
         wk_text = f" im Wahlkreis {wk.zfill(2)}" if wk else ""
+        wahlkreis_topbar = (
+            f"<a href='../wahlkreis/{html.escape(wahlkreis_link)}'>Wahlkreis</a><span>/</span>"
+            if wahlkreis_link else ""
+        )
+        landkreis_topbar = (
+            f"<a href='../{html.escape(landkreis_link)}'>Landkreis</a><span>/</span>"
+            if landkreis_link else ""
+        )
         body = (
             f"<div class='hero'><div class='topbar'><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
-            f"<a href='../wahlkreis/{html.escape(wahlkreis_link)}'>Wahlkreis</a><span>/</span>"
+            f"{landkreis_topbar}{wahlkreis_topbar}"
             "<a href='../search.html'>Suche</a><span>/</span>"
             "<a href='../../index.html'>Alle Wahlen</a></div>"
             f"<h1>{html.escape(name)}</h1><p class='muted'>Wahlergebnis für {html.escape(name)}{html.escape(wk_text)} "
@@ -3456,6 +3772,7 @@ def main() -> int:
             f"<div class='stat'><div class='stat-label'>Gültige {html.escape(vote_type_label('Erststimmen'))}</div><div class='stat-value'>{vote_total_for_snapshot(municipality_row, 'Erststimmen'):,}</div></div>"
             f"<div class='stat'><div class='stat-label'>Gültige {html.escape(vote_type_label('Zweitstimmen'))}</div><div class='stat-value'>{vote_total_for_snapshot(municipality_row, 'Zweitstimmen'):,}</div></div>"
             "</div></div>"
+            f"{assignment_panel}"
             f"{render_historical_comparison_section(municipality_row, party_row_details, party_order)}"
             f"<div class='panel'><h2>Wahlbezirke</h2>{render_booth_list(booth_rows, booth_local_links)}</div>"
             f"<div class='panel'><h2>Wahlbezirkstabelle: {html.escape(vote_type_label('Erststimmen'))}</h2>{first_table}</div>"
@@ -3618,6 +3935,9 @@ def main() -> int:
         config,
         output_root,
         features,
+        landkreis_pages,
+        landkreis_overview_rows,
+        landkreis_link_by_id,
         wahlkreis_pages,
         wahlkreis_status_rows,
         wahlkreis_link_by_wk,

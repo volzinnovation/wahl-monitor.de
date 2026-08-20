@@ -6,7 +6,7 @@
   "timezone": "Europe/Berlin",
   "kommone_wahltermin": "",
   "kommone_base_url_template": "",
-  "statla_live_csv_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/erg_land.html",
+  "statla_live_csv_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/index.html",
   "statla_dummy_csv_url": "",
   "statla_downloads_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads.html",
   "wahlkreise_geojson_zip_url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Wahlen/Wahlkreise/Wahlkreise_LTW_2026_geosjon-Datei.zip",
