@@ -144,6 +144,7 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         "notes": [
             "Die Sitzverteilung nutzt ein proportionales Sainte-Laguë-Modell mit 5-Prozent-Schwelle.",
             "Direktmandate, Überhangmandate, Mehrheitssicherungen und amtliche Losentscheide werden hier nicht simuliert.",
+            "Die Regler geben absolute Stimmenanteile an; bei einer Summe ungleich 100 % wird für die Sitznäherung proportional normiert.",
         ],
     }
 
@@ -222,6 +223,12 @@ def scenario_css() -> str:
     font-variant-numeric: tabular-nums;
     font-weight: 700;
   }
+  .scenario-total {
+    margin: 10px 0 0;
+    font-weight: 700;
+  }
+  .scenario-total.ok { color: #15803d; }
+  .scenario-total.mismatch { color: #b45309; }
   .scenario-control input {
     accent-color: var(--accent);
     width: 100%;
@@ -301,13 +308,14 @@ def scenario_script() -> str:
   const coalitionsRoot = document.querySelector("[data-coalitions]");
   const tableBody = document.querySelector("[data-scenario-table]");
   const summary = document.querySelector("[data-scenario-summary]");
+  const scenarioTotal = document.querySelector("[data-scenario-total]");
   const resetButton = document.querySelector("[data-reset]");
   const copyButton = document.querySelector("[data-copy]");
   const params = new URLSearchParams(window.location.search);
   const defaultSwingLimit = 100;
   let payload = null;
 
-  function clampSwing(value) {
+  function clampScenarioShare(value) {
     const limit = Number(payload && payload.swingLimitPercent) || defaultSwingLimit;
     const numericValue = Number(value);
     if (!Number.isFinite(numericValue)) {
@@ -318,6 +326,11 @@ def scenario_script() -> str:
 
   function formatPercent(value) {
     return `${value.toLocaleString("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} %`;
+  }
+
+  function formatPoints(value) {
+    const sign = value >= 0 ? "+" : "";
+    return `${sign}${value.toLocaleString("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} pp`;
   }
 
   function escapeHtml(value) {
@@ -344,25 +357,25 @@ def scenario_script() -> str:
     return allocation;
   }
 
-  function currentSwings() {
-    const swings = new Map();
+  function currentScenarioShares() {
+    const shares = new Map();
     controls.querySelectorAll("input[data-party]").forEach((input) => {
-      swings.set(input.dataset.party, Number(input.value || 0));
+      shares.set(input.dataset.party, clampScenarioShare(input.value));
     });
-    return swings;
+    return shares;
   }
 
   function adjustedParties() {
-    const swings = currentSwings();
+    const shares = currentScenarioShares();
     const raw = payload.parties.map((party) => ({
       ...party,
-      swing: swings.get(party.party) || 0,
-      rawShare: Math.max(0, party.share + (swings.get(party.party) || 0)),
+      scenarioShare: shares.has(party.party) ? shares.get(party.party) : party.share,
     }));
-    const sum = raw.reduce((total, party) => total + party.rawShare, 0) || 1;
+    const sum = raw.reduce((total, party) => total + party.scenarioShare, 0);
     return raw.map((party) => ({
       ...party,
-      adjustedShare: (party.rawShare / sum) * 100,
+      swing: party.scenarioShare - party.share,
+      adjustedShare: sum > 0 ? (party.scenarioShare / sum) * 100 : 0,
     }));
   }
 
@@ -370,7 +383,7 @@ def scenario_script() -> str:
     const next = new URLSearchParams();
     parties.forEach((party) => {
       if (Math.abs(party.swing) >= 0.05) {
-        next.set(party.slug, party.swing.toFixed(1));
+        next.set(party.slug, party.scenarioShare.toFixed(1));
       }
     });
     const suffix = next.toString();
@@ -380,6 +393,14 @@ def scenario_script() -> str:
 
   function render() {
     const parties = adjustedParties();
+    const scenarioShareTotal = parties.reduce((total, party) => total + party.scenarioShare, 0);
+    const mismatch = scenarioShareTotal - 100;
+    const totalMatches = Math.abs(mismatch) < 0.05;
+    scenarioTotal.classList.toggle("ok", totalMatches);
+    scenarioTotal.classList.toggle("mismatch", !totalMatches);
+    scenarioTotal.textContent = totalMatches
+      ? `Summe der Szenarioanteile: ${formatPercent(scenarioShareTotal)}`
+      : `Summe der Szenarioanteile: ${formatPercent(scenarioShareTotal)} · Abweichung ${formatPoints(mismatch)}. Für die Sitznäherung werden die Werte auf 100 % normiert.`;
     const allocation = allocate(parties, payload.baseSeats, payload.thresholdPercent);
     parties.forEach((party) => {
       party.seats = allocation.get(party.party) || 0;
@@ -432,21 +453,22 @@ def scenario_script() -> str:
     controls.replaceChildren();
     const swingLimit = Number(payload.swingLimitPercent) || defaultSwingLimit;
     payload.parties.forEach((party) => {
-      const initial = clampSwing(params.get(party.slug) || 0);
+      const requested = params.get(party.slug);
+      const initial = clampScenarioShare(requested === null ? party.share : requested);
       const wrapper = document.createElement("label");
       wrapper.className = "scenario-control";
       const partyLabel = escapeHtml(party.party);
       wrapper.innerHTML = `
         <span class="scenario-control-head">
           <span class="scenario-party"><span class="scenario-dot" style="background:${party.color}"></span>${partyLabel}</span>
-          <output>${initial.toFixed(1)} pp</output>
+          <output>${formatPercent(initial)}</output>
         </span>
-        <input data-party="${partyLabel}" type="range" min="0" max="${swingLimit}" step="0.5" value="${initial}">
+        <input data-party="${partyLabel}" data-default="${party.share}" type="range" min="0" max="${swingLimit}" step="0.5" value="${initial}" aria-label="${partyLabel} Szenarioanteil">
       `;
       const input = wrapper.querySelector("input");
       const output = wrapper.querySelector("output");
       input.addEventListener("input", () => {
-        output.textContent = `${Number(input.value).toFixed(1)} pp`;
+        output.textContent = formatPercent(Number(input.value));
         render();
       });
       controls.appendChild(wrapper);
@@ -455,8 +477,8 @@ def scenario_script() -> str:
 
   resetButton.addEventListener("click", () => {
     controls.querySelectorAll("input[data-party]").forEach((input) => {
-      input.value = "0";
-      input.closest(".scenario-control").querySelector("output").textContent = "0.0 pp";
+      input.value = input.dataset.default;
+      input.closest(".scenario-control").querySelector("output").textContent = formatPercent(Number(input.value));
     });
     render();
   });
@@ -511,14 +533,15 @@ def render_scenario_page(
         "<div class='hero'><div class='topbar'><a href='index.html'>Startseite dieser Wahl</a><span>/</span>"
         "<a href='search.html'>Suche</a><span>/</span><a href='../index.html'>Alle Wahlen</a></div>"
         f"<h1>Was-wäre-wenn: {html.escape(config.election_name)}</h1>"
-        f"<p class='muted'>Interaktive Stimmenverschiebung für {html.escape(str(payload['voteLabel']))}, "
+        f"<p class='muted'>Interaktive Szenario-Stimmenanteile für {html.escape(str(payload['voteLabel']))}, "
         "Schwelle, Sitznäherung und Koalitionsmehrheiten.</p></div>"
         "<div class='scenario-shell'>"
         f"<div class='scenario-alert'>{html.escape(baseline_note)} "
         "Die Sitznäherung ist ein transparentes Rechenmodell, kein amtliches Ergebnis.</div>"
         "<div class='scenario-workspace'>"
-        "<div class='panel'><h2>Stimmen verschieben</h2>"
-        "<p class='small'>Je Partei sind Verschiebungen von 0 bis +100 Prozentpunkten möglich.</p>"
+        "<div class='panel'><h2>Stimmenanteile festlegen</h2>"
+        "<p class='small'>Je Partei sind 0 bis 100 % möglich. Die Summe aller Regler sollte 100,0 % ergeben.</p>"
+        "<p class='scenario-total mismatch' data-scenario-total aria-live='polite'>Summe der Szenarioanteile wird berechnet …</p>"
         "<div class='scenario-controls' data-scenario-controls></div>"
         "<div class='scenario-actions'><button type='button' data-reset>Zurücksetzen</button>"
         "<button class='secondary' type='button' data-copy>Link kopieren</button></div></div>"
@@ -538,7 +561,7 @@ def render_scenario_page(
         body,
         description=(
             f"Interaktives Was-wäre-wenn-Szenario zur {config.election_name}: "
-            "Stimmenanteile verschieben, 5-Prozent-Schwelle prüfen und Sitznäherung vergleichen."
+            "Stimmenanteile festlegen, die Summe auf 100 % prüfen und Sitznäherung vergleichen."
         ),
         breadcrumbs=[
             ("wahl-monitor.de", "/"),
