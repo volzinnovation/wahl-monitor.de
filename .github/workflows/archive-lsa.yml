@@ -1,0 +1,179 @@
+name: Archive Sachsen-Anhalt 2026
+
+on:
+  # GitHub Actions schedules are UTC.  16:30 UTC is 18:30 CEST in Berlin
+  # on 2026-09-06.  The second run covers the official Wahlbezirk export,
+  # which the downloads page says will be published after the preliminary
+  # result, potentially on the morning of 2026-09-07.
+  schedule:
+    - cron: "30 16 6 9 *"
+    - cron: "30 4 7 9 *"
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: "Archive phase to run"
+        required: true
+        default: evening
+        type: choice
+        options:
+          - evening
+          - follow-up
+
+permissions:
+  contents: read
+
+concurrency:
+  group: archive-2026-lsa
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Select scheduled archive phase
+        id: timing
+        shell: bash
+        run: |
+          set -euo pipefail
+          phase="${{ inputs.phase || 'evening' }}"
+          should_run=true
+
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
+            schedule="${{ github.event.schedule }}"
+            local_date="$(TZ=Europe/Berlin date +%F)"
+            case "$schedule" in
+              "30 16 6 9 *")
+                phase="evening"
+                [ "$local_date" = "2026-09-06" ] || should_run=false
+                ;;
+              "30 4 7 9 *")
+                phase="follow-up"
+                [ "$local_date" = "2026-09-07" ] || should_run=false
+                ;;
+              *)
+                should_run=false
+                ;;
+            esac
+            echo "Scheduled event: $schedule; Berlin date: $local_date"
+          fi
+
+          echo "phase=$phase" >> "$GITHUB_OUTPUT"
+          echo "run=$should_run" >> "$GITHUB_OUTPUT"
+
+      - name: Poll election-night results
+        if: steps.timing.outputs.run == 'true'
+        env:
+          ARCHIVE_PHASE: ${{ steps.timing.outputs.phase }}
+        run: |
+          set -euo pipefail
+          if [ "$ARCHIVE_PHASE" = "evening" ]; then
+            # Keep the election-night raw snapshots in the artifact.  The
+            # first poll starts immediately because the schedule is already
+            # aligned to 18:30 CEST.
+            python scripts/run_local_poll_loop.py \
+              --election-key 2026-lsa \
+              --interval-seconds 300 \
+              --iterations 24 \
+              -- \
+              --force-run \
+              --skip-kommone \
+              --quiet \
+              --no-progress
+          else
+            # The later run is intentionally one poll: it captures the
+            # preliminary-result and, if present, Wahlbezirk CSV.
+            python scripts/poll_election.py \
+              --election-key 2026-lsa \
+              --force-run \
+              --skip-kommone \
+              --quiet \
+              --no-progress
+          fi
+
+      - name: Build and validate archive
+        if: steps.timing.outputs.run == 'true'
+        env:
+          ARCHIVE_PHASE: ${{ steps.timing.outputs.phase }}
+          ARCHIVE_ROOT: ${{ github.workspace }}/archive/2026-lsa
+        run: |
+          set -euo pipefail
+          mkdir -p "$ARCHIVE_ROOT/data/2026-lsa" "$ARCHIVE_ROOT/site"
+          cp -R data/2026-lsa/latest "$ARCHIVE_ROOT/data/2026-lsa/latest"
+          cp -R data/2026-lsa/raw "$ARCHIVE_ROOT/data/2026-lsa/raw"
+          cp -R data/2026-lsa/reports "$ARCHIVE_ROOT/data/2026-lsa/reports"
+          cp -R data/2026-lsa/metadata "$ARCHIVE_ROOT/data/2026-lsa/metadata"
+          cp config/2026-lsa.json "$ARCHIVE_ROOT/config-2026-lsa.json"
+          if [ -f data/2026-lsa/history.sqlite ]; then
+            cp data/2026-lsa/history.sqlite "$ARCHIVE_ROOT/data/2026-lsa/history.sqlite"
+          fi
+
+          python scripts/generate_static_detail_pages.py \
+            --election-key 2026-lsa \
+            --output-root "$ARCHIVE_ROOT/site/2026-lsa"
+
+          ARCHIVE_PHASE="$ARCHIVE_PHASE" ARCHIVE_ROOT="$ARCHIVE_ROOT" python - <<'PY'
+          import csv
+          import json
+          import os
+          from collections import Counter
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          root = Path(os.environ["ARCHIVE_ROOT"])
+          latest = root / "data" / "2026-lsa" / "latest"
+          snapshots_path = latest / "statla_snapshots.csv"
+          with snapshots_path.open(encoding="utf-8", newline="") as handle:
+              rows = list(csv.DictReader(handle))
+          levels = Counter(str(row.get("gebietsart") or "").upper() for row in rows)
+          required = {"LAND", "KREIS", "WAHLKREIS", "GEMEINDE"}
+          missing = sorted(required - set(levels))
+          if missing:
+              raise SystemExit(f"Missing required LSA result levels: {missing}")
+          if levels.get("WAHLBEZIRK", 0):
+              booth_pages = len(list((root / "site" / "2026-lsa" / "booth").glob("*.html")))
+              if booth_pages != levels["WAHLBEZIRK"]:
+                  raise SystemExit(
+                      "Wahlbezirk result/page mismatch: "
+                      f"{levels['WAHLBEZIRK']} rows != {booth_pages} pages"
+                  )
+
+          run_metadata = json.loads((latest / "run_metadata.json").read_text(encoding="utf-8"))
+          manifest = {
+              "archive_created_at_utc": datetime.now(timezone.utc).isoformat(),
+              "archive_phase": os.environ["ARCHIVE_PHASE"],
+              "election_key": "2026-lsa",
+              "election_date": "2026-09-06",
+              "levels": dict(sorted(levels.items())),
+              "wahlbezirk_csv_published": levels.get("WAHLBEZIRK", 0) > 0,
+              "run_metadata": run_metadata,
+          }
+          (root / "archive_manifest.json").write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(manifest, ensure_ascii=False, indent=2))
+          PY
+
+          tar -czf "$GITHUB_WORKSPACE/lsa-2026-${ARCHIVE_PHASE}-archive.tar.gz" \
+            -C "$GITHUB_WORKSPACE/archive" 2026-lsa
+
+      - name: Upload Sachsen-Anhalt archive
+        if: steps.timing.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: lsa-2026-${{ steps.timing.outputs.phase }}-${{ github.run_id }}
+          path: |
+            ${{ github.workspace }}/archive/2026-lsa
+            ${{ github.workspace }}/lsa-2026-${{ steps.timing.outputs.phase }}-archive.tar.gz
+          if-no-files-found: error
+          retention-days: 90

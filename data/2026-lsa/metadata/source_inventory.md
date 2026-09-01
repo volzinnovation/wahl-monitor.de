@@ -1,11 +1,12 @@
 # Sachsen-Anhalt 2026 Setup Notes
 
-Last checked: `2026-08-20`.
+Last checked: `2026-09-01`.
 
 ## Official Published Inputs
 - Election information hub: <https://wahlen.sachsen-anhalt.de/zu-den-wahlen/landtagswahl>
 - Official FAQ page for the 2026 election: <https://wahlen.sachsen-anhalt.de/zu-den-wahlen/landtagswahl/faqs-zur-landtagswahl-2026>
 - Statistical election page: <https://statistik.sachsen-anhalt.de/themen/gebiet-und-wahlen/wahlen/landtagswahl-2026>
+- The official candidate information is now available from the Landeswahlleiterin; the Statistisches Landesamt reports 16 parties, 398 candidates and 6 independent candidates: <https://statistik.sachsen-anhalt.de/daten-und-veroeffentlichungen/pressemitteilungen/2026/08/205/2026-16-parteien-und-398-bewerberinnen-und-bewerber-treten-zur-landtagswahl-2026-an>
 - Statistical Wahlkreis overview and downloads: <https://statistik.sachsen-anhalt.de/themen/gebiet-und-wahlen/wahlen/landtagswahl-2026-2/uebersicht-wahlkreiseinteilung>
 - Official notice confirming the election date `2026-09-06`: <https://wahlen.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/MI/wahlen/PDF/2025_09_29_Bek_der_Landeswahlleiterin_nach___28_Abs_2_LWO.pdf>
 - Official 2026 Wahlkreiseinteilung PDF: <https://wahlen.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/MI/wahlen/PDF/2026_Wahlkreiseinteilung_fuer_Landtagswahlen_in_Sachsen_Anhalt.pdf>
@@ -18,8 +19,10 @@ Last checked: `2026-08-20`.
 - Official results portal root: <https://wahlergebnisse.sachsen-anhalt.de/>
 - Published 2026 results portal/presentation: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/index.html>
 - Published 2026 downloads page: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads.html>
-- The downloads page now publishes two UTF-8 empty CSVs: land/districts/Wahlkreise and municipalities. They contain the complete structural rows, but all current vote values are zero until election day.
+- The downloads page currently publishes two UTF-8 empty CSVs: land/districts/Wahlkreise and municipalities. It states that interim results will be added after 18:00 on election day and the preliminary result during the election night or early on 2026-09-07.
 - Direct files: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Land_RKR_WKR_LT_2026.csv> and <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Gemeinden_LT_2026.csv>
+- Current result dataset description: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/DSB_LT_2026.pdf>
+- New Wahlbezirk dataset description, dated 2026-08-28: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/DSB_WBZ_LT_2026.pdf>. The corresponding CSV is to be made available only after the preliminary result; the poller now discovers and normalizes it automatically when the official downloads page links it.
 - The former `erg_land.html` path currently returns HTTP 404; the current portal entry point is `lt26/index.html`.
 - Verified historical 2021 results portal: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/index.php>
 - Verified historical 2021 download page: <https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php>
@@ -34,7 +37,7 @@ Last checked: `2026-08-20`.
 - The five split municipalities are recorded separately in `split_municipalities.csv`. The official page identifies the split municipality and Wahlkreis ranges; the workbook gives the exact district-level split only for Leuna and Petersberg.
 - The normalized 2021 reference tables are in `data/2026-lsa/reference/2021/`. They cover the land, 14 districts, 41 Wahlkreise, and 218 municipalities, with long party-result rows and a compact Wahlkreis winner table.
 - The 2026 landing-page map uses the official 2026 Wahlkreis geometry and colors each district by the 2021 official Zweitstimmen winner until 2026 results arrive.
-- The current 2026 result drill-down therefore has four published levels: `LAND`, `KREIS`, `WAHLKREIS` and `GEMEINDE`. Individual `WAHLBEZIRK` rows are not included in the official LSA downloads; the static site exposes Landkreis pages and preserves all municipality-to-Wahlkreis links, including the five split municipalities.
+- The current 2026 result drill-down has four published levels: `LAND`, `KREIS`, `WAHLKREIS` and `GEMEINDE`. `WAHLBEZIRK` is a planned fifth result level: its schema is published but its result file is not yet linked. Once it appears, the poller creates one navigable Wahlbezirk page per official Wahlbezirk and preserves the existing Landkreis → Wahlkreis → Gemeinde relationships, including the five split municipalities.
 
 ## Population Reference
 - Latest available official estimate used for preparation: `2,120,100` inhabitants on `2025-12-31`.

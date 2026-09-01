@@ -35,6 +35,30 @@ HEADER = ";".join(
     ]
 )
 
+WAHLBEZIRK_HEADER = ";".join(
+    [
+        "Wahlkreisnummer",
+        "Wahlkreisname",
+        "Kreisschlüssel",
+        "KreisfreieStadt.Landkreis",
+        "Gemeindeschlüssel",
+        "Gemeindename",
+        "Verbandsgemeindeschlüssel",
+        "Verbandsgemeindename",
+        "Wahlbezirk",
+        "Wahlbezirksname",
+        "Wahllokal",
+        "A.Wahlberechtigte",
+        "B.Wähler",
+        "E.Ungültige.Zweitstimmen",
+        "F.Gültige.Zweitstimmen",
+        "F01.CDU",
+        "C.Ungültige.Erststimmen",
+        "D.Gültige.Erststimmen",
+        "D01.CDU",
+    ]
+)
+
 
 def row(area_type: str, number: str, name: str, polling_type: str, cdu: str = "0") -> str:
     values = [
@@ -62,6 +86,32 @@ def row(area_type: str, number: str, name: str, polling_type: str, cdu: str = "0
     return ";".join(values)
 
 
+def wahlbezirk_row(polling_type: str, voters: str, cdu: str) -> str:
+    return ";".join(
+        [
+            "10",
+            "Magdeburg I",
+            "15003",
+            "Magdeburg, Landeshauptstadt",
+            "15003000",
+            "Magdeburg, Landeshauptstadt",
+            "",
+            "",
+            "1001",
+            "Altstadt",
+            polling_type,
+            "100",
+            voters,
+            "0",
+            voters,
+            cdu,
+            "0",
+            voters,
+            cdu,
+        ]
+    )
+
+
 def main() -> int:
     sample = "\n".join(
         [
@@ -84,6 +134,22 @@ def main() -> int:
         "ags_count": 1,
         "wahlkreis_count": 0,
     }
+
+    wahlbezirk_csv = "\n".join(
+        [
+            WAHLBEZIRK_HEADER,
+            wahlbezirk_row("U", "40", "8"),
+            wahlbezirk_row("B", "20", "4"),
+        ]
+    )
+    wahlbezirk_snapshots, wahlbezirk_party_rows = core.parse_statla_csv_rows(wahlbezirk_csv)
+    assert len(wahlbezirk_snapshots) == 1
+    assert wahlbezirk_snapshots[0]["gebietsart"] == "WAHLBEZIRK"
+    assert wahlbezirk_snapshots[0]["ags"] == "15003000"
+    assert wahlbezirk_snapshots[0]["wahlkreisnummer"] == "10"
+    assert wahlbezirk_snapshots[0]["voters_total"] == 60
+    assert wahlbezirk_snapshots[0]["valid_votes_erst"] == 60
+    assert next(row for row in wahlbezirk_party_rows if row["vote_type"] == "Erststimmen")["votes"] == 12
     print("LSA StatLA CSV schema test passed")
     return 0
 

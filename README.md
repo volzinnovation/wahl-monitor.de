@@ -28,7 +28,7 @@ Current operational status:
 
 - Live election currently configured for polling: none
 - Next prepared election scaffold: `2026-lsa` for the Landtagswahl Sachsen-Anhalt on `2026-09-06`
-- Active manual GitHub Actions workflows: `.github/workflows/`
+- Active GitHub Actions workflows: `.github/workflows/` (manual Pages deployment, CI smoke test, and the scheduled LSA archive)
 - Archived scheduled GitHub Actions workflows: `.github/workflows-disabled/`
 
 ## Repository Layout
@@ -58,6 +58,7 @@ Current operational status:
 - `scripts/run_local_mock_poll.py`: runs the poller locally against mock or dummy data
 - `scripts/refresh_statla_from_presentation.py`: refreshes StatLA-like outputs from the presentation fallback when direct source access is incomplete
 - `scripts/maybe_disable_poll_schedule.py`: comments out the old poll workflow schedule after all Wahlkreise are complete
+- `.github/workflows/archive-lsa.yml`: archives Sachsen-Anhalt election-night snapshots from 18:30 CEST on 2026-09-06 and captures the preliminary/Wahlbezirk export in a follow-up run
 
 ### Static Site and Publishing
 
@@ -187,6 +188,7 @@ Then open:
 - official RLP result presentation CSV and JSON assets
 - Statistik BW dummy CSV for pre-election and local mock runs
 - official Wahlkreis geometry and mapping files
+- official Sachsen-Anhalt 2026 result CSVs, including the post-preliminary Wahlbezirk export when published
 - cached `komm.one` 2021 structure data for municipality and polling-place drill-down
 
 ## Notes

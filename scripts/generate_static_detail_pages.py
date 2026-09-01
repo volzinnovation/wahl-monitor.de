@@ -415,6 +415,9 @@ def load_latest_statla_snapshots() -> List[Dict[str, Any]]:
                 "municipality_name": str(row.get("municipality_name") or ""),
                 "gebietsart": str(row.get("gebietsart") or ""),
                 "gebietsnummer": str(row.get("gebietsnummer") or ""),
+                "wahlkreisnummer": str(row.get("wahlkreisnummer") or ""),
+                "wahlbezirk_name": str(row.get("wahlbezirk_name") or ""),
+                "wahllokal": str(row.get("wahllokal") or ""),
                 "reported_precincts": core.parse_int(row.get("reported_precincts")),
                 "total_precincts": core.parse_int(row.get("total_precincts")),
                 "voters_total": core.parse_int(row.get("voters_total")),
@@ -440,7 +443,9 @@ def load_statla_dataset() -> Tuple[List[Dict[str, Any]], Dict[str, Dict[str, str
     if raw_path is not None:
         raw_text = core.decode_bytes(raw_path.read_bytes())
         raw_rows = list(csv.DictReader(raw_text.splitlines(), delimiter=";"))
-        for snapshot, raw_row in zip(snapshots, raw_rows):
+        raw_summary_rows = [row for row in raw_rows if core.statla_summary_row(row)]
+        raw_snapshots, _party_rows = core.parse_statla_csv_rows(raw_text)
+        for snapshot, raw_row in zip(raw_snapshots, raw_summary_rows):
             raw_by_row_key[snapshot["row_key"]] = raw_row
     return snapshots, raw_by_row_key
 
@@ -1298,6 +1303,7 @@ def booth_slug(ags: str, snapshot: Dict[str, Any], raw_row: Dict[str, str], wk: 
     kind = {
         "URNENWAHLBEZIRK": "urn",
         "BRIEFWAHLBEZIRK": "brief",
+        "WAHLBEZIRK": "wahlbezirk",
     }.get(gebietsart, slugify(gebietsart) or "booth")
     code = str(raw_row.get("Gebietsnummer") or raw_row.get("Bezirksnummer") or "").strip()
     if code:
@@ -1337,12 +1343,12 @@ def fallback_raw_row(snapshot: Dict[str, Any]) -> Dict[str, str]:
     gebietsart = str(snapshot.get("gebietsart") or "").strip()
     gebietsnummer = str(snapshot.get("gebietsnummer") or "").strip()
     municipality_name = str(snapshot.get("municipality_name") or "").strip()
-    wahlkreisnummer = ""
-    if gebietsart.upper() == "WAHLKREIS":
+    wahlkreisnummer = str(snapshot.get("wahlkreisnummer") or "").strip()
+    if gebietsart.upper() == "WAHLKREIS" and not wahlkreisnummer:
         wahlkreisnummer = core.normalize_wahlkreis_nummer(gebietsnummer)
-    is_booth = gebietsart.upper() in {"URNENWAHLBEZIRK", "BRIEFWAHLBEZIRK"}
+    is_booth = gebietsart.upper() in {"URNENWAHLBEZIRK", "BRIEFWAHLBEZIRK", "WAHLBEZIRK"}
     if is_booth:
-        fallback_name = gebietsnummer or str(snapshot.get("row_key") or "")
+        fallback_name = str(snapshot.get("wahlbezirk_name") or gebietsnummer or snapshot.get("row_key") or "")
     else:
         fallback_name = municipality_name or gebietsnummer or str(snapshot.get("row_key") or "")
     return {
@@ -1351,6 +1357,8 @@ def fallback_raw_row(snapshot: Dict[str, Any]) -> Dict[str, str]:
         "Gebietsname": fallback_name,
         "Gebietsnummer": gebietsnummer,
         "Bezirksnummer": gebietsnummer,
+        "Gebietsart": gebietsart,
+        "Wahllokal": str(snapshot.get("wahllokal") or ""),
     }
 
 
@@ -3225,7 +3233,7 @@ def render_index_page(
         "<a href='../index.html'>Alle Wahlen</a></div>"
         f"<h1>{html.escape(config.election_name)} ({html.escape(config.election_key)})</h1>"
         "<p class='muted'>Statische Übersicht mit Drill-down von Land zu Landkreis, Wahlkreis, Gemeinde und – sofern veröffentlicht – Wahlbezirk.</p>"
-        "<p class='small'>Aktuell veröffentlichte LSA-Ergebnisebenen: Land, Landkreis/kreisfreie Stadt, Wahlkreis und Gemeinde. Einzelne Wahlbezirke sind in den offiziellen 2026-CSV-Dateien derzeit nicht enthalten.</p>"
+        "<p class='small'>Aktuell veröffentlichte LSA-Ergebnisebenen: Land, Landkreis/kreisfreie Stadt, Wahlkreis und Gemeinde. Die offizielle Beschreibung der Wahlbezirk-Datei ist veröffentlicht; die Datei selbst wird laut Statistischem Landesamt erst nach dem vorläufigen Ergebnis bereitgestellt und dann automatisch eingelesen.</p>"
         f"<div class='stats'>"
         f"<div class='stat'><div class='stat-label'>Letzte Abfrage</div><div class='stat-value'>{html.escape(polled_at_local)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Trackingstart</div><div class='stat-value'>{html.escape(tracking_start)}</div></div>"
@@ -3278,6 +3286,11 @@ def render_index_page(
             "<li>2026 Wahlkreisgeometrie und Gemeindezuordnung: <a href='https://statistik.sachsen-anhalt.de/themen/gebiet-und-wahlen/wahlen/landtagswahl-2026-2/uebersicht-wahlkreiseinteilung'>Statistisches Landesamt Sachsen-Anhalt</a></li>"
             if config.election_key.endswith("-lsa")
             else f"<li>Offizieller Wahlkreis-Strukturbericht 2026: <a href='{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}'>{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}</a></li>"
+        )
+        + (
+            "<li>Zugelassene Landes- und Kreiswahlvorschläge: <a href='https://wahlen.sachsen-anhalt.de/zu-den-wahlen/landtagswahl'>Landeswahlleiterin Sachsen-Anhalt</a></li>"
+            if config.election_key.endswith("-lsa")
+            else ""
         )
         + (
             "<li>2021 Endergebnisse: <a href='https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php'>Wahlergebnisportal Sachsen-Anhalt</a></li>"
@@ -3479,7 +3492,11 @@ def main() -> int:
     for row in snapshots:
         if str(row.get("ags") or "") not in selected_ags:
             continue
-        if str(row.get("gebietsart") or "").upper() in {"URNENWAHLBEZIRK", "BRIEFWAHLBEZIRK"}:
+        if str(row.get("gebietsart") or "").upper() in {
+            "URNENWAHLBEZIRK",
+            "BRIEFWAHLBEZIRK",
+            "WAHLBEZIRK",
+        }:
             booth_rows_by_ags[row["ags"]].append(row)
 
     structure_cache: Dict[str, Any] = {}
@@ -3720,7 +3737,8 @@ def main() -> int:
         booth_local_links: Dict[str, str] = {}
         for booth in booth_rows:
             raw_row = raw_row_for_snapshot(raw_by_row_key, booth)
-            booth_filename = booth_slug(ags, booth, raw_row, wk if entity["is_split_city"] else None) + ".html"
+            booth_wk = wahlkreis_number_from_raw_row(raw_row) or str(booth.get("wahlkreisnummer") or "").strip()
+            booth_filename = booth_slug(ags, booth, raw_row, booth_wk or (wk if entity["is_split_city"] else None)) + ".html"
             booth_pages[booth["row_key"]] = f"../booth/{booth_filename}"
             booth_local_links[booth["row_key"]] = booth_pages[booth["row_key"]]
 
@@ -3815,7 +3833,8 @@ def main() -> int:
 
         for booth in booth_rows:
             raw_row = raw_row_for_snapshot(raw_by_row_key, booth)
-            booth_filename = booth_slug(ags, booth, raw_row, wk if entity["is_split_city"] else None) + ".html"
+            booth_wk = wahlkreis_number_from_raw_row(raw_row) or str(booth.get("wahlkreisnummer") or "").strip()
+            booth_filename = booth_slug(ags, booth, raw_row, booth_wk or (wk if entity["is_split_city"] else None)) + ".html"
             detail_link = ""
             if booth.get("structure_detail_url"):
                 detail_link = (
@@ -3830,6 +3849,19 @@ def main() -> int:
                 )
             first_votes = party_votes.get(booth["row_key"], {}).get("Erststimmen", {})
             second_votes = party_votes.get(booth["row_key"], {}).get("Zweitstimmen", {})
+            booth_landkreis_id = landkreis_id_for_ags(ags)
+            booth_landkreis_link = landkreis_link_by_id.get(booth_landkreis_id, "")
+            booth_wahlkreis_link = wahlkreis_link_by_wk.get(booth_wk, "") if booth_wk else ""
+            booth_wahlkreis_topbar = (
+                f"<a href='../wahlkreis/{html.escape(booth_wahlkreis_link)}'>Wahlkreis</a><span>/</span>"
+                if booth_wahlkreis_link
+                else ""
+            )
+            booth_landkreis_topbar = (
+                f"<a href='../{html.escape(booth_landkreis_link)}'>Landkreis</a><span>/</span>"
+                if booth_landkreis_link
+                else ""
+            )
             def render_detail_list(votes: Dict[str, int], vote_type: str) -> str:
                 total = vote_total_for_snapshot(booth, vote_type)
                 ordered = party_order[vote_type]
@@ -3845,7 +3877,8 @@ def main() -> int:
 
             body = (
                 f"<div class='hero'><div class='topbar'><a href='../municipality/{html.escape(filename)}'>{html.escape(name)}</a>"
-                "<span>/</span><a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
+                f"<span>/</span>{booth_wahlkreis_topbar}{booth_landkreis_topbar}"
+                "<a href='../index.html'>Startseite dieser Wahl</a><span>/</span>"
                 "<a href='../search.html'>Suche</a><span>/</span>"
                 "<a href='../../index.html'>Alle Wahlen</a></div>"
                 f"<h1>{html.escape(booth['display_name'])}</h1>"
@@ -3880,11 +3913,11 @@ def main() -> int:
                 kind="booth",
                 title=booth_name,
                 href=f"booth/{booth_filename}",
-                subtitle=f"{name} · AGS {ags}" + (f" · Wahlkreis {wk.zfill(2)}" if wk else ""),
+                subtitle=f"{name} · AGS {ags}" + (f" · Wahlkreis {booth_wk.zfill(2)}" if booth_wk else ""),
                 search_fields=[
                     name,
                     ags,
-                    wk,
+                    booth_wk,
                     booth.get("row_key"),
                     booth.get("gebietsart"),
                     raw_row.get("Gebietsnummer"),

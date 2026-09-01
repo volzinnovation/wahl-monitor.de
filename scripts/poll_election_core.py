@@ -29,7 +29,7 @@ import subprocess
 import sys
 import tempfile
 import unicodedata
-from collections import deque
+from collections import defaultdict, deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -1586,7 +1586,9 @@ def extract_statla_parties(row: Dict[str, str]) -> List[Dict[str, Any]]:
         if value is None:
             continue
 
-        if is_lsa_download_row(row) and not re.fullmatch(r"[DF]\d+\..+", str(key).strip()):
+        if (is_lsa_download_row(row) or is_lsa_wahlbezirk_download_row(row)) and not re.fullmatch(
+            r"[DF]\d+\..+", str(key).strip()
+        ):
             continue
 
         if re.fullmatch(r"D\d+", key):
@@ -1683,6 +1685,18 @@ def is_lsa_download_row(row: Dict[str, str]) -> bool:
     return "Satzart" in row and "Schlüsselnummer" in row
 
 
+def is_lsa_wahlbezirk_download_row(row: Dict[str, str]) -> bool:
+    """Return whether a row uses the separate LSA Wahlbezirk export schema."""
+    normalized = {normalize_text(key) for key in row}
+    return {
+        "wahlkreisnummer",
+        "wahlbezirk",
+        "gemeindeschlussel",
+        "f.gultige.zweitstimmen",
+        "d.gultige.erststimmen",
+    }.issubset(normalized)
+
+
 def statla_area_type(row: Dict[str, str]) -> str:
     if is_lsa_download_row(row):
         return {
@@ -1691,12 +1705,16 @@ def statla_area_type(row: Dict[str, str]) -> str:
             "WKR": "WAHLKREIS",
             "GEM": "GEMEINDE",
         }.get(str(row.get("Satzart") or "").strip().upper(), str(row.get("Satzart") or "").strip())
+    if is_lsa_wahlbezirk_download_row(row):
+        return "WAHLBEZIRK"
     return str(row.get("Gebietsart") or "").strip()
 
 
 def statla_area_number(row: Dict[str, str]) -> str:
     if is_lsa_download_row(row):
         return str(row.get("Schlüsselnummer") or "").strip()
+    if is_lsa_wahlbezirk_download_row(row):
+        return str(row.get("Wahlbezirk") or "").strip()
     return str(row.get("Gebietsnummer") or "").strip()
 
 
@@ -1705,12 +1723,16 @@ def statla_ags(row: Dict[str, str]) -> str:
         area_type = str(row.get("Satzart") or "").strip().upper()
         area_number = statla_area_number(row)
         return canonical_ags(area_number) if area_type == "GEM" else ""
+    if is_lsa_wahlbezirk_download_row(row):
+        return canonical_ags(row.get("Gemeindeschlüssel"))
     return canonical_ags(row.get("AGS"))
 
 
 def statla_municipality_name(row: Dict[str, str]) -> str:
     if is_lsa_download_row(row):
         return canonical_municipality_name(row.get("Name"))
+    if is_lsa_wahlbezirk_download_row(row):
+        return canonical_municipality_name(row.get("Gemeindename"))
     return canonical_municipality_name(row.get("Gemeindename"))
 
 
@@ -1722,10 +1744,19 @@ def statla_summary_row(row: Dict[str, str]) -> bool:
 
 
 def statla_metric(row: Dict[str, str], new_key: str, old_key: str) -> Optional[int]:
-    return parse_int(row.get(new_key if is_lsa_download_row(row) else old_key))
+    return parse_int(row.get(new_key if (is_lsa_download_row(row) or is_lsa_wahlbezirk_download_row(row)) else old_key))
+
+
+def statla_wahlkreis_number(row: Dict[str, str]) -> str:
+    if is_lsa_wahlbezirk_download_row(row):
+        return normalize_wahlkreis_nummer(row.get("Wahlkreisnummer"))
+    return ""
 
 
 def parse_statla_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    if looks_like_statla_wahlbezirk_csv(csv_text):
+        return parse_statla_wahlbezirk_csv_rows(csv_text)
+
     snapshots: List[Dict[str, Any]] = []
     party_rows: List[Dict[str, Any]] = []
     for idx, raw_row in enumerate(csv_rows_from_text(csv_text, delimiter=";")):
@@ -1766,6 +1797,77 @@ def parse_statla_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dic
     return snapshots, party_rows
 
 
+def parse_statla_wahlbezirk_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """Normalize the post-election LSA Wahlbezirk CSV.
+
+    The separate file has no ``Satzart`` or explicit sum row.  It may contain
+    separate urn and postal rows for one Wahlbezirk, so those rows are summed
+    into one navigable Wahlbezirk entity.  If the source later adds an empty
+    ``Wahllokal`` total row, that row is preferred to avoid double counting.
+    """
+    rows = [
+        dict(row)
+        for row in csv_rows_from_text(csv_text, delimiter=";")
+        if is_lsa_wahlbezirk_download_row(dict(row))
+    ]
+    grouped: Dict[Tuple[str, str, str], List[Dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        wk = statla_wahlkreis_number(row)
+        ags = statla_ags(row)
+        booth_number = statla_area_number(row)
+        if wk and ags and booth_number:
+            grouped[(wk, ags, booth_number)].append(row)
+
+    snapshots: List[Dict[str, Any]] = []
+    party_rows: List[Dict[str, Any]] = []
+    for (wk, ags, booth_number), group_rows in sorted(grouped.items()):
+        total_rows = [row for row in group_rows if not str(row.get("Wahllokal") or "").strip()]
+        selected_rows = total_rows or group_rows
+        first = selected_rows[0]
+        row_key = f"lsa:WAHLBEZIRK:{ags}:{wk}:{booth_number}"
+        canonical_row_json = json.dumps(selected_rows, sort_keys=True, ensure_ascii=False).encode("utf-8")
+        snapshots.append(
+            {
+                "row_key": row_key,
+                "ags": ags,
+                "municipality_name": statla_municipality_name(first),
+                "gebietsart": "WAHLBEZIRK",
+                "gebietsnummer": booth_number,
+                "wahlkreisnummer": wk,
+                "wahlbezirk_name": str(first.get("Wahlbezirksname") or booth_number).strip(),
+                "wahllokal": str(first.get("Wahllokal") or "").strip(),
+                "reported_precincts": 1,
+                "total_precincts": 1,
+                "voters_total": sum(statla_metric(row, "B.Wähler", "") or 0 for row in selected_rows),
+                "valid_votes_erst": sum(
+                    statla_metric(row, "D.Gültige.Erststimmen", "") or 0 for row in selected_rows
+                ),
+                "valid_votes_zweit": sum(
+                    statla_metric(row, "F.Gültige.Zweitstimmen", "") or 0 for row in selected_rows
+                ),
+                "payload_hash": sha256_bytes(canonical_row_json),
+                "is_municipality_summary": False,
+            }
+        )
+        party_totals: Dict[Tuple[str, str, str], int] = defaultdict(int)
+        for row in selected_rows:
+            for party in extract_statla_parties(row):
+                key = (str(party["vote_type"]), str(party["party_key"]), str(party["party_name"]))
+                party_totals[key] += int(party["votes"] or 0)
+        party_rows.extend(
+            {
+                "row_key": row_key,
+                "vote_type": vote_type,
+                "party_key": party_key,
+                "party_name": party_name,
+                "votes": votes,
+            }
+            for (vote_type, party_key, party_name), votes in sorted(party_totals.items())
+        )
+
+    return snapshots, party_rows
+
+
 def normalize_latest_statla_snapshots(rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     normalized: List[Dict[str, Any]] = []
     for row in rows:
@@ -1776,6 +1878,9 @@ def normalize_latest_statla_snapshots(rows: List[Dict[str, Any]]) -> List[Dict[s
                 "municipality_name": canonical_municipality_name(row.get("municipality_name")),
                 "gebietsart": str(row.get("gebietsart") or "").strip(),
                 "gebietsnummer": str(row.get("gebietsnummer") or "").strip(),
+                "wahlkreisnummer": str(row.get("wahlkreisnummer") or "").strip(),
+                "wahlbezirk_name": str(row.get("wahlbezirk_name") or "").strip(),
+                "wahllokal": str(row.get("wahllokal") or "").strip(),
                 "reported_precincts": parse_int(row.get("reported_precincts")),
                 "total_precincts": parse_int(row.get("total_precincts")),
                 "voters_total": parse_int(row.get("voters_total")),
@@ -1857,6 +1962,13 @@ def statla_snapshot_match_key(row: Dict[str, Any]) -> Tuple[str, str]:
         wk = normalize_wahlkreis_nummer(row.get("gebietsnummer") or row.get("row_key"))
         if wk:
             return ("WAHLKREIS", wk)
+
+    if gebietsart == "WAHLBEZIRK":
+        ags = canonical_ags(row.get("ags"))
+        wk = normalize_wahlkreis_nummer(row.get("wahlkreisnummer"))
+        booth = str(row.get("gebietsnummer") or "").strip()
+        if ags and wk and booth:
+            return ("WAHLBEZIRK", f"{ags}:{wk}:{booth}")
 
     ags = canonical_ags(row.get("ags"))
     if ags and snapshot_is_municipality_summary(row):
@@ -2502,6 +2614,28 @@ def looks_like_statla_csv(text: str) -> bool:
     return False
 
 
+def looks_like_statla_wahlbezirk_csv(text: str) -> bool:
+    content = str(text or "")
+    if not content.strip() or looks_like_html_document(content):
+        return False
+    nonempty_lines = [line for line in content.splitlines() if line.strip()]
+    for line in nonempty_lines[:3]:
+        try:
+            header = next(csv.reader([line], delimiter=";"))
+        except Exception:  # pylint: disable=broad-except
+            continue
+        normalized = {normalize_text(cell) for cell in header if str(cell).strip()}
+        if {
+            "wahlkreisnummer",
+            "wahlbezirk",
+            "gemeindeschlussel",
+            "f.gultige.zweitstimmen",
+            "d.gultige.erststimmen",
+        }.issubset(normalized):
+            return True
+    return False
+
+
 def discover_statla_csv_download(
     config: Config,
     timeout_seconds: int,
@@ -2567,6 +2701,45 @@ def discover_statla_csv_download(
         ),
         None,
     )
+
+
+def discover_statla_wahlbezirk_csv_download(
+    config: Config,
+    timeout_seconds: int,
+) -> Tuple[Optional[HttpResult], Optional[str]]:
+    """Find the optional post-election Wahlbezirk CSV on the official page."""
+    downloads_url = str(config.statla_downloads_url or "").strip()
+    if not downloads_url:
+        return None, "No official downloads page configured"
+
+    page_result = html_fetch_result(downloads_url, timeout_seconds)
+    if page_result.status_code != 200 or not page_result.content:
+        return None, page_result.error_message or f"Downloads page HTTP {page_result.status_code}"
+
+    page_text = decode_bytes(page_result.content)
+    hrefs = re.findall(r"href\s*=\s*[\"']([^\"']+)[\"']", page_text, flags=re.IGNORECASE)
+    csv_urls: List[str] = []
+    for href in hrefs:
+        absolute_url = urljoin(downloads_url, html.unescape(href).strip())
+        if urlsplit(absolute_url).path.lower().endswith(".csv") and absolute_url not in csv_urls:
+            csv_urls.append(absolute_url)
+
+    matching_results: List[Tuple[Tuple[int, int], HttpResult]] = []
+    for csv_url in csv_urls:
+        result = statla_http_get(csv_url, timeout_seconds, show_progress=False)
+        if result.status_code != 200 or not result.content:
+            continue
+        csv_text = decode_bytes(result.content)
+        if not looks_like_statla_wahlbezirk_csv(csv_text):
+            continue
+        snapshots, _party_rows = parse_statla_wahlbezirk_csv_rows(csv_text)
+        matching_results.append(((len(snapshots), len(result.content)), result))
+
+    if not matching_results:
+        return None, "The official downloads page has not published a Wahlbezirk CSV yet"
+
+    matching_results.sort(key=lambda item: item[0], reverse=True)
+    return matching_results[0][1], None
 
 
 def rlp_portal_base_url(config: Config) -> str:
@@ -2956,6 +3129,8 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
     fallback_used = False
     discovered_download: Optional[HttpResult] = None
     download_discovery_error: Optional[str] = None
+    discovered_wahlbezirk: Optional[HttpResult] = None
+    wahlbezirk_discovery_error: Optional[str] = None
 
     live_is_csv = live_result.status_code == 200 and live_result.content and looks_like_statla_csv(decode_bytes(live_result.content))
     if not force_dummy and not live_is_csv:
@@ -2968,6 +3143,14 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
             selected_mode = "LIVE_CSV_DOWNLOAD"
             selected_url = discovered_download.url
             cli_note(f"Using StatLA CSV discovered from downloads page: {discovered_download.url}")
+
+    if config.election_key == "2026-lsa" and not force_dummy:
+        discovered_wahlbezirk, wahlbezirk_discovery_error = discover_statla_wahlbezirk_csv_download(
+            config,
+            timeout_seconds,
+        )
+        if discovered_wahlbezirk is not None:
+            cli_note(f"Using LSA Wahlbezirk CSV discovered from downloads page: {discovered_wahlbezirk.url}")
 
     if force_dummy or selected_result.status_code != 200 or not selected_result.content:
         if config.statla_dummy_csv_url:
@@ -3018,6 +3201,17 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
                 "content_hash": sha256_bytes(discovered_download.content) if discovered_download.content else None,
                 "byte_count": len(discovered_download.content),
                 "error_message": discovered_download.error_message,
+            }
+        )
+    if discovered_wahlbezirk is not None:
+        fetches.append(
+            {
+                "source": "statla-wahlbezirk-download",
+                "url": discovered_wahlbezirk.url,
+                "status_code": discovered_wahlbezirk.status_code,
+                "content_hash": sha256_bytes(discovered_wahlbezirk.content) if discovered_wahlbezirk.content else None,
+                "byte_count": len(discovered_wahlbezirk.content),
+                "error_message": discovered_wahlbezirk.error_message,
             }
         )
 
@@ -3116,6 +3310,16 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
             return json_fallback
 
     snapshots, party_rows = parse_statla_csv_rows(csv_text)
+    wahlbezirk_csv_text = ""
+    if discovered_wahlbezirk is not None:
+        wahlbezirk_csv_text = decode_bytes(discovered_wahlbezirk.content)
+        wahlbezirk_snapshots, wahlbezirk_party_rows = parse_statla_wahlbezirk_csv_rows(wahlbezirk_csv_text)
+        snapshots.extend(wahlbezirk_snapshots)
+        party_rows.extend(wahlbezirk_party_rows)
+        cli_note(
+            "Parsed LSA Wahlbezirk CSV: "
+            f"rows={len(wahlbezirk_snapshots)} party_rows={len(wahlbezirk_party_rows)}"
+        )
     previous_latest = load_latest_statla_exports()
     if config.election_key == "2026-rlp":
         snapshots, party_rows = merge_statla_rows_with_previous_latest(
@@ -3165,10 +3369,16 @@ def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False
         }
     return {
         "mode": selected_mode,
-        "url": selected_url,
+        "url": ";".join(url for url in (selected_url, discovered_wahlbezirk.url if discovered_wahlbezirk else "") if url),
         "status_code": selected_result.status_code,
-        "content_hash": sha256_bytes(selected_result.content),
+        "content_hash": sha256_bytes(
+            selected_result.content
+            + (b"\n--WAHLBEZIRK--\n" + discovered_wahlbezirk.content if discovered_wahlbezirk else b"")
+        ),
         "raw_csv": csv_text,
+        "raw_wahlbezirk_csv": wahlbezirk_csv_text,
+        "wahlbezirk_source_url": discovered_wahlbezirk.url if discovered_wahlbezirk else None,
+        "wahlbezirk_source_error": wahlbezirk_discovery_error,
         "source_copy_text": decode_bytes(live_result.content) if live_result.content else "",
         "source_copy_url": live_result.url,
         "source_copy_status_code": live_result.status_code,
@@ -4426,6 +4636,10 @@ def persist_files(
     write_json(RAW_KOMMONE_DIR / f"{label_file}-kommone.json", {"snapshots": kommone_snapshots, "party_rows": kommone_party_rows})
     if statla.get("raw_csv"):
         (RAW_STATLA_DIR / f"{label_file}-statla.csv").write_text(statla["raw_csv"], encoding="utf-8")
+    if statla.get("raw_wahlbezirk_csv"):
+        (RAW_STATLA_DIR / f"{label_file}-wahlbezirke.csv").write_text(
+            statla["raw_wahlbezirk_csv"], encoding="utf-8"
+        )
     if statla.get("source_copy_text"):
         source_copy_text = str(statla.get("source_copy_text") or "")
         (RAW_STATLA_DIR / f"{label_file}-official-results-source.csv").write_text(source_copy_text, encoding="utf-8")
@@ -4494,6 +4708,9 @@ def persist_files(
             "municipality_name",
             "gebietsart",
             "gebietsnummer",
+            "wahlkreisnummer",
+            "wahlbezirk_name",
+            "wahllokal",
             "reported_precincts",
             "total_precincts",
             "voters_total",
@@ -4551,6 +4768,13 @@ def persist_files(
             "official_source_url": statla.get("source_copy_url"),
             "official_source_status_code": statla.get("source_copy_status_code"),
             "official_source_error": statla.get("source_copy_error"),
+            "wahlbezirk_source_url": statla.get("wahlbezirk_source_url"),
+            "wahlbezirk_source_error": statla.get("wahlbezirk_source_error"),
+            "wahlbezirk_rows": sum(
+                1
+                for row in statla.get("snapshots", [])
+                if str(row.get("gebietsart") or "").strip().upper() == "WAHLBEZIRK"
+            ),
             "kommone_municipalities_polled": len(kommone_snapshots),
         },
     )
