@@ -134,6 +134,7 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         "voteLabel": vote_label,
         "baseSeats": seat_count_for(config.election_key),
         "thresholdPercent": 5.0,
+        "swingLimitPercent": 100.0,
         "baselineMode": baseline["baselineMode"],
         "validVotes": baseline["validVotes"],
         "reportedPrecincts": baseline["reportedPrecincts"],
@@ -303,7 +304,17 @@ def scenario_script() -> str:
   const resetButton = document.querySelector("[data-reset]");
   const copyButton = document.querySelector("[data-copy]");
   const params = new URLSearchParams(window.location.search);
+  const defaultSwingLimit = 100;
   let payload = null;
+
+  function clampSwing(value) {
+    const limit = Number(payload && payload.swingLimitPercent) || defaultSwingLimit;
+    const numericValue = Number(value);
+    if (!Number.isFinite(numericValue)) {
+      return 0;
+    }
+    return Math.min(limit, Math.max(0, numericValue));
+  }
 
   function formatPercent(value) {
     return `${value.toLocaleString("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} %`;
@@ -419,8 +430,9 @@ def scenario_script() -> str:
 
   function buildControls() {
     controls.replaceChildren();
+    const swingLimit = Number(payload.swingLimitPercent) || defaultSwingLimit;
     payload.parties.forEach((party) => {
-      const initial = Number(params.get(party.slug) || 0);
+      const initial = clampSwing(params.get(party.slug) || 0);
       const wrapper = document.createElement("label");
       wrapper.className = "scenario-control";
       const partyLabel = escapeHtml(party.party);
@@ -429,7 +441,7 @@ def scenario_script() -> str:
           <span class="scenario-party"><span class="scenario-dot" style="background:${party.color}"></span>${partyLabel}</span>
           <output>${initial.toFixed(1)} pp</output>
         </span>
-        <input data-party="${partyLabel}" type="range" min="-8" max="8" step="0.5" value="${initial}">
+        <input data-party="${partyLabel}" type="range" min="0" max="${swingLimit}" step="0.5" value="${initial}">
       `;
       const input = wrapper.querySelector("input");
       const output = wrapper.querySelector("output");
@@ -506,6 +518,7 @@ def render_scenario_page(
         "Die Sitznäherung ist ein transparentes Rechenmodell, kein amtliches Ergebnis.</div>"
         "<div class='scenario-workspace'>"
         "<div class='panel'><h2>Stimmen verschieben</h2>"
+        "<p class='small'>Je Partei sind Verschiebungen von 0 bis +100 Prozentpunkten möglich.</p>"
         "<div class='scenario-controls' data-scenario-controls></div>"
         "<div class='scenario-actions'><button type='button' data-reset>Zurücksetzen</button>"
         "<button class='secondary' type='button' data-copy>Link kopieren</button></div></div>"
