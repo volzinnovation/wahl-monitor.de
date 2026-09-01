@@ -140,13 +140,21 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         "reportedPrecincts": baseline["reportedPrecincts"],
         "totalPrecincts": baseline["totalPrecincts"],
         "parties": baseline["parties"],
-        "coalitions": coalition_presets(config.election_key),
+        "coalitions": single_party_presets(baseline["parties"]) + coalition_presets(config.election_key),
         "notes": [
             "Die Sitzverteilung nutzt ein proportionales Sainte-Laguë-Modell mit 5-Prozent-Schwelle.",
             "Direktmandate, Überhangmandate, Mehrheitssicherungen und amtliche Losentscheide werden hier nicht simuliert.",
             "Die Regler geben absolute Stimmenanteile an; bei einer Summe ungleich 100 % wird für die Sitznäherung proportional normiert.",
         ],
     }
+
+
+def single_party_presets(parties: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {"label": f"{party['party']} allein", "parties": [party["party"]]}
+        for party in parties
+        if str(party.get("party") or "").strip()
+    ]
 
 
 def coalition_presets(election_key: str) -> list[dict[str, Any]]:
@@ -308,6 +316,7 @@ def scenario_script() -> str:
   const coalitionsRoot = document.querySelector("[data-coalitions]");
   const tableBody = document.querySelector("[data-scenario-table]");
   const summary = document.querySelector("[data-scenario-summary]");
+  const coalitionSummary = document.querySelector("[data-coalition-summary]");
   const scenarioTotal = document.querySelector("[data-scenario-total]");
   const resetButton = document.querySelector("[data-reset]");
   const copyButton = document.querySelector("[data-copy]");
@@ -409,6 +418,7 @@ def scenario_script() -> str:
     parties.sort((a, b) => b.seats - a.seats || b.adjustedShare - a.adjustedShare || a.party.localeCompare(b.party));
     const majority = Math.floor(payload.baseSeats / 2) + 1;
     summary.textContent = `${payload.baseSeats} Sitze, Mehrheit ab ${majority}. Modell: 5%-Schwelle und Sainte-Laguë.`;
+    coalitionSummary.textContent = `Absolute Mehrheit ab ${majority} von ${payload.baseSeats} Sitzen.`;
 
     seatsRoot.replaceChildren();
     parties.filter((party) => party.seats > 0).forEach((party) => {
@@ -428,7 +438,8 @@ def scenario_script() -> str:
       const seats = coalition.parties.reduce((total, party) => total + (allocation.get(party) || 0), 0);
       const card = document.createElement("div");
       card.className = `coalition ${seats >= majority ? "ok" : "miss"}`;
-      card.innerHTML = `<strong>${escapeHtml(coalition.label)}</strong><span>${seats} / ${majority} Sitze</span>`;
+      const status = seats >= majority ? "absolute Mehrheit" : `unter ${majority} Sitzen`;
+      card.innerHTML = `<strong>${escapeHtml(coalition.label)}</strong><span>${seats} / ${payload.baseSeats} Sitze · ${status}</span>`;
       coalitionsRoot.appendChild(card);
     });
 
@@ -548,7 +559,7 @@ def render_scenario_page(
         "<div class='panel'><h2>Sitznäherung</h2><p class='small' data-scenario-summary>Lade Szenario...</p>"
         "<div class='seat-bars' data-seat-bars></div></div>"
         "</div>"
-        "<div class='panel'><h2>Koalitionsmehrheiten</h2><div class='coalition-grid' data-coalitions></div></div>"
+        "<div class='panel'><h2>Koalitionsmehrheiten</h2><p class='small' data-coalition-summary>Sitzmehrheit wird berechnet …</p><div class='coalition-grid' data-coalitions></div></div>"
         "<div class='panel scenario-table'><h2>Parteien im Szenario</h2>"
         "<table><thead><tr><th>Partei</th><th>Ausgangswert</th><th>Verschiebung</th><th>Szenario</th><th>5 %</th><th>Sitze</th></tr></thead>"
         "<tbody data-scenario-table></tbody></table></div>"
