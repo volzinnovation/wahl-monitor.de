@@ -3,23 +3,23 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 2,Gardelegen-Klötze,pending,79,105,4,0,0,4
 3,Havelberg-Osterburg,complete,96,96,21,0,0,21
 4,Stendal,pending,64,65,2,0,0,2
-5,Genthin,pending,66,70,5,0,0,5
-6,Burg,pending,52,66,4,0,0,4
-7,Haldensleben,pending,82,85,16,0,0,16
-8,Wolmirstedt,pending,59,67,10,0,0,10
-9,Oschersleben-Wanzleben,pending,59,64,7,0,0,7
+5,Genthin,pending,67,70,5,0,0,5
+6,Burg,pending,62,66,4,0,0,4
+7,Haldensleben,pending,83,85,16,0,0,16
+8,Wolmirstedt,pending,60,67,10,0,0,10
+9,Oschersleben-Wanzleben,pending,60,64,7,0,0,7
 10,Magdeburg I,complete,44,44,1,0,0,1
 11,Magdeburg II,pending,65,66,1,0,0,1
 12,Magdeburg III,pending,45,49,1,0,0,1
-13,Magdeburg IV,pending,56,59,1,0,0,1
+13,Magdeburg IV,complete,59,59,1,0,0,1
 14,Halberstadt,pending,47,48,4,0,0,4
-15,Blankenburg,pending,51,59,4,0,0,4
+15,Blankenburg,pending,58,59,4,0,0,4
 16,Wernigerode,pending,50,51,3,0,0,3
 17,Quedlinburg,pending,54,60,8,0,0,8
 18,Aschersleben,pending,49,55,4,0,0,4
-19,Staßfurt,pending,32,40,7,0,0,7
-20,Schönebeck,pending,48,56,4,0,0,4
-21,Bernburg,pending,53,65,8,0,0,8
+19,Staßfurt,pending,35,40,7,0,0,7
+20,Schönebeck,pending,49,56,4,0,0,4
+21,Bernburg,pending,54,65,8,0,0,8
 22,Köthen,pending,77,79,4,0,0,4
 23,Zerbst,complete,79,79,4,0,0,4
 24,Wittenberg,pending,60,63,2,0,0,2
@@ -27,16 +27,16 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 26,Dessau-Roßlau,pending,51,52,1,0,0,1
 27,Dessau-Roßlau-Wittenberg,pending,49,66,3,0,0,3
 28,Bitterfeld-Wolfen,complete,61,61,3,0,0,3
-29,Saalekreis,pending,59,63,5,0,0,5
+29,Saalekreis,pending,60,63,5,0,0,5
 30,Eisleben,pending,70,71,11,0,0,11
 31,Sangerhausen,complete,88,88,8,0,0,8
-32,Querfurt,pending,82,90,17,0,0,17
+32,Querfurt,pending,89,90,17,0,0,17
 33,Merseburg,pending,41,43,3,0,0,3
 34,Bad Dürrenberg-Saalekreis,pending,60,63,6,0,0,6
-35,Halle I,pending,34,38,1,0,0,1
-36,Halle II,pending,41,47,1,0,0,1
-37,Halle III,pending,52,57,1,0,0,1
-38,Halle IV,pending,40,44,1,0,0,1
+35,Halle I,pending,36,38,1,0,0,1
+36,Halle II,pending,42,47,1,0,0,1
+37,Halle III,pending,54,57,1,0,0,1
+38,Halle IV,complete,44,44,1,0,0,1
 39,Weißenfels,pending,70,72,3,0,0,3
 40,Naumburg,pending,74,79,15,0,0,15
 41,Zeitz,pending,77,79,8,0,0,8
