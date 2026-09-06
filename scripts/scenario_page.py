@@ -40,7 +40,25 @@ def state_code(election_key: str) -> str:
 
 
 def seat_count_for(election_key: str) -> int:
-    return {"bw": 120, "rlp": 101, "lsa": 97}.get(state_code(election_key), 100)
+    # Sachsen-Anhalt's current LWG sets the regular starting size at 83
+    # seats: 41 constituency seats and 42 list seats. The 2021 parliament
+    # had 97 seats after overhang and compensation mandates.
+    return {"bw": 120, "rlp": 101, "lsa": 83}.get(state_code(election_key), 100)
+
+
+def direct_seat_count_for(election_key: str) -> int:
+    return 41 if state_code(election_key) == "lsa" else 0
+
+
+def allocation_method_for(election_key: str) -> str:
+    return "hare_niemeyer" if state_code(election_key) == "lsa" else "sainte_lague"
+
+
+def allocation_method_label(method: str) -> str:
+    return {
+        "hare_niemeyer": "Hare/Niemeyer",
+        "sainte_lague": "Sainte-Laguë",
+    }.get(method, method)
 
 
 def slug_for_party(party: str) -> str:
@@ -140,11 +158,36 @@ def load_party_baseline(config: core.Config, party_colors: dict[str, str]) -> di
 def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str, Any]:
     baseline = load_party_baseline(config, party_colors)
     vote_label = config.second_vote_label or "Zweitstimmen"
+    allocation_method = allocation_method_for(config.election_key)
+    lsa = state_code(config.election_key) == "lsa"
+    notes = (
+        [
+            "Sachsen-Anhalt: gesetzliche Ausgangszahl 83 Sitze (41 Direktmandate und 42 Listenmandate).",
+            "Die Sitzverteilung nutzt die 5-Prozent-Schwelle und Hare/Niemeyer.",
+            "Die 97 Sitze des Landtags 2021–2026 waren eine vergrößerte Sitzverteilung durch Überhang- und Ausgleichsmandate.",
+            "Direktmandate, Überhangmandate, Ausgleichsmandate, Mehrheitssicherungen und amtliche Losentscheide werden hier nicht simuliert.",
+        ]
+        if lsa
+        else [
+            f"Die Sitzverteilung nutzt ein proportionales {allocation_method_label(allocation_method)}-Modell mit 5-Prozent-Schwelle.",
+            "Direktmandate, Überhangmandate, Mehrheitssicherungen und amtliche Losentscheide werden hier nicht simuliert.",
+        ]
+    )
+    notes.append("Die Regler geben absolute Stimmenanteile an; bei einer Summe ungleich 100 % wird für die Sitznäherung proportional normiert.")
     return {
         "electionKey": config.election_key,
         "electionName": config.election_name,
         "voteLabel": vote_label,
         "baseSeats": seat_count_for(config.election_key),
+        "directSeats": direct_seat_count_for(config.election_key),
+        "allocationMethod": allocation_method,
+        "seatBasis": "gesetzliche Ausgangszahl" if lsa else "Modellbasis",
+        "seatNote": (
+            "Gesetzliche Ausgangszahl: 83 Sitze (41 Direktmandate + 42 Listenmandate). "
+            "Die 97 Sitze des Landtags 2021–2026 entstanden durch Überhang- und Ausgleichsmandate."
+            if lsa
+            else "Transparente Modellbasis ohne landesspezifische Überhang- und Ausgleichsmandate."
+        ),
         "thresholdPercent": 5.0,
         "swingLimitPercent": 100.0,
         "baselineMode": baseline["baselineMode"],
@@ -153,11 +196,7 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         "totalPrecincts": baseline["totalPrecincts"],
         "parties": baseline["parties"],
         "coalitions": single_party_presets(baseline["parties"]) + coalition_presets(config.election_key),
-        "notes": [
-            "Die Sitzverteilung nutzt ein proportionales Sainte-Laguë-Modell mit 5-Prozent-Schwelle.",
-            "Direktmandate, Überhangmandate, Mehrheitssicherungen und amtliche Losentscheide werden hier nicht simuliert.",
-            "Die Regler geben absolute Stimmenanteile an; bei einer Summe ungleich 100 % wird für die Sitznäherung proportional normiert.",
-        ],
+        "notes": notes,
     }
 
 
@@ -364,7 +403,7 @@ def scenario_script() -> str:
     }[char]));
   }
 
-  function allocate(parties, seats, threshold) {
+  function allocateSainteLague(parties, seats, threshold) {
     const eligible = parties.filter((party) => party.adjustedShare >= threshold);
     const allocation = new Map(eligible.map((party) => [party.party, 0]));
     const quotients = [];
@@ -376,6 +415,34 @@ def scenario_script() -> str:
     quotients.sort((a, b) => b.value - a.value || a.party.localeCompare(b.party));
     quotients.slice(0, seats).forEach((item) => allocation.set(item.party, (allocation.get(item.party) || 0) + 1));
     return allocation;
+  }
+
+  function allocateHareNiemeyer(parties, seats, threshold) {
+    const eligible = parties.filter((party) => party.adjustedShare >= threshold);
+    const allocation = new Map(eligible.map((party) => [party.party, 0]));
+    const eligibleTotal = eligible.reduce((total, party) => total + party.adjustedShare, 0);
+    if (eligibleTotal <= 0) {
+      return allocation;
+    }
+    let assigned = 0;
+    const remainders = eligible.map((party) => {
+      const exact = (party.adjustedShare / eligibleTotal) * seats;
+      const whole = Math.floor(exact);
+      allocation.set(party.party, whole);
+      assigned += whole;
+      return { party: party.party, remainder: exact - whole, share: party.adjustedShare };
+    });
+    remainders.sort((a, b) => b.remainder - a.remainder || b.share - a.share || a.party.localeCompare(b.party));
+    remainders.slice(0, seats - assigned).forEach((item) => {
+      allocation.set(item.party, (allocation.get(item.party) || 0) + 1);
+    });
+    return allocation;
+  }
+
+  function allocate(parties, seats, threshold) {
+    return payload.allocationMethod === "hare_niemeyer"
+      ? allocateHareNiemeyer(parties, seats, threshold)
+      : allocateSainteLague(parties, seats, threshold);
   }
 
   function currentScenarioShares() {
@@ -429,7 +496,8 @@ def scenario_script() -> str:
     });
     parties.sort((a, b) => b.seats - a.seats || b.adjustedShare - a.adjustedShare || a.party.localeCompare(b.party));
     const majority = Math.floor(payload.baseSeats / 2) + 1;
-    summary.textContent = `${payload.baseSeats} Sitze, Mehrheit ab ${majority}. Modell: 5%-Schwelle und Sainte-Laguë.`;
+    const methodLabel = payload.allocationMethod === "hare_niemeyer" ? "Hare/Niemeyer" : "Sainte-Laguë";
+    summary.textContent = `${payload.baseSeats} Sitze gesetzliche Ausgangszahl, Mehrheit ab ${majority}. Modell: 5%-Schwelle und ${methodLabel}.`;
     coalitionSummary.textContent = `Absolute Mehrheit ab ${majority} von ${payload.baseSeats} Sitzen.`;
 
     seatsRoot.replaceChildren();
@@ -559,7 +627,7 @@ def render_scenario_page(
         f"<p class='muted'>Interaktive Szenario-Stimmenanteile für {html.escape(str(payload['voteLabel']))}, "
         "Schwelle, Sitznäherung und Koalitionsmehrheiten.</p></div>"
         "<div class='scenario-shell'>"
-        f"<div class='scenario-alert'>{html.escape(baseline_note)} "
+        f"<div class='scenario-alert'>{html.escape(baseline_note)} {html.escape(str(payload['seatNote']))} "
         "Die Sitznäherung ist ein transparentes Rechenmodell, kein amtliches Ergebnis.</div>"
         "<div class='scenario-workspace'>"
         "<div class='panel'><h2>Stimmenanteile festlegen</h2>"

@@ -133,6 +133,30 @@ class CurrentOverviewTests(unittest.TestCase):
         self.assertEqual([(row["party"], row["votes"]) for row in baseline["parties"]],
                          [("AfD", 600), ("CDU", 400)])
 
+    def test_lsa_seat_model_uses_legal_starting_size_and_method(self):
+        self.assertEqual(scenario_page.seat_count_for("2026-lsa"), 83)
+        self.assertEqual(scenario_page.direct_seat_count_for("2026-lsa"), 41)
+        self.assertEqual(scenario_page.allocation_method_for("2026-lsa"), "hare_niemeyer")
+        with mock.patch.object(
+            scenario_page,
+            "load_party_baseline",
+            return_value={
+                "baselineMode": "current",
+                "validVotes": 1000,
+                "reportedPrecincts": 10,
+                "totalPrecincts": 20,
+                "parties": [{"party": "AfD", "slug": "afd", "votes": 600, "share": 60.0}],
+            },
+        ):
+            payload = scenario_page.build_payload(
+                SimpleNamespace(election_key="2026-lsa", election_name="LSA", second_vote_label="Zweitstimmen"),
+                {},
+            )
+        self.assertEqual(payload["baseSeats"], 83)
+        self.assertEqual(payload["directSeats"], 41)
+        self.assertEqual(payload["allocationMethod"], "hare_niemeyer")
+        self.assertIn("97 Sitze", payload["seatNote"])
+
 
 class PreservationTests(unittest.TestCase):
     def setUp(self):
