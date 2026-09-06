@@ -1,7 +1,14 @@
 {
-  "content_hash": "6e4975521be55e2b703e78fec1be320ce8cf21dc303b103c32e8515fae2bac2d",
+  "content_hash": "49671f354b2f6fede12d4e574f6a1dcec511476ebf62cd6801526f83d19264c0",
   "error_message": null,
-  "fetched_at_utc": "2026-09-06T17:03:10.761587+00:00",
+  "fetched_at_utc": "2026-09-06T17:05:31.741139+00:00",
+  "overview_reporting": {
+    "content_hash": "49671f354b2f6fede12d4e574f6a1dcec511476ebf62cd6801526f83d19264c0",
+    "reported_precincts": 219,
+    "reported_rows": 219,
+    "rows": 2660,
+    "total_precincts": 2660
+  },
   "status_code": 200,
-  "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads.html"
+  "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/index.html"
 }
