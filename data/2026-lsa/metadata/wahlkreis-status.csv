@@ -15,7 +15,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 14,Halberstadt,pending,47,48,4,0,0,4
 15,Blankenburg,pending,58,59,4,0,0,4
 16,Wernigerode,pending,50,51,3,0,0,3
-17,Quedlinburg,pending,54,60,8,0,0,8
+17,Quedlinburg,pending,59,60,8,0,0,8
 18,Aschersleben,pending,49,55,4,0,0,4
 19,Staßfurt,pending,35,40,7,0,0,7
 20,Schönebeck,pending,49,56,4,0,0,4

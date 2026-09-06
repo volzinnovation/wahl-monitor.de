@@ -1,9 +1,9 @@
 {
-  "content_hash": "4b092f3ab38d5635d7a8b752825e19f5286b8d1b9f9913360b99a7fe6d4930a1",
+  "content_hash": "92becfd0b44d25e96f8d520ca92a716ded965929c5bc0fc69fb396ea3632c7dc",
   "error_message": null,
-  "fetched_at_utc": "2026-09-06T20:27:22.872086+00:00",
+  "fetched_at_utc": "2026-09-06T20:33:43.025621+00:00",
   "overview_reporting": {
-    "content_hash": "4b092f3ab38d5635d7a8b752825e19f5286b8d1b9f9913360b99a7fe6d4930a1",
+    "content_hash": "92becfd0b44d25e96f8d520ca92a716ded965929c5bc0fc69fb396ea3632c7dc",
     "reported_precincts": 2505,
     "reported_rows": 2505,
     "rows": 2660,
