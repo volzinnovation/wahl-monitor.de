@@ -4779,6 +4779,20 @@ def persist_files(
         events_rows,
     )
 
+    overview_summary = statla.get("overview_summary") or {}
+    land_snapshot = next(
+        (
+            row
+            for row in statla.get("snapshots", [])
+            if str(row.get("gebietsart") or "").strip().upper() == "LAND"
+        ),
+        {},
+    )
+    csv_reported_precincts = parse_int(land_snapshot.get("reported_precincts"))
+    csv_total_precincts = parse_int(land_snapshot.get("total_precincts"))
+    overview_reported_precincts = parse_int(overview_summary.get("reported_precincts"))
+    overview_total_precincts = parse_int(overview_summary.get("total_precincts"))
+
     write_json(
         LATEST_DIR / "run_metadata.json",
         {
@@ -4795,6 +4809,18 @@ def persist_files(
             "overview_total_precincts": (statla.get("overview_summary") or {}).get("total_precincts"),
             "overview_rows": (statla.get("overview_summary") or {}).get("rows"),
             "overview_reported_rows": (statla.get("overview_summary") or {}).get("reported_rows"),
+            "csv_reported_precincts": csv_reported_precincts,
+            "csv_total_precincts": csv_total_precincts,
+            "overview_csv_delta_reported_precincts": (
+                overview_reported_precincts - csv_reported_precincts
+                if overview_reported_precincts is not None and csv_reported_precincts is not None
+                else None
+            ),
+            "overview_csv_delta_total_precincts": (
+                overview_total_precincts - csv_total_precincts
+                if overview_total_precincts is not None and csv_total_precincts is not None
+                else None
+            ),
             "dynamic_results_url": (statla.get("dynamic_results_summary") or {}).get("url"),
             "dynamic_results_wahlkreis_count": (statla.get("dynamic_results_summary") or {}).get("wahlkreis_count"),
             "dynamic_results_party_rows": (statla.get("dynamic_results_summary") or {}).get("party_row_count"),

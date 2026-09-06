@@ -590,11 +590,22 @@ def render_lsa_current_results_panel(
     overview_summary = overview_summary or {}
     overview_reported = core.parse_int(overview_summary.get("reported_precincts"))
     overview_total = core.parse_int(overview_summary.get("total_precincts"))
+
+    def signed_number(value: int) -> str:
+        if value > 0:
+            return f"+{number(value, 0)}"
+        if value < 0:
+            return f"−{number(abs(value), 0)}"
+        return "0"
+
     if overview_reported is not None and overview_total is not None:
         reported, total = overview_reported, overview_total
+        delta_reported = overview_reported - csv_reported
+        delta_total = overview_total - csv_total
         coverage_note = (
             f"Abdeckung aus der offiziellen Übersicht: {number(reported)} / {number(total)} Wahlbezirke. "
-            f"Stimmenwerte aus dem offiziellen CSV-Ergebnisstand ({number(csv_reported)} / {number(csv_total)} Wahlbezirke)."
+            f"Stimmenwerte aus dem offiziellen CSV-Ergebnisstand ({number(csv_reported)} / {number(csv_total)} Wahlbezirke). "
+            f"Delta HTML − CSV (gemeldet / gesamt): {signed_number(delta_reported)} / {signed_number(delta_total)} Wahlbezirke."
         )
     else:
         reported, total = csv_reported, csv_total

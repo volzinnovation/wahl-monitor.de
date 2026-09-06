@@ -56,6 +56,7 @@ class CurrentOverviewTests(unittest.TestCase):
         )
         self.assertIn("219 / 2.660", result)
         self.assertIn("CSV-Ergebnisstand (1 / 10 Wahlbezirke)", result)
+        self.assertIn("Delta HTML − CSV (gemeldet / gesamt): +218 / +2.650 Wahlbezirke", result)
 
     def test_vote_share_history_uses_fixed_zero_to_sixty_percent_axis(self):
         history = [
