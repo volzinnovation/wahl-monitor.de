@@ -581,12 +581,25 @@ def render_lsa_current_results_panel(
     snapshot: Dict[str, Any],
     party_rows: List[Dict[str, Any]],
     reference: Dict[str, Any],
+    overview_summary: Optional[Dict[str, Any]] = None,
 ) -> str:
     """Lead with current counts; compare shares against the labelled 2021 final."""
     def number(value: Any, decimals: int = 0) -> str:
         return format_decimal(str(value), decimals)
 
-    reported, total = reporting_counts(snapshot)
+    csv_reported, csv_total = reporting_counts(snapshot)
+    overview_summary = overview_summary or {}
+    overview_reported = core.parse_int(overview_summary.get("reported_precincts"))
+    overview_total = core.parse_int(overview_summary.get("total_precincts"))
+    if overview_reported is not None and overview_total is not None:
+        reported, total = overview_reported, overview_total
+        coverage_note = (
+            f"Abdeckung aus der offiziellen Übersicht: {number(reported)} / {number(total)} Wahlbezirke. "
+            f"Stimmenwerte aus dem offiziellen CSV-Ergebnisstand ({number(csv_reported)} / {number(csv_total)} Wahlbezirke)."
+        )
+    else:
+        reported, total = csv_reported, csv_total
+        coverage_note = "Abdeckung und Stimmenwerte aus dem offiziellen CSV-Ergebnisstand."
     metrics = (
         ("Wahlbezirke gemeldet", f"{number(reported, 0)} / {number(total, 0)}" if total else "Noch keine Meldung"),
         ("Wähler in gemeldeten Wahlbezirken", number(snapshot.get("voters_total") or 0, 0)),
@@ -600,7 +613,7 @@ def render_lsa_current_results_panel(
     panels = [
         "<section class='panel' id='ergebnis-2026'><h2>Landesergebnis 2026</h2>"
         "<p class='small'>Laufende Auszählung · Sachsen-Anhalt</p>"
-        f"<div class='stats'>{cells}</div></section>"
+        f"<div class='stats'>{cells}</div><p class='small'>{html.escape(coverage_note)}</p></section>"
     ]
     row_key = str(snapshot.get("row_key") or "")
     for vote_type in ("Zweitstimmen", "Erststimmen"):
@@ -3284,6 +3297,10 @@ def render_index_page(
         (row for row in statla_snapshots if str(row.get("gebietsart") or "").strip().upper() == "LAND"),
         {},
     )
+    overview_summary = run_metadata.get("overview_reporting") or {
+        "reported_precincts": run_metadata.get("overview_reported_precincts"),
+        "total_precincts": run_metadata.get("overview_total_precincts"),
+    }
     reference_2021 = load_lsa_reference_2021(config) if config.election_key.endswith("-lsa") else {}
     reference_map_mode = bool(reference_2021) and not statla_snapshots
     map_heading = "Wahlkreiskarte · 2021 Referenz" if reference_map_mode else "Klickbare Wahlkreiskarte"
@@ -3316,7 +3333,7 @@ def render_index_page(
         f"<div class='stat'><div class='stat-label'>Wahlkreise vor Start</div><div class='stat-value'>{wahlkreis_counts['prestart']}</div></div>"
         "</div></div>"
         "<div class='grid'>"
-        f"{render_lsa_current_results_panel(land_snapshot, statla_party_rows, reference_2021) if config.election_key.endswith('-lsa') else ''}"
+        f"{render_lsa_current_results_panel(land_snapshot, statla_party_rows, reference_2021, overview_summary) if config.election_key.endswith('-lsa') else ''}"
         "<div class='panel'><h2>Was-wäre-wenn-Szenario</h2>"
         "<p class='small'>Stimmenanteile verschieben, 5-Prozent-Schwelle prüfen und Koalitionsmehrheiten als teilbaren Link simulieren.</p>"
         "<ul class='linklist'><li><a href='scenario.html'>Szenario öffnen</a></li></ul></div>"

@@ -43,6 +43,16 @@ class CurrentOverviewTests(unittest.TestCase):
         self.assertIn("Noch keine gültigen Stimmen", result)
         self.assertNotIn("−30,00 Pp.", result)
 
+    def test_overview_coverage_leads_when_csv_is_behind(self):
+        result = generator.render_lsa_current_results_panel(
+            self.snapshot,
+            self.current,
+            self.reference,
+            {"reported_precincts": 219, "total_precincts": 2660},
+        )
+        self.assertIn("219 / 2.660", result)
+        self.assertIn("CSV-Ergebnisstand (1 / 10 Wahlbezirke)", result)
+
 
 class PreservationTests(unittest.TestCase):
     def setUp(self):
