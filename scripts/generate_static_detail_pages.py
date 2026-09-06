@@ -884,16 +884,24 @@ def render_vote_share_history_panel(config: core.Config) -> str:
         )
 
     x_ticks: List[str] = []
-    for item, ts_value in zip(history, timestamps):
+    label_stride = max(1, (len(history) + 7) // 8)
+    for index, (item, ts_value) in enumerate(zip(history, timestamps)):
         x = x_pos(ts_value)
         x_ticks.append(
             f"<line x1='{x:.2f}' y1='{margin_top + plot_height:.2f}' x2='{x:.2f}' y2='{margin_top + plot_height + 6:.2f}' "
             "stroke='#7c8a9a' stroke-width='1'/>"
         )
-        label_y = height - 18.0
+        if index % label_stride and index != len(history) - 1:
+            continue
+        if index == 0:
+            text_anchor = "start"
+        elif index == len(history) - 1:
+            text_anchor = "end"
+        else:
+            text_anchor = "middle"
+        label_y = margin_top + plot_height + 38.0
         x_ticks.append(
-            f"<text x='{x:.2f}' y='{label_y:.2f}' text-anchor='start' "
-            f"transform='rotate(90 {x:.2f} {label_y:.2f})' class='history-axis-label'>"
+            f"<text x='{x:.2f}' y='{label_y:.2f}' text-anchor='{text_anchor}' class='history-axis-label'>"
             f"{html.escape(str(item['label']))}</text>"
         )
 

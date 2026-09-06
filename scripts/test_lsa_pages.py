@@ -78,6 +78,9 @@ class CurrentOverviewTests(unittest.TestCase):
             result = generator.render_vote_share_history_panel(object())
         for tick in (0, 12, 24, 36, 48, 60):
             self.assertIn(f">{tick}%</text>", result)
+        self.assertIn(">18:00</text>", result)
+        self.assertIn(">18:15</text>", result)
+        self.assertNotIn("rotate(90", result)
 
     def test_vote_share_history_reads_land_party_rows_by_shared_row_key(self):
         snapshots = (
