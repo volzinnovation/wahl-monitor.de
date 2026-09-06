@@ -68,6 +68,34 @@ class PipelineTests(unittest.TestCase):
         self.http_mock = self.get_patch.start()
         self.addCleanup(self.get_patch.stop)
 
+    def dynamic_results_html(self):
+        """Build the compact Reactable payload used by the live Wahlkreise page."""
+        snapshots, parties = lsa_source.core.parse_statla_csv_rows(
+            self.files[BASE + "downloads/land.csv"].decode("utf-8-sig")
+        )
+        names = {
+            row["gebietsnummer"]: row["municipality_name"]
+            for row in snapshots
+            if row["gebietsart"] == "WAHLKREIS"
+        }
+        data = {key: [] for key in ("id", "id_name", "merkmal", "anzahl.wj.x", "anzahl.wj.y", "partei_pos")}
+        for party in parties:
+            if not party["row_key"].startswith("lsa:WAHLKREIS:"):
+                continue
+            number = party["row_key"].rsplit(":", 1)[1]
+            data["id"].append(number)
+            data["id_name"].append(f"{names[number]} ({number})")
+            data["merkmal"].append(party["party_name"])
+            data["anzahl.wj.x"].append(party["votes"] if party["vote_type"] == "Zweitstimmen" else "NA")
+            data["anzahl.wj.y"].append(party["votes"] if party["vote_type"] == "Erststimmen" else "NA")
+            data["partei_pos"].append(int(party["party_key"][1:]))
+        widget = {"x": {"tag": {"attribs": {"data": data}}}}
+        return (
+            "<!doctype html><html><body><script type='application/json' data-for='ergtable'>"
+            + json.dumps(widget, ensure_ascii=False)
+            + "</script></body></html>"
+        ).encode("utf-8")
+
     def restore_core(self):
         self.root_patch.stop()
         core.set_active_election(election_key="2026-bw")
@@ -75,6 +103,8 @@ class PipelineTests(unittest.TestCase):
     def http(self, url, *_args, **_kwargs):
         if url == self.config.statla_downloads_url:
             content = ('<html>' + ''.join(f'<a href="{u}">CSV</a>' for u in self.files) + '</html>').encode()
+        elif url == self.config.statla_live_results_url:
+            content = self.dynamic_results_html()
         else:
             content = self.files[url]
         if isinstance(content, core.HttpResult):
@@ -92,10 +122,12 @@ class PipelineTests(unittest.TestCase):
         self.poll()
         metadata = version.verify(self.root)
         self.assertEqual(metadata["statla_mode"], "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD")
-        self.assertEqual(self.http_mock.call_count, 4)  # overview, downloads page, each CSV once
+        self.assertEqual(self.http_mock.call_count, 5)  # overview, dynamic results, downloads page, each CSV once
         self.assertEqual(len(core.load_latest_statla_exports()["snapshots"]), 274)
         self.assertEqual(metadata["overview_reported_precincts"], 2)
         self.assertEqual(metadata["overview_total_precincts"], 4)
+        self.assertEqual(metadata["dynamic_results_wahlkreis_count"], 41)
+        self.assertTrue(metadata["dynamic_results_used_for_normalized_results"])
         self.assertTrue((core.LATEST_DIR / "official-results-source.html").exists())
         manifest = json.loads((core.LATEST_DIR / "official_sources/manifest.json").read_text())
         for source in manifest["fetches"]:

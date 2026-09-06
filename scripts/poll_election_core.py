@@ -152,6 +152,7 @@ class Config:
     kommone_wahltermin: str
     kommone_base_url_template: str
     statla_live_csv_url: str
+    statla_live_results_url: str
     statla_dummy_csv_url: str
     statla_downloads_url: str
     wahlkreise_geojson_zip_url: str
@@ -291,6 +292,7 @@ def load_config() -> Config:
         kommone_wahltermin=data["kommone_wahltermin"],
         kommone_base_url_template=data["kommone_base_url_template"],
         statla_live_csv_url=data["statla_live_csv_url"],
+        statla_live_results_url=data.get("statla_live_results_url", ""),
         statla_dummy_csv_url=data["statla_dummy_csv_url"],
         statla_downloads_url=data.get("statla_downloads_url", ""),
         wahlkreise_geojson_zip_url=data["wahlkreise_geojson_zip_url"],
@@ -4793,6 +4795,10 @@ def persist_files(
             "overview_total_precincts": (statla.get("overview_summary") or {}).get("total_precincts"),
             "overview_rows": (statla.get("overview_summary") or {}).get("rows"),
             "overview_reported_rows": (statla.get("overview_summary") or {}).get("reported_rows"),
+            "dynamic_results_url": (statla.get("dynamic_results_summary") or {}).get("url"),
+            "dynamic_results_wahlkreis_count": (statla.get("dynamic_results_summary") or {}).get("wahlkreis_count"),
+            "dynamic_results_party_rows": (statla.get("dynamic_results_summary") or {}).get("party_row_count"),
+            "dynamic_results_used_for_normalized_results": (statla.get("dynamic_results_summary") or {}).get("used_for_normalized_results"),
             "wahlbezirk_source_url": statla.get("wahlbezirk_source_url"),
             "wahlbezirk_source_error": statla.get("wahlbezirk_source_error"),
             "wahlbezirk_rows": sum(

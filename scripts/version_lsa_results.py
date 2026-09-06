@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 
 import poll_election_core as core
-from lsa_source import validate_results
+from lsa_source import parse_dynamic_results_page, validate_results
 
 VERSION_PATHS = ["data/2026-lsa/latest", "data/2026-lsa/metadata/wahlkreis-status.csv",
                  "data/2026-lsa/metadata/wahlkreis-status.svg",
@@ -31,6 +31,7 @@ def verify(root: Path) -> dict:
     if manifest.get("election_key") != "2026-lsa" or len(manifest.get("fetches", [])) < 3:
         raise ValueError("Missing LSA source provenance")
     expected_snapshots, expected_parties = [], []
+    dynamic_parties = []
     for source in manifest["fetches"]:
         name = source["filename"]
         if Path(name).name != name:
@@ -45,6 +46,12 @@ def verify(root: Path) -> dict:
             rows, parties = core.parse_statla_csv_rows(text)
             expected_snapshots.extend(rows)
             expected_parties.extend(parties)
+        elif name == "erg_wkr.html":
+            dynamic_parties = parse_dynamic_results_page(data)["party_rows"]
+    if dynamic_parties:
+        dynamic_keys = {row["row_key"] for row in dynamic_parties}
+        expected_parties = [row for row in expected_parties if row["row_key"] not in dynamic_keys]
+        expected_parties.extend(dynamic_parties)
     snapshots = core.normalize_latest_statla_snapshots(core.read_csv_rows_from_file(latest / "statla_snapshots.csv"))
     parties = core.normalize_latest_statla_party_rows(core.read_csv_rows_from_file(latest / "statla_party_results.csv"))
     validate_results(snapshots, parties, [])
