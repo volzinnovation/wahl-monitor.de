@@ -1,0 +1,36 @@
+{
+  "content_hash": "f42bafe1bf974427d990a30219cbcb09f9e9564150871f0c1c58d2bcd9c2daae",
+  "election_key": "2026-lsa",
+  "fetches": [
+    {
+      "byte_count": 32543,
+      "content_hash": "fac4a284fa97dbec7760d9b64064890253a5d57886bd011a29fdf2d388fea169",
+      "error_message": null,
+      "fetched_at_utc": "2026-09-06T10:20:12.708176+00:00",
+      "filename": "downloads.html",
+      "source": "statla",
+      "status_code": 200,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads.html"
+    },
+    {
+      "byte_count": 77166,
+      "content_hash": "47fe8740a8e917179e11469f1b923855c6dbf075021b25c2f5481aff8d4e8b03",
+      "error_message": null,
+      "fetched_at_utc": "2026-09-06T10:20:13.336171+00:00",
+      "filename": "5d732ecfa7a37833.csv",
+      "source": "statla",
+      "status_code": 200,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Gemeinden_LT_2026.csv"
+    },
+    {
+      "byte_count": 19224,
+      "content_hash": "2b76397a3dc609d233666b5e644d18e0ae426a168987b1a3355eeea9a47c02c3",
+      "error_message": null,
+      "fetched_at_utc": "2026-09-06T10:20:13.957429+00:00",
+      "filename": "9fce65bb2d3229ca.csv",
+      "source": "statla",
+      "status_code": 200,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Land_RKR_WKR_LT_2026.csv"
+    }
+  ]
+}
