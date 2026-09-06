@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ebc60db188ef306950d9575fb91cd422.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-83cfdaab410cbb3d81a7662914778a26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d04e35d8247c59209392b255e7eb5173.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/social-share-1.0.0/social-share.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/social-share-1.0.0/all.min.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json" nonce="lt26-script">{
@@ -80,6 +80,10 @@ cookieconsent.run({
 });
 </script> 
   
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="site_libs/bootstrap-grid-3.4.1/bootstrap-grid.min.css" rel="stylesheet">
+<script src="js/functions.js"></script>
 
 
 <link rel="stylesheet" href="css/styles.css">
@@ -106,9 +110,9 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> <i class="bi bi-bar-chart-line" role="img" aria-label="Wahlbeteiligung">
+    <a class="nav-link" href="./index.html"> <i class="bi bi-globe" role="img" aria-label="Ergebnisstand">
 </i> 
-<span class="menu-text">Wahlbeteiligung</span></a>
+<span class="menu-text">Übersicht</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://statistik.sachsen-anhalt.de/themen/gebiet-und-wahlen/wahlen/landtagswahl-2026-2/uebersicht-wahlkreiseinteilung" target="_blank"> <i class="bi bi-map" role="img" aria-label="Wahlkreiseinteilung">
@@ -120,6 +124,48 @@ cookieconsent.run({
 </i> 
 <span class="menu-text">Wahlvorschläge</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./erg_land.html"> <i class="bi bi-bar-chart-line" role="img" aria-label="Landesebene">
+</i> 
+<span class="menu-text">Land</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./erg_wkr.html"> <i class="bi bi-bar-chart-line" role="img" aria-label="Wahlkreisebene">
+</i> 
+<span class="menu-text">Wahlkreise</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./erg_kreise.html"> <i class="bi bi-bar-chart-line" role="img" aria-label="Kreisebene">
+</i> 
+<span class="menu-text">Kreisfreie Städte / Landkreise</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./erg_gem.html"> <i class="bi bi-bar-chart-line" role="img" aria-label="Gemeindeebene">
+</i> 
+<span class="menu-text">Gemeinden</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-vergleichstabellen" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-table" role="img" aria-label="Vergleichstabellen">
+</i> 
+ <span class="menu-text">Vergleichstabellen</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-vergleichstabellen">    
+        <li class="dropdown-header">Zweitstimmenvergleich</li>
+        <li>
+    <a class="dropdown-item" href="./zstvgl_wkr.html">
+ <span class="dropdown-text">Wahlkreisebene</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./zstvgl_kreise.html">
+ <span class="dropdown-text">Kreisebene</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./zstvgl_gem.html">
+ <span class="dropdown-text">Gemeindeebene</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -189,29 +235,18 @@ cookieconsent.run({
 
 <div class="cell">
 <div class="cell-output-display">
-<div class="grid">
-<div class="g-col-xxl-1 g-col-lg-3">
-<a href="https://wahlen.sachsen-anhalt.de/die-landeswahlleiterin/" target="_blank">
-<img src="img/st-lw-logo.png" alt="logo">
-</a>
-<data id="ralfs-zeitstempel" value="1788703900000"></data>
+<h1>Downloads</h1>
 </div>
-<div class="g-col-lg-9 g-col-12">
-<strong class="fs-1">Downloads</strong>
-<p class="mx-5">
-Hier finden Sie die Leerdateien zum Download. Am Wahltag werden die Zwischenergebnisse der Auszählung nach 
-<span class="text-nowrap">18 Uhr</span>
- an dieser Stelle veröffentlicht. Voraussichtlich in der Wahlnacht oder am frühen Morgen des 07.09.2026 wird das vorläufige Ergebnis bereitgestellt.
-</p>
-</div>
-</div>
+<div class="cell-output-display">
+<p>An dieser Stelle finden Sie die Zwischenergebnisse der Auszählung. Voraussichtlich in der Wahlnacht oder am frühen Morgen des 07.09.2026 wird das vorläufige Ergebnis bereitgestellt.</p>
 </div>
 <div class="cell-output-display">
 <br>
 </div>
 <div class="cell-output-display">
-<div class="grid">
-<div class="g-col-xl-2 g-col-lg-3 g-col-md-4 g-col-6">
+<div class="container-fluid crosstalk-bscols">
+<div class="row">
+<div class="col-xs-1">
 <a href="./downloads/DSB_LT_2026.pdf" download="DSB_LT_2026.pdf">
 <button class="btn">
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" class="opt-h-1em opt-w-1em opt-vertical-align--0.125em opt-margin-left-auto opt-margin-right-auto opt-font-size-inherit opt-fill-currentColor opt-overflow-visible opt-position-relative"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg>
@@ -219,15 +254,19 @@ Download
 </button>
 </a>
 </div>
-<div class="g-col-xl-10 g-col-lg-9 g-col-md-8 g-col-12 mt-2">Datensatzbeschreibung für Land, Wahlkreise, Landkreise/kreisfreie Städte und Gemeinden, pdf</div>
+<div class="col-xs-11">
+<div class="mt-2">Datensatzbeschreibung für Land, Wahlkreise, Landkreise/kreisfreie Städte und Gemeinden, pdf</div>
+</div>
+</div>
 </div>
 </div>
 <div class="cell-output-display">
 <br>
 </div>
 <div class="cell-output-display">
-<div class="grid">
-<div class="g-col-xl-2 g-col-lg-3 g-col-md-4 g-col-6">
+<div class="container-fluid crosstalk-bscols">
+<div class="row">
+<div class="col-xs-1">
 <a href="./downloads/DSB_WBZ_LT_2026.pdf" download="DSB_WBZ_LT_2026.pdf">
 <button class="btn">
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" class="opt-h-1em opt-w-1em opt-vertical-align--0.125em opt-margin-left-auto opt-margin-right-auto opt-font-size-inherit opt-fill-currentColor opt-overflow-visible opt-position-relative"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg>
@@ -235,15 +274,19 @@ Download
 </button>
 </a>
 </div>
-<div class="g-col-xl-10 g-col-lg-9 g-col-md-8 g-col-12 mt-2">Datensatzbeschreibung für Wahlbezirke, pdf</div>
+<div class="col-xs-11">
+<div class="mt-2">Datensatzbeschreibung für Wahlbezirke, pdf</div>
+</div>
+</div>
 </div>
 </div>
 <div class="cell-output-display">
 <br>
 </div>
 <div class="cell-output-display">
-<div class="grid">
-<div class="g-col-xl-2 g-col-lg-3 g-col-md-4 g-col-6">
+<div class="container-fluid crosstalk-bscols">
+<div class="row">
+<div class="col-xs-1">
 <a href="./downloads/DSB_Sitzverteilung_LT_2026.pdf" download="DSB_Sitzverteilung_LT_2026.pdf">
 <button class="btn">
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" class="opt-h-1em opt-w-1em opt-vertical-align--0.125em opt-margin-left-auto opt-margin-right-auto opt-font-size-inherit opt-fill-currentColor opt-overflow-visible opt-position-relative"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg>
@@ -251,15 +294,19 @@ Download
 </button>
 </a>
 </div>
-<div class="g-col-xl-10 g-col-lg-9 g-col-md-8 g-col-12 mt-2">Datensatzbeschreibung für Sitzverteilung, pdf</div>
+<div class="col-xs-11">
+<div class="mt-2">Datensatzbeschreibung für Sitzverteilung, pdf</div>
+</div>
+</div>
 </div>
 </div>
 <div class="cell-output-display">
 <br>
 </div>
 <div class="cell-output-display">
-<div class="grid">
-<div class="g-col-xl-2 g-col-lg-3 g-col-md-4 g-col-6">
+<div class="container-fluid crosstalk-bscols">
+<div class="row">
+<div class="col-xs-1">
 <a href="./downloads/Ergebnisse_Land_RKR_WKR_LT_2026.csv" download="Ergebnisse_Land_RKR_WKR_LT_2026.csv">
 <button class="btn">
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" class="opt-h-1em opt-w-1em opt-vertical-align--0.125em opt-margin-left-auto opt-margin-right-auto opt-font-size-inherit opt-fill-currentColor opt-overflow-visible opt-position-relative"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg>
@@ -267,15 +314,19 @@ Download
 </button>
 </a>
 </div>
-<div class="g-col-xl-10 g-col-lg-9 g-col-md-8 g-col-12 mt-2">Leerdatei für Land, Wahlkreise und Landkreise/kreisfreie Städte, csv, utf-8</div>
+<div class="col-xs-11">
+<div class="mt-2">Zwischenergebnisse für Land, Wahlkreise und Landkreise/kreisfreie Städte, csv, utf-8</div>
+</div>
+</div>
 </div>
 </div>
 <div class="cell-output-display">
 <br>
 </div>
 <div class="cell-output-display">
-<div class="grid">
-<div class="g-col-xl-2 g-col-lg-3 g-col-md-4 g-col-6">
+<div class="container-fluid crosstalk-bscols">
+<div class="row">
+<div class="col-xs-1">
 <a href="./downloads/Ergebnisse_Gemeinden_LT_2026.csv" download="Ergebnisse_Gemeinden_LT_2026.csv">
 <button class="btn">
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" class="opt-h-1em opt-w-1em opt-vertical-align--0.125em opt-margin-left-auto opt-margin-right-auto opt-font-size-inherit opt-fill-currentColor opt-overflow-visible opt-position-relative"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg>
@@ -283,7 +334,10 @@ Download
 </button>
 </a>
 </div>
-<div class="g-col-xl-10 g-col-lg-9 g-col-md-8 g-col-12 mt-2">Leerdatei für Gemeinden, csv, utf-8</div>
+<div class="col-xs-11">
+<div class="mt-2">Zwischenergebnisse für Gemeinden, csv, utf-8</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -735,9 +789,13 @@ Download
 <p>Kontakt</p>
 </a>
   </li>  
+    <li class="nav-item compact">
+      <i class="bi bi-info-square" role="img">
+</i> 
+  </li>  
     <li class="nav-item">
     <a class="nav-link" href="https://wahlergebnisse.sachsen-anhalt.de/wahlen/and/impressum.html" target="_blank">
-<p>§ Impressum</p>
+<p>Impressum</p>
 </a>
   </li>  
 </ul>
