@@ -26,9 +26,9 @@ The repository is organized by election key in the form `<year>-<state>`, for ex
 
 Current operational status:
 
-- Election configured for scheduled collection: `2026-lsa`, from 18:00 CEST on `2026-09-06` through the morning of `2026-09-08` once the revised workflow is on the default branch
+- Active scheduled collection: `2026-lsa`, from 18:00 CEST on `2026-09-06` through the morning of `2026-09-08`
 - Election-night activation, recovery, and independent backup: [LSA runbook](docs/lsa-election-night.md)
-- Active GitHub Actions workflows: `.github/workflows/` (manual Pages deployment, CI smoke test, and the scheduled LSA archive)
+- Active GitHub Actions workflows: `.github/workflows/` (automatic LSA Pages deployment after collection, CI, and the scheduled LSA archive)
 - Archived scheduled GitHub Actions workflows: `.github/workflows-disabled/`
 
 ## Repository Layout
@@ -172,9 +172,14 @@ Then open:
 
 ## GitHub Pages Procedure
 
-1. Generate `site/` locally with `python3 scripts/generate_static_detail_pages.py --election-key <election-key>`.
-2. Inspect `site/<election-key>/index.html` and `site/<election-key>/search.html` locally.
-3. Trigger `.github/workflows/pages.yml` manually on GitHub to rebuild, validate generated search indexes, and deploy the static site.
+LSA Pages build and deploy automatically after each successful archive run.
+Only LSA is generated; published BW/RLP pages are restored byte for byte from
+`data/published-site/` and verified before deployment. Other election data and
+configs are checked for changes too.
+
+1. For an isolated local preview, run `python3 scripts/build_lsa_pages.py --output-root /tmp/lsa-pages-preview`.
+2. Inspect `/tmp/lsa-pages-preview/2026-lsa/index.html` and `search.html`.
+3. For an immediate manual refresh, dispatch `.github/workflows/pages.yml` on the default branch.
 
 ## Adding Another Election
 

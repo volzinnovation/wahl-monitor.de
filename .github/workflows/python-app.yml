@@ -42,6 +42,14 @@ jobs:
         run: |
           python scripts/test_lsa_statla_csv.py
           python -m unittest discover -s scripts -p 'test_lsa_pipeline.py' -v
-      - name: Run poller in limited mode
+          python -m unittest discover -s scripts -p 'test_lsa_pages.py' -v
+      - name: Parse BW fixture without polling or writing election results
         run: |
-          python scripts/poll_election.py --election-key 2026-bw --force-run --use-dummy-statla --skip-kommone --limit-ags 50
+          PYTHONPATH=scripts python - <<'PY'
+          from pathlib import Path
+          import poll_election_core as core
+          data = Path('data/2026-bw/metadata/2026021_LTW26-Dummy-Datei.csv').read_bytes()
+          snapshots, parties = core.parse_statla_csv_rows(core.decode_bytes(data))
+          assert len(snapshots) > 1000 and parties
+          print(f'Parsed {len(snapshots)} BW fixture rows in memory; no files regenerated')
+          PY
