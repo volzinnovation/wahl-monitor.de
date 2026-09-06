@@ -7,7 +7,6 @@ import argparse
 import csv
 import html
 import json
-import math
 import os
 import re
 import shutil
@@ -851,15 +850,10 @@ def render_vote_share_history_panel(config: core.Config) -> str:
     min_x = min(timestamps)
     max_x = max(timestamps)
     parties = ["AfD", "CDU", "GRÜNE"]
-    all_values = [history_item["shares"][party] for history_item in history for party in parties]
-    min_share = min(all_values)
-    max_share = max(all_values)
-    padded_min = math.floor((min_share - 1.0) / 2.0) * 2.0
-    padded_max = math.ceil((max_share + 1.0) / 2.0) * 2.0
-    if padded_max - padded_min < 8.0:
-        midpoint = (padded_max + padded_min) / 2.0
-        padded_min = math.floor((midpoint - 4.0) / 2.0) * 2.0
-        padded_max = math.ceil((midpoint + 4.0) / 2.0) * 2.0
+    # Keep the election-night comparison visually stable as new snapshots arrive.
+    # The fixed 0–60% range also keeps low-result early snapshots readable.
+    padded_min = 0.0
+    padded_max = 60.0
 
     def x_pos(ts_value: float) -> float:
         if max_x <= min_x:
