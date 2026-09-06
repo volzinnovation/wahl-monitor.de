@@ -4,7 +4,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 3,Havelberg-Osterburg,complete,96,96,21,0,0,21
 4,Stendal,pending,64,65,2,0,0,2
 5,Genthin,pending,69,70,5,0,0,5
-6,Burg,pending,64,66,4,0,0,4
+6,Burg,pending,65,66,4,0,0,4
 7,Haldensleben,complete,85,85,16,0,0,16
 8,Wolmirstedt,pending,65,67,10,0,0,10
 9,Oschersleben-Wanzleben,pending,62,64,7,0,0,7
@@ -16,10 +16,10 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 15,Blankenburg,pending,58,59,4,0,0,4
 16,Wernigerode,pending,50,51,3,0,0,3
 17,Quedlinburg,pending,59,60,8,0,0,8
-18,Aschersleben,pending,50,55,4,0,0,4
-19,Staßfurt,pending,37,40,7,0,0,7
-20,Schönebeck,pending,51,56,4,0,0,4
-21,Bernburg,pending,55,65,8,0,0,8
+18,Aschersleben,pending,51,55,4,0,0,4
+19,Staßfurt,pending,39,40,7,0,0,7
+20,Schönebeck,pending,54,56,4,0,0,4
+21,Bernburg,pending,56,65,8,0,0,8
 22,Köthen,pending,77,79,4,0,0,4
 23,Zerbst,complete,79,79,4,0,0,4
 24,Wittenberg,pending,62,63,2,0,0,2
