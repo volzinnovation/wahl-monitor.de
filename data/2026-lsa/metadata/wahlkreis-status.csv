@@ -31,11 +31,11 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 30,Eisleben,pending,70,71,11,0,0,11
 31,Sangerhausen,complete,88,88,8,0,0,8
 32,Querfurt,pending,89,90,17,0,0,17
-33,Merseburg,pending,41,43,3,0,0,3
+33,Merseburg,pending,42,43,3,0,0,3
 34,Bad Dürrenberg-Saalekreis,pending,60,63,6,0,0,6
-35,Halle I,pending,36,38,1,0,0,1
-36,Halle II,pending,42,47,1,0,0,1
-37,Halle III,pending,54,57,1,0,0,1
+35,Halle I,pending,37,38,1,0,0,1
+36,Halle II,pending,43,47,1,0,0,1
+37,Halle III,pending,56,57,1,0,0,1
 38,Halle IV,complete,44,44,1,0,0,1
 39,Weißenfels,pending,70,72,3,0,0,3
 40,Naumburg,pending,74,79,15,0,0,15
