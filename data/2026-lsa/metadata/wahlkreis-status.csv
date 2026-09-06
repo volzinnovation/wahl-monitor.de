@@ -37,6 +37,6 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 36,Halle II,pending,43,47,1,0,0,1
 37,Halle III,complete,57,57,1,0,0,1
 38,Halle IV,complete,44,44,1,0,0,1
-39,Weißenfels,pending,70,72,3,0,0,3
-40,Naumburg,pending,78,79,15,0,0,15
-41,Zeitz,pending,78,79,8,0,0,8
+39,Weißenfels,complete,72,72,3,0,0,3
+40,Naumburg,complete,79,79,15,0,0,15
+41,Zeitz,complete,79,79,8,0,0,8
