@@ -13,6 +13,7 @@ from unittest import mock
 
 import build_lsa_pages as pages
 import generate_static_detail_pages as generator
+import scenario_page
 
 
 class CurrentOverviewTests(unittest.TestCase):
@@ -111,6 +112,26 @@ class CurrentOverviewTests(unittest.TestCase):
             history = generator.load_git_vote_share_history(SimpleNamespace(timezone="Europe/Berlin"))
         self.assertEqual(len(history), 1)
         self.assertEqual(history[0]["shares"], {"AfD": 50.0, "CDU": 20.0, "GRÜNE": 5.0})
+
+    def test_scenario_baseline_uses_current_lsa_state_rows(self):
+        current_snapshot = {
+            "gebietsart": "LAND",
+            "valid_votes_zweit": "1000",
+            "reported_precincts": "200",
+            "total_precincts": "2660",
+        }
+        current_party_rows = [
+            {"row_key": "lsa:LAND:15", "vote_type": "Zweitstimmen", "party_name": "AfD", "votes": "600"},
+            {"row_key": "lsa:LAND:15", "vote_type": "Zweitstimmen", "party_name": "CDU", "votes": "400"},
+        ]
+        config = SimpleNamespace(election_key="2026-lsa")
+        with mock.patch.object(scenario_page, "read_csv_rows", return_value=current_party_rows), \
+             mock.patch.object(scenario_page, "land_snapshot", return_value=current_snapshot):
+            baseline = scenario_page.load_party_baseline(config, {})
+        self.assertEqual(baseline["baselineMode"], "current")
+        self.assertEqual(baseline["validVotes"], 1000)
+        self.assertEqual([(row["party"], row["votes"]) for row in baseline["parties"]],
+                         [("AfD", 600), ("CDU", 400)])
 
 
 class PreservationTests(unittest.TestCase):

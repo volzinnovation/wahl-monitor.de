@@ -51,7 +51,19 @@ def slug_for_party(party: str) -> str:
 
 
 def land_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
-    return [row for row in rows if str(row.get("row_key") or "").endswith(":LAND")]
+    """Return party-result rows for the state-wide level.
+
+    StatLA uses keys such as ``lsa:LAND:15`` for the state row. Older
+    datasets used a trailing ``:LAND`` key, and some callers provide an
+    explicit ``gebietsart`` column, so accept all three representations.
+    """
+    result = []
+    for row in rows:
+        area_level = str(row.get("gebietsart") or "").strip().upper()
+        key_parts = {part.strip().upper() for part in str(row.get("row_key") or "").split(":")}
+        if area_level == "LAND" or "LAND" in key_parts:
+            result.append(row)
+    return result
 
 
 def land_snapshot() -> dict[str, str]:
