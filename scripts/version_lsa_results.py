@@ -49,9 +49,24 @@ def verify(root: Path) -> dict:
         elif name == "erg_wkr.html":
             dynamic_parties = parse_dynamic_results_page(data)["party_rows"]
     if dynamic_parties:
+        # The dynamic Wahlkreise page can advance before the downloadable CSV.
+        # Only replace CSV Wahlkreis rows when both sources reconcile; otherwise
+        # keep the CSV as the normalized result and preserve the reported delta.
         dynamic_keys = {row["row_key"] for row in dynamic_parties}
-        expected_parties = [row for row in expected_parties if row["row_key"] not in dynamic_keys]
-        expected_parties.extend(dynamic_parties)
+        expected_snapshots_by_key = {row["row_key"]: row for row in expected_snapshots}
+        dynamic_totals = {}
+        for row in dynamic_parties:
+            key = (row["row_key"], row["vote_type"])
+            dynamic_totals[key] = dynamic_totals.get(key, 0) + row["votes"]
+        dynamic_matches_csv = all(
+            key in expected_snapshots_by_key
+            and dynamic_totals.get((key, "Erststimmen"), 0) == (expected_snapshots_by_key[key].get("valid_votes_erst") or 0)
+            and dynamic_totals.get((key, "Zweitstimmen"), 0) == (expected_snapshots_by_key[key].get("valid_votes_zweit") or 0)
+            for key in dynamic_keys
+        ) and len(dynamic_keys) == 41
+        if dynamic_matches_csv:
+            expected_parties = [row for row in expected_parties if row["row_key"] not in dynamic_keys]
+            expected_parties.extend(dynamic_parties)
     snapshots = core.normalize_latest_statla_snapshots(core.read_csv_rows_from_file(latest / "statla_snapshots.csv"))
     parties = core.normalize_latest_statla_party_rows(core.read_csv_rows_from_file(latest / "statla_party_results.csv"))
     validate_results(snapshots, parties, [])

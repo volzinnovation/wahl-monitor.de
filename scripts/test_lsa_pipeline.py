@@ -140,6 +140,19 @@ class PipelineTests(unittest.TestCase):
         self.poll()
         version.verify(self.root)
 
+    def test_version_replay_keeps_csv_when_dynamic_page_is_ahead(self):
+        self.poll()
+        original_parser = version.parse_dynamic_results_page
+
+        def ahead_parser(content):
+            parsed = original_parser(content)
+            parsed["party_rows"][0] = dict(parsed["party_rows"][0])
+            parsed["party_rows"][0]["votes"] += 1
+            return parsed
+
+        with patch.object(version, "parse_dynamic_results_page", side_effect=ahead_parser):
+            version.verify(self.root)
+
     def test_source_outage_preserves_latest_and_diagnostics(self):
         self.poll()
         previous = self.latest_bytes()
