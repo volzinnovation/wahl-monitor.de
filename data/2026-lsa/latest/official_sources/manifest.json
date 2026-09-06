@@ -1,22 +1,32 @@
 {
-  "content_hash": "1c22c58e8132903444ae97c589c0b6b62ed51e7e390d3fc3b6795b9e5c0d1254",
+  "content_hash": "710cf9a51679fffaa6bcf9c039fcb040761d2da325fe51f4da21ef54e756fad2",
   "election_key": "2026-lsa",
   "fetches": [
     {
       "byte_count": 235749,
       "content_hash": "5b9c22e19225e42f331b7accb1dd5212b58d001d7e0cbff05d7d267203d12a99",
       "error_message": null,
-      "fetched_at_utc": "2026-09-06T17:19:39.039992+00:00",
+      "fetched_at_utc": "2026-09-06T17:24:48.369557+00:00",
       "filename": "overview.html",
       "source": "statla",
       "status_code": 200,
       "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/"
     },
     {
+      "byte_count": 711191,
+      "content_hash": "740a7e548ae7a02c3518799fae72ed5f12e63fd0ccce78fd5944a4f873c428df",
+      "error_message": null,
+      "fetched_at_utc": "2026-09-06T17:24:50.054919+00:00",
+      "filename": "erg_wkr.html",
+      "source": "statla",
+      "status_code": 200,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/erg_wkr.html"
+    },
+    {
       "byte_count": 34265,
       "content_hash": "6e4975521be55e2b703e78fec1be320ce8cf21dc303b103c32e8515fae2bac2d",
       "error_message": null,
-      "fetched_at_utc": "2026-09-06T17:19:39.619050+00:00",
+      "fetched_at_utc": "2026-09-06T17:24:50.519971+00:00",
       "filename": "downloads.html",
       "source": "statla",
       "status_code": 200,
@@ -26,7 +36,7 @@
       "byte_count": 88535,
       "content_hash": "218e969fb7bd6a53fd22e09ed1985b1dd5635c32d77a69fabeca77613ed337b8",
       "error_message": null,
-      "fetched_at_utc": "2026-09-06T17:19:40.375078+00:00",
+      "fetched_at_utc": "2026-09-06T17:24:51.096941+00:00",
       "filename": "5d732ecfa7a37833.csv",
       "source": "statla",
       "status_code": 200,
@@ -36,7 +46,7 @@
       "byte_count": 25749,
       "content_hash": "871a1437f7354bef85a04ec70e11f17db3cc4e12d392aeeec6b69c49a6fed422",
       "error_message": null,
-      "fetched_at_utc": "2026-09-06T17:19:40.985955+00:00",
+      "fetched_at_utc": "2026-09-06T17:24:51.631336+00:00",
       "filename": "9fce65bb2d3229ca.csv",
       "source": "statla",
       "status_code": 200,
