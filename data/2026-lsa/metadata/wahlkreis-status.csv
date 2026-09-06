@@ -12,7 +12,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 11,Magdeburg II,complete,66,66,1,0,0,1
 12,Magdeburg III,complete,49,49,1,0,0,1
 13,Magdeburg IV,complete,59,59,1,0,0,1
-14,Halberstadt,pending,47,48,4,0,0,4
+14,Halberstadt,complete,48,48,4,0,0,4
 15,Blankenburg,pending,58,59,4,0,0,4
 16,Wernigerode,pending,50,51,3,0,0,3
 17,Quedlinburg,pending,59,60,8,0,0,8
@@ -22,7 +22,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 21,Bernburg,pending,57,65,8,0,0,8
 22,Köthen,pending,77,79,4,0,0,4
 23,Zerbst,complete,79,79,4,0,0,4
-24,Wittenberg,pending,62,63,2,0,0,2
+24,Wittenberg,complete,63,63,2,0,0,2
 25,Jessen,complete,81,81,5,0,0,5
 26,Dessau-Roßlau,complete,52,52,1,0,0,1
 27,Dessau-Roßlau-Wittenberg,complete,66,66,3,0,0,3
