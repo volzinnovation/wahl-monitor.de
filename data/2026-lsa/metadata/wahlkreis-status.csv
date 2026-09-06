@@ -20,7 +20,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 19,Staßfurt,pending,39,40,7,0,0,7
 20,Schönebeck,complete,56,56,4,0,0,4
 21,Bernburg,pending,60,65,8,0,0,8
-22,Köthen,pending,77,79,4,0,0,4
+22,Köthen,complete,79,79,4,0,0,4
 23,Zerbst,complete,80,80,4,0,0,4
 24,Wittenberg,complete,63,63,2,0,0,2
 25,Jessen,complete,81,81,5,0,0,5
