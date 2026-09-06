@@ -3,8 +3,8 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 2,Gardelegen-Klötze,pending,79,105,4,0,0,4
 3,Havelberg-Osterburg,complete,96,96,21,0,0,21
 4,Stendal,pending,64,65,2,0,0,2
-5,Genthin,pending,67,70,5,0,0,5
-6,Burg,pending,63,66,4,0,0,4
+5,Genthin,pending,69,70,5,0,0,5
+6,Burg,pending,64,66,4,0,0,4
 7,Haldensleben,pending,84,85,16,0,0,16
 8,Wolmirstedt,pending,61,67,10,0,0,10
 9,Oschersleben-Wanzleben,pending,61,64,7,0,0,7
@@ -22,7 +22,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 21,Bernburg,pending,54,65,8,0,0,8
 22,Köthen,pending,77,79,4,0,0,4
 23,Zerbst,complete,79,79,4,0,0,4
-24,Wittenberg,pending,60,63,2,0,0,2
+24,Wittenberg,pending,62,63,2,0,0,2
 25,Jessen,complete,81,81,5,0,0,5
 26,Dessau-Roßlau,pending,51,52,1,0,0,1
 27,Dessau-Roßlau-Wittenberg,pending,49,66,3,0,0,3
