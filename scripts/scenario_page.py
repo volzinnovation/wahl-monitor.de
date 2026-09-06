@@ -164,7 +164,6 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         [
             "Sachsen-Anhalt: gesetzliche Ausgangszahl 83 Sitze (41 Direktmandate und 42 Listenmandate).",
             "Die Sitzverteilung nutzt die 5-Prozent-Schwelle und Hare/Niemeyer.",
-            "Die 97 Sitze des Landtags 2021–2026 waren eine vergrößerte Sitzverteilung durch Überhang- und Ausgleichsmandate.",
             "Direktmandate, Überhangmandate, Ausgleichsmandate, Mehrheitssicherungen und amtliche Losentscheide werden hier nicht simuliert.",
         ]
         if lsa
@@ -184,7 +183,7 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         "seatBasis": "gesetzliche Ausgangszahl" if lsa else "Modellbasis",
         "seatNote": (
             "Gesetzliche Ausgangszahl: 83 Sitze (41 Direktmandate + 42 Listenmandate). "
-            "Die 97 Sitze des Landtags 2021–2026 entstanden durch Überhang- und Ausgleichsmandate."
+            "Die Sitznäherung wird mit den aktuellen Zweitstimmen und Hare/Niemeyer berechnet."
             if lsa
             else "Transparente Modellbasis ohne landesspezifische Überhang- und Ausgleichsmandate."
         ),

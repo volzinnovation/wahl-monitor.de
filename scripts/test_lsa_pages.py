@@ -155,7 +155,8 @@ class CurrentOverviewTests(unittest.TestCase):
         self.assertEqual(payload["baseSeats"], 83)
         self.assertEqual(payload["directSeats"], 41)
         self.assertEqual(payload["allocationMethod"], "hare_niemeyer")
-        self.assertIn("97 Sitze", payload["seatNote"])
+        self.assertIn("aktuellen Zweitstimmen", payload["seatNote"])
+        self.assertNotIn("97 Sitze", payload["seatNote"])
 
 
 class PreservationTests(unittest.TestCase):
