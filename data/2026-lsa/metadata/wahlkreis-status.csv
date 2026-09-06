@@ -16,10 +16,10 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 15,Blankenburg,pending,58,59,4,0,0,4
 16,Wernigerode,pending,50,51,3,0,0,3
 17,Quedlinburg,complete,60,60,8,0,0,8
-18,Aschersleben,pending,52,55,4,0,0,4
+18,Aschersleben,pending,53,55,4,0,0,4
 19,Staßfurt,pending,39,40,7,0,0,7
-20,Schönebeck,pending,55,56,4,0,0,4
-21,Bernburg,pending,57,65,8,0,0,8
+20,Schönebeck,complete,56,56,4,0,0,4
+21,Bernburg,pending,60,65,8,0,0,8
 22,Köthen,pending,77,79,4,0,0,4
 23,Zerbst,complete,79,79,4,0,0,4
 24,Wittenberg,complete,63,63,2,0,0,2
