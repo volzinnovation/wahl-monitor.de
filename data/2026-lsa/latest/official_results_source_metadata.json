@@ -1,11 +1,11 @@
 {
-  "content_hash": "82ed3e5d7bc3da44ce0119c6c737ebc22c286bd3651a9cabeb5d21a9a23bb0d0",
+  "content_hash": "bd46b97e504084315a45b5b36d9a58782f9ccb6686a67f1f6d65b6622814e02d",
   "error_message": null,
-  "fetched_at_utc": "2026-09-06T18:59:11.790868+00:00",
+  "fetched_at_utc": "2026-09-06T19:05:08.750712+00:00",
   "overview_reporting": {
-    "content_hash": "82ed3e5d7bc3da44ce0119c6c737ebc22c286bd3651a9cabeb5d21a9a23bb0d0",
-    "reported_precincts": 2134,
-    "reported_rows": 2134,
+    "content_hash": "bd46b97e504084315a45b5b36d9a58782f9ccb6686a67f1f6d65b6622814e02d",
+    "reported_precincts": 2173,
+    "reported_rows": 2173,
     "rows": 2660,
     "total_precincts": 2660
   },
