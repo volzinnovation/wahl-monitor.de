@@ -3,40 +3,40 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 2,Gardelegen-Klötze,pending,79,105,4,0,0,4
 3,Havelberg-Osterburg,pending,76,96,21,0,0,21
 4,Stendal,pending,45,65,2,0,0,2
-5,Genthin,pending,23,70,5,0,0,5
-6,Burg,pending,9,66,4,0,0,4
-7,Haldensleben,pending,63,85,16,0,0,16
-8,Wolmirstedt,pending,28,67,10,0,0,10
-9,Oschersleben-Wanzleben,pending,40,64,7,0,0,7
-10,Magdeburg I,pending,23,44,1,0,0,1
-11,Magdeburg II,pending,44,66,1,0,0,1
-12,Magdeburg III,pending,26,49,1,0,0,1
-13,Magdeburg IV,pending,37,59,1,0,0,1
+5,Genthin,pending,33,70,5,0,0,5
+6,Burg,pending,11,66,4,0,0,4
+7,Haldensleben,pending,71,85,16,0,0,16
+8,Wolmirstedt,pending,34,67,10,0,0,10
+9,Oschersleben-Wanzleben,pending,47,64,7,0,0,7
+10,Magdeburg I,pending,27,44,1,0,0,1
+11,Magdeburg II,pending,54,66,1,0,0,1
+12,Magdeburg III,pending,28,49,1,0,0,1
+13,Magdeburg IV,pending,44,59,1,0,0,1
 14,Halberstadt,pending,23,48,4,0,0,4
-15,Blankenburg,pending,36,59,4,0,0,4
+15,Blankenburg,pending,37,59,4,0,0,4
 16,Wernigerode,pending,24,51,3,0,0,3
-17,Quedlinburg,pending,22,60,8,0,0,8
-18,Aschersleben,pending,26,55,4,0,0,4
-19,Staßfurt,pending,14,40,7,0,0,7
-20,Schönebeck,pending,12,56,4,0,0,4
-21,Bernburg,pending,34,65,8,0,0,8
-22,Köthen,pending,61,79,4,0,0,4
-23,Zerbst,pending,67,79,4,0,0,4
-24,Wittenberg,pending,29,63,2,0,0,2
-25,Jessen,pending,55,81,5,0,0,5
-26,Dessau-Roßlau,pending,27,52,1,0,0,1
-27,Dessau-Roßlau-Wittenberg,pending,24,66,3,0,0,3
-28,Bitterfeld-Wolfen,pending,43,61,3,0,0,3
-29,Saalekreis,pending,29,63,5,0,0,5
+17,Quedlinburg,pending,26,60,8,0,0,8
+18,Aschersleben,pending,37,55,4,0,0,4
+19,Staßfurt,pending,22,40,7,0,0,7
+20,Schönebeck,pending,26,56,4,0,0,4
+21,Bernburg,pending,47,65,8,0,0,8
+22,Köthen,pending,66,79,4,0,0,4
+23,Zerbst,pending,68,79,4,0,0,4
+24,Wittenberg,pending,49,63,2,0,0,2
+25,Jessen,pending,70,81,5,0,0,5
+26,Dessau-Roßlau,pending,36,52,1,0,0,1
+27,Dessau-Roßlau-Wittenberg,pending,27,66,3,0,0,3
+28,Bitterfeld-Wolfen,pending,46,61,3,0,0,3
+29,Saalekreis,pending,40,63,5,0,0,5
 30,Eisleben,pending,46,71,11,0,0,11
 31,Sangerhausen,pending,59,88,8,0,0,8
-32,Querfurt,pending,44,90,17,0,0,17
-33,Merseburg,pending,14,43,3,0,0,3
-34,Bad Dürrenberg-Saalekreis,pending,27,63,6,0,0,6
-35,Halle I,pending,8,38,1,0,0,1
-36,Halle II,pending,11,47,1,0,0,1
-37,Halle III,pending,13,57,1,0,0,1
-38,Halle IV,pending,8,44,1,0,0,1
+32,Querfurt,pending,56,90,17,0,0,17
+33,Merseburg,pending,21,43,3,0,0,3
+34,Bad Dürrenberg-Saalekreis,pending,39,63,6,0,0,6
+35,Halle I,pending,13,38,1,0,0,1
+36,Halle II,pending,21,47,1,0,0,1
+37,Halle III,pending,30,57,1,0,0,1
+38,Halle IV,pending,16,44,1,0,0,1
 39,Weißenfels,pending,52,72,3,0,0,3
 40,Naumburg,pending,47,79,15,0,0,15
 41,Zeitz,pending,53,79,8,0,0,8
