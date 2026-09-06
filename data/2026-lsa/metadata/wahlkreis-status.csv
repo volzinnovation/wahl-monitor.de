@@ -15,7 +15,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 14,Halberstadt,complete,48,48,4,0,0,4
 15,Blankenburg,pending,58,59,4,0,0,4
 16,Wernigerode,pending,50,51,3,0,0,3
-17,Quedlinburg,pending,59,60,8,0,0,8
+17,Quedlinburg,complete,60,60,8,0,0,8
 18,Aschersleben,pending,52,55,4,0,0,4
 19,Staßfurt,pending,39,40,7,0,0,7
 20,Schönebeck,pending,55,56,4,0,0,4
@@ -33,9 +33,9 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 32,Querfurt,pending,89,90,17,0,0,17
 33,Merseburg,pending,42,43,3,0,0,3
 34,Bad Dürrenberg-Saalekreis,pending,60,63,6,0,0,6
-35,Halle I,pending,37,38,1,0,0,1
+35,Halle I,complete,38,38,1,0,0,1
 36,Halle II,pending,43,47,1,0,0,1
-37,Halle III,pending,56,57,1,0,0,1
+37,Halle III,complete,57,57,1,0,0,1
 38,Halle IV,complete,44,44,1,0,0,1
 39,Weißenfels,pending,70,72,3,0,0,3
 40,Naumburg,pending,78,79,15,0,0,15
