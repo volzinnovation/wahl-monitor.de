@@ -4,7 +4,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 3,Havelberg-Osterburg,complete,96,96,21,0,0,21
 4,Stendal,pending,64,65,2,0,0,2
 5,Genthin,pending,67,70,5,0,0,5
-6,Burg,pending,62,66,4,0,0,4
+6,Burg,pending,63,66,4,0,0,4
 7,Haldensleben,pending,84,85,16,0,0,16
 8,Wolmirstedt,pending,61,67,10,0,0,10
 9,Oschersleben-Wanzleben,pending,61,64,7,0,0,7
@@ -16,9 +16,9 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 15,Blankenburg,pending,58,59,4,0,0,4
 16,Wernigerode,pending,50,51,3,0,0,3
 17,Quedlinburg,pending,59,60,8,0,0,8
-18,Aschersleben,pending,49,55,4,0,0,4
+18,Aschersleben,pending,50,55,4,0,0,4
 19,Staßfurt,pending,35,40,7,0,0,7
-20,Schönebeck,pending,49,56,4,0,0,4
+20,Schönebeck,pending,50,56,4,0,0,4
 21,Bernburg,pending,54,65,8,0,0,8
 22,Köthen,pending,77,79,4,0,0,4
 23,Zerbst,complete,79,79,4,0,0,4
@@ -27,7 +27,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 26,Dessau-Roßlau,pending,51,52,1,0,0,1
 27,Dessau-Roßlau-Wittenberg,pending,49,66,3,0,0,3
 28,Bitterfeld-Wolfen,complete,61,61,3,0,0,3
-29,Saalekreis,pending,60,63,5,0,0,5
+29,Saalekreis,pending,61,63,5,0,0,5
 30,Eisleben,pending,70,71,11,0,0,11
 31,Sangerhausen,complete,88,88,8,0,0,8
 32,Querfurt,pending,89,90,17,0,0,17
