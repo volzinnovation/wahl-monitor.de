@@ -147,16 +147,30 @@ class CurrentOverviewTests(unittest.TestCase):
                 "totalPrecincts": 20,
                 "parties": [{"party": "AfD", "slug": "afd", "votes": 600, "share": 60.0}],
             },
-        ):
+        ), mock.patch.object(scenario_page, "load_direct_seat_counts", return_value={"AfD": 38, "Die Linke": 3}):
             payload = scenario_page.build_payload(
                 SimpleNamespace(election_key="2026-lsa", election_name="LSA", second_vote_label="Zweitstimmen"),
                 {},
             )
         self.assertEqual(payload["baseSeats"], 83)
         self.assertEqual(payload["directSeats"], 41)
+        self.assertEqual(payload["directSeatCounts"], {"AfD": 38, "Die Linke": 3})
+        self.assertEqual(payload["reportedDirectSeats"], 41)
         self.assertEqual(payload["allocationMethod"], "hare_niemeyer")
         self.assertIn("aktuellen Zweitstimmen", payload["seatNote"])
         self.assertNotIn("97 Sitze", payload["seatNote"])
+
+    def test_current_lsa_wahlkreis_leaders_are_counted_as_direct_seats(self):
+        rows = [
+            {"row_key": "lsa:WAHLKREIS:001", "vote_type": "Erststimmen", "party_name": "AfD", "votes": "70"},
+            {"row_key": "lsa:WAHLKREIS:001", "vote_type": "Erststimmen", "party_name": "CDU", "votes": "30"},
+            {"row_key": "lsa:WAHLKREIS:002", "vote_type": "Erststimmen", "party_name": "Die Linke", "votes": "55"},
+            {"row_key": "lsa:WAHLKREIS:002", "vote_type": "Erststimmen", "party_name": "AfD", "votes": "45"},
+            {"row_key": "lsa:LAND:15", "vote_type": "Erststimmen", "party_name": "AfD", "votes": "999"},
+        ]
+        config = SimpleNamespace(election_key="2026-lsa")
+        with mock.patch.object(scenario_page, "read_csv_rows", return_value=rows):
+            self.assertEqual(scenario_page.load_direct_seat_counts(config), {"AfD": 1, "Die Linke": 1})
 
 
 class PreservationTests(unittest.TestCase):

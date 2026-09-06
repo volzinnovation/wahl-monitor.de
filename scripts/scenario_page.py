@@ -155,8 +155,42 @@ def load_party_baseline(config: core.Config, party_colors: dict[str, str]) -> di
     }
 
 
+def load_direct_seat_counts(config: core.Config) -> dict[str, int]:
+    """Count current first-vote leaders in the LSA Wahlkreise.
+
+    These leaders are provisional while the live result is incomplete. The
+    scenario keeps them fixed while users vary the second-vote shares.
+    """
+    if state_code(config.election_key) != "lsa":
+        return {}
+    rows = read_csv_rows(core.LATEST_DIR / "statla_party_results.csv")
+    by_wahlkreis: dict[str, list[tuple[int, str]]] = {}
+    for row in rows:
+        key = str(row.get("row_key") or "")
+        key_parts = {part.strip().upper() for part in key.split(":")}
+        if "WAHLKREIS" not in key_parts:
+            continue
+        if core.canonical_vote_type(str(row.get("vote_type") or "")) != "Erststimmen":
+            continue
+        votes = core.parse_int(row.get("votes")) or 0
+        party = core.canonical_party_name(
+            str(row.get("party_name") or row.get("party_key") or ""),
+            "Erststimmen",
+        )
+        if votes > 0 and party:
+            by_wahlkreis.setdefault(key, []).append((votes, party))
+
+    counts: dict[str, int] = {}
+    for entries in by_wahlkreis.values():
+        winner_votes, winner_party = max(entries, key=lambda item: (item[0], item[1]))
+        if winner_votes > 0:
+            counts[winner_party] = counts.get(winner_party, 0) + 1
+    return dict(sorted(counts.items()))
+
+
 def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str, Any]:
     baseline = load_party_baseline(config, party_colors)
+    direct_seat_counts = load_direct_seat_counts(config)
     vote_label = config.second_vote_label or "Zweitstimmen"
     allocation_method = allocation_method_for(config.election_key)
     lsa = state_code(config.election_key) == "lsa"
@@ -164,7 +198,7 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         [
             "Sachsen-Anhalt: gesetzliche Ausgangszahl 83 Sitze (41 Direktmandate und 42 Listenmandate).",
             "Die Sitzverteilung nutzt die 5-Prozent-Schwelle und Hare/Niemeyer.",
-            "Direktmandate, Überhangmandate, Ausgleichsmandate, Mehrheitssicherungen und amtliche Losentscheide werden hier nicht simuliert.",
+            "Die aktuellen Direktmandatsführer werden berücksichtigt; bei Überhang werden zusätzliche Sitze nach der gesetzlichen Ausgleichslogik ergänzt.",
         ]
         if lsa
         else [
@@ -179,11 +213,13 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         "voteLabel": vote_label,
         "baseSeats": seat_count_for(config.election_key),
         "directSeats": direct_seat_count_for(config.election_key),
+        "directSeatCounts": direct_seat_counts,
+        "reportedDirectSeats": sum(direct_seat_counts.values()),
         "allocationMethod": allocation_method,
         "seatBasis": "gesetzliche Ausgangszahl" if lsa else "Modellbasis",
         "seatNote": (
             "Gesetzliche Ausgangszahl: 83 Sitze (41 Direktmandate + 42 Listenmandate). "
-            "Die Sitznäherung wird mit den aktuellen Zweitstimmen und Hare/Niemeyer berechnet."
+            "Die Sitznäherung wird mit den aktuellen Zweitstimmen und Hare/Niemeyer berechnet; Überhang und Ausgleich können die Gesamtzahl erhöhen."
             if lsa
             else "Transparente Modellbasis ohne landesspezifische Überhang- und Ausgleichsmandate."
         ),
@@ -416,32 +452,60 @@ def scenario_script() -> str:
     return allocation;
   }
 
-  function allocateHareNiemeyer(parties, seats, threshold) {
+  function allocateHareNiemeyer(parties, seats, threshold, directSeatCounts = {}) {
     const eligible = parties.filter((party) => party.adjustedShare >= threshold);
-    const allocation = new Map(eligible.map((party) => [party.party, 0]));
+    const ineligible = parties.filter((party) => party.adjustedShare < threshold);
+    const ineligibleDirectSeats = ineligible.reduce(
+      (total, party) => total + (Number(directSeatCounts[party.party]) || 0),
+      0,
+    );
+    const allocation = new Map(
+      parties
+        .map((party) => [party.party, Number(directSeatCounts[party.party]) || 0])
+        .filter((entry) => entry[1] > 0),
+    );
     const eligibleTotal = eligible.reduce((total, party) => total + party.adjustedShare, 0);
     if (eligibleTotal <= 0) {
       return allocation;
     }
+    const proportionalSeats = Math.max(0, seats - ineligibleDirectSeats);
     let assigned = 0;
     const remainders = eligible.map((party) => {
-      const exact = (party.adjustedShare / eligibleTotal) * seats;
+      const exact = (party.adjustedShare / eligibleTotal) * proportionalSeats;
       const whole = Math.floor(exact);
-      allocation.set(party.party, whole);
+      allocation.set(party.party, (allocation.get(party.party) || 0) + whole);
       assigned += whole;
       return { party: party.party, remainder: exact - whole, share: party.adjustedShare };
     });
     remainders.sort((a, b) => b.remainder - a.remainder || b.share - a.share || a.party.localeCompare(b.party));
-    remainders.slice(0, seats - assigned).forEach((item) => {
+    remainders.slice(0, proportionalSeats - assigned).forEach((item) => {
       allocation.set(item.party, (allocation.get(item.party) || 0) + 1);
     });
     return allocation;
   }
 
-  function allocate(parties, seats, threshold) {
-    return payload.allocationMethod === "hare_niemeyer"
-      ? allocateHareNiemeyer(parties, seats, threshold)
-      : allocateSainteLague(parties, seats, threshold);
+  function allocateSeats(parties, seats, threshold) {
+    const directSeatCounts = payload.directSeatCounts || {};
+    let totalSeats = seats;
+    let allocation = new Map();
+    let overhang = 0;
+    for (let iteration = 0; iteration < 12; iteration += 1) {
+      allocation = payload.allocationMethod === "hare_niemeyer"
+        ? allocateHareNiemeyer(parties, totalSeats, threshold, directSeatCounts)
+        : allocateSainteLague(parties, totalSeats, threshold);
+      overhang = parties.reduce((total, party) => {
+        if (party.adjustedShare < threshold) {
+          return total;
+        }
+        const directSeats = Number(directSeatCounts[party.party]) || 0;
+        return total + Math.max(0, directSeats - (allocation.get(party.party) || 0));
+      }, 0);
+      if (overhang <= 0) {
+        break;
+      }
+      totalSeats = seats + (2 * overhang);
+    }
+    return { allocation, totalSeats, overhang };
   }
 
   function currentScenarioShares() {
@@ -488,16 +552,26 @@ def scenario_script() -> str:
     scenarioTotal.textContent = totalMatches
       ? `Summe der Szenarioanteile: ${formatPercent(scenarioShareTotal)}`
       : `Summe der Szenarioanteile: ${formatPercent(scenarioShareTotal)} · Abweichung ${formatPoints(mismatch)}. Für die Sitznäherung werden die Werte auf 100 % normiert.`;
-    const allocation = allocate(parties, payload.baseSeats, payload.thresholdPercent);
+    const seatResult = allocateSeats(parties, payload.baseSeats, payload.thresholdPercent);
+    const allocation = seatResult.allocation;
+    const totalSeats = seatResult.totalSeats;
+    const extraSeats = Math.max(0, totalSeats - payload.baseSeats);
     parties.forEach((party) => {
       party.seats = allocation.get(party.party) || 0;
+      party.directSeats = Number((payload.directSeatCounts || {})[party.party]) || 0;
       party.qualifies = party.adjustedShare >= payload.thresholdPercent;
     });
     parties.sort((a, b) => b.seats - a.seats || b.adjustedShare - a.adjustedShare || a.party.localeCompare(b.party));
-    const majority = Math.floor(payload.baseSeats / 2) + 1;
+    const majority = Math.floor(totalSeats / 2) + 1;
     const methodLabel = payload.allocationMethod === "hare_niemeyer" ? "Hare/Niemeyer" : "Sainte-Laguë";
-    summary.textContent = `${payload.baseSeats} Sitze gesetzliche Ausgangszahl, Mehrheit ab ${majority}. Modell: 5%-Schwelle und ${methodLabel}.`;
-    coalitionSummary.textContent = `Absolute Mehrheit ab ${majority} von ${payload.baseSeats} Sitzen.`;
+    const totalLabel = extraSeats > 0
+      ? `${totalSeats} Sitze (${extraSeats} zusätzliche Sitze)`
+      : `${totalSeats} Sitze`;
+    const directLabel = payload.reportedDirectSeats
+      ? ` Aktuelle Direktmandatsführer: ${payload.reportedDirectSeats} von ${payload.directSeats}.`
+      : "";
+    summary.textContent = `${totalLabel}, gesetzliche Ausgangszahl ${payload.baseSeats}, Mehrheit ab ${majority}. Modell: 5%-Schwelle und ${methodLabel}.${directLabel}`;
+    coalitionSummary.textContent = `Absolute Mehrheit ab ${majority} von ${totalSeats} Sitzen.`;
 
     seatsRoot.replaceChildren();
     parties.filter((party) => party.seats > 0).forEach((party) => {
@@ -506,7 +580,7 @@ def scenario_script() -> str:
       const partyLabel = escapeHtml(party.party);
       row.innerHTML = `
         <span class="scenario-party"><span class="scenario-dot" style="background:${party.color}"></span>${partyLabel}</span>
-        <span class="seat-track"><span class="seat-fill" style="width:${Math.max(2, (party.seats / payload.baseSeats) * 100)}%; background:${party.color}"></span></span>
+        <span class="seat-track"><span class="seat-fill" style="width:${Math.max(2, (party.seats / totalSeats) * 100)}%; background:${party.color}"></span></span>
         <strong>${party.seats}</strong>
       `;
       seatsRoot.appendChild(row);
@@ -518,7 +592,7 @@ def scenario_script() -> str:
       const card = document.createElement("div");
       card.className = `coalition ${seats >= majority ? "ok" : "miss"}`;
       const status = seats >= majority ? "absolute Mehrheit" : `unter ${majority} Sitzen`;
-      card.innerHTML = `<strong>${escapeHtml(coalition.label)}</strong><span>${seats} / ${payload.baseSeats} Sitze · ${status}</span>`;
+      card.innerHTML = `<strong>${escapeHtml(coalition.label)}</strong><span>${seats} / ${totalSeats} Sitze · ${status}</span>`;
       coalitionsRoot.appendChild(card);
     });
 
