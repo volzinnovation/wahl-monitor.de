@@ -7,7 +7,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 6,Burg,pending,65,66,4,0,0,4
 7,Haldensleben,complete,85,85,16,0,0,16
 8,Wolmirstedt,complete,67,67,10,0,0,10
-9,Oschersleben-Wanzleben,pending,63,64,7,0,0,7
+9,Oschersleben-Wanzleben,complete,64,64,7,0,0,7
 10,Magdeburg I,complete,44,44,1,0,0,1
 11,Magdeburg II,complete,66,66,1,0,0,1
 12,Magdeburg III,complete,49,49,1,0,0,1
@@ -17,9 +17,9 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 16,Wernigerode,complete,51,51,3,0,0,3
 17,Quedlinburg,complete,60,60,8,0,0,8
 18,Aschersleben,pending,54,55,4,0,0,4
-19,Staßfurt,pending,39,40,7,0,0,7
+19,Staßfurt,complete,40,40,7,0,0,7
 20,Schönebeck,complete,56,56,4,0,0,4
-21,Bernburg,pending,62,65,8,0,0,8
+21,Bernburg,complete,65,65,8,0,0,8
 22,Köthen,complete,79,79,4,0,0,4
 23,Zerbst,complete,80,80,4,0,0,4
 24,Wittenberg,complete,63,63,2,0,0,2
