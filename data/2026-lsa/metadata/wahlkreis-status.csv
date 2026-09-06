@@ -1,8 +1,8 @@
 wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipalities_total,municipalities_complete,municipalities_pending,municipalities_no_data
 1,Salzwedel,pending,57,75,10,0,0,10
 2,Gardelegen-Klötze,pending,79,105,4,0,0,4
-3,Havelberg-Osterburg,pending,81,96,21,0,0,21
-4,Stendal,pending,52,65,2,0,0,2
+3,Havelberg-Osterburg,pending,89,96,21,0,0,21
+4,Stendal,pending,60,65,2,0,0,2
 5,Genthin,pending,45,70,5,0,0,5
 6,Burg,pending,20,66,4,0,0,4
 7,Haldensleben,pending,79,85,16,0,0,16
@@ -12,10 +12,10 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 11,Magdeburg II,pending,60,66,1,0,0,1
 12,Magdeburg III,pending,34,49,1,0,0,1
 13,Magdeburg IV,pending,52,59,1,0,0,1
-14,Halberstadt,pending,35,48,4,0,0,4
-15,Blankenburg,pending,43,59,4,0,0,4
-16,Wernigerode,pending,39,51,3,0,0,3
-17,Quedlinburg,pending,40,60,8,0,0,8
+14,Halberstadt,pending,45,48,4,0,0,4
+15,Blankenburg,pending,49,59,4,0,0,4
+16,Wernigerode,pending,41,51,3,0,0,3
+17,Quedlinburg,pending,45,60,8,0,0,8
 18,Aschersleben,pending,40,55,4,0,0,4
 19,Staßfurt,pending,27,40,7,0,0,7
 20,Schönebeck,pending,43,56,4,0,0,4
