@@ -3112,6 +3112,11 @@ def fetch_rlp_json_fallback(
 
 
 def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False) -> Dict[str, Any]:
+    if config.election_key == "2026-lsa" and not force_dummy:
+        from lsa_source import fetch_lsa
+
+        return fetch_lsa(config, timeout_seconds)
+
     cli_note(f"Fetching StatLA live CSV from {config.statla_live_csv_url}")
     live_result = statla_http_get(
         config.statla_live_csv_url,
@@ -4631,6 +4636,14 @@ def persist_files(
     events_rows: List[Dict[str, Any]],
 ) -> None:
     comparison_enabled = load_config().publish_source_comparison
+
+    # Exact official response bytes are git-versioned alongside normalized CSVs.
+    if statla.get("source_payloads"):
+        source_dir = LATEST_DIR / "official_sources"
+        source_dir.mkdir(parents=True, exist_ok=True)
+        for payload in statla["source_payloads"]:
+            (source_dir / payload["filename"]).write_bytes(payload["content"])
+        write_json(source_dir / "manifest.json", statla["source_manifest"])
 
     # Raw snapshots
     write_json(RAW_KOMMONE_DIR / f"{label_file}-kommone.json", {"snapshots": kommone_snapshots, "party_rows": kommone_party_rows})

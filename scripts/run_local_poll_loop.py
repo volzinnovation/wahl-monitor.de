@@ -50,7 +50,15 @@ def parse_args() -> argparse.Namespace:
         nargs=argparse.REMAINDER,
         help="Arguments passed through to poll_election.py. Prefix them with --.",
     )
-    return parser.parse_args()
+    parser.add_argument("--continue-on-error", action="store_true", help="Keep polling after a failed cycle")
+    parser.add_argument("--poll-timeout-seconds", type=int, default=None, help="Optional maximum runtime for one poll")
+    parser.add_argument("--version-lsa", action="store_true", help="Commit each validated LSA capture locally (no push)")
+    args = parser.parse_args()
+    if args.interval_seconds <= 0 or (args.poll_timeout_seconds is not None and args.poll_timeout_seconds <= 0) or (args.iterations is not None and args.iterations <= 0):
+        parser.error("Intervals, timeouts and iterations must be positive")
+    if args.version_lsa and args.election_key != "2026-lsa":
+        parser.error("--version-lsa requires --election-key 2026-lsa")
+    return args
 
 
 def normalize_poller_args(args: list[str]) -> list[str]:
@@ -100,22 +108,34 @@ def main() -> int:
         sleep_until(start_at)
 
     iteration = 0
+    failures = 0
     while args.iterations is None or iteration < args.iterations:
         iteration += 1
         started_at = time.time()
         started_label = datetime.now(LOCAL_TZ).strftime("%Y-%m-%d %H:%M:%S %Z")
         print(f"[{started_label}] Starting poll {iteration}", flush=True)
-        completed = subprocess.run(
-            [sys.executable, str(POLLER_PATH), "--election-key", args.election_key, *poller_args],
-            cwd=ROOT,
-            check=False,
-        )
-        if completed.returncode != 0:
-            print(f"Poll {iteration} failed with exit code {completed.returncode}", flush=True)
-            return completed.returncode
-        sleep_to_next_tick(args.interval_seconds, started_at)
+        try:
+            completed = subprocess.run(
+                [sys.executable, str(POLLER_PATH), "--election-key", args.election_key, *poller_args],
+                cwd=ROOT, check=False, timeout=args.poll_timeout_seconds,
+            )
+            returncode = completed.returncode
+            if returncode == 0 and args.version_lsa:
+                returncode = subprocess.run(
+                    [sys.executable, str(ROOT / "scripts/version_lsa_results.py"), "--commit"],
+                    cwd=ROOT, check=False, timeout=60,
+                ).returncode
+        except subprocess.TimeoutExpired:
+            returncode = 124
+        if returncode != 0:
+            failures += 1
+            print(f"Poll {iteration} failed with exit code {returncode}", flush=True)
+            if not args.continue_on_error:
+                return returncode
+        if args.iterations is None or iteration < args.iterations:
+            sleep_to_next_tick(args.interval_seconds, started_at)
 
-    return 0
+    return 1 if failures else 0
 
 
 if __name__ == "__main__":

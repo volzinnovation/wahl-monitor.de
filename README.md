@@ -26,8 +26,8 @@ The repository is organized by election key in the form `<year>-<state>`, for ex
 
 Current operational status:
 
-- Live election currently configured for polling: none
-- Next prepared election scaffold: `2026-lsa` for the Landtagswahl Sachsen-Anhalt on `2026-09-06`
+- Election configured for scheduled collection: `2026-lsa`, from 18:00 CEST on `2026-09-06` through the morning of `2026-09-08` once the revised workflow is on the default branch
+- Election-night activation, recovery, and independent backup: [LSA runbook](docs/lsa-election-night.md)
 - Active GitHub Actions workflows: `.github/workflows/` (manual Pages deployment, CI smoke test, and the scheduled LSA archive)
 - Archived scheduled GitHub Actions workflows: `.github/workflows-disabled/`
 
@@ -58,7 +58,9 @@ Current operational status:
 - `scripts/run_local_mock_poll.py`: runs the poller locally against mock or dummy data
 - `scripts/refresh_statla_from_presentation.py`: refreshes StatLA-like outputs from the presentation fallback when direct source access is incomplete
 - `scripts/maybe_disable_poll_schedule.py`: comments out the old poll workflow schedule after all Wahlkreise are complete
-- `.github/workflows/archive-lsa.yml`: archives Sachsen-Anhalt election-night snapshots from 18:30 CEST on 2026-09-06 and captures the preliminary/Wahlbezirk export in a follow-up run
+- `scripts/lsa_source.py`: validates complete LSA downloads and retains exact source bytes with SHA-256 provenance
+- `scripts/version_lsa_results.py`: verifies normalized outputs against source bytes and optionally commits/pushes a result version
+- `.github/workflows/archive-lsa.yml`: versions each successful LSA capture in git from 18:00 CEST on election day through the morning of September 8; preserves diagnostics on failure
 
 ### Static Site and Publishing
 
@@ -99,6 +101,7 @@ Current operational status:
 - `scripts/validate_dummy_statla_result.py`: validates normalized outputs against the official dummy CSV
 - `scripts/test_rlp_seat_allocation.py`: lightweight self-tests for the RLP seat allocator
 - `scripts/test_map_against_schaubild8.py`: validates Wahlkreis geometry against the official reference map
+- `scripts/test_lsa_pipeline.py`: offline acquisition, failure recovery, source replay, versioning, and schedule regression tests
 
 ## Local Workflow
 

@@ -17,6 +17,6 @@
   "local_wahlkreise_geojson_filename": "wahlkreise.geojson",
   "local_wahlkreise_mapping_csv_filename": "wahlkreis-mapping.csv",
   "publish_source_comparison": false,
-  "request_timeout_seconds": 300,
+  "request_timeout_seconds": 20,
   "max_workers": 48
 }

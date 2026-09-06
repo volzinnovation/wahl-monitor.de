@@ -1,0 +1,118 @@
+# Sachsen-Anhalt election-night operations
+
+Prepared on 2026-09-06. All times below are Europe/Berlin (CEST).
+
+## Collection and retention
+
+After the revised workflow is approved and pushed to the repository default
+branch, `Archive Sachsen-Anhalt 2026` requests a capture every five minutes from
+**September 6 at 18:00 through September 7 at 23:55**, then every 15 minutes
+through **September 8 at 11:45**. Each run checks the year and collection window;
+manual dispatch remains available for later preliminary/final corrections.
+
+GitHub schedules are best effort: starts can be delayed or dropped under load.
+Use the independent local backup below when the opening minutes matter.
+[GitHub schedule documentation](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+
+Every successful poll commits the normalized latest CSVs, exact official source
+bytes, a source manifest with URLs/times/SHA-256 checksums, reporting progress,
+and change events. Git history is the durable result timeline. Source timestamps
+and `Ergebnisart` remain in the original CSVs; acquisition times are in the
+manifest. Separate files may reflect different moments during counting, so
+cross-file totals are not required to match. Downward official vote corrections
+are accepted and versioned.
+
+The collector discovers CSV links from the official downloads page, fetches
+each once, and parses each under its own header. It requires 1 land, 14 Kreise,
+41 Wahlkreise, and 218 municipality AGS, rejects duplicate areas, malformed
+numbers, truncated rows, and party totals that disagree with valid votes.
+Once Wahlbezirk rows are collected, their disappearance is rejected too.
+Unpublished Wahlbezirk data is expected before the preliminary result.
+
+Three attempts per workflow run have a 180-second poll limit and a 20-second
+pause. A failed source or validation leaves the previous latest exports intact.
+Raw attempts and diagnostics are uploaded even after failure. Artifact retention
+is 90 days; artifacts supplement git and are not the permanent archive.
+The versioning step verifies that normalized exports reproduce the archived
+source bytes before committing. It retries non-fast-forward pushes by rebasing;
+conflicts fail visibly, without force-pushing. The pre-push `result.patch` in the
+artifact can recover a captured version if a push fails.
+
+The collection workflow does not deploy Pages. The existing manual Pages
+workflow rebuilds from the latest committed results when requested.
+
+## Before 18:00
+
+1. Approve and push the reviewed collector changes to the default branch.
+2. Run CI and manually dispatch `Archive Sachsen-Anhalt 2026` once from that
+   branch. A pre-election run should archive the official empty templates with
+   zero counts. Confirm the run succeeds **and creates a data commit**; this
+   proves the Actions token can write, which local tests cannot establish.
+3. Verify the three schedule expressions are present in the remote workflow.
+4. Arrange an independent backup if exact start-time coverage is required.
+
+Read-only checks and offline tests:
+
+```bash
+gh api repos/volzinnovation/wahl-monitor.de --jq .default_branch
+gh run list --workflow archive-lsa.yml --limit 5
+python3 -m unittest discover -s scripts -p 'test_lsa_pipeline.py' -v
+python3 scripts/test_lsa_statla_csv.py
+```
+
+## Independent local backup
+
+Use a **separate clone** on a machine that will remain awake and connected.
+After the approved changes are on the remote, clone it and run:
+
+```bash
+python3 scripts/run_local_poll_loop.py \
+  --election-key 2026-lsa \
+  --start-at 2026-09-06T18:00:00+02:00 \
+  --interval-seconds 300 --iterations 504 \
+  --continue-on-error --poll-timeout-seconds 180 --version-lsa \
+  -- --skip-kommone --no-progress
+```
+
+This commits locally and never pushes. Do not run a second writer in the same
+checkout or push a competing backup history during the primary collection.
+The ISO start time starts immediately if already past; a bare `18:00` would
+wait until tomorrow when started late. The finite loop returns a nonzero exit
+code if any cycle failed, even when later cycles recovered. Stop with Ctrl-C.
+
+## During counting and recovery
+
+- Check successful data commits and `data/2026-lsa/latest/run_metadata.json`.
+  Investigate if acquisition is over 15 minutes old during the five-minute
+  window, even when the vote totals have not changed. A green old run is not a
+  freshness signal.
+- For source/validation failures, inspect the run artifact's `collector.log`
+  and `raw/statla/<UTC-attempt>/manifest.json`. Fix an actual schema change in
+  the parser using the captured bytes as a regression fixture. Never bypass
+  validation just to make a run green.
+- For push failures, download the run artifact and retain `archive/result.patch`.
+  Inspect it with `git apply --stat` before applying it in a recovery checkout.
+  A conflict or a write restriction needs resolution before collection can
+  resume normal remote versioning.
+- To verify a captured checkout: `python3 scripts/version_lsa_results.py`.
+- To inspect the version timeline:
+  `git log --format='%h %s' -- data/2026-lsa/latest/statla_snapshots.csv`.
+- To reconstruct a prior version, use a separate checkout at the selected
+  commit and read `data/2026-lsa/latest/official_sources/manifest.json` with its
+  referenced CSVs. Rebuilding SQLite from older git deltas remains available.
+- If the preliminary/Wahlbezirk export is absent at the end of the automatic
+  window, manually dispatch another capture when it is published. Continue
+  manual captures for final corrections after the scheduled window.
+
+## Readiness evidence and remaining activation
+
+On 2026-09-06 the official portal and both result CSVs were reachable; they
+still contained empty templates. The isolated live rehearsal produced 274
+normalized areas and 6,173 party rows and verified the source checksums and
+normalized replay. Offline tests cover outages, truncation, partial HTTP 200
+transfers, reordered columns/BOM, corrections, Wahlbezirk arrival/disappearance,
+scoped git commits, concurrent pushes, the time window, and local-loop recovery.
+
+Production activation and the first Actions data push must be verified after
+approval. Neither future source availability nor GitHub scheduling precision
+can be guaranteed by a pre-election rehearsal.
