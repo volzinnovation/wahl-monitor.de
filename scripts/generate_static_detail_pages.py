@@ -3164,7 +3164,7 @@ def render_clickable_wahlkreis_map(
         row = status_by_wk.get(wk, {})
         status = str(row.get("status") or "no_data")
         name = display_text(props.get("WK Name") or row.get("wahlkreisname") or f"Wahlkreis {wk}")
-        winner_party = str(row.get("winner_party_zweit") or "").strip()
+        winner_party = str(row.get("winner_party_erst") or "").strip()
         title_prefix = ""
         if reference_mode and reference_winners and wk in reference_winners:
             reference_winner = reference_winners[wk]
@@ -3180,7 +3180,7 @@ def render_clickable_wahlkreis_map(
             continue
         title_text = f"{wk.zfill(2)} {name} ({status_label(status)})"
         if winner_party:
-            title_text += f" - {title_prefix + ': ' if title_prefix else vote_type_label('Zweitstimmen') + ': '}{winner_party}"
+            title_text += f" - {title_prefix + ': ' if title_prefix else vote_type_label('Erststimmen') + ': '}{winner_party}"
             if reference_mode and reference_winners and wk in reference_winners:
                 title_text += f" ({float(reference_winners[wk].get('winner_share_percent') or 0.0):.1f} %)"
         title = html.escape(title_text)
@@ -3326,7 +3326,7 @@ def render_index_page(
     map_note = (
         "Farbe = Zweitstimmen-Sieger der Landtagswahl 2021; die Geometrie zeigt die Wahlkreiseinteilung 2026. Jeder Wahlkreis führt zur Detailseite."
         if reference_map_mode
-        else "Jeder Wahlkreis führt direkt zur Detailseite."
+        else "Farbe = führende Erststimme im aktuellen Ergebnis. Jeder Wahlkreis führt direkt zur Detailseite."
     )
 
     operations = [f"`python scripts/generate_static_detail_pages.py --election-key {config.election_key}`"]

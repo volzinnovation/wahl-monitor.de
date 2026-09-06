@@ -459,11 +459,11 @@ def scenario_script() -> str:
       (total, party) => total + (Number(directSeatCounts[party.party]) || 0),
       0,
     );
-    const allocation = new Map(
-      parties
-        .map((party) => [party.party, Number(directSeatCounts[party.party]) || 0])
-        .filter((entry) => entry[1] > 0),
-    );
+    // Direct mandates are a constraint on the proportional result. They must
+    // not be added on top of the proportional seats, otherwise every direct
+    // mandate is counted twice (once as a direct seat and once again in the
+    // Hare/Niemeyer allocation).
+    const allocation = new Map(eligible.map((party) => [party.party, 0]));
     const eligibleTotal = eligible.reduce((total, party) => total + party.adjustedShare, 0);
     if (eligibleTotal <= 0) {
       return allocation;
@@ -627,7 +627,7 @@ def scenario_script() -> str:
           <span class="scenario-party"><span class="scenario-dot" style="background:${party.color}"></span>${partyLabel}</span>
           <output>${formatPercent(initial)}</output>
         </span>
-        <input data-party="${partyLabel}" data-default="${party.share}" type="range" min="0" max="${swingLimit}" step="0.5" value="${initial}" aria-label="${partyLabel} Szenarioanteil">
+        <input data-party="${partyLabel}" data-default="${party.share}" type="range" min="0" max="${swingLimit}" step="0.01" value="${initial}" aria-label="${partyLabel} Szenarioanteil">
       `;
       const input = wrapper.querySelector("input");
       const output = wrapper.querySelector("output");

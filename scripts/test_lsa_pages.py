@@ -172,6 +172,27 @@ class CurrentOverviewTests(unittest.TestCase):
         with mock.patch.object(scenario_page, "read_csv_rows", return_value=rows):
             self.assertEqual(scenario_page.load_direct_seat_counts(config), {"AfD": 1, "Die Linke": 1})
 
+    def test_scenario_keeps_baseline_precision_and_does_not_double_count_direct_seats(self):
+        script = scenario_page.scenario_script()
+        self.assertIn('step="0.01"', script)
+        self.assertIn("const allocation = new Map(eligible.map((party) => [party.party, 0]));", script)
+        self.assertNotIn("Number(directSeatCounts[party.party]) || 0]).filter", script)
+
+    def test_wahlkreis_map_uses_current_first_vote_leader(self):
+        feature = {"properties": {"Nummer": "01", "WK Name": "Testkreis"}}
+        status = [{
+            "wahlkreisnummer": "1",
+            "status": "complete",
+            "winner_party_erst": "AfD",
+            "winner_party_zweit": "CDU",
+        }]
+        with mock.patch.object(generator, "compute_wahlkreis_map_projection", return_value={"width": 100, "height": 80}), \
+             mock.patch.object(generator, "build_projected_wahlkreis_path", return_value="M0 0 L1 1"):
+            result = generator.render_clickable_wahlkreis_map([feature], status, {"1": "wahlkreis/test.html"})
+        self.assertIn("Erststimmen: AfD", result)
+        self.assertNotIn("Zweitstimmen: CDU", result)
+        self.assertIn("#00ccff", result)
+
 
 class PreservationTests(unittest.TestCase):
     def setUp(self):
