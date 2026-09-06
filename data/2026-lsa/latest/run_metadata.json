@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-09-06T10:20:14.222877+00:00",
+  "generated_at_utc": "2026-09-06T10:34:59.365473+00:00",
   "kommone_municipalities_polled": 218,
   "official_source_error": null,
   "official_source_status_code": 200,
   "official_source_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads.html",
-  "run_label": "2026-09-06-12-20-11",
+  "run_label": "2026-09-06-12-34-55",
   "statla_error": null,
   "statla_mode": "LIVE_CSV_DOWNLOAD",
   "statla_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Gemeinden_LT_2026.csv;https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Land_RKR_WKR_LT_2026.csv",
