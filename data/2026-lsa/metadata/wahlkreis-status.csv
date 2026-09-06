@@ -1,8 +1,8 @@
 wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipalities_total,municipalities_complete,municipalities_pending,municipalities_no_data
 1,Salzwedel,pending,0,75,10,0,0,10
 2,Gardelegen-Klötze,pending,0,105,4,0,0,4
-3,Havelberg-Osterburg,pending,0,96,21,0,0,21
-4,Stendal,pending,0,65,2,0,0,2
+3,Havelberg-Osterburg,pending,5,96,21,0,0,21
+4,Stendal,pending,1,65,2,0,0,2
 5,Genthin,pending,0,70,5,0,0,5
 6,Burg,pending,0,66,4,0,0,4
 7,Haldensleben,pending,0,85,16,0,0,16
@@ -28,8 +28,8 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 27,Dessau-Roßlau-Wittenberg,pending,0,66,3,0,0,3
 28,Bitterfeld-Wolfen,pending,0,61,3,0,0,3
 29,Saalekreis,pending,0,63,5,0,0,5
-30,Eisleben,pending,0,71,11,0,0,11
-31,Sangerhausen,pending,0,88,8,0,0,8
+30,Eisleben,pending,2,71,11,0,0,11
+31,Sangerhausen,pending,4,88,8,0,0,8
 32,Querfurt,pending,0,90,17,0,0,17
 33,Merseburg,pending,0,43,3,0,0,3
 34,Bad Dürrenberg-Saalekreis,pending,0,63,6,0,0,6
