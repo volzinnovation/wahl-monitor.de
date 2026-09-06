@@ -2,11 +2,13 @@
 import hashlib
 import io
 import json
+import subprocess
 import tarfile
 import tempfile
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
+from types import SimpleNamespace
 from unittest import mock
 
 import build_lsa_pages as pages
@@ -76,6 +78,35 @@ class CurrentOverviewTests(unittest.TestCase):
             result = generator.render_vote_share_history_panel(object())
         for tick in (0, 12, 24, 36, 48, 60):
             self.assertIn(f">{tick}%</text>", result)
+
+    def test_vote_share_history_reads_land_party_rows_by_shared_row_key(self):
+        snapshots = (
+            "row_key,gebietsart,valid_votes_zweit,reported_precincts,total_precincts\n"
+            "lsa:LAND:15,LAND,100,10,20\n"
+        )
+        party_rows = (
+            "row_key,vote_type,party_name,votes\n"
+            "lsa:LAND:15,Zweitstimmen,AfD,50\n"
+            "lsa:LAND:15,Zweitstimmen,CDU,20\n"
+            "lsa:LAND:15,Zweitstimmen,GRÜNE,5\n"
+        )
+
+        def fake_git(args, **kwargs):
+            if args[1] == "log":
+                return subprocess.CompletedProcess(args, 0, "abc123\t2026-09-06T18:00:00+00:00\n", "")
+            target = args[2]
+            if target.endswith("run_metadata.json"):
+                output = '{"generated_at_utc":"2026-09-06T18:00:00+00:00"}'
+            elif target.endswith("statla_snapshots.csv"):
+                output = snapshots
+            else:
+                output = party_rows
+            return subprocess.CompletedProcess(args, 0, output, "")
+
+        with mock.patch.object(generator.subprocess, "run", side_effect=fake_git):
+            history = generator.load_git_vote_share_history(SimpleNamespace(timezone="Europe/Berlin"))
+        self.assertEqual(len(history), 1)
+        self.assertEqual(history[0]["shares"], {"AfD": 50.0, "CDU": 20.0, "GRÜNE": 5.0})
 
 
 class PreservationTests(unittest.TestCase):
