@@ -21,7 +21,10 @@ IDENTITY = ["-c", "user.name=github-actions[bot]", "-c",
 def verify(root: Path) -> dict:
     latest = root / "data/2026-lsa/latest"
     metadata = json.loads((latest / "run_metadata.json").read_text())
-    if metadata.get("statla_mode") != "LIVE_CSV_DOWNLOAD" or metadata.get("statla_error"):
+    if metadata.get("statla_mode") not in {
+        "LIVE_CSV_DOWNLOAD",
+        "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+    } or metadata.get("statla_error"):
         raise ValueError("Cannot version an unsuccessful LSA capture")
     source_dir = latest / "official_sources"
     manifest = json.loads((source_dir / "manifest.json").read_text())

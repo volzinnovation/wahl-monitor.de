@@ -1,4 +1,4 @@
-"""Strict, lossless acquisition of the official Sachsen-Anhalt downloads.
+"""Strict, lossless acquisition of the official Sachsen-Anhalt overview and downloads.
 
 Each file is parsed with its own header. Failed attempts remain in ignored raw
 storage; only a complete, validated result may replace the published exports.
@@ -15,6 +15,52 @@ from collections import Counter, defaultdict
 from urllib.parse import urljoin, urlsplit
 
 import poll_election_core as core
+
+
+def parse_overview_page(content: bytes) -> dict[str, int | str]:
+    """Parse the official overview's embedded polling-district status table."""
+    text = core.decode_bytes(content)
+    if not core.looks_like_html_document(text):
+        raise ValueError("LSA overview response is not HTML")
+
+    for attrs, body in re.findall(r"<script([^>]*)>(.*?)</script>", text, re.S | re.I):
+        if "application/json" not in attrs.lower() or "data-for" not in attrs.lower():
+            continue
+        try:
+            widget = json.loads(body)
+        except json.JSONDecodeError:
+            continue
+        data = (
+            widget.get("x", {})
+            .get("tag", {})
+            .get("attribs", {})
+            .get("data", {})
+        )
+        if not isinstance(data, dict) or not {"wbz_ist", "wbz_soll"}.issubset(data):
+            continue
+        reported = data["wbz_ist"]
+        total = data["wbz_soll"]
+        if not isinstance(reported, list) or not isinstance(total, list) or len(reported) != len(total):
+            raise ValueError("LSA overview has invalid polling-district arrays")
+        if any(
+            isinstance(actual, bool)
+            or isinstance(expected, bool)
+            or not isinstance(actual, (int, float))
+            or not isinstance(expected, (int, float))
+            or actual < 0
+            or expected < 0
+            or actual > expected
+            for actual, expected in zip(reported, total)
+        ):
+            raise ValueError("LSA overview has invalid polling-district counts")
+        return {
+            "reported_precincts": int(sum(reported)),
+            "total_precincts": int(sum(total)),
+            "rows": len(reported),
+            "reported_rows": sum(1 for value in reported if value > 0),
+            "content_hash": core.sha256_bytes(content),
+        }
+    raise ValueError("LSA overview contains no polling-district table")
 
 
 def read_rows(content: bytes) -> list[dict[str, str]]:
@@ -95,12 +141,21 @@ def fetch_lsa(config: core.Config, timeout_seconds: int) -> dict:
         payloads.append({"filename": filename, "content": result.content})
         return result
 
-    page = fetch(config.statla_downloads_url, "downloads.html")
+    overview_url = str(config.statla_live_csv_url or "").strip()
+    if not overview_url:
+        raise ValueError("No official LSA overview URL configured")
+    overview = fetch(overview_url, "overview.html")
+    overview_summary = parse_overview_page(overview.content)
+
+    downloads_url = str(config.statla_downloads_url or "").strip()
+    if not downloads_url:
+        raise ValueError("No official LSA downloads URL configured")
+    page = fetch(downloads_url, "downloads.html")
     urls = set()
     for href in re.findall(r"href\s*=\s*[\"']([^\"']+)[\"']", core.decode_bytes(page.content), re.I):
-        url = urljoin(config.statla_downloads_url, html.unescape(href).strip())
+        url = urljoin(downloads_url, html.unescape(href).strip())
         if urlsplit(url).path.lower().endswith(".csv"):
-            if urlsplit(url).netloc != urlsplit(config.statla_downloads_url).netloc:
+            if urlsplit(url).netloc != urlsplit(downloads_url).netloc:
                 raise ValueError(f"Unexpected external LSA CSV link: {url}")
             urls.add(url)
     if not urls:
@@ -143,12 +198,14 @@ def fetch_lsa(config: core.Config, timeout_seconds: int) -> dict:
         sort_keys=True,
     ).encode())
     return {
-        "mode": "LIVE_CSV_DOWNLOAD", "url": ";".join(result_urls + booth_urls),
+        "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD", "url": ";".join([overview_url] + result_urls + booth_urls),
         "status_code": 200, "content_hash": digest, "raw_csv": combined.getvalue(),
         "raw_wahlbezirk_csv": "\n".join(booth_texts),
-        "source_copy_text": core.decode_bytes(page.content), "source_copy_url": page.url,
+        "source_copy_text": core.decode_bytes(overview.content), "source_copy_url": overview.url,
+        "source_copy_filename": "official-results-source.html",
         "source_copy_status_code": 200, "source_copy_error": None,
-        "source_copy_hash": core.sha256_bytes(page.content),
+        "source_copy_hash": core.sha256_bytes(overview.content),
+        "overview_summary": overview_summary,
         "wahlbezirk_source_url": ";".join(booth_urls) or None,
         "wahlbezirk_source_error": None if booth_urls else "Wahlbezirk CSV not published yet",
         "snapshots": sorted(snapshots, key=lambda row: row["row_key"]),

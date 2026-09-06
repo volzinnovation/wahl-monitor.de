@@ -4655,8 +4655,14 @@ def persist_files(
         )
     if statla.get("source_copy_text"):
         source_copy_text = str(statla.get("source_copy_text") or "")
-        (RAW_STATLA_DIR / f"{label_file}-official-results-source.csv").write_text(source_copy_text, encoding="utf-8")
-        (LATEST_DIR / "official_results_source.csv").write_text(source_copy_text, encoding="utf-8")
+        source_copy_filename = str(statla.get("source_copy_filename") or "official-results-source.csv")
+        if Path(source_copy_filename).name != source_copy_filename:
+            raise ValueError("Invalid official source copy filename")
+        (RAW_STATLA_DIR / f"{label_file}-{source_copy_filename}").write_text(source_copy_text, encoding="utf-8")
+        (LATEST_DIR / source_copy_filename).write_text(source_copy_text, encoding="utf-8")
+        # Remove the pre-overview legacy name after the first HTML-based run.
+        if source_copy_filename.endswith(".html"):
+            unlink_if_exists(LATEST_DIR / "official_results_source.csv")
         write_json(
             LATEST_DIR / "official_results_source_metadata.json",
             {
@@ -4665,6 +4671,7 @@ def persist_files(
                 "status_code": statla.get("source_copy_status_code"),
                 "content_hash": statla.get("source_copy_hash"),
                 "error_message": statla.get("source_copy_error"),
+                "overview_reporting": statla.get("overview_summary"),
             },
         )
 
@@ -4781,6 +4788,11 @@ def persist_files(
             "official_source_url": statla.get("source_copy_url"),
             "official_source_status_code": statla.get("source_copy_status_code"),
             "official_source_error": statla.get("source_copy_error"),
+            "overview_url": statla.get("source_copy_url"),
+            "overview_reported_precincts": (statla.get("overview_summary") or {}).get("reported_precincts"),
+            "overview_total_precincts": (statla.get("overview_summary") or {}).get("total_precincts"),
+            "overview_rows": (statla.get("overview_summary") or {}).get("rows"),
+            "overview_reported_rows": (statla.get("overview_summary") or {}).get("reported_rows"),
             "wahlbezirk_source_url": statla.get("wahlbezirk_source_url"),
             "wahlbezirk_source_error": statla.get("wahlbezirk_source_error"),
             "wahlbezirk_rows": sum(

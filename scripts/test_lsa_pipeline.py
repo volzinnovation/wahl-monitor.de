@@ -24,6 +24,12 @@ from test_lsa_statla_csv import WAHLBEZIRK_HEADER, wahlbezirk_row
 REPO = Path(__file__).resolve().parents[1]
 FIXTURES = REPO / "scripts/fixtures/lsa"
 BASE = "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/"
+OVERVIEW_HTML = (
+    "<!doctype html><html><body>"
+    "<script type='application/json' data-for='kullern-table'>"
+    '{"x":{"tag":{"attribs":{"data":{"wbz_ist":[0,1,1],"wbz_soll":[1,1,2]}}}}}'
+    "</script></body></html>"
+).encode()
 
 
 def encode_rows(rows, *, reverse=False):
@@ -54,6 +60,7 @@ class PipelineTests(unittest.TestCase):
         core.ensure_directories()
         self.config = core.load_config()
         self.files = {
+            self.config.statla_live_csv_url: OVERVIEW_HTML,
             BASE + "downloads/land.csv": (FIXTURES / "land.csv").read_bytes(),
             BASE + "downloads/gemeinden.csv": (FIXTURES / "gemeinden.csv").read_bytes(),
         }
@@ -84,9 +91,12 @@ class PipelineTests(unittest.TestCase):
     def test_full_capture_provenance_and_replay(self):
         self.poll()
         metadata = version.verify(self.root)
-        self.assertEqual(metadata["statla_mode"], "LIVE_CSV_DOWNLOAD")
-        self.assertEqual(self.http_mock.call_count, 3)  # one page, each CSV once
+        self.assertEqual(metadata["statla_mode"], "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD")
+        self.assertEqual(self.http_mock.call_count, 4)  # overview, downloads page, each CSV once
         self.assertEqual(len(core.load_latest_statla_exports()["snapshots"]), 274)
+        self.assertEqual(metadata["overview_reported_precincts"], 2)
+        self.assertEqual(metadata["overview_total_precincts"], 4)
+        self.assertTrue((core.LATEST_DIR / "official-results-source.html").exists())
         manifest = json.loads((core.LATEST_DIR / "official_sources/manifest.json").read_text())
         for source in manifest["fetches"]:
             if source["url"] in self.files:
