@@ -577,6 +577,79 @@ def load_lsa_reference_2021(config: core.Config) -> Dict[str, Any]:
     }
 
 
+def render_lsa_current_results_panel(
+    snapshot: Dict[str, Any],
+    party_rows: List[Dict[str, Any]],
+    reference: Dict[str, Any],
+) -> str:
+    """Lead with current counts; compare shares against the labelled 2021 final."""
+    def number(value: Any, decimals: int = 0) -> str:
+        return format_decimal(str(value), decimals)
+
+    reported, total = reporting_counts(snapshot)
+    metrics = (
+        ("Wahlbezirke gemeldet", f"{number(reported, 0)} / {number(total, 0)}" if total else "Noch keine Meldung"),
+        ("Wähler in gemeldeten Wahlbezirken", number(snapshot.get("voters_total") or 0, 0)),
+        ("Gültige Zweitstimmen 2026", number(vote_total_for_snapshot(snapshot, "Zweitstimmen"), 0)),
+    )
+    cells = "".join(
+        f"<div class='stat'><div class='stat-label'>{html.escape(label)}</div>"
+        f"<div class='stat-value'>{html.escape(value)}</div></div>"
+        for label, value in metrics
+    )
+    panels = [
+        "<section class='panel' id='ergebnis-2026'><h2>Landesergebnis 2026</h2>"
+        "<p class='small'>Laufende Auszählung · Sachsen-Anhalt</p>"
+        f"<div class='stats'>{cells}</div></section>"
+    ]
+    row_key = str(snapshot.get("row_key") or "")
+    for vote_type in ("Zweitstimmen", "Erststimmen"):
+        current: Dict[str, int] = defaultdict(int)
+        historical: Dict[str, int] = defaultdict(int)
+        for row in party_rows:
+            if row.get("row_key") == row_key and row.get("vote_type") == vote_type:
+                party = core.canonical_party_name(str(row.get("party_name") or ""), vote_type)
+                if party:
+                    current[party] += core.parse_int(row.get("votes")) or 0
+        for row in reference.get("party_rows", []):
+            if row.get("area_level") == "LAND" and row.get("vote_type") == vote_type:
+                party = core.canonical_party_name(str(row.get("party_name") or ""), vote_type)
+                if party:
+                    historical[party] += core.parse_int(row.get("votes")) or 0
+        current_total = vote_total_for_snapshot(snapshot, vote_type)
+        historical_field = "valid_second_votes" if vote_type == "Zweitstimmen" else "valid_first_votes"
+        historical_total = core.parse_int(reference.get("land_area", {}).get(historical_field)) or 0
+        body_rows = []
+        for party in sorted(set(current) | set(historical), key=lambda name: (-current.get(name, 0), -historical.get(name, 0), name)):
+            votes = current.get(party)
+            share = votes / current_total * 100 if votes is not None and current_total else None
+            old_share = historical[party] / historical_total * 100 if party in historical and historical_total else None
+            delta = share - old_share if share is not None and old_share is not None else None
+            color = WAHL_PARTY_COLORS.get(party, "#94a3b8")
+            body_rows.append(
+                "<tr>"
+                f"<td><span class='party-chip'><span class='party-dot' style='background:{color}'></span>{html.escape(party)}</span></td>"
+                f"<td>{number(votes, 0) if votes is not None and current_total else '—'}</td>"
+                f"<td>{number(share, 2) + ' %' if share is not None else '—'}</td>"
+                f"<td>{number(old_share, 2) + ' %' if old_share is not None else '—'}</td>"
+                f"<td>{('+' if delta >= 0 else '−') + number(abs(delta), 2) + ' Pp.' if delta is not None else '—'}</td>"
+                "</tr>"
+            )
+        waiting = "<p class='small'>Noch keine gültigen Stimmen für 2026 gemeldet.</p>" if not current_total else ""
+        panels.append(
+            f"<section class='panel'><h2>{html.escape(vote_type)} 2026 · Vergleich mit 2021</h2>"
+            "<p class='small'>2026: bisher gemeldete Wahlbezirke. 2021: landesweites amtliches Endergebnis. "
+            "Die Gebietsabdeckung unterscheidet sich während der Auszählung; die Differenz zeigt Prozentpunkte.</p>"
+            f"{waiting}<table class='compact'><thead><tr><th>Partei</th><th>Stimmen 2026</th>"
+            "<th>Anteil 2026</th><th>Anteil 2021 (Endergebnis)</th><th>Differenz (Pp.)</th></tr></thead>"
+            f"<tbody>{''.join(body_rows)}</tbody></table>"
+            "<p class='small'>—: noch keine gültigen Stimmen oder keine vergleichbare Parteizeile in dieser Wahl. "
+            "Vergleichsbasis: <a href='https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php'>"
+            "amtliches Endergebnis Sachsen-Anhalt vom 6. Juni 2021</a>.</p></section>"
+        )
+    return "".join(panels)
+
+
 def render_reference_2021_panel(reference: Dict[str, Any]) -> str:
     if not reference:
         return ""
@@ -3243,6 +3316,7 @@ def render_index_page(
         f"<div class='stat'><div class='stat-label'>Wahlkreise vor Start</div><div class='stat-value'>{wahlkreis_counts['prestart']}</div></div>"
         "</div></div>"
         "<div class='grid'>"
+        f"{render_lsa_current_results_panel(land_snapshot, statla_party_rows, reference_2021) if config.election_key.endswith('-lsa') else ''}"
         "<div class='panel'><h2>Was-wäre-wenn-Szenario</h2>"
         "<p class='small'>Stimmenanteile verschieben, 5-Prozent-Schwelle prüfen und Koalitionsmehrheiten als teilbaren Link simulieren.</p>"
         "<ul class='linklist'><li><a href='scenario.html'>Szenario öffnen</a></li></ul></div>"
@@ -3251,7 +3325,7 @@ def render_index_page(
         f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk, reference_2021.get('winners'), reference_map_mode)}"
         f"{render_reference_map_legend(reference_2021) if reference_map_mode else ''}</div>"
         f"{render_structure_profile_panel(features, wahlkreis_link_by_wk)}"
-        f"{render_reference_2021_panel(reference_2021)}"
+        f"{render_reference_2021_panel(reference_2021) if not config.election_key.endswith('-lsa') else ''}"
         f"{render_landkreis_overview_table(landkreis_overview_rows, landkreis_link_by_id)}"
         f"{render_historical_comparison_section(land_snapshot, party_row_details_by_row_key, party_order)}"
         f"{render_report_figure_panel(output_root, title='Politische Repräsentation', image_path=core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png', image_alt='Politische Repräsentation der Stimmenanteile', description='Reportgrafik zur politischen Repräsentation der Landes- bzw. Zweitstimmen.', data_links=[('PNG', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png'), ('CSV', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.csv')])}"

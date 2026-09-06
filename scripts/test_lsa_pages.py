@@ -8,6 +8,40 @@ import unittest
 from pathlib import Path
 
 import build_lsa_pages as pages
+import generate_static_detail_pages as generator
+
+
+class CurrentOverviewTests(unittest.TestCase):
+    def setUp(self):
+        self.snapshot = {"row_key": "land", "reported_precincts": 1, "total_precincts": 10,
+                         "voters_total": 101, "valid_votes_zweit": 100, "valid_votes_erst": 0}
+        self.current = [{"row_key": "land", "vote_type": "Zweitstimmen", "party_name": "CDU", "votes": 60},
+                        {"row_key": "land", "vote_type": "Zweitstimmen", "party_name": "BSW", "votes": 40}]
+        self.reference = {"land_area": {"valid_second_votes": 1000}, "party_rows": [
+            {"area_level": "LAND", "vote_type": "Zweitstimmen", "party_name": "CDU", "votes": 300}]}
+
+    def test_current_votes_and_percentage_point_change_use_separate_denominators(self):
+        result = generator.render_lsa_current_results_panel(self.snapshot, self.current, self.reference)
+        self.assertIn("<td>60</td><td>60,00 %</td><td>30,00 %</td><td>+30,00 Pp.</td>", result)
+        self.assertIn("Die Gebietsabdeckung unterscheidet sich", result)
+        self.assertNotIn("Sitzverteilung 2021", result)
+        self.assertNotIn("Rheinland-Pfalz", result)
+
+    def test_new_party_does_not_get_an_invented_2021_result(self):
+        result = generator.render_lsa_current_results_panel(self.snapshot, self.current, self.reference)
+        self.assertIn("<td>40</td><td>40,00 %</td><td>—</td><td>—</td>", result)
+
+    def test_zero_votes_and_zero_change_are_visible(self):
+        self.current[0]["votes"] = 0
+        self.reference["party_rows"][0]["votes"] = 0
+        result = generator.render_lsa_current_results_panel(self.snapshot, self.current, self.reference)
+        self.assertIn("<td>0</td><td>0,00 %</td><td>0,00 %</td><td>+0,00 Pp.</td>", result)
+
+    def test_empty_results_do_not_show_false_negative_swings(self):
+        result = generator.render_lsa_current_results_panel({}, [], self.reference)
+        self.assertIn("Landesergebnis 2026", result)
+        self.assertIn("Noch keine gültigen Stimmen", result)
+        self.assertNotIn("−30,00 Pp.", result)
 
 
 class PreservationTests(unittest.TestCase):
