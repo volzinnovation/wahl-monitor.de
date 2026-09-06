@@ -3,8 +3,8 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 2,Gardelegen-Klötze,complete,105,105,4,0,0,4
 3,Havelberg-Osterburg,complete,96,96,21,0,0,21
 4,Stendal,complete,65,65,2,0,0,2
-5,Genthin,pending,69,70,5,0,0,5
-6,Burg,pending,65,66,4,0,0,4
+5,Genthin,complete,70,70,5,0,0,5
+6,Burg,complete,66,66,4,0,0,4
 7,Haldensleben,complete,85,85,16,0,0,16
 8,Wolmirstedt,complete,67,67,10,0,0,10
 9,Oschersleben-Wanzleben,complete,64,64,7,0,0,7
