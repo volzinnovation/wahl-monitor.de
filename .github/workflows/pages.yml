@@ -2,6 +2,11 @@ name: Deploy GitHub Pages
 
 on:
   workflow_dispatch:
+    inputs:
+      source_ref:
+        description: "Archived commit SHA to restore (blank uses latest data)"
+        required: false
+        type: string
   workflow_run:
     workflows: ["Archive Sachsen-Anhalt 2026"]
     types: [completed]
@@ -27,10 +32,22 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+      - name: Validate archived source commit
+        if: ${{ inputs.source_ref != '' }}
+        env:
+          SOURCE_REF: ${{ inputs.source_ref }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          if not re.fullmatch(r"[0-9a-fA-F]{40}", os.environ["SOURCE_REF"]):
+              raise SystemExit("source_ref must be a full 40-character commit SHA")
+          PY
+
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
-          ref: ${{ github.event.repository.default_branch }}
+          ref: ${{ inputs.source_ref || github.event.repository.default_branch }}
           fetch-depth: 0
 
       - name: Set up Python
