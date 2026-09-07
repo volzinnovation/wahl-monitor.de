@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build LSA pages while preserving the published BW/RLP files verbatim."""
+"""Build LSA and MV pages while preserving the published BW/RLP files verbatim."""
 from __future__ import annotations
 
 import argparse
@@ -96,6 +96,9 @@ def main() -> None:
     manifest = restore_baseline(args.output_root)
     subprocess.run([sys.executable, str(core.ROOT / "scripts/generate_static_detail_pages.py"),
                     "--election-key", "2026-lsa", "--output-root", str(args.output_root / "2026-lsa")],
+                   cwd=core.ROOT, check=True)
+    subprocess.run([sys.executable, str(core.ROOT / "scripts/generate_static_detail_pages.py"),
+                    "--election-key", "2026-mv", "--output-root", str(args.output_root / "2026-mv")],
                    cwd=core.ROOT, check=True)
     verify_frozen_pages(args.output_root, manifest)
     if before != result_fingerprints():

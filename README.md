@@ -175,9 +175,9 @@ Then open:
 ## GitHub Pages Procedure
 
 LSA Pages build and deploy automatically after each successful archive run.
-Only LSA is generated; published BW/RLP pages are restored byte for byte from
-`data/published-site/` and verified before deployment. Other election data and
-configs are checked for changes too.
+LSA and the pre-election MV stub are generated; published BW/RLP pages are
+restored byte for byte from `data/published-site/` and verified before deployment.
+Other election data and configs are checked for changes too.
 
 1. For an isolated local preview, run `python3 scripts/build_lsa_pages.py --output-root /tmp/lsa-pages-preview`.
 2. Inspect `/tmp/lsa-pages-preview/2026-lsa/index.html` and `search.html`.
