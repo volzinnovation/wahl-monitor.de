@@ -23,10 +23,12 @@ The repository is organized by election key in the form `<year>-<state>`, for ex
 - `2026-bw`: Landtagswahl Baden-Württemberg 2026
 - `2026-rlp`: Landtagswahl Rheinland-Pfalz 2026
 - `2026-lsa`: Landtagswahl Sachsen-Anhalt 2026
+- `2026-mv`: Landtagswahl Mecklenburg-Vorpommern 2026 (pre-election setup)
 
 Current operational status:
 
 - Active scheduled collection: `2026-lsa`, from 18:00 CEST on `2026-09-06` through the morning of `2026-09-08`
+- Prepared, but not activated: `2026-mv`, election day `2026-09-20`; official LAIV result URLs are expected from calendar week 38
 - Election-night activation, recovery, and independent backup: [LSA runbook](docs/lsa-election-night.md)
 - Active GitHub Actions workflows: `.github/workflows/` (automatic LSA Pages deployment after collection, CI, and the scheduled LSA archive)
 - Archived scheduled GitHub Actions workflows: `.github/workflows-disabled/`
@@ -197,6 +199,7 @@ configs are checked for changes too.
 - Statistik BW dummy CSV for pre-election and local mock runs
 - official Wahlkreis geometry and mapping files
 - official Sachsen-Anhalt 2026 result CSVs, including the post-preliminary Wahlbezirk export when published
+- official Mecklenburg-Vorpommern 2026 LAIV CSV templates and the official result-download page
 - cached `komm.one` 2021 structure data for municipality and polling-place drill-down
 
 ## Notes

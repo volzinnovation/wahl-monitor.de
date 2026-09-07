@@ -1,0 +1,17 @@
+{
+  "municipalities": 218,
+  "municipalities_matched": 218,
+  "election_precincts": 2661,
+  "valid_second_votes": 1315315,
+  "parties": 15,
+  "pairwise_correlations": 225,
+  "all_municipality_features": 11,
+  "matching_census_and_register_ars": 218,
+  "age_rows": 4578,
+  "population_2025": 2120252,
+  "cities": 104,
+  "election_source": "data/2026-lsa/reports/git-timeline/80fa3052/latest_official_rows.json",
+  "election_sha256": "a0d15c7c5f2bede6e49d7c18d8876e9fada80664be6a04c6c9cb558cb3795978",
+  "source_snapshot": "80fa3052044a45af29f4f0b2867957d8a3b1df35; capture 2026-09-07 04:06:37 CEST; preliminary result",
+  "analysis": "Exploratory descriptive associations only. No p values, causal claims, independent-factor ranking, or individual-voter inferences."
+}

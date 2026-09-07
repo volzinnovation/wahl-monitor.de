@@ -1,0 +1,16 @@
+label,type,role,amount,start,end,approximate,order,signed_amount
+Einwohner,total,population,2120252,0,2120252,False,1,2120252
+Nichtwahlberechtigte*,delta,exclusion,413401,2120252,1706851,True,2,-413401
+Wahlberechtigte,total,subtotal,1706851,0,1706851,False,3,1706851
+Nichtwählende,delta,exclusion,378640,1706851,1328211,False,4,-378640
+Wählende,total,subtotal,1328211,0,1328211,False,5,1328211
+Ungültige Zweitstimmen,delta,exclusion,12896,1328211,1315315,False,6,-12896
+Gültige Zweitstimmen,total,subtotal,1315315,0,1315315,False,7,1315315
+Parteien ohne Sitze,delta,exclusion,91023,1315315,1224292,False,8,-91023
+Repräsentierte Zweitstimmen,total,represented,1224292,0,1224292,False,9,1224292
+AfD,delta,party,576037,1224292,648255,False,10,-576037
+CDU,delta,party,226622,648255,421633,False,11,-226622
+SPD,delta,party,122303,421633,299330,False,12,-122303
+GRÜNE,delta,party,117498,299330,181832,False,13,-117498
+Die Linke,delta,party,112541,181832,69291,False,14,-112541
+BSW,delta,party,69291,69291,0,False,15,-69291

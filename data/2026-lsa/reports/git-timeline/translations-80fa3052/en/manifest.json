@@ -1,0 +1,11 @@
+{
+  "source_git_ref": "80fa3052044a45af29f4f0b2867957d8a3b1df35",
+  "capture_local": "2026-09-07T04:06:37.855848+02:00",
+  "translation": "English; party-list votes means Zweitstimmen",
+  "source_sha256": "a0d15c7c5f2bede6e49d7c18d8876e9fada80664be6a04c6c9cb558cb3795978",
+  "renderer_sha256": "9e30b9cc3626628dd9a891194fd801fa4b7340348c2a94e887d14bae2bd0a443",
+  "files": {
+    "11_urne_brief.png": "a68be12ef8a27b39b982ca85f43b3a21d545643e93e2ab3776407473e46c15c2",
+    "11_urne_brief.csv": "e3bd078df42066e8fce26eb7ab974b52b9c91094831e454294221670fa6fde36"
+  }
+}

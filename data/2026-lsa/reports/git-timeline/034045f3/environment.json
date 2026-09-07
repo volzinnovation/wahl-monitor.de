@@ -1,0 +1,7 @@
+{
+  "aken_addendum_script_sha256": "39c99ba3c3012856ae22aeaa66ebc06ff8f095302972132b54d2b11d6faad915",
+  "analysis_script_sha256": "8540f3f495c31db02af33c07bab4cb6b56477bc9df1a954efd7b9590e5c32cad",
+  "matplotlib": "3.10.8",
+  "numpy": "2.2.6",
+  "renderer_sha256": "a82ffc7682bce8f7309de419b240ddbf68b5843407369ef8baa69b64eecdae84"
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "file": "census_education.xlsx",
+    "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Bildung_Erwerbstaetigkeit.xlsx",
+    "bytes": 28096453,
+    "sha256": "aad34940d33fa984e900ee18f732b53e60c6b6cb20da4d1305073d016c6a0a12",
+    "retrieved_at_utc": "2026-09-07T13:13:41.258610+00:00"
+  },
+  {
+    "file": "census_demography.xlsx",
+    "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Demografie.xlsx",
+    "bytes": 5408238,
+    "sha256": "4d129b55ce031ed72a59e8b84eebb402f679ba33b28848c0ee99ff13502fea75",
+    "retrieved_at_utc": "2026-09-07T13:13:37.995784+00:00"
+  },
+  {
+    "file": "census_households.xlsx",
+    "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Haushalte.xlsx",
+    "bytes": 4669959,
+    "sha256": "ae576a1532c9ee5151bde866dff506dd53cb672882b8605c4a4db8e195dd74cc",
+    "retrieved_at_utc": "2026-09-07T13:13:38.057652+00:00"
+  },
+  {
+    "file": "census_housing.xlsx",
+    "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Gebaeude_Wohnungen.xlsx",
+    "bytes": 21451209,
+    "sha256": "82da8578a4657e20752b436a756ed27846c77f96e3f7333bdea7f4fe29a8b551",
+    "retrieved_at_utc": "2026-09-07T13:13:40.194897+00:00"
+  },
+  {
+    "file": "regional_11111.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=11111",
+    "bytes": 21614,
+    "sha256": "a4bc002fab029a00e36d2ba53683cc65f8e3750b8adb3dc943535f1dd662a9f4",
+    "retrieved_at_utc": "2026-09-07T13:13:40.242234+00:00"
+  },
+  {
+    "file": "regional_13111.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=13111",
+    "bytes": 21614,
+    "sha256": "1cbb93037fb17ef29776f25df737d4ced367e4aae3be29c4ac150ff512f2086f",
+    "retrieved_at_utc": "2026-09-07T13:13:39.310527+00:00"
+  },
+  {
+    "file": "regional_13211.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=13211",
+    "bytes": 21614,
+    "sha256": "ed10ff0d74e8f872e25dd2e9e54c0d9ff4c7b72a4f6d159ccafdeb69bf84f117",
+    "retrieved_at_utc": "2026-09-07T13:13:40.879156+00:00"
+  },
+  {
+    "file": "regional_12711.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=12711",
+    "bytes": 21614,
+    "sha256": "417ad3a1a1f04e9103e0133c2cb813b133a328508552e9246776c3ab05700150",
+    "retrieved_at_utc": "2026-09-07T13:13:41.557937+00:00"
+  },
+  {
+    "file": "regional_73111.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=73111",
+    "bytes": 21614,
+    "sha256": "a3155ce6c7d6a818b19bd8d6c097a78c58d35cebac4a754f4b7a312c32bbff4a",
+    "retrieved_at_utc": "2026-09-07T13:13:41.555643+00:00"
+  },
+  {
+    "file": "regional_82111.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=82111",
+    "bytes": 21614,
+    "sha256": "fc8333ce7995ff9db42320e28a9972f9838e9485324bd3371a22db8e17510cc1",
+    "retrieved_at_utc": "2026-09-07T13:13:42.209797+00:00"
+  },
+  {
+    "file": "lsa_12411.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online?operation=statistic&code=12411",
+    "bytes": 19857,
+    "sha256": "106cae87674b529554fc69d17225f2a876946160f9b17206d172017f08c14d80",
+    "retrieved_at_utc": "2026-09-07T13:13:58.047732+00:00"
+  },
+  {
+    "file": "destatis_12411_catalogue.json",
+    "url": "https://genesis.destatis.de/genesisWS/rest/2020/catalogue/tables?selection=12411*&area=all&pagelength=100&language=de",
+    "error": "curl: (22) The requested URL returned error: 405\n"
+  }
+]

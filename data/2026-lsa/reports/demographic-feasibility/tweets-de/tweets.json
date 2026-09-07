@@ -1,0 +1,206 @@
+{
+  "format": "1600 × 1000 PNG",
+  "order": "editorial priority, low to high",
+  "party_filter": "statewide second-vote share >5% in frozen snapshot",
+  "source_snapshot": "80fa3052044a45af29f4f0b2867957d8a3b1df35; capture 2026-09-07 04:06:37 CEST; preliminary result",
+  "sources": {
+    "data/2026-lsa/reports/demographic-feasibility/municipality_analysis.csv": "33edf3b32f98d7906add80e14fbfce98ad9d92246f02ebb4fe43ca9bb5eaa151",
+    "data/2026-lsa/reports/demographic-feasibility/party_correlations.csv": "39d2015772329e2e0ef3aa7b7415573fd5e3dcb7996762e96a357f817771c375",
+    "data/2026-lsa/reports/demographic-feasibility/party_strongest_descriptive_associations.csv": "b3a9341b90e4de9613d37149ec1dcc3be6830ca0375747732f52c5f0717cd99b",
+    "data/2026-lsa/reports/git-timeline/80fa3052/latest_official_rows.json": "a0d15c7c5f2bede6e49d7c18d8876e9fada80664be6a04c6c9cb558cb3795978"
+  },
+  "tweets": [
+    {
+      "index": 1,
+      "tweet": "1/8 Sachsen-Anhalt 2026: Wie hängen Sozialstruktur und Zweitstimmen zusammen? Wir vergleichen alle 218 Gemeinden für die sechs Parteien über 5 %. Bevölkerung: 2025, Zensus: 2022. ρ steht für Spearman-Korrelation; jede Gemeinde zählt gleich. Wahlergebnis vorläufig.",
+      "weighted_characters": 264,
+      "image": "01-parteien-und-datenbasis.png",
+      "alt_text": "Balkendiagramm der sechs Parteien über fünf Prozent: AfD 43,79 Prozent; CDU 17,23 Prozent; SPD 9,30 Prozent; GRÜNE 8,93 Prozent; Die Linke 8,56 Prozent; BSW 5,27 Prozent. Die Korrelationsanalyse umfasst 218 Gemeinden und elf vollständig verfügbare Merkmale."
+    },
+    {
+      "index": 2,
+      "tweet": "2/8 CDU und BSW zeigen bei den elf überall verfügbaren Merkmalen nur schwache Zusammenhänge. Die jeweils größte absolute Korrelation: CDU mit dem Anteil 18- bis 29-Jähriger (ρ=−0,15), BSW mit Bevölkerungsdichte (−0,13). Eine starke Erklärung liefert das noch nicht.",
+      "weighted_characters": 267,
+      "image": "02-cdu-bsw.png",
+      "alt_text": "Punktdiagramm mit elf Merkmalen und einer Korrelationsachse von minus eins bis plus eins. CDU als gefüllte blaue Punkte, BSW als offene Punkte. Alle Werte liegen nahe null. Größter absoluter Wert: CDU mit dem Anteil 18- bis 29-Jähriger minus 0,15; BSW mit Bevölkerungsdichte minus 0,13. Je 218 Gemeinden."
+    },
+    {
+      "index": 3,
+      "tweet": "3/8 Die SPD erzielt tendenziell niedrigere Zweitstimmenanteile in Gemeinden mit mehr selbstgenutztem Wohneigentum (ρ=−0,24). Ohne Halle, Magdeburg und Dessau-Roßlau beträgt der Zusammenhang −0,22. Das beschreibt Gemeinden, nicht das Wahlverhalten ihrer Eigentümer.",
+      "weighted_characters": 266,
+      "image": "03-spd.png",
+      "alt_text": "Streudiagramm: Wohneigentumsquote 2022 (%) auf der x-Achse, Zweitstimmenanteil SPD auf der y-Achse. 218 Gemeinden. Spearman-Korrelation −0,24; ohne Halle, Magdeburg und Dessau-Roßlau −0,22 bei 215 Gemeinden. Mehr Wohneigentum geht tendenziell mit niedrigeren SPD-Anteilen einher. Quote: selbstgenutzte Wohnungen / bewohnte Wohnungen in Wohngebäuden, ohne Wohnheime."
+    },
+    {
+      "index": 4,
+      "tweet": "4/8 Die Linke erzielt tendenziell höhere Zweitstimmenanteile in Gemeinden mit mehr Einpersonenhaushalten (ρ=+0,42). Ohne Halle, Magdeburg und Dessau-Roßlau liegt der Wert bei +0,40. Daraus lässt sich nicht ableiten, wie Alleinlebende persönlich gewählt haben.",
+      "weighted_characters": 259,
+      "image": "04-die-linke.png",
+      "alt_text": "Streudiagramm: Einpersonenhaushalte 2022 (%) auf der x-Achse, Zweitstimmenanteil Die Linke auf der y-Achse. 218 Gemeinden. Spearman-Korrelation +0,42; ohne Halle, Magdeburg und Dessau-Roßlau +0,40 bei 215 Gemeinden. Mehr Einpersonenhaushalte gehen tendenziell mit höheren Linke-Anteilen einher. Anteil an allen privaten Haushalten · Kein Rückschluss auf die Wahlentscheidung Alleinlebender."
+    },
+    {
+      "index": 5,
+      "tweet": "5/8 Die GRÜNEN sind tendenziell in einwohnerreicheren Gemeinden stärker: Einwohnerzahl und Zweitstimmenanteil korrelieren mit ρ=+0,36. Ohne Halle, Magdeburg und Dessau-Roßlau bleibt der Wert bei +0,34. Das Muster reicht somit über diese drei Städte hinaus.",
+      "weighted_characters": 256,
+      "image": "05-gruene.png",
+      "alt_text": "Streudiagramm: Einwohnerzahl 2025 (logarithmische Skala) auf der x-Achse, Zweitstimmenanteil GRÜNE auf der y-Achse. 218 Gemeinden. Spearman-Korrelation +0,36; ohne Halle, Magdeburg und Dessau-Roßlau +0,34 bei 215 Gemeinden. Die GRÜNEN sind tendenziell in einwohnerreicheren Gemeinden stärker. Der Zusammenhang bleibt auch ohne die drei kreisfreien Städte positiv."
+    },
+    {
+      "index": 6,
+      "tweet": "6/8 Bei der AfD verläuft der Zusammenhang umgekehrt: In einwohnerreicheren Gemeinden fällt ihr Zweitstimmenanteil tendenziell niedriger aus (ρ=−0,34). Ohne Halle, Magdeburg und Dessau-Roßlau beträgt der Wert −0,31. Gemeindegröße allein erklärt das Ergebnis nicht.",
+      "weighted_characters": 265,
+      "image": "06-afd.png",
+      "alt_text": "Streudiagramm: Einwohnerzahl 2025 (logarithmische Skala) auf der x-Achse, Zweitstimmenanteil AfD auf der y-Achse. 218 Gemeinden. Spearman-Korrelation −0,34; ohne Halle, Magdeburg und Dessau-Roßlau −0,31 bei 215 Gemeinden. Die AfD ist tendenziell in einwohnerärmeren Gemeinden stärker. Der Zusammenhang bleibt auch ohne die drei kreisfreien Städte negativ."
+    },
+    {
+      "index": 7,
+      "tweet": "7/8 Bildung zeigt stärkere Zusammenhänge: Der Anteil mit Abitur/Fachhochschulreife korreliert mit GRÜNE bei ρ=+0,76 und AfD bei −0,59. Aber: Diese Zensusdaten liegen nur für 54 der 218 Gemeinden vor. Die Ergebnisse gelten nicht automatisch für kleinere Gemeinden.",
+      "weighted_characters": 264,
+      "image": "07-bildung.png",
+      "alt_text": "Zwei Streudiagramme mit identischen Achsen. X: Anteil der Personen ab 15 Jahren mit Abitur oder Fachhochschulreife im Zensus 2022. Y: Zweitstimmenanteil 2026 von null bis siebzig Prozent. GRÜNE: Spearman plus 0,76; AfD: minus 0,59. Nur 54 der 218 Gemeinden haben Bildungsdaten. Die Ergebnisse sind nicht ohne Weiteres auf kleinere Gemeinden übertragbar."
+    },
+    {
+      "index": 8,
+      "tweet": "8/8 Die wichtigste Grenze: Diese Gemeindekorrelationen belegen keine Ursachen und erklären keine individuellen Wahlentscheidungen. Die Auswertung ist explorativ. Erst gemeinsame Modelle mit Sozialstruktur, regionalen Unterschieden und Vorwahlergebnissen können Erklärungen prüfen.",
+      "weighted_characters": 280,
+      "image": "08-aussagegrenzen.png",
+      "alt_text": "Vergleich der stärksten vollständigen Gemeindekorrelation je Partei. Gefüllter Kreis: alle 218 Gemeinden. Offene Raute: 215 Gemeinden ohne Halle, Magdeburg und Dessau-Roßlau. CDU: minus 0,15 versus minus 0,13; BSW: minus 0,13 versus minus 0,13; SPD: minus 0,24 versus minus 0,22; Die Linke: plus 0,42 versus plus 0,40; GRÜNE: plus 0,36 versus plus 0,34; AfD: minus 0,34 versus minus 0,31. Die ähnlichen Werte belegen keine Ursachen und keine individuellen Wahlmotive."
+    }
+  ],
+  "chart_contracts": [
+    {
+      "image": "01-parteien-und-datenbasis.png",
+      "family": "horizontal bar",
+      "fields": [
+        "statewide second votes",
+        "party"
+      ],
+      "observations": 6,
+      "takeaway": "Six parties qualify; the pilot has 218 municipalities.",
+      "renderer": "Matplotlib/Agg, static PNG",
+      "palette": "single-root blue with neutral references",
+      "non_color_encoding": "direct labels, numeric axes, filled/open markers",
+      "grain": "municipality except chart 1 (statewide party totals)"
+    },
+    {
+      "image": "02-cdu-bsw.png",
+      "family": "paired dot",
+      "fields": [
+        "11 full-coverage features",
+        "CDU share",
+        "BSW share"
+      ],
+      "observations": 218,
+      "takeaway": "All 22 correlations have small absolute magnitude.",
+      "renderer": "Matplotlib/Agg, static PNG",
+      "palette": "single-root blue with neutral references",
+      "non_color_encoding": "direct labels, numeric axes, filled/open markers",
+      "grain": "municipality except chart 1 (statewide party totals)"
+    },
+    {
+      "image": "03-spd.png",
+      "family": "scatter",
+      "fields": [
+        "owner_occupancy_share",
+        "F4_share",
+        "ags",
+        "kreis",
+        "valid_second_votes"
+      ],
+      "observations": 218,
+      "takeaway": "Mehr Wohneigentum geht tendenziell mit niedrigeren SPD-Anteilen einher.",
+      "renderer": "Matplotlib/Agg, static PNG",
+      "palette": "single-root blue with neutral references",
+      "non_color_encoding": "direct labels, numeric axes, filled/open markers",
+      "grain": "municipality except chart 1 (statewide party totals)"
+    },
+    {
+      "image": "04-die-linke.png",
+      "family": "scatter",
+      "fields": [
+        "single_household_share",
+        "F3_share",
+        "ags",
+        "kreis",
+        "valid_second_votes"
+      ],
+      "observations": 218,
+      "takeaway": "Mehr Einpersonenhaushalte gehen tendenziell mit höheren Linke-Anteilen einher.",
+      "renderer": "Matplotlib/Agg, static PNG",
+      "palette": "single-root blue with neutral references",
+      "non_color_encoding": "direct labels, numeric axes, filled/open markers",
+      "grain": "municipality except chart 1 (statewide party totals)"
+    },
+    {
+      "image": "05-gruene.png",
+      "family": "scatter",
+      "fields": [
+        "population_2025",
+        "F6_share",
+        "ags",
+        "kreis",
+        "valid_second_votes"
+      ],
+      "observations": 218,
+      "takeaway": "Die GRÜNEN sind tendenziell in einwohnerreicheren Gemeinden stärker.",
+      "renderer": "Matplotlib/Agg, static PNG",
+      "palette": "single-root blue with neutral references",
+      "non_color_encoding": "direct labels, numeric axes, filled/open markers",
+      "grain": "municipality except chart 1 (statewide party totals)"
+    },
+    {
+      "image": "06-afd.png",
+      "family": "scatter",
+      "fields": [
+        "population_2025",
+        "F2_share",
+        "ags",
+        "kreis",
+        "valid_second_votes"
+      ],
+      "observations": 218,
+      "takeaway": "Die AfD ist tendenziell in einwohnerärmeren Gemeinden stärker.",
+      "renderer": "Matplotlib/Agg, static PNG",
+      "palette": "single-root blue with neutral references",
+      "non_color_encoding": "direct labels, numeric axes, filled/open markers",
+      "grain": "municipality except chart 1 (statewide party totals)"
+    },
+    {
+      "image": "07-bildung.png",
+      "family": "faceted scatter",
+      "fields": [
+        "abitur_share",
+        "F6_share",
+        "F2_share",
+        "ags",
+        "kreis",
+        "valid_second_votes"
+      ],
+      "observations": 54,
+      "takeaway": "The stronger education associations are restricted to 54 municipalities.",
+      "renderer": "Matplotlib/Agg, static PNG",
+      "palette": "single-root blue with neutral references",
+      "non_color_encoding": "direct labels, numeric axes, filled/open markers",
+      "grain": "municipality except chart 1 (statewide party totals)"
+    },
+    {
+      "image": "08-aussagegrenzen.png",
+      "family": "paired dot",
+      "fields": [
+        "party",
+        "strongest full-coverage feature",
+        "spearman",
+        "spearman_without_three_cities"
+      ],
+      "observations": [
+        218,
+        215
+      ],
+      "takeaway": "Removing three independent cities changes these associations little, without establishing causality.",
+      "renderer": "Matplotlib/Agg, static PNG",
+      "palette": "single-root blue with neutral references",
+      "non_color_encoding": "direct labels, numeric axes, filled/open markers",
+      "grain": "municipality except chart 1 (statewide party totals)"
+    }
+  ]
+}

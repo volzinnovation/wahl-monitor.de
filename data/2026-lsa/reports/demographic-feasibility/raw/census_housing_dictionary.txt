@@ -1,0 +1,170 @@
+Erläuterung zu CSV-Tabellen
+
+Für die Weiterverarbeitung stellen wir die Inhalte der Layout-Tabellen auch in strukturierter Form ohne Formatierungen und ohne verbundene Zellen als CSV-Tabelle zur Verfügung. Fußnoten oder weitere Erläuterungen sind in den CSV-Tabellen nicht enthalten.
+Für die weitere Verwendung der Daten finden Sie Copyright-Informationen im Impressum.
+
+CSV-Gebäude | Ergebnisse des Zensus 2022 Tabelle Gebäude nach ausgewählten Merkmalen
+CSV-Wohnungen | Ergebnisse des Zensus 2022 Tabelle Wohnungen nach ausgewählten Merkmalen
+
+Zeilenaufbau
+
+– Erste Zeile: | Kopfzeile/Header 
+Sie beschreibt die Inhalte des jeweiligen Elements. Hier werden keine Umlaute verwendet und Unterstriche ersetzen Leerzeichen.
+– Weitere Zeilen: | Datenzeilen
+Sie enthalten die in der Kopfzeile benannten Metadaten (Beschreibungen, gegebenenfalls mit Umlauten, Sonderzeichen und Leerzeichen) sowie die Werte selbst. Die Reihenfolge entspricht der Nennung in der Kopfzeile. Jeder einzelne Datenwert ist durch eine Reihe von Metadaten (Merkmale und deren Ausprägungen) genau beschrieben.
+
+Spaltenaufbau
+
+Gebäude: 
+
+– Berichtszeitpunkt: | Zensusergebnis zum Stichtag 15.05.2022 (Format JJJJMMTT)
+– _RS | Amtlicher Regionalschlüssel (ARS)
+– Name | Name der regionalen Einheit
+– Regionalebene | Kategorie der regionalen Einheit
+– GEBAEUDEART_SYS__1 | Gebäude mit Wohnraum (Anzahl)
+– GEBAEUDEART_SYS__11 | Wohngebäude (Anzahl)
+– GEBAEUDEART_SYS__111 | Wohngebäude (ohne Wohnheime) (Anzahl)
+– GEBAEUDEART_SYS__112 | Wohnheime (Anzahl)
+– GEBAEUDEART_SYS__12 | Sonstige Gebäude mit Wohnraum (Anzahl)
+– BAUJAHR_10JA__01 | Gebäude mit Baujahr vor 1919 (Anzahl)
+– BAUJAHR_10JA__02 | Gebäude mit Baujahr von 1919 bis 1949 (Anzahl)
+– BAUJAHR_10JA__03 | Gebäude mit Baujahr von 1950 bis 1959 (Anzahl)
+– BAUJAHR_10JA__04 | Gebäude mit Baujahr von 1960 bis 1969 (Anzahl)
+– BAUJAHR_10JA__05 | Gebäude mit Baujahr von 1970 bis 1979 (Anzahl)
+– BAUJAHR_10JA__06 | Gebäude mit Baujahr von 1980 bis 1989 (Anzahl)
+– BAUJAHR_10JA__07 | Gebäude mit Baujahr von 1990 bis 1999 (Anzahl)
+– BAUJAHR_10JA__08 | Gebäude mit Baujahr von 2000 bis 2009 (Anzahl)
+– BAUJAHR_10JA__09 | Gebäude mit Baujahr von 2010 bis 2015 (Anzahl)
+– BAUJAHR_10JA__10 | Gebäude mit Baujahr 2016 und später (Anzahl)
+– EIGENTUM__1 | Gebäude mit Eigentumsform Gemeinschaft von Wohnungseigentümer/-innen (Anzahl)
+– EIGENTUM__2 | Gebäude mit Eigentumsform Privatpersonen (Anzahl)
+– EIGENTUM__3 | Gebäude mit Eigentumsform Wohnungsgenossenschaft (Anzahl)
+– EIGENTUM__4 | Gebäude mit Eigentumsform Kommune oder kommunales Wohnungsunternehmen (Anzahl)
+– EIGENTUM__5 | Gebäude mit Eigentumsform Privatwirtschaftliches Wohnungsunternehmen (Anzahl)
+– EIGENTUM__6 | Gebäude mit Eigentumsform Anderes privatwirtschaftliches Unternehmen (Anzahl)
+– EIGENTUM__7 | Gebäude mit Eigentumsform Bund oder Land (Anzahl)
+– EIGENTUM__8 | Gebäude mit Eigentumsform Organisation ohne Erwerbszweck (Anzahl)
+– HEIZTYP__1 | Gebäude mit Heiungsart Fernheizung (Fernwärme) (Anzahl)
+– HEIZTYP__2 | Gebäude mit Heiungsart Etagenheizung (Anzahl)
+– HEIZTYP__3 | Gebäude mit Heiungsart Blockheizung (Anzahl)
+– HEIZTYP__4 | Gebäude mit Heiungsart Zentralheizung (Anzahl)
+– HEIZTYP__5 | Gebäude mit Heiungsart Einzel- oder Mehrraumöfen (auch Nachtspeicherheizung) (Anzahl)
+– HEIZTYP__6 | Gebäude mit Heiungsart Keine Heizung im Gebäude oder in den Wohnungen (Anzahl)
+– ENERGIETRAEGER__1 | Gebäude mit Energieträger Gas (Anzahl)
+– ENERGIETRAEGER__2 | Gebäude mit Energieträger Heizöl (Anzahl)
+– ENERGIETRAEGER__3 | Gebäude mit Energieträger Holz, Holzpellets (Anzahl)
+– ENERGIETRAEGER__4 | Gebäude mit Energieträger Biomasse (ohne Holz), Biogas (Anzahl)
+– ENERGIETRAEGER__5 | Gebäude mit Energieträger Solar-/Geothermie, Wärmepumpen (Anzahl)
+– ENERGIETRAEGER__6 | Gebäude mit Energieträger Strom (ohne Wärmepumpen) (Anzahl)
+– ENERGIETRAEGER__7 | Gebäude mit Energieträger Kohle (Anzahl)
+– ENERGIETRAEGER__8 | Gebäude mit Energieträger Fernwärme (verschiedene Energieträger) (Anzahl)
+– ENERGIETRAEGER__9 | Gebäude mit Energieträger Kein Energieträger (keine Heizung) (Anzahl)
+– ZAHLWOHNGN_HHG__1 | Gebäude mit 1 Wohnung (Anzahl)
+– ZAHLWOHNGN_HHG__2 | Gebäude mit 2 Wohnungen (Anzahl)
+– ZAHLWOHNGN_HHG__3 | Gebäude mit 3 bis 6 Wohnungen (Anzahl)
+– ZAHLWOHNGN_HHG__4 | Gebäude mit 7 bis 12 Wohnungen (Anzahl)
+– ZAHLWOHNGN_HHG__5 | Gebäude mit 13 und mehr Wohnungen (Anzahl)
+– GEBTYPBAUWEISE__1 | Gebäude mit Gebäudetyp-Bauweise Freistehendes Haus (Anzahl)
+– GEBTYPBAUWEISE__2 | Gebäude mit Gebäudetyp-Bauweise Doppelhaushälfte (Anzahl)
+– GEBTYPBAUWEISE__3 | Gebäude mit Gebäudetyp-Bauweise Gereihtes Haus (Anzahl)
+– GEBTYPBAUWEISE__4 | Gebäude mit Gebäudetyp-Bauweise Anderer Gebäudetyp (Anzahl)
+
+
+Wohnung: 
+
+– Berichtszeitpunkt: | Berichtszeitpunkt
+– _RS | Amtlicher Gemeindeschlüssel (AGS)
+– Gemeindename | Name der regionalen Einheit
+– Regionalebene | Kategorie der regionalen Einheit
+– GEBAEUDEART_SYS__1 | Wohnungen in Gebäude mit Wohnraum (Anzahl)
+– GEBAEUDEART_SYS__11 | Wohnungen in Wohngebäude (Anzahl)
+– GEBAEUDEART_SYS__111 | Wohnungen in Wohngebäude (ohne Wohnheime) (Anzahl)
+– GEBAEUDEART_SYS__112 | Wohnungen in Wohnheime (Anzahl)
+– GEBAEUDEART_SYS__12 | Wohnungen in Sonstige Gebäude mit Wohnraum (Anzahl)
+– ZAHLWOHNGN_HHG__1 | Wohnungen in Gebäude mit Wohnraum mit 1 Wohnung (Anzahl)
+– ZAHLWOHNGN_HHG__2 | Wohnungen in Gebäude mit Wohnraum mit 2 Wohnungen (Anzahl)
+– ZAHLWOHNGN_HHG__3 | Wohnungen in Gebäude mit Wohnraum mit 3 bis 6 Wohnungen (Anzahl)
+– ZAHLWOHNGN_HHG__4 | Wohnungen in Gebäude mit Wohnraum mit 7 bis 12 Wohnungen (Anzahl)
+– ZAHLWOHNGN_HHG__5 | Wohnungen in Gebäude mit Wohnraum mit 13 und mehr Wohnungen (Anzahl)
+– BAUJAHR_10JA__01 | Wohnungen in Gebäude mit Wohnraum mit Baujahr vor 1919 (Anzahl)
+– BAUJAHR_10JA__02 | Wohnungen in Gebäude mit Wohnraum mit Baujahr von 1919 bis 1949 (Anzahl)
+– BAUJAHR_10JA__03 | Wohnungen in Gebäude mit Wohnraum mit Baujahr von 1950 bis 1959 (Anzahl)
+– BAUJAHR_10JA__04 | Wohnungen in Gebäude mit Wohnraum mit Baujahr von 1960 bis 1969 (Anzahl)
+– BAUJAHR_10JA__05 | Wohnungen in Gebäude mit Wohnraum mit Baujahr von 1970 bis 1979 (Anzahl)
+– BAUJAHR_10JA__06 | Wohnungen in Gebäude mit Wohnraum mit Baujahr von 1980 bis 1989 (Anzahl)
+– BAUJAHR_10JA__07 | Wohnungen in Gebäude mit Wohnraum mit Baujahr von 1990 bis 1999 (Anzahl)
+– BAUJAHR_10JA__08 | Wohnungen in Gebäude mit Wohnraum mit Baujahr von 2000 bis 2009 (Anzahl)
+– BAUJAHR_10JA__09 | Wohnungen in Gebäude mit Wohnraum mit Baujahr von 2010 bis 2015 (Anzahl)
+– BAUJAHR_10JA__10 | Wohnungen in Gebäude mit Wohnraum mit Baujahr 2016 und später (Anzahl)
+– EIGENTUM__1 | Wohnungen in Gebäude mit Wohnraum mit Eigentumsform Gemeinschaft von Wohnungseigentümer/-innen (Anzahl)
+– EIGENTUM__2 | Wohnungen in Gebäude mit Eigentumsform Privatpersonen (Anzahl)
+– EIGENTUM__3 | Wohnungen in Gebäude mit Wohnraum mit Eigentumsform Wohnungsgenossenschaft (Anzahl)
+– EIGENTUM__4 | Wohnungen in Gebäude mit Wohnraum mit Eigentumsform Kommune oder kommunales Wohnungsunternehmen (Anzahl)
+– EIGENTUM__5 | Wohnungen in Gebäude mit Wohnraum mit Eigentumsform Privatwirtschaftliches Unternehmen (Anzahl)
+– EIGENTUM__6 | Wohnungen in Gebäude mit Wohnraum mit Eigentumsform Anderes privatwirtschaftliches Unternehmen (Anzahl)
+– EIGENTUM__7 | Wohnungen in Gebäude mit Wohnraum mit Eigentumsform Bund oder Land (Anzahl)
+– EIGENTUM__8 | Wohnungen in Gebäude mit Wohnraum mit Eigentumsform Organisation ohne Erwerbszweck (Anzahl)
+– HEIZTYP__1 | Wohnungen in Gebäude mit Wohnraum mit Heiungsart Fernheizung (Fernwärme) (Anzahl)
+– HEIZTYP__2 | Wohnungen in Gebäude mit Wohnraum mit Heiungsart Etagenheizung (Anzahl)
+– HEIZTYP__3 | Wohnungen in Gebäude mit Wohnraum mit Heiungsart Blockheizung (Anzahl)
+– HEIZTYP__4 | Wohnungen in Gebäude mit Wohnraum mit Heiungsart Zentralheizung (Anzahl)
+– HEIZTYP__5 | Wohnungen in Gebäude mit Wohnraum mit Heiungsart Einzel- oder Mehrraumöfen (auch Nachtspeicherheizung) (Anzahl)
+– HEIZTYP__6 | Wohnungen in Gebäude mit Wohnraum mit Heiungsart Keine Heizung im Gebäude oder in den Wohnungen (Anzahl)
+– ENERGIETRAEGER__1 | Wohnungen in Gebäude mit Wohnraum mit Energieträger Gas (Anzahl)
+– ENERGIETRAEGER__2 | Wohnungen in Gebäude mit Wohnraum mit Energieträger Heizöl (Anzahl)
+– ENERGIETRAEGER__3 | Wohnungen in Gebäude mit Wohnraum mit Energieträger Holz, Holzpellets (Anzahl)
+– ENERGIETRAEGER__4 | Wohnungen in Gebäude mit Wohnraum mit Energieträger Biomasse (ohne Holz), Biogas (Anzahl)
+– ENERGIETRAEGER__5 | Wohnungen in Gebäude mit Wohnraum mit Energieträger Solar-/Geothermie, Wärmepumpen (Anzahl)
+– ENERGIETRAEGER__6 | Wohnungen in Gebäude mit Wohnraum mit Energieträger Strom (ohne Wärmepumpen) (Anzahl)
+– ENERGIETRAEGER__7 | Wohnungen in Gebäude mit Wohnraum mit Energieträger Kohle (Anzahl)
+– ENERGIETRAEGER__8 | Wohnungen in Gebäude mit Wohnraum mit Energieträger Fernwärme (verschiedene Energieträger) (Anzahl)
+– ENERGIETRAEGER__9 | Wohnungen in Gebäude mit Wohnraum mit Energieträger Kein Energieträger (keine Heizung) (Anzahl)
+– NUTZUNG__01 | Von Eigentümer/-in bewohnte Wohnungen in Gebäuden mit Wohnraum (Anzahl)
+– NUTZUNG__02 | Vermietete Wohnungen in Gebäuden mit Wohnraum (Anzahl)
+– NUTZUNG__03 | Privat genutzte Ferien- oder Freizeitwohnungen in Gebäuden mit Wohnraum (Anzahl)
+– NUTZUNG__04 | Leerstehende Wohnungen in Gebäuden mit Wohnraum (Anzahl)
+– MIETE_EURM2_2__01 | Vermietete Wohnungen in Gebäuden mit Wohnraum mit einer Nettokaltmiete von unter 4€/m² (Anzahl)
+– MIETE_EURM2_2__02 | Vermietete Wohnungen in Gebäuden mit Wohnraum mit einer Nettokaltmiete zwischen 4€/m² und unter 6€/m² (Anzahl)
+– MIETE_EURM2_2__03 | Vermietete Wohnungen in Gebäuden mit Wohnraum mit einer Nettokaltmiete zwischen 6€/m² und unter 8€/m² (Anzahl)
+– MIETE_EURM2_2__04 | Vermietete Wohnungen in Gebäuden mit Wohnraum mit einer Nettokaltmiete zwischen 8€/m² und unter 10€/m² (Anzahl)
+– MIETE_EURM2_2__05 | Vermietete Wohnungen in Gebäuden mit Wohnraum mit einer Nettokaltmiete zwischen 10€/m² und unter 12€/m² (Anzahl)
+– MIETE_EURM2_2__06 | Vermietete Wohnungen in Gebäuden mit Wohnraum mit einer Nettokaltmiete zwischen 12€/m² und unter 14€/m² (Anzahl)
+– MIETE_EURM2_2__07 | Vermietete Wohnungen in Gebäuden mit Wohnraum mit einer Nettokaltmiete zwischen 14€/m² und unter 16€/m² (Anzahl)
+– MIETE_EURM2_2__08 | Vermietete Wohnungen in Gebäuden mit Wohnraum mit einer Nettokaltmiete zwischen 16€/m² und unter 18€/m² (Anzahl)
+– MIETE_EURM2_2__09 | Vermietete Wohnungen in Gebäuden mit Wohnraum mit einer Nettokaltmiete zwischen 18€/m² und unter 20€/m² (Anzahl)
+– MIETE_EURM2_2__10 | Vermietete Wohnungen in Gebäuden mit Wohnraum mit einer Nettokaltmiete von 20€/m² und mehr (Anzahl)
+– WOHNFLAECHE_20S_01 | Wohnungen in Gebäuden mit Wohnraum mit einer Fläche von unter 40m² (Anzahl)
+– WOHNFLAECHE_20S_02 | Wohnungen in Gebäuden mit Wohnraum mit einer Fläche von 40m² bis 59m² (Anzahl)
+– WOHNFLAECHE_20S_03 | Wohnungen in Gebäuden mit Wohnraum mit einer Fläche von 60m² bis 79m² (Anzahl)
+– WOHNFLAECHE_20S_04 | Wohnungen in Gebäuden mit Wohnraum mit einer Fläche von 80m² bis 99m² (Anzahl)
+– WOHNFLAECHE_20S_05 | Wohnungen in Gebäuden mit Wohnraum mit einer Fläche von 100m² bis 119m² (Anzahl)
+– WOHNFLAECHE_20S_06 | Wohnungen in Gebäuden mit Wohnraum mit einer Fläche von 120m² bis 139m² (Anzahl)
+– WOHNFLAECHE_20S_07 | Wohnungen in Gebäuden mit Wohnraum mit einer Fläche von 140m² bis 159m² (Anzahl)
+– WOHNFLAECHE_20S_08 | Wohnungen in Gebäuden mit Wohnraum mit einer Fläche von 160m² bis 179m² (Anzahl)
+– WOHNFLAECHE_20S_09 | Wohnungen in Gebäuden mit Wohnraum mit einer Fläche von 180m² bis 199m² (Anzahl)
+– WOHNFLAECHE_20S_10 | Wohnungen in Gebäuden mit Wohnraum mit einer Fläche von 200m² und mehr (Anzahl)
+– RAUMZAHL__01 | Wohnungen in Gebäuden mit Wohnraum mit 1 Raum (Anzahl)
+– RAUMZAHL__02 | Wohnungen in Gebäuden mit Wohnraum mit 2 Räumen (Anzahl)
+– RAUMZAHL__03 | Wohnungen in Gebäuden mit Wohnraum mit 3 Räumen (Anzahl)
+– RAUMZAHL__04 | Wohnungen in Gebäuden mit Wohnraum mit 4 Räumen (Anzahl)
+– RAUMZAHL__05 | Wohnungen in Gebäuden mit Wohnraum mit 5 Räumen (Anzahl)
+– RAUMZAHL__06 | Wohnungen in Gebäuden mit Wohnraum mit 6 Räumen (Anzahl)
+– RAUMZAHL__07 | Wohnungen in Gebäuden mit Wohnraum mit 7 oder mehr Räumen (Anzahl)
+– QMMIETE | Durchschnittliche Nettokaltmiete pro Quadratmeter (in €/m²): Die durchschnittliche Nettokaltmiete/qm ist das Verhältnis zwischen der Summe der Quadratmetermiete der Wohnungen und der Summe der Wohnungen. Die Berechnung erfolgt für vermietete Wohnungen in Wohngebäuden (ohne Wohnheime). Mietfrei überlassene Wohnungen werden aus der Berechnung ausgeschlossen.
+– LEQ | Leerstandsquote (in %): Die Leerstandsquote (Wohnungen) stellt den Anteil der leerstehenden Wohnungen an allen bewohnten und leerstehenden Wohnungen dar. Nicht berücksichtigt sind: Ferien- und Frei-zeitwohnungen sowie gewerblich genutzte Wohnungen. Die Berechnung erfolgt für Wohnungen in Wohngebäuden (ohne Wohnheime).
+– ETQ | Eigentümerquote (in %): Die Eigentümerquote stellt den Anteil der von Eigentümerinnen/ Eigentümern bewohnten Wohnungen an allen bewohnten Wohnungen dar. Nicht berücksichtigt sind: Leer stehende Wohnungen, Ferien- und Freizeitwohnungen sowie gewerblich genutzte Wohnungen. Die Berechnung erfolgt für Wohnungen in Wohngebäuden (ohne Wohnheime).
+– FLAECHE | Durchschnittliche Fläche je Wohnung: Die durchschnittliche Wohnungsgröße in m² ist das Verhältnis zwischen der Gesamtfläche in m² und der Gesamtzahl der Wohnungen. Nicht berücksichtigt sind gewerblich genutzte Wohnungen. Die Berechnung erfolgt für Wohnungen in Wohngebäuden (ohne Wohnheime).
+– LEERSTAND_INSGESAMT | Leerstehende Wohnungen in Gebäuden mit Wohnraum (Anzahl)
+– LEERSTAND_DAUER__1 | Leerstehende Wohnungen in Gebäuden mit Wohnraum mit Leerstandsdauer von weniger als 3 Monaten (Anzahl)
+– LEERSTAND_DAUER__2 | Leerstehende Wohnungen in Gebäuden mit Wohnraum mit Leerstandsdauer von 3 als 6 Monaten (Anzahl)
+– LEERSTAND_DAUER__3 | Leerstehende Wohnungen in Gebäuden mit Wohnraum mit Leerstandsdauer von 6 als 12 Monaten (Anzahl)
+– LEERSTAND_DAUER__4 | Leerstehende Wohnungen in Gebäuden mit Wohnraum mit Leerstandsdauer von 12 oder mehr Monaten (Anzahl)
+– LEERSTAND_GRUND__1 | Leerstehende Wohnungen in Gebäuden mit Wohnraum, die innerhalb von 3 Monaten für den Bezug verfügbar sind (Anzahl)
+– LEERSTAND_GRUND__2 | Leerstehende Wohnungen in Gebäuden mit Wohnraum mit Leerstandsgrund Laufende bzw. geplante Baumaßnahmen (Anzahl)
+– LEERSTAND_GRUND__3 | Leerstehende Wohnungen in Gebäuden mit Wohnraum mit Leerstandsgrund Geplanter Abruss oder Rückbau (Anzahl)
+– LEERSTAND_GRUND__4 | Leerstehende Wohnungen in Gebäuden mit Wohnraum mit Leerstandsgrund Verkauf des Gebäudes oder der Wohnung (Anzahl)
+– LEERSTAND_GRUND__5 | Leerstehende Wohnungen in Gebäuden mit Wohnraum mit Leerstandsgrund Künftige Selbstnutzung (Anzahl)
+– LEERSTAND_GRUND__6 | Leerstehende Wohnungen in Gebäuden mit Wohnraum mit Leerstandsgrund Sonstiger Grund (Anzahl)
+
+
+Die Datenzeilen der Werte-Spalten können anstelle von Zahlen auch Sonderzeichen enthalten, die möglicherweise die Weiterverarbeitung erschweren und vorher durch geeignete Zeichen ersetzt werden können. Leere Werte-Zellen kommen nicht vor. Die Bedeutung der Sonderzeichen in den Werte-Spalten finden Sie unter Punkt 2 der "Erläuterungen zur Methodik".

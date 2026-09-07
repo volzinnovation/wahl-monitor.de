@@ -1,0 +1,15 @@
+topic,provider,table,grain,availability
+Taxpayers and taxable income,Sachsen-Anhalt GENESIS,73111-0001,Municipality,Catalogue verified; available years/cells not extracted; not disposable household income
+Registered labour-market indicators,Sachsen-Anhalt GENESIS,13211-0003 / 13211-0004,District / independent city,"Catalogue verified, annual / monthly; do not copy district rates as independent municipal observations"
+Population and sex,Sachsen-Anhalt GENESIS,12411-0001,Municipality,Catalogue verified; 2025 values extracted from official age report
+Age structure,Sachsen-Anhalt GENESIS,12411-0003,Municipality,Catalogue verified; all 218 municipalities in 2025 PDF
+Citizenship,Sachsen-Anhalt GENESIS,12411-0014,Municipality,Catalogue verified; pilot uses census 2022 values
+"Births, deaths, migration",Sachsen-Anhalt GENESIS,12XXX-0005-1 / 12XXX-0005-2,Municipality,Catalogue verified: through 2024 / from 2025; not extracted
+Population and sex,Regionaldatenbank,12411-01-01-5,Municipality,Catalogue verified; individual year/cell coverage not queried
+Age structure,Regionaldatenbank,12411-02-03-5,Municipality,Catalogue verified: 17 age groups; individual year/cell coverage not queried
+Average age,Regionaldatenbank,12411-07-01-5,Municipality,Catalogue verified; not extracted
+Citizenship and sex,Regionaldatenbank,12411-11-01-5,Municipality,Catalogue verified; not extracted
+"Area, population, coordinates, urban class",Destatis GV-ISys,Onlineprodukt_Gemeinden30062026,Municipality (AGS + ARS),"Downloaded and matched 218/218; June 2026 boundaries, area/population 2024"
+"Demography, households, housing",Destatis Zensus 2022,CSV-Demografie / CSV-Haushalte / CSV-Wohnungen,Municipality (12-digit ARS),Downloaded; selected factors present for 218/218
+Education and employment,Destatis Zensus 2022,CSV-Hoechster_Schulabschluss / CSV-Erwerbsstatus and companion sheets,Published municipality subset,54 education/manufacturing observations; 52 ILO unemployment ratios
+Registered unemployment,Bundesagentur für Arbeit,Arbeitslose – Kreise und Gemeinden,Municipality counts; standard rate series at district level,Official product verified; not downloaded in this pilot

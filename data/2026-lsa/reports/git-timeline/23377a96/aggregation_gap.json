@@ -1,0 +1,952 @@
+{
+  "first_capture": {
+    "acquired_at_local": "2026-09-07T03:04:09.391314+02:00",
+    "acquired_at_utc": "2026-09-07T01:04:09.391314+00:00",
+    "area_rows": "274",
+    "commit": "6ac9b700edc38b17e23c4e85b0f2928530e2a69f",
+    "commit_time": "2026-09-07T01:04:10Z",
+    "coverage_percent": "99.96242014280345",
+    "dynamic_results_used": "False",
+    "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+    "overview_minus_csv": "1",
+    "overview_reported": "2661",
+    "overview_rows": "2661",
+    "raw_rows": "822",
+    "reported_precincts": "2660",
+    "subject": "2026-lsa poll 2026-09-07T01:04:09.391314+00:00",
+    "total_precincts": "2661",
+    "valid_votes_erst": "1311225",
+    "valid_votes_zweit": "1313802",
+    "voters_total": "1326694",
+    "wahlbezirk_vote_rows": "0"
+  },
+  "geographic_field_residual_count": 162,
+  "last_capture": {
+    "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+    "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+    "area_rows": 274,
+    "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+    "commit_time": "2026-09-07T01:10:12Z",
+    "coverage_percent": 99.96242014280345,
+    "dynamic_results_used": false,
+    "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+    "overview_minus_csv": 1,
+    "overview_reported": 2661,
+    "overview_rows": 2661,
+    "raw_rows": 822,
+    "reported_precincts": 2660,
+    "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00",
+    "total_precincts": 2661,
+    "valid_votes_erst": 1311225,
+    "valid_votes_zweit": 1313802,
+    "voters_total": 1326694,
+    "wahlbezirk_vote_rows": 0
+  },
+  "latest_land_deltas": {
+    "party:D1": 415,
+    "party:D15": 243,
+    "party:D19": 24,
+    "party:D2": 346,
+    "party:D3": 147,
+    "party:D4": 218,
+    "party:D5": 46,
+    "party:D6": 70,
+    "party:F1": 401,
+    "party:F10": 7,
+    "party:F11": 2,
+    "party:F12": 11,
+    "party:F15": 148,
+    "party:F19": 7,
+    "party:F2": 373,
+    "party:F20": 5,
+    "party:F3": 146,
+    "party:F4": 211,
+    "party:F5": 35,
+    "party:F6": 122,
+    "party:F7": 24,
+    "party:F8": 3,
+    "party:F9": 18,
+    "reported_precincts": 1,
+    "valid_votes_erst": 1509,
+    "valid_votes_zweit": 1513,
+    "voters_total": 1517
+  },
+  "latest_residuals": [
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "2661",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "1",
+      "field": "reported_precincts",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "2660",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "1328211",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "1517",
+      "field": "voters_total",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "1326694",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "1312734",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "1509",
+      "field": "valid_votes_erst",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "1311225",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "1315315",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "1513",
+      "field": "valid_votes_zweit",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "1313802",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "314535",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "415",
+      "field": "party:D1",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "314120",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "41782",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "243",
+      "field": "party:D15",
+      "missing_children": "85",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "41539",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "2680",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "24",
+      "field": "party:D19",
+      "missing_children": "173",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "2656",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "581945",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "346",
+      "field": "party:D2",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "581599",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "157905",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "147",
+      "field": "party:D3",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "157758",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "102881",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "218",
+      "field": "party:D4",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "102663",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "41113",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "46",
+      "field": "party:D5",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "41067",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "45310",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "70",
+      "field": "party:D6",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "45240",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "226622",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "401",
+      "field": "party:F1",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "226221",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "7482",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "7",
+      "field": "party:F10",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "7475",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "3487",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "2",
+      "field": "party:F11",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "3485",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "7283",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "11",
+      "field": "party:F12",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "7272",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "69291",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "148",
+      "field": "party:F15",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "69143",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "2778",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "7",
+      "field": "party:F19",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "2771",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "576037",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "373",
+      "field": "party:F2",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "575664",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "4339",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "5",
+      "field": "party:F20",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "4334",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "112541",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "146",
+      "field": "party:F3",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "112395",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "122303",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "211",
+      "field": "party:F4",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "122092",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "33969",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "35",
+      "field": "party:F5",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "33934",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "117498",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "122",
+      "field": "party:F6",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "117376",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "15430",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "24",
+      "field": "party:F7",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "15406",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "1899",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "3",
+      "field": "party:F8",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "1896",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "acquired_at_utc": "2026-09-07T01:10:10.827443+00:00",
+      "child_count": "218",
+      "children_sum": "14356",
+      "commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "commit_time": "2026-09-07T01:10:12Z",
+      "delta": "18",
+      "field": "party:F9",
+      "missing_children": "0",
+      "name": "Sachsen-Anhalt",
+      "parent": "lsa:LAND:15",
+      "parent_value": "14338",
+      "relation": "GEMEINDE->LAND",
+      "subject": "2026-lsa poll 2026-09-07T01:10:10.827443+00:00"
+    }
+  ],
+  "matching_municipality_arrival": {
+    "acquired_at_local": "2026-09-07T03:04:09.391314+02:00",
+    "acquired_at_utc": "2026-09-07T01:04:09.391314+00:00",
+    "candidate": "False",
+    "changes": {
+      "party:D1": {
+        "after": 2793,
+        "before": 2378,
+        "delta": 415
+      },
+      "party:D15": {
+        "after": 1749,
+        "before": 1506,
+        "delta": 243
+      },
+      "party:D19": {
+        "after": 179,
+        "before": 155,
+        "delta": 24
+      },
+      "party:D2": {
+        "after": 6852,
+        "before": 6506,
+        "delta": 346
+      },
+      "party:D3": {
+        "after": 1339,
+        "before": 1192,
+        "delta": 147
+      },
+      "party:D4": {
+        "after": 1291,
+        "before": 1073,
+        "delta": 218
+      },
+      "party:D5": {
+        "after": 409,
+        "before": 363,
+        "delta": 46
+      },
+      "party:D6": {
+        "after": 441,
+        "before": 371,
+        "delta": 70
+      },
+      "party:F1": {
+        "after": 2535,
+        "before": 2134,
+        "delta": 401
+      },
+      "party:F10": {
+        "after": 78,
+        "before": 71,
+        "delta": 7
+      },
+      "party:F11": {
+        "after": 32,
+        "before": 30,
+        "delta": 2
+      },
+      "party:F12": {
+        "after": 106,
+        "before": 95,
+        "delta": 11
+      },
+      "party:F15": {
+        "after": 1191,
+        "before": 1043,
+        "delta": 148
+      },
+      "party:F19": {
+        "after": 57,
+        "before": 50,
+        "delta": 7
+      },
+      "party:F2": {
+        "after": 7012,
+        "before": 6639,
+        "delta": 373
+      },
+      "party:F20": {
+        "after": 72,
+        "before": 67,
+        "delta": 5
+      },
+      "party:F3": {
+        "after": 1183,
+        "before": 1037,
+        "delta": 146
+      },
+      "party:F4": {
+        "after": 1183,
+        "before": 972,
+        "delta": 211
+      },
+      "party:F5": {
+        "after": 325,
+        "before": 290,
+        "delta": 35
+      },
+      "party:F6": {
+        "after": 931,
+        "before": 809,
+        "delta": 122
+      },
+      "party:F7": {
+        "after": 125,
+        "before": 101,
+        "delta": 24
+      },
+      "party:F8": {
+        "after": 24,
+        "before": 21,
+        "delta": 3
+      },
+      "party:F9": {
+        "after": 206,
+        "before": 188,
+        "delta": 18
+      },
+      "reported_precincts": {
+        "after": 26,
+        "before": 25,
+        "delta": 1
+      },
+      "valid_votes_erst": {
+        "after": 15053,
+        "before": 13544,
+        "delta": 1509
+      },
+      "valid_votes_zweit": {
+        "after": 15060,
+        "before": 13547,
+        "delta": 1513
+      },
+      "voters_total": {
+        "after": 15219,
+        "before": 13702,
+        "delta": 1517
+      }
+    },
+    "commit": "6ac9b700edc38b17e23c4e85b0f2928530e2a69f",
+    "commit_time": "2026-09-07T01:04:10Z",
+    "event": "reporting_growth",
+    "key": "lsa:GEMEINDE:15089015",
+    "level": "GEMEINDE",
+    "mode": "TOTAL",
+    "name": "Aschersleben, Stadt",
+    "previous_acquired_at_local": "2026-09-07T02:58:40.357602+02:00",
+    "previous_commit": "65d2b1d09ce51b8d2f8e2f46658804051f529f95",
+    "previous_reported": "25",
+    "reported": "26",
+    "source": "normalized",
+    "subject": "2026-lsa poll 2026-09-07T01:04:09.391314+00:00",
+    "total": "26"
+  },
+  "municipality_sum_reported": 2661,
+  "municipality_sum_valid_erst": 1312734,
+  "municipality_sum_valid_zweit": 1315315,
+  "observed_commits": [
+    "6ac9b700edc38b17e23c4e85b0f2928530e2a69f",
+    "14bbd628facaffd1aa484eae168078c61c198f89",
+    "23377a96d918a4b77f71dbabbf9c385f78334126"
+  ],
+  "party_comparison": [
+    {
+      "code": "D1",
+      "delta": 415,
+      "land_votes": 314120,
+      "municipality_sum": 314535,
+      "party": "CDU",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D2",
+      "delta": 346,
+      "land_votes": 581599,
+      "municipality_sum": 581945,
+      "party": "AfD",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D3",
+      "delta": 147,
+      "land_votes": 157758,
+      "municipality_sum": 157905,
+      "party": "Die Linke",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D4",
+      "delta": 218,
+      "land_votes": 102663,
+      "municipality_sum": 102881,
+      "party": "SPD",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D5",
+      "delta": 46,
+      "land_votes": 41067,
+      "municipality_sum": 41113,
+      "party": "FDP",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D6",
+      "delta": 70,
+      "land_votes": 45240,
+      "municipality_sum": 45310,
+      "party": "GRÜNE",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D7",
+      "delta": 0,
+      "land_votes": 14464,
+      "municipality_sum": 14464,
+      "party": "FREIE WÄHLER",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D9",
+      "delta": 0,
+      "land_votes": 1129,
+      "municipality_sum": 1129,
+      "party": "Tierschutzpartei",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D10",
+      "delta": 0,
+      "land_votes": 2937,
+      "municipality_sum": 2937,
+      "party": "Gartenpartei",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D11",
+      "delta": 0,
+      "land_votes": 777,
+      "municipality_sum": 777,
+      "party": "Die PARTEI",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D12",
+      "delta": 0,
+      "land_votes": 999,
+      "municipality_sum": 999,
+      "party": "TIERSCHUTZALLIANZ",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D13",
+      "delta": 0,
+      "land_votes": 325,
+      "municipality_sum": 325,
+      "party": "HEIMAT",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D15",
+      "delta": 243,
+      "land_votes": 41539,
+      "municipality_sum": 41782,
+      "party": "BSW",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D19",
+      "delta": 24,
+      "land_votes": 2656,
+      "municipality_sum": 2680,
+      "party": "PdF",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D20",
+      "delta": 0,
+      "land_votes": 768,
+      "municipality_sum": 768,
+      "party": "Volt",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "D21",
+      "delta": 0,
+      "land_votes": 3184,
+      "municipality_sum": 3184,
+      "party": "Anderer Kreiswahlvorschlag",
+      "vote_type": "Erststimmen"
+    },
+    {
+      "code": "F1",
+      "delta": 401,
+      "land_votes": 226221,
+      "municipality_sum": 226622,
+      "party": "CDU",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F2",
+      "delta": 373,
+      "land_votes": 575664,
+      "municipality_sum": 576037,
+      "party": "AfD",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F3",
+      "delta": 146,
+      "land_votes": 112395,
+      "municipality_sum": 112541,
+      "party": "Die Linke",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F4",
+      "delta": 211,
+      "land_votes": 122092,
+      "municipality_sum": 122303,
+      "party": "SPD",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F5",
+      "delta": 35,
+      "land_votes": 33934,
+      "municipality_sum": 33969,
+      "party": "FDP",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F6",
+      "delta": 122,
+      "land_votes": 117376,
+      "municipality_sum": 117498,
+      "party": "GRÜNE",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F7",
+      "delta": 24,
+      "land_votes": 15406,
+      "municipality_sum": 15430,
+      "party": "FREIE WÄHLER",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F8",
+      "delta": 3,
+      "land_votes": 1896,
+      "municipality_sum": 1899,
+      "party": "dieBasis",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F9",
+      "delta": 18,
+      "land_votes": 14338,
+      "municipality_sum": 14356,
+      "party": "Tierschutzpartei",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F10",
+      "delta": 7,
+      "land_votes": 7475,
+      "municipality_sum": 7482,
+      "party": "Gartenpartei",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F11",
+      "delta": 2,
+      "land_votes": 3485,
+      "municipality_sum": 3487,
+      "party": "Die PARTEI",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F12",
+      "delta": 11,
+      "land_votes": 7272,
+      "municipality_sum": 7283,
+      "party": "TIERSCHUTZALLIANZ",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F15",
+      "delta": 148,
+      "land_votes": 69143,
+      "municipality_sum": 69291,
+      "party": "BSW",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F19",
+      "delta": 7,
+      "land_votes": 2771,
+      "municipality_sum": 2778,
+      "party": "PdF",
+      "vote_type": "Zweitstimmen"
+    },
+    {
+      "code": "F20",
+      "delta": 5,
+      "land_votes": 4334,
+      "municipality_sum": 4339,
+      "party": "Volt",
+      "vote_type": "Zweitstimmen"
+    }
+  ],
+  "status_changes_at_first_gap": [
+    {
+      "acquired_at_local": "2026-09-07T03:04:09.391314+02:00",
+      "acquired_at_utc": "2026-09-07T01:04:09.391314+00:00",
+      "candidate": "False",
+      "changes": "{\"reported_precincts\":{\"after\":1,\"before\":0,\"delta\":1}}",
+      "commit": "6ac9b700edc38b17e23c4e85b0f2928530e2a69f",
+      "commit_time": "2026-09-07T01:04:10Z",
+      "event": "reporting_growth",
+      "key": "[\"18, Aschersleben\",\"Salzlandkreis\",\"Aschersleben, Stadt\",\"000965\"]",
+      "name": "Aschersleben, Stadt / 000965",
+      "previous_acquired_at_local": "2026-09-07T02:58:40.357602+02:00",
+      "previous_commit": "65d2b1d09ce51b8d2f8e2f46658804051f529f95",
+      "subject": "2026-lsa poll 2026-09-07T01:04:09.391314+00:00"
+    },
+    {
+      "acquired_at_local": "2026-09-07T03:04:09.391314+02:00",
+      "acquired_at_utc": "2026-09-07T01:04:09.391314+00:00",
+      "candidate": "False",
+      "changes": "{\"reported_precincts\":{\"after\":1,\"before\":0,\"delta\":1}}",
+      "commit": "6ac9b700edc38b17e23c4e85b0f2928530e2a69f",
+      "commit_time": "2026-09-07T01:04:10Z",
+      "event": "reporting_growth",
+      "key": "[\"29, Saalekreis\",\"Saalekreis\",\"Petersberg\",\"000012\"]",
+      "name": "Petersberg / 000012",
+      "previous_acquired_at_local": "2026-09-07T02:58:40.357602+02:00",
+      "previous_commit": "65d2b1d09ce51b8d2f8e2f46658804051f529f95",
+      "subject": "2026-lsa poll 2026-09-07T01:04:09.391314+00:00"
+    }
+  ]
+}

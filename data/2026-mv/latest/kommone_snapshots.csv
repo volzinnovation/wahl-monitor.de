@@ -1,0 +1,800 @@
+ags,municipality_name,status,reported_precincts,total_precincts,voters_total,valid_votes,invalid_votes,source_timestamp,payload_hash,error_message
+13003000,"Rostock, Hanse-und Universitätsstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13004000,"Schwerin, Landeshauptstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071001,Alt Schwerin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071002,Altenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071003,Altenhof,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071004,"Altentreptow, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071005,"Ankershagen, Schliemanngemeinde",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071006,Bartow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071007,Basedow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071008,Beggerow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071009,Beseritz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071010,Blankenhof,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071011,Blankensee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071012,Blumenholz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071013,Bollewick,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071014,Borrentin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071015,Bredenfelde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071016,Breesen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071018,Briggow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071019,Brunn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071020,Buchholz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071021,"Burg Stargard, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071022,Burow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071023,Bütow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071025,Carpin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071026,Cölpin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071027,"Dargun, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071028,Datzetal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071029,"Demmin, Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071032,Faulenrost,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071033,Feldberger Seenlandschaft,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071034,Fincken,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071035,"Friedland, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071036,Fünfseen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071037,Galenbeck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071039,Gielow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071041,Gnevkow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071042,Godendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071043,Göhren-Lebbin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071044,Golchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071045,Gotthun,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071047,Grabowhöfe,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071048,Grammentin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071049,Grapzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071050,Grischow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071053,Groß Kelle,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071054,Groß Miltzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071055,Groß Nemerow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071056,Groß Plasten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071057,Groß Teetzleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071058,Grünow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071059,Gültz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071060,Gülzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071063,Hohen Wangelin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071064,Hohenbollentin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071065,Hohenmocker,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071066,Hohenzieritz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071067,Holldorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071068,Ivenack,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071069,Jabel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071070,Jürgenstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071071,Kargow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071072,Kentzlin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071073,Kieve,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071074,Kittendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071075,Klein Vielen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071076,Kletzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071077,Klink,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071078,Klocksin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071079,Knorrendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071080,Kratzeburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071081,Kriesow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071083,Kublank,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071084,Seegemeinde Kummerow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071087,Lärz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071088,Leizen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071089,Lindenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071090,Lindetal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071092,"Malchin, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071093,"Malchow, Inselstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071096,Meesiger,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071097,Melz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071099,"Mirow, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071100,Möllenbeck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071101,Möllenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071102,Mölln,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071103,Moltzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071104,Neddemin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071105,Neetzka,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071107,"Neubrandenburg, Vier-Tore-Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071108,Neuenkirchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071109,"Neukalen, Peenestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071110,"Neustrelitz, Residenzstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071111,Neverin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071112,Nossendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071113,Nossentiner Hütte,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071115,"Penzlin, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071117,Pragsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071118,Priborn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071119,Priepert,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071120,Pripsleben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071122,Rechlin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071123,Ritzerow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071124,"Röbel/Müritz, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071125,Röckwitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071127,Rosenow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071128,Sarow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071130,Schönbeck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071131,Schönfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071132,Schönhausen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071133,Schwarz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071135,Siedenbollentin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071136,Siedenbrünzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071137,Sietow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071138,Silz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071139,Sommersdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071140,Sponholz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071141,Staven,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071142,"Stavenhagen, Reuterstadt, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071143,Stuer,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071144,Torgelow am See,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071145,Trollenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071146,Tützpatz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071147,Userin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071148,Utzedel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071150,Verchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071153,Voigtsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071154,Vollrathsruhe,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071155,Walow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071156,"Waren (Müritz), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071157,Warrenzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071158,Werder,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071159,"Wesenberg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071160,Wildberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071161,Woggersin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071162,Wokuhl-Dabelow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071163,Wolde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071164,"Woldegk, Windmühlenstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071166,Wulkenzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071167,Wustrow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071169,Zettemin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071170,Zirzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071171,Zislow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071172,Peenehagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071173,Kuckssee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071174,Schloen-Dratow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071175,Eldetal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071176,Südmüritz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071751,Briefwahl Demmin-Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071752,Briefwahl Friedland,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071753,Briefwahl Malchin am Kummerower See,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071754,Briefwahl Malchow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071755,Briefwahl Mecklenburgische Kleinseenplatte,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071756,Briefwahl Neustrelitz-Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071757,Briefwahl Neverin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071758,Briefwahl Penzliner Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071759,Briefwahl Röbel-Müritz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071760,Briefwahl Seenlandschaft Waren,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071761,Briefwahl Stargarder Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071762,Briefwahl Stavenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071763,Briefwahl Treptower Tollensewinkel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13071764,Briefwahl Woldegk,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072001,Admannshagen-Bargeshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072002,Alt Bukow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072003,Alt Sührkow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072004,Altkalen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072005,Am Salzhaff,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072006,"Bad Doberan, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072007,Bartenshagen-Parkentin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072008,Bastorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072009,Baumgarten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072010,Behren-Lübchin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072011,Benitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072012,Bentwisch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072013,Bernitt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072014,Biendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072015,Blankenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072017,"Börgerende-Rethwisch, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072018,Bröbberow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072019,Broderstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072020,"Bützow, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072021,Cammin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072022,Carinerland,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072023,Dahmen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072024,Dalkendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072026,Dobbin-Linstow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072027,Dolgen am See,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072028,Dreetz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072029,Dummerstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072030,Elmenhorst/Lichtenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072031,Finkenthal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072032,Gelbensande,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072033,Glasewitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072034,Gnewitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072035,"Gnoien, Warbelstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072036,"Graal-Müritz, Ostseeheilbad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072037,Grammow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072038,Groß Roge,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072039,Groß Schwiesow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072040,Groß Wokern,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072041,Groß Wüstenfelde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072042,Gülzow-Prüzen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072043,"Güstrow, Barlachstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072044,Gutow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072045,Hohen Demzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072046,Hohen Sprenz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072047,Hohenfelde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072048,Hoppenrade,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072049,Jördenstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072050,Jürgenshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072051,Kassow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072053,Klein Belitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072055,Klein Upahl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072056,"Krakow am See, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072057,Kritzmow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072058,"Kröpelin, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072059,Kuchelmiß,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072060,"Kühlungsborn, Ostseebad, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072061,Kuhs,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072062,"Laage, Recknitzstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072063,Lalendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072064,Lambrechtshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072066,Lelkendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072067,Lohmen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072069,Lüssow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072071,Mistorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072072,Mönchhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072073,Mühl Rosin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072074,"Neubukow, Schliemannstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072075,"Nienhagen, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072076,Nustrow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072077,Papendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072078,Penzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072079,Plaaz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072080,Pölchow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072081,Poppendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072082,Prebberede,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072083,Reddelich,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072084,Reimershagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072085,"Rerik, Ostseebad, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072086,Retschow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072087,Roggentin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072088,Rövershagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072089,Rühn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072090,Rukieten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072091,Sanitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072092,Sarmstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072093,Satow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072094,Schorssow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072095,"Schwaan, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072096,Schwasdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072097,Selpin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072098,Stäbelow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072099,Steffenshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072101,Steinhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072102,Stubbendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072103,Sukow-Levitzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072104,Tarnow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072105,"Tessin, Blumenstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072106,"Teterow, Bergringstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072107,Thelkow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072108,Thulendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072109,Thürkow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072110,Vorbeck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072111,Walkendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072112,Wardow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072113,Warnkenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072114,Warnow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072116,Wiendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072117,Wittenbeck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072118,Zarnewanz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072119,Zehna,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072120,Zepelin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072121,Ziesendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072751,Briefwahl Bad Doberan-Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072752,Briefwahl Bützow-Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072753,Briefwahl Carbäk,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072754,Briefwahl Gnoien,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072755,Briefwahl Güstrow-Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072756,Briefwahl Krakow am See,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072757,Briefwahl Laage,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072758,Briefwahl Mecklenburgische Schweiz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072759,Briefwahl Neubukow-Salzhaff,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072760,Briefwahl Rostocker Heide,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072761,Briefwahl Schwaan,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072762,Briefwahl Tessin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13072763,Briefwahl Warnow-West,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073001,Ahrenshagen-Daskow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073002,"Ahrenshoop, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073003,Altefähr,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073004,Altenkirchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073005,Altenpleen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073006,"Baabe, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073007,"Bad Sülze, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073009,"Barth, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073010,"Bergen auf Rügen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073011,"Binz, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073012,"Born a. Darß, Seebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073013,Breege,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073014,Buschvitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073015,Dettmannsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073016,Deyelsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073017,"Dierhagen, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073018,Divitz-Spoldershagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073019,Dranske,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073020,Drechow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073021,Dreschvitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073022,Eixen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073023,Elmenhorst,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073024,"Franzburg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073025,Fuhlendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073027,"Garz/Rügen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073028,Gingst,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073029,Glewitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073030,"Glowe, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073031,"Göhren, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073032,Grammendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073033,Gransebieth,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073034,Gremersdorf-Buchholz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073035,"Grimmen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073036,Groß Kordshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073037,Groß Mohrdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073038,Gustow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073039,Hugoldsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073040,"Insel Hiddensee, Seebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073041,Jakobsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073042,Karnin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073043,Kenz-Küstrow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073044,Klausdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073045,Kluis,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073046,Kramerhof,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073048,Lancken-Granitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073049,Lietzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073050,Lindholz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073051,Löbnitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073052,Lohme,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073053,Lüdershagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073054,Lüssow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073055,"Marlow, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073057,Millienhagen-Oebelitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073059,Neuenkirchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073060,Niepars,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073061,Pantelitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073062,Papenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073063,Parchtitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073064,Patzig,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073065,Poseritz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073066,Preetz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073067,"Prerow, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073068,Prohn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073069,Pruchten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073070,"Putbus, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073071,Putgarten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073072,Ralswiek,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073073,Rambin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073074,Rappin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073075,"Ribnitz-Damgarten, Bernsteinstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073076,"Richtenberg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073077,Saal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073078,Sagard,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073079,Samtens,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073080,"Sassnitz, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073081,Schaprode,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073082,Schlemmin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073083,Sehlen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073084,"Sellin, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073085,Semlow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073086,Splietsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073087,Steinhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073088,"Stralsund, Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073089,Süderholz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073090,Sundhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073092,Trent,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073093,"Tribsees, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073094,Trinwillershagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073095,Ummanz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073096,Velgast,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073097,Weitenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073098,Wendisch Baggendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073099,Wendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073100,Wieck a. Darß,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073101,Wiek,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073102,Wittenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073103,"Wustrow, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073104,Zarrendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073105,"Zingst, Ostseeheilbad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073106,Zirkow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073107,"Mönchgut, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073751,Briefwahl Altenpleen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073752,Briefwahl Barth,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073753,Briefwahl Bergen auf Rügen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073754,Briefwahl Darß/Fischland,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073755,Briefwahl Franzburg-Richtenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073756,Briefwahl Miltzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073757,Briefwahl Mönchgut-Granitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073758,Briefwahl Niepars,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073759,Briefwahl Nord-Rügen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073760,Briefwahl Recknitz-Trebeltal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073761,Briefwahl Ribnitz-Damgarten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13073762,Briefwahl West-Rügen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074001,Alt Meteln,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074002,Bad Kleinen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074003,Barnekow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074004,Benz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074005,Bernstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074006,Bibow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074007,Blowatz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074008,Bobitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074009,Boiensdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074010,"Boltenhagen, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074012,Brüsewitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074013,Carlow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074014,Cramonshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074015,Dalberg-Wendelstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074016,Damshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074017,"Dassow, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074018,Dechow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074019,Dorf Mecklenburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074020,Dragun,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074021,"Gadebusch, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074022,Gägelow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074023,Glasin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074024,Gottesgabe,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074025,Grambow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074026,"Grevesmühlen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074027,Grieben,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074028,Groß Molzahn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074030,Groß Stieten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074031,Hohen Viecheln,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074032,Hohenkirchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074033,Holdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074034,Hornstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074035,"Insel Poel, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074036,Jesendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074037,Kalkhorst,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074038,Klein Trebbow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074039,"Klütz, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074040,Kneese,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074042,Königsfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074043,Krembz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074044,Krusenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074046,Lübberstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074047,Lübow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074048,Lübstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074049,Lüdersdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074050,Lützow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074052,Menzendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074053,Metelsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074054,Mühlen Eichsen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074056,Neuburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074057,"Neukloster, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074060,Passee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074061,Perlin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074062,Pingelshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074064,Pokrent,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074065,"Rehna, Klosterstadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074066,Rieps,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074067,Roduchelstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074068,Roggendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074069,Roggenstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074070,Rögnitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074071,Rüting,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074072,Schildetal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074073,Schlagsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074074,"Schönberg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074075,Seehof,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074076,Selmsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074077,Testorf-Steinfort,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074078,Thandorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074079,Upahl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074080,Utecht,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074081,Veelböken,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074082,Ventschow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074084,"Warin, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074085,Warnow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074087,"Wismar, Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074088,Zickhusen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074089,Zierow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074090,Zurow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074091,Züsow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074092,Wedendorfersee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074093,Stepenitztal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074094,Siemz-Niendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074751,Briefwahl Dorf Mecklenburg-Bad Kleinen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074752,Briefwahl Gadebusch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074753,Briefwahl Grevesmühlen-Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074754,Briefwahl Klützer Winkel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074755,Briefwahl Lützow-Lübstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074756,Briefwahl Neuburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074757,Briefwahl Neukloster-Warin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074758,Briefwahl Rehna,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13074759,Briefwahl Schönberger Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075001,Ahlbeck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075002,Alt Tellin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075003,"Altwarp, Fischerdorf",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075004,Altwigshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075005,"Anklam, Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075006,Bandelin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075007,Bargischow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075008,Behrenhoff,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075009,Bentzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075010,Benz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075011,Bergholz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075012,Blankensee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075013,Blesewitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075015,Boldekow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075016,Boock,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075017,Brietzig,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075018,Brünzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075020,Bugewitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075021,Buggenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075022,Butzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075023,Daberkow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075025,Dargelin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075026,Dargen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075027,Dersekow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075029,Ducherow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075031,"Eggesin, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075032,Fahrenwalde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075033,Ferdinandshof,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075034,Garz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075035,Glasow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075036,Görmin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075037,Grambin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075038,Grambow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075039,"Greifswald, Universitäts-und Hansestadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075040,Gribow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075041,Groß Kiesow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075042,Groß Luckow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075043,Groß Polzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075044,"Gützkow, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075045,Hammer a. d. Uecker,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075046,Hanshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075048,Heinrichswalde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075049,"Heringsdorf, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075050,Hinrichshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075051,Hintersee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075053,Iven,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075054,"Jarmen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075055,Jatznick,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075056,Kamminke,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075058,"Karlshagen, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075059,Katzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075060,Kemnitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075061,Klein Bünzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075063,Koblentz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075065,Korswandt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075066,"Koserow, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075067,Krackow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075068,Krien,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075069,Kröslin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075070,Kruckow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075071,Krugsdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075072,Krummin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075073,Krusenfelde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075074,"Lassan, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075075,Leopoldshagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075076,Levenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075078,Liepgarten,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075079,Löcknitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075080,"Loddin, Seebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075081,Loissin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075082,"Loitz, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075083,"Lubmin, Seebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075084,Lübs,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075085,Luckow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075087,Lütow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075088,Medow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075089,Meiersberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075090,Mellenthin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075091,Mesekenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075092,Mölschow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075093,Mönkebude,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075094,Murchin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075095,Nadrensee,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075097,Neu Boltenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075098,Neu Kosenow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075101,Neuenkirchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075102,Neuenkirchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075103,Nieden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075104,Papendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075105,"Pasewalk, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075106,Peenemünde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075107,"Penkun, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075108,Plöwen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075109,Polzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075110,Postlow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075111,Pudagla,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075113,Ramin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075114,Rankwitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075115,Rollwitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075116,Rossin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075117,Rossow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075118,Rothemühl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075119,Rothenklempenow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075120,Rubenow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075121,Rubkow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075122,Sarnow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075123,Sassen-Trantow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075124,Sauzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075125,Schmatzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075126,Schönwalde,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075127,Spantekow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075128,Stolpe an der Peene,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075129,Stolpe auf Usedom,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075130,"Strasburg (Uckermark), Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075131,"Torgelow, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075133,"Trassenheide, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075134,Tutow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075135,"Ückeritz, Seebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075136,"Ueckermünde, Seebad, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075137,"Usedom, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075138,Viereck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075139,Vogelsang-Warsin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075140,Völschow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075141,Wackerow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075142,Weitenhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075143,Wilhelmsburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075144,"Wolgast, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075145,Wrangelsburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075146,Wusterhusen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075147,Zemitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075148,"Zempin, Seebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075149,Zerrenthin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075150,Ziethen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075151,"Zinnowitz, Ostseebad",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075152,Zirchow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075154,Züssow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075155,Neetzow-Liepen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075156,Karlsburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075751,Briefwahl Am Peenestrom,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075752,Briefwahl Am Stettiner Haff,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075753,Briefwahl Anklam-Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075754,Briefwahl Jarmen-Tutow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075755,Briefwahl Landhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075756,Briefwahl Löcknitz-Penkun,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075757,Briefwahl Lubmin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075758,Briefwahl Peenetal/Loitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075759,Briefwahl Torgelow-Ferdinandshof,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075760,Briefwahl Uecker-Randow-Tal,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075761,Briefwahl Usedom-Nord,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075762,Briefwahl Usedom-Süd,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13075763,Briefwahl Züssow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076001,Alt Krenzlin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076002,Alt Zachun,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076003,Balow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076004,Bandenitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076005,Banzkow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076006,Barkhagen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076007,Barnin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076008,Belsch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076009,Bengerstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076010,Besitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076011,Blankenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076012,Blievenstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076013,Bobzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076014,"Boizenburg/Elbe, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076015,Borkow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076016,Brahlstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076017,Brenz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076018,Bresegard bei Eldena,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076019,Bresegard bei Picher,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076020,"Brüel, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076021,Brunow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076023,Bülow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076024,Cambs,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076025,"Crivitz, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076026,Dabel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076027,Dambeck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076029,Demen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076030,Dersenow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076032,Dobbertin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076033,Dobin am See,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076034,"Dömitz, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076035,Domsühl,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076036,Dümmer,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076037,Eldena,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076038,Friedrichsruhe,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076039,Gallin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076040,Gallin-Kuppentin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076041,Gammelin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076044,Gneven,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076046,Göhlen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076048,"Goldberg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076049,Gorlosen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076050,"Grabow, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076051,Granzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076053,Grebs-Niendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076054,Gresse,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076055,Greven,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076056,Groß Godems,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076057,Groß Krams,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076058,Groß Laasch,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076060,"Hagenow, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076062,Hohen Pritz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076063,Holthusen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076064,Hoort,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076065,Hülseburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076067,Karenz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076068,Karrenzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076069,Karstädt,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076070,Kirch Jesar,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076071,Klein Rogahn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076072,Kobrow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076073,Kogel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076075,Kreien,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076076,Kremmin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076077,Kritzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076078,Kuhlen-Wendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076079,Kuhstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076080,Langen Brütz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076082,Leezen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076085,Lewitzrand,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076086,Lübesse,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076087,Lüblow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076088,"Lübtheen, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076089,"Lübz, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076090,"Ludwigslust, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076092,Lüttow-Valluhn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076093,Malk Göhren,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076094,Malliß,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076096,Mestlin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076097,Milow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076098,Möllenbeck,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076099,Moraas,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076100,Muchow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076101,Mustin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076102,Neu Gülze,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076103,Neu Kaliß,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076104,Neu Poserin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076105,"Neustadt-Glewe, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076106,Nostorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076107,Pampow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076108,"Parchim, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076109,Passow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076110,Pätow-Steegen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076111,Picher,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076112,Pinnow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076113,Plate,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076114,"Plau am See, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076115,Prislich,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076116,Pritzier,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076117,Raben Steinfeld,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076118,Rastow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076119,Redefin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076120,Rom,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076121,Schossin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076122,Schwanheide,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076125,Siggelkow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076126,Spornitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076128,"Sternberg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076129,Stolpe,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076130,Stralendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076131,Strohkirchen,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076133,Sukow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076134,Sülstorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076135,Techentin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076136,Teldau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076138,Tessin b. Boizenburg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076140,Tramm,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076141,Uelitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076142,Vellahn,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076143,Vielank,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076145,Warlitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076146,Warlow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076147,Warsow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076148,Weitendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076151,Werder,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076152,"Wittenburg, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076153,Wittendörp,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076154,Wittenförden,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076155,Witzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076156,Wöbbelin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076158,Zapel,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076159,"Zarrentin am Schaalsee, Stadt",NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076160,Ziegendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076161,Zierzow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076162,Zölkow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076163,Zülow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076164,Obere Warnow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076165,Gehlsbach,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076166,Ganzlin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076167,Kloster Tempzin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076168,Ruhner Berge,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076169,Toddin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076752,Briefwahl Boizenburg-Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076754,Briefwahl Dömitz-Malliß,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076755,Briefwahl Eldenburg Lübz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076756,Briefwahl Goldberg-Mildenitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076757,Briefwahl Amt Grabow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076758,Briefwahl Hagenow-Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076759,Briefwahl Ludwigslust-Land,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076760,Briefwahl Neustadt-Glewe,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076762,Briefwahl Parchimer Umland,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076763,Briefwahl Plau am See,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076764,Briefwahl Sternberger Seenlandschaft,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076765,Briefwahl Stralendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076767,Briefwahl Zarrentin,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+13076768,Briefwahl Crivitz,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone

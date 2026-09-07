@@ -1,0 +1,423 @@
+{
+  "digit_checks": [
+    {
+      "counts_match": true,
+      "external_q": 1.0,
+      "party": "AfD",
+      "recomputed_counts": [
+        148,
+        144,
+        154,
+        147,
+        124,
+        124,
+        147,
+        151,
+        142,
+        121
+      ],
+      "recomputed_n": 1402,
+      "reported_counts": [
+        148,
+        144,
+        154,
+        147,
+        124,
+        124,
+        147,
+        151,
+        142,
+        121
+      ],
+      "reported_n": 1402,
+      "simulations_reproduced": false
+    },
+    {
+      "counts_match": true,
+      "external_q": 1.0,
+      "party": "CDU",
+      "recomputed_counts": [
+        53,
+        54,
+        52,
+        32,
+        53,
+        68,
+        53,
+        63,
+        51,
+        52
+      ],
+      "recomputed_n": 531,
+      "reported_counts": [
+        53,
+        54,
+        52,
+        32,
+        53,
+        68,
+        53,
+        63,
+        51,
+        52
+      ],
+      "reported_n": 531,
+      "simulations_reproduced": false
+    },
+    {
+      "counts_match": true,
+      "external_q": 1.0,
+      "party": "Die Linke",
+      "recomputed_counts": [
+        10,
+        12,
+        10,
+        12,
+        8,
+        16,
+        11,
+        15,
+        12,
+        11
+      ],
+      "recomputed_n": 117,
+      "reported_counts": [
+        10,
+        12,
+        10,
+        12,
+        8,
+        16,
+        11,
+        15,
+        12,
+        11
+      ],
+      "reported_n": 117,
+      "simulations_reproduced": false
+    },
+    {
+      "counts_match": true,
+      "external_q": 1.0,
+      "party": "GRÜNE",
+      "recomputed_counts": [
+        18,
+        25,
+        23,
+        23,
+        26,
+        22,
+        19,
+        23,
+        18,
+        18
+      ],
+      "recomputed_n": 215,
+      "reported_counts": [
+        18,
+        25,
+        23,
+        23,
+        26,
+        22,
+        19,
+        23,
+        18,
+        18
+      ],
+      "reported_n": 215,
+      "simulations_reproduced": false
+    },
+    {
+      "counts_match": true,
+      "external_q": 1.0,
+      "party": "SPD",
+      "recomputed_counts": [
+        17,
+        17,
+        15,
+        15,
+        20,
+        21,
+        25,
+        20,
+        26,
+        20
+      ],
+      "recomputed_n": 196,
+      "reported_counts": [
+        17,
+        17,
+        15,
+        15,
+        20,
+        21,
+        25,
+        20,
+        26,
+        20
+      ],
+      "reported_n": 196,
+      "simulations_reproduced": false
+    }
+  ],
+  "external_generated_at": "2026-09-07T08:24:22.991634+00:00",
+  "external_software_commit": "8f9115dd05fb7f6353af880fe83b86c5486a105d",
+  "external_url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/",
+  "external_version": "09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a",
+  "git_ref": "80fa3052044a45af29f4f0b2867957d8a3b1df35",
+  "mad_checked": 24171,
+  "mad_flagged_levels": {
+    "GEMEINDE": 2,
+    "WAHLBEZIRK": 116
+  },
+  "mad_flags": {
+    "orange": 88,
+    "red": 30
+  },
+  "mad_mismatches": [],
+  "mad_unique_flagged_areas": 106,
+  "methods_catalogue": [
+    {
+      "counts": {
+        "neutral": 6966
+      },
+      "id": "balance",
+      "title": "Gültig + ungültig = Wähler",
+      "total": 6966
+    },
+    {
+      "counts": {
+        "neutral": 6966
+      },
+      "id": "party-sum",
+      "title": "Partei- und Kandidatensummen",
+      "total": 6966
+    },
+    {
+      "counts": {
+        "neutral": 3483
+      },
+      "id": "ranges",
+      "title": "Wertebereiche und Meldestatus",
+      "total": 3483
+    },
+    {
+      "counts": {
+        "neutral": 3483
+      },
+      "id": "coverage",
+      "title": "Vollständigkeit der Auszählung",
+      "total": 3483
+    },
+    {
+      "counts": {
+        "neutral": 3483
+      },
+      "id": "turnout",
+      "title": "Wahlbeteiligung",
+      "total": 3483
+    },
+    {
+      "counts": {
+        "neutral": 6966
+      },
+      "id": "invalid",
+      "title": "Ungültige Erst- und Zweitstimmen",
+      "total": 6966
+    },
+    {
+      "counts": {
+        "neutral": 40470
+      },
+      "id": "votes-eligible",
+      "title": "Parteistimmen je Wahlberechtigten",
+      "total": 40470
+    },
+    {
+      "counts": {
+        "neutral": 25443
+      },
+      "id": "split-ticket",
+      "title": "Erst- gegen Zweitstimme",
+      "total": 25443
+    },
+    {
+      "counts": {
+        "neutral": 4993
+      },
+      "id": "prior-change",
+      "title": "Veränderung gegenüber 2021",
+      "total": 4993
+    },
+    {
+      "counts": {
+        "neutral": 24071,
+        "orange": 88,
+        "red": 30
+      },
+      "id": "robust-mad",
+      "title": "Robuster Vergleich ähnlicher Größen",
+      "total": 24189
+    },
+    {
+      "counts": {
+        "neutral": 218
+      },
+      "id": "identical-profiles",
+      "title": "Identische Stimmenprofile",
+      "total": 218
+    },
+    {
+      "counts": {
+        "neutral": 3270
+      },
+      "id": "integer-peaks",
+      "title": "Glatte Prozentwerte",
+      "total": 3270
+    },
+    {
+      "counts": {
+        "neutral": 3270
+      },
+      "id": "fingerprint",
+      "title": "Beteiligung und Parteianteil",
+      "total": 3270
+    },
+    {
+      "counts": {
+        "neutral": 3270
+      },
+      "id": "cumulative",
+      "title": "Kumulierte Stimmenkurven",
+      "total": 3270
+    },
+    {
+      "counts": {
+        "neutral": 12659,
+        "orange": 86
+      },
+      "id": "revision",
+      "title": "Änderungen archivierter Stände",
+      "total": 12745
+    },
+    {
+      "counts": {
+        "neutral": 5
+      },
+      "id": "last-digits",
+      "title": "Letzte Ziffern unter einem Zählmodell",
+      "total": 5
+    },
+    {
+      "counts": {
+        "neutral": 218
+      },
+      "id": "mahalanobis",
+      "title": "Robuster mehrdimensionaler Abstand",
+      "total": 218
+    },
+    {
+      "counts": {
+        "neutral": 218
+      },
+      "id": "isolation-forest",
+      "title": "Isolation Forest",
+      "total": 218
+    },
+    {
+      "counts": {
+        "neutral": 218
+      },
+      "id": "lof",
+      "title": "Lokaler Dichtevergleich (LOF)",
+      "total": 218
+    },
+    {
+      "counts": {
+        "neutral": 1962
+      },
+      "id": "regression",
+      "title": "Vorwahl, Größe und Lage gemeinsam",
+      "total": 1962
+    },
+    {
+      "counts": {
+        "neutral": 3075
+      },
+      "id": "neighbours",
+      "title": "Vergleich direkter Nachbargemeinden",
+      "total": 3075
+    },
+    {
+      "counts": {
+        "neutral": 15
+      },
+      "id": "moran",
+      "title": "Globaler Moran-I-Wert",
+      "total": 15
+    },
+    {
+      "counts": {
+        "neutral": 15
+      },
+      "id": "geary",
+      "title": "Globaler Geary-C-Wert",
+      "total": 15
+    },
+    {
+      "counts": {
+        "neutral": 3075
+      },
+      "id": "lisa",
+      "title": "Lokaler Moran-I-Wert (LISA)",
+      "total": 3075
+    },
+    {
+      "counts": {
+        "neutral": 3075
+      },
+      "id": "getis-ord",
+      "title": "Lokale Getis-Ord-Gi*-Struktur",
+      "total": 3075
+    }
+  ],
+  "numeric_comparisons": 135837,
+  "numeric_differences": [],
+  "raw_rows_compared": 3483,
+  "revision_exact_matches": 86,
+  "revision_flags": 86,
+  "revision_unmatched": [],
+  "source_hash_comparison": [
+    {
+      "external_sha256": "83cc8ec51b5e8d0ba1017934a273f7155597495731bc0713a1d7f52cc125e7ec",
+      "git_sha256": "83cc8ec51b5e8d0ba1017934a273f7155597495731bc0713a1d7f52cc125e7ec",
+      "matches": true,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Land_RKR_WKR_LT_2026.csv"
+    },
+    {
+      "external_sha256": "94797677f0a830d319b93b9e73ac1cfd8e740f351b8e1d2af4a9474939e94220",
+      "git_sha256": "94797677f0a830d319b93b9e73ac1cfd8e740f351b8e1d2af4a9474939e94220",
+      "matches": true,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Gemeinden_LT_2026.csv"
+    },
+    {
+      "external_sha256": "3c29e3db7176349ed68d818e34040f10d642c94ce880e1848b3b16536f6b5bd4",
+      "git_sha256": "3c29e3db7176349ed68d818e34040f10d642c94ce880e1848b3b16536f6b5bd4",
+      "matches": true,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/erg_wkr.html"
+    },
+    {
+      "external_sha256": "cd61401bbf7543724bace2db67668fc538774082d1d182b8a2ddb77841cb20ae",
+      "git_sha256": "cd61401bbf7543724bace2db67668fc538774082d1d182b8a2ddb77841cb20ae",
+      "matches": true,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads.html"
+    },
+    {
+      "external_sha256": "f4ec5066531fdb3833b19e5f0a8de70122640fed2d68373e1df652e5905edd6f",
+      "git_sha256": "f4ec5066531fdb3833b19e5f0a8de70122640fed2d68373e1df652e5905edd6f",
+      "matches": true,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_WBZ_LT_2026.csv"
+    }
+  ]
+}

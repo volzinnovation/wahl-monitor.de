@@ -1,0 +1,34 @@
+{
+  "checked_at_local": "2026-09-07T04:20:11+02:00",
+  "all_four_files_identical_to_0403_capture": true,
+  "files": [
+    {
+      "filename": "Ergebnisse_Gemeinden_LT_2026.csv",
+      "sha256": "94797677f0a830d319b93b9e73ac1cfd8e740f351b8e1d2af4a9474939e94220",
+      "bytes": 114523
+    },
+    {
+      "filename": "Ergebnisse_Land_RKR_WKR_LT_2026.csv",
+      "sha256": "83cc8ec51b5e8d0ba1017934a273f7155597495731bc0713a1d7f52cc125e7ec",
+      "bytes": 33305
+    },
+    {
+      "filename": "Ergebnisse_WBZ_LT_2026.csv",
+      "sha256": "f4ec5066531fdb3833b19e5f0a8de70122640fed2d68373e1df652e5905edd6f",
+      "bytes": 580014
+    },
+    {
+      "filename": "Sitzverteilung_LT_2026.csv",
+      "sha256": "38156752176771d33f6c43956a3dce45f4c8a3567200faee34ab76aa70ce50fc",
+      "bytes": 250
+    }
+  ],
+  "rollback_deployed": false,
+  "workflow_commit": "c07240b3126ea26c775973cd17c3abd670b303b0",
+  "live_data_commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+  "missing_columns": [
+    "Uhrzeit",
+    "Soll.Wahlbezirke",
+    "Ist.Wahlbezirke"
+  ]
+}

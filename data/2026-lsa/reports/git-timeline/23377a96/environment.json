@@ -1,0 +1,7 @@
+{
+  "analysis_script_sha256": "78034383b5f543e538ef927f1eecec139b45d660cdae6f2f124e7437fed7d5fb",
+  "full_history_renderer_sha256": "118ebbfa56bcc8dd41d0b36d07c547c2b7c8bed2f19cb404be167af97603fb56",
+  "matplotlib": "3.10.8",
+  "numpy": "2.2.6",
+  "renderer_sha256": "afaae0f02c8a510900c91be58ebf531419c1c15d1ab9e85226e67ffa9dd2077e"
+}

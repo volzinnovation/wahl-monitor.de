@@ -1,0 +1,44 @@
+Erläuterung zu csv-Tabellen
+
+Für die Weiterverarbeitung stellen wir die Inhalte der Layout-Tabellen auch in strukturierter Form ohne Formatierungen und ohne verbundene Zellen als csv-Tabelle zur Verfügung. Fußnoten oder weitere Erläuterungen sind in den csv-Tabellen nicht enthalten.
+Für die weitere Verwendung der Daten finden Sie Copyright-Informationen im Impressum.
+
+CSV-Haushalte | Ergebnisse des Zensus 2022 Tabelle Haushalte nach ausgewählten Merkmalen
+
+Zeilenaufbau
+
+– Erste Zeile: | Kopfzeile/Header 
+Sie beschreibt die Inhalte des jeweiligen Elements. Hier werden keine Umlaute verwendet und Unterstriche ersetzen Leerzeichen.
+– Weitere Zeilen: | Datenzeilen
+Sie enthalten die in der Kopfzeile benannten Metadaten (Beschreibungen, gegebenenfalls mit Umlauten, Sonderzeichen und Leerzeichen) sowie die Werte selbst. Die Reihenfolge entspricht der Nennung in der Kopfzeile. Jeder einzelne Datenwert ist durch eine Reihe von Metadaten (Merkmale und deren Ausprägungen) genau beschrieben.
+
+Spaltenaufbau
+
+– Berichtszeitpunkt | Zensusergebnis zum Stichtag 15.05.2022 (Format JJJJMMTT)
+– _RS | Amtlicher Regionalschlüssel (ARS)
+– Name | Name der regionalen Einheit
+– Regionalebene | Kategorie der regionalen Einheit
+– 0_Insgesamt_ | Haushalte insgesamt (Anzahl)
+– HH_SIZE_NAT__1 | Haushalte mit einer Person (Anzahl)
+– HH_SIZE_NAT__2 | Haushalte mit zwei Personen (Anzahl)
+– HH_SIZE_NAT__3 | Haushalte mit drei Personen (Anzahl)
+– HH_SIZE_NAT__4 | Haushalte mit vier Personen (Anzahl)
+– HH_SIZE_NAT__5 | Haushalte mit fünf Personen (Anzahl)
+– HH_SIZE_NAT__6 | Haushalte mit sechs Personen (Anzahl)
+– HHTYP_FAM__1 | Einpersonenhaushalt (Singlehaushalt) (Anzahl)
+– HHTYP_FAM__2 | Paare ohne Kind (Anzahl Haushalte)
+– HHTYP_FAM__3 | Paare mit Kind(ern) (Anzahl Haushalte)
+– HHTYP_FAM__4 | Alleinerziehende Elternteile (Anzahl Haushalte)
+– HHTYP_FAM__5 | Mehrpersonenhaushalte ohne Kernfamilie (Anzahl)
+– HHTYP_LEB__1 | Einpersonenhaushalte (Singlehaushalte) (Anzahl)
+– HHTYP_LEB__2 | Ehepaare (Anzahl Haushalte)
+– HHTYP_LEB__3 | Eingetragene Lebenspartnerschaften (Anzahl Haushalte)
+– HHTYP_LEB__4 | Nichteheliche Lebensgemeinschaften (Anzahl Haushalte)
+– HHTYP_LEB__5 | Alleinerziehende Mütter (Anzahl Haushalte)
+– HHTYP_LEB__6 | Alleinerziehende Väter (Anzahl Haushalte)
+– HHTYP_LEB__7 | Mehrpersonenhaushalte ohne Kernfamilie (Anzahl)
+– HHTYP_SENIOR_HH__1 | Haushalte mit ausschließlich Seniorinnen/Senioren (Anzahl)
+– HHTYP_SENIOR_HH__2 | Haushalte mit Seniorinnen/Senioren und Jüngeren (Anzahl)
+– HHTYP_SENIOR_HH__3 | Haushalte ohne Seniorinnen/Senioren (Anzahl)
+
+Die Datenzeilen der Werte-Spalten können anstelle von Zahlen auch Sonderzeichen enthalten, die möglicherweise die Weiterverarbeitung erschweren und vorher durch geeignete Zeichen ersetzt werden können. Leere Werte-Zellen kommen nicht vor. Die Bedeutung der Sonderzeichen in den Werte-Spalten finden Sie unter Punkt 2 der "Erläuterungen zur Methodik".

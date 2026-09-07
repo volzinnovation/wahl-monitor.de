@@ -1,0 +1,165 @@
+[
+  {
+    "alt_text": [
+      "Relative Änderung der Parteianteile: erster → letzter Stand · Zweitstimmen / RLP: Landesstimmen · (letzter Anteil − erster Anteil) ÷ erster Anteil × 100 · keine Prozentpunkte"
+    ],
+    "evidence": [
+      "cross_election_share_delta.csv",
+      "cross_election_endpoints.json"
+    ],
+    "finding": "Frühe Parteianteile hängen von der Meldestichprobe ab",
+    "images": [
+      "charts/25_drei_wahlen_relativer_anteilsdelta.png"
+    ],
+    "priority_rank": 1,
+    "text": "1/10 Vom ersten positiven zum letzten Git-Stand sinkt der AfD-Anteil relativ: BW −21,7 %, RLP −16,8 %, SA −26,9 %. Keine Prozentpunkte. Die frühen Stichproben unterscheiden sich; der dokumentierte RLP-Parserfehler betrifft keine gezeigte Partei.",
+    "weighted_characters": 248
+  },
+  {
+    "alt_text": [],
+    "evidence": [
+      "turnout_denominator_observations.json",
+      "METHODS.md"
+    ],
+    "finding": "Unvollständige Teilstände liefern keine belastbare Beteiligungsquote",
+    "images": [],
+    "priority_rank": 2,
+    "text": "2/10 152 Teilstände zeigen mehr Wählende als veröffentlichte Wahlberechtigte: 17 überlappende Gebiete, kein vollständiger Stand. Beispiel Balgstädt: Briefwahl trifft auf einen unvollständigen Urnen-Nenner. Der Quotient ist dann keine belastbare Beteiligungsquote.",
+    "weighted_characters": 263
+  },
+  {
+    "alt_text": [
+      "Die 118 statistischen Hinweise sind reproduzierbar · GFrei.News-Schwellen nachgerechnet · 106 verschiedene Gebiete · keine 118 festgestellten Fehler",
+      "Hohe GRÜNE-Anteile im örtlichen Vergleich · Zwölf größte robuste GRÜNE-Abstände · jeweilige Gemeinde, Wahlart und Größenklasse ergänzen den Vergleich"
+    ],
+    "evidence": [
+      "external_mad_recalculation.csv",
+      "screening_local_context.csv"
+    ],
+    "finding": "Statistische Hinweise sind keine festgestellten Wahlfehler",
+    "images": [
+      "charts/19_statistische_hinweise.png",
+      "charts/20_hinweise_ortsstruktur.png"
+    ],
+    "priority_rank": 3,
+    "text": "3/10 Die robuste MAD-Prüfung liefert 118 Merkmals-Hinweise in 106 Gebieten, davon 91 zu GRÜNE-Anteilen. Alle 24.171 prüfbaren MAD-Werte sind reproduziert. Die Vergleichsgruppen berücksichtigen keine Ortsstruktur; die Hinweise sind keine nachgewiesenen Wahlfehler.",
+    "weighted_characters": 263
+  },
+  {
+    "alt_text": [
+      "Zwei Analysen: gleiche Werte, andere Zähleinheiten · Unsere Git-Historie und Lauras Wahlforensik · versionierter Datenvergleich"
+    ],
+    "evidence": [
+      "EXTERNAL_COMPARISON.md",
+      "external_revision_comparison.json"
+    ],
+    "finding": "Beide Analysen stimmen bei den geprüften Daten überein",
+    "images": [
+      "charts/21_vergleich_analysen.png"
+    ],
+    "priority_rank": 4,
+    "text": "4/10 Lauras Wahlforensik und unser Archiv stimmen in 135.837 Zahlen überein. Alle 86 externen Revisionsfelder passen exakt zu Git-Übergängen. Unsere 20 Gemeinderevisionen zählen andere Einheiten; die Zahlen widersprechen sich nicht.",
+    "weighted_characters": 232
+  },
+  {
+    "alt_text": [
+      "Meldestand am Ende des Archivs · 2.661 gemeldete Bezirke; 2.661 individuelle Ergebnisse. Landes-CSV ohne Meldezähler."
+    ],
+    "evidence": [
+      "source_schema_events.json",
+      "final_reconciliation.json"
+    ],
+    "finding": "Entfernte Meldezähler sind ein Schemawechsel",
+    "images": [
+      "charts/07_offene_meldungen.png"
+    ],
+    "priority_rank": 5,
+    "text": "5/10 Die vorläufige Landes-CSV entfernt Ist/Soll-Meldezähler. Das ist ein Schemawechsel, kein Rückgang auf 0/0. HTML und Gemeinde-CSV zeigen 2.661/2.661; der neue Einzelbezirk-Export enthält genau dieselben 2.661 Identitäten.",
+    "weighted_characters": 225
+  },
+  {
+    "alt_text": [
+      "Ein neuer Eintrag erhöht das Soll um eins · Aken 000010 · 00:45:41 → 00:51:10 MESZ · bereits gemeldet"
+    ],
+    "evidence": [
+      "AKEN_000010.md",
+      "district_identity_changes.json"
+    ],
+    "finding": "Aken erklärt den Anstieg auf 2.661 Wahlbezirke",
+    "images": [
+      "charts/14_aken_neuer_wahlbezirk.png"
+    ],
+    "priority_rank": 6,
+    "text": "6/10 Aken 000010 wird zwischen 00:45:41 und 00:51:10 MESZ neu sichtbar; das Soll steigt von 2.660 auf 2.661. Die damaligen +435 Zweitstimmen der Gemeinde sind nicht die finalen 1.139 dieses Bezirks. Seine frühere Stimmenzuordnung fehlt.",
+    "weighted_characters": 236
+  },
+  {
+    "alt_text": [
+      "Fünf Gemeinderevisionen nach Mitternacht · Unveränderte Zahl gemeldeter Bezirke · E = Erststimmen, Z = Zweitstimmen"
+    ],
+    "evidence": [
+      "summary.json",
+      "post_midnight_revisions.json",
+      "raw_candidate_events.csv"
+    ],
+    "finding": "20 Gemeinderevisionen sind im Verlauf dokumentiert",
+    "images": [
+      "charts/16_revisionen_nach_mitternacht.png"
+    ],
+    "priority_rank": 7,
+    "text": "7/10 20 Änderungen bei gleicher Meldezahl in 19 Gemeinden, davon 17 nach Vollmeldung. Fünf nach Mitternacht: Bitterfeld-Wolfen, Harzgerode, Tangermünde, Leuna und Querfurt. Änderungen sind belegt; ihre Ursachen erklärt das Archiv nicht.",
+    "weighted_characters": 236
+  },
+  {
+    "alt_text": [
+      "Eine Meldung wird zurückgenommen · Bitterfeld-Wolfen, Stadt / 000028 · Statushistorie; Einzelstimmen zu den beiden historischen Zeitpunkten fehlen",
+      "Bitterfeld-Wolfen: Stimmen der gesamten Gemeinde · Abrufe 19:35 → 22:11 MESZ · 13/31 → 31/31 Wahlbezirke · Einzelbezirk 000028 nicht isolierbar"
+    ],
+    "evidence": [
+      "BITTERFELD_WOLFEN_000028.md",
+      "bitterfeld_party_diff.csv"
+    ],
+    "finding": "Bitterfeld 000028 verliert vorübergehend seinen Meldestatus",
+    "images": [
+      "charts/08_status_ruecknahme.png",
+      "charts/13_bitterfeld_gemeindediff.png"
+    ],
+    "priority_rank": 8,
+    "text": "8/10 Bitterfeld-Wolfen 000028: einzige beobachtete Statusrücknahme, ab 19:35 nicht gemeldet, ab 22:11 wieder gemeldet. Der späte Einzelstand enthält 1.024 Zweitstimmen. Der Parteidiff 19:35/22:11 ist nur für die Gemeinde verfügbar, nicht für diesen Bezirk.",
+    "weighted_characters": 256
+  },
+  {
+    "alt_text": [
+      "Die Aschersleben-Lücke ist geschlossen · Gemeindesumme minus Landes-CSV · gültige Zweitstimmen · archivierte Beobachtungen"
+    ],
+    "evidence": [
+      "AGGREGATION_ASCHERSLEBEN.md",
+      "aggregation_gap.json",
+      "final_precinct_cases.json"
+    ],
+    "finding": "Die geschlossene Aschersleben-Lücke passt exakt zu Bezirk 000965",
+    "images": [
+      "charts/15_aggregationsdifferenz.png"
+    ],
+    "priority_rank": 9,
+    "text": "9/10 Die Aschersleben-Lücke von 1.513 Zweitstimmen besteht in drei Abrufen 03:04–03:10 und ist um 04:06 geschlossen. Alle Parteiwerte passen zum jetzt einzeln belegten Briefwahlbezirk 000965. Der genaue Zeitpunkt des Abgleichs zwischen den Abrufen bleibt offen.",
+    "weighted_characters": 261
+  },
+  {
+    "alt_text": [
+      "Vier unabhängige Summen ergeben denselben Landeswert · Gebietsebenen einzeln summiert · 1.315.315 gültige Zweitstimmen · keine Ebenen zusammengezählt"
+    ],
+    "evidence": [
+      "final_reconciliation.json",
+      "final_aggregation_checks.csv",
+      "VALIDATION.md"
+    ],
+    "finding": "Die abschließende Gesamtprüfung ergibt übereinstimmende Summen",
+    "images": [
+      "charts/17_finaler_aggregatabgleich.png"
+    ],
+    "priority_rank": 10,
+    "text": "10/10 Gesamtbefund: Alle 2.661 Wahlbezirke ergeben exakt die Landes-, Kreis-, Wahlkreis- und Gemeindesummen: 1.315.315 gültige Zweitstimmen. Keine finalen Rechenabweichungen. Das erklärt historische Änderungen nicht und ist keine amtliche Endfeststellung.",
+    "weighted_characters": 255
+  }
+]

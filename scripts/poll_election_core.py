@@ -493,6 +493,20 @@ def csv_rows_from_text(content: str, delimiter: str = ";") -> List[Dict[str, str
     return [dict(row) for row in reader]
 
 
+def mv_csv_rows_from_text(content: str) -> List[Dict[str, str]]:
+    """Read an LAIV M-V CSV after its six-line publication preamble."""
+    lines = content.splitlines()
+    for index, line in enumerate(lines):
+        try:
+            header = next(csv.reader([line], delimiter=";"))
+        except Exception:  # pylint: disable=broad-except
+            continue
+        normalized = {normalize_text(cell) for cell in header if str(cell).strip()}
+        if "berechnungsdatum" in normalized and "ausgabe" in normalized:
+            return csv_rows_from_text("\n".join(lines[index:]), delimiter=";")
+    return []
+
+
 def terminal_supports_progress() -> bool:
     try:
         return sys.stderr.isatty()
@@ -1140,7 +1154,25 @@ def build_municipality_master(config: Config, timeout_seconds: int) -> List[Dict
         except Exception:  # pylint: disable=broad-except
             pass
 
-    if config.statla_dummy_csv_url:
+    if config.election_key == "2026-mv":
+        local_dummy_path = META_DIR / config.local_dummy_statla_csv_filename
+        dummy_text = decode_bytes(local_dummy_path.read_bytes()) if local_dummy_path.exists() else ""
+        if not dummy_text and config.statla_dummy_csv_url:
+            dummy_result = http_get(config.statla_dummy_csv_url, timeout_seconds)
+            if dummy_result.status_code == 200 and dummy_result.content:
+                dummy_text = decode_bytes(dummy_result.content)
+        for row in mv_csv_rows_from_text(dummy_text):
+            if str(row.get("Ausgabe") or "").strip().upper() != "A":
+                continue
+            ags = canonical_ags(row.get("Gemeinde"))
+            name = canonical_municipality_name(row.get("Gemeindename"))
+            if ags and name:
+                merged[ags] = {
+                    "ags": ags,
+                    "municipality_name": name,
+                    "source": "laiv-2026-template",
+                }
+    elif config.statla_dummy_csv_url:
         dummy_result = http_get(config.statla_dummy_csv_url, timeout_seconds)
         if dummy_result.status_code == 200 and dummy_result.content:
             dummy_text = decode_bytes(dummy_result.content)
@@ -1755,7 +1787,199 @@ def statla_wahlkreis_number(row: Dict[str, str]) -> str:
     return ""
 
 
+MV_NON_PARTY_FIELDS = {
+    "berechnungsdatum",
+    "ausgabe",
+    "kreis",
+    "kreisname",
+    "wahlkreis",
+    "wahlkreisname",
+    "wahlkreisname/land",
+    "amt",
+    "amtsname",
+    "gemeinde",
+    "gemeindename",
+    "wahlbezirk",
+    "wahlbezirksname",
+    "wahlbezirke insg.",
+    "erf. wahlbezirke",
+    "wahlberechtigte",
+    "wahler",
+    "wahlbeteiligung",
+    "erst-/zweitstimme",
+    "ungultige stimmen",
+    "gultige stimmen",
+    "sort",
+    "mandatstyp",
+}
+
+
+def looks_like_mv_csv(text: str) -> bool:
+    if not text or looks_like_html_document(text):
+        return False
+    for line in text.splitlines()[:10]:
+        try:
+            header = next(csv.reader([line], delimiter=";"))
+        except Exception:  # pylint: disable=broad-except
+            continue
+        normalized = {normalize_text(cell) for cell in header if str(cell).strip()}
+        if {
+            "berechnungsdatum",
+            "ausgabe",
+            "erst-/zweitstimme",
+            "gultige stimmen",
+        }.issubset(normalized):
+            return True
+    return False
+
+
+def mv_vote_type(row: Dict[str, str]) -> str:
+    return {
+        "1": "Erststimmen",
+        "2": "Zweitstimmen",
+    }.get(str(row.get("Erst-/Zweitstimme") or "").strip(), "")
+
+
+def mv_party_rows(row: Dict[str, str], row_key: str, vote_type: str) -> List[Dict[str, Any]]:
+    output: List[Dict[str, Any]] = []
+    for key, raw_value in row.items():
+        if normalize_text(key) in MV_NON_PARTY_FIELDS:
+            continue
+        votes = parse_int(raw_value)
+        if votes is None:
+            continue
+        party_name = canonical_party_name(key, vote_type)
+        if not party_name:
+            continue
+        output.append(
+            {
+                "row_key": row_key,
+                "vote_type": vote_type,
+                "party_key": key,
+                "party_name": party_name,
+                "votes": votes,
+            }
+        )
+    return output
+
+
+def parse_mv_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """Normalize the LAIV M-V A/P CSV exports into the common result model."""
+    groups: Dict[str, Dict[str, Any]] = {}
+    party_rows_by_key: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
+
+    for row in mv_csv_rows_from_text(csv_text):
+        if str(row.get("Ausgabe") or "").strip().upper() != "A":
+            continue
+
+        normalized_keys = {normalize_text(key) for key in row}
+        is_booth = "wahlbezirksname" in normalized_keys
+        is_wahlkreis = "wahlkreisname/land" in normalized_keys
+        vote_type = mv_vote_type(row)
+        if not vote_type:
+            continue
+
+        wahlkreis = normalize_wahlkreis_nummer(row.get("Wahlkreis"))
+        if is_booth:
+            ags = canonical_ags(row.get("Gemeinde"))
+            booth = str(row.get("Wahlbezirk") or "").strip()
+            if not ags or not wahlkreis or not booth:
+                continue
+            row_key = f"mv:WAHLBEZIRK:{ags}:{wahlkreis}:{booth}"
+            gebietsart = "WAHLBEZIRK"
+            gebietsnummer = booth
+            municipality_name = canonical_municipality_name(row.get("Gemeindename"))
+            is_municipality_summary = False
+        elif is_wahlkreis:
+            if not wahlkreis:
+                continue
+            if wahlkreis == "99":
+                row_key = "mv:LAND"
+                gebietsart = "LAND"
+            else:
+                row_key = f"mv:WAHLKREIS:{wahlkreis}"
+                gebietsart = "WAHLKREIS"
+            gebietsnummer = wahlkreis
+            ags = ""
+            municipality_name = ""
+            is_municipality_summary = False
+        else:
+            ags = canonical_ags(row.get("Gemeinde"))
+            if not ags:
+                continue
+            row_key = f"mv:GEMEINDE:{ags}"
+            gebietsart = "GEMEINDE"
+            gebietsnummer = ags
+            municipality_name = canonical_municipality_name(row.get("Gemeindename"))
+            is_municipality_summary = True
+
+        group = groups.setdefault(
+            row_key,
+            {
+                "rows": [],
+                "ags": ags,
+                "municipality_name": municipality_name,
+                "gebietsart": gebietsart,
+                "gebietsnummer": gebietsnummer,
+                "wahlkreisnummer": wahlkreis if is_booth else "",
+                "is_municipality_summary": is_municipality_summary,
+                "metrics": {},
+            },
+        )
+        group["rows"].append(row)
+        metrics = group["metrics"]
+        metrics["voters_total"] = parse_int(row.get("Wähler"))
+        metrics["valid_votes_erst" if vote_type == "Erststimmen" else "valid_votes_zweit"] = parse_int(
+            row.get("Gültige Stimmen")
+        )
+        if is_booth:
+            metrics["reported_precincts"] = 0 if metrics["voters_total"] in {None, 0} else 1
+            metrics["total_precincts"] = 1
+        else:
+            metrics["reported_precincts"] = parse_int(row.get("Erf. Wahlbezirke"))
+            metrics["total_precincts"] = parse_int(row.get("Wahlbezirke insg."))
+
+        for party_row in mv_party_rows(row, row_key, vote_type):
+            party_rows_by_key[(row_key, party_row["vote_type"], party_row["party_key"])] = party_row
+
+    snapshots: List[Dict[str, Any]] = []
+    for row_key, group in groups.items():
+        metrics = group["metrics"]
+        snapshots.append(
+            {
+                "row_key": row_key,
+                "ags": group["ags"],
+                "municipality_name": group["municipality_name"],
+                "gebietsart": group["gebietsart"],
+                "gebietsnummer": group["gebietsnummer"],
+                "wahlkreisnummer": group["wahlkreisnummer"],
+                "reported_precincts": metrics.get("reported_precincts"),
+                "total_precincts": metrics.get("total_precincts"),
+                "voters_total": metrics.get("voters_total"),
+                "valid_votes_erst": metrics.get("valid_votes_erst"),
+                "valid_votes_zweit": metrics.get("valid_votes_zweit"),
+                "payload_hash": sha256_bytes(
+                    json.dumps(group["rows"], sort_keys=True, ensure_ascii=False).encode("utf-8")
+                ),
+                "is_municipality_summary": group["is_municipality_summary"],
+            }
+        )
+
+    snapshots.sort(key=lambda row: str(row.get("row_key") or ""))
+    party_rows = sorted(
+        party_rows_by_key.values(),
+        key=lambda row: (
+            str(row.get("row_key") or ""),
+            str(row.get("vote_type") or ""),
+            str(row.get("party_key") or ""),
+        ),
+    )
+    return snapshots, party_rows
+
+
 def parse_statla_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    if looks_like_mv_csv(csv_text):
+        return parse_mv_csv_rows(csv_text)
     if looks_like_statla_wahlbezirk_csv(csv_text):
         return parse_statla_wahlbezirk_csv_rows(csv_text)
 
@@ -2590,6 +2814,8 @@ def looks_like_statla_csv(text: str) -> bool:
         return False
     if looks_like_html_document(content):
         return False
+    if looks_like_mv_csv(content):
+        return True
 
     nonempty_lines = [line for line in content.splitlines() if line.strip()]
     for line in nonempty_lines[:3]:
@@ -3113,7 +3339,130 @@ def fetch_rlp_json_fallback(
     }
 
 
+def fetch_mv(config: Config, timeout_seconds: int, *, force_dummy: bool) -> Dict[str, Any]:
+    """Fetch the three LAIV M-V result levels from the official downloads page."""
+    source_names = ("l_wahlbezirke.csv", "l_gemeinden.csv", "l_wahlkreise.csv")
+    source_results: List[HttpResult] = []
+    page_result: Optional[HttpResult] = None
+
+    if force_dummy:
+        for source_name in source_names:
+            local_path = META_DIR / source_name
+            if local_path.exists():
+                source_results.append(
+                    HttpResult(
+                        url=str(local_path),
+                        status_code=200,
+                        content=local_path.read_bytes(),
+                        error_message=None,
+                    )
+                )
+    else:
+        downloads_url = str(config.statla_downloads_url or "").strip()
+        if downloads_url:
+            page_result = html_fetch_result(downloads_url, timeout_seconds)
+            if page_result.status_code == 200 and page_result.content:
+                page_text = decode_bytes(page_result.content)
+                hrefs = re.findall(r"href\s*=\s*[\"']([^\"']+)[\"']", page_text, flags=re.IGNORECASE)
+                urls_by_name: Dict[str, str] = {}
+                for href in hrefs:
+                    absolute_url = urljoin(downloads_url, html.unescape(href).strip())
+                    basename = Path(urlsplit(absolute_url).path).name.lower()
+                    if basename in source_names:
+                        urls_by_name[basename] = absolute_url
+                for source_name in source_names:
+                    source_url = urls_by_name.get(source_name)
+                    if source_url:
+                        result = statla_http_get(source_url, timeout_seconds, show_progress=CLI_PROGRESS)
+                        if result.status_code == 200 and result.content:
+                            source_results.append(result)
+
+        if not source_results and config.statla_live_csv_url:
+            direct_result = statla_http_get(
+                config.statla_live_csv_url,
+                timeout_seconds,
+                show_progress=CLI_PROGRESS,
+            )
+            if direct_result.status_code == 200 and direct_result.content:
+                source_results.append(direct_result)
+
+    fetches: List[Dict[str, Any]] = []
+    if page_result is not None:
+        fetches.append(
+            {
+                "source": "statla-downloads-page",
+                "url": page_result.url,
+                "status_code": page_result.status_code,
+                "content_hash": sha256_bytes(page_result.content) if page_result.content else None,
+                "byte_count": len(page_result.content),
+                "error_message": page_result.error_message,
+            }
+        )
+
+    snapshots: List[Dict[str, Any]] = []
+    party_rows: List[Dict[str, Any]] = []
+    raw_parts: List[str] = []
+    for result in source_results:
+        csv_text = decode_bytes(result.content)
+        if not looks_like_mv_csv(csv_text):
+            continue
+        current_snapshots, current_party_rows = parse_mv_csv_rows(csv_text)
+        snapshots.extend(current_snapshots)
+        party_rows.extend(current_party_rows)
+        raw_parts.append(f"# SOURCE: {result.url}\n{csv_text}")
+        fetches.append(
+            {
+                "source": "statla-mv-csv",
+                "url": result.url,
+                "status_code": result.status_code,
+                "content_hash": sha256_bytes(result.content),
+                "byte_count": len(result.content),
+                "error_message": result.error_message,
+            }
+        )
+
+    if not fetches or not snapshots:
+        fallback_url = ";".join(result.url for result in source_results) or config.statla_downloads_url
+        return {
+            "mode": "UNAVAILABLE",
+            "url": fallback_url,
+            "status_code": source_results[0].status_code if source_results else None,
+            "content_hash": None,
+            "raw_csv": "",
+            "source_copy_text": decode_bytes(source_results[0].content) if source_results else "",
+            "source_copy_url": source_results[0].url if source_results else config.statla_live_csv_url,
+            "source_copy_status_code": source_results[0].status_code if source_results else None,
+            "source_copy_error": source_results[0].error_message if source_results else "No M-V CSV source available",
+            "source_copy_hash": sha256_bytes(source_results[0].content) if source_results else None,
+            "snapshots": [],
+            "party_rows": [],
+            "fetches": fetches,
+            "error_message": "No valid M-V result CSV available",
+        }
+
+    combined_content = b"\n--MV-SOURCE--\n".join(result.content for result in source_results)
+    first_result = source_results[0]
+    return {
+        "mode": "DUMMY" if force_dummy else "LIVE_CSV_DOWNLOAD",
+        "url": ";".join(result.url for result in source_results),
+        "status_code": 200,
+        "content_hash": sha256_bytes(combined_content),
+        "raw_csv": "\n".join(raw_parts),
+        "source_copy_text": decode_bytes(first_result.content),
+        "source_copy_url": first_result.url,
+        "source_copy_status_code": first_result.status_code,
+        "source_copy_error": first_result.error_message,
+        "source_copy_hash": sha256_bytes(first_result.content),
+        "snapshots": snapshots,
+        "party_rows": party_rows,
+        "fetches": fetches,
+        "error_message": None,
+    }
+
+
 def fetch_statla(config: Config, timeout_seconds: int, force_dummy: bool = False) -> Dict[str, Any]:
+    if config.election_key == "2026-mv":
+        return fetch_mv(config, timeout_seconds, force_dummy=force_dummy)
     if config.election_key == "2026-lsa" and not force_dummy:
         from lsa_source import fetch_lsa
 

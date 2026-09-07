@@ -1,0 +1,261 @@
+[
+  {
+    "alt_text": [
+      "Auszählung im Verlauf · Wahlbezirke mit Meldung in % des jeweiligen Solls · 07.09.2026 03:10 MESZ: 99,96 % gesamt"
+    ],
+    "evidence": [
+      "history_inventory.csv",
+      "polling_stopped.json"
+    ],
+    "images": [
+      "charts/01_auszaehlung.png"
+    ],
+    "text": "1/19 LSA: Polling beendet. Vollständige Git-Historie bis 07.09.2026, 03:10 MESZ: 123 Daten-Commits, 121 datierte Abrufe, davon 118 am Wahlabend/in der Nacht. Alle Zahlen und Grafiken wurden neu berechnet.",
+    "weighted_characters": 204
+  },
+  {
+    "alt_text": [
+      "Meldestand am Ende des Archivs · HTML und Gemeindesumme sind vollständig; die Landes-CSV weist weiterhin einen Bezirk weniger aus."
+    ],
+    "evidence": [
+      "summary.json",
+      "aggregation_gap.json"
+    ],
+    "images": [
+      "charts/07_offene_meldungen.png"
+    ],
+    "text": "2/19 Letzter Stand: HTML und Gemeinde-CSV 2.661/2.661 Bezirke gemeldet; Landes-CSV 2.660/2.661 (99,96 %). Vollständige Statusmeldungen bedeuten hier noch keine übereinstimmenden Stimmenaggregate. Kein amtliches Endergebnis.",
+    "weighted_characters": 223
+  },
+  {
+    "alt_text": [
+      "Zweitstimmen am eingefrorenen Stand · Parteien mit landesweit mehr als 5 % · 1.313.802 gültige Zweitstimmen · 99,96 % der Wahlbezirke"
+    ],
+    "evidence": [
+      "summary.json"
+    ],
+    "images": [
+      "charts/02_parteien.png"
+    ],
+    "text": "3/19 Zweitstimmen der amtlichen Landes-CSV: AfD 43,82 %, CDU 17,22 %, SPD 9,29 %, GRÜNE 8,93 %, Die Linke 8,55 %, BSW 5,26 %. Auswahl: strikt über 5 %; Nenner sind alle gültigen Zweitstimmen.",
+    "weighted_characters": 191
+  },
+  {
+    "alt_text": [
+      "Gemeindesumme minus amtliche Landes-CSV · 07.09.2026 03:10 MESZ · +1.513 gültige Zweitstimmen in der Gemeindesumme · Differenz seit 03:04"
+    ],
+    "evidence": [
+      "aggregation_gap.json",
+      "AGGREGATION_ASCHERSLEBEN.md"
+    ],
+    "images": [
+      "charts/15_aggregationsdifferenz.png"
+    ],
+    "text": "4/19 Ab 03:04 MESZ: Gemeindesumme 1.315.315 gültige Zweitstimmen, Landes-CSV 1.313.802. Differenz +1.513, bis 03:10 unverändert. Sie entspricht exakt dem neuen Gemeindezuwachs in Aschersleben.",
+    "weighted_characters": 192
+  },
+  {
+    "alt_text": [
+      "Gemeindesumme minus amtliche Landes-CSV · 07.09.2026 03:10 MESZ · +1.513 gültige Zweitstimmen in der Gemeindesumme · Differenz seit 03:04"
+    ],
+    "evidence": [
+      "land_vs_municipality_parties.csv"
+    ],
+    "images": [
+      "charts/15_aggregationsdifferenz.png"
+    ],
+    "text": "5/19 Gemeindesumme minus Landes-CSV, Zweitstimmen: CDU +401, AfD +373, SPD +211, BSW +148, Linke +146, GRÜNE +122, übrige +112. Eine Aggregationslücke in den veröffentlichten Dateien; kein Beleg für verlorene Stimmzettel.",
+    "weighted_characters": 221
+  },
+  {
+    "alt_text": [
+      "Die drei kreisfreien Städte im Vergleich · Zweitstimmen in % · übrige Gemeinden nach gültigen Stimmen gewichtet · Meldestand je Zeile"
+    ],
+    "evidence": [
+      "results_by_area.csv",
+      "aggregation_gap.json"
+    ],
+    "images": [
+      "charts/04_staedte.png"
+    ],
+    "text": "6/19 Magdeburg, Halle und Dessau-Roßlau im Vergleich mit den übrigen 215 Gemeinden. Die übrigen Gemeinden werden nach Stimmen gewichtet. Gemeindezahlen enthalten den späteren Aschersleben-Zuwachs; die amtliche Landes-CSV noch nicht.",
+    "weighted_characters": 232
+  },
+  {
+    "alt_text": [
+      "Alle 14 Kreise und kreisfreien Städte · Zweitstimmen in % · feste Parteiauswahl >5 % im Land · Klammern: gemeldete / gesamte Wahlbezirke"
+    ],
+    "evidence": [
+      "results_by_area.csv"
+    ],
+    "images": [
+      "charts/05_kreise.png"
+    ],
+    "text": "7/19 Alle 14 Kreise/kreisfreien Städte: dieselbe landesweite Parteiauswahl, lokale Anteile unter 5 % bleiben sichtbar. Überlappende Gebietsebenen werden nicht addiert. Der Salzlandkreis bleibt im höheren CSV-Aggregat bei 193/194 Meldungen.",
+    "weighted_characters": 239
+  },
+  {
+    "alt_text": [
+      "Alle 41 Wahlkreise · Zweitstimmen in % · dieselbe Skala in beiden Tafeln · Meldestand in Klammern",
+      "Streuung zwischen Gemeinden und Wahlkreisen · Zweitstimmen in % · jede Gebietseinheit gleich gewichtet · große Punkte zeigen die Landesanteile"
+    ],
+    "evidence": [
+      "results_by_area.csv"
+    ],
+    "images": [
+      "charts/06_wahlkreise.png",
+      "charts/12_gebietsstreuung.png"
+    ],
+    "text": "8/19 Alle 41 Wahlkreise und die Streuung in 218 Gemeinden. Wahlkreise stammen direkt aus dem amtlichen Export; geteilte Gemeinden werden nicht pauschal zugeordnet. Regionale Unterschiede allein belegen keine Unregelmäßigkeit.",
+    "weighted_characters": 225
+  },
+  {
+    "alt_text": [
+      "Urnen- und Briefwahl: unterschiedliche Parteianteile · Erfasste Zweitstimmen · Urne 2150/2150 Wahlbezirke · Brief 510/511 · keine Prognose"
+    ],
+    "evidence": [
+      "latest_official_rows.json"
+    ],
+    "images": [
+      "charts/11_urne_brief.png"
+    ],
+    "text": "9/19 Landes-CSV: Urne 2150/2150, Brief 510/511. Der offene Zähler liegt bei der Briefwahl. Die erfassten Parteianteile unterscheiden sich nach Wahltyp; dies ist keine Prognose.",
+    "weighted_characters": 176
+  },
+  {
+    "alt_text": [
+      "Parteianteile während der Auszählung · Feste Parteiauswahl vom Berichtsstand · frühe Meldungen sind keine repräsentative Stichprobe"
+    ],
+    "evidence": [
+      "raw_timeline.jsonl.gz",
+      "history_inventory.csv"
+    ],
+    "images": [
+      "charts/03_parteiverlauf.png"
+    ],
+    "text": "10/19 Der Parteiverlauf zeigt die Zusammensetzung eingehender Meldungen, keine wechselnden Wählerpräferenzen. Frühe Ergebnisse sind selektiv. Die Kurven zeigen die Wahlnacht; frühere Nullvorlagen bleiben im vollständigen Daten-Audit.",
+    "weighted_characters": 233
+  },
+  {
+    "alt_text": [
+      "Eine Meldung wird zurückgenommen · Bitterfeld-Wolfen, Stadt / 000028 · beobachteter Status, keine verfügbaren Einzelstimmen"
+    ],
+    "evidence": [
+      "summary.json",
+      "BITTERFELD_WOLFEN_000028.md"
+    ],
+    "images": [
+      "charts/08_status_ruecknahme.png"
+    ],
+    "text": "11/19 Bitterfeld-Wolfen / 000028: gemeldet, ab 19:35 wieder nicht gemeldet, ab 22:11 erneut gemeldet. Es bleibt die einzige beobachtete Statusrücknahme. Einzelstimmen dieses Bezirks wurden nicht archiviert.",
+    "weighted_characters": 206
+  },
+  {
+    "alt_text": [
+      "Spätere Änderungen von Summen · 11 Gemeinde-Änderungen bei gleicher Zahl gemeldeter Wahlbezirke · Parteienverschiebungen separat im Audit",
+      "Gemeinderevisionen nach dem ersten Bericht · 5 Änderungen nach 00:00:20 MESZ · jeweils unveränderte Zahl gemeldeter Wahlbezirke"
+    ],
+    "evidence": [
+      "summary.json",
+      "post_midnight_revisions.json"
+    ],
+    "images": [
+      "charts/09_summenrevisionen.png",
+      "charts/16_revisionen_nach_mitternacht.png"
+    ],
+    "text": "12/19 Vollständige Historie: 20 Änderungen in 19 Gemeinden bei gleicher Zahl gemeldeter Bezirke; 17 nach vollständiger Meldung. Seit dem Bericht um 00:00 kommen fünf hinzu. Alle Parteien werden im Änderungs-Audit geprüft.",
+    "weighted_characters": 221
+  },
+  {
+    "alt_text": [
+      "Gemeinderevisionen nach dem ersten Bericht · 5 Änderungen nach 00:00:20 MESZ · jeweils unveränderte Zahl gemeldeter Wahlbezirke"
+    ],
+    "evidence": [
+      "post_midnight_revisions.json"
+    ],
+    "images": [
+      "charts/16_revisionen_nach_mitternacht.png"
+    ],
+    "text": "13/19 Bitterfeld-Wolfen, 00:23 MESZ: Erststimmen Linke +50, GRÜNE −28, FREIE WÄHLER −19, AfD −2, CDU −1. Summe unverändert, 31/31 Bezirke gemeldet. Ein späterer Gemeinde-Diff; Bezirk 000028 ist damit nicht als Ursache identifiziert.",
+    "weighted_characters": 236
+  },
+  {
+    "alt_text": [
+      "Gemeinderevisionen nach dem ersten Bericht · 5 Änderungen nach 00:00:20 MESZ · jeweils unveränderte Zahl gemeldeter Wahlbezirke"
+    ],
+    "evidence": [
+      "post_midnight_revisions.json",
+      "raw_candidate_events.csv"
+    ],
+    "images": [
+      "charts/16_revisionen_nach_mitternacht.png"
+    ],
+    "text": "14/19 Weitere spätere Änderungen: Harzgerode −21 Wählende, Tangermünde −24. Leuna: Linke −9 und GRÜNE +8 Zweitstimmen, gültige Summe −1. Querfurt: PdF +1, Volt −1 Zweitstimme. Ursachen sind nicht dokumentiert.",
+    "weighted_characters": 214
+  },
+  {
+    "alt_text": [
+      "Wahlbezirke beim neuen Aken-Eintrag · 07.09.2026 · 00:45:41 → 00:51:10 MESZ · 000010 erscheint bereits gemeldet"
+    ],
+    "evidence": [
+      "AKEN_000010.md",
+      "district_identity_changes.json"
+    ],
+    "images": [
+      "charts/14_aken_neuer_wahlbezirk.png"
+    ],
+    "text": "15/19 Aken (Elbe) / 000010 erscheint neu: 00:45:41 MESZ noch nicht aufgeführt, um 00:51:10 bereits gemeldet. Das Soll steigt 2.660 → 2.661. Aken 9 → 10, Wahlkreis Zerbst 79 → 80, Anhalt-Bitterfeld 204 → 205. Keine Identität entfernt.",
+    "weighted_characters": 237
+  },
+  {
+    "alt_text": [
+      "Gemeindesumme minus amtliche Landes-CSV · 07.09.2026 03:10 MESZ · +1.513 gültige Zweitstimmen in der Gemeindesumme · Differenz seit 03:04"
+    ],
+    "evidence": [
+      "aggregation_nonzero.csv",
+      "source_manifest.json",
+      "summary.json"
+    ],
+    "images": [
+      "charts/15_aggregationsdifferenz.png"
+    ],
+    "text": "16/19 Prüfung: 575 Quellen per SHA-256 bestätigt; keine Fehler innerhalb der Zeilensummen und keine Abweichung zwischen Export und Quell-CSV. 162 geografische Feldabweichungen betreffen dieselbe Aschersleben-Lücke in drei Ständen.",
+    "weighted_characters": 230
+  },
+  {
+    "alt_text": [
+      "Übersicht und CSV laufen zeitweise auseinander · Differenz der gemeldeten Wahlbezirke: HTML-Übersicht minus Landes-CSV · keine Differenz von Stimmen",
+      "Meldestand am Ende des Archivs · HTML und Gemeindesumme sind vollständig; die Landes-CSV weist weiterhin einen Bezirk weniger aus."
+    ],
+    "evidence": [
+      "versions.csv",
+      "aggregation_gap.json"
+    ],
+    "images": [
+      "charts/10_quellenversatz.png",
+      "charts/07_offene_meldungen.png"
+    ],
+    "text": "17/19 HTML und CSV sind nicht immer synchron: 25 von 110 gemeinsamen Abrufen unterscheiden sich beim Meldestand. Zuletzt zeigt HTML keinen offenen Bezirk. Für die Stimmen bleibt der dokumentierte Unterschied zwischen den CSV-Ebenen.",
+    "weighted_characters": 232
+  },
+  {
+    "alt_text": [],
+    "evidence": [
+      "history_inventory.csv",
+      "summary.json"
+    ],
+    "images": [],
+    "text": "18/19 Grenzen: Für 0 Bezirke liegen Einzelstimmen vor; die Statushistorie beginnt um 19:05. Drei frühere Nullvorlagen und zwei Einrichtungsschritte sind inventarisiert. Änderungen zwischen Abrufen und ausgleichende Korrekturen können unsichtbar bleiben.",
+    "weighted_characters": 253
+  },
+  {
+    "alt_text": [],
+    "evidence": [
+      "polling_stopped.json",
+      "METHODS.md"
+    ],
+    "images": [],
+    "text": "19/19 Die Erfassung ist gestoppt; es ist kein weiterer Abruf geplant. Offen bleiben amtliche Erklärungen zur Rücknahme, zu Korrekturen, zum Aken-Eintrag und zur Aggregationslücke. Das Archiv belegt Datenänderungen, nicht deren Ursache oder Wahlmanipulation.",
+    "weighted_characters": 257
+  }
+]

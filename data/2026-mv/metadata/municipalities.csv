@@ -1,0 +1,800 @@
+ags,municipality_name,source
+13003000,"Rostock, Hanse- und Universitätsstadt",official-2026-template
+13004000,"Schwerin, Landeshauptstadt",official-2026-template
+13071107,"Neubrandenburg, Vier-Tore-Stadt",official-2026-template
+13071027,"Dargun, Stadt",official-2026-template
+13071029,"Demmin, Hansestadt",official-2026-template
+13071033,"Feldberger Seenlandschaft",official-2026-template
+13071110,"Neustrelitz, Residenzstadt",official-2026-template
+13071156,"Waren (Müritz), Stadt",official-2026-template
+13071008,"Beggerow",official-2026-template
+13071014,"Borrentin",official-2026-template
+13071064,"Hohenbollentin",official-2026-template
+13071065,"Hohenmocker",official-2026-template
+13071072,"Kentzlin",official-2026-template
+13071076,"Kletzin",official-2026-template
+13071089,"Lindenberg",official-2026-template
+13071096,"Meesiger",official-2026-template
+13071112,"Nossendorf",official-2026-template
+13071128,"Sarow",official-2026-template
+13071131,"Schönfeld",official-2026-template
+13071136,"Siedenbrünzow",official-2026-template
+13071139,"Sommersdorf",official-2026-template
+13071148,"Utzedel",official-2026-template
+13071150,"Verchen",official-2026-template
+13071157,"Warrenzin",official-2026-template
+13071751,"Briefwahl Demmin-Land",official-2026-template
+13071028,"Datzetal",official-2026-template
+13071035,"Friedland, Stadt",official-2026-template
+13071037,"Galenbeck",official-2026-template
+13071752,"Briefwahl Friedland",official-2026-template
+13071007,"Basedow",official-2026-template
+13071032,"Faulenrost",official-2026-template
+13071039,"Gielow",official-2026-template
+13071084,"Seegemeinde Kummerow",official-2026-template
+13071092,"Malchin, Stadt",official-2026-template
+13071109,"Neukalen, Peenestadt",official-2026-template
+13071753,"Briefwahl Malchin am Kummerower See",official-2026-template
+13071001,"Alt Schwerin",official-2026-template
+13071036,"Fünfseen",official-2026-template
+13071043,"Göhren-Lebbin",official-2026-template
+13071093,"Malchow, Inselstadt",official-2026-template
+13071113,"Nossentiner Hütte",official-2026-template
+13071138,"Silz",official-2026-template
+13071155,"Walow",official-2026-template
+13071171,"Zislow",official-2026-template
+13071754,"Briefwahl Malchow",official-2026-template
+13071099,"Mirow, Stadt",official-2026-template
+13071119,"Priepert",official-2026-template
+13071159,"Wesenberg, Stadt",official-2026-template
+13071167,"Wustrow",official-2026-template
+13071755,"Briefwahl Mecklenburgische Kleinseenplatte",official-2026-template
+13071011,"Blankensee",official-2026-template
+13071012,"Blumenholz",official-2026-template
+13071025,"Carpin",official-2026-template
+13071042,"Godendorf",official-2026-template
+13071058,"Grünow",official-2026-template
+13071066,"Hohenzieritz",official-2026-template
+13071075,"Klein Vielen",official-2026-template
+13071080,"Kratzeburg",official-2026-template
+13071100,"Möllenbeck",official-2026-template
+13071147,"Userin",official-2026-template
+13071162,"Wokuhl-Dabelow",official-2026-template
+13071756,"Briefwahl Neustrelitz-Land",official-2026-template
+13071009,"Beseritz",official-2026-template
+13071010,"Blankenhof",official-2026-template
+13071019,"Brunn",official-2026-template
+13071104,"Neddemin",official-2026-template
+13071108,"Neuenkirchen",official-2026-template
+13071111,"Neverin",official-2026-template
+13071140,"Sponholz",official-2026-template
+13071141,"Staven",official-2026-template
+13071145,"Trollenhagen",official-2026-template
+13071161,"Woggersin",official-2026-template
+13071166,"Wulkenzin",official-2026-template
+13071170,"Zirzow",official-2026-template
+13071757,"Briefwahl Neverin",official-2026-template
+13071005,"Ankershagen, Schliemanngemeinde",official-2026-template
+13071101,"Möllenhagen",official-2026-template
+13071115,"Penzlin, Stadt",official-2026-template
+13071173,"Kuckssee",official-2026-template
+13071758,"Briefwahl Penzliner Land",official-2026-template
+13071003,"Altenhof",official-2026-template
+13071013,"Bollewick",official-2026-template
+13071020,"Buchholz",official-2026-template
+13071023,"Bütow",official-2026-template
+13071034,"Fincken",official-2026-template
+13071045,"Gotthun",official-2026-template
+13071053,"Groß Kelle",official-2026-template
+13071073,"Kieve",official-2026-template
+13071087,"Lärz",official-2026-template
+13071088,"Leizen",official-2026-template
+13071097,"Melz",official-2026-template
+13071118,"Priborn",official-2026-template
+13071122,"Rechlin",official-2026-template
+13071124,"Röbel/Müritz, Stadt",official-2026-template
+13071133,"Schwarz",official-2026-template
+13071137,"Sietow",official-2026-template
+13071143,"Stuer",official-2026-template
+13071175,"Eldetal",official-2026-template
+13071176,"Südmüritz",official-2026-template
+13071759,"Briefwahl Röbel-Müritz",official-2026-template
+13071047,"Grabowhöfe",official-2026-template
+13071056,"Groß Plasten",official-2026-template
+13071063,"Hohen Wangelin",official-2026-template
+13071069,"Jabel",official-2026-template
+13071071,"Kargow",official-2026-template
+13071077,"Klink",official-2026-template
+13071078,"Klocksin",official-2026-template
+13071103,"Moltzow",official-2026-template
+13071144,"Torgelow am See",official-2026-template
+13071154,"Vollrathsruhe",official-2026-template
+13071172,"Peenehagen",official-2026-template
+13071174,"Schloen-Dratow",official-2026-template
+13071760,"Briefwahl Seenlandschaft Waren",official-2026-template
+13071021,"Burg Stargard, Stadt",official-2026-template
+13071026,"Cölpin",official-2026-template
+13071055,"Groß Nemerow",official-2026-template
+13071067,"Holldorf",official-2026-template
+13071090,"Lindetal",official-2026-template
+13071117,"Pragsdorf",official-2026-template
+13071761,"Briefwahl Stargarder Land",official-2026-template
+13071015,"Bredenfelde",official-2026-template
+13071018,"Briggow",official-2026-template
+13071048,"Grammentin",official-2026-template
+13071060,"Gülzow",official-2026-template
+13071068,"Ivenack",official-2026-template
+13071070,"Jürgenstorf",official-2026-template
+13071074,"Kittendorf",official-2026-template
+13071079,"Knorrendorf",official-2026-template
+13071102,"Mölln",official-2026-template
+13071123,"Ritzerow",official-2026-template
+13071127,"Rosenow",official-2026-template
+13071142,"Stavenhagen, Reuterstadt, Stadt",official-2026-template
+13071169,"Zettemin",official-2026-template
+13071762,"Briefwahl Stavenhagen",official-2026-template
+13071002,"Altenhagen",official-2026-template
+13071004,"Altentreptow, Stadt",official-2026-template
+13071006,"Bartow",official-2026-template
+13071016,"Breesen",official-2026-template
+13071022,"Burow",official-2026-template
+13071041,"Gnevkow",official-2026-template
+13071044,"Golchen",official-2026-template
+13071049,"Grapzow",official-2026-template
+13071050,"Grischow",official-2026-template
+13071057,"Groß Teetzleben",official-2026-template
+13071059,"Gültz",official-2026-template
+13071081,"Kriesow",official-2026-template
+13071120,"Pripsleben",official-2026-template
+13071125,"Röckwitz",official-2026-template
+13071135,"Siedenbollentin",official-2026-template
+13071146,"Tützpatz",official-2026-template
+13071158,"Werder",official-2026-template
+13071160,"Wildberg",official-2026-template
+13071163,"Wolde",official-2026-template
+13071763,"Briefwahl Treptower Tollensewinkel",official-2026-template
+13071054,"Groß Miltzow",official-2026-template
+13071083,"Kublank",official-2026-template
+13071105,"Neetzka",official-2026-template
+13071130,"Schönbeck",official-2026-template
+13071132,"Schönhausen",official-2026-template
+13071153,"Voigtsdorf",official-2026-template
+13071164,"Woldegk, Windmühlenstadt",official-2026-template
+13071764,"Briefwahl Woldegk",official-2026-template
+13072006,"Bad Doberan, Stadt",official-2026-template
+13072029,"Dummerstorf",official-2026-template
+13072036,"Graal-Müritz, Ostseeheilbad",official-2026-template
+13072043,"Güstrow, Barlachstadt",official-2026-template
+13072058,"Kröpelin, Stadt",official-2026-template
+13072060,"Kühlungsborn, Ostseebad, Stadt",official-2026-template
+13072074,"Neubukow, Schliemannstadt",official-2026-template
+13072091,"Sanitz",official-2026-template
+13072093,"Satow",official-2026-template
+13072106,"Teterow, Bergringstadt",official-2026-template
+13072001,"Admannshagen-Bargeshagen",official-2026-template
+13072007,"Bartenshagen-Parkentin",official-2026-template
+13072017,"Börgerende-Rethwisch, Ostseebad",official-2026-template
+13072047,"Hohenfelde",official-2026-template
+13072075,"Nienhagen, Ostseebad",official-2026-template
+13072083,"Reddelich",official-2026-template
+13072086,"Retschow",official-2026-template
+13072099,"Steffenshagen",official-2026-template
+13072117,"Wittenbeck",official-2026-template
+13072751,"Briefwahl Bad Doberan-Land",official-2026-template
+13072009,"Baumgarten",official-2026-template
+13072013,"Bernitt",official-2026-template
+13072020,"Bützow, Stadt",official-2026-template
+13072028,"Dreetz",official-2026-template
+13072050,"Jürgenshagen",official-2026-template
+13072053,"Klein Belitz",official-2026-template
+13072078,"Penzin",official-2026-template
+13072089,"Rühn",official-2026-template
+13072101,"Steinhagen",official-2026-template
+13072104,"Tarnow",official-2026-template
+13072114,"Warnow",official-2026-template
+13072120,"Zepelin",official-2026-template
+13072752,"Briefwahl Bützow-Land",official-2026-template
+13072019,"Broderstorf",official-2026-template
+13072081,"Poppendorf",official-2026-template
+13072087,"Roggentin",official-2026-template
+13072108,"Thulendorf",official-2026-template
+13072753,"Briefwahl Carbäk",official-2026-template
+13072004,"Altkalen",official-2026-template
+13072010,"Behren-Lübchin",official-2026-template
+13072031,"Finkenthal",official-2026-template
+13072035,"Gnoien, Warbelstadt",official-2026-template
+13072111,"Walkendorf",official-2026-template
+13072754,"Briefwahl Gnoien",official-2026-template
+13072033,"Glasewitz",official-2026-template
+13072039,"Groß Schwiesow",official-2026-template
+13072042,"Gülzow-Prüzen",official-2026-template
+13072044,"Gutow",official-2026-template
+13072055,"Klein Upahl",official-2026-template
+13072061,"Kuhs",official-2026-template
+13072067,"Lohmen",official-2026-template
+13072069,"Lüssow",official-2026-template
+13072071,"Mistorf",official-2026-template
+13072073,"Mühl Rosin",official-2026-template
+13072079,"Plaaz",official-2026-template
+13072084,"Reimershagen",official-2026-template
+13072092,"Sarmstorf",official-2026-template
+13072119,"Zehna",official-2026-template
+13072755,"Briefwahl Güstrow-Land",official-2026-template
+13072026,"Dobbin-Linstow",official-2026-template
+13072048,"Hoppenrade",official-2026-template
+13072056,"Krakow am See, Stadt",official-2026-template
+13072059,"Kuchelmiß",official-2026-template
+13072063,"Lalendorf",official-2026-template
+13072756,"Briefwahl Krakow am See",official-2026-template
+13072027,"Dolgen am See",official-2026-template
+13072046,"Hohen Sprenz",official-2026-template
+13072062,"Laage, Recknitzstadt",official-2026-template
+13072112,"Wardow",official-2026-template
+13072757,"Briefwahl Laage",official-2026-template
+13072003,"Alt Sührkow",official-2026-template
+13072023,"Dahmen",official-2026-template
+13072024,"Dalkendorf",official-2026-template
+13072038,"Groß Roge",official-2026-template
+13072040,"Groß Wokern",official-2026-template
+13072041,"Groß Wüstenfelde",official-2026-template
+13072045,"Hohen Demzin",official-2026-template
+13072049,"Jördenstorf",official-2026-template
+13072066,"Lelkendorf",official-2026-template
+13072082,"Prebberede",official-2026-template
+13072094,"Schorssow",official-2026-template
+13072096,"Schwasdorf",official-2026-template
+13072103,"Sukow-Levitzow",official-2026-template
+13072109,"Thürkow",official-2026-template
+13072113,"Warnkenhagen",official-2026-template
+13072758,"Briefwahl Mecklenburgische Schweiz",official-2026-template
+13072002,"Alt Bukow",official-2026-template
+13072005,"Am Salzhaff",official-2026-template
+13072008,"Bastorf",official-2026-template
+13072014,"Biendorf",official-2026-template
+13072022,"Carinerland",official-2026-template
+13072085,"Rerik, Ostseebad, Stadt",official-2026-template
+13072759,"Briefwahl Neubukow-Salzhaff",official-2026-template
+13072012,"Bentwisch",official-2026-template
+13072015,"Blankenhagen",official-2026-template
+13072032,"Gelbensande",official-2026-template
+13072072,"Mönchhagen",official-2026-template
+13072088,"Rövershagen",official-2026-template
+13072760,"Briefwahl Rostocker Heide",official-2026-template
+13072011,"Benitz",official-2026-template
+13072018,"Bröbberow",official-2026-template
+13072051,"Kassow",official-2026-template
+13072090,"Rukieten",official-2026-template
+13072095,"Schwaan, Stadt",official-2026-template
+13072110,"Vorbeck",official-2026-template
+13072116,"Wiendorf",official-2026-template
+13072761,"Briefwahl Schwaan",official-2026-template
+13072021,"Cammin",official-2026-template
+13072034,"Gnewitz",official-2026-template
+13072037,"Grammow",official-2026-template
+13072076,"Nustrow",official-2026-template
+13072097,"Selpin",official-2026-template
+13072102,"Stubbendorf",official-2026-template
+13072105,"Tessin, Blumenstadt",official-2026-template
+13072107,"Thelkow",official-2026-template
+13072118,"Zarnewanz",official-2026-template
+13072762,"Briefwahl Tessin",official-2026-template
+13072030,"Elmenhorst/Lichtenhagen",official-2026-template
+13072057,"Kritzmow",official-2026-template
+13072064,"Lambrechtshagen",official-2026-template
+13072077,"Papendorf",official-2026-template
+13072080,"Pölchow",official-2026-template
+13072098,"Stäbelow",official-2026-template
+13072121,"Ziesendorf",official-2026-template
+13072763,"Briefwahl Warnow-West",official-2026-template
+13073088,"Stralsund, Hansestadt",official-2026-template
+13073011,"Binz, Ostseebad",official-2026-template
+13073035,"Grimmen, Stadt",official-2026-template
+13073055,"Marlow, Stadt",official-2026-template
+13073070,"Putbus, Stadt",official-2026-template
+13073080,"Sassnitz, Stadt",official-2026-template
+13073089,"Süderholz",official-2026-template
+13073105,"Zingst, Ostseeheilbad",official-2026-template
+13073005,"Altenpleen",official-2026-template
+13073037,"Groß Mohrdorf",official-2026-template
+13073044,"Klausdorf",official-2026-template
+13073046,"Kramerhof",official-2026-template
+13073066,"Preetz",official-2026-template
+13073068,"Prohn",official-2026-template
+13073751,"Briefwahl Altenpleen",official-2026-template
+13073009,"Barth, Stadt",official-2026-template
+13073018,"Divitz-Spoldershagen",official-2026-template
+13073025,"Fuhlendorf",official-2026-template
+13073042,"Karnin",official-2026-template
+13073043,"Kenz-Küstrow",official-2026-template
+13073051,"Löbnitz",official-2026-template
+13073053,"Lüdershagen",official-2026-template
+13073069,"Pruchten",official-2026-template
+13073077,"Saal",official-2026-template
+13073094,"Trinwillershagen",official-2026-template
+13073752,"Briefwahl Barth",official-2026-template
+13073010,"Bergen auf Rügen, Stadt",official-2026-template
+13073014,"Buschvitz",official-2026-template
+13073027,"Garz/Rügen, Stadt",official-2026-template
+13073038,"Gustow",official-2026-template
+13073049,"Lietzow",official-2026-template
+13073063,"Parchtitz",official-2026-template
+13073064,"Patzig",official-2026-template
+13073065,"Poseritz",official-2026-template
+13073072,"Ralswiek",official-2026-template
+13073074,"Rappin",official-2026-template
+13073083,"Sehlen",official-2026-template
+13073753,"Briefwahl Bergen auf Rügen",official-2026-template
+13073002,"Ahrenshoop, Ostseebad",official-2026-template
+13073012,"Born a. Darß, Seebad",official-2026-template
+13073017,"Dierhagen, Ostseebad",official-2026-template
+13073067,"Prerow, Ostseebad",official-2026-template
+13073100,"Wieck a. Darß",official-2026-template
+13073103,"Wustrow, Ostseebad",official-2026-template
+13073754,"Briefwahl Darß/Fischland",official-2026-template
+13073024,"Franzburg, Stadt",official-2026-template
+13073029,"Glewitz",official-2026-template
+13073034,"Gremersdorf-Buchholz",official-2026-template
+13073057,"Millienhagen-Oebelitz",official-2026-template
+13073062,"Papenhagen",official-2026-template
+13073076,"Richtenberg, Stadt",official-2026-template
+13073086,"Splietsdorf",official-2026-template
+13073096,"Velgast",official-2026-template
+13073097,"Weitenhagen",official-2026-template
+13073098,"Wendisch Baggendorf",official-2026-template
+13073755,"Briefwahl Franzburg-Richtenberg",official-2026-template
+13073023,"Elmenhorst",official-2026-template
+13073090,"Sundhagen",official-2026-template
+13073102,"Wittenhagen",official-2026-template
+13073756,"Briefwahl Miltzow",official-2026-template
+13073006,"Baabe, Ostseebad",official-2026-template
+13073031,"Göhren, Ostseebad",official-2026-template
+13073048,"Lancken-Granitz",official-2026-template
+13073084,"Sellin, Ostseebad",official-2026-template
+13073106,"Zirkow",official-2026-template
+13073107,"Mönchgut, Ostseebad",official-2026-template
+13073757,"Briefwahl Mönchgut-Granitz",official-2026-template
+13073036,"Groß Kordshagen",official-2026-template
+13073041,"Jakobsdorf",official-2026-template
+13073054,"Lüssow",official-2026-template
+13073060,"Niepars",official-2026-template
+13073061,"Pantelitz",official-2026-template
+13073087,"Steinhagen",official-2026-template
+13073099,"Wendorf",official-2026-template
+13073104,"Zarrendorf",official-2026-template
+13073758,"Briefwahl Niepars",official-2026-template
+13073004,"Altenkirchen",official-2026-template
+13073013,"Breege",official-2026-template
+13073019,"Dranske",official-2026-template
+13073030,"Glowe, Ostseebad",official-2026-template
+13073052,"Lohme",official-2026-template
+13073071,"Putgarten",official-2026-template
+13073078,"Sagard",official-2026-template
+13073101,"Wiek",official-2026-template
+13073759,"Briefwahl Nord-Rügen",official-2026-template
+13073007,"Bad Sülze, Stadt",official-2026-template
+13073015,"Dettmannsdorf",official-2026-template
+13073016,"Deyelsdorf",official-2026-template
+13073020,"Drechow",official-2026-template
+13073022,"Eixen",official-2026-template
+13073032,"Grammendorf",official-2026-template
+13073033,"Gransebieth",official-2026-template
+13073039,"Hugoldsdorf",official-2026-template
+13073050,"Lindholz",official-2026-template
+13073093,"Tribsees, Stadt",official-2026-template
+13073760,"Briefwahl Recknitz-Trebeltal",official-2026-template
+13073001,"Ahrenshagen-Daskow",official-2026-template
+13073075,"Ribnitz-Damgarten, Bernsteinstadt",official-2026-template
+13073082,"Schlemmin",official-2026-template
+13073085,"Semlow",official-2026-template
+13073761,"Briefwahl Ribnitz-Damgarten",official-2026-template
+13073003,"Altefähr",official-2026-template
+13073021,"Dreschvitz",official-2026-template
+13073028,"Gingst",official-2026-template
+13073040,"Insel Hiddensee, Seebad",official-2026-template
+13073045,"Kluis",official-2026-template
+13073059,"Neuenkirchen",official-2026-template
+13073073,"Rambin",official-2026-template
+13073079,"Samtens",official-2026-template
+13073081,"Schaprode",official-2026-template
+13073092,"Trent",official-2026-template
+13073095,"Ummanz",official-2026-template
+13073762,"Briefwahl West-Rügen",official-2026-template
+13074087,"Wismar, Hansestadt",official-2026-template
+13074026,"Grevesmühlen, Stadt",official-2026-template
+13074035,"Insel Poel, Ostseebad",official-2026-template
+13074002,"Bad Kleinen",official-2026-template
+13074003,"Barnekow",official-2026-template
+13074008,"Bobitz",official-2026-template
+13074019,"Dorf Mecklenburg",official-2026-template
+13074030,"Groß Stieten",official-2026-template
+13074031,"Hohen Viecheln",official-2026-template
+13074047,"Lübow",official-2026-template
+13074053,"Metelsdorf",official-2026-template
+13074082,"Ventschow",official-2026-template
+13074751,"Briefwahl Dorf Mecklenburg-Bad Kleinen",official-2026-template
+13074020,"Dragun",official-2026-template
+13074021,"Gadebusch, Stadt",official-2026-template
+13074040,"Kneese",official-2026-template
+13074043,"Krembz",official-2026-template
+13074054,"Mühlen Eichsen",official-2026-template
+13074068,"Roggendorf",official-2026-template
+13074070,"Rögnitz",official-2026-template
+13074081,"Veelböken",official-2026-template
+13074752,"Briefwahl Gadebusch",official-2026-template
+13074005,"Bernstorf",official-2026-template
+13074022,"Gägelow",official-2026-template
+13074069,"Roggenstorf",official-2026-template
+13074071,"Rüting",official-2026-template
+13074077,"Testorf-Steinfort",official-2026-template
+13074079,"Upahl",official-2026-template
+13074085,"Warnow",official-2026-template
+13074093,"Stepenitztal",official-2026-template
+13074753,"Briefwahl Grevesmühlen-Land",official-2026-template
+13074010,"Boltenhagen, Ostseebad",official-2026-template
+13074016,"Damshagen",official-2026-template
+13074032,"Hohenkirchen",official-2026-template
+13074037,"Kalkhorst",official-2026-template
+13074039,"Klütz, Stadt",official-2026-template
+13074089,"Zierow",official-2026-template
+13074754,"Briefwahl Klützer Winkel",official-2026-template
+13074001,"Alt Meteln",official-2026-template
+13074012,"Brüsewitz",official-2026-template
+13074014,"Cramonshagen",official-2026-template
+13074015,"Dalberg-Wendelstorf",official-2026-template
+13074024,"Gottesgabe",official-2026-template
+13074025,"Grambow",official-2026-template
+13074038,"Klein Trebbow",official-2026-template
+13074048,"Lübstorf",official-2026-template
+13074050,"Lützow",official-2026-template
+13074061,"Perlin",official-2026-template
+13074062,"Pingelshagen",official-2026-template
+13074064,"Pokrent",official-2026-template
+13074072,"Schildetal",official-2026-template
+13074075,"Seehof",official-2026-template
+13074088,"Zickhusen",official-2026-template
+13074755,"Briefwahl Lützow-Lübstorf",official-2026-template
+13074004,"Benz",official-2026-template
+13074007,"Blowatz",official-2026-template
+13074009,"Boiensdorf",official-2026-template
+13074034,"Hornstorf",official-2026-template
+13074044,"Krusenhagen",official-2026-template
+13074056,"Neuburg",official-2026-template
+13074756,"Briefwahl Neuburg",official-2026-template
+13074006,"Bibow",official-2026-template
+13074023,"Glasin",official-2026-template
+13074036,"Jesendorf",official-2026-template
+13074046,"Lübberstorf",official-2026-template
+13074057,"Neukloster, Stadt",official-2026-template
+13074060,"Passee",official-2026-template
+13074084,"Warin, Stadt",official-2026-template
+13074090,"Zurow",official-2026-template
+13074091,"Züsow",official-2026-template
+13074757,"Briefwahl Neukloster-Warin",official-2026-template
+13074013,"Carlow",official-2026-template
+13074018,"Dechow",official-2026-template
+13074028,"Groß Molzahn",official-2026-template
+13074033,"Holdorf",official-2026-template
+13074042,"Königsfeld",official-2026-template
+13074065,"Rehna, Klosterstadt",official-2026-template
+13074066,"Rieps",official-2026-template
+13074073,"Schlagsdorf",official-2026-template
+13074078,"Thandorf",official-2026-template
+13074080,"Utecht",official-2026-template
+13074092,"Wedendorfersee",official-2026-template
+13074758,"Briefwahl Rehna",official-2026-template
+13074017,"Dassow, Stadt",official-2026-template
+13074027,"Grieben",official-2026-template
+13074049,"Lüdersdorf",official-2026-template
+13074052,"Menzendorf",official-2026-template
+13074067,"Roduchelstorf",official-2026-template
+13074074,"Schönberg, Stadt",official-2026-template
+13074076,"Selmsdorf",official-2026-template
+13074094,"Siemz-Niendorf",official-2026-template
+13074759,"Briefwahl Schönberger Land",official-2026-template
+13075039,"Greifswald, Universitäts- und Hansestadt",official-2026-template
+13075005,"Anklam, Hansestadt",official-2026-template
+13075049,"Heringsdorf, Ostseebad",official-2026-template
+13075105,"Pasewalk, Stadt",official-2026-template
+13075130,"Strasburg (Uckermark), Stadt",official-2026-template
+13075136,"Ueckermünde, Seebad, Stadt",official-2026-template
+13075021,"Buggenhagen",official-2026-template
+13075072,"Krummin",official-2026-template
+13075074,"Lassan, Stadt",official-2026-template
+13075087,"Lütow",official-2026-template
+13075124,"Sauzin",official-2026-template
+13075144,"Wolgast, Stadt",official-2026-template
+13075147,"Zemitz",official-2026-template
+13075751,"Briefwahl Am Peenestrom",official-2026-template
+13075001,"Ahlbeck",official-2026-template
+13075003,"Altwarp, Fischerdorf",official-2026-template
+13075031,"Eggesin, Stadt",official-2026-template
+13075037,"Grambin",official-2026-template
+13075051,"Hintersee",official-2026-template
+13075075,"Leopoldshagen",official-2026-template
+13075078,"Liepgarten",official-2026-template
+13075084,"Lübs",official-2026-template
+13075085,"Luckow",official-2026-template
+13075089,"Meiersberg",official-2026-template
+13075093,"Mönkebude",official-2026-template
+13075139,"Vogelsang-Warsin",official-2026-template
+13075752,"Briefwahl Am Stettiner Haff",official-2026-template
+13075007,"Bargischow",official-2026-template
+13075013,"Blesewitz",official-2026-template
+13075015,"Boldekow",official-2026-template
+13075020,"Bugewitz",official-2026-template
+13075022,"Butzow",official-2026-template
+13075029,"Ducherow",official-2026-template
+13075053,"Iven",official-2026-template
+13075068,"Krien",official-2026-template
+13075073,"Krusenfelde",official-2026-template
+13075088,"Medow",official-2026-template
+13075098,"Neu Kosenow",official-2026-template
+13075101,"Neuenkirchen",official-2026-template
+13075110,"Postlow",official-2026-template
+13075116,"Rossin",official-2026-template
+13075122,"Sarnow",official-2026-template
+13075127,"Spantekow",official-2026-template
+13075128,"Stolpe an der Peene",official-2026-template
+13075155,"Neetzow-Liepen",official-2026-template
+13075753,"Briefwahl Anklam-Land",official-2026-template
+13075002,"Alt Tellin",official-2026-template
+13075009,"Bentzin",official-2026-template
+13075023,"Daberkow",official-2026-template
+13075054,"Jarmen, Stadt",official-2026-template
+13075070,"Kruckow",official-2026-template
+13075134,"Tutow",official-2026-template
+13075140,"Völschow",official-2026-template
+13075754,"Briefwahl Jarmen-Tutow",official-2026-template
+13075008,"Behrenhoff",official-2026-template
+13075025,"Dargelin",official-2026-template
+13075027,"Dersekow",official-2026-template
+13075050,"Hinrichshagen",official-2026-template
+13075076,"Levenhagen",official-2026-template
+13075091,"Mesekenhagen",official-2026-template
+13075102,"Neuenkirchen",official-2026-template
+13075141,"Wackerow",official-2026-template
+13075142,"Weitenhagen",official-2026-template
+13075755,"Briefwahl Landhagen",official-2026-template
+13075011,"Bergholz",official-2026-template
+13075012,"Blankensee",official-2026-template
+13075016,"Boock",official-2026-template
+13075035,"Glasow",official-2026-template
+13075038,"Grambow",official-2026-template
+13075067,"Krackow",official-2026-template
+13075079,"Löcknitz",official-2026-template
+13075095,"Nadrensee",official-2026-template
+13075107,"Penkun, Stadt",official-2026-template
+13075108,"Plöwen",official-2026-template
+13075113,"Ramin",official-2026-template
+13075117,"Rossow",official-2026-template
+13075119,"Rothenklempenow",official-2026-template
+13075756,"Briefwahl Löcknitz-Penkun",official-2026-template
+13075018,"Brünzow",official-2026-template
+13075046,"Hanshagen",official-2026-template
+13075059,"Katzow",official-2026-template
+13075060,"Kemnitz",official-2026-template
+13075069,"Kröslin",official-2026-template
+13075081,"Loissin",official-2026-template
+13075083,"Lubmin, Seebad",official-2026-template
+13075097,"Neu Boltenhagen",official-2026-template
+13075120,"Rubenow",official-2026-template
+13075146,"Wusterhusen",official-2026-template
+13075757,"Briefwahl Lubmin",official-2026-template
+13075036,"Görmin",official-2026-template
+13075082,"Loitz, Stadt",official-2026-template
+13075123,"Sassen-Trantow",official-2026-template
+13075758,"Briefwahl Peenetal/Loitz",official-2026-template
+13075004,"Altwigshagen",official-2026-template
+13075033,"Ferdinandshof",official-2026-template
+13075045,"Hammer a. d. Uecker",official-2026-template
+13075048,"Heinrichswalde",official-2026-template
+13075118,"Rothemühl",official-2026-template
+13075131,"Torgelow, Stadt",official-2026-template
+13075143,"Wilhelmsburg",official-2026-template
+13075759,"Briefwahl Torgelow-Ferdinandshof",official-2026-template
+13075017,"Brietzig",official-2026-template
+13075032,"Fahrenwalde",official-2026-template
+13075042,"Groß Luckow",official-2026-template
+13075055,"Jatznick",official-2026-template
+13075063,"Koblentz",official-2026-template
+13075071,"Krugsdorf",official-2026-template
+13075103,"Nieden",official-2026-template
+13075104,"Papendorf",official-2026-template
+13075109,"Polzow",official-2026-template
+13075115,"Rollwitz",official-2026-template
+13075126,"Schönwalde",official-2026-template
+13075138,"Viereck",official-2026-template
+13075149,"Zerrenthin",official-2026-template
+13075760,"Briefwahl Uecker-Randow-Tal",official-2026-template
+13075058,"Karlshagen, Ostseebad",official-2026-template
+13075092,"Mölschow",official-2026-template
+13075106,"Peenemünde",official-2026-template
+13075133,"Trassenheide, Ostseebad",official-2026-template
+13075151,"Zinnowitz, Ostseebad",official-2026-template
+13075761,"Briefwahl Usedom-Nord",official-2026-template
+13075010,"Benz",official-2026-template
+13075026,"Dargen",official-2026-template
+13075034,"Garz",official-2026-template
+13075056,"Kamminke",official-2026-template
+13075065,"Korswandt",official-2026-template
+13075066,"Koserow, Ostseebad",official-2026-template
+13075080,"Loddin, Seebad",official-2026-template
+13075090,"Mellenthin",official-2026-template
+13075111,"Pudagla",official-2026-template
+13075114,"Rankwitz",official-2026-template
+13075129,"Stolpe auf Usedom",official-2026-template
+13075135,"Ückeritz, Seebad",official-2026-template
+13075137,"Usedom, Stadt",official-2026-template
+13075148,"Zempin, Seebad",official-2026-template
+13075152,"Zirchow",official-2026-template
+13075762,"Briefwahl Usedom-Süd",official-2026-template
+13075006,"Bandelin",official-2026-template
+13075040,"Gribow",official-2026-template
+13075041,"Groß Kiesow",official-2026-template
+13075043,"Groß Polzin",official-2026-template
+13075044,"Gützkow, Stadt",official-2026-template
+13075061,"Klein Bünzow",official-2026-template
+13075094,"Murchin",official-2026-template
+13075121,"Rubkow",official-2026-template
+13075125,"Schmatzin",official-2026-template
+13075145,"Wrangelsburg",official-2026-template
+13075150,"Ziethen",official-2026-template
+13075154,"Züssow",official-2026-template
+13075156,"Karlsburg",official-2026-template
+13075763,"Briefwahl Züssow",official-2026-template
+13076014,"Boizenburg/Elbe, Stadt",official-2026-template
+13076060,"Hagenow, Stadt",official-2026-template
+13076088,"Lübtheen, Stadt",official-2026-template
+13076090,"Ludwigslust, Stadt",official-2026-template
+13076108,"Parchim, Stadt",official-2026-template
+13076009,"Bengerstorf",official-2026-template
+13076010,"Besitz",official-2026-template
+13076016,"Brahlstorf",official-2026-template
+13076030,"Dersenow",official-2026-template
+13076054,"Gresse",official-2026-template
+13076055,"Greven",official-2026-template
+13076102,"Neu Gülze",official-2026-template
+13076106,"Nostorf",official-2026-template
+13076122,"Schwanheide",official-2026-template
+13076136,"Teldau",official-2026-template
+13076138,"Tessin b. Boizenburg",official-2026-template
+13076752,"Briefwahl Boizenburg-Land",official-2026-template
+13076034,"Dömitz, Stadt",official-2026-template
+13076053,"Grebs-Niendorf",official-2026-template
+13076067,"Karenz",official-2026-template
+13076093,"Malk Göhren",official-2026-template
+13076094,"Malliß",official-2026-template
+13076103,"Neu Kaliß",official-2026-template
+13076143,"Vielank",official-2026-template
+13076754,"Briefwahl Dömitz-Malliß",official-2026-template
+13076040,"Gallin-Kuppentin",official-2026-template
+13076051,"Granzin",official-2026-template
+13076075,"Kreien",official-2026-template
+13076077,"Kritzow",official-2026-template
+13076089,"Lübz, Stadt",official-2026-template
+13076109,"Passow",official-2026-template
+13076125,"Siggelkow",official-2026-template
+13076151,"Werder",official-2026-template
+13076165,"Gehlsbach",official-2026-template
+13076168,"Ruhner Berge",official-2026-template
+13076755,"Briefwahl Eldenburg Lübz",official-2026-template
+13076032,"Dobbertin",official-2026-template
+13076048,"Goldberg, Stadt",official-2026-template
+13076096,"Mestlin",official-2026-template
+13076104,"Neu Poserin",official-2026-template
+13076135,"Techentin",official-2026-template
+13076756,"Briefwahl Goldberg-Mildenitz",official-2026-template
+13076003,"Balow",official-2026-template
+13076021,"Brunow",official-2026-template
+13076027,"Dambeck",official-2026-template
+13076037,"Eldena",official-2026-template
+13076049,"Gorlosen",official-2026-template
+13076050,"Grabow, Stadt",official-2026-template
+13076069,"Karstädt",official-2026-template
+13076076,"Kremmin",official-2026-template
+13076097,"Milow",official-2026-template
+13076098,"Möllenbeck",official-2026-template
+13076100,"Muchow",official-2026-template
+13076115,"Prislich",official-2026-template
+13076161,"Zierzow",official-2026-template
+13076757,"Briefwahl Amt Grabow",official-2026-template
+13076002,"Alt Zachun",official-2026-template
+13076004,"Bandenitz",official-2026-template
+13076008,"Belsch",official-2026-template
+13076013,"Bobzin",official-2026-template
+13076019,"Bresegard bei Picher",official-2026-template
+13076041,"Gammelin",official-2026-template
+13076057,"Groß Krams",official-2026-template
+13076064,"Hoort",official-2026-template
+13076065,"Hülseburg",official-2026-template
+13076070,"Kirch Jesar",official-2026-template
+13076079,"Kuhstorf",official-2026-template
+13076099,"Moraas",official-2026-template
+13076110,"Pätow-Steegen",official-2026-template
+13076111,"Picher",official-2026-template
+13076116,"Pritzier",official-2026-template
+13076119,"Redefin",official-2026-template
+13076131,"Strohkirchen",official-2026-template
+13076145,"Warlitz",official-2026-template
+13076169,"Toddin",official-2026-template
+13076758,"Briefwahl Hagenow-Land",official-2026-template
+13076001,"Alt Krenzlin",official-2026-template
+13076018,"Bresegard bei Eldena",official-2026-template
+13076046,"Göhlen",official-2026-template
+13076058,"Groß Laasch",official-2026-template
+13076086,"Lübesse",official-2026-template
+13076087,"Lüblow",official-2026-template
+13076118,"Rastow",official-2026-template
+13076134,"Sülstorf",official-2026-template
+13076141,"Uelitz",official-2026-template
+13076146,"Warlow",official-2026-template
+13076156,"Wöbbelin",official-2026-template
+13076759,"Briefwahl Ludwigslust-Land",official-2026-template
+13076012,"Blievenstorf",official-2026-template
+13076017,"Brenz",official-2026-template
+13076105,"Neustadt-Glewe, Stadt",official-2026-template
+13076760,"Briefwahl Neustadt-Glewe",official-2026-template
+13076035,"Domsühl",official-2026-template
+13076056,"Groß Godems",official-2026-template
+13076068,"Karrenzin",official-2026-template
+13076085,"Lewitzrand",official-2026-template
+13076120,"Rom",official-2026-template
+13076126,"Spornitz",official-2026-template
+13076129,"Stolpe",official-2026-template
+13076160,"Ziegendorf",official-2026-template
+13076162,"Zölkow",official-2026-template
+13076164,"Obere Warnow",official-2026-template
+13076762,"Briefwahl Parchimer Umland",official-2026-template
+13076006,"Barkhagen",official-2026-template
+13076114,"Plau am See, Stadt",official-2026-template
+13076166,"Ganzlin",official-2026-template
+13076763,"Briefwahl Plau am See",official-2026-template
+13076011,"Blankenberg",official-2026-template
+13076015,"Borkow",official-2026-template
+13076020,"Brüel, Stadt",official-2026-template
+13076026,"Dabel",official-2026-template
+13076062,"Hohen Pritz",official-2026-template
+13076072,"Kobrow",official-2026-template
+13076078,"Kuhlen-Wendorf",official-2026-template
+13076101,"Mustin",official-2026-template
+13076128,"Sternberg, Stadt",official-2026-template
+13076148,"Weitendorf",official-2026-template
+13076155,"Witzin",official-2026-template
+13076167,"Kloster Tempzin",official-2026-template
+13076764,"Briefwahl Sternberger Seenlandschaft",official-2026-template
+13076036,"Dümmer",official-2026-template
+13076063,"Holthusen",official-2026-template
+13076071,"Klein Rogahn",official-2026-template
+13076107,"Pampow",official-2026-template
+13076121,"Schossin",official-2026-template
+13076130,"Stralendorf",official-2026-template
+13076147,"Warsow",official-2026-template
+13076154,"Wittenförden",official-2026-template
+13076163,"Zülow",official-2026-template
+13076765,"Briefwahl Stralendorf",official-2026-template
+13076152,"Wittenburg, Stadt",official-2026-template
+13076153,"Wittendörp",official-2026-template
+13076039,"Gallin",official-2026-template
+13076073,"Kogel",official-2026-template
+13076092,"Lüttow-Valluhn",official-2026-template
+13076142,"Vellahn",official-2026-template
+13076159,"Zarrentin am Schaalsee, Stadt",official-2026-template
+13076767,"Briefwahl Zarrentin",official-2026-template
+13076005,"Banzkow",official-2026-template
+13076007,"Barnin",official-2026-template
+13076023,"Bülow",official-2026-template
+13076024,"Cambs",official-2026-template
+13076025,"Crivitz, Stadt",official-2026-template
+13076029,"Demen",official-2026-template
+13076033,"Dobin am See",official-2026-template
+13076038,"Friedrichsruhe",official-2026-template
+13076044,"Gneven",official-2026-template
+13076080,"Langen Brütz",official-2026-template
+13076082,"Leezen",official-2026-template
+13076112,"Pinnow",official-2026-template
+13076113,"Plate",official-2026-template
+13076117,"Raben Steinfeld",official-2026-template
+13076133,"Sukow",official-2026-template
+13076140,"Tramm",official-2026-template
+13076158,"Zapel",official-2026-template
+13076768,"Briefwahl Crivitz",official-2026-template

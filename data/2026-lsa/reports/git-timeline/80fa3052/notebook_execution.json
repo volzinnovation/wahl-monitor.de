@@ -1,0 +1,47 @@
+{
+  "runner": "Python exec with sequential shared namespace; no Jupyter kernel runner installed",
+  "executed_code_cells": 8,
+  "cells": [
+    {
+      "execution_count": 1,
+      "cell_index": 1,
+      "stdout": "{'data_commits': 124, 'dated_captures': 122, 'booths': 2661, 'valid_second_votes': 1315315}\n"
+    },
+    {
+      "execution_count": 2,
+      "cell_index": 3,
+      "stdout": "{'independent_geographic_fields': 8942, 'independent_ballot_and_party_checks': 13932, 'discrepancies': 0}\n"
+    },
+    {
+      "execution_count": 3,
+      "cell_index": 4,
+      "stdout": "Aschersleben: all party and voter deltas match final 000965; three historical 1513-vote gaps, final gap zero.\nAken: final individual second votes 1139; historical municipality arrival 435. Not interchangeable.\n"
+    },
+    {
+      "execution_count": 4,
+      "cell_index": 5,
+      "stdout": "Bitterfeld 000028: historical statuses 0 -> 1; final 1024 second votes, historical vote diff unavailable.\nEvery final HTML identity matches an original individual vote CSV identity: 2661 / 2661.\n"
+    },
+    {
+      "execution_count": 5,
+      "cell_index": 7,
+      "stdout": "{'checked_MAD_values': 24171, 'flags': {'orange': 88, 'red': 30}, 'distinct_areas': 106, 'differences': 0}\n"
+    },
+    {
+      "execution_count": 6,
+      "cell_index": 8,
+      "stdout": "{'external_revision_fields_verified_against_original_Git_CSV': 86}\n"
+    },
+    {
+      "execution_count": 7,
+      "cell_index": 9,
+      "stdout": "Full reachable data history equals first-parent scope: 124 commits. Historic events remain in the report.\nLimits: one individual-vote snapshot; no historical district party diff. External simulations and spatial/multivariate models were not rerun.\n"
+    },
+    {
+      "execution_count": 8,
+      "cell_index": 10,
+      "stdout": "18 relative changes checked with exact fractions; 546 arrival observations verified; representation bridge closes at zero.\nRLP early FREIE WÄHLER parser defect is disclosed; its party is outside the six-party chart and its zero is not imputed.\n"
+    }
+  ],
+  "notebook_sha256": "0190dacceb15dec4690d28f9bf4725febe5ed7891194dec3d656d0d26051578f"
+}

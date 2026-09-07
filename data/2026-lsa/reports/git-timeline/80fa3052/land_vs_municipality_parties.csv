@@ -1,0 +1,32 @@
+code,party,vote_type,land_votes,municipality_sum,delta
+D1,CDU,Erststimmen,314120,314535,415
+D2,AfD,Erststimmen,581599,581945,346
+D3,Die Linke,Erststimmen,157758,157905,147
+D4,SPD,Erststimmen,102663,102881,218
+D5,FDP,Erststimmen,41067,41113,46
+D6,GRÜNE,Erststimmen,45240,45310,70
+D7,FREIE WÄHLER,Erststimmen,14464,14464,0
+D9,Tierschutzpartei,Erststimmen,1129,1129,0
+D10,Gartenpartei,Erststimmen,2937,2937,0
+D11,Die PARTEI,Erststimmen,777,777,0
+D12,TIERSCHUTZALLIANZ,Erststimmen,999,999,0
+D13,HEIMAT,Erststimmen,325,325,0
+D15,BSW,Erststimmen,41539,41782,243
+D19,PdF,Erststimmen,2656,2680,24
+D20,Volt,Erststimmen,768,768,0
+D21,EB,Erststimmen,3184,3184,0
+F1,CDU,Zweitstimmen,226221,226622,401
+F2,AfD,Zweitstimmen,575664,576037,373
+F3,Die Linke,Zweitstimmen,112395,112541,146
+F4,SPD,Zweitstimmen,122092,122303,211
+F5,FDP,Zweitstimmen,33934,33969,35
+F6,GRÜNE,Zweitstimmen,117376,117498,122
+F7,FREIE WÄHLER,Zweitstimmen,15406,15430,24
+F8,dieBasis,Zweitstimmen,1896,1899,3
+F9,Tierschutzpartei,Zweitstimmen,14338,14356,18
+F10,Gartenpartei,Zweitstimmen,7475,7482,7
+F11,Die PARTEI,Zweitstimmen,3485,3487,2
+F12,TIERSCHUTZALLIANZ,Zweitstimmen,7272,7283,11
+F15,BSW,Zweitstimmen,69143,69291,148
+F19,PdF,Zweitstimmen,2771,2778,7
+F20,Volt,Zweitstimmen,4334,4339,5

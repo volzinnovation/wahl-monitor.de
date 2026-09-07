@@ -1,0 +1,167 @@
+[
+  {
+    "acquired_at_local": "2026-09-07T00:23:44.184698+02:00",
+    "acquired_at_utc": "2026-09-06T22:23:44.184698+00:00",
+    "candidate": true,
+    "changes": {
+      "party:D1": {
+        "after": 4314,
+        "before": 4315,
+        "delta": -1
+      },
+      "party:D2": {
+        "after": 11013,
+        "before": 11015,
+        "delta": -2
+      },
+      "party:D3": {
+        "after": 2277,
+        "before": 2227,
+        "delta": 50
+      },
+      "party:D6": {
+        "after": 704,
+        "before": 732,
+        "delta": -28
+      },
+      "party:D7": {
+        "after": 926,
+        "before": 945,
+        "delta": -19
+      }
+    },
+    "commit": "305df69296afee6657b419df62f861403fd4370e",
+    "commit_time": "2026-09-06T22:23:45Z",
+    "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+    "key": "lsa:GEMEINDE:15082015",
+    "level": "GEMEINDE",
+    "mode": "TOTAL",
+    "name": "Bitterfeld-Wolfen, Stadt",
+    "previous_acquired_at_local": "2026-09-07T00:18:14.070833+02:00",
+    "previous_commit": "82b745143ae58288ad021a5f17a786d53eece813",
+    "previous_reported": 31,
+    "reported": 31,
+    "source": "normalized",
+    "subject": "2026-lsa poll 2026-09-06T22:23:44.184698+00:00",
+    "total": 31
+  },
+  {
+    "acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+    "acquired_at_utc": "2026-09-06T22:45:41.299801+00:00",
+    "candidate": true,
+    "changes": {
+      "voters_total": {
+        "after": 4820,
+        "before": 4841,
+        "delta": -21
+      }
+    },
+    "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+    "commit_time": "2026-09-06T22:45:42Z",
+    "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+    "key": "lsa:GEMEINDE:15085145",
+    "level": "GEMEINDE",
+    "mode": "TOTAL",
+    "name": "Harzgerode, Stadt",
+    "previous_acquired_at_local": "2026-09-07T00:40:08.798418+02:00",
+    "previous_commit": "937eaa10aa40ba789d0dd62ff5de859dc6ef9e86",
+    "previous_reported": 13,
+    "reported": 13,
+    "source": "normalized",
+    "subject": "2026-lsa poll 2026-09-06T22:45:41.299801+00:00",
+    "total": 13
+  },
+  {
+    "acquired_at_local": "2026-09-07T01:52:10.207428+02:00",
+    "acquired_at_utc": "2026-09-06T23:52:10.207428+00:00",
+    "candidate": true,
+    "changes": {
+      "voters_total": {
+        "after": 6967,
+        "before": 6991,
+        "delta": -24
+      }
+    },
+    "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+    "commit_time": "2026-09-06T23:52:11Z",
+    "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+    "key": "lsa:GEMEINDE:15090550",
+    "level": "GEMEINDE",
+    "mode": "TOTAL",
+    "name": "Tangermünde, Stadt",
+    "previous_acquired_at_local": "2026-09-07T01:46:41.804432+02:00",
+    "previous_commit": "8498858d5feb8fd3e85f08ed011bc269ae59a984",
+    "previous_reported": 14,
+    "reported": 14,
+    "source": "normalized",
+    "subject": "2026-lsa poll 2026-09-06T23:52:10.207428+00:00",
+    "total": 14
+  },
+  {
+    "acquired_at_local": "2026-09-07T02:03:11.796077+02:00",
+    "acquired_at_utc": "2026-09-07T00:03:11.796077+00:00",
+    "candidate": true,
+    "changes": {
+      "party:F3": {
+        "after": 576,
+        "before": 585,
+        "delta": -9
+      },
+      "party:F6": {
+        "after": 463,
+        "before": 455,
+        "delta": 8
+      },
+      "valid_votes_zweit": {
+        "after": 8980,
+        "before": 8981,
+        "delta": -1
+      }
+    },
+    "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+    "commit_time": "2026-09-07T00:03:13Z",
+    "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+    "key": "lsa:GEMEINDE:15088205",
+    "level": "GEMEINDE",
+    "mode": "TOTAL",
+    "name": "Leuna, Stadt",
+    "previous_acquired_at_local": "2026-09-07T01:57:40.558068+02:00",
+    "previous_commit": "bcef1b09bad690c72a89f6812b476fb7df5269ce",
+    "previous_reported": 14,
+    "reported": 14,
+    "source": "normalized",
+    "subject": "2026-lsa poll 2026-09-07T00:03:11.796077+00:00",
+    "total": 14
+  },
+  {
+    "acquired_at_local": "2026-09-07T02:03:11.796077+02:00",
+    "acquired_at_utc": "2026-09-07T00:03:11.796077+00:00",
+    "candidate": true,
+    "changes": {
+      "party:F19": {
+        "after": 27,
+        "before": 26,
+        "delta": 1
+      },
+      "party:F20": {
+        "after": 13,
+        "before": 14,
+        "delta": -1
+      }
+    },
+    "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+    "commit_time": "2026-09-07T00:03:13Z",
+    "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+    "key": "lsa:GEMEINDE:15088305",
+    "level": "GEMEINDE",
+    "mode": "TOTAL",
+    "name": "Querfurt, Stadt",
+    "previous_acquired_at_local": "2026-09-07T01:57:40.558068+02:00",
+    "previous_commit": "bcef1b09bad690c72a89f6812b476fb7df5269ce",
+    "previous_reported": 16,
+    "reported": 16,
+    "source": "normalized",
+    "subject": "2026-lsa poll 2026-09-07T00:03:11.796077+00:00",
+    "total": 16
+  }
+]

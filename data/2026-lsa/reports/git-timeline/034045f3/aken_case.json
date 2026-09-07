@@ -1,0 +1,391 @@
+{
+  "added": [
+    {
+      "Gemeinde": "Aken (Elbe), Stadt",
+      "Landkreis": "Anhalt-Bitterfeld",
+      "Wahlkreis": "23, Zerbst",
+      "goto": null,
+      "key": "[\"23, Zerbst\",\"Anhalt-Bitterfeld\",\"Aken (Elbe), Stadt\",\"000010\"]",
+      "level": "WAHLBEZIRK_STATUS",
+      "name": "Aken (Elbe), Stadt / 000010",
+      "reported_precincts": 1,
+      "stand": 1,
+      "total_precincts": 1,
+      "wbz": "000010",
+      "wbz_ist": 1,
+      "wbz_soll": 1
+    }
+  ],
+  "after": {
+    "capture_local": "2026-09-07T00:51:09.962028+02:00",
+    "capture_utc": "2026-09-06T22:51:09.962028+00:00",
+    "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+    "csv_reported": 2634,
+    "csv_total": 2661,
+    "district": {
+      "Gemeinde": "Aken (Elbe), Stadt",
+      "Landkreis": "Anhalt-Bitterfeld",
+      "Wahlkreis": "23, Zerbst",
+      "goto": null,
+      "key": "[\"23, Zerbst\",\"Anhalt-Bitterfeld\",\"Aken (Elbe), Stadt\",\"000010\"]",
+      "level": "WAHLBEZIRK_STATUS",
+      "name": "Aken (Elbe), Stadt / 000010",
+      "reported_precincts": 1,
+      "stand": 1,
+      "total_precincts": 1,
+      "wbz": "000010",
+      "wbz_ist": 1,
+      "wbz_soll": 1
+    },
+    "individual_vote_rows": 0,
+    "overview_fetched_local": "2026-09-07T00:51:06.884664+02:00",
+    "overview_reported": 2634,
+    "overview_total": 2661,
+    "present": true
+  },
+  "baseline_ref": "034045f3d0f71c47aebf3daea47f3d33b136de5c",
+  "baseline_status_rows_checked": 191520,
+  "before": {
+    "capture_local": "2026-09-07T00:45:41.299801+02:00",
+    "capture_utc": "2026-09-06T22:45:41.299801+00:00",
+    "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+    "csv_reported": 2633,
+    "csv_total": 2660,
+    "district": null,
+    "individual_vote_rows": 0,
+    "overview_fetched_local": "2026-09-07T00:45:37.326072+02:00",
+    "overview_reported": 2630,
+    "overview_total": 2660,
+    "present": false
+  },
+  "cause_documented": false,
+  "groups": [
+    {
+      "after_reported": 10,
+      "after_total": 10,
+      "area": "Aken (Elbe)",
+      "before_reported": 9,
+      "before_total": 9
+    },
+    {
+      "after_reported": 80,
+      "after_total": 80,
+      "area": "Wahlkreis 23 Zerbst",
+      "before_reported": 79,
+      "before_total": 79
+    },
+    {
+      "after_reported": 203,
+      "after_total": 205,
+      "area": "Anhalt-Bitterfeld",
+      "before_reported": 202,
+      "before_total": 204
+    },
+    {
+      "after_reported": 2634,
+      "after_total": 2661,
+      "area": "Sachsen-Anhalt",
+      "before_reported": 2630,
+      "before_total": 2660
+    }
+  ],
+  "identity": {
+    "Gemeinde": "Aken (Elbe), Stadt",
+    "Landkreis": "Anhalt-Bitterfeld",
+    "Wahlkreis": "23, Zerbst",
+    "wbz": "000010"
+  },
+  "individual_district_party_votes_available": false,
+  "observations": [
+    {
+      "capture_local": "2026-09-07T00:07:10.420342+02:00",
+      "capture_utc": "2026-09-06T22:07:10.420342+00:00",
+      "commit": "73b20ed389d90cdd9fc49cb129b8edc45e73e2b8",
+      "csv_reported": 2617,
+      "csv_total": 2660,
+      "district": null,
+      "individual_vote_rows": 0,
+      "overview_fetched_local": "2026-09-07T00:07:07.228864+02:00",
+      "overview_reported": 2617,
+      "overview_total": 2660,
+      "present": false
+    },
+    {
+      "capture_local": "2026-09-07T00:12:41.947578+02:00",
+      "capture_utc": "2026-09-06T22:12:41.947578+00:00",
+      "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+      "csv_reported": 2619,
+      "csv_total": 2660,
+      "district": null,
+      "individual_vote_rows": 0,
+      "overview_fetched_local": "2026-09-07T00:12:37.816182+02:00",
+      "overview_reported": 2618,
+      "overview_total": 2660,
+      "present": false
+    },
+    {
+      "capture_local": "2026-09-07T00:23:44.184698+02:00",
+      "capture_utc": "2026-09-06T22:23:44.184698+00:00",
+      "commit": "305df69296afee6657b419df62f861403fd4370e",
+      "csv_reported": 2619,
+      "csv_total": 2660,
+      "district": null,
+      "individual_vote_rows": 0,
+      "overview_fetched_local": "2026-09-07T00:23:39.889868+02:00",
+      "overview_reported": 2619,
+      "overview_total": 2660,
+      "present": false
+    },
+    {
+      "capture_local": "2026-09-07T00:29:09.751905+02:00",
+      "capture_utc": "2026-09-06T22:29:09.751905+00:00",
+      "commit": "15d61af750d18344385c3082fc57643b64212bc0",
+      "csv_reported": 2622,
+      "csv_total": 2660,
+      "district": null,
+      "individual_vote_rows": 0,
+      "overview_fetched_local": "2026-09-07T00:29:06.710270+02:00",
+      "overview_reported": 2622,
+      "overview_total": 2660,
+      "present": false
+    },
+    {
+      "capture_local": "2026-09-07T00:34:42.762130+02:00",
+      "capture_utc": "2026-09-06T22:34:42.762130+00:00",
+      "commit": "55559785f9f6171e1ab5d3e50086665100128973",
+      "csv_reported": 2625,
+      "csv_total": 2660,
+      "district": null,
+      "individual_vote_rows": 0,
+      "overview_fetched_local": "2026-09-07T00:34:37.440240+02:00",
+      "overview_reported": 2625,
+      "overview_total": 2660,
+      "present": false
+    },
+    {
+      "capture_local": "2026-09-07T00:40:08.798418+02:00",
+      "capture_utc": "2026-09-06T22:40:08.798418+00:00",
+      "commit": "937eaa10aa40ba789d0dd62ff5de859dc6ef9e86",
+      "csv_reported": 2630,
+      "csv_total": 2660,
+      "district": null,
+      "individual_vote_rows": 0,
+      "overview_fetched_local": "2026-09-07T00:40:04.887723+02:00",
+      "overview_reported": 2630,
+      "overview_total": 2660,
+      "present": false
+    },
+    {
+      "capture_local": "2026-09-07T00:45:41.299801+02:00",
+      "capture_utc": "2026-09-06T22:45:41.299801+00:00",
+      "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "csv_reported": 2633,
+      "csv_total": 2660,
+      "district": null,
+      "individual_vote_rows": 0,
+      "overview_fetched_local": "2026-09-07T00:45:37.326072+02:00",
+      "overview_reported": 2630,
+      "overview_total": 2660,
+      "present": false
+    },
+    {
+      "capture_local": "2026-09-07T00:51:09.962028+02:00",
+      "capture_utc": "2026-09-06T22:51:09.962028+00:00",
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "csv_reported": 2634,
+      "csv_total": 2661,
+      "district": {
+        "Gemeinde": "Aken (Elbe), Stadt",
+        "Landkreis": "Anhalt-Bitterfeld",
+        "Wahlkreis": "23, Zerbst",
+        "goto": null,
+        "key": "[\"23, Zerbst\",\"Anhalt-Bitterfeld\",\"Aken (Elbe), Stadt\",\"000010\"]",
+        "level": "WAHLBEZIRK_STATUS",
+        "name": "Aken (Elbe), Stadt / 000010",
+        "reported_precincts": 1,
+        "stand": 1,
+        "total_precincts": 1,
+        "wbz": "000010",
+        "wbz_ist": 1,
+        "wbz_soll": 1
+      },
+      "individual_vote_rows": 0,
+      "overview_fetched_local": "2026-09-07T00:51:06.884664+02:00",
+      "overview_reported": 2634,
+      "overview_total": 2661,
+      "present": true
+    }
+  ],
+  "removed": [],
+  "sources": [
+    {
+      "commit": "73b20ed389d90cdd9fc49cb129b8edc45e73e2b8",
+      "git_blob_sha": "3314d730e3ecca3ddfaa73a4d146ab992d3a34df",
+      "path": "official_sources/overview.html",
+      "sha256": "65af96d885d9c781a9cdee7039e96b08b81d954045ce744946f7cc5daa0dfe96",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/73b20ed389d90cdd9fc49cb129b8edc45e73e2b8/data/2026-lsa/latest/official_sources/overview.html"
+    },
+    {
+      "commit": "73b20ed389d90cdd9fc49cb129b8edc45e73e2b8",
+      "git_blob_sha": "ed9ba4feb7550273a83246fa2a12ffc22ee1b6fd",
+      "path": "official_sources/manifest.json",
+      "sha256": "bf648dfcd8b2d1ea4a34373065a071fef47648195b3bb8470bd6cef65b2d342d",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/73b20ed389d90cdd9fc49cb129b8edc45e73e2b8/data/2026-lsa/latest/official_sources/manifest.json"
+    },
+    {
+      "commit": "73b20ed389d90cdd9fc49cb129b8edc45e73e2b8",
+      "git_blob_sha": "03a87884c91cf5ddda63849b7094c9b66da89daa",
+      "path": "run_metadata.json",
+      "sha256": "ec9d87c5abd3ff6181cb0de379048560308a08b46e4ea292bc072ae60a642520",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/73b20ed389d90cdd9fc49cb129b8edc45e73e2b8/data/2026-lsa/latest/run_metadata.json"
+    },
+    {
+      "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+      "git_blob_sha": "02594ced0eac7186314dcd24c084b16cb9a56609",
+      "path": "official_sources/overview.html",
+      "sha256": "f0c0eeea9b7df4947b726695636c06c05693d7bb0ec63bbcc86da3313518165e",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/f3399322b2dbf01a95f3341a2a31760f34541f15/data/2026-lsa/latest/official_sources/overview.html"
+    },
+    {
+      "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+      "git_blob_sha": "ed0f5a9c7efdf0076637bb0cd69b88d78ca1e167",
+      "path": "official_sources/manifest.json",
+      "sha256": "dcaab521d168108cc92fa06269f0e22ac81e45dd489d3ee23acd5bf299e0936f",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/f3399322b2dbf01a95f3341a2a31760f34541f15/data/2026-lsa/latest/official_sources/manifest.json"
+    },
+    {
+      "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+      "git_blob_sha": "f32b9a86e9279402a01af15387849d8892185a26",
+      "path": "run_metadata.json",
+      "sha256": "55e5b8015ea3ea71218c0197ca0dc13daafc6b8e0632d9891c9a175c1699a954",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/f3399322b2dbf01a95f3341a2a31760f34541f15/data/2026-lsa/latest/run_metadata.json"
+    },
+    {
+      "commit": "305df69296afee6657b419df62f861403fd4370e",
+      "git_blob_sha": "e836580d262e3401d7e6e8046fc288c0a3412ed4",
+      "path": "official_sources/overview.html",
+      "sha256": "6f16c0ec4ceec33458ec763eb4cd631f9675e7816f329e36fb95d6fc3831dc27",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/305df69296afee6657b419df62f861403fd4370e/data/2026-lsa/latest/official_sources/overview.html"
+    },
+    {
+      "commit": "305df69296afee6657b419df62f861403fd4370e",
+      "git_blob_sha": "3e0e6a22b8e0100b200cd2a698b85c86a77d653a",
+      "path": "official_sources/manifest.json",
+      "sha256": "8463c4643d33ac395cd94c5679fdc04679a385e277c74c13a36ea187c417c731",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/305df69296afee6657b419df62f861403fd4370e/data/2026-lsa/latest/official_sources/manifest.json"
+    },
+    {
+      "commit": "305df69296afee6657b419df62f861403fd4370e",
+      "git_blob_sha": "0998bc1f40c49306cc47a362c5bd3e0346ef2c42",
+      "path": "run_metadata.json",
+      "sha256": "9888917f1b2858df168906d321ea2fe0b007e83f8c2a2367806eaa59c835c440",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/305df69296afee6657b419df62f861403fd4370e/data/2026-lsa/latest/run_metadata.json"
+    },
+    {
+      "commit": "15d61af750d18344385c3082fc57643b64212bc0",
+      "git_blob_sha": "15ffbd492454bc228e81bd8dd152b6b955f332ed",
+      "path": "official_sources/overview.html",
+      "sha256": "153eacba342976a0da9ba879e15e30525f1c9cdec4b5d60113659a09dcd7dd12",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/15d61af750d18344385c3082fc57643b64212bc0/data/2026-lsa/latest/official_sources/overview.html"
+    },
+    {
+      "commit": "15d61af750d18344385c3082fc57643b64212bc0",
+      "git_blob_sha": "b19caeb5618cfa9cda51779e0ff3df3c7e6a5ef5",
+      "path": "official_sources/manifest.json",
+      "sha256": "77f73ac1925632cb9b4fc2edafd94bf89b2bb93cee058b60b21e92f26867e0c0",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/15d61af750d18344385c3082fc57643b64212bc0/data/2026-lsa/latest/official_sources/manifest.json"
+    },
+    {
+      "commit": "15d61af750d18344385c3082fc57643b64212bc0",
+      "git_blob_sha": "352e4ee6b8a616aa7fbaefd49c009b977e87c230",
+      "path": "run_metadata.json",
+      "sha256": "7e74786bc58283622b4966ab298ae087c75e70cf4df73e3f3709bdb8e7f2590c",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/15d61af750d18344385c3082fc57643b64212bc0/data/2026-lsa/latest/run_metadata.json"
+    },
+    {
+      "commit": "55559785f9f6171e1ab5d3e50086665100128973",
+      "git_blob_sha": "f39790bd848b4c8e3623f6d3221b4f533d394a6f",
+      "path": "official_sources/overview.html",
+      "sha256": "b6cd7a68deae1760b707e2f11acd1fb5489e3f2c43c21237aa2c40e0f80fc8c0",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/55559785f9f6171e1ab5d3e50086665100128973/data/2026-lsa/latest/official_sources/overview.html"
+    },
+    {
+      "commit": "55559785f9f6171e1ab5d3e50086665100128973",
+      "git_blob_sha": "57f3797608bcbfd85bb3c8e92087a3e2c13b6d1b",
+      "path": "official_sources/manifest.json",
+      "sha256": "d012563be6353b18a4784e5d3dde07847a427b9332641064945f91e13a94bd63",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/55559785f9f6171e1ab5d3e50086665100128973/data/2026-lsa/latest/official_sources/manifest.json"
+    },
+    {
+      "commit": "55559785f9f6171e1ab5d3e50086665100128973",
+      "git_blob_sha": "371ef4cadb1fadde3daff465f00c2fe205ce011d",
+      "path": "run_metadata.json",
+      "sha256": "9a438353f584ddfc6c2d4bfd730b2d79a7d07887d32c75363231ecdc6ad1b73e",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/55559785f9f6171e1ab5d3e50086665100128973/data/2026-lsa/latest/run_metadata.json"
+    },
+    {
+      "commit": "937eaa10aa40ba789d0dd62ff5de859dc6ef9e86",
+      "git_blob_sha": "5c914011b24ae9b6c1e77a4ba97f4b04002b99a5",
+      "path": "official_sources/overview.html",
+      "sha256": "f379965546f6849850277f4ea71fe73a2e95429654a46c388c0825df03bf2dc4",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/937eaa10aa40ba789d0dd62ff5de859dc6ef9e86/data/2026-lsa/latest/official_sources/overview.html"
+    },
+    {
+      "commit": "937eaa10aa40ba789d0dd62ff5de859dc6ef9e86",
+      "git_blob_sha": "043daef2b05e4f9355bc594dc6bb98e9e96988cd",
+      "path": "official_sources/manifest.json",
+      "sha256": "adb62c3935f4e12e1b280fee8f25c6fdc330fe8517b00723466afeec02fa365c",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/937eaa10aa40ba789d0dd62ff5de859dc6ef9e86/data/2026-lsa/latest/official_sources/manifest.json"
+    },
+    {
+      "commit": "937eaa10aa40ba789d0dd62ff5de859dc6ef9e86",
+      "git_blob_sha": "d71430f1d7f6a2a983166b2401039af2288a212e",
+      "path": "run_metadata.json",
+      "sha256": "48463d90f4b17368debda7fe0bcd981a204632b238dea67d03b771ea6ddb9037",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/937eaa10aa40ba789d0dd62ff5de859dc6ef9e86/data/2026-lsa/latest/run_metadata.json"
+    },
+    {
+      "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "git_blob_sha": "5c914011b24ae9b6c1e77a4ba97f4b04002b99a5",
+      "path": "official_sources/overview.html",
+      "sha256": "f379965546f6849850277f4ea71fe73a2e95429654a46c388c0825df03bf2dc4",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/55f50c51b9dfac63ad15cb2b7b2ff314eefdf062/data/2026-lsa/latest/official_sources/overview.html"
+    },
+    {
+      "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "git_blob_sha": "9f53ee17a0499196b08bd20321c8642e5d042cc9",
+      "path": "official_sources/manifest.json",
+      "sha256": "79461e921cd72a59779c909c528bbd250b4e9bfe8f20667a05909bfa96f172ba",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/55f50c51b9dfac63ad15cb2b7b2ff314eefdf062/data/2026-lsa/latest/official_sources/manifest.json"
+    },
+    {
+      "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "git_blob_sha": "174b5998911d62ea0562db3beeea4a2f641e15de",
+      "path": "run_metadata.json",
+      "sha256": "e3721635bf2df25c494de7bc2964feafc00412229878024b5e7020587ebc413e",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/55f50c51b9dfac63ad15cb2b7b2ff314eefdf062/data/2026-lsa/latest/run_metadata.json"
+    },
+    {
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "git_blob_sha": "fc58f616486552286f36cc7fea03beb7e4d06316",
+      "path": "official_sources/overview.html",
+      "sha256": "75217aeeed5323255405b4de022511f6e7a61079f03b4592833de7b6b5240c82",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/8822e360c1ca7656105447c8bc3f1cad88d4599a/data/2026-lsa/latest/official_sources/overview.html"
+    },
+    {
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "git_blob_sha": "832471600f684a1904c1245aa454709a9b6e1955",
+      "path": "official_sources/manifest.json",
+      "sha256": "c2d74c0fb4a9ea8d18ac589a75ca7f7b51615cabd55c5b254ec06fdf472b9de1",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/8822e360c1ca7656105447c8bc3f1cad88d4599a/data/2026-lsa/latest/official_sources/manifest.json"
+    },
+    {
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "git_blob_sha": "6b586f59b832d07e7f2d716c1e9eea70f9996c25",
+      "path": "run_metadata.json",
+      "sha256": "65d79c840e74308f3baeacaf7337665cf511f30ab3f27fbab224dfb59fff4aa9",
+      "url": "https://github.com/volzinnovation/wahl-monitor.de/blob/8822e360c1ca7656105447c8bc3f1cad88d4599a/data/2026-lsa/latest/run_metadata.json"
+    }
+  ],
+  "timezone": "Europe/Berlin (MESZ, UTC+02:00)"
+}

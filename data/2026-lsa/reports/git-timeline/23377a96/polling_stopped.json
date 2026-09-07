@@ -1,0 +1,24 @@
+{
+  "active_or_queued_archive_runs_at_verification": [],
+  "further_collection_scheduled": false,
+  "heartbeat": {
+    "id": "retrigger-election-archive-every-5-minutes",
+    "status": "PAUSED"
+  },
+  "last_archive_capture_utc": "2026-09-07T01:10:10.827443+00:00",
+  "last_archive_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+  "other_lsa_heartbeat": {
+    "id": "watch-for-first-sachsen-anhalt-result",
+    "status": "PAUSED"
+  },
+  "recorded_at_utc": "2026-09-07T01:22:11.827977+00:00",
+  "repository": "volzinnovation/wahl-monitor.de",
+  "user_instruction": "Stop polling now and update the report from the full LSA Git history.",
+  "verification": "GitHub workflow state and workflow-run list read after disabling; local automation status verified.",
+  "workflow": {
+    "id": 347350709,
+    "name": "Archive Sachsen-Anhalt 2026",
+    "path": ".github/workflows/archive-lsa.yml",
+    "state": "disabled_manually"
+  }
+}

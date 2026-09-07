@@ -1,0 +1,166 @@
+[
+  {
+    "file": "age_2025.pdf",
+    "url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Bevoelkerung/Berichte/Bevoelkerungsstand/6A119_2025-A.pdf",
+    "bytes": 2511369,
+    "sha256": "09880b88ae86cbab8ced2143383caf1d86ffce4a50970cf5bce75eb3bffc177b",
+    "retrieved_at_utc": "2026-09-07T13:13:06.566602+00:00"
+  },
+  {
+    "file": "population_2025.pdf",
+    "url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Bevoelkerung/Berichte/Bevoelkerungsstand/6A102_2025-A.pdf",
+    "bytes": 2111028,
+    "sha256": "1c1776f93161a184ff69dde6df30ab5fcf281b82fd31fdba1118f002b76fa6bc",
+    "retrieved_at_utc": "2026-09-07T13:13:06.487370+00:00"
+  },
+  {
+    "file": "census_downloads.html",
+    "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/publikationen-akkordeon-regionaltabellen.html",
+    "bytes": 72653,
+    "sha256": "b3132419eb0c4b12ec2b5179a54ae8b728c181525648687c09f0a8cb09c4e98e",
+    "retrieved_at_utc": "2026-09-07T13:13:06.165681+00:00"
+  },
+  {
+    "file": "gv_isys.html",
+    "url": "https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html",
+    "bytes": 164567,
+    "sha256": "06ccb1bbf98b68c7568f18e0ac1d316380810cf163b32180d8dbeab615452709",
+    "retrieved_at_utc": "2026-09-07T13:13:07.688857+00:00"
+  },
+  {
+    "file": "regional_12411.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=12411",
+    "bytes": 30280,
+    "sha256": "4ea4222c5224140c99d865d3f146fbc704cfcb73b01f6e6392f8c46f7ed77aef",
+    "retrieved_at_utc": "2026-09-07T13:13:19.048388+00:00"
+  },
+  {
+    "file": "lsa_genesis.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online",
+    "bytes": 21600,
+    "sha256": "b8c514ff1a64ee81d02a18375bf1df8035a015a53fe5711abc84465d5f7068d7",
+    "retrieved_at_utc": "2026-09-07T13:13:06.838648+00:00"
+  },
+  {
+    "file": "lsa_election_structure.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online?operation=result&code=14311-SD&deep=true",
+    "error": "curl: (28) Operation timed out after 45002 milliseconds with 0 bytes received\n"
+  },
+  {
+    "file": "lsa_13111.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online?operation=statistic&code=13111",
+    "bytes": 8752,
+    "sha256": "d31320c231d42e93b637c5c4eae85d7670476cee72b2ef72454421c14d14764d",
+    "retrieved_at_utc": "2026-09-07T13:19:29.583038+00:00"
+  },
+  {
+    "file": "lsa_13211.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online?operation=statistic&code=13211",
+    "bytes": 12349,
+    "sha256": "fa0605341b43493e8da5396ac11beb97d09046afc0d036e758c46eeeeeb4d3f1",
+    "retrieved_at_utc": "2026-09-07T13:19:43.528291+00:00"
+  },
+  {
+    "file": "lsa_73111.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online?operation=statistic&code=73111",
+    "bytes": 11880,
+    "sha256": "d0ad4300bb710deacf606cfbda0bc8ddae4a5a730ca5d449000e64b419b4b656",
+    "retrieved_at_utc": "2026-09-07T13:19:53.445265+00:00"
+  },
+  {
+    "file": "census_education.xlsx",
+    "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Bildung_Erwerbstaetigkeit.xlsx",
+    "bytes": 28096453,
+    "sha256": "aad34940d33fa984e900ee18f732b53e60c6b6cb20da4d1305073d016c6a0a12",
+    "retrieved_at_utc": "2026-09-07T13:13:41.258610+00:00"
+  },
+  {
+    "file": "census_demography.xlsx",
+    "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Demografie.xlsx",
+    "bytes": 5408238,
+    "sha256": "4d129b55ce031ed72a59e8b84eebb402f679ba33b28848c0ee99ff13502fea75",
+    "retrieved_at_utc": "2026-09-07T13:13:37.995784+00:00"
+  },
+  {
+    "file": "census_households.xlsx",
+    "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Haushalte.xlsx",
+    "bytes": 4669959,
+    "sha256": "ae576a1532c9ee5151bde866dff506dd53cb672882b8605c4a4db8e195dd74cc",
+    "retrieved_at_utc": "2026-09-07T13:13:38.057652+00:00"
+  },
+  {
+    "file": "census_housing.xlsx",
+    "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Gebaeude_Wohnungen.xlsx",
+    "bytes": 21451209,
+    "sha256": "82da8578a4657e20752b436a756ed27846c77f96e3f7333bdea7f4fe29a8b551",
+    "retrieved_at_utc": "2026-09-07T13:13:40.194897+00:00"
+  },
+  {
+    "file": "regional_11111.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=11111",
+    "bytes": 21614,
+    "sha256": "a4bc002fab029a00e36d2ba53683cc65f8e3750b8adb3dc943535f1dd662a9f4",
+    "retrieved_at_utc": "2026-09-07T13:13:40.242234+00:00"
+  },
+  {
+    "file": "regional_13111.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=13111",
+    "bytes": 21614,
+    "sha256": "1cbb93037fb17ef29776f25df737d4ced367e4aae3be29c4ac150ff512f2086f",
+    "retrieved_at_utc": "2026-09-07T13:13:39.310527+00:00"
+  },
+  {
+    "file": "regional_13211.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=13211",
+    "bytes": 21614,
+    "sha256": "ed10ff0d74e8f872e25dd2e9e54c0d9ff4c7b72a4f6d159ccafdeb69bf84f117",
+    "retrieved_at_utc": "2026-09-07T13:13:40.879156+00:00"
+  },
+  {
+    "file": "regional_12711.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=12711",
+    "bytes": 21614,
+    "sha256": "417ad3a1a1f04e9103e0133c2cb813b133a328508552e9246776c3ab05700150",
+    "retrieved_at_utc": "2026-09-07T13:13:41.557937+00:00"
+  },
+  {
+    "file": "regional_73111.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=73111",
+    "bytes": 21614,
+    "sha256": "a3155ce6c7d6a818b19bd8d6c097a78c58d35cebac4a754f4b7a312c32bbff4a",
+    "retrieved_at_utc": "2026-09-07T13:13:41.555643+00:00"
+  },
+  {
+    "file": "regional_82111.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=82111",
+    "bytes": 21614,
+    "sha256": "fc8333ce7995ff9db42320e28a9972f9838e9485324bd3371a22db8e17510cc1",
+    "retrieved_at_utc": "2026-09-07T13:13:42.209797+00:00"
+  },
+  {
+    "file": "lsa_12411.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online?operation=statistic&code=12411",
+    "bytes": 19857,
+    "sha256": "106cae87674b529554fc69d17225f2a876946160f9b17206d172017f08c14d80",
+    "retrieved_at_utc": "2026-09-07T13:13:58.047732+00:00"
+  },
+  {
+    "file": "destatis_12411_catalogue.json",
+    "url": "https://genesis.destatis.de/genesisWS/rest/2020/catalogue/tables?selection=12411*&area=all&pagelength=100&language=de",
+    "error": "curl: (22) The requested URL returned error: 405\n"
+  },
+  {
+    "file": "gv_download_page.html",
+    "url": "https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/Archiv/GVAuszugQ/AuszugGV2QAktuell.html",
+    "bytes": 67449,
+    "sha256": "2d5ea76c2c21ff8f2a4a38132ef1c175e37ef68810f68fa5e1b55cd04a789d56",
+    "retrieved_on": "2026-09-07"
+  },
+  {
+    "file": "gv_2026q2.xlsx",
+    "url": "https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/Archiv/GVAuszugQ/AuszugGV2QAktuell.xlsx?__blob=publicationFile&v=13",
+    "bytes": 1868818,
+    "sha256": "92e51ee097b1fea2f76a1c383c02d01ffa889975647d640b61c39845a1067174",
+    "retrieved_on": "2026-09-07"
+  }
+]

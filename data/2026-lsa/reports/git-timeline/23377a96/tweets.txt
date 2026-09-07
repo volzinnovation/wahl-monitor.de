@@ -1,0 +1,37 @@
+1/19 LSA: Polling beendet. Vollständige Git-Historie bis 07.09.2026, 03:10 MESZ: 123 Daten-Commits, 121 datierte Abrufe, davon 118 am Wahlabend/in der Nacht. Alle Zahlen und Grafiken wurden neu berechnet.
+
+2/19 Letzter Stand: HTML und Gemeinde-CSV 2.661/2.661 Bezirke gemeldet; Landes-CSV 2.660/2.661 (99,96 %). Vollständige Statusmeldungen bedeuten hier noch keine übereinstimmenden Stimmenaggregate. Kein amtliches Endergebnis.
+
+3/19 Zweitstimmen der amtlichen Landes-CSV: AfD 43,82 %, CDU 17,22 %, SPD 9,29 %, GRÜNE 8,93 %, Die Linke 8,55 %, BSW 5,26 %. Auswahl: strikt über 5 %; Nenner sind alle gültigen Zweitstimmen.
+
+4/19 Ab 03:04 MESZ: Gemeindesumme 1.315.315 gültige Zweitstimmen, Landes-CSV 1.313.802. Differenz +1.513, bis 03:10 unverändert. Sie entspricht exakt dem neuen Gemeindezuwachs in Aschersleben.
+
+5/19 Gemeindesumme minus Landes-CSV, Zweitstimmen: CDU +401, AfD +373, SPD +211, BSW +148, Linke +146, GRÜNE +122, übrige +112. Eine Aggregationslücke in den veröffentlichten Dateien; kein Beleg für verlorene Stimmzettel.
+
+6/19 Magdeburg, Halle und Dessau-Roßlau im Vergleich mit den übrigen 215 Gemeinden. Die übrigen Gemeinden werden nach Stimmen gewichtet. Gemeindezahlen enthalten den späteren Aschersleben-Zuwachs; die amtliche Landes-CSV noch nicht.
+
+7/19 Alle 14 Kreise/kreisfreien Städte: dieselbe landesweite Parteiauswahl, lokale Anteile unter 5 % bleiben sichtbar. Überlappende Gebietsebenen werden nicht addiert. Der Salzlandkreis bleibt im höheren CSV-Aggregat bei 193/194 Meldungen.
+
+8/19 Alle 41 Wahlkreise und die Streuung in 218 Gemeinden. Wahlkreise stammen direkt aus dem amtlichen Export; geteilte Gemeinden werden nicht pauschal zugeordnet. Regionale Unterschiede allein belegen keine Unregelmäßigkeit.
+
+9/19 Landes-CSV: Urne 2150/2150, Brief 510/511. Der offene Zähler liegt bei der Briefwahl. Die erfassten Parteianteile unterscheiden sich nach Wahltyp; dies ist keine Prognose.
+
+10/19 Der Parteiverlauf zeigt die Zusammensetzung eingehender Meldungen, keine wechselnden Wählerpräferenzen. Frühe Ergebnisse sind selektiv. Die Kurven zeigen die Wahlnacht; frühere Nullvorlagen bleiben im vollständigen Daten-Audit.
+
+11/19 Bitterfeld-Wolfen / 000028: gemeldet, ab 19:35 wieder nicht gemeldet, ab 22:11 erneut gemeldet. Es bleibt die einzige beobachtete Statusrücknahme. Einzelstimmen dieses Bezirks wurden nicht archiviert.
+
+12/19 Vollständige Historie: 20 Änderungen in 19 Gemeinden bei gleicher Zahl gemeldeter Bezirke; 17 nach vollständiger Meldung. Seit dem Bericht um 00:00 kommen fünf hinzu. Alle Parteien werden im Änderungs-Audit geprüft.
+
+13/19 Bitterfeld-Wolfen, 00:23 MESZ: Erststimmen Linke +50, GRÜNE −28, FREIE WÄHLER −19, AfD −2, CDU −1. Summe unverändert, 31/31 Bezirke gemeldet. Ein späterer Gemeinde-Diff; Bezirk 000028 ist damit nicht als Ursache identifiziert.
+
+14/19 Weitere spätere Änderungen: Harzgerode −21 Wählende, Tangermünde −24. Leuna: Linke −9 und GRÜNE +8 Zweitstimmen, gültige Summe −1. Querfurt: PdF +1, Volt −1 Zweitstimme. Ursachen sind nicht dokumentiert.
+
+15/19 Aken (Elbe) / 000010 erscheint neu: 00:45:41 MESZ noch nicht aufgeführt, um 00:51:10 bereits gemeldet. Das Soll steigt 2.660 → 2.661. Aken 9 → 10, Wahlkreis Zerbst 79 → 80, Anhalt-Bitterfeld 204 → 205. Keine Identität entfernt.
+
+16/19 Prüfung: 575 Quellen per SHA-256 bestätigt; keine Fehler innerhalb der Zeilensummen und keine Abweichung zwischen Export und Quell-CSV. 162 geografische Feldabweichungen betreffen dieselbe Aschersleben-Lücke in drei Ständen.
+
+17/19 HTML und CSV sind nicht immer synchron: 25 von 110 gemeinsamen Abrufen unterscheiden sich beim Meldestand. Zuletzt zeigt HTML keinen offenen Bezirk. Für die Stimmen bleibt der dokumentierte Unterschied zwischen den CSV-Ebenen.
+
+18/19 Grenzen: Für 0 Bezirke liegen Einzelstimmen vor; die Statushistorie beginnt um 19:05. Drei frühere Nullvorlagen und zwei Einrichtungsschritte sind inventarisiert. Änderungen zwischen Abrufen und ausgleichende Korrekturen können unsichtbar bleiben.
+
+19/19 Die Erfassung ist gestoppt; es ist kein weiterer Abruf geplant. Offen bleiben amtliche Erklärungen zur Rücknahme, zu Korrekturen, zum Aken-Eintrag und zur Aggregationslücke. Das Archiv belegt Datenänderungen, nicht deren Ursache oder Wahlmanipulation.

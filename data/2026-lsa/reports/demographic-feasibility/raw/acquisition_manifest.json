@@ -1,0 +1,44 @@
+[
+  {
+    "file": "age_2025.pdf",
+    "url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Bevoelkerung/Berichte/Bevoelkerungsstand/6A119_2025-A.pdf",
+    "bytes": 2511369,
+    "sha256": "09880b88ae86cbab8ced2143383caf1d86ffce4a50970cf5bce75eb3bffc177b",
+    "retrieved_at_utc": "2026-09-07T13:13:06.566602+00:00"
+  },
+  {
+    "file": "population_2025.pdf",
+    "url": "https://statistik.sachsen-anhalt.de/fileadmin/Bibliothek/Landesaemter/StaLa/startseite/Themen/Bevoelkerung/Berichte/Bevoelkerungsstand/6A102_2025-A.pdf",
+    "bytes": 2111028,
+    "sha256": "1c1776f93161a184ff69dde6df30ab5fcf281b82fd31fdba1118f002b76fa6bc",
+    "retrieved_at_utc": "2026-09-07T13:13:06.487370+00:00"
+  },
+  {
+    "file": "census_downloads.html",
+    "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/publikationen-akkordeon-regionaltabellen.html",
+    "bytes": 72653,
+    "sha256": "b3132419eb0c4b12ec2b5179a54ae8b728c181525648687c09f0a8cb09c4e98e",
+    "retrieved_at_utc": "2026-09-07T13:13:06.165681+00:00"
+  },
+  {
+    "file": "gv_isys.html",
+    "url": "https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html",
+    "bytes": 164567,
+    "sha256": "06ccb1bbf98b68c7568f18e0ac1d316380810cf163b32180d8dbeab615452709",
+    "retrieved_at_utc": "2026-09-07T13:13:07.688857+00:00"
+  },
+  {
+    "file": "regional_12411.html",
+    "url": "https://www.regionalstatistik.de/genesis/online?operation=statistic&code=12411",
+    "bytes": 30280,
+    "sha256": "4ea4222c5224140c99d865d3f146fbc704cfcb73b01f6e6392f8c46f7ed77aef",
+    "retrieved_at_utc": "2026-09-07T13:13:19.048388+00:00"
+  },
+  {
+    "file": "lsa_genesis.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online",
+    "bytes": 21600,
+    "sha256": "b8c514ff1a64ee81d02a18375bf1df8035a015a53fe5711abc84465d5f7068d7",
+    "retrieved_at_utc": "2026-09-07T13:13:06.838648+00:00"
+  }
+]

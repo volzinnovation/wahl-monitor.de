@@ -1,0 +1,725 @@
+{
+  "Aken": {
+    "arrival_vector_matches_final_booth": false,
+    "arrival_vs_final_discrepancies": {
+      "party:D1": {
+        "final_booth": 367,
+        "municipal_arrival": 75
+      },
+      "party:D2": {
+        "final_booth": 334,
+        "municipal_arrival": 238
+      },
+      "party:D3": {
+        "final_booth": 164,
+        "municipal_arrival": 36
+      },
+      "party:D4": {
+        "final_booth": 93,
+        "municipal_arrival": 26
+      },
+      "party:D5": {
+        "final_booth": 140,
+        "municipal_arrival": 45
+      },
+      "party:D6": {
+        "final_booth": 31,
+        "municipal_arrival": 12
+      },
+      "party:F1": {
+        "final_booth": 271,
+        "municipal_arrival": 65
+      },
+      "party:F10": {
+        "final_booth": 8,
+        "municipal_arrival": 2
+      },
+      "party:F12": {
+        "final_booth": 8,
+        "municipal_arrival": 4
+      },
+      "party:F15": {
+        "final_booth": 80,
+        "municipal_arrival": 19
+      },
+      "party:F19": {
+        "final_booth": 0,
+        "municipal_arrival": 1
+      },
+      "party:F2": {
+        "final_booth": 318,
+        "municipal_arrival": 228
+      },
+      "party:F20": {
+        "final_booth": 4,
+        "municipal_arrival": 2
+      },
+      "party:F3": {
+        "final_booth": 119,
+        "municipal_arrival": 32
+      },
+      "party:F4": {
+        "final_booth": 141,
+        "municipal_arrival": 34
+      },
+      "party:F5": {
+        "final_booth": 60,
+        "municipal_arrival": 16
+      },
+      "party:F6": {
+        "final_booth": 99,
+        "municipal_arrival": 19
+      },
+      "party:F7": {
+        "final_booth": 15,
+        "municipal_arrival": 5
+      },
+      "party:F9": {
+        "final_booth": 14,
+        "municipal_arrival": 8
+      },
+      "valid_votes_erst": {
+        "final_booth": 1129,
+        "municipal_arrival": 432
+      },
+      "valid_votes_zweit": {
+        "final_booth": 1139,
+        "municipal_arrival": 435
+      },
+      "voters_total": {
+        "final_booth": 1150,
+        "municipal_arrival": 440
+      }
+    },
+    "first_individual_vote_capture": {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "area_rows": 2935,
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "coverage_percent": null,
+      "dynamic_results_used": true,
+      "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+      "overview_minus_csv": null,
+      "overview_reported": 2661,
+      "overview_rows": 2661,
+      "raw_rows": 3483,
+      "reported_precincts": null,
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total_precincts": null,
+      "valid_votes_erst": 1312734,
+      "valid_votes_zweit": 1315315,
+      "voters_total": 1328211,
+      "wahlbezirk_vote_rows": 2661
+    },
+    "historical_individual_vote_diff_available": false,
+    "historical_municipal_arrival": {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 1044,
+          "before": 969,
+          "delta": 75
+        },
+        "party:D2": {
+          "after": 2273,
+          "before": 2035,
+          "delta": 238
+        },
+        "party:D3": {
+          "after": 478,
+          "before": 442,
+          "delta": 36
+        },
+        "party:D4": {
+          "after": 294,
+          "before": 268,
+          "delta": 26
+        },
+        "party:D5": {
+          "after": 416,
+          "before": 371,
+          "delta": 45
+        },
+        "party:D6": {
+          "after": 108,
+          "before": 96,
+          "delta": 12
+        },
+        "party:F1": {
+          "after": 836,
+          "before": 771,
+          "delta": 65
+        },
+        "party:F10": {
+          "after": 25,
+          "before": 23,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 29,
+          "before": 25,
+          "delta": 4
+        },
+        "party:F15": {
+          "after": 262,
+          "before": 243,
+          "delta": 19
+        },
+        "party:F19": {
+          "after": 3,
+          "before": 2,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 2181,
+          "before": 1953,
+          "delta": 228
+        },
+        "party:F20": {
+          "after": 10,
+          "before": 8,
+          "delta": 2
+        },
+        "party:F3": {
+          "after": 372,
+          "before": 340,
+          "delta": 32
+        },
+        "party:F4": {
+          "after": 357,
+          "before": 323,
+          "delta": 34
+        },
+        "party:F5": {
+          "after": 195,
+          "before": 179,
+          "delta": 16
+        },
+        "party:F6": {
+          "after": 247,
+          "before": 228,
+          "delta": 19
+        },
+        "party:F7": {
+          "after": 54,
+          "before": 49,
+          "delta": 5
+        },
+        "party:F9": {
+          "after": 52,
+          "before": 44,
+          "delta": 8
+        },
+        "reported_precincts": {
+          "after": 10,
+          "before": 9,
+          "delta": 1
+        },
+        "total_precincts": {
+          "after": 10,
+          "before": 9,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 4613,
+          "before": 4181,
+          "delta": 432
+        },
+        "valid_votes_zweit": {
+          "after": 4635,
+          "before": 4200,
+          "delta": 435
+        },
+        "voters_total": {
+          "after": 4692,
+          "before": 4252,
+          "delta": 440
+        }
+      },
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "denominator_change|revision_after_complete",
+      "key": "lsa:GEMEINDE:15082005",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Aken (Elbe), Stadt",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "previous_reported": 9,
+      "reported": 10,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00",
+      "total": 10
+    },
+    "row": {
+      "area_key": "lsa:WAHLBEZIRK:15082005:23:000010",
+      "extra": {
+        "eligible_voters": 0,
+        "invalid_votes_erst": 21,
+        "invalid_votes_zweit": 11
+      },
+      "key": "lsa:WAHLBEZIRK:15082005:23:000010:B",
+      "level": "WAHLBEZIRK",
+      "mode": "B",
+      "name": "Aken (Elbe), Stadt / 000010",
+      "number": "000010",
+      "parties": {
+        "D1": 367,
+        "D10": null,
+        "D11": null,
+        "D12": null,
+        "D13": null,
+        "D15": null,
+        "D19": null,
+        "D2": 334,
+        "D20": null,
+        "D21": null,
+        "D3": 164,
+        "D4": 93,
+        "D5": 140,
+        "D6": 31,
+        "D7": null,
+        "D9": null,
+        "F1": 271,
+        "F10": 8,
+        "F11": 1,
+        "F12": 8,
+        "F15": 80,
+        "F19": 0,
+        "F2": 318,
+        "F20": 4,
+        "F3": 119,
+        "F4": 141,
+        "F5": 60,
+        "F6": 99,
+        "F7": 15,
+        "F8": 1,
+        "F9": 14
+      },
+      "party_names": {
+        "D1": "CDU",
+        "D10": "Gartenpartei",
+        "D11": "Die PARTEI",
+        "D12": "TIERSCHUTZALLIANZ",
+        "D13": "HEIMAT",
+        "D15": "BSW",
+        "D19": "PdF",
+        "D2": "AfD",
+        "D20": "Volt",
+        "D21": "EB",
+        "D3": "Die Linke",
+        "D4": "SPD",
+        "D5": "FDP",
+        "D6": "GRÜNE",
+        "D7": "FREIE WÄHLER",
+        "D9": "Tierschutzpartei",
+        "F1": "CDU",
+        "F10": "Gartenpartei",
+        "F11": "Die PARTEI",
+        "F12": "TIERSCHUTZALLIANZ",
+        "F15": "BSW",
+        "F19": "PdF",
+        "F2": "AfD",
+        "F20": "Volt",
+        "F3": "Die Linke",
+        "F4": "SPD",
+        "F5": "FDP",
+        "F6": "GRÜNE",
+        "F7": "FREIE WÄHLER",
+        "F8": "dieBasis",
+        "F9": "Tierschutzpartei"
+      },
+      "reported_precincts": 1,
+      "result_type": null,
+      "source_time_local": " ",
+      "total_precincts": 1,
+      "valid_votes_erst": 1129,
+      "valid_votes_zweit": 1139,
+      "voters_total": 1150
+    }
+  },
+  "Aschersleben": {
+    "arrival_vector_matches_final_booth": true,
+    "arrival_vs_final_discrepancies": {},
+    "first_individual_vote_capture": {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "area_rows": 2935,
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "coverage_percent": null,
+      "dynamic_results_used": true,
+      "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+      "overview_minus_csv": null,
+      "overview_reported": 2661,
+      "overview_rows": 2661,
+      "raw_rows": 3483,
+      "reported_precincts": null,
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total_precincts": null,
+      "valid_votes_erst": 1312734,
+      "valid_votes_zweit": 1315315,
+      "voters_total": 1328211,
+      "wahlbezirk_vote_rows": 2661
+    },
+    "historical_individual_vote_diff_available": false,
+    "historical_municipal_arrival": {
+      "acquired_at_local": "2026-09-07T03:04:09.391314+02:00",
+      "acquired_at_utc": "2026-09-07T01:04:09.391314+00:00",
+      "candidate": "False",
+      "changes": {
+        "party:D1": {
+          "after": 2793,
+          "before": 2378,
+          "delta": 415
+        },
+        "party:D15": {
+          "after": 1749,
+          "before": 1506,
+          "delta": 243
+        },
+        "party:D19": {
+          "after": 179,
+          "before": 155,
+          "delta": 24
+        },
+        "party:D2": {
+          "after": 6852,
+          "before": 6506,
+          "delta": 346
+        },
+        "party:D3": {
+          "after": 1339,
+          "before": 1192,
+          "delta": 147
+        },
+        "party:D4": {
+          "after": 1291,
+          "before": 1073,
+          "delta": 218
+        },
+        "party:D5": {
+          "after": 409,
+          "before": 363,
+          "delta": 46
+        },
+        "party:D6": {
+          "after": 441,
+          "before": 371,
+          "delta": 70
+        },
+        "party:F1": {
+          "after": 2535,
+          "before": 2134,
+          "delta": 401
+        },
+        "party:F10": {
+          "after": 78,
+          "before": 71,
+          "delta": 7
+        },
+        "party:F11": {
+          "after": 32,
+          "before": 30,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 106,
+          "before": 95,
+          "delta": 11
+        },
+        "party:F15": {
+          "after": 1191,
+          "before": 1043,
+          "delta": 148
+        },
+        "party:F19": {
+          "after": 57,
+          "before": 50,
+          "delta": 7
+        },
+        "party:F2": {
+          "after": 7012,
+          "before": 6639,
+          "delta": 373
+        },
+        "party:F20": {
+          "after": 72,
+          "before": 67,
+          "delta": 5
+        },
+        "party:F3": {
+          "after": 1183,
+          "before": 1037,
+          "delta": 146
+        },
+        "party:F4": {
+          "after": 1183,
+          "before": 972,
+          "delta": 211
+        },
+        "party:F5": {
+          "after": 325,
+          "before": 290,
+          "delta": 35
+        },
+        "party:F6": {
+          "after": 931,
+          "before": 809,
+          "delta": 122
+        },
+        "party:F7": {
+          "after": 125,
+          "before": 101,
+          "delta": 24
+        },
+        "party:F8": {
+          "after": 24,
+          "before": 21,
+          "delta": 3
+        },
+        "party:F9": {
+          "after": 206,
+          "before": 188,
+          "delta": 18
+        },
+        "reported_precincts": {
+          "after": 26,
+          "before": 25,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 15053,
+          "before": 13544,
+          "delta": 1509
+        },
+        "valid_votes_zweit": {
+          "after": 15060,
+          "before": 13547,
+          "delta": 1513
+        },
+        "voters_total": {
+          "after": 15219,
+          "before": 13702,
+          "delta": 1517
+        }
+      },
+      "commit": "6ac9b700edc38b17e23c4e85b0f2928530e2a69f",
+      "commit_time": "2026-09-07T01:04:10Z",
+      "event": "reporting_growth",
+      "key": "lsa:GEMEINDE:15089015",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Aschersleben, Stadt",
+      "previous_acquired_at_local": "2026-09-07T02:58:40.357602+02:00",
+      "previous_commit": "65d2b1d09ce51b8d2f8e2f46658804051f529f95",
+      "previous_reported": "25",
+      "reported": "26",
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T01:04:09.391314+00:00",
+      "total": "26"
+    },
+    "row": {
+      "area_key": "lsa:WAHLBEZIRK:15089015:18:000965",
+      "extra": {
+        "eligible_voters": 0,
+        "invalid_votes_erst": 8,
+        "invalid_votes_zweit": 4
+      },
+      "key": "lsa:WAHLBEZIRK:15089015:18:000965:B",
+      "level": "WAHLBEZIRK",
+      "mode": "B",
+      "name": "Aschersleben, Stadt / 000965",
+      "number": "000965",
+      "parties": {
+        "D1": 415,
+        "D10": null,
+        "D11": null,
+        "D12": null,
+        "D13": null,
+        "D15": 243,
+        "D19": 24,
+        "D2": 346,
+        "D20": null,
+        "D21": null,
+        "D3": 147,
+        "D4": 218,
+        "D5": 46,
+        "D6": 70,
+        "D7": null,
+        "D9": null,
+        "F1": 401,
+        "F10": 7,
+        "F11": 2,
+        "F12": 11,
+        "F15": 148,
+        "F19": 7,
+        "F2": 373,
+        "F20": 5,
+        "F3": 146,
+        "F4": 211,
+        "F5": 35,
+        "F6": 122,
+        "F7": 24,
+        "F8": 3,
+        "F9": 18
+      },
+      "party_names": {
+        "D1": "CDU",
+        "D10": "Gartenpartei",
+        "D11": "Die PARTEI",
+        "D12": "TIERSCHUTZALLIANZ",
+        "D13": "HEIMAT",
+        "D15": "BSW",
+        "D19": "PdF",
+        "D2": "AfD",
+        "D20": "Volt",
+        "D21": "EB",
+        "D3": "Die Linke",
+        "D4": "SPD",
+        "D5": "FDP",
+        "D6": "GRÜNE",
+        "D7": "FREIE WÄHLER",
+        "D9": "Tierschutzpartei",
+        "F1": "CDU",
+        "F10": "Gartenpartei",
+        "F11": "Die PARTEI",
+        "F12": "TIERSCHUTZALLIANZ",
+        "F15": "BSW",
+        "F19": "PdF",
+        "F2": "AfD",
+        "F20": "Volt",
+        "F3": "Die Linke",
+        "F4": "SPD",
+        "F5": "FDP",
+        "F6": "GRÜNE",
+        "F7": "FREIE WÄHLER",
+        "F8": "dieBasis",
+        "F9": "Tierschutzpartei"
+      },
+      "reported_precincts": 1,
+      "result_type": null,
+      "source_time_local": " ",
+      "total_precincts": 1,
+      "valid_votes_erst": 1509,
+      "valid_votes_zweit": 1513,
+      "voters_total": 1517
+    }
+  },
+  "Bitterfeld-Wolfen": {
+    "arrival_vector_matches_final_booth": null,
+    "arrival_vs_final_discrepancies": null,
+    "first_individual_vote_capture": {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "area_rows": 2935,
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "coverage_percent": null,
+      "dynamic_results_used": true,
+      "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+      "overview_minus_csv": null,
+      "overview_reported": 2661,
+      "overview_rows": 2661,
+      "raw_rows": 3483,
+      "reported_precincts": null,
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total_precincts": null,
+      "valid_votes_erst": 1312734,
+      "valid_votes_zweit": 1315315,
+      "voters_total": 1328211,
+      "wahlbezirk_vote_rows": 2661
+    },
+    "historical_individual_vote_diff_available": false,
+    "historical_municipal_arrival": null,
+    "row": {
+      "area_key": "lsa:WAHLBEZIRK:15082015:28:000028",
+      "extra": {
+        "eligible_voters": 0,
+        "invalid_votes_erst": 7,
+        "invalid_votes_zweit": 4
+      },
+      "key": "lsa:WAHLBEZIRK:15082015:28:000028:B",
+      "level": "WAHLBEZIRK",
+      "mode": "B",
+      "name": "Bitterfeld-Wolfen, Stadt / 000028",
+      "number": "000028",
+      "parties": {
+        "D1": 325,
+        "D10": null,
+        "D11": null,
+        "D12": null,
+        "D13": null,
+        "D15": null,
+        "D19": null,
+        "D2": 282,
+        "D20": null,
+        "D21": null,
+        "D3": 175,
+        "D4": 107,
+        "D5": 39,
+        "D6": 52,
+        "D7": 41,
+        "D9": null,
+        "F1": 290,
+        "F10": 8,
+        "F11": 0,
+        "F12": 4,
+        "F15": 46,
+        "F19": 0,
+        "F2": 258,
+        "F20": 6,
+        "F3": 129,
+        "F4": 137,
+        "F5": 27,
+        "F6": 87,
+        "F7": 15,
+        "F8": 0,
+        "F9": 17
+      },
+      "party_names": {
+        "D1": "CDU",
+        "D10": "Gartenpartei",
+        "D11": "Die PARTEI",
+        "D12": "TIERSCHUTZALLIANZ",
+        "D13": "HEIMAT",
+        "D15": "BSW",
+        "D19": "PdF",
+        "D2": "AfD",
+        "D20": "Volt",
+        "D21": "EB",
+        "D3": "Die Linke",
+        "D4": "SPD",
+        "D5": "FDP",
+        "D6": "GRÜNE",
+        "D7": "FREIE WÄHLER",
+        "D9": "Tierschutzpartei",
+        "F1": "CDU",
+        "F10": "Gartenpartei",
+        "F11": "Die PARTEI",
+        "F12": "TIERSCHUTZALLIANZ",
+        "F15": "BSW",
+        "F19": "PdF",
+        "F2": "AfD",
+        "F20": "Volt",
+        "F3": "Die Linke",
+        "F4": "SPD",
+        "F5": "FDP",
+        "F6": "GRÜNE",
+        "F7": "FREIE WÄHLER",
+        "F8": "dieBasis",
+        "F9": "Tierschutzpartei"
+      },
+      "reported_precincts": 1,
+      "result_type": null,
+      "source_time_local": " ",
+      "total_precincts": 1,
+      "valid_votes_erst": 1021,
+      "valid_votes_zweit": 1024,
+      "voters_total": 1028
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "election_key": "2026-mv",
+  "prepared_at": "2026-09-07",
+  "status": "pre-election",
+  "election_date": "2026-09-20",
+  "official_download_page": "https://www.laiv-mv.de/Wahlen/Landtagswahlen/2026/Ergebnisse/",
+  "result_levels": [
+    "wahlbezirke",
+    "gemeinden",
+    "wahlkreise",
+    "mandate"
+  ],
+  "template_encoding": "ISO-8859-1",
+  "template_delimiter": ";",
+  "template_preamble_lines": 5,
+  "live_collection_enabled": false,
+  "geometry_status": "source archive configured; GeoJSON conversion pending"
+}

@@ -1,0 +1,136 @@
+Erläuterungen zur Methodik
+
+1 | Allgemeine Informationen
+
+Basis der Auswertung sind die Ergebnisse des Zensus 2022 mit Stichtag 15.05.2022
+
+Die aus der Stichprobenerhebung hochgerechneten Ergebnisse werden auf ein Vielfaches von zehn gerundet ausgewiesen. Die in den Ergebnistabellen dargestellten Summenwerte werden stets auf Basis der nicht gerundeten Ausgangswerte ermittelt, weshalb diese von der Summe der ausgewiesenen Einzelwerte abweichen können.
+
+Bei den hochgerechneten Zensusergebnissen aus der Haushaltsstichprobe werden die Ergebnisse mit zu geringen Besetzungszahlen nicht ausgewiesen, sondern durch einen Schrägstrich ("/") ersetzt.
+Ferner werden die aus der Stichprobenerhebung hochgerechneten Ergebnisse nur für Gemeinden und Gemeindeverbände mit einer Bevölkerungszahl von mindestens 10.000 sowie flächendeckend ab Kreisebene ausgewiesen. 
+In Ländern, in denen nach ZensG 2022 §11 Absatz 1 als Gemeinden im Sinne des Gesetzes auch Verbände von Gemeinden gelten, können auch für verbandsangehörige Gemeinden unabhängig von der Bevölkerungszahl keine hochgerechneten Ergebnisse ausgewiesen werden.
+
+Ohne Personen in Gemeinschaftsunterkünften. Ohne im Ausland tätige Angehörige der Bundeswehr, der Polizeibehörden und des Auswärtigen Dienstes sowie ihre dort ansässigen Familien.
+
+Weitere methodische Informationen und Hinweise finden Sie unter: 
+www.zensus2022.de
+www.zensus2022.de/methodische-hinweise
+
+Eine eigenständige Bearbeitung und Berechnung von statistischen Kennzahlen aus den hochgerechneten gerundeten Ergebnissen führt unter Umständen zu größeren Abweichungen von Originalergebnissen oder Unplausibilitäten.
+
+2 | Zeichenerklärung
+
+/  = Keine Angabe, da Zahlenwert nicht sicher genug oder nichts vorhanden | 
+
+Abweichungen in den Summen durch Runden der Zahlen.
+
+3 | Definitionen
+
+Bildung
+
+Personen in schulischer Ausbildung nach Klassenstufen
+
+Dieses Merkmal gibt an, wie viele Personen bis einschließlich 50 Jahren im Berichtszeitraum (9. bis 15. Mai 2022) Schülerin oder Schüler einer allgemeinbildenden Schule waren und eine bestimmte Klassenstufe besuchten.
+
+Ausprägungen
+Klasse 1 bis 4 (Primarstufe)
+Klasse 5 bis 9 bzw. 10 (Sekundarstufe I)
+ab Klasse 10 bzw. 11 (Sekundarstufe II)
+
+Personen in schulischer Ausbildung nach Schulform
+
+Dieses Merkmal gibt an, wie viele Personen bis einschließlich 50 Jahren im Berichtszeitraum (9. bis 15. Mai 2022) Schülerin oder Schüler einer allgemeinbildenden Schule waren und eine bestimmte Schulform besuchten.
+
+Ausprägungen
+Grundschule
+Förderschule
+Schule mit mehreren Bildungsgängen
+Hauptschule
+Realschule
+Gesamtschule, Waldorfschule
+Gymnasium, Kolleg
+
+Personen ab 15 Jahren nach höchstem schulischen Abschluss
+
+Dieses Merkmal gibt den höchsten allgemeinbildenden Schulabschluss einer Person an, die 15 Jahre oder älter ist.
+
+Ausprägungen
+Noch in schulischer Ausbildung
+Mit allgemeinbildendem Schulabschluss
+Haupt-/Volksschulabschluss
+Abschluss der Polytechnischen Oberschule
+Realschulabschluss, Mittlere Reife oder gleichwertiger Abschluss
+inklusive Schülerinnen und Schüler der gymnasialen Oberstufe
+Fachhochschul- oder Hochschulreife (Abitur)
+Ohne allgemeinbildenden Schulabschluss
+inklusive Abschluss nach höchstens 7 Jahren Schulbesuch (insbesondere Abschluss im Ausland) und Förderschulabschluss
+
+Personen ab 15 Jahren nach höchstem beruflichen Abschluss (ausführlich)
+
+Dieses Merkmal gibt den höchsten beruflichen Abschluss einer Person an, die 15 Jahre oder älter ist.
+
+Ausprägungen
+Mit beruflichem Bildungsabschluss
+Lehre, Berufsausbildung im dualen System
+Zu der Ausprägung „Lehre, Berufsausbildung im dualen System“ gehören auch Personen, 
+die einen Vorbereitungsdienst für den mittleren Dienst in der öffentlichen Verwaltung durchlaufen haben. Außerdem fallen hierunter Personen mit ausschließlich einer Anlernausbildung, die vor 1954 geboren wurden.
+Fachschulabschluss
+einschließlich einer Meister-/Technikerausbildung, Abschluss einer 2- oder 3-jährigen Schule für Gesundheits- und Sozialberufe sowie Abschluss an einer Schule für Erzieherinnen und Erzieher
+Fachschulabschluss in der ehemaligen DDR
+Bachelor
+Master
+Diplom
+einschließlich Lehramtsprüfung, Staatsprüfung, Magister, künstlerischer Abschluss und vergleichbare Abschlüsse sowie Diplom (FH) und Diplom an Berufsakademien
+Promotion
+Ohne beruflichen Bildungsabschluss
+einschließlich Berufsvorbereitungsjahr und berufliches Praktikum, da durch diese keine berufsqualifizierenden Abschlüsse erworben werden
+
+
+Erwerbstätigkeit
+
+Erwerbsstatus
+
+Die Grundlage für dieses Merkmal ist das Labour-Force-Konzept der International Labour Organisation (ILO).
+
+Ausprägungen
+Erwerbspersonen
+Erwerbstätige
+Erwerbstätig im Sinne der ILO-Definition ist jede Person im erwerbsfähigen Alter ab 15 Jahren, 
+die in einem einwöchigen Berichtszeitraum mindestens eine Stunde lang gegen Entgelt oder im Rahmen einer selbstständigen oder mithelfenden Tätigkeit gearbeitet hat. Auch eine Person, die sich in einem formalen Arbeitsverhältnis befindet, dieses im Berichtszeitraum aber nur vorübergehend nicht ausgeübt hat, gilt als erwerbstätig.
+Erwerbslose
+Als erwerbslos im Sinne der durch die EU konkretisierten ILO-Abgrenzung gilt jede Person im erwerbsfähigen Alter ab 15 Jahren, die im Berichtszeitraum nicht erwerbstätig war, aber in den letzten vier Wochen vor der Befragung aktiv nach einer Tätigkeit gesucht hat. Auf den zeitlichen Umfang der gesuchten Tätigkeit kommt es nicht an. Eine neue Arbeit muss innerhalb von zwei Wochen aufgenommen werden können. Die Einschaltung einer Agentur für Arbeit oder eines kommunalen Trägers in die Suchbemühungen ist nicht erforderlich.
+Nichterwerbspersonen
+Personen, die weder erwerbstätig noch erwerbslos sind, gelten als Nichterwerbspersonen.
+
+Erwerbstätige nach höchstem beruflichen Abschluss
+
+Dieses Merkmal weist den höchsten beruflichen Abschluss für erwerbstätige Personen im Alter von 15 Jahren oder älter aus. 
+Zu den Ausprägungen für den höchsten beruflichen Abschluss:
+siehe Definition "Personen ab 15 Jahren nach höchstem beruflichen Abschluss"
+
+Erwerbstätige nach Stellung im Beruf
+
+Dieses Merkmal weist die Stellung im Beruf für erwerbstätige Personen im Alter von 15 Jahren oder älter aus. Bei mehreren Tätigkeiten bezieht sich die Angabe auf die Tätigkeit mit der höchsten Stundenzahl. Hat eine Person die Tätigkeit unterbrochen, zum Beispiel im Rahmen der Elternzeit, bezieht sich die Angabe auf die unterbrochene Tätigkeit.
+
+Ausprägungen
+Angestellte/Arbeiterinnen und Arbeiter
+Angestellte/Arbeiterinnen und Arbeiter sind alle Personen in einem abhängigen Beschäftigungsverhältnis. 
+Hierzu zählen alle Angestellten, Arbeiterinnen und Arbeiter, Auszubildenden, Trainees und Personen im Volontariat oder bezahlten Praktikum, Personen im Bundesfreiwilligendienst oder in einem Freiwilligen Sozialen Jahr, Wehrdienstleistenden sowie Beschäftigten mit Gelegenheitsarbeit.
+Beamtinnen und Beamte
+Beamtinnen und Beamte sind alle Personen in einem öffentlich-rechtlichen Dienstverhältnis des Bundes, der Länder, der Gemeinden oder sonstiger Körperschaften des öffentlichen Rechts (einschließlich der Beamtenanwärterinnen und -anwärter sowie der Beamtinnen und Beamten im Vorbereitungsdienst) sowie Richterinnen und Richter. Unter diese Kategorie zählen auch alle Soldatinnen und Soldaten.
+Selbstständige mit Beschäftigten
+Selbstständige mit Beschäftigten sind alle Personen, die in keinem abhängigen 
+Beschäftigungsverhältnis stehen und abhängig Beschäftigte haben, die ein Arbeitsentgelt erhalten.
+Selbstständige ohne Beschäftigte
+Selbstständige ohne Beschäftigte sind alle Personen, die in keinem abhängigen Beschäftigungsverhältnis stehen und höchstens mithelfende Familienangehörige ohne Entgelt beschäftigen.
+Mithelfende Familienangehörige
+Mithelfende Familienangehörige sind Familienangehörige, die regelmäßig und überwiegend in einem Betrieb, den ein Familienmitglied als Selbstständige oder Selbstständiger leitet, mithelfen, ohne hierfür Lohn oder Gehalt zu erhalten und ohne dass für sie Pflichtbeiträge zur gesetzlichen Rentenversicherung gezahlt werden.
+
+Erwerbstätige nach Beruf (Hauptgruppen ISCO-08)
+
+Dieses Merkmal gibt die tatsächlich ausgeübte Tätigkeit einer erwerbstätigen Person im Alter von 15 Jahren oder älter an. Der Auswertung wird dabei die aktuelle internationale Standardklassifikation der Berufe von 2008 (ISCO-08) zugrunde gelegt. Dargestellt wird hier die Berufshauptgruppe (1-Steller der Klassifikation).
+Die ISCO-08 unterscheidet sich strukturell von der nationalen Berufsklassifikation KldB 2010. Während die KldB 2010 nationale Besonderheiten besser berücksichtigt, ermöglicht die Auswertung nach der ISCO-08 eine internationale Vergleichbarkeit und bietet einen anderen Blickwinkel auf die Struktur der ausgeübten Tätigkeiten. Die Auswertung der Berufshauptgruppe (1-Steller) nach der ISCO-08 zählt darüber hinaus zu den nachzuweisenden EU-Pflichtmerkmalen.
+
+Erwerbstätige nach Wirtschaftszweig und Wirtschafts(unter)bereichen
+
+Der Wirtschaftszweig bezieht sich auf die Art der Produktion oder Tätigkeit des Betriebes oder einer ähnlichen Wirtschaftseinheit, in dem beziehungsweise in der sich der Arbeitsplatz einer erwerbstätigen Person im Alter von 15 Jahren oder älter befindet. Das Merkmal stellt die Wirtschafts(unter)bereiche gemäß Mikrozensus auf Basis der aktuellen Wirtschaftszweigklassifikation von 2008 (WZ 2008) dar. 

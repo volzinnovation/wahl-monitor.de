@@ -1,0 +1,347 @@
+{
+  "capture_type": "one-off; no recurring schedule enabled; no Git commit or publication",
+  "dynamic_html_vote_totals": {
+    "Erststimmen": 1312734,
+    "Zweitstimmen": 1315315
+  },
+  "finished_at_local": "2026-09-07T04:03:35.345090+02:00",
+  "html_csv_party_comparisons": 922,
+  "html_minus_csv_party_differences": [],
+  "land_csv": {
+    "reported_precincts": null,
+    "total_precincts": null,
+    "valid_votes_erst": 1312734,
+    "valid_votes_zweit": 1315315,
+    "voters_total": 1328211
+  },
+  "land_csv_source_time_local": "07.09.2026 ",
+  "land_reporting_count_columns_blank": true,
+  "municipalities_minus_land": {
+    "reported_precincts": null,
+    "total_precincts": null,
+    "valid_votes_erst": 0,
+    "valid_votes_zweit": 0,
+    "voters_total": 0
+  },
+  "municipality_csv_sum": {
+    "reported_precincts": 2661,
+    "total_precincts": 2661,
+    "valid_votes_erst": 1312734,
+    "valid_votes_zweit": 1315315,
+    "voters_total": 1328211
+  },
+  "municipality_land_party_comparison": [
+    {
+      "code": "F1",
+      "land_votes": 226622,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 226622,
+      "party": "CDU"
+    },
+    {
+      "code": "F2",
+      "land_votes": 576037,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 576037,
+      "party": "AfD"
+    },
+    {
+      "code": "F3",
+      "land_votes": 112541,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 112541,
+      "party": "Die Linke"
+    },
+    {
+      "code": "F4",
+      "land_votes": 122303,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 122303,
+      "party": "SPD"
+    },
+    {
+      "code": "F5",
+      "land_votes": 33969,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 33969,
+      "party": "FDP"
+    },
+    {
+      "code": "F6",
+      "land_votes": 117498,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 117498,
+      "party": "GRÜNE"
+    },
+    {
+      "code": "F7",
+      "land_votes": 15430,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 15430,
+      "party": "FREIE WÄHLER"
+    },
+    {
+      "code": "F8",
+      "land_votes": 1899,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 1899,
+      "party": "dieBasis"
+    },
+    {
+      "code": "F9",
+      "land_votes": 14356,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 14356,
+      "party": "Tierschutzpartei"
+    },
+    {
+      "code": "F10",
+      "land_votes": 7482,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 7482,
+      "party": "Gartenpartei"
+    },
+    {
+      "code": "F11",
+      "land_votes": 3487,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 3487,
+      "party": "Die PARTEI"
+    },
+    {
+      "code": "F12",
+      "land_votes": 7283,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 7283,
+      "party": "TIERSCHUTZALLIANZ"
+    },
+    {
+      "code": "F15",
+      "land_votes": 69291,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 69291,
+      "party": "BSW"
+    },
+    {
+      "code": "F19",
+      "land_votes": 2778,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 2778,
+      "party": "PdF"
+    },
+    {
+      "code": "F20",
+      "land_votes": 4339,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 4339,
+      "party": "Volt"
+    },
+    {
+      "code": "D1",
+      "land_votes": 314535,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 314535,
+      "party": "CDU"
+    },
+    {
+      "code": "D2",
+      "land_votes": 581945,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 581945,
+      "party": "AfD"
+    },
+    {
+      "code": "D3",
+      "land_votes": 157905,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 157905,
+      "party": "Die Linke"
+    },
+    {
+      "code": "D4",
+      "land_votes": 102881,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 102881,
+      "party": "SPD"
+    },
+    {
+      "code": "D5",
+      "land_votes": 41113,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 41113,
+      "party": "FDP"
+    },
+    {
+      "code": "D6",
+      "land_votes": 45310,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 45310,
+      "party": "GRÜNE"
+    },
+    {
+      "code": "D7",
+      "land_votes": 14464,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 14464,
+      "party": "FREIE WÄHLER"
+    },
+    {
+      "code": "D9",
+      "land_votes": 1129,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 1129,
+      "party": "Tierschutzpartei"
+    },
+    {
+      "code": "D10",
+      "land_votes": 2937,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 2937,
+      "party": "Gartenpartei"
+    },
+    {
+      "code": "D11",
+      "land_votes": 777,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 777,
+      "party": "Die PARTEI"
+    },
+    {
+      "code": "D12",
+      "land_votes": 999,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 999,
+      "party": "TIERSCHUTZALLIANZ"
+    },
+    {
+      "code": "D13",
+      "land_votes": 325,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 325,
+      "party": "HEIMAT"
+    },
+    {
+      "code": "D15",
+      "land_votes": 41782,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 41782,
+      "party": "BSW"
+    },
+    {
+      "code": "D19",
+      "land_votes": 2680,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 2680,
+      "party": "PdF"
+    },
+    {
+      "code": "D20",
+      "land_votes": 768,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 768,
+      "party": "Volt"
+    },
+    {
+      "code": "D21",
+      "land_votes": 3184,
+      "municipalities_minus_land": 0,
+      "municipality_votes": 3184,
+      "party": "EB"
+    }
+  ],
+  "overview_html": {
+    "content_hash": "3a63c62b0ae7b29bcb69fbd43b8f13a2c89e5423c40a9fbae010adba29dd55e2",
+    "reported_precincts": 2661,
+    "reported_rows": 2661,
+    "rows": 2661,
+    "total_precincts": 2661
+  },
+  "prior_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+  "sources_vs_prior_git_capture": [
+    {
+      "fetched_at_utc": "2026-09-07T02:03:28.717022+00:00",
+      "filename": "overview.html",
+      "sha256": "3a63c62b0ae7b29bcb69fbd43b8f13a2c89e5423c40a9fbae010adba29dd55e2",
+      "unchanged_since_prior": false,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/"
+    },
+    {
+      "fetched_at_utc": "2026-09-07T02:03:29.030849+00:00",
+      "filename": "erg_wkr.html",
+      "sha256": "3c29e3db7176349ed68d818e34040f10d642c94ce880e1848b3b16536f6b5bd4",
+      "unchanged_since_prior": false,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/erg_wkr.html"
+    },
+    {
+      "fetched_at_utc": "2026-09-07T02:03:29.214114+00:00",
+      "filename": "downloads.html",
+      "sha256": "cd61401bbf7543724bace2db67668fc538774082d1d182b8a2ddb77841cb20ae",
+      "unchanged_since_prior": false,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads.html"
+    },
+    {
+      "fetched_at_utc": "2026-09-07T02:03:29.414440+00:00",
+      "filename": "5d732ecfa7a37833.csv",
+      "sha256": "94797677f0a830d319b93b9e73ac1cfd8e740f351b8e1d2af4a9474939e94220",
+      "unchanged_since_prior": true,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Gemeinden_LT_2026.csv"
+    },
+    {
+      "fetched_at_utc": "2026-09-07T02:03:29.644574+00:00",
+      "filename": "9fce65bb2d3229ca.csv",
+      "sha256": "83cc8ec51b5e8d0ba1017934a273f7155597495731bc0713a1d7f52cc125e7ec",
+      "unchanged_since_prior": false,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Land_RKR_WKR_LT_2026.csv"
+    },
+    {
+      "fetched_at_utc": "2026-09-07T02:03:29.944254+00:00",
+      "filename": "fcce58cc72a66f90.csv",
+      "sha256": "f4ec5066531fdb3833b19e5f0a8de70122640fed2d68373e1df652e5905edd6f",
+      "unchanged_since_prior": false,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_WBZ_LT_2026.csv"
+    },
+    {
+      "fetched_at_utc": "2026-09-07T02:03:35.345090+00:00",
+      "filename": "a92018b4fa1f5b90.csv",
+      "sha256": "38156752176771d33f6c43956a3dce45f4c8a3567200faee34ab76aa70ce50fc",
+      "unchanged_since_prior": false,
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Sitzverteilung_LT_2026.csv"
+    }
+  ],
+  "started_at_local": "2026-09-07T04:03:28.717022+02:00",
+  "vote_results_in_sync": true,
+  "wahlbezirk_csv_rows": 2661,
+  "wahlbezirk_csv_sum": {
+    "reported_precincts": 2661,
+    "total_precincts": 2661,
+    "valid_votes_erst": 1312734,
+    "valid_votes_zweit": 1315315,
+    "voters_total": 1328211
+  },
+  "independent_level_sums_to_land": [
+    {
+      "level": "KREIS",
+      "areas": 14,
+      "numeric_comparisons": 34,
+      "differences": {}
+    },
+    {
+      "level": "WAHLKREIS",
+      "areas": 41,
+      "numeric_comparisons": 34,
+      "differences": {}
+    },
+    {
+      "level": "GEMEINDE",
+      "areas": 218,
+      "numeric_comparisons": 34,
+      "differences": {}
+    },
+    {
+      "level": "WAHLBEZIRK",
+      "areas": 2661,
+      "numeric_comparisons": 34,
+      "differences": {}
+    }
+  ]
+}

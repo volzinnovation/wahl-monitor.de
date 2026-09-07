@@ -1,0 +1,455 @@
+{
+  "BW": {
+    "boundary_candidates_examined": [
+      {
+        "capture_utc": "2026-03-08T15:13:35.417124+00:00",
+        "commit": "a767a3bb0ba7b679d0654ef213435ea16ffa22b8",
+        "election": "2026-bw",
+        "eligible_for_endpoint": false,
+        "mode": "DUMMY",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-03-08T17:11:18.751987+00:00",
+        "commit": "11ae93d82a991fbbbc65495143ce5c93f3fe2c91",
+        "election": "2026-bw",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-03-08T17:33:18.038671+00:00",
+        "commit": "ca4ce5c8fa20c6d9194418b33f774bdfb7c14a2d",
+        "election": "2026-bw",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-03-08T17:39:50.457565+00:00",
+        "commit": "58b08f0758c6a5dcfb045aaf09c43e8c350f08b4",
+        "election": "2026-bw",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-03-08T17:50:22.844550+00:00",
+        "commit": "db584e55f2e693c0c6fa68694fcdc5e62920c890",
+        "election": "2026-bw",
+        "eligible_for_endpoint": true,
+        "mode": "LIVE",
+        "valid_second_votes": 144137
+      },
+      {
+        "capture_utc": "2026-03-09T08:48:18.632852+00:00",
+        "commit": "be222a1a7ec6c13b3336a2c3009ca0ad6d37f0f5",
+        "election": "2026-bw",
+        "eligible_for_endpoint": true,
+        "mode": "LIVE",
+        "valid_second_votes": 5374834
+      }
+    ],
+    "first": {
+      "capture_local": "2026-03-08T18:50:22.844550+01:00",
+      "capture_utc": "2026-03-08T17:50:22.844550+00:00",
+      "commit": "db584e55f2e693c0c6fa68694fcdc5e62920c890",
+      "election": "2026-bw",
+      "mode": "LIVE",
+      "parties": {
+        "AfD": 34602,
+        "BSW": 2012,
+        "Bündnis C": 395,
+        "CDU": 47287,
+        "Die Gerechtigkeitspartei": 206,
+        "Die Linke": 4727,
+        "Die PARTEI": 594,
+        "FDP": 5555,
+        "FREIE WÄHLER": 2932,
+        "GRÜNE": 35019,
+        "KlimalisteBW": 61,
+        "PDH": 49,
+        "PDR": 191,
+        "PdF": 93,
+        "SPD": 7248,
+        "Tierschutzpartei": 1254,
+        "Verjüngungsforschung": 96,
+        "Volt": 825,
+        "Werteunion": 295,
+        "dieBasis": 458,
+        "ÖDP": 238
+      },
+      "parties_sha256": "101c712d9f72f7c1b35d82fd1da12944106cbad305dc16b5fb5a221c02bb6e59",
+      "party_sum_matches_valid": true,
+      "party_sum_residual": 0,
+      "quality_note": null,
+      "reported": 674,
+      "snapshot_sha256": "166e407591fa167f6b1c40feefe564e081f65016a1cc88789c95e6c76ec2a1bc",
+      "source_error": null,
+      "source_url": "https://wahlen.statistik-bw.de/ltw26/ltw26-ergebnisse.csv",
+      "total": 11570,
+      "valid_second_votes": 144137,
+      "voters_total": 145174
+    },
+    "last": {
+      "capture_local": "2026-03-09T09:48:18.632852+01:00",
+      "capture_utc": "2026-03-09T08:48:18.632852+00:00",
+      "commit": "be222a1a7ec6c13b3336a2c3009ca0ad6d37f0f5",
+      "election": "2026-bw",
+      "mode": "LIVE",
+      "parties": {
+        "AfD": 1010449,
+        "BSW": 76314,
+        "Bündnis C": 12518,
+        "CDU": 1595844,
+        "Die Gerechtigkeitspartei": 7332,
+        "Die Linke": 237062,
+        "Die PARTEI": 22784,
+        "FDP": 235599,
+        "FREIE WÄHLER": 102687,
+        "GRÜNE": 1623156,
+        "KlimalisteBW": 2790,
+        "PDH": 2357,
+        "PDR": 9009,
+        "PdF": 3670,
+        "SPD": 298278,
+        "Tierschutzpartei": 49802,
+        "Verjüngungsforschung": 3590,
+        "Volt": 45797,
+        "Werteunion": 11304,
+        "dieBasis": 15122,
+        "ÖDP": 9370
+      },
+      "parties_sha256": "93977d19faf751636ffcbefc5383b3ea61624b925949077bd631bdf92f43448f",
+      "party_sum_matches_valid": true,
+      "party_sum_residual": 0,
+      "quality_note": null,
+      "reported": 11570,
+      "snapshot_sha256": "e4b796fa81d2bb534c41b955cf9249dc451b4145f9f8b73b02c76298303e4ce9",
+      "source_error": null,
+      "source_url": "https://wahlen.statistik-bw.de/ltw26/ltw26-ergebnisse.csv",
+      "total": 11570,
+      "valid_second_votes": 5374834,
+      "voters_total": 5406852
+    },
+    "relevant_data_commits": 53
+  },
+  "RLP": {
+    "boundary_candidates_examined": [
+      {
+        "capture_utc": "2026-03-09T17:37:02.062316+00:00",
+        "commit": "541fb492bf28452a7833a1745033b11facc2de99",
+        "election": "2026-rlp",
+        "eligible_for_endpoint": false,
+        "mode": "PREP_ZERO",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-03-21T11:09:28.018729+00:00",
+        "commit": "aca816f7ab5fdf69e978642ab48e3ef63d85e1ee",
+        "election": "2026-rlp",
+        "eligible_for_endpoint": false,
+        "mode": "PREP_ZERO",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-03-21T21:47:30.926097+00:00",
+        "commit": "451f51bdaf01f16fbcd87688e49c6b466dc3b4a5",
+        "election": "2026-rlp",
+        "eligible_for_endpoint": false,
+        "mode": "PREP_ZERO",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-03-22T17:24:57.335185+00:00",
+        "commit": "1ebcbdc69ce67fe94e68a9fbf9332af6816947d5",
+        "election": "2026-rlp",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE_JSON_23DEGREES",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-03-22T17:45:00.909895+00:00",
+        "commit": "7f7b5acd2a9e5e465d397c32b385b065377847ef",
+        "election": "2026-rlp",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE_JSON_23DEGREES",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-03-22T17:46:40.428383+00:00",
+        "commit": "1d4eec2ae3fdef8a1ab0741e7d01d510c0bdc4a7",
+        "election": "2026-rlp",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE_JSON_23DEGREES",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-03-22T17:48:30.006654+00:00",
+        "commit": "6409c3bbb4b090c385169efd2643f939d441a26e",
+        "election": "2026-rlp",
+        "eligible_for_endpoint": true,
+        "mode": "LIVE_JSON_23DEGREES",
+        "valid_second_votes": 90362
+      },
+      {
+        "capture_utc": "2026-04-02T16:02:05.519594+00:00",
+        "commit": "79aa4e2dd31840608256ed40903ae777e38528fc",
+        "election": "2026-rlp",
+        "eligible_for_endpoint": false,
+        "mode": "PREP_ZERO",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-03-23T07:58:30.227694+00:00",
+        "commit": "981ade8664de6a1a58c484594d56eda7414eb9c6",
+        "election": "2026-rlp",
+        "eligible_for_endpoint": true,
+        "mode": "LIVE_JSON_23DEGREES",
+        "valid_second_votes": 2028183
+      }
+    ],
+    "first": {
+      "capture_local": "2026-03-22T18:48:30.006654+01:00",
+      "capture_utc": "2026-03-22T17:48:30.006654+00:00",
+      "commit": "6409c3bbb4b090c385169efd2643f939d441a26e",
+      "election": "2026-rlp",
+      "mode": "LIVE_JSON_23DEGREES",
+      "parties": {
+        "AfD": 21133,
+        "BSW": 1653,
+        "Basisdemokratie": 0,
+        "CDU": 27736,
+        "Die Linke": 3426,
+        "Die PARTEI": 0,
+        "Dr. Moritz": 0,
+        "FDP": 1688,
+        "FREIE WÄHLER": 0,
+        "GRÜNE": 5265,
+        "Klimaliste": 0,
+        "PDH": 89,
+        "PIRATEN": 0,
+        "SIGGI WÄHLEN": 0,
+        "SPD": 22004,
+        "Sonstige 2021": 0,
+        "Tierschutzpartei": 1528,
+        "Volt": 769,
+        "ÖDP": 419
+      },
+      "parties_sha256": "057f2ac25ff4062b6bf10c703ca5adde22860f3f981e2ded756143eb89fcef54",
+      "party_sum_matches_valid": false,
+      "party_sum_residual": 4652,
+      "quality_note": "Known early parser defect: FREIE WÄHLER classified as voter total. Residual equals misassigned voter field; selected party votes and valid denominator are retained unchanged. Fixed later in commit 80b01c01.",
+      "reported": 534,
+      "snapshot_sha256": "a689704e68a213faff55581483248d4e296c5d0c6a536a9d011eebcc5cc371a8",
+      "source_error": "Official CSV URL did not return CSV content",
+      "source_url": "https://rlp-ltw26.wahlen.23degrees.eu/wk/0000000000000/overview",
+      "total": 4698,
+      "valid_second_votes": 90362,
+      "voters_total": 4652
+    },
+    "last": {
+      "capture_local": "2026-03-23T08:58:30.227694+01:00",
+      "capture_utc": "2026-03-23T07:58:30.227694+00:00",
+      "commit": "981ade8664de6a1a58c484594d56eda7414eb9c6",
+      "election": "2026-rlp",
+      "mode": "LIVE_JSON_23DEGREES",
+      "parties": {
+        "AfD": 394803,
+        "BSW": 37770,
+        "Basisdemokratie": 0,
+        "CDU": 627909,
+        "Die Linke": 88967,
+        "Die PARTEI": 0,
+        "Dr. Moritz": 0,
+        "FDP": 42083,
+        "FREIE WÄHLER": 85081,
+        "GRÜNE": 160067,
+        "Klimaliste": 0,
+        "PDH": 1815,
+        "PIRATEN": 0,
+        "SIGGI WÄHLEN": 0,
+        "SPD": 525680,
+        "Sonstige 2021": 0,
+        "Tierschutzpartei": 32731,
+        "Volt": 22089,
+        "ÖDP": 9188
+      },
+      "parties_sha256": "51bd1c047b23e85de7d9a3f5a84c4c8050126377c10bbbdccc030a58009efcc8",
+      "party_sum_matches_valid": true,
+      "party_sum_residual": 0,
+      "quality_note": null,
+      "reported": 4692,
+      "snapshot_sha256": "feba62152ce8855cc971a22327eec4e657d7a25a9bdddf55e3c12cc072e5c92c",
+      "source_error": "Official CSV URL did not return CSV content",
+      "source_url": "https://rlp-ltw26.wahlen.23degrees.eu/wk/0000000000000/overview",
+      "total": 4692,
+      "valid_second_votes": 2028183,
+      "voters_total": 2047098
+    },
+    "relevant_data_commits": 119
+  },
+  "SA": {
+    "boundary_candidates_examined": [
+      {
+        "capture_utc": null,
+        "commit": "981ade8664de6a1a58c484594d56eda7414eb9c6",
+        "election": "2026-lsa",
+        "eligible_for_endpoint": false,
+        "mode": null,
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": null,
+        "commit": "0ed7fbfc3e0068987b76e0f4aeac5369a21177aa",
+        "election": "2026-lsa",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE_PRESENTATION_CONFIGURED",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-08-20T10:54:58.222512+00:00",
+        "commit": "355c37f89c5aa7310907c2922bc2607388fafd2c",
+        "election": "2026-lsa",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE_CSV_DOWNLOAD",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-09-06T10:20:14.222877+00:00",
+        "commit": "acfbf5e832d70c088309e2e01cf3a469a6613176",
+        "election": "2026-lsa",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE_CSV_DOWNLOAD",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-09-06T10:34:59.365473+00:00",
+        "commit": "d4f188f59d08ad034c9acc3935e0eeb5d7a25b93",
+        "election": "2026-lsa",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE_CSV_DOWNLOAD",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-09-06T16:05:42.132776+00:00",
+        "commit": "2ef63b72a9e9398349c2c6c610abcda9fffe532e",
+        "election": "2026-lsa",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE_CSV_DOWNLOAD",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-09-06T16:13:39.955412+00:00",
+        "commit": "053a4939f9d5b219a4e3d64b638b53c21a808933",
+        "election": "2026-lsa",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE_CSV_DOWNLOAD",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-09-06T16:26:10.355645+00:00",
+        "commit": "80f3f58f23b32a844025cfe3b74f460f82133bae",
+        "election": "2026-lsa",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE_CSV_DOWNLOAD",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-09-06T16:26:36.247903+00:00",
+        "commit": "7873490a99fa2c6e39b9618a6a4f218016e3b561",
+        "election": "2026-lsa",
+        "eligible_for_endpoint": false,
+        "mode": "LIVE_CSV_DOWNLOAD",
+        "valid_second_votes": 0
+      },
+      {
+        "capture_utc": "2026-09-06T16:39:34.212928+00:00",
+        "commit": "090c55727349adcf25c243dee770737bef332023",
+        "election": "2026-lsa",
+        "eligible_for_endpoint": true,
+        "mode": "LIVE_CSV_DOWNLOAD",
+        "valid_second_votes": 1174
+      },
+      {
+        "capture_utc": "2026-09-07T02:06:37.855848+00:00",
+        "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+        "election": "2026-lsa",
+        "eligible_for_endpoint": true,
+        "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+        "valid_second_votes": 1315315
+      }
+    ],
+    "first": {
+      "capture_local": "2026-09-06T18:39:34.212928+02:00",
+      "capture_utc": "2026-09-06T16:39:34.212928+00:00",
+      "commit": "090c55727349adcf25c243dee770737bef332023",
+      "election": "2026-lsa",
+      "mode": "LIVE_CSV_DOWNLOAD",
+      "parties": {
+        "AfD": 703,
+        "BSW": 53,
+        "CDU": 157,
+        "Die Linke": 86,
+        "Die PARTEI": 2,
+        "FDP": 24,
+        "FREIE WÄHLER": 14,
+        "GRÜNE": 53,
+        "Gartenpartei": 3,
+        "PdF": 1,
+        "SPD": 64,
+        "TIERSCHUTZALLIANZ": 2,
+        "Tierschutzpartei": 8,
+        "Volt": 3,
+        "dieBasis": 1
+      },
+      "parties_sha256": "45429ca9f65b6f1442e2765232fe19fbba5f5e8582b41f6d8a081c64561c1410",
+      "party_sum_matches_valid": true,
+      "party_sum_residual": 0,
+      "quality_note": null,
+      "reported": 12,
+      "snapshot_sha256": "a0431a423c6087ffc3aa641020ddca6dba9eedc9ef1852eb47112a2891d6765d",
+      "source_error": null,
+      "source_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Gemeinden_LT_2026.csv;https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Land_RKR_WKR_LT_2026.csv",
+      "total": 2660,
+      "valid_second_votes": 1174,
+      "voters_total": 1182
+    },
+    "last": {
+      "capture_local": "2026-09-07T04:06:37.855848+02:00",
+      "capture_utc": "2026-09-07T02:06:37.855848+00:00",
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "election": "2026-lsa",
+      "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+      "parties": {
+        "AfD": 576037,
+        "BSW": 69291,
+        "CDU": 226622,
+        "Die Linke": 112541,
+        "Die PARTEI": 3487,
+        "FDP": 33969,
+        "FREIE WÄHLER": 15430,
+        "GRÜNE": 117498,
+        "Gartenpartei": 7482,
+        "PdF": 2778,
+        "SPD": 122303,
+        "TIERSCHUTZALLIANZ": 7283,
+        "Tierschutzpartei": 14356,
+        "Volt": 4339,
+        "dieBasis": 1899
+      },
+      "parties_sha256": "210bb0c6306d558147ec52b67eef99ab14c100a58032f9e2f8dd49dc70376cd9",
+      "party_sum_matches_valid": true,
+      "party_sum_residual": 0,
+      "quality_note": null,
+      "reported": null,
+      "snapshot_sha256": "156f878a5bd2453b66b4c4e82928aa7ce2cda74d486e2400dcd4df532ba656d0",
+      "source_error": null,
+      "source_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/;https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/erg_wkr.html;https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Gemeinden_LT_2026.csv;https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_Land_RKR_WKR_LT_2026.csv;https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_WBZ_LT_2026.csv",
+      "total": null,
+      "valid_second_votes": 1315315,
+      "voters_total": 1328211
+    },
+    "relevant_data_commits": 124
+  }
+}

@@ -1,0 +1,19 @@
+1/10 Vom ersten positiven zum letzten Git-Stand sinkt der AfD-Anteil relativ: BW −21,7 %, RLP −16,8 %, SA −26,9 %. Keine Prozentpunkte. Die frühen Stichproben unterscheiden sich; der dokumentierte RLP-Parserfehler betrifft keine gezeigte Partei.
+
+2/10 152 Teilstände zeigen mehr Wählende als veröffentlichte Wahlberechtigte: 17 überlappende Gebiete, kein vollständiger Stand. Beispiel Balgstädt: Briefwahl trifft auf einen unvollständigen Urnen-Nenner. Der Quotient ist dann keine belastbare Beteiligungsquote.
+
+3/10 Die robuste MAD-Prüfung liefert 118 Merkmals-Hinweise in 106 Gebieten, davon 91 zu GRÜNE-Anteilen. Alle 24.171 prüfbaren MAD-Werte sind reproduziert. Die Vergleichsgruppen berücksichtigen keine Ortsstruktur; die Hinweise sind keine nachgewiesenen Wahlfehler.
+
+4/10 Lauras Wahlforensik und unser Archiv stimmen in 135.837 Zahlen überein. Alle 86 externen Revisionsfelder passen exakt zu Git-Übergängen. Unsere 20 Gemeinderevisionen zählen andere Einheiten; die Zahlen widersprechen sich nicht.
+
+5/10 Die vorläufige Landes-CSV entfernt Ist/Soll-Meldezähler. Das ist ein Schemawechsel, kein Rückgang auf 0/0. HTML und Gemeinde-CSV zeigen 2.661/2.661; der neue Einzelbezirk-Export enthält genau dieselben 2.661 Identitäten.
+
+6/10 Aken 000010 wird zwischen 00:45:41 und 00:51:10 MESZ neu sichtbar; das Soll steigt von 2.660 auf 2.661. Die damaligen +435 Zweitstimmen der Gemeinde sind nicht die finalen 1.139 dieses Bezirks. Seine frühere Stimmenzuordnung fehlt.
+
+7/10 20 Änderungen bei gleicher Meldezahl in 19 Gemeinden, davon 17 nach Vollmeldung. Fünf nach Mitternacht: Bitterfeld-Wolfen, Harzgerode, Tangermünde, Leuna und Querfurt. Änderungen sind belegt; ihre Ursachen erklärt das Archiv nicht.
+
+8/10 Bitterfeld-Wolfen 000028: einzige beobachtete Statusrücknahme, ab 19:35 nicht gemeldet, ab 22:11 wieder gemeldet. Der späte Einzelstand enthält 1.024 Zweitstimmen. Der Parteidiff 19:35/22:11 ist nur für die Gemeinde verfügbar, nicht für diesen Bezirk.
+
+9/10 Die Aschersleben-Lücke von 1.513 Zweitstimmen besteht in drei Abrufen 03:04–03:10 und ist um 04:06 geschlossen. Alle Parteiwerte passen zum jetzt einzeln belegten Briefwahlbezirk 000965. Der genaue Zeitpunkt des Abgleichs zwischen den Abrufen bleibt offen.
+
+10/10 Gesamtbefund: Alle 2.661 Wahlbezirke ergeben exakt die Landes-, Kreis-, Wahlkreis- und Gemeindesummen: 1.315.315 gültige Zweitstimmen. Keine finalen Rechenabweichungen. Das erklärt historische Änderungen nicht und ist keine amtliche Endfeststellung.

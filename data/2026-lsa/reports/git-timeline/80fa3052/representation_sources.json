@@ -1,0 +1,27 @@
+{
+  "eligible": 1706851,
+  "git_ref": "80fa3052044a45af29f4f0b2867957d8a3b1df35",
+  "not_represented_valid_votes": 91023,
+  "note": "Population is dated 31 December 2025; eligible/votes are election results dated 6/7 September 2026. Their difference is an approximate contextual bridge, not a measured election-day count of ineligible people. Representation here means votes for parties with seats in the published preliminary seat CSV.",
+  "population_date": "2025-12-31",
+  "population_file": "context_sources/population_2025.html",
+  "population_sha256": "c5605f163ee828d077c22070b7d1ecadb4ed7ef95b80e5e5194e99419bb2ba1d",
+  "population_total": 2120252,
+  "population_url": "https://statistik.sachsen-anhalt.de/news/news-details/212-mio-menschen-lebten-am-31122025-in-sachsen-anhalt",
+  "represented_share_eligible": 71.72811217850885,
+  "represented_share_population": 57.74275887960488,
+  "represented_share_valid": 93.07975656021561,
+  "represented_votes": 1224292,
+  "seat_source": {
+    "byte_count": 250,
+    "content_hash": "38156752176771d33f6c43956a3dce45f4c8a3567200faee34ab76aa70ce50fc",
+    "error_message": null,
+    "fetched_at_utc": "2026-09-07T02:06:37.180464+00:00",
+    "filename": "a92018b4fa1f5b90.csv",
+    "source": "statla",
+    "status_code": 200,
+    "url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Sitzverteilung_LT_2026.csv"
+  },
+  "valid_second_votes": 1315315,
+  "voters": 1328211
+}

@@ -1,0 +1,1464 @@
+[
+  {
+    "after": 677,
+    "before": 678,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "034045f3d0f71c47aebf3daea47f3d33b136de5c",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:00:20.311232+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:01:36.665801+00:00",
+    "external_row": "WKR:009:B",
+    "field": "Erststimmen: Die Linke",
+    "mapped_field": "party:D3",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 192,
+    "before": 193,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "034045f3d0f71c47aebf3daea47f3d33b136de5c",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:00:20.311232+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:01:36.665801+00:00",
+    "external_row": "WKR:009:B",
+    "field": "Erststimmen: FDP",
+    "mapped_field": "party:D5",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 76,
+    "before": 77,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "034045f3d0f71c47aebf3daea47f3d33b136de5c",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:00:20.311232+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:01:37.063997+00:00",
+    "external_row": "GEM:15083245:B",
+    "field": "Erststimmen: Die Linke",
+    "mapped_field": "party:D3",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 11,
+    "before": 12,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "034045f3d0f71c47aebf3daea47f3d33b136de5c",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:00:20.311232+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:01:37.063997+00:00",
+    "external_row": "GEM:15083245:B",
+    "field": "Erststimmen: FDP",
+    "mapped_field": "party:D5",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 239,
+    "before": 240,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "034045f3d0f71c47aebf3daea47f3d33b136de5c",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:00:20.311232+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:01:37.063997+00:00",
+    "external_row": "GEM:15083245:TOTAL",
+    "field": "Erststimmen: Die Linke",
+    "mapped_field": "party:D3",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 57,
+    "before": 58,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "034045f3d0f71c47aebf3daea47f3d33b136de5c",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:00:20.311232+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:01:37.063997+00:00",
+    "external_row": "GEM:15083245:TOTAL",
+    "field": "Erststimmen: FDP",
+    "mapped_field": "party:D5",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 95128,
+    "before": 95129,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:46.804664+00:00",
+    "external_row": "KRS:15085:U",
+    "field": "Wähler",
+    "mapped_field": "voters_total",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 93897,
+    "before": 93898,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:46.804664+00:00",
+    "external_row": "KRS:15085:U",
+    "field": "Gültige Erststimmen",
+    "mapped_field": "valid_votes_erst",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 93969,
+    "before": 93970,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:46.804664+00:00",
+    "external_row": "KRS:15085:U",
+    "field": "Gültige Zweitstimmen",
+    "mapped_field": "valid_votes_zweit",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 47303,
+    "before": 47304,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:46.804664+00:00",
+    "external_row": "KRS:15085:U",
+    "field": "Erststimmen: AfD",
+    "mapped_field": "party:D2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 47765,
+    "before": 47766,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:46.804664+00:00",
+    "external_row": "KRS:15085:U",
+    "field": "Zweitstimmen: AfD",
+    "mapped_field": "party:F2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 20699,
+    "before": 20700,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:46.804664+00:00",
+    "external_row": "WKR:014:U",
+    "field": "Wähler",
+    "mapped_field": "voters_total",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 20447,
+    "before": 20448,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:46.804664+00:00",
+    "external_row": "WKR:014:U",
+    "field": "Gültige Erststimmen",
+    "mapped_field": "valid_votes_erst",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 20443,
+    "before": 20444,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:46.804664+00:00",
+    "external_row": "WKR:014:U",
+    "field": "Gültige Zweitstimmen",
+    "mapped_field": "valid_votes_zweit",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 10771,
+    "before": 10772,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:46.804664+00:00",
+    "external_row": "WKR:014:U",
+    "field": "Erststimmen: AfD",
+    "mapped_field": "party:D2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 10716,
+    "before": 10717,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:46.804664+00:00",
+    "external_row": "WKR:014:U",
+    "field": "Zweitstimmen: AfD",
+    "mapped_field": "party:F2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 3342,
+    "before": 3343,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:47.199527+00:00",
+    "external_row": "GEM:15085185:U",
+    "field": "Wähler",
+    "mapped_field": "voters_total",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 3303,
+    "before": 3304,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:47.199527+00:00",
+    "external_row": "GEM:15085185:U",
+    "field": "Gültige Erststimmen",
+    "mapped_field": "valid_votes_erst",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 3306,
+    "before": 3307,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:47.199527+00:00",
+    "external_row": "GEM:15085185:U",
+    "field": "Gültige Zweitstimmen",
+    "mapped_field": "valid_votes_zweit",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 1723,
+    "before": 1724,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:47.199527+00:00",
+    "external_row": "GEM:15085185:U",
+    "field": "Erststimmen: AfD",
+    "mapped_field": "party:D2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 1755,
+    "before": 1756,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "f3399322b2dbf01a95f3341a2a31760f34541f15",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:12:41.947578+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:16:47.199527+00:00",
+    "external_row": "GEM:15085185:U",
+    "field": "Zweitstimmen: AfD",
+    "mapped_field": "party:F2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 193804,
+    "before": 193805,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "LAN:15:U",
+    "field": "Erststimmen: CDU",
+    "mapped_field": "party:D1",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 491449,
+    "before": 491451,
+    "delta": -2,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "LAN:15:U",
+    "field": "Erststimmen: AfD",
+    "mapped_field": "party:D2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 26552,
+    "before": 26580,
+    "delta": -28,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "LAN:15:U",
+    "field": "Erststimmen: GRÜNE",
+    "mapped_field": "party:D6",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 9675,
+    "before": 9694,
+    "delta": -19,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "LAN:15:U",
+    "field": "Erststimmen: FREIE WÄHLER",
+    "mapped_field": "party:D7",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 301867,
+    "before": 301868,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "LAN:15:TOTAL",
+    "field": "Erststimmen: CDU",
+    "mapped_field": "party:D1",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 569239,
+    "before": 569241,
+    "delta": -2,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "LAN:15:TOTAL",
+    "field": "Erststimmen: AfD",
+    "mapped_field": "party:D2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 43660,
+    "before": 43688,
+    "delta": -28,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "LAN:15:TOTAL",
+    "field": "Erststimmen: GRÜNE",
+    "mapped_field": "party:D6",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 14223,
+    "before": 14242,
+    "delta": -19,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "LAN:15:TOTAL",
+    "field": "Erststimmen: FREIE WÄHLER",
+    "mapped_field": "party:D7",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 14362,
+    "before": 14363,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "KRS:15082:U",
+    "field": "Erststimmen: CDU",
+    "mapped_field": "party:D1",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 41129,
+    "before": 41131,
+    "delta": -2,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "KRS:15082:U",
+    "field": "Erststimmen: AfD",
+    "mapped_field": "party:D2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 1712,
+    "before": 1740,
+    "delta": -28,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "KRS:15082:U",
+    "field": "Erststimmen: GRÜNE",
+    "mapped_field": "party:D6",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 1236,
+    "before": 1255,
+    "delta": -19,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "KRS:15082:U",
+    "field": "Erststimmen: FREIE WÄHLER",
+    "mapped_field": "party:D7",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 20976,
+    "before": 20977,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "KRS:15082:TOTAL",
+    "field": "Erststimmen: CDU",
+    "mapped_field": "party:D1",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 47122,
+    "before": 47124,
+    "delta": -2,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "KRS:15082:TOTAL",
+    "field": "Erststimmen: AfD",
+    "mapped_field": "party:D2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 2638,
+    "before": 2666,
+    "delta": -28,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "KRS:15082:TOTAL",
+    "field": "Erststimmen: GRÜNE",
+    "mapped_field": "party:D6",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 1932,
+    "before": 1951,
+    "delta": -19,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "KRS:15082:TOTAL",
+    "field": "Erststimmen: FREIE WÄHLER",
+    "mapped_field": "party:D7",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 4506,
+    "before": 4507,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "WKR:028:U",
+    "field": "Erststimmen: CDU",
+    "mapped_field": "party:D1",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 15718,
+    "before": 15720,
+    "delta": -2,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "WKR:028:U",
+    "field": "Erststimmen: AfD",
+    "mapped_field": "party:D2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 717,
+    "before": 745,
+    "delta": -28,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "WKR:028:U",
+    "field": "Erststimmen: GRÜNE",
+    "mapped_field": "party:D6",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 1236,
+    "before": 1255,
+    "delta": -19,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "WKR:028:U",
+    "field": "Erststimmen: FREIE WÄHLER",
+    "mapped_field": "party:D7",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 7746,
+    "before": 7747,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "WKR:028:TOTAL",
+    "field": "Erststimmen: CDU",
+    "mapped_field": "party:D1",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 18803,
+    "before": 18805,
+    "delta": -2,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "WKR:028:TOTAL",
+    "field": "Erststimmen: AfD",
+    "mapped_field": "party:D2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 1257,
+    "before": 1285,
+    "delta": -28,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "WKR:028:TOTAL",
+    "field": "Erststimmen: GRÜNE",
+    "mapped_field": "party:D6",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 1932,
+    "before": 1951,
+    "delta": -19,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:26.898229+00:00",
+    "external_row": "WKR:028:TOTAL",
+    "field": "Erststimmen: FREIE WÄHLER",
+    "mapped_field": "party:D7",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 2458,
+    "before": 2459,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:27.345092+00:00",
+    "external_row": "GEM:15082015:U",
+    "field": "Erststimmen: CDU",
+    "mapped_field": "party:D1",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 9249,
+    "before": 9251,
+    "delta": -2,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:27.345092+00:00",
+    "external_row": "GEM:15082015:U",
+    "field": "Erststimmen: AfD",
+    "mapped_field": "party:D2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 395,
+    "before": 423,
+    "delta": -28,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:27.345092+00:00",
+    "external_row": "GEM:15082015:U",
+    "field": "Erststimmen: GRÜNE",
+    "mapped_field": "party:D6",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 596,
+    "before": 615,
+    "delta": -19,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:27.345092+00:00",
+    "external_row": "GEM:15082015:U",
+    "field": "Erststimmen: FREIE WÄHLER",
+    "mapped_field": "party:D7",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 4314,
+    "before": 4315,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:27.345092+00:00",
+    "external_row": "GEM:15082015:TOTAL",
+    "field": "Erststimmen: CDU",
+    "mapped_field": "party:D1",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 11013,
+    "before": 11015,
+    "delta": -2,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:27.345092+00:00",
+    "external_row": "GEM:15082015:TOTAL",
+    "field": "Erststimmen: AfD",
+    "mapped_field": "party:D2",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 704,
+    "before": 732,
+    "delta": -28,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:27.345092+00:00",
+    "external_row": "GEM:15082015:TOTAL",
+    "field": "Erststimmen: GRÜNE",
+    "mapped_field": "party:D6",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 926,
+    "before": 945,
+    "delta": -19,
+    "exact_git_matches": [
+      {
+        "commit": "305df69296afee6657b419df62f861403fd4370e",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:23:44.184698+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:24:27.345092+00:00",
+    "external_row": "GEM:15082015:TOTAL",
+    "field": "Erststimmen: FREIE WÄHLER",
+    "mapped_field": "party:D7",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 1157,
+    "before": 1178,
+    "delta": -21,
+    "exact_git_matches": [
+      {
+        "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:45:41.299801+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:47:27.344803+00:00",
+    "external_row": "GEM:15085145:B",
+    "field": "Wähler",
+    "mapped_field": "voters_total",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 7,
+    "before": 28,
+    "delta": -21,
+    "exact_git_matches": [
+      {
+        "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:45:41.299801+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:47:27.344803+00:00",
+    "external_row": "GEM:15085145:B",
+    "field": "Ungültige Erststimmen",
+    "mapped_field": "invalid_votes_erst",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 8,
+    "before": 29,
+    "delta": -21,
+    "exact_git_matches": [
+      {
+        "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:45:41.299801+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:47:27.344803+00:00",
+    "external_row": "GEM:15085145:B",
+    "field": "Ungültige Zweitstimmen",
+    "mapped_field": "invalid_votes_zweit",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 4820,
+    "before": 4841,
+    "delta": -21,
+    "exact_git_matches": [
+      {
+        "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:45:41.299801+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:47:27.344803+00:00",
+    "external_row": "GEM:15085145:TOTAL",
+    "field": "Wähler",
+    "mapped_field": "voters_total",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 49,
+    "before": 70,
+    "delta": -21,
+    "exact_git_matches": [
+      {
+        "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:45:41.299801+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:47:27.344803+00:00",
+    "external_row": "GEM:15085145:TOTAL",
+    "field": "Ungültige Erststimmen",
+    "mapped_field": "invalid_votes_erst",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 49,
+    "before": 70,
+    "delta": -21,
+    "exact_git_matches": [
+      {
+        "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T00:45:41.299801+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:47:27.344803+00:00",
+    "external_row": "GEM:15085145:TOTAL",
+    "field": "Ungültige Zweitstimmen",
+    "mapped_field": "invalid_votes_zweit",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 15893,
+    "before": 15917,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.005233+00:00",
+    "external_row": "KRS:15090:B",
+    "field": "Wähler",
+    "mapped_field": "voters_total",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 113,
+    "before": 137,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.005233+00:00",
+    "external_row": "KRS:15090:B",
+    "field": "Ungültige Erststimmen",
+    "mapped_field": "invalid_votes_erst",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 65,
+    "before": 89,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.005233+00:00",
+    "external_row": "KRS:15090:B",
+    "field": "Ungültige Zweitstimmen",
+    "mapped_field": "invalid_votes_zweit",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 68250,
+    "before": 68274,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.005233+00:00",
+    "external_row": "KRS:15090:TOTAL",
+    "field": "Wähler",
+    "mapped_field": "voters_total",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 803,
+    "before": 827,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.005233+00:00",
+    "external_row": "KRS:15090:TOTAL",
+    "field": "Ungültige Erststimmen",
+    "mapped_field": "invalid_votes_erst",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 711,
+    "before": 735,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.005233+00:00",
+    "external_row": "KRS:15090:TOTAL",
+    "field": "Ungültige Zweitstimmen",
+    "mapped_field": "invalid_votes_zweit",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 1633,
+    "before": 1657,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.512700+00:00",
+    "external_row": "GEM:15090550:B",
+    "field": "Wähler",
+    "mapped_field": "voters_total",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 13,
+    "before": 37,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.512700+00:00",
+    "external_row": "GEM:15090550:B",
+    "field": "Ungültige Erststimmen",
+    "mapped_field": "invalid_votes_erst",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 10,
+    "before": 34,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.512700+00:00",
+    "external_row": "GEM:15090550:B",
+    "field": "Ungültige Zweitstimmen",
+    "mapped_field": "invalid_votes_zweit",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 6967,
+    "before": 6991,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.512700+00:00",
+    "external_row": "GEM:15090550:TOTAL",
+    "field": "Wähler",
+    "mapped_field": "voters_total",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 67,
+    "before": 91,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.512700+00:00",
+    "external_row": "GEM:15090550:TOTAL",
+    "field": "Ungültige Erststimmen",
+    "mapped_field": "invalid_votes_erst",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 67,
+    "before": 91,
+    "delta": -24,
+    "exact_git_matches": [
+      {
+        "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T01:52:10.207428+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T23:50:07.512700+00:00",
+    "external_row": "GEM:15090550:TOTAL",
+    "field": "Ungültige Zweitstimmen",
+    "mapped_field": "invalid_votes_zweit",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 51,
+    "before": 52,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T02:03:11.796077+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-07T00:06:07.015925+00:00",
+    "external_row": "WKR:032:U",
+    "field": "Zweitstimmen: Volt",
+    "mapped_field": "party:F20",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 5813,
+    "before": 5814,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T02:03:11.796077+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-07T00:06:07.556638+00:00",
+    "external_row": "GEM:15088205:U",
+    "field": "Gültige Zweitstimmen",
+    "mapped_field": "valid_votes_zweit",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 311,
+    "before": 320,
+    "delta": -9,
+    "exact_git_matches": [
+      {
+        "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T02:03:11.796077+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-07T00:06:07.556638+00:00",
+    "external_row": "GEM:15088205:U",
+    "field": "Zweitstimmen: Die Linke",
+    "mapped_field": "party:F3",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 8980,
+    "before": 8981,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T02:03:11.796077+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-07T00:06:07.556638+00:00",
+    "external_row": "GEM:15088205:TOTAL",
+    "field": "Gültige Zweitstimmen",
+    "mapped_field": "valid_votes_zweit",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 576,
+    "before": 585,
+    "delta": -9,
+    "exact_git_matches": [
+      {
+        "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T02:03:11.796077+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-07T00:06:07.556638+00:00",
+    "external_row": "GEM:15088205:TOTAL",
+    "field": "Zweitstimmen: Die Linke",
+    "mapped_field": "party:F3",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 12,
+    "before": 13,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T02:03:11.796077+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-07T00:06:07.556638+00:00",
+    "external_row": "GEM:15088305:U",
+    "field": "Zweitstimmen: Volt",
+    "mapped_field": "party:F20",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 13,
+    "before": 14,
+    "delta": -1,
+    "exact_git_matches": [
+      {
+        "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+        "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+        "time": "2026-09-07T02:03:11.796077+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-07T00:06:07.556638+00:00",
+    "external_row": "GEM:15088305:TOTAL",
+    "field": "Zweitstimmen: Volt",
+    "mapped_field": "party:F20",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 2150,
+    "before": 2149,
+    "delta": 1,
+    "exact_git_matches": [
+      {
+        "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+        "event": "denominator_change",
+        "time": "2026-09-07T00:51:09.962028+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:55:06.689550+00:00",
+    "external_row": "LAN:15:U",
+    "field": "Erwartete Wahlbezirke",
+    "mapped_field": "total_precincts",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 2661,
+    "before": 2660,
+    "delta": 1,
+    "exact_git_matches": [
+      {
+        "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+        "event": "denominator_change",
+        "time": "2026-09-07T00:51:09.962028+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:55:06.689550+00:00",
+    "external_row": "LAN:15:TOTAL",
+    "field": "Erwartete Wahlbezirke",
+    "mapped_field": "total_precincts",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 183,
+    "before": 182,
+    "delta": 1,
+    "exact_git_matches": [
+      {
+        "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+        "event": "denominator_change|revision_after_complete",
+        "time": "2026-09-07T00:51:09.962028+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:55:06.689550+00:00",
+    "external_row": "KRS:15082:U",
+    "field": "Erwartete Wahlbezirke",
+    "mapped_field": "total_precincts",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 205,
+    "before": 204,
+    "delta": 1,
+    "exact_git_matches": [
+      {
+        "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+        "event": "denominator_change",
+        "time": "2026-09-07T00:51:09.962028+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:55:06.689550+00:00",
+    "external_row": "KRS:15082:TOTAL",
+    "field": "Erwartete Wahlbezirke",
+    "mapped_field": "total_precincts",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 74,
+    "before": 73,
+    "delta": 1,
+    "exact_git_matches": [
+      {
+        "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+        "event": "denominator_change|revision_after_complete",
+        "time": "2026-09-07T00:51:09.962028+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:55:06.689550+00:00",
+    "external_row": "WKR:023:U",
+    "field": "Erwartete Wahlbezirke",
+    "mapped_field": "total_precincts",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 80,
+    "before": 79,
+    "delta": 1,
+    "exact_git_matches": [
+      {
+        "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+        "event": "denominator_change|revision_after_complete",
+        "time": "2026-09-07T00:51:09.962028+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:55:06.689550+00:00",
+    "external_row": "WKR:023:TOTAL",
+    "field": "Erwartete Wahlbezirke",
+    "mapped_field": "total_precincts",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 9,
+    "before": 8,
+    "delta": 1,
+    "exact_git_matches": [
+      {
+        "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+        "event": "denominator_change|revision_after_complete",
+        "time": "2026-09-07T00:51:09.962028+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:55:07.067196+00:00",
+    "external_row": "GEM:15082005:U",
+    "field": "Erwartete Wahlbezirke",
+    "mapped_field": "total_precincts",
+    "same_delta_git_matches": []
+  },
+  {
+    "after": 10,
+    "before": 9,
+    "delta": 1,
+    "exact_git_matches": [
+      {
+        "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+        "event": "denominator_change|revision_after_complete",
+        "time": "2026-09-07T00:51:09.962028+02:00"
+      }
+    ],
+    "external_event_at": "2026-09-06T22:55:07.067196+00:00",
+    "external_row": "GEM:15082005:TOTAL",
+    "field": "Erwartete Wahlbezirke",
+    "mapped_field": "total_precincts",
+    "same_delta_git_matches": []
+  }
+]

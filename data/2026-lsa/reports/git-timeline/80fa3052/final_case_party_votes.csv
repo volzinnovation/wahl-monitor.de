@@ -1,0 +1,94 @@
+case,precinct,mode,party,vote_type,votes
+Aschersleben,000965,B,CDU,Erststimmen,415
+Aschersleben,000965,B,Gartenpartei,Erststimmen,
+Aschersleben,000965,B,Die PARTEI,Erststimmen,
+Aschersleben,000965,B,TIERSCHUTZALLIANZ,Erststimmen,
+Aschersleben,000965,B,HEIMAT,Erststimmen,
+Aschersleben,000965,B,BSW,Erststimmen,243
+Aschersleben,000965,B,PdF,Erststimmen,24
+Aschersleben,000965,B,AfD,Erststimmen,346
+Aschersleben,000965,B,Volt,Erststimmen,
+Aschersleben,000965,B,EB,Erststimmen,
+Aschersleben,000965,B,Die Linke,Erststimmen,147
+Aschersleben,000965,B,SPD,Erststimmen,218
+Aschersleben,000965,B,FDP,Erststimmen,46
+Aschersleben,000965,B,GRÜNE,Erststimmen,70
+Aschersleben,000965,B,FREIE WÄHLER,Erststimmen,
+Aschersleben,000965,B,Tierschutzpartei,Erststimmen,
+Aschersleben,000965,B,CDU,Zweitstimmen,401
+Aschersleben,000965,B,Gartenpartei,Zweitstimmen,7
+Aschersleben,000965,B,Die PARTEI,Zweitstimmen,2
+Aschersleben,000965,B,TIERSCHUTZALLIANZ,Zweitstimmen,11
+Aschersleben,000965,B,BSW,Zweitstimmen,148
+Aschersleben,000965,B,PdF,Zweitstimmen,7
+Aschersleben,000965,B,AfD,Zweitstimmen,373
+Aschersleben,000965,B,Volt,Zweitstimmen,5
+Aschersleben,000965,B,Die Linke,Zweitstimmen,146
+Aschersleben,000965,B,SPD,Zweitstimmen,211
+Aschersleben,000965,B,FDP,Zweitstimmen,35
+Aschersleben,000965,B,GRÜNE,Zweitstimmen,122
+Aschersleben,000965,B,FREIE WÄHLER,Zweitstimmen,24
+Aschersleben,000965,B,dieBasis,Zweitstimmen,3
+Aschersleben,000965,B,Tierschutzpartei,Zweitstimmen,18
+Aken,000010,B,CDU,Erststimmen,367
+Aken,000010,B,Gartenpartei,Erststimmen,
+Aken,000010,B,Die PARTEI,Erststimmen,
+Aken,000010,B,TIERSCHUTZALLIANZ,Erststimmen,
+Aken,000010,B,HEIMAT,Erststimmen,
+Aken,000010,B,BSW,Erststimmen,
+Aken,000010,B,PdF,Erststimmen,
+Aken,000010,B,AfD,Erststimmen,334
+Aken,000010,B,Volt,Erststimmen,
+Aken,000010,B,EB,Erststimmen,
+Aken,000010,B,Die Linke,Erststimmen,164
+Aken,000010,B,SPD,Erststimmen,93
+Aken,000010,B,FDP,Erststimmen,140
+Aken,000010,B,GRÜNE,Erststimmen,31
+Aken,000010,B,FREIE WÄHLER,Erststimmen,
+Aken,000010,B,Tierschutzpartei,Erststimmen,
+Aken,000010,B,CDU,Zweitstimmen,271
+Aken,000010,B,Gartenpartei,Zweitstimmen,8
+Aken,000010,B,Die PARTEI,Zweitstimmen,1
+Aken,000010,B,TIERSCHUTZALLIANZ,Zweitstimmen,8
+Aken,000010,B,BSW,Zweitstimmen,80
+Aken,000010,B,PdF,Zweitstimmen,0
+Aken,000010,B,AfD,Zweitstimmen,318
+Aken,000010,B,Volt,Zweitstimmen,4
+Aken,000010,B,Die Linke,Zweitstimmen,119
+Aken,000010,B,SPD,Zweitstimmen,141
+Aken,000010,B,FDP,Zweitstimmen,60
+Aken,000010,B,GRÜNE,Zweitstimmen,99
+Aken,000010,B,FREIE WÄHLER,Zweitstimmen,15
+Aken,000010,B,dieBasis,Zweitstimmen,1
+Aken,000010,B,Tierschutzpartei,Zweitstimmen,14
+Bitterfeld-Wolfen,000028,B,CDU,Erststimmen,325
+Bitterfeld-Wolfen,000028,B,Gartenpartei,Erststimmen,
+Bitterfeld-Wolfen,000028,B,Die PARTEI,Erststimmen,
+Bitterfeld-Wolfen,000028,B,TIERSCHUTZALLIANZ,Erststimmen,
+Bitterfeld-Wolfen,000028,B,HEIMAT,Erststimmen,
+Bitterfeld-Wolfen,000028,B,BSW,Erststimmen,
+Bitterfeld-Wolfen,000028,B,PdF,Erststimmen,
+Bitterfeld-Wolfen,000028,B,AfD,Erststimmen,282
+Bitterfeld-Wolfen,000028,B,Volt,Erststimmen,
+Bitterfeld-Wolfen,000028,B,EB,Erststimmen,
+Bitterfeld-Wolfen,000028,B,Die Linke,Erststimmen,175
+Bitterfeld-Wolfen,000028,B,SPD,Erststimmen,107
+Bitterfeld-Wolfen,000028,B,FDP,Erststimmen,39
+Bitterfeld-Wolfen,000028,B,GRÜNE,Erststimmen,52
+Bitterfeld-Wolfen,000028,B,FREIE WÄHLER,Erststimmen,41
+Bitterfeld-Wolfen,000028,B,Tierschutzpartei,Erststimmen,
+Bitterfeld-Wolfen,000028,B,CDU,Zweitstimmen,290
+Bitterfeld-Wolfen,000028,B,Gartenpartei,Zweitstimmen,8
+Bitterfeld-Wolfen,000028,B,Die PARTEI,Zweitstimmen,0
+Bitterfeld-Wolfen,000028,B,TIERSCHUTZALLIANZ,Zweitstimmen,4
+Bitterfeld-Wolfen,000028,B,BSW,Zweitstimmen,46
+Bitterfeld-Wolfen,000028,B,PdF,Zweitstimmen,0
+Bitterfeld-Wolfen,000028,B,AfD,Zweitstimmen,258
+Bitterfeld-Wolfen,000028,B,Volt,Zweitstimmen,6
+Bitterfeld-Wolfen,000028,B,Die Linke,Zweitstimmen,129
+Bitterfeld-Wolfen,000028,B,SPD,Zweitstimmen,137
+Bitterfeld-Wolfen,000028,B,FDP,Zweitstimmen,27
+Bitterfeld-Wolfen,000028,B,GRÜNE,Zweitstimmen,87
+Bitterfeld-Wolfen,000028,B,FREIE WÄHLER,Zweitstimmen,15
+Bitterfeld-Wolfen,000028,B,dieBasis,Zweitstimmen,0
+Bitterfeld-Wolfen,000028,B,Tierschutzpartei,Zweitstimmen,17

@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-07",
+  "federal_genesis": {
+    "GET_catalogue": 405,
+    "POST_catalogue_without_credentials": 401,
+    "documentation": "https://genesis.destatis.de/datenbank/online/docs/GENESIS-Webservices_Introduction.pdf"
+  },
+  "regionalstatistik": {
+    "12411_catalogue": "retrieved",
+    "other_catalogues": "temporary login requirement; retained HTML",
+    "API": "registered access required; not authenticated"
+  },
+  "sachsen_anhalt": {
+    "12411": "catalogue retrieved",
+    "73111": "catalogue retrieved; 73111-0001 municipalities",
+    "13211": "catalogue retrieved; district and state tables",
+    "13111": "catalogue returned no objects; not evidence that BA employment data do not exist",
+    "14311-SD": "request timed out; not claimed inspected"
+  }
+}

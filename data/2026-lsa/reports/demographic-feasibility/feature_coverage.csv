@@ -1,0 +1,16 @@
+feature,label,date,definition,n,missing,scope,min,max
+log_population,Population size (log),2025-12-31,Natural log of resident population,218,0,all municipalities,6.566672429803241,12.406946047718655
+log_density,Population density (log),2025-12-31 / area 2024,Natural log of 2025 population / GV area; June 2026 boundaries,218,0,all municipalities,2.36528444622318,7.419698601879052
+age65_share,Residents aged 65+ (%),2025-12-31,100 × residents aged 65+ / all residents,218,0,all municipalities,21.77466433158202,36.554307116104866
+age18_29_share,Residents aged 18–29 (%),2025-12-31,100 × residents aged 18–29 / all residents,218,0,all municipalities,5.613577023498695,17.209730045184052
+male_share,Male residents (%),2025-12-31,100 × male residents / all residents,218,0,all municipalities,46.90230341540906,54.290718038528894
+population_change_2024_25,Population change 2024–25 (%),2024-12-31 to 2025-12-31,100 × (2025 / 2024 population − 1); both based on Zensus 2022,218,0,all municipalities,-4.094827586206895,3.1605562579013924
+foreign_citizenship_share,Non-German citizenship (%),2022-05-15,100 × non-German citizens / demographic population; citizenship is not migration background,218,0,all municipalities,0.0,18.362573099415204
+single_household_share,One-person households (%),2022-05-15,100 × one-person private households / all private households,218,0,all municipalities,24.545454545454547,54.8552552180842
+owner_occupancy_share,Owner-occupied dwellings (%),2022-05-15,Published ETQ: owner-occupied / inhabited dwellings in residential buildings excluding dormitories,218,0,all municipalities,16.8,88.81
+vacancy_share,Vacant dwellings (%),2022-05-15,Published LEQ: empty / occupied and empty dwellings in residential buildings excluding dormitories,218,0,all municipalities,3.37,20.76
+rent_eur_m2,Net cold rent (EUR/m²),2022-05-15,Published mean dwelling-level rent per m²; rental dwellings in residential buildings excluding dormitories and rent-free dwellings,218,0,all municipalities,3.75,6.29
+abitur_share,Abitur/Fachhochschulreife (%),2022-05-15,100 × persons with university entrance qualification / persons aged 15+ in sampled household population,54,164,published subset,13.44007763221737,38.65572735878826
+no_vocational_qualification_share,No vocational qualification (%),2022-05-15,100 × persons without vocational qualification / persons aged 15+ in sampled household population,54,164,published subset,11.231527093596059,23.402868318122554
+ilo_unemployment_share,ILO unemployment (%),2022-05-15,100 × unemployed / labour force in census household sample; not registered BA unemployment,52,166,published subset,3.7537537537537538,11.511254019292604
+manufacturing_share,Manufacturing employment (%),2022-05-15,100 × employed residents in manufacturing / all employed residents in census household sample,54,164,published subset,8.960573476702509,28.057553956834532

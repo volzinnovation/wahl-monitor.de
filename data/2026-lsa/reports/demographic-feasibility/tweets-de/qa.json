@@ -1,0 +1,99 @@
+{
+  "data_checks_passed": true,
+  "party_filter": [
+    "AfD",
+    "BSW",
+    "CDU",
+    "Die Linke",
+    "GRÜNE",
+    "SPD"
+  ],
+  "tweet_weighted_characters": [
+    264,
+    267,
+    266,
+    259,
+    256,
+    265,
+    264,
+    280
+  ],
+  "exports": [
+    {
+      "image": "01-parteien-und-datenbasis.png",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "text_outside_canvas": []
+    },
+    {
+      "image": "02-cdu-bsw.png",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "text_outside_canvas": []
+    },
+    {
+      "image": "03-spd.png",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "text_outside_canvas": []
+    },
+    {
+      "image": "04-die-linke.png",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "text_outside_canvas": []
+    },
+    {
+      "image": "05-gruene.png",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "text_outside_canvas": []
+    },
+    {
+      "image": "06-afd.png",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "text_outside_canvas": []
+    },
+    {
+      "image": "07-bildung.png",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "text_outside_canvas": []
+    },
+    {
+      "image": "08-aussagegrenzen.png",
+      "pixels": [
+        1600,
+        1000
+      ],
+      "text_outside_canvas": []
+    }
+  ],
+  "visual_review": "passed: all eight PNGs inspected; chart 1 label spacing corrected and re-inspected",
+  "figure_text_overlap_check": "passed for all eight exports",
+  "image_sha256": {
+    "01-parteien-und-datenbasis.png": "482cdbd3fceda3c006a58b09d52f07e5d79cb86c2e80eca69108439cd13b5efa",
+    "02-cdu-bsw.png": "8e5381694f434189d665550c939f36be4370e0caf7c91871e35bef0729c5272b",
+    "03-spd.png": "6c92d24bb16ec17603efb780eeb12657aa0e65378d8349700c5ad5bca1cb5cff",
+    "04-die-linke.png": "8ba59d0b537cf039973bbd58ca2a125541483dba0367bd2b97f5549365467166",
+    "05-gruene.png": "61fa4512d9988c2cb84a3521ed1ffd5d687d32ed3601b326a573273269eb6cd0",
+    "06-afd.png": "3e19c78c3e35b1994d756c67857fd31199eb431311850dba9f1127bed39c02d2",
+    "07-bildung.png": "9b6bee735f6ca937e44a43684b06a3dcc37dd4533225df651d3dfebfd76a37f8",
+    "08-aussagegrenzen.png": "eee4e06e4c5124f7c5226f3fb2311dc2665977a3e4a13e712d6b28de4d48c122"
+  }
+}

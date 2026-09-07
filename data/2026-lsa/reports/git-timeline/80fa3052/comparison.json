@@ -1,0 +1,99 @@
+{
+  "baseline_ref": "034045f3d0f71c47aebf3daea47f3d33b136de5c",
+  "current_html_reported": 2661,
+  "current_land_counters": null,
+  "current_ref": "80fa3052044a45af29f4f0b2867957d8a3b1df35",
+  "parties": [
+    {
+      "after": 226622,
+      "before": 215891,
+      "delta": 10731,
+      "party": "CDU"
+    },
+    {
+      "after": 7482,
+      "before": 7208,
+      "delta": 274,
+      "party": "Gartenpartei"
+    },
+    {
+      "after": 3487,
+      "before": 3361,
+      "delta": 126,
+      "party": "Die PARTEI"
+    },
+    {
+      "after": 7283,
+      "before": 7024,
+      "delta": 259,
+      "party": "TIERSCHUTZALLIANZ"
+    },
+    {
+      "after": 69291,
+      "before": 66444,
+      "delta": 2847,
+      "party": "BSW"
+    },
+    {
+      "after": 2778,
+      "before": 2639,
+      "delta": 139,
+      "party": "PdF"
+    },
+    {
+      "after": 576037,
+      "before": 561832,
+      "delta": 14205,
+      "party": "AfD"
+    },
+    {
+      "after": 4339,
+      "before": 4176,
+      "delta": 163,
+      "party": "Volt"
+    },
+    {
+      "after": 112541,
+      "before": 107770,
+      "delta": 4771,
+      "party": "Die Linke"
+    },
+    {
+      "after": 122303,
+      "before": 116679,
+      "delta": 5624,
+      "party": "SPD"
+    },
+    {
+      "after": 33969,
+      "before": 32386,
+      "delta": 1583,
+      "party": "FDP"
+    },
+    {
+      "after": 117498,
+      "before": 112873,
+      "delta": 4625,
+      "party": "GRÜNE"
+    },
+    {
+      "after": 15430,
+      "before": 14850,
+      "delta": 580,
+      "party": "FREIE WÄHLER"
+    },
+    {
+      "after": 1899,
+      "before": 1847,
+      "delta": 52,
+      "party": "dieBasis"
+    },
+    {
+      "after": 14356,
+      "before": 13792,
+      "delta": 564,
+      "party": "Tierschutzpartei"
+    }
+  ],
+  "valid_second_vote_delta": 46543
+}

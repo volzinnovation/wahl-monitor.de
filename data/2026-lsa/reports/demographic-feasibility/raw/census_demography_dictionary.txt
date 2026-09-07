@@ -1,0 +1,49 @@
+Erläuterung zu CSV-Tabellen
+
+Für die Weiterverarbeitung stellen wir die Inhalte der Layout-Tabellen auch in strukturierter Form ohne Formatierungen und ohne verbundene Zellen als CSV-Tabelle zur Verfügung. Fußnoten oder weitere Erläuterungen sind in den CSV-Tabellen nicht enthalten.
+Für die weitere Verwendung der Daten finden Sie Copyright-Informationen im Impressum.
+
+CSV-Demografie | Ergebnisse des Zensus 2022 Tabelle Demografie nach ausgewählten Merkmalen
+
+Zeilenaufbau
+
+– Erste Zeile: | Kopfzeile/Header 
+Sie beschreibt die Inhalte des jeweiligen Elements. Hier werden keine Umlaute verwendet und Unterstriche ersetzen Leerzeichen.
+– Weitere Zeilen: | Datenzeilen
+Sie enthalten die in der Kopfzeile benannten Metadaten (Beschreibungen, gegebenenfalls mit Umlauten, Sonderzeichen und Leerzeichen) sowie die Werte selbst. Die Reihenfolge entspricht der Nennung in der Kopfzeile. Jeder einzelne Datenwert ist durch eine Reihe von Metadaten (Merkmale und deren Ausprägungen) genau beschrieben.
+
+Spaltenaufbau
+
+– Berichtszeitpunkt | Zensusergebnis zum Stichtag 15.05.2022 (Format JJJJMMTT)
+– _RS | Amtlicher Regionalschlüssel (ARS)
+– Name | Name der regionalen Einheit
+– Regionalebene | Kategorie der regionalen Einheit
+– 0_Insgesamt_ | Bevölkerung insgesamt (Anzahl)
+– GESCHLECHT__1 | Bevölkerung männlich (Anzahl)
+– GESCHLECHT__2 | Bevölkerung weiblich (Anzahl)
+– Staatsange_kurz__1 | Personen mit deutscher Staatsangehörigkeit (Anzahl)
+– Staatsange_kurz__2 | Personen mit ausländischer Staatsangehörigkeit (einschl. Personen mit einer Staatsangehörigkeit „Staatenlos“, „Ungeklärt“ und „Ohne Angabe“) (Anzahl)
+– Alter_infr__01 | Personen in der Altersklasse "Unter 3 Jahren" (Anzahl)
+– Alter_infr__02 | Personen in der Altersklasse "3 - 5 Jahre" (Anzahl)
+– Alter_infr__03 | Personen in der Altersklasse "6 - 9 Jahre" (Anzahl)
+– Alter_infr__04 | Personen in der Altersklasse "10 - 15 Jahre" (Anzahl)
+– Alter_infr__05 | Personen in der Altersklasse "16 - 18 Jahre" (Anzahl)
+– Alter_infr__06 | Personen in der Altersklasse "19 - 24 Jahre" (Anzahl)
+– Alter_infr__07 | Personen in der Altersklasse "25 - 39 Jahre" (Anzahl)
+– Alter_infr__08 | Personen in der Altersklasse "40 - 59 Jahre" (Anzahl)
+– Alter_infr__09 | Personen in der Altersklasse "60 - 66 Jahre" (Anzahl)
+– Alter_infr__10 | Personen in der Altersklasse "67 - 74 Jahre" (Anzahl)
+– Alter_infr__11 | Personen in der Altersklasse "75 Jahre und älter" (Anzahl)
+– FAMSTND_KURZ__1 | Personen mit dem Familienstand "Ledig" (Anzahl)
+– FAMSTND_KURZ__2 | Personen mit dem Familienstand "Verheiratet / eingetragene Lebenspartnerschaft" (Anzahl)
+– FAMSTND_KURZ__3 | Personen mit dem Familienstand "Verwitwet / eingetragene(r) Lebenspartner(in) verstorben" (Anzahl)
+– FAMSTND_KURZ__4 | Personen mit dem Familienstand "Geschieden / eingetragene Lebenspartnerschaft aufgehoben" (Anzahl)
+– FAMSTND_KURZ__5 | Personen mit dem Familienstand "Ohne Angabe" (Anzahl)
+– Einwanderungserf_ausf__2 | Personen mit Einwanderungsgeschichte (Einwanderungserf_ausf__21 und Einwanderungserf_ausf__22 zusammen) (Anzahl)
+– Einwanderungserf_ausf__21 | Eingewanderte (Anzahl)
+– Einwanderungserf_ausf__22 | Nachkommen von Eingewanderten (Anzahl)
+– Einwanderungserf_ausf__3 | Personen mit einseitiger Einwanderungsgeschichte (Anzahl)
+– Einwanderungserf_ausf__1 | Personen ohne Einwanderungsgeschichte (Anzahl)
+
+
+Die Datenzeilen der Werte-Spalten können anstelle von Zahlen auch Sonderzeichen enthalten, die möglicherweise die Weiterverarbeitung erschweren und vorher durch geeignete Zeichen ersetzt werden können. Leere Werte-Zellen kommen nicht vor. Die Bedeutung der Sonderzeichen in den Werte-Spalten finden Sie unter Punkt 2 der "Erläuterungen zur Methodik".

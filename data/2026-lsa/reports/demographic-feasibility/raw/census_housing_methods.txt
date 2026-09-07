@@ -1,0 +1,415 @@
+Erläuterungen zur Methodik
+
+1 | Allgemeine Informationen
+
+Basis der Auswertung sind die Ergebnisse des Zensus 2022 mit Stichtag 15.Mai 2022
+
+Für die Wahrung der Geheimhaltung nach § 16 Bundesstatistikgesetz (BStatG) wird für Auswertungen, die ausschließlich auf demografischen Daten, Gebäude- und Wohnungsdaten, Haushaltsdaten und Familiendaten basieren, ein Verfahren der stochastischen Überlagerung nach der Cell-Key-Methode (CKM) angewendet. 
+Einige Fallzahlen werden daher gegenüber ihrem Originalwert leicht verändert ausgewiesen. Dies hat zur Folge, dass sich die ausgewiesenen Einzelwerte in der Tabelle nicht notwendigerweise zu den ausgewiesenen Summen addieren. Dieses Vorgehen sichert neben dem Schutz von Einzelangaben eine hohe Datenqualität. 
+Eine Sperrung von Auswertungen (in den Tabellen als Punkt . dargestellt) erfolgt nur dann, wenn die Tabelle - oder Teile der Tabelle - ein zu hohes Aufdeckungsrisiko und/oder einen zu hohen Informationsverlust bergen.
+
+Weiterführende methodische Informationen zum Zensusmodell und zur Geheimhaltung unter:
+www.zensus2022.de
+https://www.zensus2022.de/DE/Zensusdatenbank/Geheimhaltung.html
+
+2 | Zeichenerklärung
+
+–     = Genau Null oder auf Null geändert
+( )   = Aussagewert eingeschränkt, da der Zahlenwert statistisch relativ unsicher ist
+.     = Zahlenwert unbekannt oder geheim
+
+Abweichungen in den Summen durch das angewandte Geheimhaltungsverfahren.
+
+Eine Sperrung von Auswertungen (in den Tabellen als Punkt . dargestellt) erfolgt nur dann, wenn die Tabelle - oder Teile der Tabelle - ein zu hohes Aufdeckungsrisiko und/oder einen zu hohen Informationsverlust bergen.
+
+3 | Definitionen
+
+Gebäude
+
+Art des Gebäudes
+
+Das Merkmal gibt die Art des Gebäudes an. Es wird unter anderem unterschieden zwischen Gebäuden, die ausschließlich Wohnraum enthalten und Gebäuden, die sowohl zu Wohn- als auch zu Geschäftszwecken genutzt werden.
+Gebäude mit Wohnraum:
+Für längere Dauer errichtete Bauwerke, die entweder vollständig oder teilweise für die Wohnversorgung von Haushalten bestimmt sind. Hierzu zählen auch administrative oder gewerblich genutzte Gebäude, wenn in ihnen mindestens eine zu Wohnzwecken genutzte Wohnung vorhanden ist. Gebäude mit Wohnraum gliedern sich in Wohngebäude und sonstige Gebäude mit Wohnraum.
+Wohngebäude:
+Gebäude, die mindestens zur Hälfte der Gesamtnutzfläche zu Wohnzwecken genutzt werden. Zu den Wohngebäuden gehören auch die Wohnheime (mit eigener Haushaltsführung der Bewohnerinnen und Bewohner).
+Wohngebäude (ohne Wohnheime):
+Das Gebäude wird mindestens zur Hälfte der Gesamtnutzfläche für Wohnzwecke genutzt und ist kein Wohnheim.
+Wohnheime: 
+Wohnheime sind Wohngebäude, die primär den Wohnbedürfnissen bestimmter Bevölkerungskreise dienen (wie Studierendenwohnheim, Arbeiterwohnheim). Wohnheime besitzen Gemeinschaftsräume. Die Bewohnerinnen und Bewohner von Wohnheimen führen einen eigenen Haushalt. Wohnheim liegt auch dann vor, wenn sich im Gebäude beispielsweise noch eine Pflegestation befindet.
+Sonstiges Gebäude mit Wohnraum: 
+Weniger als die Hälfte der Gesamtnutzfläche wird für Wohnzwecke genutzt, weil sich beispielsweise im Gebäude überwiegend Läden oder Büros befinden.
+
+Ausprägungen
+Gebäude mit Wohnraum
+Wohngebäude
+Wohngebäude (ohne Wohnheime)
+Wohnheim
+Sonstiges Gebäude mit Wohnraum
+
+Baujahr (Jahrzehnte)
+
+Mit Baujahr ist das Jahr der Bezugsfertigstellung des Gebäudes gemeint.
+Bei Um-, An- und Erweiterungsbauten am Haus gilt das ursprüngliche Baujahr des Gebäudes. Bei vollkommen zerstörten und wieder aufgebauten Gebäuden gilt das Jahr des Wiederaufbaus als Baujahr.
+
+Ausprägungen
+vor 1919
+1919 - 1949
+1950 - 1959
+1960 - 1969
+1970 - 1979
+1980 - 1989
+1990 - 1999
+2000 - 2009
+2010 - 2015
+2016 und später
+
+Eigentumsform des Gebäudes
+
+Das Merkmal bildet ab, wem das Eigentum an dem Gebäude (nicht der einzelnen Wohnung) rechtlich zusteht. Dies können Privatpersonen oder juristische Personen sein.
+Gemeinschaft von Wohnungseigentümern: 
+Gilt ausschließlich und immer dann, wenn ein Gebäude (Mehrfamilienhaus) nach dem Wohnungseigentumsgesetz (WEG) in Eigentumswohnungen aufgeteilt ist. Im Fall von Einfamilienhausanlagen (wie Doppelhaus- oder Reihenhausanlagen), die nach WEG aufgeteilt sind, darf "Gemeinschaft von Wohnungseigentümerinnen und -eigentümern" nicht angegeben werden. Für diesen Fall muss eine der anderen Ausprägungen gewählt werden (in der Regel: Privatperson oder Privatpersonen).
+Privatperson oder Privatpersonen:
+Alle natürlichen Personen. Dies können Einzelpersonen, Paare oder sonstige Gruppen von Personen sein, wie Erbengemeinschaften.
+Wohnungsgenossenschaft:
+Alle Wohnungsunternehmen, die die Rechtsform einer Genossenschaft haben.
+Kommune oder kommunales Wohnungsunternehmen:
+Unternehmen oder Einrichtungen, bei denen die Kommune mit mehr als 50 % Nennkapital oder Stimmrecht beteiligt ist.
+Privatwirtschaftliches Wohnungsunternehmen: 
+Alle privatrechtlichen Wohnungsunternehmen, ohne Genossenschaften.
+Anderes privatwirtschaftliches Unternehmen:
+Alle privatrechtlichen Unternehmen, in deren Eigentum sich Wohnungen befinden, deren primärer Erwerbszweck aber nicht die Wohnungsvermietung ist (beispielsweisen Banken, Versicherungen, Fonds).
+Bund, Land:
+Unternehmen oder Einrichtungen, bei denen der Bund oder das Land mit mehr als 50 % Nennkapital oder Stimmrecht beteiligt ist.
+Organisation ohne Erwerbszweck: 
+Beispielsweise Kirchen.
+
+Ausprägungen
+Gemeinschaft von Wohnungseigentümerinnen oder -eigentümern
+Privatperson oder Privatpersonen
+Wohnungsgenossenschaft
+Kommune oder kommunales Wohnungsunternehmen
+Privatwirtschaftliches Wohnungsunternehmen
+Anderes privatwirtschaftliches Unternehmen
+Bund oder Land
+Organisation ohne Erwerbszweck
+
+Heizungsart
+
+Das Merkmal bezeichnet die überwiegende Heizungsart im Gebäude.
+Die überwiegende Heizungsart im Gebäude gliedert sich danach, welche räumliche Einheit (Stadtteil, Gebäudeblock, Gebäude, Wohnung, Raum) durch die Heizanlage beheizt wird. Bei Passivhäusern gelten Anlagen zur Wärmerückgewinnung/kontrollierte Lüftungsanlagen als "Heizung" und sind entsprechend zugeordnet (in der Regel: Zentralheizung).
+Fernheizung:
+Hier werden ganze Wohnbezirke von einem zentralen Fernheizwerk aus mit Wärme versorgt (sogenannte Fernwärme).
+Etagenheizung:
+Unter einer Etagenheizung versteht man eine zentrale Heizanlage für sämtliche Räume einer abgeschlossenen Wohnung, wobei sich die Heizquelle (beispielsweise Gastherme) meist innerhalb dieser Wohnung befindet.
+Blockheizung:
+Eine Blockheizung liegt vor, wenn ein Block ganzer Häuser durch ein zentrales Heizsystem beheizt wird und die Heizquelle sich in beziehungsweise an einem der Gebäude oder in dessen unmittelbarer Nähe befindet (sogenannte Nahwärme).
+Zentralheizung:
+Bei einer Zentralheizung werden sämtliche Wohneinheiten eines Gebäudes von einer zentralen Heizstelle, die sich innerhalb des Gebäudes (in der Regel im Keller) befindet, beheizt. Dazu zählen auch Wärmepumpen.
+Einzel- oder Mehrraumöfen:
+Einzelöfen (wie Kohle- oder Nachtspeicheröfen) beheizen jeweils nur den Raum, in dem sie stehen. In der Regel sind sie fest installiert. Ein Mehrraumofen (beispielsweise Kachelofen) beheizt gleichzeitig mehrere Räume (auch durch Luftkanäle).
+keine Heizung im Gebäude oder in den Wohnungen
+
+Ausprägungen
+Fernheizung (Fernwärme)
+Etagenheizung
+Blockheizung
+Zentralheizung
+Einzel-/Mehrraumöfen (auch Nachtspeicherheizung)
+Keine Heizung im Gebäude oder in den Wohnungen
+
+Energieträger der Heizung
+
+Energieträger, der für die Beheizung des Gebäudes verwendet wird. Bei mehreren Energieträgern im Gebäude ist es derjenige, durch den der größte Teil der Wohnfläche beheizt wird.
+Bei Passivhäusern wird der Restwärmebedarf durch eine zusätzliche Quelle gedeckt, die hier angegeben wird.
+Gas
+Heizöl
+Holz, Holzpellets
+Biomasse (ohne Holz), Biogas:
+Alle durch Pflanzen oder Tiere erzeugten organischen Substanzen, aus denen mittels Verbrennung
+Energie gewonnen werden kann. Dazu zählen unter anderem Stroh, Biomüll oder Gülle (ohne Holz). Biogas entsteht bei der Vergärung von Biomasse und ist hier auch eingeordnet.
+Solar-/Geothermie, Umweltwärme, Abluftwärme:
+Hier wird Sonnenenergie sowie Energie aus Wasser, Luft und Erde mit Hilfe von Kollektoren, Wärmepumpen und -tauschern gewonnen. Dazu zählt auch die Wärme, die aus der Abluft von Gebäuden gewonnen wird (sogenannte Abluftwärme).
+Strom (ohne Wärmepumpe)
+Kohle 
+Fernwärme (verschiedene Energieträger)
+kein Energieträger (keine Heizung)
+
+Ausprägungen
+Gas
+Heizöl
+Holz, Holzpellets
+Biomasse (ohne Holz), Biogas
+Solar-/Geothermie, Wärmepumpen
+Strom (ohne Wärmepumpe)
+Kohle
+Fernwärme (verschiedene Energieträger)
+kein Energieträger (keine Heizung)
+
+Zahl der Wohnungen im Gebäude
+
+Unter einer Wohnung sind nach außen abgeschlossene, zu Wohnzwecken bestimmte, in der Regel zusammenliegende Räume zu verstehen, die die Führung eines eigenen Haushalts ermöglichen und nicht vollständig für gewerbliche Zwecke genutzt werden.
+Eine Wohnung muss nicht notwendigerweise eine Küche oder Kochnische enthalten.
+Wohnungen haben einen eigenen Eingang unmittelbar vom Freien, von einem Treppenhaus oder einem Vorraum. Zur Wohnung können aber auch außerhalb des eigentlichen Wohnungsabschlusses liegende, zu Wohnzwecken ausgebaute Keller- oder Bodenräume (wie Mansarden) gehören.
+
+Ausprägungen
+1 Wohnung
+2 Wohnungen
+3 - 6 Wohnungen
+7 - 12 Wohnungen
+13 und mehr Wohnungen
+
+Gebäudetyp Bauweise
+
+Das Merkmal gibt die Bauart des Gebäudes an.
+Freistehendes Ein- oder Mehrfamilienhaus
+Doppelhaushälfte:
+Gebäude, das mit genau einem anderen Gebäude aneinander gebaut ist. Die Gebäude müssen nicht baugleich sein, sie können auch seitlich oder in der Höhe versetzt sein.
+Gereihtes Ein- oder Mehrfamilienhaus:
+Gebäude, das mit mindestens zwei anderen Gebäuden aneinander gebaut ist. Die Gebäude müssen nicht baugleich sein, sie können auch seitlich oder in der Höhe versetzt sein. Hierzu zählen auch Reiheneckhäuser.
+Anderer Gebäudetyp:
+Alle Arten von Gebäuden, die nicht freistehendes Haus, Doppel- oder gereihtes Haus sind, sowie alle Arten von bewohnten Unterkünften.
+
+Ausprägungen
+Freistehendes Ein- oder Mehrfamilienhaus
+Doppelhaushälfte (Ein- oder Mehrfamilienhaus)
+Gereihtes Ein- oder Mehrfamilienhaus 
+Anderer Gebäudetyp
+
+Wohnungen
+
+Art des Gebäudes
+
+Das Merkmal gibt die Art des Gebäudes an. Es wird unter anderem unterschieden zwischen Gebäuden, die ausschließlich Wohnraum enthalten und Gebäuden, die sowohl zu Wohn- als auch zu Geschäftszwecken genutzt werden.
+Gebäude mit Wohnraum:
+Für längere Dauer errichtete Bauwerke, die entweder vollständig oder teilweise für die Wohnversorgung von Haushalten bestimmt sind. Hierzu zählen auch administrative oder gewerblich genutzte Gebäude, wenn in ihnen mindestens eine zu Wohnzwecken genutzte Wohnung vorhanden ist. Gebäude mit Wohnraum gliedern sich in Wohngebäude und sonstige Gebäude mit Wohnraum.
+Wohngebäude:
+Gebäude, die mindestens zur Hälfte der Gesamtnutzfläche zu Wohnzwecken genutzt werden. Zu den Wohngebäuden gehören auch die Wohnheime (mit eigener Haushaltsführung der Bewohnerinnen und Bewohner).
+Wohngebäude (ohne Wohnheime):
+Das Gebäude wird mindestens zur Hälfte der Gesamtnutzfläche für Wohnzwecke genutzt und ist kein Wohnheim.
+Wohnheime: 
+Wohnheime sind Wohngebäude, die primär den Wohnbedürfnissen bestimmter Bevölkerungskreise dienen (wie Studierendenwohnheim, Arbeiterwohnheim). Wohnheime besitzen Gemeinschaftsräume. Die Bewohnerinnen und Bewohner von Wohnheimen führen einen eigenen Haushalt. Wohnheim liegt auch dann vor, wenn sich im Gebäude beispielsweise noch eine Pflegestation befindet.
+Sonstiges Gebäude mit Wohnraum: 
+Weniger als die Hälfte der Gesamtnutzfläche wird für Wohnzwecke genutzt, weil sich beispielsweise im Gebäude überwiegend Läden oder Büros befinden.
+
+Ausprägungen
+Gebäude mit Wohnraum
+Wohngebäude
+Wohngebäude (ohne Wohnheime)
+Wohnheim
+Sonstiges Gebäude mit Wohnraum
+
+Zahl der Wohnungen im Gebäude
+
+Unter einer Wohnung sind nach außen abgeschlossene, zu Wohnzwecken bestimmte, in der Regel zusammenliegende Räume zu verstehen, die die Führung eines eigenen Haushalts ermöglichen und nicht vollständig für gewerbliche Zwecke genutzt werden.
+Eine Wohnung muss nicht notwendigerweise eine Küche oder Kochnische enthalten.
+Wohnungen haben einen eigenen Eingang unmittelbar vom Freien, von einem Treppenhaus oder einem Vorraum. Zur Wohnung können aber auch außerhalb des eigentlichen Wohnungsabschlusses liegende, zu Wohnzwecken ausgebaute Keller- oder Bodenräume (wie Mansarden) gehören.
+
+Ausprägungen
+1 Wohnung
+2 Wohnungen
+3 - 6 Wohnungen
+7 - 12 Wohnungen
+13 und mehr Wohnungen
+
+Baujahr (Jahrzehnte)
+
+Mit Baujahr ist das Jahr der Bezugsfertigstellung des Gebäudes gemeint.
+Bei Um-, An- und Erweiterungsbauten am Haus gilt das ursprüngliche Baujahr des Gebäudes. Bei vollkommen zerstörten und wieder aufgebauten Gebäuden gilt das Jahr des Wiederaufbaus als Baujahr.
+
+Ausprägungen
+vor 1919
+1919 - 1949
+1950 - 1959
+1960 - 1969
+1970 - 1979
+1980 - 1989
+1990 - 1999
+2000 - 2009
+2010 - 2015
+2016 und später
+
+Eigentumsform des Gebäudes
+
+Das Merkmal bildet ab, wem das Eigentum an dem Gebäude (nicht der einzelnen Wohnung) rechtlich zusteht. Dies können Privatpersonen oder juristische Personen sein.
+Gemeinschaft von Wohnungseigentümern: 
+Gilt ausschließlich und immer dann, wenn ein Gebäude (Mehrfamilienhaus) nach dem Wohnungseigentumsgesetz (WEG) in Eigentumswohnungen aufgeteilt ist. Im Fall von Einfamilienhausanlagen (wie Doppelhaus- oder Reihenhausanlagen), die nach WEG aufgeteilt sind, darf "Gemeinschaft von Wohnungseigentümerinnen und -eigentümern" nicht angegeben werden. Für diesen Fall muss eine der anderen Ausprägungen gewählt werden (in der Regel: Privatperson oder Privatpersonen).
+Privatperson oder Privatpersonen:
+Alle natürlichen Personen. Dies können Einzelpersonen, Paare oder sonstige Gruppen von Personen sein, wie Erbengemeinschaften.
+Wohnungsgenossenschaft:
+Alle Wohnungsunternehmen, die die Rechtsform einer Genossenschaft haben.
+Kommune oder kommunales Wohnungsunternehmen:
+Unternehmen oder Einrichtungen, bei denen die Kommune mit mehr als 50 % Nennkapital oder Stimmrecht beteiligt ist.
+Privatwirtschaftliches Wohnungsunternehmen: 
+Alle privatrechtlichen Wohnungsunternehmen, ohne Genossenschaften.
+Anderes privatwirtschaftliches Unternehmen:
+Alle privatrechtlichen Unternehmen, in deren Eigentum sich Wohnungen befinden, deren primärer Erwerbszweck aber nicht die Wohnungsvermietung ist (beispielsweisen Banken, Versicherungen, Fonds).
+Bund, Land:
+Unternehmen oder Einrichtungen, bei denen der Bund oder das Land mit mehr als 50 % Nennkapital oder Stimmrecht beteiligt ist.
+Organisation ohne Erwerbszweck: 
+Beispielsweise Kirchen.
+
+Ausprägungen
+Gemeinschaft von Wohnungseigentümerinnen oder -eigentümern
+Privatperson oder Privatpersonen
+Wohnungsgenossenschaft
+Kommune oder kommunales Wohnungsunternehmen
+Privatwirtschaftliches Wohnungsunternehmen
+Anderes privatwirtschaftliches Unternehmen
+Bund oder Land
+Organisation ohne Erwerbszweck
+
+Heizungsart
+
+Das Merkmal bezeichnet die überwiegende Heizungsart im Gebäude.
+Die überwiegende Heizungsart im Gebäude gliedert sich danach, welche räumliche Einheit (Stadtteil, Gebäudeblock, Gebäude, Wohnung, Raum) durch die Heizanlage beheizt wird. Bei Passivhäusern gelten Anlagen zur Wärmerückgewinnung/kontrollierte Lüftungsanlagen als "Heizung" und sind entsprechend zugeordnet (in der Regel: Zentralheizung).
+Fernheizung:
+Hier werden ganze Wohnbezirke von einem zentralen Fernheizwerk aus mit Wärme versorgt (sogenannte Fernwärme).
+Etagenheizung:
+Unter einer Etagenheizung versteht man eine zentrale Heizanlage für sämtliche Räume einer abgeschlossenen Wohnung, wobei sich die Heizquelle (beispielsweise Gastherme) meist innerhalb dieser Wohnung befindet.
+Blockheizung:
+Eine Blockheizung liegt vor, wenn ein Block ganzer Häuser durch ein zentrales Heizsystem beheizt wird und die Heizquelle sich in beziehungsweise an einem der Gebäude oder in dessen unmittelbarer Nähe befindet (sogenannte Nahwärme).
+Zentralheizung:
+Bei einer Zentralheizung werden sämtliche Wohneinheiten eines Gebäudes von einer zentralen Heizstelle, die sich innerhalb des Gebäudes (in der Regel im Keller) befindet, beheizt. Dazu zählen auch Wärmepumpen.
+Einzel- oder Mehrraumöfen:
+Einzelöfen (wie Kohle- oder Nachtspeicheröfen) beheizen jeweils nur den Raum, in dem sie stehen. In der Regel sind sie fest installiert. Ein Mehrraumofen (beispielsweise Kachelofen) beheizt gleichzeitig mehrere Räume (auch durch Luftkanäle).
+keine Heizung im Gebäude oder in den Wohnungen
+
+Ausprägungen
+Fernheizung (Fernwärme)
+Etagenheizung
+Blockheizung
+Zentralheizung
+Einzel-/Mehrraumöfen (auch Nachtspeicherheizung)
+Keine Heizung im Gebäude oder in den Wohnungen
+
+Energieträger der Heizung
+
+Energieträger, der für die Beheizung des Gebäudes verwendet wird. Bei mehreren Energieträgern im Gebäude ist es derjenige, durch den der größte Teil der Wohnfläche beheizt wird.
+Bei Passivhäusern wird der Restwärmebedarf durch eine zusätzliche Quelle gedeckt, die hier angegeben wird.
+Gas
+Heizöl
+Holz, Holzpellets
+Biomasse (ohne Holz), Biogas:
+Alle durch Pflanzen oder Tiere erzeugten organischen Substanzen, aus denen mittels Verbrennung
+Energie gewonnen werden kann. Dazu zählen unter anderem Stroh, Biomüll oder Gülle (ohne Holz). Biogas entsteht bei der Vergärung von Biomasse und ist hier auch eingeordnet.
+Solar-/Geothermie, Umweltwärme, Abluftwärme:
+Hier wird Sonnenenergie sowie Energie aus Wasser, Luft und Erde mit Hilfe von Kollektoren, Wärmepumpen und -tauschern gewonnen. Dazu zählt auch die Wärme, die aus der Abluft von Gebäuden gewonnen wird (sogenannte Abluftwärme).
+Strom (ohne Wärmepumpe)
+Kohle 
+Fernwärme (verschiedene Energieträger)
+kein Energieträger (keine Heizung)
+
+Ausprägungen
+Gas
+Heizöl
+Holz, Holzpellets
+Biomasse (ohne Holz), Biogas
+Solar-/Geothermie, Wärmepumpen
+Strom (ohne Wärmepumpe)
+Kohle
+Fernwärme (verschiedene Energieträger)
+kein Energieträger (keine Heizung)
+
+Art der Wohnungsnutzung
+
+Die Art der Wohnungsnutzung beschreibt, wie die Wohnung zum Stichtag genutzt wird.
+Vom Eigentümerin oder Eigentümer bewohnt: 
+Wenn mindestens einer der Bewohnerinnen oder einer der Bewohner Eigentümerin oder Eigentümer der Wohnung ist. Gilt auch, wenn außer der Eigentümerin oder dem Eigentümer zusätzlich noch weitere Personen beispielsweise Untermieterinnen oder Untermieter in der Wohnung wohnen.
+Zu Wohnzwecken vermietet: 
+Die Wohnung ist zu Wohnzwecken vermietet oder mietfrei überlassen. Hierzu zählen auch Nießbrauch- und sonstige Wohnrechte.
+Privat genutzte Ferien- oder Freizeitwohnung: 
+Privat genutzte Ferien- oder Freizeitwohnungen sind Wohnungen, in denen eine Person dauerhaft zu privaten Zwecken ihre Freizeit verbringt, beispielsweise am Wochenende, während des Urlaubs oder der Ferien. Ferien- und Freizeitwohnungen kann es in jedem Gebäude (wie Wochenend- und Ferienhaus, Mehrfamilienhaus) geben. Sie können vom Eigentümer oder von der Eigentümerin selbst genutzt oder dauerhaft an eine dritte Person zur Freizeitnutzung vermietet (oder kostenlos überlassen) werden. Ferienwohnungen, die an wechselnde Personen vermietet werden, gehören nicht dazu.
+Leer stehend:
+Eine Wohnung gilt als leer stehend, wenn sie am Erhebungsstichtag weder vermietet ist, noch von der Eigentümerin oder dem Eigentümer selbst genutzt wird und auch keine Ferien- und Freizeitwohnung ist. Wenn die Wohnung wegen Umbaus oder Modernisierung – bei Weiterbestehen des Mietverhältnisses – vorübergehend nicht genutzt werden kann, zählt diese Wohnung nicht als leer stehend.
+
+Ausprägungen
+Von Eigentümerin oder Eigentümer bewohnt
+Zu Wohnzwecken vermietet
+Privat genutzte Ferien- oder Freizeitwohnung
+Leerstehend
+
+Miete der Wohnung (EUR pro qm in 2 EUR-Schritten)
+
+Monatliche Nettokaltmiete der Wohnung in € pro Wohnfläche in m²
+
+Ausprägungen
+unter 4 €/m²
+4 - unter 6 €/m²
+6 - unter 8 €/m²
+8 - unter 10 €/m²
+10 - unter 12€/m²
+12 - unter 14€/m²
+14 - unter 16€/m²
+16 - unter 18 €/m²
+18 - unter 20 €/m²
+20 €/m² und mehr
+
+Fläche der Wohnung (20 m² Intervalle)
+
+Grundfläche der gesamten Wohnung. Zur Wohnung zählen auch außerhalb des eigentlichen Wohnungsabschlusses liegende Räume (z. B. Mansarden) sowie zu Wohnzwecken ausgebaute Keller- und Bodenräume.
+Zur Ermittlung der Fläche sind anzurechnen (gemäß Wohnflächenverordnung):
+- voll: die Grundflächen von Räumen/Raumteilen mit einer lichten Höhe von mindestens 2 Metern
+- zur Hälfte: die Grundflächen von Räumen/Raumteilen mit einer lichten Höhe von mindestens 1 Meter, aber weniger als 2 Metern; unbeheizbare Wintergärten, Schwimmbäder und ähnliche nach allen Seiten geschlossene Räume
+- in der Regel zu einem Viertel, höchstens jedoch zur Hälfte: die Flächen von Balkonen, Loggien, Dachgärten, Terrassen.
+
+Ausprägungen
+unter 40 m²
+40 - 59 m²
+60 - 79 m²
+80 - 99 m²
+100 - 119 m²
+120 - 139 m²
+140 - 159 m²
+160 - 179 m²
+180 - 199 m²
+200 m² und mehr
+
+Zahl der Räume
+
+Die Zahl der Räume umfasst alle Wohn-, Ess- und Schlafzimmer und andere separate Räume (wie bewohnbare Keller- und Bodenräume) von mindestens 6 m² Größe sowie abgeschlossene Küchen unabhängig von deren Größe.
+Ein Wohnzimmer mit einer Essecke, Schlafnische oder Kochnische ist als ein Raum zu zählen. Dementsprechend bestehen Wohnungen, in denen es keine bauliche Trennung der einzelnen Wohnbereiche gibt (wie sogenannte „Loftwohnungen“) aus nur einem Raum.
+Bad, Toilette, Flur und Wirtschaftsräume werden grundsätzlich nicht mitgezählt.
+
+Ausprägungen
+1 Raum
+2 Räume
+3 Räume
+4 Räume
+5 Räume
+6 Räume
+7 und mehr Räume
+
+Durchschnittliche Nettokaltmiete pro Quadratmeter
+Die durchschnittliche Nettokaltmiete/qm ist das Verhältnis zwischen der Summe der Quad-ratmetermiete der Wohnungen und der Summe der Wohnungen. Die Berechnung erfolgt für vermietete Wohnungen in Wohngebäuden (ohne Wohnheime). Mietfrei überlassene Wohnungen werden aus der Berechnung ausgeschlossen.
+
+Leerstandsquote (Wohnungen)
+Die Leerstandsquote (Wohnungen) stellt den Anteil der leerstehenden Wohnungen an allen bewohnten und leerstehenden Wohnungen dar. Nicht berücksichtigt sind: Ferien- und Frei-zeitwohnungen sowie gewerblich genutzte Wohnungen. Die Berechnung erfolgt für Wohnungen in Wohngebäuden (ohne Wohnheime).
+
+Eigentümerquote (Wohnungen)
+Die Eigentümerquote stellt den Anteil der von Eigentümerinnen/ Eigentümern bewohnten Wohnungen an allen bewohnten Wohnungen dar. Nicht berücksichtigt sind: Leer stehende Wohnungen, Ferien- und Freizeitwohnungen sowie gewerblich genutzte Wohnungen. Die Berechnung erfolgt für Wohnungen in Wohngebäuden (ohne Wohnheime).
+
+Durchschnittliche Wohnfläche je Wohnung
+Die durchschnittliche Wohnungsgröße in m² ist das Verhältnis zwischen der Gesamtfläche in m² und der Gesamtzahl der Wohnungen. Nicht berücksichtigt sind gewerblich genutzte Wohnungen. Die Berechnung erfolgt für Wohnungen in Wohngebäuden (ohne Wohnheime).
+
+Leerstandsdauer
+
+Angabe zur Dauer des Leerstands.
+
+Ausprägungen
+Seit weniger als 3 Monaten
+Seit 3 bis unter 6 Monaten
+Seit 6 bis unter 12 Monaten
+Seit 12 Monaten oder länger
+
+Leerstandsgrund
+
+Angabe, ob die Wohnung innerhalb von 3 Monaten nach dem Stichtag für eine Vermietung beziehungsweise einen Bezug zur Verfügung stehen wird und wenn nein, Grund des Leerstands.
+
+Ausprägungen
+nnerhalb von 3 Monaten für den Bezug verfügbar
+Laufende bzw. geplante Baumaßnahmen
+Geplanter Abriss oder Rückbau
+Verkauf des Gebäudes oder der Wohnung
+Künftige Selbstnutzung
+Sonstiger Grund

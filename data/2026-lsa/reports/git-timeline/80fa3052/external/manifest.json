@@ -1,0 +1,161 @@
+[
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/results.json",
+    "file": "results.json",
+    "bytes": 254136,
+    "sha256": "43c5ccbde8fd327a72aa9b568531ed7f010fccedf261a027cf21d0d5b7caac3f",
+    "retrieved_at_utc": "2026-09-07T08:36:30.545927+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/current.json",
+    "file": "current.json",
+    "sha256": "c30e3680ada9dffe50fffb1e54a0acc9a187e29da23c4cf454f1f471a8ce5e97"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-revision.json",
+    "file": "method-revision.json",
+    "bytes": 270,
+    "sha256": "373bf0187ef253d31d70780a5d9f4e3d30b7e802e64ca136ec51d4215cd0d82f",
+    "retrieved_at_utc": "2026-09-07T08:36:30.629916+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-robust-mad.json",
+    "file": "method-robust-mad.json",
+    "bytes": 282,
+    "sha256": "5f7fc1e8c66adbca735f042574d0317ad2ce01dca1785f5c482954b97844af1a",
+    "retrieved_at_utc": "2026-09-07T08:36:30.709130+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-last-digits.json",
+    "file": "method-last-digits.json",
+    "bytes": 4970,
+    "sha256": "8537038d4db1aa5613bcea5d5ef9d69a65e33790a2b92e62889932f1a371fc24",
+    "retrieved_at_utc": "2026-09-07T08:36:30.798077+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-mahalanobis.json",
+    "file": "method-mahalanobis.json",
+    "bytes": 97761,
+    "sha256": "044a0b7f777785529f2ff788e758ae22cb71467cf38c614fd594d3f0080edbb7",
+    "retrieved_at_utc": "2026-09-07T08:36:30.937627+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-isolation-forest.json",
+    "file": "method-isolation-forest.json",
+    "bytes": 99037,
+    "sha256": "be93f18e7eea040e34d63b6c6ff4d88c39b01801c27157d7a7acfbccff5c9223",
+    "retrieved_at_utc": "2026-09-07T08:36:31.085250+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-lof.json",
+    "file": "method-lof.json",
+    "bytes": 96096,
+    "sha256": "3ffb7d77093eecdfa1435813372963bdba3bfc23cadc39d1e6c7780c48f7a11e",
+    "retrieved_at_utc": "2026-09-07T08:36:31.238856+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/results.part-0000.json",
+    "file": "results.part-0000.json",
+    "bytes": 2094604,
+    "sha256": "8cf56871d59741d752f4aa73be9f8f96939144a796a175537d86db719ba4d87d",
+    "retrieved_at_utc": "2026-09-07T08:36:47.917052+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/results.part-0001.json",
+    "file": "results.part-0001.json",
+    "bytes": 2094406,
+    "sha256": "c4ca70ad560c4bad12e5be11d955dc35b75401e9975ad801ef12745c8628e9f9",
+    "retrieved_at_utc": "2026-09-07T08:36:48.250744+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/results.part-0002.json",
+    "file": "results.part-0002.json",
+    "bytes": 362182,
+    "sha256": "229f6cf352154641630f9310b8bfdf0d33ceb8652beaa1c081a351d1ededb16d",
+    "retrieved_at_utc": "2026-09-07T08:36:48.428078+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-revision.part-0000.json",
+    "file": "method-revision.part-0000.json",
+    "bytes": 2092061,
+    "sha256": "861c0b6a812e06011c452b11342b8376d602d910099b4ac9d280e79da8af2337",
+    "retrieved_at_utc": "2026-09-07T08:36:48.751721+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-revision.part-0001.json",
+    "file": "method-revision.part-0001.json",
+    "bytes": 2094466,
+    "sha256": "f265b43457954927b665b80843a6923785d042415371f748ddff616fbc9d57ef",
+    "retrieved_at_utc": "2026-09-07T08:36:49.069366+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-revision.part-0002.json",
+    "file": "method-revision.part-0002.json",
+    "bytes": 2094749,
+    "sha256": "04c05f530a3247dbfce1067b86f8d412425865230e2975868b35ba0c2c530f57",
+    "retrieved_at_utc": "2026-09-07T08:36:49.411041+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-revision.part-0003.json",
+    "file": "method-revision.part-0003.json",
+    "bytes": 2094672,
+    "sha256": "6a9244a2ea414f5bc6bfc8165c6411c1f516a0834ddf10d51875d31ed0dd6cc6",
+    "retrieved_at_utc": "2026-09-07T08:36:49.744189+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-revision.part-0004.json",
+    "file": "method-revision.part-0004.json",
+    "bytes": 2094729,
+    "sha256": "1ace43eafd3fd87bde6603cf51bfe2e5cbf6151afff002898d4f35e563a11937",
+    "retrieved_at_utc": "2026-09-07T08:36:50.071528+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-revision.part-0005.json",
+    "file": "method-revision.part-0005.json",
+    "bytes": 789725,
+    "sha256": "59a85a3d3e5ac97763994d3bbf270b5dc8b3d430df7235187b84cf57475671ef",
+    "retrieved_at_utc": "2026-09-07T08:36:50.280179+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-robust-mad.part-0000.json",
+    "file": "method-robust-mad.part-0000.json",
+    "bytes": 2092598,
+    "sha256": "77ee0b365ce2e4fe4463295f3f3d9c0c5cc8a4f555b37743739578db6ebd58ad",
+    "retrieved_at_utc": "2026-09-07T08:36:50.608131+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-robust-mad.part-0001.json",
+    "file": "method-robust-mad.part-0001.json",
+    "bytes": 2092515,
+    "sha256": "d6bc08e29634666cbf75ffd1dfb2583223638ef117b4d112697b2680856ec146",
+    "retrieved_at_utc": "2026-09-07T08:36:50.938552+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-robust-mad.part-0002.json",
+    "file": "method-robust-mad.part-0002.json",
+    "bytes": 2092321,
+    "sha256": "d4f23aa132892d758b0bdce93ccede7706493d075d3fc2270049a612e51ff4f0",
+    "retrieved_at_utc": "2026-09-07T08:36:51.259037+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-robust-mad.part-0003.json",
+    "file": "method-robust-mad.part-0003.json",
+    "bytes": 2092363,
+    "sha256": "f5e87caa5ed7a2e0ae67465e4d5f2ab9ceb5137178f7e312d484172cf76073e0",
+    "retrieved_at_utc": "2026-09-07T08:36:51.585458+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-robust-mad.part-0004.json",
+    "file": "method-robust-mad.part-0004.json",
+    "bytes": 2092411,
+    "sha256": "a6024b6d61f11b64d7b4a3a605f6cf4ff24f34d14d54e2036f161a2d2bbd0ed2",
+    "retrieved_at_utc": "2026-09-07T08:36:51.921791+00:00"
+  },
+  {
+    "url": "https://gfrei.news/wp-content/uploads/wahlbeobachtung/forensics/versions/09303583f6526bc22f686fbf9e3e77562d0e7d7cebb51b531ddb3324ececbb7a/method-robust-mad.part-0005.json",
+    "file": "method-robust-mad.part-0005.json",
+    "bytes": 876788,
+    "sha256": "12d5c5e81ae7086214a4b7dbf0c47878ec68917c1bb9bc5f35cc56699cc36482",
+    "retrieved_at_utc": "2026-09-07T08:36:52.154116+00:00"
+  }
+]

@@ -1,0 +1,33 @@
+1/15 Landtagswahl Sachsen-Anhalt: Git-Audit von 80 archivierten Abrufen. Stand 07.09. 00:00 MESZ: 2.614/2.660 Wahlbezirke (98,27 %). Ein Zwischenstandsbericht als Basis für den 100%-Lauf.
+
+2/15 Zweitstimmen am Berichtsstand: AfD 44,28 %, CDU 17,02 %, SPD 9,20 %, GRÜNE 8,90 %, Die Linke 8,49 %, BSW 5,24 %. Auswahl: landesweit strikt über 5 %. Nenner: alle gültigen Zweitstimmen.
+
+3/15 Parteianteile verändern sich mit den eingehenden Gebieten. Das ist eine Zeitreihe der Auszählung, keine Messung wechselnder Wählerpräferenzen. Frühe Ergebnisse sind besonders selektiv; fehlende Meldungen können den Stand noch verändern.
+
+4/15 Noch offen: 10 Urnen- und 36 Briefwahlbezirke. Die erfassten Parteianteile unterscheiden sich deutlich nach Wahltyp. Später eingehende Briefwahl kann deshalb die Gesamtanteile verschieben; die Grafik ist keine Prognose.
+
+5/15 Magdeburg, Halle und Dessau-Roßlau zeigen andere Parteianteile als die übrigen Gemeinden. Die Vergleichsgruppe wird aus Stimmen summiert, nicht aus Gemeindeprozenten gemittelt. Der jeweilige Meldestand steht in der Grafik.
+
+6/15 Alle 14 Kreise/kreisfreien Städte im Vergleich: Zweitstimmenanteile derselben landesweiten Parteiauswahl. Ein lokaler Anteil unter 5 % bleibt sichtbar. Verschiedene Gebietsebenen werden nicht miteinander aufsummiert.
+
+7/15 Alle 41 Wahlkreise und die Streuung in 218 Gemeinden: klare regionale Unterschiede, für sich genommen kein Unregelmäßigkeitsnachweis. Wahlkreise stammen direkt aus dem amtlichen Export; geteilte Gemeinden werden nicht pauschal zugeordnet.
+
+8/15 Auffälliger Statuswechsel: Bitterfeld-Wolfen / 000028 war gemeldet, ab Abruf 19:35 nicht mehr. Ab 22:11 wieder gemeldet. Belegt ist der Meldestatus; Einzelstimmen dieses Bezirks fehlen im Archiv.
+
+9/15 Bei gleichbleibender Zahl gemeldeter Wahlbezirke wurden 15 Änderungen in 14 Gemeinden beobachtet, davon 12 nach vollständiger Meldung. Dazu zählen auch Parteiverschiebungen bei unveränderter Gesamtsumme. Vollständige Vorher/Nachher-Liste im Audit.
+
+10/15 Beispiel Annaburg: SPD-Erststimmen 151 → 168 (+17), FDP 85 → 68 (−17), Summe unverändert. Bad Dürrenberg: 42 Wählende weniger; gültige Stimmen unverändert, ungültige Erst- und Zweitstimmen jeweils −42. Die Ursachen sind nicht dokumentiert.
+
+11/15 Arithmetik: 40.880 Vergleiche von Gemeinden, Kreisen und Wahlkreisen mit ihren Summen; 669.200 Vergleiche Urne + Brief = Gesamt. Nicht-null Abweichungen: 0 bzw. 0. Wiederholte Datenstände sind mitgezählt.
+
+12/15 Die Quellen sind nicht immer synchron: In 8 von 72 gemeinsamen Abrufen unterscheiden sich Übersicht und CSV beim Meldestand. Solche Publikationsunterschiede sind nicht mit verlorenen Stimmen gleichzusetzen.
+
+13/15 Am Berichtsstand fehlen 46 Wahlbezirke. Die vollständige Liste enthält Wahlkreis, Kreis, Gemeinde und Bezirksnummer. Damit lässt sich beim nächsten Lauf prüfen, welche Lücken geschlossen wurden und ob neue Statusrücknahmen hinzukamen.
+
+14/15 Prüfgrenze: Einzel-Wahlbezirksergebnisse mit Stimmen sind im Berichtsstand für 0 Bezirke vorhanden. Die Statushistorie beginnt erst um 19:05. Rücknahmen oder Korrekturen außerhalb der erfassten Zeitpunkte sind nicht ausschließbar.
+
+15/15 Der 100%-Lauf wird mit neuer Git-Referenz reproduziert und gegen diesen Stand verglichen. Vollständige Meldung ist nicht gleich amtliches Endergebnis. Änderungen sind belegt; ihre Ursachen und mögliche Wahlunregelmäßigkeiten brauchen zusätzliche Belege.
+
+Nachtrag 1/2: Am 07.09.2026 erscheint Wahlbezirk 000010 in Aken (Elbe), Wahlkreis 23 Zerbst, neu in der Übersicht. Um 00:45:41 MESZ noch nicht aufgeführt, im Archivlauf 00:51:10 MESZ bereits gemeldet. Deutsche Ortszeit: UTC+2.
+
+Nachtrag 2/2: Der Aken-Eintrag erhöht die Zahl der Wahlbezirke von 2.660 auf 2.661. Aken: 9 → 10; Wahlkreis Zerbst: 79 → 80; Anhalt-Bitterfeld: 204 → 205. Keine Zeile verschwindet. Warum der Eintrag hinzukam, ist in den geprüften Quellen nicht erklärt.

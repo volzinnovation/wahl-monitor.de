@@ -1,0 +1,96 @@
+Erläuterungen zur Methodik
+
+1 | Allgemeine Informationen
+
+Basis der Auswertung sind die Ergebnisse des Zensus 2022 mit Stichtag 15.05.2022
+
+Für die Wahrung der Geheimhaltung nach § 16 Bundesstatistikgesetz (BStatG) wird für Auswertungen, die ausschließlich auf demografischen Daten, Gebäude- und Wohnungsdaten, Haushaltsdaten und Familiendaten basieren, ein Verfahren der stochastischen Überlagerung nach der Cell-Key-Methode (CKM) angewendet. 
+Einige Fallzahlen werden daher gegenüber ihrem Originalwert leicht verändert ausgewiesen. Dies hat zur Folge, dass sich die ausgewiesenen Einzelwerte in der Tabelle nicht notwendigerweise zu den ausgewiesenen Summen addieren. Dieses Vorgehen sichert neben dem Schutz von Einzelangaben eine hohe Datenqualität. 
+Eine Sperrung von Auswertungen (in den Tabellen als Punkt . dargestellt) erfolgt nur dann, wenn die Tabelle - oder Teile der Tabelle - ein zu hohes Aufdeckungsrisiko und/oder einen zu hohen Informationsverlust bergen.
+
+Die Bevölkerungszahl (Insgesamt) wird durch die statistische Geheimhaltung nicht verändert. Aus diesem Grund kann die Summe der Einzelergebnisse einer Tabelle von der Bevölkerungszahl abweichen.
+
+Das Ergebnis der Regionalebene "Bund" umfasst neben den in Deutschland lebenden Personen zusätzlich die im Ausland tätigen Angehörigen der Bundeswehr, der Polizeibehörden und des Auswärtigen Dienstes einschließlich ihrer dort ansässigen Familien. Die Summe der Länderergebnisse ist daher kleiner als das Bundesergebnis.
+
+In bundesweit 163 Gemeinden konnten für insgesamt 277 Anschriften die Daten nicht vollständig erhoben und verarbeitet werden, obwohl die Anschriften für die Zensusbefragung ausgewählt worden waren. Diese Anschriften wurden zum Zeitpunkt der Stichprobenziehung als vermeintliche Sonderbereichsanschriften in die Auswahl für die Erhebung aufgenommen. Es hat sich jedoch später herausgestellt, dass es sich doch nicht um Sonderbereichsanschriften handelte. Diese Anschriften mussten daher wie Stichprobenanschriften erhoben werden. An bundesweit 277 Anschriften konnten in dieser Konstellation die Befragungen allerdings nicht oder nicht hinreichend zuverlässig durchgeführt werden – zum Beispiel wegen unklarer Abgrenzung der Anschrift. Die an diesen Anschriften melderechtlich erfassten Personen werden aber bei der Bevölkerungszahl der Gemeinden in der Regionaltabelle "Bevölkerung" berücksichtigt. Es liegen jedoch keine Ergebnisse zu den weiteren im Rahmen des Zensus erfassten Bereichen (Demografie, Haushalte und Familien, Bildungsstand und Erwerbstätigkeit) vor.
+
+Weiterführende methodische Informationen zum Zensusmodell und zur Geheimhaltung unter:
+www.zensus2022.de
+https://www.zensus2022.de/DE/Zensusdatenbank/Geheimhaltung.html
+
+
+2 | Zeichenerklärung
+
+–     = Genau Null oder auf Null geändert | 
+.     = Zahlenwert unbekannt oder geheim | 
+
+Abweichungen in den Summen durch das angewandte Geheimhaltungsverfahren.
+
+Eine Sperrung von Auswertungen (in den Tabellen als Punkt . dargestellt) erfolgt nur dann, wenn die Tabelle - oder Teile der Tabelle - ein zu hohes Aufdeckungsrisiko und/oder einen zu hohen Informationsverlust bergen.
+
+
+3 | Definitionen
+
+Geschlecht
+
+Dieses Merkmal gibt das Geschlecht einer Person an. Die Ausprägungen sind „männlich“ und „weiblich“. 
+
+Zensus 2011: 
+Weitere Ausprägungen sind nicht vorgesehen, da dies zum Stichtag 9. Mai 2011 den Angaben der Einwohnermeldeämter entspricht.
+
+Zensus 2022: 
+Aufgrund geringer Besetzungszahlen können Fälle mit den Geschlechtsausprägungen 'unbekannt' und 'divers' nicht gesondert ausgewiesen werden. Fälle mit diesen Geschlechtsausprägungen werden durch ein definiertes Umschlüsselungsverfahren auf die Geschlechtsausprägungen männlich und weiblich verteilt.
+
+Ausprägungen
+Männlich
+Weiblich
+
+Staatsangehörigkeit
+
+Dieses Merkmal unterscheidet zwischen Personen deutscher und nicht-deutscher Staatsangehörigkeit. Personen mit einer deutschen Staatsangehörigkeit gelten als Deutsche, unabhängig vom Vorliegen weiterer Staatsangehörigkeiten.
+Personen mit einer Staatsangehörigkeit „Staatenlos“, „Ungeklärt“ und „Ohne Angabe“ sind dem Ausland und Sonstige zugeordnet.
+
+Ausprägungen
+deutsch
+ausländisch (einschl. Personen mit einer Staatsangehörigkeit „Staatenlos“, „Ungeklärt“ und „Ohne Angabe“) 
+
+Alter (Infrastrukturrelevante Altersgruppen)
+
+Das Alter der Person bezeichnet das vollendete Lebensjahr zum jeweiligen Zensus-Stichtag. Die Einteilung in infrastrukturrelevante Altersgruppen kann als Grundlage für Infrastruktur- und Sozialplanungen aller Art dienen und damit zur Erstellung von passgenauen Handlungskonzepten und Maßnahmen für die unterschiedlichen Altersgruppen beitragen.
+
+Ausprägungen
+unter 3 Jahren
+3 - 5 Jahre
+6 - 9 Jahre
+10 - 15 Jahre
+16 - 18 Jahre
+19 - 24 Jahre
+25 - 39 Jahre
+40 - 59 Jahre
+60 - 66 Jahre
+67 - 74 Jahre
+75 Jahre und älter
+
+Familienstand
+
+Das Merkmal gibt an, welchen personenrechtlichen Familienstand eine Person hat. Der personenrechtliche Familienstand wird nach dem Personenstandsgesetz sowie nach dem Gesetz über die eingetragene Lebenspartnerschaft ausgewiesen.
+Das Gesetz zur Einführung des Rechts auf Eheschließung für Personen gleichen Geschlechts (Eheöffnungsgesetz) erlaubt gleichgeschlechtlichen Paaren seit 1. Oktober 2017 die Eheschließung. Die Begründung neuer eingetragener Lebenspartnerschaften nach dem Lebenspartnerschaftsgesetz (LPartG) ist seit dem 1. Oktober 2017 nicht mehr möglich. Sofern bestehende Lebenspartnerschaften nicht in eine Ehe umgewandelt werden, bleiben eingetragene Lebenspartnerschaften bestehen.
+
+Ausprägungen
+ledig
+verheiratet / eingetragene Lebenspartnerschaft
+verwitwet / eingetragene(r) Lebenspartner(in) verstorben
+geschieden / eingetragene Lebenspartnerschaft aufgehoben
+ohne Angabe
+
+Einwanderungsgeschichte
+
+Typisierung der Personen nach der Einwanderungsgeschichte.  
+Eine Einwanderungsgeschichte haben Personen, die entweder selbst oder deren beide Elternteile nach Deutschland eingewandert sind. Es gilt der Staat einer Person zum Zeitpunkt ihrer Geburt. Personen die vor dem 2. August 1945 geboren wurden, werden anhand der Grenzen des Deutschen Reiches von 31. Dezember 1937 ausgewertet. Personen die nach dem 2. August 1945 geboren wurden, werden anhand der Grenzen der heutigen Bundesrepublik typisiert. Die Informationen zur Nachkommenschaft von gewanderten Personen, unabhängig von beid- oder einseitiger Einwanderungsgeschichte, kann nur für Personen gleich und unter 18 Jahren, die in derselben Gemeinde der Eltern gemeldet sind, ausgewiesen werden. Das Konzept der Einwanderungsgeschichte ersetzt das Konzept Migrationshintergrund aus dem Zensus 2011. Das neue Konzept Einwanderungsgeschichte wurde von der Fachkommission Integrationsfähigkeit ausgearbeitet und vom Mikrozensus weiterentwickelt.
+
+Ausprägungen
+Mit Einwanderungsgeschichte
+ Eingewanderte
+ Nachkommen von Eingewanderten
+Mit einseitiger Einwanderungsgeschichte
+Ohne Einwanderungsgeschichte

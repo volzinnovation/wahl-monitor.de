@@ -1,0 +1,244 @@
+[
+  {
+    "alt_text": "Auszählung im Verlauf · Wahlbezirke mit Meldung in % des jeweiligen Solls · 07.09.2026 00:00 MESZ: 98,27 % gesamt",
+    "family": "step line",
+    "fields": [
+      "reported_precincts",
+      "total_precincts",
+      "mode"
+    ],
+    "id": "01_auszaehlung",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "80 acquisition observations; zeros in initial templates have no defined percentage; no interpolation.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/01_auszaehlung.png",
+    "question": "How complete is each reporting mode?",
+    "renderer": "Matplotlib PNG",
+    "source": "raw_timeline.jsonl.gz"
+  },
+  {
+    "alt_text": "Zweitstimmen am eingefrorenen Stand · Parteien mit landesweit mehr als 5 % · 1.268.772 gültige Zweitstimmen · 98,27 % der Wahlbezirke",
+    "family": "horizontal bar",
+    "fields": [
+      "party",
+      "votes",
+      "share_percent"
+    ],
+    "id": "02_parteien",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Strict >5% at cutoff; denominator includes every party, no renormalization.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/02_parteien.png",
+    "question": "Which parties exceed 5% at cutoff?",
+    "renderer": "Matplotlib PNG",
+    "source": "summary.json"
+  },
+  {
+    "alt_text": "Parteianteile während der Auszählung · Feste Parteiauswahl vom Berichtsstand · frühe Meldungen sind keine repräsentative Stichprobe",
+    "family": "step line",
+    "fields": [
+      "party",
+      "votes",
+      "valid_votes_zweit",
+      "capture"
+    ],
+    "id": "03_parteiverlauf",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Time ordered archive; reporting composition, not a voter-preference time series. Shared 0–65% scale.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/03_parteiverlauf.png",
+    "question": "How did the reported party mix change?",
+    "renderer": "Matplotlib PNG",
+    "source": "raw_timeline.jsonl.gz"
+  },
+  {
+    "alt_text": "Die drei kreisfreien Städte im Vergleich · Zweitstimmen in % · übrige Gemeinden nach gültigen Stimmen gewichtet · Meldestand je Zeile",
+    "family": "heatmap",
+    "fields": [
+      "area",
+      "party",
+      "share",
+      "coverage"
+    ],
+    "id": "04_staedte",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Percentages use all valid second votes. Ordered rows, numeric cells, single blue root, shared 0–65% scale.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/04_staedte.png",
+    "question": "Die drei kreisfreien Städte im Vergleich",
+    "renderer": "Matplotlib PNG",
+    "source": "results_by_area.csv"
+  },
+  {
+    "alt_text": "Alle 14 Kreise und kreisfreien Städte · Zweitstimmen in % · feste Parteiauswahl >5 % im Land · Klammern: gemeldete / gesamte Wahlbezirke",
+    "family": "heatmap",
+    "fields": [
+      "area",
+      "party",
+      "share",
+      "coverage"
+    ],
+    "id": "05_kreise",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Percentages use all valid second votes. Ordered rows, numeric cells, single blue root, shared 0–65% scale.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/05_kreise.png",
+    "question": "Alle 14 Kreise und kreisfreien Städte",
+    "renderer": "Matplotlib PNG",
+    "source": "results_by_area.csv"
+  },
+  {
+    "alt_text": "Alle 41 Wahlkreise · Zweitstimmen in % · dieselbe Skala in beiden Tafeln · Meldestand in Klammern",
+    "family": "heatmap",
+    "fields": [
+      "wahlkreis",
+      "party",
+      "share",
+      "coverage"
+    ],
+    "id": "06_wahlkreise",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "41 direct official constituencies; split municipalities are never allocated wholesale; shared 0–65% scale.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/06_wahlkreise.png",
+    "question": "How do all constituencies compare?",
+    "renderer": "Matplotlib PNG",
+    "source": "results_by_area.csv"
+  },
+  {
+    "alt_text": "Welche Wahlbezirke fehlen noch? · 46 offene Meldungen in 35 Gemeinden · Statusübersicht, Stand 07.09. 00:00 MESZ",
+    "family": "horizontal bar",
+    "fields": [
+      "Gemeinde",
+      "unreported count"
+    ],
+    "id": "07_offene_meldungen",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Four largest municipalities plus explicitly aggregated remainder; full identity list in CSV.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/07_offene_meldungen.png",
+    "question": "Where are the remaining reports?",
+    "renderer": "Matplotlib PNG",
+    "source": "missing_wahlbezirke.csv"
+  },
+  {
+    "alt_text": "Eine Meldung wird zurückgenommen · Bitterfeld-Wolfen, Stadt / 000028 · beobachteter Status, keine verfügbaren Einzelstimmen",
+    "family": "binary step timeline",
+    "fields": [
+      "precinct identity",
+      "reported status",
+      "capture"
+    ],
+    "id": "08_status_ruecknahme",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Exact archived observed values. Step line is not proof of continuous state between captures; first recorded loss shown.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/08_status_ruecknahme.png",
+    "question": "Was any previously reported district reset?",
+    "renderer": "Matplotlib PNG",
+    "source": "status_timeline.jsonl.gz"
+  },
+  {
+    "alt_text": "Spätere Änderungen von Summen · 8 Gemeinde-Änderungen bei gleicher Zahl gemeldeter Wahlbezirke · Parteienverschiebungen separat im Audit",
+    "family": "faceted signed bar",
+    "fields": [
+      "municipality",
+      "capture",
+      "voter and valid-vote deltas"
+    ],
+    "id": "09_summenrevisionen",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Shows all revisions affecting sums; party-only redistributions are included in the full ledger, not visible here.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/09_summenrevisionen.png",
+    "question": "Which fixed-reporting changes affected totals?",
+    "renderer": "Matplotlib PNG",
+    "source": "summary.json:municipality_revisions"
+  },
+  {
+    "alt_text": "Übersicht und CSV laufen zeitweise auseinander · Differenz der gemeldeten Wahlbezirke: HTML-Übersicht minus Landes-CSV · keine Differenz von Stimmen",
+    "family": "step line",
+    "fields": [
+      "overview_minus_csv",
+      "capture"
+    ],
+    "id": "10_quellenversatz",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Different official publication surfaces may update asynchronously; do not infer missing ballots from this count difference.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/10_quellenversatz.png",
+    "question": "Do source surfaces agree on reporting progress?",
+    "renderer": "Matplotlib PNG",
+    "source": "versions.csv"
+  },
+  {
+    "alt_text": "Urnen- und Briefwahl: unterschiedliche Parteianteile · Erfasste Zweitstimmen · Urne 2139/2149 Wahlbezirke · Brief 475/511 · keine Prognose",
+    "family": "paired dot",
+    "fields": [
+      "party",
+      "mode",
+      "share"
+    ],
+    "id": "11_urne_brief",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Valid-vote weighted statewide totals; voting mode is self-selected, observational, and incompletely reported.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/11_urne_brief.png",
+    "question": "How does the observed vote mix differ by reporting mode?",
+    "renderer": "Matplotlib PNG",
+    "source": "latest_official_rows.json"
+  },
+  {
+    "alt_text": "Streuung zwischen Gemeinden und Wahlkreisen · Zweitstimmen in % · jede Gebietseinheit gleich gewichtet · große Punkte zeigen die Landesanteile",
+    "family": "box plot",
+    "fields": [
+      "party",
+      "level",
+      "local share"
+    ],
+    "id": "12_gebietsstreuung",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Equal area weight, not voter weight. No inference of irregularity from geographic outliers.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/12_gebietsstreuung.png",
+    "question": "How much do party shares vary within geographic levels?",
+    "renderer": "Matplotlib PNG",
+    "source": "results_by_area.csv"
+  },
+  {
+    "alt_text": "Bitterfeld-Wolfen: Stimmen der gesamten Gemeinde · Abrufe 19:35 → 22:11 MESZ · 13/31 → 31/31 Wahlbezirke · Einzelbezirk 000028 nicht isolierbar",
+    "family": "grouped horizontal bar",
+    "fields": [
+      "party",
+      "capture",
+      "municipality votes"
+    ],
+    "id": "13_bitterfeld_gemeindediff",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Municipality total only. The 18 net additional reports prevent attribution to district 000028; even the last interval restores five districts.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/13_bitterfeld_gemeindediff.png",
+    "question": "What do municipality party totals show at the two captures?",
+    "renderer": "Matplotlib PNG",
+    "source": "bitterfeld_party_diff.csv"
+  },
+  {
+    "alt_text": "Aken: Wahlbezirk 000010 erscheint gemeldet. 07.09.2026, 00:45:41 → 00:51:10 MESZ: Aken 9 → 10, Wahlkreis Zerbst 79 → 80, Anhalt-Bitterfeld 204 → 205, Sachsen-Anhalt 2.660 → 2.661 Wahlbezirke insgesamt.",
+    "family": "before/after table",
+    "fields": [
+      "area",
+      "before_total",
+      "after_total",
+      "capture_local",
+      "district identity"
+    ],
+    "id": "14_aken_neuer_wahlbezirk",
+    "non_color_encoding": "direct values, arrows, status text",
+    "note": "Four overlapping geographic totals; exact lookup, no summed groups or interpolated publication time. Eight post-baseline observations checked.",
+    "palette_policy": "single blue root plus neutrals",
+    "path": "charts/14_aken_neuer_wahlbezirk.png",
+    "question": "Which added status identity explains the changed expected total, and when was it first seen?",
+    "renderer": "Matplotlib PNG",
+    "source": "aken_case.json; aken_aggregation_diff.csv"
+  }
+]

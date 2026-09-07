@@ -1,0 +1,49 @@
+{
+  "by_relation": {
+    "GEMEINDE->KREIS": {
+      "comparisons": 375,
+      "nonzero": 0,
+      "parents": 14,
+      "unknown_counter_comparisons": 28
+    },
+    "GEMEINDE->LAND": {
+      "comparisons": 34,
+      "nonzero": 0,
+      "parents": 1,
+      "unknown_counter_comparisons": 2
+    },
+    "KREIS->LAND": {
+      "comparisons": 34,
+      "nonzero": 0,
+      "parents": 1,
+      "unknown_counter_comparisons": 2
+    },
+    "WAHLBEZIRK->GEMEINDE": {
+      "comparisons": 5977,
+      "nonzero": 0,
+      "parents": 218,
+      "unknown_counter_comparisons": 0
+    },
+    "WAHLBEZIRK->LAND": {
+      "comparisons": 34,
+      "nonzero": 0,
+      "parents": 1,
+      "unknown_counter_comparisons": 2
+    },
+    "WAHLBEZIRK->WAHLKREIS": {
+      "comparisons": 1045,
+      "nonzero": 0,
+      "parents": 41,
+      "unknown_counter_comparisons": 82
+    },
+    "WAHLKREIS->LAND": {
+      "comparisons": 34,
+      "nonzero": 0,
+      "parents": 1,
+      "unknown_counter_comparisons": 2
+    }
+  },
+  "status_only": [],
+  "status_vote_identity_matches": 2661,
+  "votes_only": []
+}

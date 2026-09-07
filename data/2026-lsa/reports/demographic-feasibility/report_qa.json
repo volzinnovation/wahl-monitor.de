@@ -1,0 +1,15 @@
+{
+  "data_validation": "passed; see validation.json",
+  "notebook": "4 executed cells passed; all 225 Spearman correlations independently reproduced",
+  "chart_ratio_validation": "SQL joins and ratios independently match Python for 218 household and 54 education rows",
+  "html_validation": "passed",
+  "html_package": "passed",
+  "html_verification": "structural_only; exact payload and required reader/fallback roots verified",
+  "browser_attempts": [
+    "Default auto-discovery did not find headless-shell",
+    "Installed Chrome failed under sandbox",
+    "Installed Chrome outside sandbox timed out after 11210ms during static chart extraction"
+  ],
+  "visual_verification": "not completed; generated semantic chart data remain available in the self-contained report",
+  "publication": "local files only"
+}

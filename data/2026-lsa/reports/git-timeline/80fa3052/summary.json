@@ -1,0 +1,5032 @@
+{
+  "aggregation_checks": 69482,
+  "aggregation_nonzero": 162,
+  "analysis_script_sha256": "be41a09a29c3747b9c93b4d07e6e3300d9a588e4e68a33a9b03c73b4c48da1ed",
+  "area_candidate_count": 98,
+  "area_disappearances": [],
+  "area_reporting_decreases": [],
+  "area_resets": [],
+  "area_revision_fixed_count": 36,
+  "area_value_missing": [
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 79,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 79,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15001",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Dessau-Roßlau, Stadt",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 79,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 186,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 186,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15002",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Halle (Saale), Stadt",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 186,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 218,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 218,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15003",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Magdeburg, Landeshauptstadt",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 218,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 152,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 152,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15081",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Altmarkkreis Salzwedel",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 152,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 205,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 205,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15082",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Anhalt-Bitterfeld",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 205,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 244,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 244,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15083",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Börde",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 244,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 253,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 253,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15084",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Burgenlandkreis",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 253,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 227,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 227,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15085",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Harz",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 227,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 116,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 116,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15086",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Jerichower Land",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 116,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 201,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 201,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15087",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Mansfeld-Südharz",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 201,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 207,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 207,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15088",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Saalekreis",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 207,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 25303,
+          "before": 24888,
+          "delta": 415
+        },
+        "party:D15": {
+          "after": 4909,
+          "before": 4666,
+          "delta": 243
+        },
+        "party:D19": {
+          "after": 221,
+          "before": 197,
+          "delta": 24
+        },
+        "party:D2": {
+          "after": 56047,
+          "before": 55701,
+          "delta": 346
+        },
+        "party:D3": {
+          "after": 10239,
+          "before": 10092,
+          "delta": 147
+        },
+        "party:D4": {
+          "after": 7569,
+          "before": 7351,
+          "delta": 218
+        },
+        "party:D5": {
+          "after": 4603,
+          "before": 4557,
+          "delta": 46
+        },
+        "party:D6": {
+          "after": 2440,
+          "before": 2370,
+          "delta": 70
+        },
+        "party:F1": {
+          "after": 18975,
+          "before": 18574,
+          "delta": 401
+        },
+        "party:F10": {
+          "after": 578,
+          "before": 571,
+          "delta": 7
+        },
+        "party:F11": {
+          "after": 216,
+          "before": 214,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 693,
+          "before": 682,
+          "delta": 11
+        },
+        "party:F15": {
+          "after": 6278,
+          "before": 6130,
+          "delta": 148
+        },
+        "party:F19": {
+          "after": 215,
+          "before": 208,
+          "delta": 7
+        },
+        "party:F2": {
+          "after": 55458,
+          "before": 55085,
+          "delta": 373
+        },
+        "party:F20": {
+          "after": 382,
+          "before": 377,
+          "delta": 5
+        },
+        "party:F3": {
+          "after": 8741,
+          "before": 8595,
+          "delta": 146
+        },
+        "party:F4": {
+          "after": 8413,
+          "before": 8202,
+          "delta": 211
+        },
+        "party:F5": {
+          "after": 3096,
+          "before": 3061,
+          "delta": 35
+        },
+        "party:F6": {
+          "after": 6015,
+          "before": 5893,
+          "delta": 122
+        },
+        "party:F7": {
+          "after": 906,
+          "before": 882,
+          "delta": 24
+        },
+        "party:F8": {
+          "after": 151,
+          "before": 148,
+          "delta": 3
+        },
+        "party:F9": {
+          "after": 1431,
+          "before": 1413,
+          "delta": 18
+        },
+        "reported_precincts": {
+          "after": null,
+          "before": 193,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 194,
+          "delta": null
+        },
+        "valid_votes_erst": {
+          "after": 111331,
+          "before": 109822,
+          "delta": 1509
+        },
+        "valid_votes_zweit": {
+          "after": 111548,
+          "before": 110035,
+          "delta": 1513
+        },
+        "voters_total": {
+          "after": 112715,
+          "before": 111198,
+          "delta": 1517
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15089",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Salzlandkreis",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 193,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 196,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 196,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15090",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Stendal",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 196,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 183,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 183,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:KREIS:15091",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Wittenberg",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 183,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 314535,
+          "before": 314120,
+          "delta": 415
+        },
+        "party:D15": {
+          "after": 41782,
+          "before": 41539,
+          "delta": 243
+        },
+        "party:D19": {
+          "after": 2680,
+          "before": 2656,
+          "delta": 24
+        },
+        "party:D2": {
+          "after": 581945,
+          "before": 581599,
+          "delta": 346
+        },
+        "party:D3": {
+          "after": 157905,
+          "before": 157758,
+          "delta": 147
+        },
+        "party:D4": {
+          "after": 102881,
+          "before": 102663,
+          "delta": 218
+        },
+        "party:D5": {
+          "after": 41113,
+          "before": 41067,
+          "delta": 46
+        },
+        "party:D6": {
+          "after": 45310,
+          "before": 45240,
+          "delta": 70
+        },
+        "party:F1": {
+          "after": 226622,
+          "before": 226221,
+          "delta": 401
+        },
+        "party:F10": {
+          "after": 7482,
+          "before": 7475,
+          "delta": 7
+        },
+        "party:F11": {
+          "after": 3487,
+          "before": 3485,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 7283,
+          "before": 7272,
+          "delta": 11
+        },
+        "party:F15": {
+          "after": 69291,
+          "before": 69143,
+          "delta": 148
+        },
+        "party:F19": {
+          "after": 2778,
+          "before": 2771,
+          "delta": 7
+        },
+        "party:F2": {
+          "after": 576037,
+          "before": 575664,
+          "delta": 373
+        },
+        "party:F20": {
+          "after": 4339,
+          "before": 4334,
+          "delta": 5
+        },
+        "party:F3": {
+          "after": 112541,
+          "before": 112395,
+          "delta": 146
+        },
+        "party:F4": {
+          "after": 122303,
+          "before": 122092,
+          "delta": 211
+        },
+        "party:F5": {
+          "after": 33969,
+          "before": 33934,
+          "delta": 35
+        },
+        "party:F6": {
+          "after": 117498,
+          "before": 117376,
+          "delta": 122
+        },
+        "party:F7": {
+          "after": 15430,
+          "before": 15406,
+          "delta": 24
+        },
+        "party:F8": {
+          "after": 1899,
+          "before": 1896,
+          "delta": 3
+        },
+        "party:F9": {
+          "after": 14356,
+          "before": 14338,
+          "delta": 18
+        },
+        "reported_precincts": {
+          "after": null,
+          "before": 2660,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 2661,
+          "delta": null
+        },
+        "valid_votes_erst": {
+          "after": 1312734,
+          "before": 1311225,
+          "delta": 1509
+        },
+        "valid_votes_zweit": {
+          "after": 1315315,
+          "before": 1313802,
+          "delta": 1513
+        },
+        "voters_total": {
+          "after": 1328211,
+          "before": 1326694,
+          "delta": 1517
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:LAND:15",
+      "level": "LAND",
+      "mode": "TOTAL",
+      "name": "Sachsen-Anhalt",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 2660,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 75,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 75,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:001",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Salzwedel",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 75,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 105,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 105,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:002",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Gardelegen-Klötze",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 105,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 96,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 96,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:003",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Havelberg-Osterburg",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 96,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 65,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 65,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:004",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Stendal",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 65,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 70,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 70,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:005",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Genthin",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 70,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 66,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 66,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:006",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Burg",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 66,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 85,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 85,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:007",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Haldensleben",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 85,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 67,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 67,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:008",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Wolmirstedt",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 67,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 64,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 64,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:009",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Oschersleben-Wanzleben",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 64,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 44,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 44,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:010",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Magdeburg I",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 44,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 66,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 66,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:011",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Magdeburg II",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 66,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 49,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 49,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:012",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Magdeburg III",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 49,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 59,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 59,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:013",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Magdeburg IV",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 59,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 48,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 48,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:014",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Halberstadt",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 48,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 59,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 59,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:015",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Blankenburg",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 59,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 51,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 51,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:016",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Wernigerode",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 51,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 60,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 60,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:017",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Quedlinburg",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 60,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 5269,
+          "before": 4854,
+          "delta": 415
+        },
+        "party:D15": {
+          "after": 2702,
+          "before": 2459,
+          "delta": 243
+        },
+        "party:D19": {
+          "after": 442,
+          "before": 418,
+          "delta": 24
+        },
+        "party:D2": {
+          "after": 13014,
+          "before": 12668,
+          "delta": 346
+        },
+        "party:D3": {
+          "after": 2319,
+          "before": 2172,
+          "delta": 147
+        },
+        "party:D4": {
+          "after": 2122,
+          "before": 1904,
+          "delta": 218
+        },
+        "party:D5": {
+          "after": 663,
+          "before": 617,
+          "delta": 46
+        },
+        "party:D6": {
+          "after": 715,
+          "before": 645,
+          "delta": 70
+        },
+        "party:F1": {
+          "after": 4708,
+          "before": 4307,
+          "delta": 401
+        },
+        "party:F10": {
+          "after": 129,
+          "before": 122,
+          "delta": 7
+        },
+        "party:F11": {
+          "after": 58,
+          "before": 56,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 179,
+          "before": 168,
+          "delta": 11
+        },
+        "party:F15": {
+          "after": 2019,
+          "before": 1871,
+          "delta": 148
+        },
+        "party:F19": {
+          "after": 149,
+          "before": 142,
+          "delta": 7
+        },
+        "party:F2": {
+          "after": 13206,
+          "before": 12833,
+          "delta": 373
+        },
+        "party:F20": {
+          "after": 109,
+          "before": 104,
+          "delta": 5
+        },
+        "party:F3": {
+          "after": 2031,
+          "before": 1885,
+          "delta": 146
+        },
+        "party:F4": {
+          "after": 2048,
+          "before": 1837,
+          "delta": 211
+        },
+        "party:F5": {
+          "after": 567,
+          "before": 532,
+          "delta": 35
+        },
+        "party:F6": {
+          "after": 1475,
+          "before": 1353,
+          "delta": 122
+        },
+        "party:F7": {
+          "after": 237,
+          "before": 213,
+          "delta": 24
+        },
+        "party:F8": {
+          "after": 37,
+          "before": 34,
+          "delta": 3
+        },
+        "party:F9": {
+          "after": 315,
+          "before": 297,
+          "delta": 18
+        },
+        "reported_precincts": {
+          "after": null,
+          "before": 54,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 55,
+          "delta": null
+        },
+        "valid_votes_erst": {
+          "after": 27246,
+          "before": 25737,
+          "delta": 1509
+        },
+        "valid_votes_zweit": {
+          "after": 27267,
+          "before": 25754,
+          "delta": 1513
+        },
+        "voters_total": {
+          "after": 27572,
+          "before": 26055,
+          "delta": 1517
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:018",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Aschersleben",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 54,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 40,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 40,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:019",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Staßfurt",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 40,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 56,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 56,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:020",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Schönebeck",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 56,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 65,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 65,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:021",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Bernburg",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 65,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 79,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 79,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:022",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Köthen",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 79,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 80,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 80,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:023",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Zerbst",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 80,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 63,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 63,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:024",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Wittenberg",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 63,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 81,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 81,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:025",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Jessen",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 81,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 52,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 52,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:026",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Dessau-Roßlau",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 52,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 66,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 66,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:027",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Dessau-Roßlau-Wittenberg",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 66,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 61,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 61,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:028",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Bitterfeld-Wolfen",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 61,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 63,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 63,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:029",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Saalekreis",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 63,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 71,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 71,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:030",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Eisleben",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 71,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 88,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 88,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:031",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Sangerhausen",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 88,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 90,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 90,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:032",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Querfurt",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 90,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 43,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 43,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:033",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Merseburg",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 43,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 63,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 63,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:034",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Bad Dürrenberg-Saalekreis",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 63,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 38,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 38,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:035",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Halle I",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 38,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 47,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 47,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:036",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Halle II",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 47,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 57,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 57,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:037",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Halle III",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 57,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 44,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 44,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:038",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Halle IV",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 44,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 72,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 72,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:039",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Weißenfels",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 72,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 79,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 79,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:040",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Naumburg",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 79,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    },
+    {
+      "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+      "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": null,
+          "before": 79,
+          "delta": null
+        },
+        "total_precincts": {
+          "after": null,
+          "before": 79,
+          "delta": null
+        }
+      },
+      "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+      "commit_time": "2026-09-07T02:06:57Z",
+      "event": "value_became_missing",
+      "key": "lsa:WAHLKREIS:041",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Zeitz",
+      "previous_acquired_at_local": "2026-09-07T03:10:10.827443+02:00",
+      "previous_commit": "23377a96d918a4b77f71dbabbf9c385f78334126",
+      "previous_reported": 79,
+      "reported": null,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+      "total": null
+    }
+  ],
+  "arithmetic_issues": [],
+  "captures_without_raw_sources": [
+    {
+      "acquired_at_local": "2026-08-20T12:54:58.222512+02:00",
+      "acquired_at_utc": "2026-08-20T10:54:58.222512+00:00",
+      "commit": "355c37f89c5aa7310907c2922bc2607388fafd2c",
+      "commit_time": "2026-08-20T13:00:49+02:00",
+      "reason": "Pre-election zero template: normalized exports retained, original CSV source bytes not retained.",
+      "subject": "Add Sachsen-Anhalt county drill-down navigation"
+    }
+  ],
+  "denominator_changes": [
+    {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 1044,
+          "before": 969,
+          "delta": 75
+        },
+        "party:D2": {
+          "after": 2273,
+          "before": 2035,
+          "delta": 238
+        },
+        "party:D3": {
+          "after": 478,
+          "before": 442,
+          "delta": 36
+        },
+        "party:D4": {
+          "after": 294,
+          "before": 268,
+          "delta": 26
+        },
+        "party:D5": {
+          "after": 416,
+          "before": 371,
+          "delta": 45
+        },
+        "party:D6": {
+          "after": 108,
+          "before": 96,
+          "delta": 12
+        },
+        "party:F1": {
+          "after": 836,
+          "before": 771,
+          "delta": 65
+        },
+        "party:F10": {
+          "after": 25,
+          "before": 23,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 29,
+          "before": 25,
+          "delta": 4
+        },
+        "party:F15": {
+          "after": 262,
+          "before": 243,
+          "delta": 19
+        },
+        "party:F19": {
+          "after": 3,
+          "before": 2,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 2181,
+          "before": 1953,
+          "delta": 228
+        },
+        "party:F20": {
+          "after": 10,
+          "before": 8,
+          "delta": 2
+        },
+        "party:F3": {
+          "after": 372,
+          "before": 340,
+          "delta": 32
+        },
+        "party:F4": {
+          "after": 357,
+          "before": 323,
+          "delta": 34
+        },
+        "party:F5": {
+          "after": 195,
+          "before": 179,
+          "delta": 16
+        },
+        "party:F6": {
+          "after": 247,
+          "before": 228,
+          "delta": 19
+        },
+        "party:F7": {
+          "after": 54,
+          "before": 49,
+          "delta": 5
+        },
+        "party:F9": {
+          "after": 52,
+          "before": 44,
+          "delta": 8
+        },
+        "reported_precincts": {
+          "after": 10,
+          "before": 9,
+          "delta": 1
+        },
+        "total_precincts": {
+          "after": 10,
+          "before": 9,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 4613,
+          "before": 4181,
+          "delta": 432
+        },
+        "valid_votes_zweit": {
+          "after": 4635,
+          "before": 4200,
+          "delta": 435
+        },
+        "voters_total": {
+          "after": 4692,
+          "before": 4252,
+          "delta": 440
+        }
+      },
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "denominator_change|revision_after_complete",
+      "key": "lsa:GEMEINDE:15082005",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Aken (Elbe), Stadt",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "previous_reported": 9,
+      "reported": 10,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00",
+      "total": 10
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 21051,
+          "before": 20976,
+          "delta": 75
+        },
+        "party:D2": {
+          "after": 47360,
+          "before": 47122,
+          "delta": 238
+        },
+        "party:D3": {
+          "after": 8554,
+          "before": 8518,
+          "delta": 36
+        },
+        "party:D4": {
+          "after": 6056,
+          "before": 6030,
+          "delta": 26
+        },
+        "party:D5": {
+          "after": 3047,
+          "before": 3002,
+          "delta": 45
+        },
+        "party:D6": {
+          "after": 2650,
+          "before": 2638,
+          "delta": 12
+        },
+        "party:F1": {
+          "after": 16019,
+          "before": 15954,
+          "delta": 65
+        },
+        "party:F10": {
+          "after": 431,
+          "before": 429,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 522,
+          "before": 518,
+          "delta": 4
+        },
+        "party:F15": {
+          "after": 4661,
+          "before": 4642,
+          "delta": 19
+        },
+        "party:F19": {
+          "after": 145,
+          "before": 144,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 46180,
+          "before": 45952,
+          "delta": 228
+        },
+        "party:F20": {
+          "after": 289,
+          "before": 287,
+          "delta": 2
+        },
+        "party:F3": {
+          "after": 7003,
+          "before": 6971,
+          "delta": 32
+        },
+        "party:F4": {
+          "after": 6578,
+          "before": 6544,
+          "delta": 34
+        },
+        "party:F5": {
+          "after": 2440,
+          "before": 2424,
+          "delta": 16
+        },
+        "party:F6": {
+          "after": 5106,
+          "before": 5087,
+          "delta": 19
+        },
+        "party:F7": {
+          "after": 1439,
+          "before": 1434,
+          "delta": 5
+        },
+        "party:F9": {
+          "after": 1105,
+          "before": 1097,
+          "delta": 8
+        },
+        "reported_precincts": {
+          "after": 203,
+          "before": 202,
+          "delta": 1
+        },
+        "total_precincts": {
+          "after": 205,
+          "before": 204,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 91971,
+          "before": 91539,
+          "delta": 432
+        },
+        "valid_votes_zweit": {
+          "after": 92231,
+          "before": 91796,
+          "delta": 435
+        },
+        "voters_total": {
+          "after": 93257,
+          "before": 92817,
+          "delta": 440
+        }
+      },
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "denominator_change",
+      "key": "lsa:KREIS:15082",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Anhalt-Bitterfeld",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "previous_reported": 202,
+      "reported": 203,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00",
+      "total": 205
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 305483,
+          "before": 305408,
+          "delta": 75
+        },
+        "party:D2": {
+          "after": 573178,
+          "before": 572940,
+          "delta": 238
+        },
+        "party:D3": {
+          "after": 153538,
+          "before": 153502,
+          "delta": 36
+        },
+        "party:D4": {
+          "after": 100341,
+          "before": 100315,
+          "delta": 26
+        },
+        "party:D5": {
+          "after": 39772,
+          "before": 39727,
+          "delta": 45
+        },
+        "party:D6": {
+          "after": 44153,
+          "before": 44141,
+          "delta": 12
+        },
+        "party:F1": {
+          "after": 219910,
+          "before": 219845,
+          "delta": 65
+        },
+        "party:F10": {
+          "after": 7301,
+          "before": 7299,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 7134,
+          "before": 7130,
+          "delta": 4
+        },
+        "party:F15": {
+          "after": 67558,
+          "before": 67539,
+          "delta": 19
+        },
+        "party:F19": {
+          "after": 2697,
+          "before": 2696,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 567253,
+          "before": 567025,
+          "delta": 228
+        },
+        "party:F20": {
+          "after": 4249,
+          "before": 4247,
+          "delta": 2
+        },
+        "party:F3": {
+          "after": 109437,
+          "before": 109405,
+          "delta": 32
+        },
+        "party:F4": {
+          "after": 118958,
+          "before": 118924,
+          "delta": 34
+        },
+        "party:F5": {
+          "after": 32996,
+          "before": 32980,
+          "delta": 16
+        },
+        "party:F6": {
+          "after": 114420,
+          "before": 114401,
+          "delta": 19
+        },
+        "party:F7": {
+          "after": 15081,
+          "before": 15076,
+          "delta": 5
+        },
+        "party:F9": {
+          "after": 14015,
+          "before": 14007,
+          "delta": 8
+        },
+        "reported_precincts": {
+          "after": 2634,
+          "before": 2633,
+          "delta": 1
+        },
+        "total_precincts": {
+          "after": 2661,
+          "before": 2660,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 1283810,
+          "before": 1283378,
+          "delta": 432
+        },
+        "valid_votes_zweit": {
+          "after": 1286284,
+          "before": 1285849,
+          "delta": 435
+        },
+        "voters_total": {
+          "after": 1299025,
+          "before": 1298585,
+          "delta": 440
+        }
+      },
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "denominator_change",
+      "key": "lsa:LAND:15",
+      "level": "LAND",
+      "mode": "TOTAL",
+      "name": "Sachsen-Anhalt",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "previous_reported": 2633,
+      "reported": 2634,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00",
+      "total": 2661
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 7731,
+          "before": 7656,
+          "delta": 75
+        },
+        "party:D2": {
+          "after": 14138,
+          "before": 13900,
+          "delta": 238
+        },
+        "party:D3": {
+          "after": 2880,
+          "before": 2844,
+          "delta": 36
+        },
+        "party:D4": {
+          "after": 2330,
+          "before": 2304,
+          "delta": 26
+        },
+        "party:D5": {
+          "after": 1478,
+          "before": 1433,
+          "delta": 45
+        },
+        "party:D6": {
+          "after": 824,
+          "before": 812,
+          "delta": 12
+        },
+        "party:F1": {
+          "after": 5538,
+          "before": 5473,
+          "delta": 65
+        },
+        "party:F10": {
+          "after": 158,
+          "before": 156,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 141,
+          "before": 137,
+          "delta": 4
+        },
+        "party:F15": {
+          "after": 1646,
+          "before": 1627,
+          "delta": 19
+        },
+        "party:F19": {
+          "after": 47,
+          "before": 46,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 13888,
+          "before": 13660,
+          "delta": 228
+        },
+        "party:F20": {
+          "after": 102,
+          "before": 100,
+          "delta": 2
+        },
+        "party:F3": {
+          "after": 2237,
+          "before": 2205,
+          "delta": 32
+        },
+        "party:F4": {
+          "after": 2420,
+          "before": 2386,
+          "delta": 34
+        },
+        "party:F5": {
+          "after": 883,
+          "before": 867,
+          "delta": 16
+        },
+        "party:F6": {
+          "after": 1696,
+          "before": 1677,
+          "delta": 19
+        },
+        "party:F7": {
+          "after": 439,
+          "before": 434,
+          "delta": 5
+        },
+        "party:F9": {
+          "after": 315,
+          "before": 307,
+          "delta": 8
+        },
+        "reported_precincts": {
+          "after": 80,
+          "before": 79,
+          "delta": 1
+        },
+        "total_precincts": {
+          "after": 80,
+          "before": 79,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 29381,
+          "before": 28949,
+          "delta": 432
+        },
+        "valid_votes_zweit": {
+          "after": 29619,
+          "before": 29184,
+          "delta": 435
+        },
+        "voters_total": {
+          "after": 29950,
+          "before": 29510,
+          "delta": 440
+        }
+      },
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "denominator_change|revision_after_complete",
+      "key": "lsa:WAHLKREIS:023",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Zerbst",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "previous_reported": 79,
+      "reported": 80,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00",
+      "total": 80
+    }
+  ],
+  "election": "Landtagswahl Sachsen-Anhalt 2026",
+  "election_night_captures": 119,
+  "first_capture": {
+    "acquired_at_local": "2026-08-20T12:54:58.222512+02:00",
+    "acquired_at_utc": "2026-08-20T10:54:58.222512+00:00",
+    "area_rows": 274,
+    "commit": "355c37f89c5aa7310907c2922bc2607388fafd2c",
+    "commit_time": "2026-08-20T13:00:49+02:00",
+    "coverage_percent": null,
+    "dynamic_results_used": null,
+    "mode": "LIVE_CSV_DOWNLOAD",
+    "overview_minus_csv": null,
+    "overview_reported": null,
+    "overview_rows": null,
+    "raw_rows": 0,
+    "reported_precincts": 0,
+    "subject": "Add Sachsen-Anhalt county drill-down navigation",
+    "total_precincts": 0,
+    "valid_votes_erst": 0,
+    "valid_votes_zweit": 0,
+    "voters_total": 0,
+    "wahlbezirk_vote_rows": 0
+  },
+  "full_history": true,
+  "history_commit_count": 124,
+  "last_capture": {
+    "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+    "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+    "area_rows": 2935,
+    "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+    "commit_time": "2026-09-07T02:06:57Z",
+    "coverage_percent": null,
+    "dynamic_results_used": true,
+    "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+    "overview_minus_csv": null,
+    "overview_reported": 2661,
+    "overview_rows": 2661,
+    "raw_rows": 3483,
+    "reported_precincts": null,
+    "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+    "total_precincts": null,
+    "valid_votes_erst": 1312734,
+    "valid_votes_zweit": 1315315,
+    "voters_total": 1328211,
+    "wahlbezirk_vote_rows": 2661
+  },
+  "levels_latest": {
+    "GEMEINDE": 218,
+    "KREIS": 14,
+    "LAND": 1,
+    "WAHLBEZIRK": 2661,
+    "WAHLKREIS": 41
+  },
+  "max_capture_gap_minutes": 24445.26667275,
+  "missing_precincts": null,
+  "missing_status_rows": 0,
+  "mode_checks": 1011997,
+  "mode_nonzero": 0,
+  "municipality_revisions": [
+    {
+      "acquired_at_local": "2026-09-06T19:42:10.100413+02:00",
+      "acquired_at_utc": "2026-09-06T17:42:10.100413+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F12": {
+          "after": 1,
+          "before": 2,
+          "delta": -1
+        },
+        "party:F9": {
+          "after": 4,
+          "before": 3,
+          "delta": 1
+        }
+      },
+      "commit": "f6961b475040d09ebb7b6629e4706c6537a3ea82",
+      "commit_time": "2026-09-06T17:42:10Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15090008",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Altmärkische Wische",
+      "previous_acquired_at_local": "2026-09-06T19:36:46.918877+02:00",
+      "previous_commit": "df702e57eb901e2960903aebb776724d314f051a",
+      "previous_reported": 5,
+      "reported": 5,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T17:42:10.100413+00:00",
+      "total": 5
+    },
+    {
+      "acquired_at_local": "2026-09-06T20:45:16.709868+02:00",
+      "acquired_at_utc": "2026-09-06T18:45:16.709868+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F1": {
+          "after": 273,
+          "before": 272,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 1178,
+          "before": 1179,
+          "delta": -1
+        }
+      },
+      "commit": "25b1063001e3c81db0ed5c28c39329ce1f820b16",
+      "commit_time": "2026-09-06T18:45:18Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count",
+      "key": "lsa:GEMEINDE:15090546",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Tangerhütte, Stadt",
+      "previous_acquired_at_local": "2026-09-06T20:42:35.835399+02:00",
+      "previous_commit": "591a63a5f78085ff05f6d75f7ae2ed08d028817c",
+      "previous_reported": 11,
+      "reported": 11,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T18:45:16.709868+00:00",
+      "total": 21
+    },
+    {
+      "acquired_at_local": "2026-09-06T21:05:08.774110+02:00",
+      "acquired_at_utc": "2026-09-06T19:05:08.774110+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F8": {
+          "after": 0,
+          "before": 3,
+          "delta": -3
+        },
+        "party:F9": {
+          "after": 14,
+          "before": 11,
+          "delta": 3
+        }
+      },
+      "commit": "52c22ef400b46584f7fd242cbd63bde9b2e8365b",
+      "commit_time": "2026-09-06T19:05:10Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count",
+      "key": "lsa:GEMEINDE:15086040",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Genthin, Stadt",
+      "previous_acquired_at_local": "2026-09-06T20:59:11.813756+02:00",
+      "previous_commit": "6218983864c2bdf79746be3ce096d1fa5a4cbc04",
+      "previous_reported": 5,
+      "reported": 5,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T19:05:08.774110+00:00",
+      "total": 14
+    },
+    {
+      "acquired_at_local": "2026-09-06T21:10:26.361861+02:00",
+      "acquired_at_utc": "2026-09-06T19:10:26.361861+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 1419,
+          "before": 1418,
+          "delta": 1
+        },
+        "party:D3": {
+          "after": 373,
+          "before": 372,
+          "delta": 1
+        },
+        "party:D6": {
+          "after": 115,
+          "before": 114,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 6305,
+          "before": 6302,
+          "delta": 3
+        }
+      },
+      "commit": "71f6ed3c34a57aa14ffc43e8bbd33b599599307b",
+      "commit_time": "2026-09-06T19:10:27Z",
+      "event": "revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15085228",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Oberharz am Brocken, Stadt",
+      "previous_acquired_at_local": "2026-09-06T21:05:08.774110+02:00",
+      "previous_commit": "52c22ef400b46584f7fd242cbd63bde9b2e8365b",
+      "previous_reported": 12,
+      "reported": 12,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T19:10:26.361861+00:00",
+      "total": 12
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:11:13.043213+02:00",
+      "acquired_at_utc": "2026-09-06T20:11:13.043213+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D2": {
+          "after": 2602,
+          "before": 2601,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 2479,
+          "before": 2478,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 4842,
+          "before": 4841,
+          "delta": 1
+        },
+        "valid_votes_zweit": {
+          "after": 4858,
+          "before": 4857,
+          "delta": 1
+        },
+        "voters_total": {
+          "after": 4911,
+          "before": 4910,
+          "delta": 1
+        }
+      },
+      "commit": "ba1fc517c286fae14ef9d1ae8b573aab69dc9d84",
+      "commit_time": "2026-09-06T20:11:14Z",
+      "event": "revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15087015",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Allstedt, Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:06:23.019099+02:00",
+      "previous_commit": "e91d1f5dd74691f625b5fb7cfd67fa79e34311d1",
+      "previous_reported": 15,
+      "reported": 15,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T20:11:13.043213+00:00",
+      "total": 15
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:11:13.043213+02:00",
+      "acquired_at_utc": "2026-09-06T20:11:13.043213+00:00",
+      "candidate": true,
+      "changes": {
+        "voters_total": {
+          "after": 6534,
+          "before": 6576,
+          "delta": -42
+        }
+      },
+      "commit": "ba1fc517c286fae14ef9d1ae8b573aab69dc9d84",
+      "commit_time": "2026-09-06T20:11:14Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15088020",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Bad Dürrenberg, Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:06:23.019099+02:00",
+      "previous_commit": "e91d1f5dd74691f625b5fb7cfd67fa79e34311d1",
+      "previous_reported": 10,
+      "reported": 10,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T20:11:13.043213+00:00",
+      "total": 10
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:11:13.043213+02:00",
+      "acquired_at_utc": "2026-09-06T20:11:13.043213+00:00",
+      "candidate": true,
+      "changes": {
+        "voters_total": {
+          "after": 11284,
+          "before": 11283,
+          "delta": 1
+        }
+      },
+      "commit": "ba1fc517c286fae14ef9d1ae8b573aab69dc9d84",
+      "commit_time": "2026-09-06T20:11:14Z",
+      "event": "revision_at_fixed_reporting_count",
+      "key": "lsa:GEMEINDE:15089015",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Aschersleben, Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:06:23.019099+02:00",
+      "previous_commit": "e91d1f5dd74691f625b5fb7cfd67fa79e34311d1",
+      "previous_reported": 23,
+      "reported": 23,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T20:11:13.043213+00:00",
+      "total": 26
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:11:13.043213+02:00",
+      "acquired_at_utc": "2026-09-06T20:11:13.043213+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D4": {
+          "after": 168,
+          "before": 151,
+          "delta": 17
+        },
+        "party:D5": {
+          "after": 68,
+          "before": 85,
+          "delta": -17
+        }
+      },
+      "commit": "ba1fc517c286fae14ef9d1ae8b573aab69dc9d84",
+      "commit_time": "2026-09-06T20:11:14Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15091010",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Annaburg, Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:06:23.019099+02:00",
+      "previous_commit": "e91d1f5dd74691f625b5fb7cfd67fa79e34311d1",
+      "previous_reported": 14,
+      "reported": 14,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T20:11:13.043213+00:00",
+      "total": 14
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:33:43.048543+02:00",
+      "acquired_at_utc": "2026-09-06T20:33:43.048543+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D5": {
+          "after": 164,
+          "before": 160,
+          "delta": 4
+        },
+        "party:D6": {
+          "after": 128,
+          "before": 132,
+          "delta": -4
+        },
+        "party:F5": {
+          "after": 103,
+          "before": 99,
+          "delta": 4
+        },
+        "party:F6": {
+          "after": 206,
+          "before": 210,
+          "delta": -4
+        }
+      },
+      "commit": "5b1254083eec780de1c02d5990127efb412a5dcd",
+      "commit_time": "2026-09-06T20:33:44Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15088235",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Mücheln (Geiseltal), Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:27:22.888490+02:00",
+      "previous_commit": "1701369eb36f9ae3dc5f2d14771ca827fc6a8841",
+      "previous_reported": 12,
+      "reported": 12,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T20:33:43.048543+00:00",
+      "total": 12
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:50:14.343235+02:00",
+      "acquired_at_utc": "2026-09-06T20:50:14.343235+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F2": {
+          "after": 6068,
+          "before": 6069,
+          "delta": -1
+        },
+        "party:F3": {
+          "after": 1224,
+          "before": 1223,
+          "delta": 1
+        }
+      },
+      "commit": "4c2543e68df2f3d92b3380232f466993b6c58edd",
+      "commit_time": "2026-09-06T20:50:15Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15085235",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Quedlinburg, Welterbestadt",
+      "previous_acquired_at_local": "2026-09-06T22:44:40.986867+02:00",
+      "previous_commit": "56a56a3f176057537914f8050630b42b588b245d",
+      "previous_reported": 18,
+      "reported": 18,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T20:50:14.343235+00:00",
+      "total": 18
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:50:14.343235+02:00",
+      "acquired_at_utc": "2026-09-06T20:50:14.343235+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F1": {
+          "after": 1073,
+          "before": 1074,
+          "delta": -1
+        },
+        "party:F5": {
+          "after": 133,
+          "before": 134,
+          "delta": -1
+        },
+        "valid_votes_zweit": {
+          "after": 5657,
+          "before": 5659,
+          "delta": -2
+        }
+      },
+      "commit": "4c2543e68df2f3d92b3380232f466993b6c58edd",
+      "commit_time": "2026-09-06T20:50:15Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15087412",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Südharz",
+      "previous_acquired_at_local": "2026-09-06T22:44:40.986867+02:00",
+      "previous_commit": "56a56a3f176057537914f8050630b42b588b245d",
+      "previous_reported": 18,
+      "reported": 18,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T20:50:14.343235+00:00",
+      "total": 18
+    },
+    {
+      "acquired_at_local": "2026-09-06T23:01:14.584325+02:00",
+      "acquired_at_utc": "2026-09-06T21:01:14.584325+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 1209,
+          "before": 1211,
+          "delta": -2
+        },
+        "party:D2": {
+          "after": 2955,
+          "before": 2956,
+          "delta": -1
+        },
+        "party:F15": {
+          "after": 243,
+          "before": 245,
+          "delta": -2
+        },
+        "party:F2": {
+          "after": 2882,
+          "before": 2883,
+          "delta": -1
+        },
+        "valid_votes_erst": {
+          "after": 5212,
+          "before": 5215,
+          "delta": -3
+        },
+        "valid_votes_zweit": {
+          "after": 5227,
+          "before": 5230,
+          "delta": -3
+        }
+      },
+      "commit": "5f4bd0f68143b10399963391191ad7ae267bae10",
+      "commit_time": "2026-09-06T21:01:15Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15088235",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Mücheln (Geiseltal), Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:55:40.135282+02:00",
+      "previous_commit": "dabef6e6806d6f4fe0b8399dc468030b204d7c00",
+      "previous_reported": 12,
+      "reported": 12,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T21:01:14.584325+00:00",
+      "total": 12
+    },
+    {
+      "acquired_at_local": "2026-09-06T23:50:42.996872+02:00",
+      "acquired_at_utc": "2026-09-06T21:50:42.996872+00:00",
+      "candidate": true,
+      "changes": {
+        "voters_total": {
+          "after": 19372,
+          "before": 19368,
+          "delta": 4
+        }
+      },
+      "commit": "c1b83b22c5edaef8f72537b33e662882fd5eda38",
+      "commit_time": "2026-09-06T21:50:43Z",
+      "event": "revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15084355",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Naumburg (Saale), Stadt",
+      "previous_acquired_at_local": "2026-09-06T23:45:11.320799+02:00",
+      "previous_commit": "22b50c3a50ef24cc5b359b52b9827daad3a65e9c",
+      "previous_reported": 31,
+      "reported": 31,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T21:50:42.996872+00:00",
+      "total": 31
+    },
+    {
+      "acquired_at_local": "2026-09-06T23:50:42.996872+02:00",
+      "acquired_at_utc": "2026-09-06T21:50:42.996872+00:00",
+      "candidate": true,
+      "changes": {
+        "voters_total": {
+          "after": 6001,
+          "before": 6039,
+          "delta": -38
+        }
+      },
+      "commit": "c1b83b22c5edaef8f72537b33e662882fd5eda38",
+      "commit_time": "2026-09-06T21:50:43Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15086145",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Möser",
+      "previous_acquired_at_local": "2026-09-06T23:45:11.320799+02:00",
+      "previous_commit": "22b50c3a50ef24cc5b359b52b9827daad3a65e9c",
+      "previous_reported": 9,
+      "reported": 9,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T21:50:42.996872+00:00",
+      "total": 9
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:00:20.311232+02:00",
+      "acquired_at_utc": "2026-09-06T22:00:20.311232+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D15": {
+          "after": 131,
+          "before": 130,
+          "delta": 1
+        },
+        "party:D3": {
+          "after": 239,
+          "before": 240,
+          "delta": -1
+        },
+        "party:D4": {
+          "after": 143,
+          "before": 142,
+          "delta": 1
+        },
+        "party:D5": {
+          "after": 57,
+          "before": 58,
+          "delta": -1
+        }
+      },
+      "commit": "034045f3d0f71c47aebf3daea47f3d33b136de5c",
+      "commit_time": "2026-09-07T00:01:13+02:00",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15083245",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Gröningen, Stadt",
+      "previous_acquired_at_local": "2026-09-06T23:56:06.793979+02:00",
+      "previous_commit": "4df0c5db1901da59dcf29fe843aa883797baf9aa",
+      "previous_reported": 6,
+      "reported": 6,
+      "source": "normalized",
+      "subject": "Refresh LSA results to 2614 districts",
+      "total": 6
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:23:44.184698+02:00",
+      "acquired_at_utc": "2026-09-06T22:23:44.184698+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 4314,
+          "before": 4315,
+          "delta": -1
+        },
+        "party:D2": {
+          "after": 11013,
+          "before": 11015,
+          "delta": -2
+        },
+        "party:D3": {
+          "after": 2277,
+          "before": 2227,
+          "delta": 50
+        },
+        "party:D6": {
+          "after": 704,
+          "before": 732,
+          "delta": -28
+        },
+        "party:D7": {
+          "after": 926,
+          "before": 945,
+          "delta": -19
+        }
+      },
+      "commit": "305df69296afee6657b419df62f861403fd4370e",
+      "commit_time": "2026-09-06T22:23:45Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15082015",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Bitterfeld-Wolfen, Stadt",
+      "previous_acquired_at_local": "2026-09-07T00:18:14.070833+02:00",
+      "previous_commit": "82b745143ae58288ad021a5f17a786d53eece813",
+      "previous_reported": 31,
+      "reported": 31,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T22:23:44.184698+00:00",
+      "total": 31
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "acquired_at_utc": "2026-09-06T22:45:41.299801+00:00",
+      "candidate": true,
+      "changes": {
+        "voters_total": {
+          "after": 4820,
+          "before": 4841,
+          "delta": -21
+        }
+      },
+      "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "commit_time": "2026-09-06T22:45:42Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15085145",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Harzgerode, Stadt",
+      "previous_acquired_at_local": "2026-09-07T00:40:08.798418+02:00",
+      "previous_commit": "937eaa10aa40ba789d0dd62ff5de859dc6ef9e86",
+      "previous_reported": 13,
+      "reported": 13,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T22:45:41.299801+00:00",
+      "total": 13
+    },
+    {
+      "acquired_at_local": "2026-09-07T01:52:10.207428+02:00",
+      "acquired_at_utc": "2026-09-06T23:52:10.207428+00:00",
+      "candidate": true,
+      "changes": {
+        "voters_total": {
+          "after": 6967,
+          "before": 6991,
+          "delta": -24
+        }
+      },
+      "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+      "commit_time": "2026-09-06T23:52:11Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15090550",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Tangermünde, Stadt",
+      "previous_acquired_at_local": "2026-09-07T01:46:41.804432+02:00",
+      "previous_commit": "8498858d5feb8fd3e85f08ed011bc269ae59a984",
+      "previous_reported": 14,
+      "reported": 14,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T23:52:10.207428+00:00",
+      "total": 14
+    },
+    {
+      "acquired_at_local": "2026-09-07T02:03:11.796077+02:00",
+      "acquired_at_utc": "2026-09-07T00:03:11.796077+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F3": {
+          "after": 576,
+          "before": 585,
+          "delta": -9
+        },
+        "party:F6": {
+          "after": 463,
+          "before": 455,
+          "delta": 8
+        },
+        "valid_votes_zweit": {
+          "after": 8980,
+          "before": 8981,
+          "delta": -1
+        }
+      },
+      "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+      "commit_time": "2026-09-07T00:03:13Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15088205",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Leuna, Stadt",
+      "previous_acquired_at_local": "2026-09-07T01:57:40.558068+02:00",
+      "previous_commit": "bcef1b09bad690c72a89f6812b476fb7df5269ce",
+      "previous_reported": 14,
+      "reported": 14,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T00:03:11.796077+00:00",
+      "total": 14
+    },
+    {
+      "acquired_at_local": "2026-09-07T02:03:11.796077+02:00",
+      "acquired_at_utc": "2026-09-07T00:03:11.796077+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F19": {
+          "after": 27,
+          "before": 26,
+          "delta": 1
+        },
+        "party:F20": {
+          "after": 13,
+          "before": 14,
+          "delta": -1
+        }
+      },
+      "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+      "commit_time": "2026-09-07T00:03:13Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15088305",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Querfurt, Stadt",
+      "previous_acquired_at_local": "2026-09-07T01:57:40.558068+02:00",
+      "previous_commit": "bcef1b09bad690c72a89f6812b476fb7df5269ce",
+      "previous_reported": 16,
+      "reported": 16,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-07T00:03:11.796077+00:00",
+      "total": 16
+    }
+  ],
+  "overview_csv_comparable_captures": 110,
+  "overview_csv_mismatching_captures": 25,
+  "preopening_captures": 3,
+  "python_version": "3.10.5",
+  "raw_municipality_candidates": [
+    {
+      "acquired_at_local": "2026-09-06T19:42:10.100413+02:00",
+      "acquired_at_utc": "2026-09-06T17:42:10.100413+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F12": {
+          "after": 1,
+          "before": 2,
+          "delta": -1
+        },
+        "party:F9": {
+          "after": 4,
+          "before": 3,
+          "delta": 1
+        }
+      },
+      "commit": "f6961b475040d09ebb7b6629e4706c6537a3ea82",
+      "commit_time": "2026-09-06T17:42:10Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15090008:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Altmärkische Wische",
+      "previous_acquired_at_local": "2026-09-06T19:36:46.918877+02:00",
+      "previous_commit": "df702e57eb901e2960903aebb776724d314f051a",
+      "previous_reported": 5,
+      "reported": 5,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T17:42:10.100413+00:00",
+      "total": 5
+    },
+    {
+      "acquired_at_local": "2026-09-06T20:03:37.130785+02:00",
+      "acquired_at_utc": "2026-09-06T18:03:37.130785+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_erst": {
+          "after": 14,
+          "before": 12,
+          "delta": 2
+        },
+        "invalid_votes_zweit": {
+          "after": 9,
+          "before": 8,
+          "delta": 1
+        },
+        "party:D1": {
+          "after": 223,
+          "before": 181,
+          "delta": 42
+        },
+        "party:D15": {
+          "after": 49,
+          "before": 37,
+          "delta": 12
+        },
+        "party:D2": {
+          "after": 462,
+          "before": 429,
+          "delta": 33
+        },
+        "party:D21": {
+          "after": 4,
+          "before": 1,
+          "delta": 3
+        },
+        "party:D3": {
+          "after": 77,
+          "before": 68,
+          "delta": 9
+        },
+        "party:D4": {
+          "after": 45,
+          "before": 36,
+          "delta": 9
+        },
+        "party:D5": {
+          "after": 15,
+          "before": 11,
+          "delta": 4
+        },
+        "party:D6": {
+          "after": 31,
+          "before": 26,
+          "delta": 5
+        },
+        "party:D7": {
+          "after": 17,
+          "before": 16,
+          "delta": 1
+        },
+        "party:F1": {
+          "after": 211,
+          "before": 168,
+          "delta": 43
+        },
+        "party:F10": {
+          "after": 4,
+          "before": 3,
+          "delta": 1
+        },
+        "party:F12": {
+          "after": 3,
+          "before": 2,
+          "delta": 1
+        },
+        "party:F15": {
+          "after": 50,
+          "before": 39,
+          "delta": 11
+        },
+        "party:F2": {
+          "after": 465,
+          "before": 432,
+          "delta": 33
+        },
+        "party:F20": {
+          "after": 1,
+          "before": 0,
+          "delta": 1
+        },
+        "party:F3": {
+          "after": 67,
+          "before": 57,
+          "delta": 10
+        },
+        "party:F4": {
+          "after": 57,
+          "before": 44,
+          "delta": 13
+        },
+        "party:F5": {
+          "after": 11,
+          "before": 9,
+          "delta": 2
+        },
+        "party:F6": {
+          "after": 41,
+          "before": 36,
+          "delta": 5
+        },
+        "party:F7": {
+          "after": 7,
+          "before": 6,
+          "delta": 1
+        },
+        "party:F9": {
+          "after": 6,
+          "before": 8,
+          "delta": -2
+        },
+        "reported_precincts": {
+          "after": 4,
+          "before": 3,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 923,
+          "before": 805,
+          "delta": 118
+        },
+        "valid_votes_zweit": {
+          "after": 928,
+          "before": 809,
+          "delta": 119
+        },
+        "voters_total": {
+          "after": 937,
+          "before": 817,
+          "delta": 120
+        }
+      },
+      "commit": "046bb7ecb898f9607e425107eeb8b414bf9d9c53",
+      "commit_time": "2026-09-06T18:03:37Z",
+      "event": "numeric_decrease",
+      "key": "lsa:GEMEINDE:15085287:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Selke-Aue",
+      "previous_acquired_at_local": "2026-09-06T19:58:42.912827+02:00",
+      "previous_commit": "ab2ae57cf0417154c232754f437ec5bf50727bb4",
+      "previous_reported": 3,
+      "reported": 4,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T18:03:37.130785+00:00",
+      "total": 4
+    },
+    {
+      "acquired_at_local": "2026-09-06T20:45:16.709868+02:00",
+      "acquired_at_utc": "2026-09-06T18:45:16.709868+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F1": {
+          "after": 273,
+          "before": 272,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 1178,
+          "before": 1179,
+          "delta": -1
+        }
+      },
+      "commit": "25b1063001e3c81db0ed5c28c39329ce1f820b16",
+      "commit_time": "2026-09-06T18:45:18Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count",
+      "key": "lsa:GEMEINDE:15090546:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Tangerhütte, Stadt",
+      "previous_acquired_at_local": "2026-09-06T20:42:35.835399+02:00",
+      "previous_commit": "591a63a5f78085ff05f6d75f7ae2ed08d028817c",
+      "previous_reported": 11,
+      "reported": 11,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T18:45:16.709868+00:00",
+      "total": 21
+    },
+    {
+      "acquired_at_local": "2026-09-06T21:05:08.774110+02:00",
+      "acquired_at_utc": "2026-09-06T19:05:08.774110+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F8": {
+          "after": 0,
+          "before": 3,
+          "delta": -3
+        },
+        "party:F9": {
+          "after": 14,
+          "before": 11,
+          "delta": 3
+        }
+      },
+      "commit": "52c22ef400b46584f7fd242cbd63bde9b2e8365b",
+      "commit_time": "2026-09-06T19:05:10Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count",
+      "key": "lsa:GEMEINDE:15086040:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Genthin, Stadt",
+      "previous_acquired_at_local": "2026-09-06T20:59:11.813756+02:00",
+      "previous_commit": "6218983864c2bdf79746be3ce096d1fa5a4cbc04",
+      "previous_reported": 5,
+      "reported": 5,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T19:05:08.774110+00:00",
+      "total": 14
+    },
+    {
+      "acquired_at_local": "2026-09-06T21:10:26.361861+02:00",
+      "acquired_at_utc": "2026-09-06T19:10:26.361861+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_erst": {
+          "after": 71,
+          "before": 74,
+          "delta": -3
+        },
+        "party:D1": {
+          "after": 1419,
+          "before": 1418,
+          "delta": 1
+        },
+        "party:D3": {
+          "after": 373,
+          "before": 372,
+          "delta": 1
+        },
+        "party:D6": {
+          "after": 115,
+          "before": 114,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 6305,
+          "before": 6302,
+          "delta": 3
+        }
+      },
+      "commit": "71f6ed3c34a57aa14ffc43e8bbd33b599599307b",
+      "commit_time": "2026-09-06T19:10:27Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15085228:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Oberharz am Brocken, Stadt",
+      "previous_acquired_at_local": "2026-09-06T21:05:08.774110+02:00",
+      "previous_commit": "52c22ef400b46584f7fd242cbd63bde9b2e8365b",
+      "previous_reported": 12,
+      "reported": 12,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T19:10:26.361861+00:00",
+      "total": 12
+    },
+    {
+      "acquired_at_local": "2026-09-06T21:27:05.847774+02:00",
+      "acquired_at_utc": "2026-09-06T19:27:05.847774+00:00",
+      "candidate": true,
+      "changes": {
+        "eligible_voters": {
+          "after": 34503,
+          "before": 32788,
+          "delta": 1715
+        },
+        "invalid_votes_erst": {
+          "after": 292,
+          "before": 300,
+          "delta": -8
+        },
+        "invalid_votes_zweit": {
+          "after": 230,
+          "before": 238,
+          "delta": -8
+        },
+        "party:D1": {
+          "after": 7406,
+          "before": 7220,
+          "delta": 186
+        },
+        "party:D2": {
+          "after": 10807,
+          "before": 10485,
+          "delta": 322
+        },
+        "party:D3": {
+          "after": 2541,
+          "before": 2454,
+          "delta": 87
+        },
+        "party:D4": {
+          "after": 1742,
+          "before": 1702,
+          "delta": 40
+        },
+        "party:D5": {
+          "after": 503,
+          "before": 486,
+          "delta": 17
+        },
+        "party:D6": {
+          "after": 836,
+          "before": 805,
+          "delta": 31
+        },
+        "party:D7": {
+          "after": 1322,
+          "before": 1292,
+          "delta": 30
+        },
+        "party:F1": {
+          "after": 5353,
+          "before": 5246,
+          "delta": 107
+        },
+        "party:F10": {
+          "after": 116,
+          "before": 113,
+          "delta": 3
+        },
+        "party:F11": {
+          "after": 74,
+          "before": 72,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 141,
+          "before": 139,
+          "delta": 2
+        },
+        "party:F15": {
+          "after": 1070,
+          "before": 1032,
+          "delta": 38
+        },
+        "party:F19": {
+          "after": 47,
+          "before": 44,
+          "delta": 3
+        },
+        "party:F2": {
+          "after": 10505,
+          "before": 10207,
+          "delta": 298
+        },
+        "party:F20": {
+          "after": 68,
+          "before": 67,
+          "delta": 1
+        },
+        "party:F3": {
+          "after": 2119,
+          "before": 2048,
+          "delta": 71
+        },
+        "party:F4": {
+          "after": 2079,
+          "before": 2030,
+          "delta": 49
+        },
+        "party:F5": {
+          "after": 531,
+          "before": 514,
+          "delta": 17
+        },
+        "party:F6": {
+          "after": 2157,
+          "before": 2062,
+          "delta": 95
+        },
+        "party:F7": {
+          "after": 637,
+          "before": 623,
+          "delta": 14
+        },
+        "party:F9": {
+          "after": 282,
+          "before": 269,
+          "delta": 13
+        },
+        "reported_precincts": {
+          "after": 46,
+          "before": 45,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 25157,
+          "before": 24444,
+          "delta": 713
+        },
+        "valid_votes_zweit": {
+          "after": 25219,
+          "before": 24506,
+          "delta": 713
+        },
+        "voters_total": {
+          "after": 25449,
+          "before": 24744,
+          "delta": 705
+        }
+      },
+      "commit": "0762de6a964c049fea546a203c823180783fd4e5",
+      "commit_time": "2026-09-06T19:27:07Z",
+      "event": "numeric_decrease",
+      "key": "lsa:GEMEINDE:15091375:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Wittenberg, Lutherstadt",
+      "previous_acquired_at_local": "2026-09-06T21:25:27.926279+02:00",
+      "previous_commit": "16fa7518fdf8e4a7c49b195779c5b8aa95fed034",
+      "previous_reported": 45,
+      "reported": 46,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T19:27:05.847774+00:00",
+      "total": 49
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:11:13.043213+02:00",
+      "acquired_at_utc": "2026-09-06T20:11:13.043213+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_zweit": {
+          "after": 6,
+          "before": 8,
+          "delta": -2
+        },
+        "party:D1": {
+          "after": 164,
+          "before": 98,
+          "delta": 66
+        },
+        "party:D2": {
+          "after": 346,
+          "before": 302,
+          "delta": 44
+        },
+        "party:D21": {
+          "after": 4,
+          "before": 1,
+          "delta": 3
+        },
+        "party:D3": {
+          "after": 51,
+          "before": 29,
+          "delta": 22
+        },
+        "party:D4": {
+          "after": 21,
+          "before": 17,
+          "delta": 4
+        },
+        "party:D5": {
+          "after": 12,
+          "before": 9,
+          "delta": 3
+        },
+        "party:D6": {
+          "after": 9,
+          "before": 7,
+          "delta": 2
+        },
+        "party:D9": {
+          "after": 25,
+          "before": 15,
+          "delta": 10
+        },
+        "party:F1": {
+          "after": 102,
+          "before": 54,
+          "delta": 48
+        },
+        "party:F10": {
+          "after": 2,
+          "before": 0,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 5,
+          "before": 1,
+          "delta": 4
+        },
+        "party:F15": {
+          "after": 37,
+          "before": 25,
+          "delta": 12
+        },
+        "party:F2": {
+          "after": 346,
+          "before": 303,
+          "delta": 43
+        },
+        "party:F20": {
+          "after": 5,
+          "before": 2,
+          "delta": 3
+        },
+        "party:F3": {
+          "after": 49,
+          "before": 30,
+          "delta": 19
+        },
+        "party:F4": {
+          "after": 31,
+          "before": 21,
+          "delta": 10
+        },
+        "party:F5": {
+          "after": 14,
+          "before": 10,
+          "delta": 4
+        },
+        "party:F6": {
+          "after": 21,
+          "before": 20,
+          "delta": 1
+        },
+        "party:F7": {
+          "after": 9,
+          "before": 4,
+          "delta": 5
+        },
+        "party:F9": {
+          "after": 13,
+          "before": 8,
+          "delta": 5
+        },
+        "reported_precincts": {
+          "after": 3,
+          "before": 2,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 632,
+          "before": 478,
+          "delta": 154
+        },
+        "valid_votes_zweit": {
+          "after": 635,
+          "before": 479,
+          "delta": 156
+        },
+        "voters_total": {
+          "after": 641,
+          "before": 487,
+          "delta": 154
+        }
+      },
+      "commit": "ba1fc517c286fae14ef9d1ae8b573aab69dc9d84",
+      "commit_time": "2026-09-06T20:11:14Z",
+      "event": "numeric_decrease",
+      "key": "lsa:GEMEINDE:15084013:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Meineweh",
+      "previous_acquired_at_local": "2026-09-06T22:06:23.019099+02:00",
+      "previous_commit": "e91d1f5dd74691f625b5fb7cfd67fa79e34311d1",
+      "previous_reported": 2,
+      "reported": 3,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T20:11:13.043213+00:00",
+      "total": 3
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:11:13.043213+02:00",
+      "acquired_at_utc": "2026-09-06T20:11:13.043213+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D2": {
+          "after": 2602,
+          "before": 2601,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 2479,
+          "before": 2478,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 4842,
+          "before": 4841,
+          "delta": 1
+        },
+        "valid_votes_zweit": {
+          "after": 4858,
+          "before": 4857,
+          "delta": 1
+        },
+        "voters_total": {
+          "after": 4911,
+          "before": 4910,
+          "delta": 1
+        }
+      },
+      "commit": "ba1fc517c286fae14ef9d1ae8b573aab69dc9d84",
+      "commit_time": "2026-09-06T20:11:14Z",
+      "event": "revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15087015:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Allstedt, Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:06:23.019099+02:00",
+      "previous_commit": "e91d1f5dd74691f625b5fb7cfd67fa79e34311d1",
+      "previous_reported": 15,
+      "reported": 15,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T20:11:13.043213+00:00",
+      "total": 15
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:11:13.043213+02:00",
+      "acquired_at_utc": "2026-09-06T20:11:13.043213+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_erst": {
+          "after": 54,
+          "before": 96,
+          "delta": -42
+        },
+        "invalid_votes_zweit": {
+          "after": 46,
+          "before": 88,
+          "delta": -42
+        },
+        "voters_total": {
+          "after": 6534,
+          "before": 6576,
+          "delta": -42
+        }
+      },
+      "commit": "ba1fc517c286fae14ef9d1ae8b573aab69dc9d84",
+      "commit_time": "2026-09-06T20:11:14Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15088020:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Bad Dürrenberg, Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:06:23.019099+02:00",
+      "previous_commit": "e91d1f5dd74691f625b5fb7cfd67fa79e34311d1",
+      "previous_reported": 10,
+      "reported": 10,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T20:11:13.043213+00:00",
+      "total": 10
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:11:13.043213+02:00",
+      "acquired_at_utc": "2026-09-06T20:11:13.043213+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_erst": {
+          "after": 142,
+          "before": 141,
+          "delta": 1
+        },
+        "invalid_votes_zweit": {
+          "after": 145,
+          "before": 144,
+          "delta": 1
+        },
+        "voters_total": {
+          "after": 11284,
+          "before": 11283,
+          "delta": 1
+        }
+      },
+      "commit": "ba1fc517c286fae14ef9d1ae8b573aab69dc9d84",
+      "commit_time": "2026-09-06T20:11:14Z",
+      "event": "revision_at_fixed_reporting_count",
+      "key": "lsa:GEMEINDE:15089015:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Aschersleben, Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:06:23.019099+02:00",
+      "previous_commit": "e91d1f5dd74691f625b5fb7cfd67fa79e34311d1",
+      "previous_reported": 23,
+      "reported": 23,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T20:11:13.043213+00:00",
+      "total": 26
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:11:13.043213+02:00",
+      "acquired_at_utc": "2026-09-06T20:11:13.043213+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D4": {
+          "after": 168,
+          "before": 151,
+          "delta": 17
+        },
+        "party:D5": {
+          "after": 68,
+          "before": 85,
+          "delta": -17
+        }
+      },
+      "commit": "ba1fc517c286fae14ef9d1ae8b573aab69dc9d84",
+      "commit_time": "2026-09-06T20:11:14Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15091010:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Annaburg, Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:06:23.019099+02:00",
+      "previous_commit": "e91d1f5dd74691f625b5fb7cfd67fa79e34311d1",
+      "previous_reported": 14,
+      "reported": 14,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T20:11:13.043213+00:00",
+      "total": 14
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:33:43.048543+02:00",
+      "acquired_at_utc": "2026-09-06T20:33:43.048543+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D5": {
+          "after": 164,
+          "before": 160,
+          "delta": 4
+        },
+        "party:D6": {
+          "after": 128,
+          "before": 132,
+          "delta": -4
+        },
+        "party:F5": {
+          "after": 103,
+          "before": 99,
+          "delta": 4
+        },
+        "party:F6": {
+          "after": 206,
+          "before": 210,
+          "delta": -4
+        }
+      },
+      "commit": "5b1254083eec780de1c02d5990127efb412a5dcd",
+      "commit_time": "2026-09-06T20:33:44Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15088235:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Mücheln (Geiseltal), Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:27:22.888490+02:00",
+      "previous_commit": "1701369eb36f9ae3dc5f2d14771ca827fc6a8841",
+      "previous_reported": 12,
+      "reported": 12,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T20:33:43.048543+00:00",
+      "total": 12
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:50:14.343235+02:00",
+      "acquired_at_utc": "2026-09-06T20:50:14.343235+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F2": {
+          "after": 6068,
+          "before": 6069,
+          "delta": -1
+        },
+        "party:F3": {
+          "after": 1224,
+          "before": 1223,
+          "delta": 1
+        }
+      },
+      "commit": "4c2543e68df2f3d92b3380232f466993b6c58edd",
+      "commit_time": "2026-09-06T20:50:15Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15085235:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Quedlinburg, Welterbestadt",
+      "previous_acquired_at_local": "2026-09-06T22:44:40.986867+02:00",
+      "previous_commit": "56a56a3f176057537914f8050630b42b588b245d",
+      "previous_reported": 18,
+      "reported": 18,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T20:50:14.343235+00:00",
+      "total": 18
+    },
+    {
+      "acquired_at_local": "2026-09-06T22:50:14.343235+02:00",
+      "acquired_at_utc": "2026-09-06T20:50:14.343235+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_zweit": {
+          "after": 54,
+          "before": 52,
+          "delta": 2
+        },
+        "party:F1": {
+          "after": 1073,
+          "before": 1074,
+          "delta": -1
+        },
+        "party:F5": {
+          "after": 133,
+          "before": 134,
+          "delta": -1
+        },
+        "valid_votes_zweit": {
+          "after": 5657,
+          "before": 5659,
+          "delta": -2
+        }
+      },
+      "commit": "4c2543e68df2f3d92b3380232f466993b6c58edd",
+      "commit_time": "2026-09-06T20:50:15Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15087412:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Südharz",
+      "previous_acquired_at_local": "2026-09-06T22:44:40.986867+02:00",
+      "previous_commit": "56a56a3f176057537914f8050630b42b588b245d",
+      "previous_reported": 18,
+      "reported": 18,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T20:50:14.343235+00:00",
+      "total": 18
+    },
+    {
+      "acquired_at_local": "2026-09-06T23:01:14.584325+02:00",
+      "acquired_at_utc": "2026-09-06T21:01:14.584325+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_erst": {
+          "after": 69,
+          "before": 66,
+          "delta": 3
+        },
+        "invalid_votes_zweit": {
+          "after": 54,
+          "before": 51,
+          "delta": 3
+        },
+        "party:D1": {
+          "after": 1209,
+          "before": 1211,
+          "delta": -2
+        },
+        "party:D2": {
+          "after": 2955,
+          "before": 2956,
+          "delta": -1
+        },
+        "party:F15": {
+          "after": 243,
+          "before": 245,
+          "delta": -2
+        },
+        "party:F2": {
+          "after": 2882,
+          "before": 2883,
+          "delta": -1
+        },
+        "valid_votes_erst": {
+          "after": 5212,
+          "before": 5215,
+          "delta": -3
+        },
+        "valid_votes_zweit": {
+          "after": 5227,
+          "before": 5230,
+          "delta": -3
+        }
+      },
+      "commit": "5f4bd0f68143b10399963391191ad7ae267bae10",
+      "commit_time": "2026-09-06T21:01:15Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15088235:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Mücheln (Geiseltal), Stadt",
+      "previous_acquired_at_local": "2026-09-06T22:55:40.135282+02:00",
+      "previous_commit": "dabef6e6806d6f4fe0b8399dc468030b204d7c00",
+      "previous_reported": 12,
+      "reported": 12,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T21:01:14.584325+00:00",
+      "total": 12
+    },
+    {
+      "acquired_at_local": "2026-09-06T23:50:42.996872+02:00",
+      "acquired_at_utc": "2026-09-06T21:50:42.996872+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_erst": {
+          "after": 179,
+          "before": 175,
+          "delta": 4
+        },
+        "invalid_votes_zweit": {
+          "after": 160,
+          "before": 156,
+          "delta": 4
+        },
+        "voters_total": {
+          "after": 19372,
+          "before": 19368,
+          "delta": 4
+        }
+      },
+      "commit": "c1b83b22c5edaef8f72537b33e662882fd5eda38",
+      "commit_time": "2026-09-06T21:50:43Z",
+      "event": "revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15084355:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Naumburg (Saale), Stadt",
+      "previous_acquired_at_local": "2026-09-06T23:45:11.320799+02:00",
+      "previous_commit": "22b50c3a50ef24cc5b359b52b9827daad3a65e9c",
+      "previous_reported": 31,
+      "reported": 31,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T21:50:42.996872+00:00",
+      "total": 31
+    },
+    {
+      "acquired_at_local": "2026-09-06T23:50:42.996872+02:00",
+      "acquired_at_utc": "2026-09-06T21:50:42.996872+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_erst": {
+          "after": 53,
+          "before": 91,
+          "delta": -38
+        },
+        "invalid_votes_zweit": {
+          "after": 53,
+          "before": 91,
+          "delta": -38
+        },
+        "voters_total": {
+          "after": 6001,
+          "before": 6039,
+          "delta": -38
+        }
+      },
+      "commit": "c1b83b22c5edaef8f72537b33e662882fd5eda38",
+      "commit_time": "2026-09-06T21:50:43Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15086145:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Möser",
+      "previous_acquired_at_local": "2026-09-06T23:45:11.320799+02:00",
+      "previous_commit": "22b50c3a50ef24cc5b359b52b9827daad3a65e9c",
+      "previous_reported": 9,
+      "reported": 9,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T21:50:42.996872+00:00",
+      "total": 9
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:00:20.311232+02:00",
+      "acquired_at_utc": "2026-09-06T22:00:20.311232+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D15": {
+          "after": 131,
+          "before": 130,
+          "delta": 1
+        },
+        "party:D3": {
+          "after": 239,
+          "before": 240,
+          "delta": -1
+        },
+        "party:D4": {
+          "after": 143,
+          "before": 142,
+          "delta": 1
+        },
+        "party:D5": {
+          "after": 57,
+          "before": 58,
+          "delta": -1
+        }
+      },
+      "commit": "034045f3d0f71c47aebf3daea47f3d33b136de5c",
+      "commit_time": "2026-09-07T00:01:13+02:00",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15083245:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Gröningen, Stadt",
+      "previous_acquired_at_local": "2026-09-06T23:56:06.793979+02:00",
+      "previous_commit": "4df0c5db1901da59dcf29fe843aa883797baf9aa",
+      "previous_reported": 6,
+      "reported": 6,
+      "source": "official_csv",
+      "subject": "Refresh LSA results to 2614 districts",
+      "total": 6
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:23:44.184698+02:00",
+      "acquired_at_utc": "2026-09-06T22:23:44.184698+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 4314,
+          "before": 4315,
+          "delta": -1
+        },
+        "party:D2": {
+          "after": 11013,
+          "before": 11015,
+          "delta": -2
+        },
+        "party:D3": {
+          "after": 2277,
+          "before": 2227,
+          "delta": 50
+        },
+        "party:D6": {
+          "after": 704,
+          "before": 732,
+          "delta": -28
+        },
+        "party:D7": {
+          "after": 926,
+          "before": 945,
+          "delta": -19
+        }
+      },
+      "commit": "305df69296afee6657b419df62f861403fd4370e",
+      "commit_time": "2026-09-06T22:23:45Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15082015:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Bitterfeld-Wolfen, Stadt",
+      "previous_acquired_at_local": "2026-09-07T00:18:14.070833+02:00",
+      "previous_commit": "82b745143ae58288ad021a5f17a786d53eece813",
+      "previous_reported": 31,
+      "reported": 31,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T22:23:44.184698+00:00",
+      "total": 31
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "acquired_at_utc": "2026-09-06T22:45:41.299801+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_erst": {
+          "after": 49,
+          "before": 70,
+          "delta": -21
+        },
+        "invalid_votes_zweit": {
+          "after": 49,
+          "before": 70,
+          "delta": -21
+        },
+        "voters_total": {
+          "after": 4820,
+          "before": 4841,
+          "delta": -21
+        }
+      },
+      "commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "commit_time": "2026-09-06T22:45:42Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15085145:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Harzgerode, Stadt",
+      "previous_acquired_at_local": "2026-09-07T00:40:08.798418+02:00",
+      "previous_commit": "937eaa10aa40ba789d0dd62ff5de859dc6ef9e86",
+      "previous_reported": 13,
+      "reported": 13,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T22:45:41.299801+00:00",
+      "total": 13
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": true,
+      "changes": {
+        "eligible_voters": {
+          "after": 5982,
+          "before": 5211,
+          "delta": 771
+        },
+        "invalid_votes_erst": {
+          "after": 79,
+          "before": 71,
+          "delta": 8
+        },
+        "invalid_votes_zweit": {
+          "after": 57,
+          "before": 52,
+          "delta": 5
+        },
+        "party:D1": {
+          "after": 1044,
+          "before": 969,
+          "delta": 75
+        },
+        "party:D2": {
+          "after": 2273,
+          "before": 2035,
+          "delta": 238
+        },
+        "party:D3": {
+          "after": 478,
+          "before": 442,
+          "delta": 36
+        },
+        "party:D4": {
+          "after": 294,
+          "before": 268,
+          "delta": 26
+        },
+        "party:D5": {
+          "after": 416,
+          "before": 371,
+          "delta": 45
+        },
+        "party:D6": {
+          "after": 108,
+          "before": 96,
+          "delta": 12
+        },
+        "party:F1": {
+          "after": 836,
+          "before": 771,
+          "delta": 65
+        },
+        "party:F10": {
+          "after": 25,
+          "before": 23,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 29,
+          "before": 25,
+          "delta": 4
+        },
+        "party:F15": {
+          "after": 262,
+          "before": 243,
+          "delta": 19
+        },
+        "party:F19": {
+          "after": 3,
+          "before": 2,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 2181,
+          "before": 1953,
+          "delta": 228
+        },
+        "party:F20": {
+          "after": 10,
+          "before": 8,
+          "delta": 2
+        },
+        "party:F3": {
+          "after": 372,
+          "before": 340,
+          "delta": 32
+        },
+        "party:F4": {
+          "after": 357,
+          "before": 323,
+          "delta": 34
+        },
+        "party:F5": {
+          "after": 195,
+          "before": 179,
+          "delta": 16
+        },
+        "party:F6": {
+          "after": 247,
+          "before": 228,
+          "delta": 19
+        },
+        "party:F7": {
+          "after": 54,
+          "before": 49,
+          "delta": 5
+        },
+        "party:F9": {
+          "after": 52,
+          "before": 44,
+          "delta": 8
+        },
+        "reported_precincts": {
+          "after": 10,
+          "before": 9,
+          "delta": 1
+        },
+        "total_precincts": {
+          "after": 10,
+          "before": 9,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 4613,
+          "before": 4181,
+          "delta": 432
+        },
+        "valid_votes_zweit": {
+          "after": 4635,
+          "before": 4200,
+          "delta": 435
+        },
+        "voters_total": {
+          "after": 4692,
+          "before": 4252,
+          "delta": 440
+        }
+      },
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "denominator_change|revision_after_complete",
+      "key": "lsa:GEMEINDE:15082005:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Aken (Elbe), Stadt",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "previous_reported": 9,
+      "reported": 10,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00",
+      "total": 10
+    },
+    {
+      "acquired_at_local": "2026-09-07T01:52:10.207428+02:00",
+      "acquired_at_utc": "2026-09-06T23:52:10.207428+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_erst": {
+          "after": 67,
+          "before": 91,
+          "delta": -24
+        },
+        "invalid_votes_zweit": {
+          "after": 67,
+          "before": 91,
+          "delta": -24
+        },
+        "voters_total": {
+          "after": 6967,
+          "before": 6991,
+          "delta": -24
+        }
+      },
+      "commit": "b91a617a4db6dda78f75a03ea2f293889c1763ea",
+      "commit_time": "2026-09-06T23:52:11Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15090550:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Tangermünde, Stadt",
+      "previous_acquired_at_local": "2026-09-07T01:46:41.804432+02:00",
+      "previous_commit": "8498858d5feb8fd3e85f08ed011bc269ae59a984",
+      "previous_reported": 14,
+      "reported": 14,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-06T23:52:10.207428+00:00",
+      "total": 14
+    },
+    {
+      "acquired_at_local": "2026-09-07T02:03:11.796077+02:00",
+      "acquired_at_utc": "2026-09-07T00:03:11.796077+00:00",
+      "candidate": true,
+      "changes": {
+        "invalid_votes_zweit": {
+          "after": 54,
+          "before": 53,
+          "delta": 1
+        },
+        "party:F3": {
+          "after": 576,
+          "before": 585,
+          "delta": -9
+        },
+        "party:F6": {
+          "after": 463,
+          "before": 455,
+          "delta": 8
+        },
+        "valid_votes_zweit": {
+          "after": 8980,
+          "before": 8981,
+          "delta": -1
+        }
+      },
+      "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+      "commit_time": "2026-09-07T00:03:13Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15088205:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Leuna, Stadt",
+      "previous_acquired_at_local": "2026-09-07T01:57:40.558068+02:00",
+      "previous_commit": "bcef1b09bad690c72a89f6812b476fb7df5269ce",
+      "previous_reported": 14,
+      "reported": 14,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-07T00:03:11.796077+00:00",
+      "total": 14
+    },
+    {
+      "acquired_at_local": "2026-09-07T02:03:11.796077+02:00",
+      "acquired_at_utc": "2026-09-07T00:03:11.796077+00:00",
+      "candidate": true,
+      "changes": {
+        "party:F19": {
+          "after": 27,
+          "before": 26,
+          "delta": 1
+        },
+        "party:F20": {
+          "after": 13,
+          "before": 14,
+          "delta": -1
+        }
+      },
+      "commit": "d7cec4116047ffe4e392c29511dcafc9c92d55c8",
+      "commit_time": "2026-09-07T00:03:13Z",
+      "event": "numeric_decrease|revision_at_fixed_reporting_count|revision_after_complete",
+      "key": "lsa:GEMEINDE:15088305:TOTAL",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Querfurt, Stadt",
+      "previous_acquired_at_local": "2026-09-07T01:57:40.558068+02:00",
+      "previous_commit": "bcef1b09bad690c72a89f6812b476fb7df5269ce",
+      "previous_reported": 16,
+      "reported": 16,
+      "source": "official_csv",
+      "subject": "2026-lsa poll 2026-09-07T00:03:11.796077+00:00",
+      "total": 16
+    }
+  ],
+  "ref": "80fa3052044a45af29f4f0b2867957d8a3b1df35",
+  "reporting_evidence": {
+    "complete_reconciled": true,
+    "final_aggregation_nonzero": 0,
+    "final_vote_comparisons_unavailable": 0,
+    "html_reported": 2661,
+    "html_total": 2661,
+    "individual_vote_rows": 2661,
+    "land_csv_reported": null,
+    "land_csv_total": null,
+    "municipality_reported": 2661,
+    "municipality_total": 2661
+  },
+  "retained_sources_verified": 582,
+  "selected_parties": [
+    {
+      "code": "F2",
+      "party": "AfD",
+      "share_percent": 43.794604334322955,
+      "votes": 576037
+    },
+    {
+      "code": "F1",
+      "party": "CDU",
+      "share_percent": 17.22948495227379,
+      "votes": 226622
+    },
+    {
+      "code": "F4",
+      "party": "SPD",
+      "share_percent": 9.298380996187225,
+      "votes": 122303
+    },
+    {
+      "code": "F6",
+      "party": "GRÜNE",
+      "share_percent": 8.93306926477688,
+      "votes": 117498
+    },
+    {
+      "code": "F3",
+      "party": "Die Linke",
+      "share_percent": 8.556201366212656,
+      "votes": 112541
+    },
+    {
+      "code": "F15",
+      "party": "BSW",
+      "share_percent": 5.268015646442107,
+      "votes": 69291
+    }
+  ],
+  "selection": "Strictly >5% of valid Land second votes at frozen cutoff; fixed cohort throughout timeline",
+  "setup_commit_count": 2,
+  "source_replay_differences": [],
+  "status_candidate_events": [
+    {
+      "acquired_at_local": "2026-09-06T19:35:33.866455+02:00",
+      "acquired_at_utc": "2026-09-06T17:35:33.866455+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": 0,
+          "before": 1,
+          "delta": -1
+        }
+      },
+      "commit": "54022b534f45331a7c3b6d920ff9a1ddd2a52510",
+      "commit_time": "2026-09-06T17:35:35Z",
+      "event": "data_reset|numeric_decrease|reported_count_decrease",
+      "key": "[\"28, Bitterfeld-Wolfen\",\"Anhalt-Bitterfeld\",\"Bitterfeld-Wolfen, Stadt\",\"000028\"]",
+      "name": "Bitterfeld-Wolfen, Stadt / 000028",
+      "previous_acquired_at_local": "2026-09-06T19:31:10.624086+02:00",
+      "previous_commit": "8c4de5b49de52c788d9015b10b6fd8367c8b3657",
+      "subject": "2026-lsa poll 2026-09-06T17:35:33.866455+00:00"
+    }
+  ],
+  "status_first_capture": {
+    "acquired_at_local": "2026-09-06T19:05:31.763958+02:00",
+    "acquired_at_utc": "2026-09-06T17:05:31.763958+00:00",
+    "area_rows": 274,
+    "commit": "a9a23b89f2ebfa668d402614ab5bfbcb724b9429",
+    "commit_time": "2026-09-06T17:05:32Z",
+    "coverage_percent": 0.45112781954887216,
+    "dynamic_results_used": null,
+    "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+    "overview_minus_csv": 207,
+    "overview_reported": 219,
+    "overview_rows": 2660,
+    "raw_rows": 822,
+    "reported_precincts": 12,
+    "subject": "2026-lsa poll 2026-09-06T17:05:31.763958+00:00",
+    "total_precincts": 2660,
+    "valid_votes_erst": 1173,
+    "valid_votes_zweit": 1174,
+    "voters_total": 1182,
+    "wahlbezirk_vote_rows": 0
+  },
+  "status_identity_additions": [
+    {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": false,
+      "changes": {},
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "row_appeared",
+      "key": "[\"23, Zerbst\",\"Anhalt-Bitterfeld\",\"Aken (Elbe), Stadt\",\"000010\"]",
+      "name": "Aken (Elbe), Stadt / 000010",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00"
+    }
+  ],
+  "status_identity_reappearances": [],
+  "status_identity_removals": [],
+  "status_last_capture": {
+    "acquired_at_local": "2026-09-07T04:06:37.855848+02:00",
+    "acquired_at_utc": "2026-09-07T02:06:37.855848+00:00",
+    "area_rows": 2935,
+    "commit": "eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b",
+    "commit_time": "2026-09-07T02:06:57Z",
+    "coverage_percent": null,
+    "dynamic_results_used": true,
+    "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+    "overview_minus_csv": null,
+    "overview_reported": 2661,
+    "overview_rows": 2661,
+    "raw_rows": 3483,
+    "reported_precincts": null,
+    "subject": "2026-lsa poll 2026-09-07T02:06:37.855848+00:00",
+    "total_precincts": null,
+    "valid_votes_erst": 1312734,
+    "valid_votes_zweit": 1315315,
+    "voters_total": 1328211,
+    "wahlbezirk_vote_rows": 2661
+  },
+  "status_losses": [
+    {
+      "acquired_at_local": "2026-09-06T19:35:33.866455+02:00",
+      "acquired_at_utc": "2026-09-06T17:35:33.866455+00:00",
+      "candidate": true,
+      "changes": {
+        "reported_precincts": {
+          "after": 0,
+          "before": 1,
+          "delta": -1
+        }
+      },
+      "commit": "54022b534f45331a7c3b6d920ff9a1ddd2a52510",
+      "commit_time": "2026-09-06T17:35:35Z",
+      "event": "data_reset|numeric_decrease|reported_count_decrease",
+      "key": "[\"28, Bitterfeld-Wolfen\",\"Anhalt-Bitterfeld\",\"Bitterfeld-Wolfen, Stadt\",\"000028\"]",
+      "name": "Bitterfeld-Wolfen, Stadt / 000028",
+      "previous_acquired_at_local": "2026-09-06T19:31:10.624086+02:00",
+      "previous_commit": "8c4de5b49de52c788d9015b10b6fd8367c8b3657",
+      "restored_capture": {
+        "acquired_at_local": "2026-09-06T22:11:13.043213+02:00",
+        "acquired_at_utc": "2026-09-06T20:11:13.043213+00:00",
+        "area_rows": 274,
+        "commit": "ba1fc517c286fae14ef9d1ae8b573aab69dc9d84",
+        "commit_time": "2026-09-06T20:11:14Z",
+        "coverage_percent": 92.25563909774436,
+        "dynamic_results_used": true,
+        "mode": "LIVE_OVERVIEW_HTML_WITH_CSV_DOWNLOAD",
+        "overview_minus_csv": 0,
+        "overview_reported": 2454,
+        "overview_rows": 2660,
+        "raw_rows": 822,
+        "reported_precincts": 2454,
+        "subject": "2026-lsa poll 2026-09-06T20:11:13.043213+00:00",
+        "total_precincts": 2660,
+        "valid_votes_erst": 1163972,
+        "valid_votes_zweit": 1166211,
+        "voters_total": 1177930,
+        "wahlbezirk_vote_rows": 0
+      },
+      "subject": "2026-lsa poll 2026-09-06T17:35:33.866455+00:00"
+    }
+  ],
+  "status_observations": 111,
+  "turnout_denominator_areas": 17,
+  "turnout_denominator_observations": 152,
+  "unique_normalized_versions": 51,
+  "unique_raw_versions": 52,
+  "unretained_source_records": 0,
+  "versions": 122
+}

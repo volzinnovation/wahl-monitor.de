@@ -1,0 +1,79 @@
+Erläuterungen zur Methodik
+
+1 | Allgemeine Informationen
+
+Basis der Auswertung sind die Ergebnisse des Zensus 2022 mit Stichtag 15.05.2022.
+
+Für die Wahrung der Geheimhaltung nach § 16 Bundesstatistikgesetz (BStatG) wird für Auswertungen, die ausschließlich auf demografischen Daten, Gebäude- und Wohnungsdaten, Haushaltsdaten und Familiendaten basieren, ein Verfahren der stochastischen Überlagerung nach der Cell-Key-Methode (CKM) angewendet. 
+Einige Fallzahlen werden daher gegenüber ihrem Originalwert leicht verändert ausgewiesen. Dies hat zur Folge, dass sich die ausgewiesenen Einzelwerte in der Tabelle nicht notwendigerweise zu den ausgewiesenen Summen addieren. Dieses Vorgehen sichert neben dem Schutz von Einzelangaben eine hohe Datenqualität. 
+Eine Sperrung von Auswertungen (in den Tabellen als Punkt . dargestellt) erfolgt nur dann, wenn die Tabelle - oder Teile der Tabelle - ein zu hohes Aufdeckungsrisiko und/oder einen zu hohen Informationsverlust bergen.
+
+In bundesweit 163 Gemeinden konnten für insgesamt 277 Anschriften die Daten nicht vollständig erhoben und verarbeitet werden, obwohl die Anschriften für die Zensusbefragung ausgewählt worden waren. Diese Anschriften wurden zum Zeitpunkt der Stichprobenziehung als vermeintliche Sonderbereichsanschriften in die Auswahl für die Erhebung aufgenommen. Es hat sich jedoch später herausgestellt, dass es sich doch nicht um Sonderbereichsanschriften handelte. Diese Anschriften mussten daher wie Stichprobenanschriften erhoben werden. An bundesweit 277 Anschriften konnten in dieser Konstellation die Befragungen allerdings nicht oder nicht hinreichend zuverlässig durchgeführt werden – z.B. wegen unklarer Abgrenzung der Anschrift. Die an diesen Anschriften melderechtlich erfass-ten Personen werden aber bei der Einwohnerzahl der Gemeinden berücksichtigt. Es liegen jedoch keine Ergebnisse zu den weiteren im Rahmen des Zensus erfassten Bereichen (Demografie, Haushalte und Familien, Bildungsstand und Erwerbstätigkeit) vor.
+
+Weiterführende methodische Informationen zum Zensusmodell und zur Geheimhaltung unter:
+www.zensus2022.de
+https://www.zensus2022.de/DE/Zensusdatenbank/Geheimhaltung.html
+
+
+2 | Zeichenerklärung
+
+–     = Genau Null oder auf Null geändert
+.     = Zahlenwert unbekannt oder geheim | 
+
+Abweichungen in den Summen durch das angewandte Geheimhaltungsverfahren.
+
+Eine Sperrung von Auswertungen (in den Tabellen als Punkt . dargestellt) erfolgt nur dann, wenn die Tabelle - oder Teile der Tabelle - ein zu hohes Aufdeckungsrisiko und/oder einen zu hohen Informationsverlust bergen.
+
+
+3 | Definitionen
+
+Größe des Haushalts
+
+Dieses Merkmal gibt die Anzahl der in einem privaten Haushalt lebenden Personen an. Personen in Gemeinschaftsunterkünften sind hier nicht enthalten, sondern nur Personen, die eine eigene Haushaltsführung aufweisen.
+Ein privater Haushalt besteht aus mindestens einer Person. Zugrunde gelegt wird das „Konzept des gemeinsamen Wohnens“: Alle Personen, die unabhängig von ihrem Wohnstatus (alleinige Wohnung, Haupt- oder Nebenwohnung) gemeinsam in einer Wohnung leben, gelten als Mitglieder desselben privaten Haushalts, sodass es einen privaten Haushalt pro belegter Wohnung gibt. In einem Haushalt gibt es höchstens eine Kernfamilie. Weitere im Haushalt lebende Personen sind keiner Kernfamilie zugeordnet.
+
+Ausprägungen
+1 Person
+2 Personen
+3 Personen
+4 Personen
+5 Personen
+6 und mehr Personen
+
+Typ des Haushalts (nach Familienform)
+
+Dieses Merkmal gibt den Typ des privaten Haushalts nach dem Bezugspersonenprinzip unter Berücksichtigung von Nebenwohnsitzpersonen an. Es beschreibt, in welcher Konstellation die Personen eines privaten Haushalts gemeinschaftlich leben, mit Fokus auf der Existenz von Kindern im Haushalt. Personen in Gemeinschaftsunterkünften sind hier nicht enthalten, sondern nur Personen, die eine eigene Haushaltsführung aufweisen.
+Ein privater Haushalt besteht aus mindestens einer Person. Zugrunde gelegt wird das „Konzept des gemeinsamen Wohnens“: Alle Personen, die unabhängig von ihrem Wohnstatus (alleinige Wohnung, Haupt- oder Nebenwohnung) gemeinsam in einer Wohnung leben, gelten als Mitglieder desselben privaten Haushalts, sodass es einen privaten Haushalt pro belegter Wohnung gibt. In einem Haushalt gibt es höchstens eine Kernfamilie. Weitere im Haushalt lebende Personen sind keiner Kernfamilie zugeordnet.
+Der Typ des Haushalts richtet sich im Wesentlichen nach dem Typ der Kernfamilie. Haushalte ohne Kernfamilie werden in Einpersonenhaushalte und Mehrpersonenhaushalte (zum Beispiel Wohngemeinschaften, Großeltern-Enkel-Haushalte ohne Elternteile) unterschieden. 
+
+Ausprägungen
+Einpersonenhaushalt (Singlehaushalt)
+Paare ohne Kind
+Paare mit Kind(ern)
+Alleinerziehende Elternteile
+Mehrpersonenhaushalte ohne Kernfamilie
+
+Typ des Haushalts (nach Lebensform)
+
+Dieses Merkmal gibt den Typ des privaten Haushalts nach dem Bezugspersonenprinzip unter Berücksichtigung von Nebenwohnsitzpersonen an. Es beschreibt, in welcher Konstellation die Personen eines privaten Haushalts gemeinschaftlich leben, mit Fokus auf den Lebensformen im privaten Haushalt.Personen in Gemeinschaftsunterkünften sind hier nicht enthalten, sondern nur Personen, die eine eigene Haushaltsführung aufweisen.
+Ein privater Haushalt besteht aus mindestens einer Person. Zugrunde gelegt wird das „Konzept des gemeinsamen Wohnens“: Alle Personen, die unabhängig von ihrem Wohnstatus (alleinige Wohnung, Haupt- oder Nebenwohnung) gemeinsam in einer Wohnung leben, gelten als Mitglieder desselben privaten Haushalts, sodass es einen privaten Haushalt pro belegter Wohnung gibt. In einem Haushalt gibt es höchstens eine Kernfamilie. Weitere im Haushalt lebende Personen sind keiner Kernfamilie zugeordnet.
+Der Typ des Haushalts richtet sich im Wesentlichen nach dem Typ der Kernfamilie. Haushalte ohne Kernfamilie werden in Einpersonenhaushalte und Mehrpersonenhaushalte (zum Beispiel Wohngemeinschaften, Großeltern-Enkel-Haushalte ohne Elternteile) unterschieden. 
+
+Ausprägungen
+Einpersonenhaushalte (Singlehaushalte)
+Ehepaare
+Eingetragene Lebenspartnerschaften
+Nichteheliche Lebensgemeinschaften
+Alleinerziehende Mütter
+Alleinerziehende Väter
+Mehrpersonenhaushalte ohne Kernfamilie
+
+Seniorenstatus eines Haushalts
+
+Dieses Merkmal gibt die Struktur privater Haushalte in Abhängigkeit vom Alter der  Personen im Haushalt an. Als Seniorinnen und Senioren gelten Personen, die zum jeweiligen Zensusstichtag das 65. Lebensjahr vollendet haben. 
+Personen in Gemeinschaftsunterkünften sind hier nicht enthalten, sondern nur Personen, die eine eigene Haushaltsführung aufweisen.
+
+Ausprägungen
+Haushalte mit ausschließlich Seniorinnen/Senioren
+Haushalte mit Seniorinnen/Senioren und Jüngeren
+Haushalte ohne Seniorinnen/Senioren

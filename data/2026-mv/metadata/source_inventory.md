@@ -1,0 +1,27 @@
+# Mecklenburg-Vorpommern 2026 source inventory
+
+Preparation status: 2026-09-07. Live collection is not activated.
+
+## Official sources
+
+- Election hub: https://www.laiv-mv.de/Wahlen/Landtagswahlen/2026/
+- Result downloads page: https://www.laiv-mv.de/Wahlen/Landtagswahlen/2026/Ergebnisse/
+- Dataset description: https://www.laiv-mv.de/static/LAIV/Wahlen/2-Landtagswahlen/2026/Ergebnisse/dsb_l.pdf
+- Wahlkreis structure and officials: https://www.laiv-mv.de/Wahlen/Landtagswahlen/2026/Wahlkreise-und-%E2%80%93leiter/
+- Wahlkreis shape archive: https://www.laiv-mv.de/static/LAIV/Geoinformation/Dateien/Karten/LTwahl_Wahlkreise.zip
+
+## Result templates retained in this directory
+
+- `l_wahlbezirke.csv`: polling-district level, absolute and percentage rows
+- `l_gemeinden.csv`: municipality level, absolute and percentage rows
+- `l_wahlkreise.csv`: constituency and state level, absolute and percentage rows
+- `l_mandate.csv`: mandate allocation schema
+
+The LAIV page states that the final live URLs will be published from calendar week 38. The poller therefore discovers the three result CSVs from the official downloads page rather than hard-coding a future result host.
+
+## Local indexes
+
+- `municipalities.csv`: municipality keys and names derived from the official municipality template
+- `wahlkreis-mapping.csv`: constituency-to-municipality relations derived from the official polling-district template
+- `wahlkreis-status.csv`: 36 constituencies initialized as `pending`
+- `wahlkreise.geojson`: pending conversion from the official shape archive

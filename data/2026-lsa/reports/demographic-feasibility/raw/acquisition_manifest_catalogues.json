@@ -1,0 +1,28 @@
+[
+  {
+    "file": "lsa_election_structure.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online?operation=result&code=14311-SD&deep=true",
+    "error": "curl: (28) Operation timed out after 45002 milliseconds with 0 bytes received\n"
+  },
+  {
+    "file": "lsa_13111.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online?operation=statistic&code=13111",
+    "bytes": 8752,
+    "sha256": "d31320c231d42e93b637c5c4eae85d7670476cee72b2ef72454421c14d14764d",
+    "retrieved_at_utc": "2026-09-07T13:19:29.583038+00:00"
+  },
+  {
+    "file": "lsa_13211.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online?operation=statistic&code=13211",
+    "bytes": 12349,
+    "sha256": "fa0605341b43493e8da5396ac11beb97d09046afc0d036e758c46eeeeeb4d3f1",
+    "retrieved_at_utc": "2026-09-07T13:19:43.528291+00:00"
+  },
+  {
+    "file": "lsa_73111.html",
+    "url": "https://genesis.sachsen-anhalt.de/genesis/online?operation=statistic&code=73111",
+    "bytes": 11880,
+    "sha256": "d0ad4300bb710deacf606cfbda0bc8ddae4a5a730ca5d449000e64b419b4b656",
+    "retrieved_at_utc": "2026-09-07T13:19:53.445265+00:00"
+  }
+]

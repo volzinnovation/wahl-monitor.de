@@ -1,0 +1,642 @@
+{
+  "additions": [
+    {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": false,
+      "changes": {},
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "row_appeared",
+      "key": "[\"23, Zerbst\",\"Anhalt-Bitterfeld\",\"Aken (Elbe), Stadt\",\"000010\"]",
+      "name": "Aken (Elbe), Stadt / 000010",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00"
+    }
+  ],
+  "aken": {
+    "event": {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": false,
+      "changes": {},
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "row_appeared",
+      "key": "[\"23, Zerbst\",\"Anhalt-Bitterfeld\",\"Aken (Elbe), Stadt\",\"000010\"]",
+      "name": "Aken (Elbe), Stadt / 000010",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00"
+    },
+    "first_html_fetch_utc": "2026-09-06T22:51:06.884664+00:00",
+    "groups": [
+      {
+        "after": 10,
+        "area": "Aken (Elbe)",
+        "before": 9
+      },
+      {
+        "after": 80,
+        "area": "Wahlkreis 23 Zerbst",
+        "before": 79
+      },
+      {
+        "after": 205,
+        "area": "Anhalt-Bitterfeld",
+        "before": 204
+      },
+      {
+        "after": 2661,
+        "area": "Sachsen-Anhalt",
+        "before": 2660
+      }
+    ],
+    "previous_html_fetch_utc": "2026-09-06T22:45:37.326072+00:00",
+    "row": {
+      "Gemeinde": "Aken (Elbe), Stadt",
+      "Landkreis": "Anhalt-Bitterfeld",
+      "Wahlkreis": "23, Zerbst",
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "goto": null,
+      "key": "[\"23, Zerbst\",\"Anhalt-Bitterfeld\",\"Aken (Elbe), Stadt\",\"000010\"]",
+      "level": "WAHLBEZIRK_STATUS",
+      "name": "Aken (Elbe), Stadt / 000010",
+      "reported_precincts": 1,
+      "stand": 1,
+      "total_precincts": 1,
+      "wbz": "000010",
+      "wbz_ist": 1,
+      "wbz_soll": 1
+    }
+  },
+  "denominator_changes": [
+    {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 1044,
+          "before": 969,
+          "delta": 75
+        },
+        "party:D2": {
+          "after": 2273,
+          "before": 2035,
+          "delta": 238
+        },
+        "party:D3": {
+          "after": 478,
+          "before": 442,
+          "delta": 36
+        },
+        "party:D4": {
+          "after": 294,
+          "before": 268,
+          "delta": 26
+        },
+        "party:D5": {
+          "after": 416,
+          "before": 371,
+          "delta": 45
+        },
+        "party:D6": {
+          "after": 108,
+          "before": 96,
+          "delta": 12
+        },
+        "party:F1": {
+          "after": 836,
+          "before": 771,
+          "delta": 65
+        },
+        "party:F10": {
+          "after": 25,
+          "before": 23,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 29,
+          "before": 25,
+          "delta": 4
+        },
+        "party:F15": {
+          "after": 262,
+          "before": 243,
+          "delta": 19
+        },
+        "party:F19": {
+          "after": 3,
+          "before": 2,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 2181,
+          "before": 1953,
+          "delta": 228
+        },
+        "party:F20": {
+          "after": 10,
+          "before": 8,
+          "delta": 2
+        },
+        "party:F3": {
+          "after": 372,
+          "before": 340,
+          "delta": 32
+        },
+        "party:F4": {
+          "after": 357,
+          "before": 323,
+          "delta": 34
+        },
+        "party:F5": {
+          "after": 195,
+          "before": 179,
+          "delta": 16
+        },
+        "party:F6": {
+          "after": 247,
+          "before": 228,
+          "delta": 19
+        },
+        "party:F7": {
+          "after": 54,
+          "before": 49,
+          "delta": 5
+        },
+        "party:F9": {
+          "after": 52,
+          "before": 44,
+          "delta": 8
+        },
+        "reported_precincts": {
+          "after": 10,
+          "before": 9,
+          "delta": 1
+        },
+        "total_precincts": {
+          "after": 10,
+          "before": 9,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 4613,
+          "before": 4181,
+          "delta": 432
+        },
+        "valid_votes_zweit": {
+          "after": 4635,
+          "before": 4200,
+          "delta": 435
+        },
+        "voters_total": {
+          "after": 4692,
+          "before": 4252,
+          "delta": 440
+        }
+      },
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "denominator_change|revision_after_complete",
+      "key": "lsa:GEMEINDE:15082005",
+      "level": "GEMEINDE",
+      "mode": "TOTAL",
+      "name": "Aken (Elbe), Stadt",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "previous_reported": 9,
+      "reported": 10,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00",
+      "total": 10
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 21051,
+          "before": 20976,
+          "delta": 75
+        },
+        "party:D2": {
+          "after": 47360,
+          "before": 47122,
+          "delta": 238
+        },
+        "party:D3": {
+          "after": 8554,
+          "before": 8518,
+          "delta": 36
+        },
+        "party:D4": {
+          "after": 6056,
+          "before": 6030,
+          "delta": 26
+        },
+        "party:D5": {
+          "after": 3047,
+          "before": 3002,
+          "delta": 45
+        },
+        "party:D6": {
+          "after": 2650,
+          "before": 2638,
+          "delta": 12
+        },
+        "party:F1": {
+          "after": 16019,
+          "before": 15954,
+          "delta": 65
+        },
+        "party:F10": {
+          "after": 431,
+          "before": 429,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 522,
+          "before": 518,
+          "delta": 4
+        },
+        "party:F15": {
+          "after": 4661,
+          "before": 4642,
+          "delta": 19
+        },
+        "party:F19": {
+          "after": 145,
+          "before": 144,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 46180,
+          "before": 45952,
+          "delta": 228
+        },
+        "party:F20": {
+          "after": 289,
+          "before": 287,
+          "delta": 2
+        },
+        "party:F3": {
+          "after": 7003,
+          "before": 6971,
+          "delta": 32
+        },
+        "party:F4": {
+          "after": 6578,
+          "before": 6544,
+          "delta": 34
+        },
+        "party:F5": {
+          "after": 2440,
+          "before": 2424,
+          "delta": 16
+        },
+        "party:F6": {
+          "after": 5106,
+          "before": 5087,
+          "delta": 19
+        },
+        "party:F7": {
+          "after": 1439,
+          "before": 1434,
+          "delta": 5
+        },
+        "party:F9": {
+          "after": 1105,
+          "before": 1097,
+          "delta": 8
+        },
+        "reported_precincts": {
+          "after": 203,
+          "before": 202,
+          "delta": 1
+        },
+        "total_precincts": {
+          "after": 205,
+          "before": 204,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 91971,
+          "before": 91539,
+          "delta": 432
+        },
+        "valid_votes_zweit": {
+          "after": 92231,
+          "before": 91796,
+          "delta": 435
+        },
+        "voters_total": {
+          "after": 93257,
+          "before": 92817,
+          "delta": 440
+        }
+      },
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "denominator_change",
+      "key": "lsa:KREIS:15082",
+      "level": "KREIS",
+      "mode": "TOTAL",
+      "name": "Anhalt-Bitterfeld",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "previous_reported": 202,
+      "reported": 203,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00",
+      "total": 205
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 305483,
+          "before": 305408,
+          "delta": 75
+        },
+        "party:D2": {
+          "after": 573178,
+          "before": 572940,
+          "delta": 238
+        },
+        "party:D3": {
+          "after": 153538,
+          "before": 153502,
+          "delta": 36
+        },
+        "party:D4": {
+          "after": 100341,
+          "before": 100315,
+          "delta": 26
+        },
+        "party:D5": {
+          "after": 39772,
+          "before": 39727,
+          "delta": 45
+        },
+        "party:D6": {
+          "after": 44153,
+          "before": 44141,
+          "delta": 12
+        },
+        "party:F1": {
+          "after": 219910,
+          "before": 219845,
+          "delta": 65
+        },
+        "party:F10": {
+          "after": 7301,
+          "before": 7299,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 7134,
+          "before": 7130,
+          "delta": 4
+        },
+        "party:F15": {
+          "after": 67558,
+          "before": 67539,
+          "delta": 19
+        },
+        "party:F19": {
+          "after": 2697,
+          "before": 2696,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 567253,
+          "before": 567025,
+          "delta": 228
+        },
+        "party:F20": {
+          "after": 4249,
+          "before": 4247,
+          "delta": 2
+        },
+        "party:F3": {
+          "after": 109437,
+          "before": 109405,
+          "delta": 32
+        },
+        "party:F4": {
+          "after": 118958,
+          "before": 118924,
+          "delta": 34
+        },
+        "party:F5": {
+          "after": 32996,
+          "before": 32980,
+          "delta": 16
+        },
+        "party:F6": {
+          "after": 114420,
+          "before": 114401,
+          "delta": 19
+        },
+        "party:F7": {
+          "after": 15081,
+          "before": 15076,
+          "delta": 5
+        },
+        "party:F9": {
+          "after": 14015,
+          "before": 14007,
+          "delta": 8
+        },
+        "reported_precincts": {
+          "after": 2634,
+          "before": 2633,
+          "delta": 1
+        },
+        "total_precincts": {
+          "after": 2661,
+          "before": 2660,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 1283810,
+          "before": 1283378,
+          "delta": 432
+        },
+        "valid_votes_zweit": {
+          "after": 1286284,
+          "before": 1285849,
+          "delta": 435
+        },
+        "voters_total": {
+          "after": 1299025,
+          "before": 1298585,
+          "delta": 440
+        }
+      },
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "denominator_change",
+      "key": "lsa:LAND:15",
+      "level": "LAND",
+      "mode": "TOTAL",
+      "name": "Sachsen-Anhalt",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "previous_reported": 2633,
+      "reported": 2634,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00",
+      "total": 2661
+    },
+    {
+      "acquired_at_local": "2026-09-07T00:51:09.962028+02:00",
+      "acquired_at_utc": "2026-09-06T22:51:09.962028+00:00",
+      "candidate": true,
+      "changes": {
+        "party:D1": {
+          "after": 7731,
+          "before": 7656,
+          "delta": 75
+        },
+        "party:D2": {
+          "after": 14138,
+          "before": 13900,
+          "delta": 238
+        },
+        "party:D3": {
+          "after": 2880,
+          "before": 2844,
+          "delta": 36
+        },
+        "party:D4": {
+          "after": 2330,
+          "before": 2304,
+          "delta": 26
+        },
+        "party:D5": {
+          "after": 1478,
+          "before": 1433,
+          "delta": 45
+        },
+        "party:D6": {
+          "after": 824,
+          "before": 812,
+          "delta": 12
+        },
+        "party:F1": {
+          "after": 5538,
+          "before": 5473,
+          "delta": 65
+        },
+        "party:F10": {
+          "after": 158,
+          "before": 156,
+          "delta": 2
+        },
+        "party:F12": {
+          "after": 141,
+          "before": 137,
+          "delta": 4
+        },
+        "party:F15": {
+          "after": 1646,
+          "before": 1627,
+          "delta": 19
+        },
+        "party:F19": {
+          "after": 47,
+          "before": 46,
+          "delta": 1
+        },
+        "party:F2": {
+          "after": 13888,
+          "before": 13660,
+          "delta": 228
+        },
+        "party:F20": {
+          "after": 102,
+          "before": 100,
+          "delta": 2
+        },
+        "party:F3": {
+          "after": 2237,
+          "before": 2205,
+          "delta": 32
+        },
+        "party:F4": {
+          "after": 2420,
+          "before": 2386,
+          "delta": 34
+        },
+        "party:F5": {
+          "after": 883,
+          "before": 867,
+          "delta": 16
+        },
+        "party:F6": {
+          "after": 1696,
+          "before": 1677,
+          "delta": 19
+        },
+        "party:F7": {
+          "after": 439,
+          "before": 434,
+          "delta": 5
+        },
+        "party:F9": {
+          "after": 315,
+          "before": 307,
+          "delta": 8
+        },
+        "reported_precincts": {
+          "after": 80,
+          "before": 79,
+          "delta": 1
+        },
+        "total_precincts": {
+          "after": 80,
+          "before": 79,
+          "delta": 1
+        },
+        "valid_votes_erst": {
+          "after": 29381,
+          "before": 28949,
+          "delta": 432
+        },
+        "valid_votes_zweit": {
+          "after": 29619,
+          "before": 29184,
+          "delta": 435
+        },
+        "voters_total": {
+          "after": 29950,
+          "before": 29510,
+          "delta": 440
+        }
+      },
+      "commit": "8822e360c1ca7656105447c8bc3f1cad88d4599a",
+      "commit_time": "2026-09-06T22:51:11Z",
+      "event": "denominator_change|revision_after_complete",
+      "key": "lsa:WAHLKREIS:023",
+      "level": "WAHLKREIS",
+      "mode": "TOTAL",
+      "name": "Zerbst",
+      "previous_acquired_at_local": "2026-09-07T00:45:41.299801+02:00",
+      "previous_commit": "55f50c51b9dfac63ad15cb2b7b2ff314eefdf062",
+      "previous_reported": 79,
+      "reported": 80,
+      "source": "normalized",
+      "subject": "2026-lsa poll 2026-09-06T22:51:09.962028+00:00",
+      "total": 80
+    }
+  ],
+  "reappearances": [],
+  "removals": []
+}
