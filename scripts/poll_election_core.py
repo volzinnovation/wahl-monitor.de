@@ -4439,13 +4439,14 @@ def load_wahlkreis_mapping() -> Dict[str, Dict[str, Any]]:
             continue
         lines.append(line)
 
-    reader = csv.DictReader(lines, delimiter=";")
+    delimiter = "," if ACTIVE_ELECTION_KEY == "2026-mv" else ";"
+    reader = csv.DictReader(lines, delimiter=delimiter)
     for row in reader:
-        wk = normalize_wahlkreis_nummer(row.get("Wahlkreisnummer"))
+        wk = normalize_wahlkreis_nummer(row.get("Wahlkreisnummer") or row.get("wahlkreisnummer"))
         if not wk:
             continue
-        ags = canonical_ags(row.get("Gemeindekennziffer"))
-        wk_name = canonical_municipality_name(row.get("Wahlkreisname"))
+        ags = canonical_ags(row.get("Gemeindekennziffer") or row.get("gemeindekennziffer"))
+        wk_name = canonical_municipality_name(row.get("Wahlkreisname") or row.get("wahlkreisname"))
         bucket = mapping.setdefault(wk, {"wahlkreis_name": wk_name or f"Wahlkreis {wk}", "ags_set": set()})
         if wk_name:
             bucket["wahlkreis_name"] = wk_name

@@ -563,6 +563,14 @@ def load_lsa_reference_2021(config: core.Config) -> Dict[str, Any]:
                 "winner_votes": core.parse_int(row.get("winner_second_votes")) or 0,
                 "winner_total_votes": core.parse_int(row.get("valid_second_votes")) or 0,
                 "winner_share_percent": parse_float(row.get("winner_second_share_percent")) or 0.0,
+                "winner_party_first": core.canonical_party_name(str(row.get("winner_first") or ""), "Erststimmen"),
+                "winner_first_votes": core.parse_int(row.get("winner_first_votes")) or 0,
+                "winner_first_total_votes": core.parse_int(row.get("valid_first_votes")) or 0,
+                "winner_first_share_percent": parse_float(row.get("winner_first_share_percent")) or 0.0,
+                "winner_party_second": core.canonical_party_name(str(row.get("winner_second") or ""), "Zweitstimmen"),
+                "winner_second_votes": core.parse_int(row.get("winner_second_votes")) or 0,
+                "winner_second_total_votes": core.parse_int(row.get("valid_second_votes")) or 0,
+                "winner_second_share_percent": parse_float(row.get("winner_second_share_percent")) or 0.0,
             }
 
     is_mv = config.election_key == "2026-mv"
@@ -580,6 +588,7 @@ def load_lsa_reference_2021(config: core.Config) -> Dict[str, Any]:
         ),
         "source_label": "amtliche Endergebnisse Mecklenburg-Vorpommern" if is_mv else "offizielle Downloads der Landtagswahl 2021",
         "reference_date": "26. September 2021" if is_mv else "6. Juni 2021",
+        "map_vote_type": "Erststimmen" if is_mv else "Zweitstimmen",
     }
 
 
@@ -841,10 +850,11 @@ def render_reference_2021_panel(reference: Dict[str, Any]) -> str:
     )
 
 
-def render_reference_map_legend(reference: Dict[str, Any]) -> str:
+def render_reference_map_legend(reference: Dict[str, Any], vote_type: str = "Zweitstimmen") -> str:
     counts: Dict[str, int] = defaultdict(int)
     for winner in (reference.get("winners") or {}).values():
-        party = core.canonical_party_name(str(winner.get("winner_party") or ""), "Zweitstimmen")
+        suffix = "first" if vote_type == "Erststimmen" else "second"
+        party = core.canonical_party_name(str(winner.get(f"winner_party_{suffix}") or winner.get("winner_party") or ""), vote_type)
         if party:
             counts[party] += 1
     if not counts:
@@ -854,7 +864,7 @@ def render_reference_map_legend(reference: Dict[str, Any]) -> str:
         items.append(
             f"<span class='party-chip'><span class='party-dot' style='background:{WAHL_PARTY_COLORS.get(party, '#94a3b8')}'></span>{html.escape(party)}: {count}</span>"
         )
-    return "<p class='small map-legend'><strong>2021 Zweitstimmen-Sieger:</strong> " + " · ".join(items) + " Wahlkreise.</p>"
+    return f"<p class='small map-legend'><strong>2021 {html.escape(vote_type)}-Sieger:</strong> " + " · ".join(items) + " Wahlkreise.</p>"
 
 
 def load_git_vote_share_history(config: core.Config) -> List[Dict[str, Any]]:
@@ -3281,6 +3291,7 @@ def render_clickable_wahlkreis_map(
     link_by_wk: Dict[str, str],
     reference_winners: Optional[Dict[str, Dict[str, Any]]] = None,
     reference_mode: bool = False,
+    reference_vote_type: str = "Zweitstimmen",
 ) -> str:
     if not features:
         return "<p class='muted'>Keine Wahlkreis-Geometrie verfügbar.</p>"
@@ -3310,9 +3321,10 @@ def render_clickable_wahlkreis_map(
         title_prefix = ""
         if reference_mode and reference_winners and wk in reference_winners:
             reference_winner = reference_winners[wk]
-            winner_party = str(reference_winner.get("winner_party") or "").strip()
-            winner_party = core.canonical_party_name(winner_party, "Zweitstimmen")
-            title_prefix = "2021 Zweitstimmen"
+            suffix = "first" if reference_vote_type == "Erststimmen" else "second"
+            winner_party = str(reference_winner.get(f"winner_party_{suffix}") or reference_winner.get("winner_party") or "").strip()
+            winner_party = core.canonical_party_name(winner_party, reference_vote_type)
+            title_prefix = f"2021 {reference_vote_type}"
         fill = WAHL_PARTY_COLORS.get(
             winner_party,
             colors.get(status, colors["no_data"]),
@@ -3324,7 +3336,11 @@ def render_clickable_wahlkreis_map(
         if winner_party:
             title_text += f" - {title_prefix + ': ' if title_prefix else vote_type_label('Erststimmen') + ': '}{winner_party}"
             if reference_mode and reference_winners and wk in reference_winners:
-                title_text += f" ({float(reference_winners[wk].get('winner_share_percent') or 0.0):.1f} %)"
+                suffix = "first" if reference_vote_type == "Erststimmen" else "second"
+                share = reference_winners[wk].get(f"winner_{suffix}_share_percent")
+                if share is None:
+                    share = reference_winners[wk].get("winner_share_percent")
+                title_text += f" ({float(share or 0.0):.1f} %)"
         title = html.escape(title_text)
         path_markup = f"<path d=\"{path_d}\" fill=\"{fill}\" stroke=\"#111827\" stroke-width=\"0.8\"><title>{title}</title></path>"
         href = link_by_wk.get(wk)
@@ -3466,9 +3482,10 @@ def render_index_page(
     reference_map_mode = bool(reference_2021) and (
         not statla_snapshots or (config.election_key == "2026-mv" and statla_mode == "DUMMY")
     )
+    reference_vote_type = str(reference_2021.get("map_vote_type") or "Zweitstimmen")
     map_heading = "Wahlkreiskarte · 2021 Referenz" if reference_map_mode else "Klickbare Wahlkreiskarte"
     map_note = (
-        "Farbe = Zweitstimmen-Sieger der Landtagswahl 2021; die Geometrie zeigt die Wahlkreiseinteilung 2026. Jeder Wahlkreis führt zur Detailseite."
+        f"Farbe = {reference_vote_type}-Sieger der Landtagswahl 2021; die Geometrie zeigt die Wahlkreiseinteilung 2026. Jeder Wahlkreis führt zur Detailseite."
         if reference_map_mode
         else "Farbe = führende Erststimme im aktuellen Ergebnis. Jeder Wahlkreis führt direkt zur Detailseite."
     )
@@ -3529,8 +3546,8 @@ def render_index_page(
         "<ul class='linklist'><li><a href='scenario.html'>Szenario öffnen</a></li></ul></div>"
         f"<div class='panel dashboard-map'><h2>{map_heading}</h2>"
         f"<p class='small'>{map_note}</p>"
-        f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk, reference_2021.get('winners'), reference_map_mode)}"
-        f"{render_reference_map_legend(reference_2021) if reference_map_mode else ''}</div>"
+        f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk, reference_2021.get('winners'), reference_map_mode, reference_vote_type)}"
+        f"{render_reference_map_legend(reference_2021, reference_vote_type) if reference_map_mode else ''}</div>"
         f"{render_structure_profile_panel(features, wahlkreis_link_by_wk)}"
         f"{render_reference_2021_panel(reference_2021) if config.election_key == '2026-mv' else ''}"
         f"{render_landkreis_overview_table(landkreis_overview_rows, landkreis_link_by_id)}"
