@@ -48,6 +48,19 @@ checksums before deployment. LSA's public `build_metadata.json` identifies its
 source commit and result timestamp. GitHub runner queues and Pages propagation
 can add latency after the automatic trigger.
 
+The preliminary Land/Kreis/Wahlkreis CSV can omit `Ist.Wahlbezirke`,
+`Soll.Wahlbezirke`, and `Uhrzeit` while retaining all vote results. These missing
+fields are not zero reporting counts. Pages displays existing votes as
+`Ergebnis vorhanden`, leaves unavailable area counts as a dash (null in search
+data), and shows the official HTML coverage at state level. It calculates an
+HTML–CSV reporting delta only when both CSV counts are available. Raw and
+normalized election data remain unchanged by this display handling.
+
+For a Pages rollback, manual dispatch accepts an optional `source_ref` input
+containing the full 40-character archived commit SHA. Leave it empty to build
+the latest default-branch data. The workflow validates the input and retains
+the same frozen BW/RLP checks for both paths.
+
 ## Before 18:00
 
 1. Approve and push the reviewed collector changes to the default branch.

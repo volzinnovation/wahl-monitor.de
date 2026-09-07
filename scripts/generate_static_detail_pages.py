@@ -171,6 +171,7 @@ def status_label(status: str) -> str:
         "complete": "vollständig",
         "pending": "ausstehend",
         "no_data": "keine Daten",
+        "available": "Ergebnis vorhanden",
         "prestart": "vor Start",
     }.get(status, status)
 
@@ -600,18 +601,29 @@ def render_lsa_current_results_panel(
 
     if overview_reported is not None and overview_total is not None:
         reported, total = overview_reported, overview_total
-        delta_reported = overview_reported - csv_reported
-        delta_total = overview_total - csv_total
         coverage_note = (
             f"Abdeckung aus der offiziellen Übersicht: {number(reported)} / {number(total)} Wahlbezirke. "
-            f"Stimmenwerte aus dem offiziellen CSV-Ergebnisstand ({number(csv_reported)} / {number(csv_total)} Wahlbezirke). "
-            f"Delta HTML − CSV (gemeldet / gesamt): {signed_number(delta_reported)} / {signed_number(delta_total)} Wahlbezirke."
         )
+        if reporting_counts_known(snapshot):
+            delta_reported = overview_reported - csv_reported
+            delta_total = overview_total - csv_total
+            coverage_note += (
+                f"Stimmenwerte aus dem offiziellen CSV-Ergebnisstand ({number(csv_reported)} / {number(csv_total)} Wahlbezirke). "
+                f"Delta HTML − CSV (gemeldet / gesamt): {signed_number(delta_reported)} / {signed_number(delta_total)} Wahlbezirke."
+            )
+        else:
+            coverage_note += (
+                "Stimmenwerte aus dem offiziellen CSV-Ergebnisstand. "
+                "Der CSV-Download enthält keine Angaben zur Zahl der gemeldeten Wahlbezirke."
+            )
     else:
         reported, total = csv_reported, csv_total
-        coverage_note = "Abdeckung und Stimmenwerte aus dem offiziellen CSV-Ergebnisstand."
+        coverage_note = ("Abdeckung und Stimmenwerte aus dem offiziellen CSV-Ergebnisstand."
+                         if reporting_counts_known(snapshot) else
+                         "Stimmenwerte aus dem offiziellen CSV-Ergebnisstand; Meldestand nicht angegeben.")
     metrics = (
-        ("Wahlbezirke gemeldet", f"{number(reported, 0)} / {number(total, 0)}" if total else "Noch keine Meldung"),
+        ("Wahlbezirke gemeldet", f"{number(reported, 0)} / {number(total, 0)}" if total else
+         ("Nicht angegeben" if has_meaningful_result(snapshot) else "Noch keine Meldung")),
         ("Wähler in gemeldeten Wahlbezirken", number(snapshot.get("voters_total") or 0, 0)),
         ("Gültige Zweitstimmen 2026", number(vote_total_for_snapshot(snapshot, "Zweitstimmen"), 0)),
     )
@@ -622,7 +634,7 @@ def render_lsa_current_results_panel(
     )
     panels = [
         "<section class='panel' id='ergebnis-2026'><h2>Landesergebnis 2026</h2>"
-        "<p class='small'>Laufende Auszählung · Sachsen-Anhalt</p>"
+        "<p class='small'>Aktueller Ergebnisstand · Sachsen-Anhalt</p>"
         f"<div class='stats'>{cells}</div><p class='small'>{html.escape(coverage_note)}</p></section>"
     ]
     row_key = str(snapshot.get("row_key") or "")
@@ -977,12 +989,12 @@ def render_vote_share_history_panel(config: core.Config) -> str:
         )
 
     latest = history[-1]
-    reporting = "?"
+    reporting = "Meldestand im CSV nicht angegeben"
     if latest["total_precincts"]:
-        reporting = f"{latest['reported_precincts']:,}/{latest['total_precincts']:,}".replace(",", ".")
+        reporting = "gemeldete Bezirke " + f"{latest['reported_precincts']:,}/{latest['total_precincts']:,}".replace(",", ".")
     subtitle = (
         "Git-Historie der landesweiten StatLA-Zweitstimmen. "
-        f"Letzter Stand {latest['timestamp_local'].strftime('%H:%M %Z')}, gemeldete Bezirke {reporting}."
+        f"Letzter Stand {latest['timestamp_local'].strftime('%H:%M %Z')}, {reporting}."
     )
 
     chart = (
@@ -1369,7 +1381,21 @@ def reporting_counts(snapshot: Dict[str, Any]) -> Tuple[int, int]:
     return reported, total
 
 
+def reporting_counts_known(snapshot: Dict[str, Any]) -> bool:
+    return all(core.parse_int(snapshot.get(key)) is not None
+               for key in ("reported_precincts", "total_precincts"))
+
+
+def reporting_count_label(snapshot: Dict[str, Any]) -> str:
+    if not reporting_counts_known(snapshot):
+        return "–"
+    reported, total = reporting_counts(snapshot)
+    return f"{reported}/{total}"
+
+
 def reporting_status_label(snapshot: Dict[str, Any]) -> str:
+    if not reporting_counts_known(snapshot):
+        return "Ergebnis vorhanden" if has_meaningful_result(snapshot) else "keine Daten"
     reported, total = reporting_counts(snapshot)
     if total <= 0:
         return "keine Daten"
@@ -1378,6 +1404,19 @@ def reporting_status_label(snapshot: Dict[str, Any]) -> str:
     if reported >= total:
         return "vollständig"
     return "teilweise"
+
+
+def apply_available_vote_status(status_rows: List[Dict[str, Any]], snapshots: List[Dict[str, Any]]) -> None:
+    """Keep unknown reporting counts separate from existing Wahlkreis votes."""
+    by_wk = {core.normalize_wahlkreis_nummer(s.get("gebietsnummer")): s for s in snapshots
+             if str(s.get("gebietsart") or "").upper() == "WAHLKREIS"}
+    for row in status_rows:
+        snapshot = by_wk.get(core.normalize_wahlkreis_nummer(row.get("wahlkreisnummer")), {})
+        for key in ("valid_votes_erst", "valid_votes_zweit"):
+            row[key] = snapshot.get(key)
+        if (row.get("status") == "no_data" and not reporting_counts_known(snapshot)
+                and has_meaningful_result(snapshot)):
+            row["status"] = "available"
 
 
 def has_meaningful_result(snapshot: Dict[str, Any]) -> bool:
@@ -2480,9 +2519,8 @@ def append_search_entry(
         "sort": sort_key or normalize_search_text(title),
     }
     if snapshot:
-        reported, total = reporting_counts(snapshot)
-        entry["reportedPrecincts"] = reported
-        entry["totalPrecincts"] = total
+        entry["reportedPrecincts"] = core.parse_int(snapshot.get("reported_precincts"))
+        entry["totalPrecincts"] = core.parse_int(snapshot.get("total_precincts"))
         entry["status"] = reporting_status_label(snapshot)
     entries.append(entry)
 
@@ -2558,8 +2596,10 @@ def render_search_page(config: core.Config, output_root: Path, entries: List[Dic
   function resultSubtitle(entry) {
     const parts = [];
     if (entry.subtitle) parts.push(entry.subtitle);
-    if (entry.status && entry.totalPrecincts) {
-      parts.push(`${entry.status} (${entry.reportedPrecincts}/${entry.totalPrecincts})`);
+    if (entry.status) {
+      const counts = entry.reportedPrecincts != null && entry.totalPrecincts != null
+        ? ` (${entry.reportedPrecincts}/${entry.totalPrecincts})` : '';
+      parts.push(`${entry.status}${counts}`);
     }
     return parts.join(" · ");
   }
@@ -2688,18 +2728,20 @@ def render_vote_table(
     grand_total = 0
     total_reported = 0
     total_precincts = 0
+    counts_known = True
     body_rows: List[str] = []
 
     for label, row_key, snapshot in rows:
         total = vote_total_for_snapshot(snapshot, vote_type)
         grand_total += total
         reported, precinct_total = reporting_counts(snapshot)
+        counts_known = counts_known and reporting_counts_known(snapshot)
         total_reported += reported
         total_precincts += precinct_total
         votes_for_row = party_votes_by_row_key.get(row_key, {}).get(vote_type, {})
         cells = [f"<td><a href='{html.escape(link_lookup[row_key])}'>{html.escape(label)}</a></td>"]
         cells.append(f"<td>{html.escape(reporting_status_label(snapshot))}</td>")
-        cells.append(f"<td>{reported}/{precinct_total}</td>")
+        cells.append(f"<td>{reporting_count_label(snapshot)}</td>")
         for party in parties:
             votes = votes_for_row.get(party, 0)
             totals_by_party[party] += votes
@@ -2709,8 +2751,11 @@ def render_vote_table(
 
     total_cells = ["<td><strong>Gesamt</strong></td>"]
     overall_status = "vollständig" if total_precincts > 0 and total_reported >= total_precincts else ("teilweise" if total_reported > 0 else "offen")
+    if not counts_known:
+        overall_status = "Ergebnis vorhanden" if grand_total > 0 else "keine Daten"
     total_cells.append(f"<td><strong>{overall_status}</strong></td>")
-    total_cells.append(f"<td><strong>{total_reported}/{total_precincts}</strong></td>")
+    counts_label = f"{total_reported}/{total_precincts}" if counts_known else "–"
+    total_cells.append(f"<td><strong>{counts_label}</strong></td>")
     for party in parties:
         total_cells.append(f"<td><strong>{format_votes_cell(totals_by_party[party], grand_total or 1)}</strong></td>")
     total_cells.append(f"<td><strong>{format_votes_cell(grand_total, grand_total or 1)}</strong></td>")
@@ -2836,7 +2881,7 @@ def render_booth_list(
             f"<td><a href='{html.escape(booth_local_links[booth['row_key']])}'>{html.escape(booth['display_name'])}</a></td>"
             f"<td>{html.escape(booth['gebietsart'])}</td>"
             f"<td>{html.escape(reporting_status_label(booth))}</td>"
-            f"<td>{reported}/{total}</td>"
+            f"<td>{reporting_count_label(booth)}</td>"
             f"<td>{booth['valid_votes_zweit']}</td>"
             f"<td>{location_link}</td>"
             "</tr>"
@@ -3336,19 +3381,38 @@ def render_index_page(
         operations.insert(2, f"`python scripts/run_local_mock_poll.py --election-key {config.election_key} --iterations 1 --limit-ags 10`")
     if config.statla_dummy_csv_url and config.kommone_base_url_template:
         operations.append(f"`python scripts/validate_dummy_statla_result.py --election-key {config.election_key}`")
+    wahlkreise_with_votes = sum(
+        str(row.get("gebietsart") or "").upper() == "WAHLKREIS" and has_meaningful_result(row)
+        for row in statla_snapshots
+    )
+    booth_count = sum(str(row.get("gebietsart") or "").upper() == "WAHLBEZIRK" for row in statla_snapshots)
+    booth_count_label = f"{booth_count:,}".replace(",", ".")
+    wahlkreis_metric_label = "Wahlkreise vollständig"
+    wahlkreis_metric_value = wahlkreis_counts['complete']
+    availability_note = ""
+    if config.election_key.endswith("-lsa"):
+        wahlkreis_metric_label = "Wahlkreise mit Ergebnis"
+        wahlkreis_metric_value = wahlkreise_with_votes
+        availability_note = (
+            "<p class='small'>Veröffentlichte Ergebnisebenen: Land, Landkreis/kreisfreie Stadt, Wahlkreis, Gemeinde "
+            f"und {booth_count_label} Wahlbezirke. Die Wahlbezirk-Ergebnisse sind über die Gemeindeseiten erreichbar.</p>"
+            if booth_count else
+            "<p class='small'>Veröffentlichte Ergebnisebenen: Land, Landkreis/kreisfreie Stadt, Wahlkreis und Gemeinde. "
+            "Wahlbezirk-Ergebnisse werden angezeigt, sobald die offizielle Datei verfügbar ist.</p>"
+        )
     body = (
         "<div class='hero'><div class='topbar'><a href='search.html'>Suche</a><span>/</span>"
         "<a href='scenario.html'>Szenario</a><span>/</span>"
         "<a href='../index.html'>Alle Wahlen</a></div>"
         f"<h1>{html.escape(config.election_name)} ({html.escape(config.election_key)})</h1>"
         "<p class='muted'>Statische Übersicht mit Drill-down von Land zu Landkreis, Wahlkreis, Gemeinde und – sofern veröffentlicht – Wahlbezirk.</p>"
-        "<p class='small'>Aktuell veröffentlichte LSA-Ergebnisebenen: Land, Landkreis/kreisfreie Stadt, Wahlkreis und Gemeinde. Die offizielle Beschreibung der Wahlbezirk-Datei ist veröffentlicht; die Datei selbst wird laut Statistischem Landesamt erst nach dem vorläufigen Ergebnis bereitgestellt und dann automatisch eingelesen.</p>"
+        f"{availability_note}"
         f"<div class='stats'>"
         f"<div class='stat'><div class='stat-label'>Letzte Abfrage</div><div class='stat-value'>{html.escape(polled_at_local)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Trackingstart</div><div class='stat-value'>{html.escape(tracking_start)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Gemeinden</div><div class='stat-value'>{len(municipality_link_by_ags):,}</div></div>"
         f"<div class='stat'><div class='stat-label'>Landkreise</div><div class='stat-value'>{len(landkreis_pages)}</div></div>"
-        f"<div class='stat'><div class='stat-label'>Wahlkreise vollständig</div><div class='stat-value'>{wahlkreis_counts['complete']}</div></div>"
+        f"<div class='stat'><div class='stat-label'>{wahlkreis_metric_label}</div><div class='stat-value'>{wahlkreis_metric_value}</div></div>"
         f"<div class='stat'><div class='stat-label'>Wahlkreise vor Start</div><div class='stat-value'>{wahlkreis_counts['prestart']}</div></div>"
         "</div></div>"
         "<div class='grid'>"
@@ -3412,8 +3476,12 @@ def render_index_page(
         + "".join(f"<li>{item}</li>" for item in operations)
         + "</ul></div>"
         + "<div class='panel'><h2>Abdeckung</h2><ul class='inline-list'>"
-        + f"<li>Wahlkreise vollständig: <strong>{wahlkreis_counts['complete']}</strong></li>"
+        + (f"<li>Wahlkreise mit Ergebnis: <strong>{wahlkreise_with_votes}</strong></li>"
+           if wahlkreis_counts.get('available') else
+           f"<li>Wahlkreise vollständig: <strong>{wahlkreis_counts['complete']}</strong></li>")
         + f"<li>Wahlkreise ausstehend: <strong>{wahlkreis_counts['pending']}</strong></li>"
+        + (f"<li>Wahlkreise mit Ergebnis ohne Meldestandsangabe: <strong>{wahlkreis_counts.get('available', 0)}</strong></li>"
+           if wahlkreis_counts.get('available') else "")
         + f"<li>Wahlkreise ohne Daten: <strong>{wahlkreis_counts['no_data']}</strong></li>"
         + f"<li>Wahlkreise vor Start: <strong>{wahlkreis_counts['prestart']}</strong></li>"
         + "</ul></div>"
@@ -4047,6 +4115,7 @@ def main() -> int:
         statla_snapshots=snapshots,
         prestart=prestart,
     )
+    apply_available_vote_status(wahlkreis_status_rows, snapshots)
     statla_erst_winners = statla_wahlkreis_winner_map(snapshots, party_votes, "Erststimmen")
     statla_zweit_winners = statla_wahlkreis_winner_map(snapshots, party_votes, "Zweitstimmen")
     for row in wahlkreis_status_rows:

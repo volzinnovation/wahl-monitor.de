@@ -84,6 +84,66 @@ class CurrentOverviewTests(unittest.TestCase):
         self.assertIn(">18:15</text>", result)
         self.assertNotIn("rotate(90", result)
 
+    def test_missing_csv_counts_do_not_create_zero_counts_or_false_delta(self):
+        self.snapshot.update(reported_precincts=None, total_precincts=None)
+        result = generator.render_lsa_current_results_panel(
+            self.snapshot, self.current, self.reference,
+            {"reported_precincts": 2661, "total_precincts": 2661},
+        )
+        self.assertIn("2.661 / 2.661", result)
+        self.assertIn("CSV-Download enthält keine Angaben", result)
+        self.assertIn("<td>60</td><td>60,00 %</td>", result)
+        self.assertNotIn("0 / 0", result)
+        self.assertNotIn("Delta HTML", result)
+        without_overview = generator.render_lsa_current_results_panel(
+            self.snapshot, self.current, self.reference)
+        self.assertIn("Nicht angegeben", without_overview)
+        self.assertNotIn("Noch keine Meldung", without_overview)
+
+    def test_missing_counts_preserve_results_in_status_tables_and_search(self):
+        self.snapshot.update(reported_precincts=None, total_precincts=None)
+        self.assertEqual(generator.reporting_status_label(self.snapshot), "Ergebnis vorhanden")
+        self.assertEqual(generator.reporting_status_label({}), "keine Daten")
+        result = generator.render_vote_table(
+            [("Land", "land", self.snapshot)], {"land": {"Zweitstimmen": {"CDU": 60, "BSW": 40}}},
+            "Zweitstimmen", ["CDU", "BSW"], {"land": "land.html"},
+        )
+        self.assertIn("Ergebnis vorhanden", result)
+        self.assertNotIn("0/0", result)
+        self.assertNotIn("vollständig", result)
+        self.assertIn("<td>–</td>", result)
+        entries = []
+        generator.append_search_entry(entries, kind="landkreis", title="Land", href="land.html", snapshot=self.snapshot)
+        self.assertIsNone(entries[0]["reportedPrecincts"])
+        self.assertIsNone(entries[0]["totalPrecincts"])
+        self.assertEqual(entries[0]["status"], "Ergebnis vorhanden")
+
+    def test_missing_counts_do_not_mark_wahlkreis_votes_as_absent(self):
+        rows = [{"wahlkreisnummer": "1", "status": "no_data", "reported_precincts": None, "total_precincts": None},
+                {"wahlkreisnummer": "2", "status": "no_data", "reported_precincts": None, "total_precincts": None}]
+        snapshot = {**self.snapshot, "gebietsart": "WAHLKREIS", "gebietsnummer": "001",
+                    "reported_precincts": None, "total_precincts": None}
+        generator.apply_available_vote_status(rows, [snapshot])
+        self.assertEqual(rows[0]["status"], "available")
+        self.assertEqual(rows[1]["status"], "no_data")
+        self.assertIsNone(rows[0]["reported_precincts"])
+        self.assertEqual(generator.reporting_status_label(rows[0]), "Ergebnis vorhanden")
+        rows[0]["wahlkreisname"] = "Testkreis"
+        table = generator.render_wahlkreis_overview_table(rows[:1], {})
+        self.assertIn("Ergebnis vorhanden", table)
+        self.assertNotIn("keine Daten", table)
+
+    def test_mixed_known_and_unknown_counts_do_not_show_a_partial_sum_as_complete(self):
+        unknown = {**self.snapshot, "row_key": "missing", "reported_precincts": None, "total_precincts": None}
+        known = {**self.snapshot, "row_key": "known", "reported_precincts": 10, "total_precincts": 10}
+        result = generator.render_vote_table(
+            [("Known", "known", known), ("Missing", "missing", unknown)],
+            {key: {"Zweitstimmen": {"CDU": 100}} for key in ["known", "missing"]},
+            "Zweitstimmen", ["CDU"], {"known": "known.html", "missing": "missing.html"},
+        )
+        self.assertIn("<strong>Ergebnis vorhanden</strong>", result)
+        self.assertNotIn("<strong>10/10</strong>", result)
+
     def test_vote_share_history_reads_land_party_rows_by_shared_row_key(self):
         snapshots = (
             "row_key,gebietsart,valid_votes_zweit,reported_precincts,total_precincts\n"
