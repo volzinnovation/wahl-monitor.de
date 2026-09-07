@@ -27,7 +27,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 26,Dessau-Roßlau,complete,52,52,1,0,0,1
 27,Dessau-Roßlau-Wittenberg,complete,66,66,3,0,0,3
 28,Bitterfeld-Wolfen,complete,61,61,3,0,0,3
-29,Saalekreis,pending,62,63,5,0,0,5
+29,Saalekreis,complete,63,63,5,0,0,5
 30,Eisleben,complete,71,71,11,0,0,11
 31,Sangerhausen,complete,88,88,8,0,0,8
 32,Querfurt,complete,90,90,17,0,0,17
