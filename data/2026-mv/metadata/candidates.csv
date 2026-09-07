@@ -1,0 +1,403 @@
+candidate_id,party,candidate_type,list_position,wahlkreisnummer,wahlkreis_name,surname,given_name,occupation,birth_year,residence
+bd4e0c219a037f71,AfD,Landesliste+Wahlkreis,19,1,Greifswald,Kurtze,Kevin,"Selbstständig, Kfz-Werkstatt",1988,17498 Wackerow
+f8e9eb4f5a9db3d9,BSW,Wahlkreis,,1,Greifswald,Bauer,Yannick Elias,Student,2004,17489 Greifswald
+9ca839f1cf8627d4,CDU,Landesliste+Wahlkreis,19,1,Greifswald,Heil,Torsten,Büroleiter,1982,17493 Greifswald
+a643e875cdcfe215,Die Linke,Landesliste+Wahlkreis,2,1,Greifswald,Herbst,Hennis,Politikwissenschaftler,1996,17489 Greifswald
+a8a7a4c1c5e2d9ce,Die PARTEI,Landesliste+Wahlkreis,1,1,Greifswald,Siewert,Lea Alexandra,Diplomjuristin,1999,17489 Greifswald
+b7f49fc075f319ef,FDP,Landesliste+Wahlkreis,10,1,Greifswald,Boorberg,Lars,Diplom Wirtschaftschemiker,1986,17489 Greifswald
+bfc969ab0040ab12,GRÜNE,Wahlkreis,,1,Greifswald,Horn,Katharina,Bootsbaumeisterin,1998,17489 Greifswald
+4d7d06186b663b09,SPD,Landesliste+Wahlkreis,2,1,Greifswald,Pegel,Christian,Minister für Inneres und Bau,1974,19057 Schwerin
+98fdd42fdc4e7c3a,AfD,Wahlkreis,,2,Neubrandenburg I,Scheel,Stephan,Meister im Trinkwasserbereich,1984,17036 Neubrandenburg
+3fba847889ce53ea,BSW,Wahlkreis,,2,Neubrandenburg I,Forberger,Nils,Notfallsanitäter,1965,17039 Trollenhagen
+be1c26efa821841c,CDU,Landesliste+Wahlkreis,10,2,Neubrandenburg I,Schöler,Yvette,Betriebswirtin,1980,17034 Neubrandenburg
+eae5fee27dd86d59,Die Linke,Landesliste+Wahlkreis,8,2,Neubrandenburg I,Koplin,Torsten,Abgeordneter des Landtages,1962,19069 Alt Meteln
+3bb687a6a06462d1,GRÜNE,Landesliste+Wahlkreis,3,2,Neubrandenburg I,Wegner,Jutta,Dipl. Verwaltungswirtin,1963,17033 Neubrandenburg
+fa28e2396e9d893c,SPD,Landesliste+Wahlkreis,27,2,Neubrandenburg I,Freund,Vanessa,Soziologin,1991,17033 Neubrandenburg
+4a82829322914c5e,Team Freiheit,Wahlkreis,,2,Neubrandenburg I,Großmüller,Tim,selbstständiger Unternehmer,1979,17033 Neubrandenburg
+e3d837a44e6b0d96,AfD,Landesliste+Wahlkreis,9,3,Neubrandenburg II,Schnell,Robert,Landwirt,1987,17034 Neubrandenburg
+bba12b896a0c4279,BSW,Wahlkreis,,3,Neubrandenburg II,Schröder,Thomas,Rechtsanwalt,1962,17033 Neubrandenburg
+e91e5d2df7b6a0ad,CDU,Landesliste+Wahlkreis,29,3,Neubrandenburg II,Rohloff,Martin,Staatlich geprüfter Betriebswirt (Logistik),1987,17033 Neubrandenburg
+6386f1a8ccd354be,Die Linke,Landesliste+Wahlkreis,21,3,Neubrandenburg II,Jaschinski,Toni,Dipl. - Kaufmann,1982,17033 Neubrandenburg
+fcadebed35a02568,GRÜNE,Wahlkreis,,3,Neubrandenburg II,Roth,Carolin,Angestellte,1986,18107 Rostock
+570c0e0b46a80c2e,SPD,Landesliste+Wahlkreis,42,3,Neubrandenburg II,von Malottki,Erik,Gewerkschafter,1986,17489 Greifswald
+4c1af46432588f94,AfD,Wahlkreis,,4,Hansestadt Rostock I,Meister,Michael,Polizeibeamter,1974,18055 Rostock
+f3f04fb9d115c047,BSW,Wahlkreis,,4,Hansestadt Rostock I,Schneider,Thomas,Rentner,1959,18119 Rostock
+f541fbe44408ed97,CDU,Landesliste+Wahlkreis,15,4,Hansestadt Rostock I,Günther,Chris,Rechtsanwältin,1978,18119 Rostock
+252dd70280a34663,Die Linke,Wahlkreis,,4,Hansestadt Rostock I,Herzer,Toralf,Angestellter,1969,18055 Rostock
+89425e54f611a2af,FDP,Wahlkreis,,4,Hansestadt Rostock I,Weu,Michael,Projektmanager,1989,18055 Rostock
+8d029ac341cfc569,GRÜNE,Landesliste+Wahlkreis,7,4,Hansestadt Rostock I,"Eggert, Dr.",Anja,Meeresbiologin,1972,18055 Rostock
+d8901962c84a40b9,SPD,Landesliste+Wahlkreis,22,4,Hansestadt Rostock I,Mucha,Ralf,"Dipl.-Sozialpädagoge, Abgeordneter des Landtages",1963,18109 Rostock
+ff633f619cf9b5da,AfD,Landesliste+Wahlkreis,45,5,Hansestadt Rostock II,Schulz,Helmut,Ingenieur,1955,18119 Rostock
+f8319afb6e2bf8c5,BSW,Wahlkreis,,5,Hansestadt Rostock II,Dittrich,Bernd,Informatiker,1967,18069 Rostock
+4875a1fe6f630e7a,CDU,Landesliste+Wahlkreis,23,5,Hansestadt Rostock II,Grafenhorst,Kenny,Soldat,1988,18109 Rostock
+6d66587b009cd30d,Die Linke,Landesliste+Wahlkreis,4,5,Hansestadt Rostock II,Albrecht,Christian,Abgeordneter des Landtages,1989,18106 Rostock
+e1746a93758ca82a,FDP,Wahlkreis,,5,Hansestadt Rostock II,Zischke,Philipp,Angestellter,1997,19374 Parchim
+5cca6f4eab17e3f3,GRÜNE,Landesliste+Wahlkreis,16,5,Hansestadt Rostock II,Wloczka,Clemens,Fachinformatiker,1992,18107 Rostock
+7b461c2674338d33,SPD,Landesliste+Wahlkreis,40,5,Hansestadt Rostock II,Harms,Lennart,Lehrer,1991,18069 Rostock
+300d913a2f305bde,AfD,Landesliste+Wahlkreis,46,6,Hansestadt Rostock III,Deicke,Enrico,Videoredakteur,2000,18106 Rostock
+12305511d28bcb24,BSW,Wahlkreis,,6,Hansestadt Rostock III,Zimmermann,Sophie,,1987,18146 Rostock
+9da211805accdf25,CDU,Landesliste+Wahlkreis,27,6,Hansestadt Rostock III,Tempel,Patrick,Medienunternehmer,1987,18147 Rostock
+3224200f08e61761,Die Linke,Landesliste+Wahlkreis,9,6,Hansestadt Rostock III,Senli,Nurgül,Gewerkschaftssekretärin,1986,18057 Rostock
+3b7eac0c3a16d653,FDP,Wahlkreis,,6,Hansestadt Rostock III,Adler,Sebastian,Unternehmer,1984,18057 Rostock
+046ca11c4570b487,GRÜNE,Landesliste+Wahlkreis,17,6,Hansestadt Rostock III,Hansen,Klara,FSJlerin Landtagsfraktion GRÜNE,2006,19059 Schwerin
+1e1b4a47ff1f17a4,SPD,Landesliste+Wahlkreis,6,6,Hansestadt Rostock III,Barlen,Julian,"Dipl.-Volkswirt, Abgeordneter des Landtages",1980,18057 Rostock
+02fb86f626addc11,Volt,Landesliste+Wahlkreis,3,6,Hansestadt Rostock III,Altstadt,Emily Ems,Studentin,2004,18057 Rostock
+473e9168c5253977,AfD,Wahlkreis,,7,Hansestadt Rostock IV,Gläser,Sascha,Remote Team Leader,1984,18109 Rostock
+2096691981dfca1a,BSW,Landesliste+Wahlkreis,11,7,Hansestadt Rostock IV,Giesel,Eric-Helge,Student M. Sc.,1976,18055 Rostock
+1d9c3a8b5947b6f4,CDU,Landesliste+Wahlkreis,1,7,Hansestadt Rostock IV,Peters,Daniel,Mitglied des Landtages,1981,18059 Rostock
+222a4d395f073e8f,Die Linke,Wahlkreis,,7,Hansestadt Rostock IV,Möller,Hannes,Selbstständig,1988,18055 Rostock
+2f03b1593ecdd28e,FDP,Wahlkreis,,7,Hansestadt Rostock IV,Schulze,Jenny,IT-Projektmanagerin,1996,18055 Rostock
+4bc38c2ee5acff4f,GRÜNE,Landesliste+Wahlkreis,2,7,Hansestadt Rostock IV,Krüger,Ole,Germanist,1983,18057 Rostock
+08edff7c90030e7c,SPD,Landesliste+Wahlkreis,25,7,Hansestadt Rostock IV,Wandt,Sandra,Dipl.-Kauffrau,1976,18147 Rostock
+06af9a687e9a272f,AfD,Wahlkreis,,8,Schwerin I,Holm,Leif-Erik,"MdB, Ökonom M. Sc.",1970,19055 Schwerin
+c9941bac9074fefc,BSW,Wahlkreis,,8,Schwerin I,Biegemann,Patrick,Verwaltungsfachangestellter,1996,19055 Schwerin
+940a5d1908c4d090,CDU,Wahlkreis,,8,Schwerin I,Dopp,Jascha Rainer,Beamter h.D.,1978,19055 Schwerin
+863fb9dbe8e27090,Die Linke,Wahlkreis,,8,Schwerin I,"Trepsdorf, Dr.",Daniel,Mitglied des Landtages,1976,19053 Schwerin
+62c154d236f312ac,FDP,Wahlkreis,,8,Schwerin I,Schuckmann,Bruno,Unternehmer,1967,19061 Schwerin
+bafd489db628dd8d,FREIE WÄHLER,Wahlkreis,,8,Schwerin I,"Bank, Dr.",Sabine,Ärztin,1954,19055 Schwerin
+a6605c424870cfb2,GRÜNE,Landesliste+Wahlkreis,4,8,Schwerin I,Hüller,Sebastian,Fachinformatiker,2000,19055 Schwerin
+23edd46c012923d5,SPD,Landesliste+Wahlkreis,1,8,Schwerin I,Schwesig,Manuela,Ministerpräsidentin,1974,19055 Schwerin
+88d90128d0447287,Team Freiheit,Landesliste+Wahlkreis,1,8,Schwerin I,Bressel,Paul,Unternehmer,1985,19053 Schwerin
+74aa94ac59120eee,Volt,Landesliste+Wahlkreis,2,8,Schwerin I,De Matteis,Massimo,Volljurist,1961,19055 Schwerin
+e2eb33f192504c1b,AfD,Landesliste+Wahlkreis,21,9,Schwerin II,Federau,Petra,Landtagsabgeordnete,1969,19061 Schwerin
+eb81634ed1b577e1,BSW,Landesliste+Wahlkreis,5,9,Schwerin II,Kulbatzki,Jens,Kraftfahrer,1966,19069 Klein Trebbow
+20d2867f449b8fb7,CDU,Landesliste+Wahlkreis,12,9,Schwerin II,Müthel-Brenncke,Dorin,Diplom Kauffrau (FH),1968,19055 Schwerin
+911442284aec28f5,Die Linke,Landesliste+Wahlkreis,10,9,Schwerin II,Hemeed,Salim,Landesgeschäftsführer,1995,19055 Schwerin
+05607b7273e84cbe,FDP,Landesliste+Wahlkreis,9,9,Schwerin II,Eising,Patrick,Student,2006,19061 Schwerin
+11b262017e3c520a,GRÜNE,Wahlkreis,,9,Schwerin II,Burger,Stefan,IT-Sicherheitsberater,1987,19061 Schwerin
+5f1df9989dddd456,SPD,Landesliste+Wahlkreis,13,9,Schwerin II,Pfeifer,Mandy,Diplom-Sozialverwaltungswirtin (FH),1977,19055 Schwerin
+13ec35e57ba5d308,AfD,Wahlkreis,,10,Wismar,Medrow,Manuela,Dipl.-Ingenieurin,1975,23966 Wismar
+56177c0b6e83c514,BSW,Landesliste+Wahlkreis,10,10,Wismar,Csutora,Linda Cornelia,Verwaltungsfachwirtin,1992,19053 Schwerin
+ce5283a7d8d67bb0,CDU,Wahlkreis,,10,Wismar,Meister,Christoph,Volljurist,1984,23968 Wismar
+7caa0144695509d6,Die Linke,Wahlkreis,,10,Wismar,Krumpen,Horst,Bundeswehroffizier a. D.,1966,23970 Wismar
+e39d3a8b6bc666ac,FDP,Landesliste+Wahlkreis,12,10,Wismar,Kelm,Nadine,Wirtschaftsjuristin,1986,23966 Wismar
+4017521df0608061,GRÜNE,Landesliste+Wahlkreis,6,10,Wismar,Fuhrwerk,René,Ingenieur für Elektrotechnik,1978,23966 Wismar
+565df10e3e5ad067,SPD,Landesliste+Wahlkreis,16,10,Wismar,Gundlack,Tilo,"Koch, Abgeordneter des Landtages",1968,23970 Wismar
+643b1d6ea3517404,AfD,Landesliste+Wahlkreis,28,11,Landkreis Rostock I,de Jesus Fernandes,Thomas,Hochbaufacharbeiter,1974,19053 Schwerin
+5326582d63d15c86,BSW,Wahlkreis,,11,Landkreis Rostock I,Hopp,Stephan,Tischler,1985,18209 Bad Doberan
+e90e8ddb1dca3689,CDU,Landesliste+Wahlkreis,2,11,Landkreis Rostock I,Hoffmeister,Katy,Juristin,1973,18209 Bad Doberan
+2fc34d3b64f5a9ed,Die Linke,Wahlkreis,,11,Landkreis Rostock I,Kröplin,Luis,Freiwilliges soziales Jahr,2008,18246 Bützow
+4df4615499338739,Einzelbewerber,Wahlkreis,,11,Landkreis Rostock I,Rödel,Nico,Abiturient,2008,18209 Steffenshagen
+21871b0e5ac028fc,FDP,Landesliste+Wahlkreis,3,11,Landkreis Rostock I,Bräunig,Whitney,Lehrkraft,1993,23970 Wismar
+96e916b691272b25,GRÜNE,Wahlkreis,,11,Landkreis Rostock I,Pieper,Hannes,Dipl.- Ing. techn. Umweltschutz,1982,18230 Bastorf
+a6b1feadc47e455b,SPD,Landesliste+Wahlkreis,5,11,Landkreis Rostock I,Drese,Stefanie,Rechtsanwältin,1976,18239 Satow
+9d907280f3781f01,AfD,Landesliste+Wahlkreis,22,12,Landkreis Rostock II,Moltzen,Hans-Werner,Selbstständiger Kaufmann,1953,18182 Mönchhagen
+d58521aa1cac5cab,BSW,Landesliste+Wahlkreis,4,12,Landkreis Rostock II,Esemann,Rica,Dipl.-Ing. Maschinenbau,1971,18184 Broderstorf
+540c9e462de03823,CDU,Landesliste+Wahlkreis,24,12,Landkreis Rostock II,Schacht,Mario,Geschäftsführer,1974,18198 Kritzmow
+ff7953b18fc747e4,Die Linke,Wahlkreis,,12,Landkreis Rostock II,Georgi,Peter,Jugendsozialarbeiter,1964,18184 Roggentin
+c4e67c4b2584a5c5,FDP,Landesliste+Wahlkreis,8,12,Landkreis Rostock II,Richter,Kai-Uwe,Unternehmer,1987,18273 Güstrow
+449c0bda2973927f,GRÜNE,Wahlkreis,,12,Landkreis Rostock II,"Bull, Dr.",Klaus-Michael,wissenschaftl. Mitarbeiter,1963,18059 Pölchow
+32d8971a51c4d718,SPD,Landesliste+Wahlkreis,32,12,Landkreis Rostock II,Stamer,Dirk,"Wirtschaftsinformatiker, Abgeordneter des Landtages",1980,18198 Kritzmow
+dd4f1854ae7a4fbe,AfD,Landesliste+Wahlkreis,1,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Schult,Enrico,"Vermessungstechniker, Mitglied des Landtages",1979,17111 Nossendorf
+4a0f4dab9089b2df,BSW,Landesliste+Wahlkreis,3,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Koch,Robert,Sozialpädagoge,1983,17111 Beggerow
+60b6012efe02435b,CDU,Landesliste+Wahlkreis,3,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Liskow,Franz-Robert,Abgeordneter des Landtages,1987,17121 Loitz
+224f6a2ad3c42c7e,Die Linke,Wahlkreis,,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Bruhn,Dirk,"Landwirt, Agrarökologe",1972,17111 Siedenbrünzow
+cf4066a7ee8f8f58,FDP,Landesliste+Wahlkreis,2,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Mendle,Jessica,Geschäftsführerin,1982,17495 Groß-Kiesow
+f031d95a5f268039,SPD,Landesliste+Wahlkreis,21,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,"Schröder, Dr.",Anna-Konstanze,"Diplom-Psychologin, Abgeordnete des Landtages",1980,17121 Sassen-Trantrow
+299c21711e2f3287,AfD,Landesliste+Wahlkreis,20,14,Mecklenburgische Seenplatte II,Skotnik,Christian,Diplom-Lehrer,1963,17139 Malchin
+478bdce60786bd1a,BSW,Wahlkreis,,14,Mecklenburgische Seenplatte II,Lehmann,Gerold,Maler und Lackierer,1971,17139 Malchin
+56879f56f4ae28e8,CDU,Landesliste+Wahlkreis,6,14,Mecklenburgische Seenplatte II,Reinhardt,Marc,"Dipl. Wirtschaftsjurist (FH), Vermessungstechniker",1978,17154 Neukalen
+c8a0978906051b36,Die Linke,Wahlkreis,,14,Mecklenburgische Seenplatte II,Burmeister,Denis,Grafik-Designer,1975,17139 Gielow
+03f7390ac5dbc552,FDP,Landesliste+Wahlkreis,20,14,Mecklenburgische Seenplatte II,Schubert,Tobias,Seniorenbetreuer,1987,17209 Altenhof
+46e84041bb84c47c,FREIE WÄHLER,Landesliste+Wahlkreis,3,14,Mecklenburgische Seenplatte II,Süssig,Arno,Rentner,1957,17139 Malchin
+77dcc217e343b26e,SPD,Landesliste+Wahlkreis,8,14,Mecklenburgische Seenplatte II,Krüger,Thomas,"Schlosser, Zahntechniker",1969,19067 Cambs
+d17a448ed3a2cbc5,AfD,Landesliste+Wahlkreis,13,15,Landkreis Rostock III,Burmeister,Steffi,Verwaltungsfachangestellte,1978,17179 Gnoien
+1cce4c2f7a6cba82,BSW,Wahlkreis,,15,Landkreis Rostock III,Pohl,Evelin,Dozentin Deutsch/Englisch,1963,17179 Behren-Lübchin
+5f2cded6816405c7,CDU,Landesliste+Wahlkreis,8,15,Landkreis Rostock III,Renz,Torsten,"Diplomingenieurpädagoge, MdL",1964,18273 Güstrow
+3690be96c30a2da8,Die Linke,Wahlkreis,,15,Landkreis Rostock III,Kowalski,Grit,Diagnostikerin,1965,18276 Lüssow
+cf357d537a4ced56,FDP,Wahlkreis,,15,Landkreis Rostock III,Marquardt,Paul,Leitender Administrator,1989,18299 Laage
+847d2ca3561c0252,GRÜNE,Wahlkreis,,15,Landkreis Rostock III,Marklein,Steffen,Dipl.-Ing.,1961,18258 Bröbberow
+4def9ab7d38a7830,SPD,Landesliste+Wahlkreis,19,15,Landkreis Rostock III,Schmelzer,Grit,Dipl.-Ing. Umweltschutz,1972,17166 Teterow
+f4ecbea9390d7e91,AfD,Landesliste+Wahlkreis,26,16,Landkreis Rostock IV,Reizlein,Peter,Diplom-Kaufmann,1966,18258 Wiendorf
+8a52fafbd71f529d,BSW,Wahlkreis,,16,Landkreis Rostock IV,Nettelmann,Nadine,Wissenschaftlerin,1975,18273 Güstrow
+b05f15ce0131cece,CDU,Landesliste+Wahlkreis,16,16,Landkreis Rostock IV,Hackendahl,Veikko,Rechtsanwalt,1973,18236 Kröpelin
+639e0390d4841446,Die Linke,Landesliste+Wahlkreis,6,16,Landkreis Rostock IV,Noetzel,Michael,Rechtsanwalt,1975,18055 Rostock
+d025a2b2dd5c4189,FDP,Wahlkreis,,16,Landkreis Rostock IV,Geufke,Steffen,Lehrer,1970,18273 Güstrow
+6637eebd4faa6186,GRÜNE,Wahlkreis,,16,Landkreis Rostock IV,"Engelke, Dr.",Roswitha,Physikerin,1968,18273 Güstrow
+13870117eed55b5a,SPD,Landesliste+Wahlkreis,14,16,Landkreis Rostock IV,da Cunha,Philipp,"Dipl.-Ing. Elektrotechnik, MdL",1987,18273 Güstrow
+dbdb0d55e45601ba,AfD,Landesliste+Wahlkreis,14,17,Ludwigslust-Parchim I,Ehlers,Nicole,Verwaltungsbeamtin,1971,19258 Boizenburg/Elbe
+f1cbeb402b8a487b,BSW,Wahlkreis,,17,Ludwigslust-Parchim I,Podrasil,Daniel Mika,Fachkraft Lagerlogistik,1998,19258 Boizenburg/Elbe
+903c4edd56890d78,CDU,Landesliste+Wahlkreis,30,17,Ludwigslust-Parchim I,Aukstein-Scheuten,Dennis,Unternehmer,1980,19258 Boizenburg/Elbe
+a7ce9c4dd408300f,Die Linke,Wahlkreis,,17,Ludwigslust-Parchim I,Makowsky,Andreas,Geodät,1962,19303 Dömitz
+49041ce6f4a9a748,FDP,Wahlkreis,,17,Ludwigslust-Parchim I,von Gersdorff,Johan,Unternehmensberater,1967,19243 Wittendörp
+b695aad8d16ee5da,GRÜNE,Landesliste+Wahlkreis,12,17,Ludwigslust-Parchim I,Lübbert,Philipp,"Verwaltungswissenschaftler, Fachlehrer",1997,19303 Dömitz
+4b6a8f7fa3ff729b,SPD,Landesliste+Wahlkreis,4,17,Ludwigslust-Parchim I,"Backhaus, Dr.",Till,Landesminister,1959,18239 Satow
+448effd0b1ed544e,WLD,Landesliste+Wahlkreis,3,17,Ludwigslust-Parchim I,Mundt,Sebastian,Selbstständig Transportgewerbe,1989,19258 Boizenburg/Elbe
+96ac713372c2c299,AfD,Landesliste+Wahlkreis,4,18,Ludwigslust-Parchim II,Schmidt,Martin,"Diplom-Kaufmann, Mitglied des Landtages",1988,19059 Schwerin
+ea5e5e7cbb2c3042,BSW,Landesliste+Wahlkreis,16,18,Ludwigslust-Parchim II,Barabas,Rainer,kaufmännischer Angestellter,1954,19406 Zülow
+62c91d0895b799da,CDU,Landesliste+Wahlkreis,14,18,Ludwigslust-Parchim II,Geier,Christian,Betriebswirt (VWA),1974,19288 Ludwigslust
+3523ae6a2151a6c1,Die Linke,Landesliste+Wahlkreis,24,18,Ludwigslust-Parchim II,Opitz,Gelord,Lehrer,1981,19230 Hagenow
+f283dbd84b91d82d,FDP,Landesliste+Wahlkreis,6,18,Ludwigslust-Parchim II,Weiße,Theodoros,Prüfer am Landesrechnungshof,1997,19230 Hagenow
+25be6e52e18e6604,GRÜNE,Wahlkreis,,18,Ludwigslust-Parchim II,Leonhard,Andrea,Ergotherapeutin,1986,19073 Stralendorf
+29eed60d4eea1bb6,SPD,Landesliste+Wahlkreis,36,18,Ludwigslust-Parchim II,Eichwitz,Markus,"Notfallsanitäter, Dozent",1988,19089 Crivitz
+2b5ba540ad097b7b,AfD,Landesliste+Wahlkreis,10,19,Ludwigslust-Parchim III,Tschich,Alexander,Forstingenieur,1992,19288 Ludwigslust
+ff50c853c0ba81a3,CDU,Landesliste+Wahlkreis,22,19,Ludwigslust-Parchim III,Herrmann,Karoline,Verwaltungsbeamtin,1990,19306 Neustadt-Glewe
+2123b4be4bbc83db,Die Linke,Landesliste+Wahlkreis,3,19,Ludwigslust-Parchim III,Bernhardt,Jacqueline,Ministerin,1977,19288 Groß Laasch
+75462ca7f48c125e,FDP,Landesliste+Wahlkreis,11,19,Ludwigslust-Parchim III,Böhringer,Noah,Abgeordneter des Landtages,1997,19288 Ludwigslust
+299512d11f61cd6e,FREIE WÄHLER,Landesliste+Wahlkreis,1,19,Ludwigslust-Parchim III,Kessner,Karl,Berufsfeuerwehrmann,1988,19300 Grabow
+8edb0f2d023fcd9b,GRÜNE,Wahlkreis,,19,Ludwigslust-Parchim III,Klein,Tommy,Hausmann,1988,19294 Karstädt
+0218548ee36dd037,SPD,Landesliste+Wahlkreis,30,19,Ludwigslust-Parchim III,Winter,Christian,"Volkswirt, MdL",1987,19053 Schwerin
+bebdbcc3d32207be,AfD,Landesliste+Wahlkreis,27,20,Mecklenburgische Seenplatte III,Müller,Frank,Immobilienkaufmann,1986,17192 Waren (Müritz)
+50699243d2f04c55,BSW,Wahlkreis,,20,Mecklenburgische Seenplatte III,Behnke,Torsten,Ingenieur für Maschinenbau,1966,17192 Torgelow am See
+fc026506e2e73cc6,CDU,Landesliste+Wahlkreis,26,20,Mecklenburgische Seenplatte III,Kagel,Matthias,Landwirt,1978,17192 Kargow
+db67c2d58330d92d,Die Linke,Wahlkreis,,20,Mecklenburgische Seenplatte III,Büttner,Lars,Betriebswirt,1980,17192 Groß Plasten
+e14974686c77ad95,Einzelbewerberin,Wahlkreis,,20,Mecklenburgische Seenplatte III,Weckert,Sandra,Systemischer Coach,1973,17192 Waren (Müritz)
+788e819fe1dbb4db,FDP,Landesliste+Wahlkreis,15,20,Mecklenburgische Seenplatte III,Kersten,Markus,IT-Berater,1964,17207 Röbel/Müritz
+94d5eb099e249426,GRÜNE,Wahlkreis,,20,Mecklenburgische Seenplatte III,Stein,Joachim,"Bürgermeister a. D., Dipl.Ing. (FH)",1947,17213 Malchow
+fbb5db651964e5b8,SPD,Landesliste+Wahlkreis,9,20,Mecklenburgische Seenplatte III,Julitz,Nadine,Abgeordnete des Landtages,1990,17192 Waren (Müritz)
+10423283b4c80bcb,AfD,Landesliste+Wahlkreis,17,21,Mecklenburgische Seenplatte IV,Hoge,Sarah,Verwaltungsfachangestellte,1987,17213 Malchow
+433b9bef670c8358,BSW,Wahlkreis,,21,Mecklenburgische Seenplatte IV,Jammrath,Olaf,Vertriebsangestellter,1972,17033 Neubrandenburg
+dab4efb25e7230d2,CDU,Landesliste+Wahlkreis,31,21,Mecklenburgische Seenplatte IV,Vonhoff,Marko,Polizeibeamter des Bundes,1967,17237 Klein Vielen
+184b237dc0f99041,Die Linke,Wahlkreis,,21,Mecklenburgische Seenplatte IV,Hehenkamp,Niklas,Ingenieur,1993,17258 Feldberger Seenlandschaft
+535da6a982bf62af,FDP,Wahlkreis,,21,Mecklenburgische Seenplatte IV,Lünsmann,Ludwig,Student,1994,17235 Neustrelitz
+54f6edb6ba5bf9ad,GRÜNE,Wahlkreis,,21,Mecklenburgische Seenplatte IV,Balke,Ines,Angestellte,1982,17217 Penzlin
+240b428788993f8d,SPD,Landesliste+Wahlkreis,29,21,Mecklenburgische Seenplatte IV,Goede,Diana,Fachschwester für Anästhesie- und Intensivpflege,1989,17235 Neustrelitz
+4477709d3b7d55ae,AfD,Landesliste+Wahlkreis,25,22,Mecklenburgische Seenplatte V,Martin,Jan Michael,Handwerksmeister,1969,17099 Datzetal
+a6cd333c09f582d9,BSW,Wahlkreis,,22,Mecklenburgische Seenplatte V,Fritzsche,Marion,Steuerfachangestellte,1967,17348 Woldegk
+74bf42783ed0d24a,CDU,Wahlkreis,,22,Mecklenburgische Seenplatte V,Lorenz,Tilo,Bürgermeister,1981,17094 Burg Stargard
+672644d3bb679316,Die Linke,Landesliste+Wahlkreis,13,22,Mecklenburgische Seenplatte V,Kanew,Amina,Antidiskriminierungsberaterin,1998,17034 Neubrandenburg
+93bf1733aa84d79e,GRÜNE,Landesliste+Wahlkreis,20,22,Mecklenburgische Seenplatte V,Flettner,Ottopeter,Möbeltischler,1952,17348 Woldegk
+1fa751dcfcbf11b9,SPD,Landesliste+Wahlkreis,44,22,Mecklenburgische Seenplatte V,Herrholz,Thomas,Elektroingenieur,1977,17099 Galenbeck
+43a33a6066db5202,AfD,Landesliste+Wahlkreis,43,23,Vorpommern-Rügen I,Steinfurth,Jan,Hotelbetriebswirt,1986,18581 Putbus
+ca15d59d5f85429c,BSW,Landesliste+Wahlkreis,12,23,Vorpommern-Rügen I,Erichson,Ulf,Rentner,1959,18311 Ribnitz-Damgarten
+9e9a6a217f452c3f,CDU,Landesliste+Wahlkreis,17,23,Vorpommern-Rügen I,Heinke,Benjamin,Gastronom,1988,18347 Ostseebad Ahrenshoop
+e27abfd9a138e6a6,Die Linke,Landesliste+Wahlkreis,5,23,Vorpommern-Rügen I,Brüdgam,Wenke,Politikwissenschaftlerin,1984,18465 Triebsees
+84343edb336fc9aa,Einzelbewerberin,Wahlkreis,,23,Vorpommern-Rügen I,Wippermann,Susann,B. A. Soziologie und Öffentliches Recht,1971,18311 Ribnitz-Damgarten
+621cbd074e0fb7a7,FDP,Landesliste+Wahlkreis,5,23,Vorpommern-Rügen I,Kipke,Brian,Gymnasiallehrer,2000,18069 Rostock
+18870be918bc342d,GRÜNE,Landesliste+Wahlkreis,5,23,Vorpommern-Rügen I,Tischler,Maya,Lehrerin,1996,18311 Ribnitz-Damgarten
+e5aa396e2b266f9a,SPD,Landesliste+Wahlkreis,28,23,Vorpommern-Rügen I,Schiefler,Michel-Friedrich,Abgeordneter des Landtages,1995,18311 Ribnitz-Damgarten
+b73d88a49a7fa3d0,AfD,Landesliste+Wahlkreis,7,24,Vorpommern-Rügen II - Stralsund III,Dias Rodrigues,Carlos,Polizeibeamter,1974,18551 Sagard
+eb24dad6a1fdec77,BSW,Wahlkreis,,24,Vorpommern-Rügen II - Stralsund III,Bogan,Hanno,Rettungsassistent,1964,18507 Grimmen
+dccbd655cd1ae59b,CDU,Landesliste+Wahlkreis,5,24,Vorpommern-Rügen II - Stralsund III,Glawe,Harry,Mitglied des Landtages,1953,18507 Grimmen
+6fea5b5d14eb2663,Die Linke,Landesliste+Wahlkreis,20,24,Vorpommern-Rügen II - Stralsund III,Latendorf,Armin,Geschäftsführer,1966,18507 Grimmen
+cc0c44dee496a5fa,FDP,Landesliste+Wahlkreis,13,24,Vorpommern-Rügen II - Stralsund III,Schulzki,Maria,Einzelunternehmerin,1992,18465 Tribsees
+bc5eaf30b222266e,GRÜNE,Landesliste+Wahlkreis,18,24,Vorpommern-Rügen II - Stralsund III,Metka,Ralf,Pharmaberater,1967,18437 Stralsund
+ab7b92ff846cfc51,LfK,Wahlkreis,,24,Vorpommern-Rügen II - Stralsund III,Walter,Henning,Küchenleiter,1985,18461 Franzburg
+2c264ef08e80a52c,SPD,Landesliste+Wahlkreis,23,24,Vorpommern-Rügen II - Stralsund III,"Wölk, Dr.",Monique,"Soziologin, Abgeordnete des Landtages",1976,17489 Greifswald
+14211bc3e5a3fcbc,Volt,Landesliste+Wahlkreis,9,24,Vorpommern-Rügen II - Stralsund III,Förster,Mars,Schüler,2006,18439 Stralsund
+ae51e8883cbc1ebb,AfD,Landesliste+Wahlkreis,5,25,Vorpommern-Rügen III - Stralsund I,Graf,Sandra,Fraktionsgeschäftsführerin,1976,18435 Stralsund
+11d5f726117f9136,BSW,Wahlkreis,,25,Vorpommern-Rügen III - Stralsund I,Szymanski,Marcel,Customer Success Manager,1988,18439 Stralsund
+adf8f08921512394,CDU,Wahlkreis,,25,Vorpommern-Rügen III - Stralsund I,Rotkowsky,Christian,geschäftsführender Gesellschafter,1993,18439 Stralsund
+c4cbf428c46691b8,Die Linke,Landesliste+Wahlkreis,22,25,Vorpommern-Rügen III - Stralsund I,Löffler,Jonas,IT-System-Koordinator,1984,18337 Marlow
+f023f3c3a7e0fd6f,FDP,Landesliste+Wahlkreis,16,25,Vorpommern-Rügen III - Stralsund I,Alms,Sebastian,Berufssoldat,1983,18320 Trinwillershagen
+d93e1c511e4fffe1,FREIE WÄHLER,Landesliste+Wahlkreis,4,25,Vorpommern-Rügen III - Stralsund I,Kröger,René,Projektmanager,1978,18356 Fuhlendorf
+300e960a5e49c9c7,GRÜNE,Landesliste+Wahlkreis,10,25,Vorpommern-Rügen III - Stralsund I,Mehnert,Thomas,Augenoptikermeister,1998,18439 Stralsund
+a68b3e0671f3e575,SPD,Landesliste+Wahlkreis,26,25,Vorpommern-Rügen III - Stralsund I,Würdisch,Thomas,Abgeordneter des Landtages,1962,18437 Stralsund
+42b9af322c12bc7a,AfD,Landesliste+Wahlkreis,3,26,Stralsund II,Kasch,Michael,Fraktionsgeschäftsführer,1965,18581 Putbus
+b8dfcf18d506e5ab,BSW,Wahlkreis,,26,Stralsund II,Rath,Jennifer-Michelle,Selbstermächtigungshelfer,1980,18437 Stralsund
+5b56a28f38230893,CDU,Landesliste+Wahlkreis,4,26,Stralsund II,von Allwörden,Ann Christin,Polizeibeamtin,1978,18439 Stralsund
+565856343ff3764f,Die Linke,Wahlkreis,,26,Stralsund II,Varbelow,Morgan Gwendolyn,Referentin für Öffentlichkeitsarbeit und Fundraising,1991,18435 Stralsund
+77b23ee5fc3d7f7f,FDP,Wahlkreis,,26,Stralsund II,Scharmberg,Gerd,Maschinen- und Anlagenmonteur,1955,18375 Born a. Darß
+9a83fa4cf26fdf67,GRÜNE,Landesliste+Wahlkreis,1,26,Stralsund II,Müller,Claudia,Betriebswirtin,1981,19055 Schwerin
+badebb42724d5b09,SPD,Landesliste+Wahlkreis,17,26,Stralsund II,Hegenkötter,Beatrix,Abgeordnete des Landtages,1975,18442 Jakobsdorf
+406dd3e72615126b,Team Freiheit,Landesliste+Wahlkreis,3,26,Stralsund II,Hofmann,Maik,Krankenpfleger,1975,18435 Stralsund
+903b7895a49d231e,Volt,Landesliste+Wahlkreis,4,26,Stralsund II,Spiering,Nils,Kommunikationsberater,1992,18439 Stralsund
+b41252eb166f7772,AfD,Landesliste+Wahlkreis,15,27,Nordwestmecklenburg I,Schreiber,Jannik,Kfz-Mechatroniker,1985,19217 Carlow
+c1632991a1bd7061,BSW,Wahlkreis,,27,Nordwestmecklenburg I,Schmidt,Winfried,"Dipl. Psychologe, Psychotherapeut",1947,23948 Klütz
+4b0bc88621263a0e,CDU,Landesliste+Wahlkreis,11,27,Nordwestmecklenburg I,Grote,Thomas,Büroleiter,1969,23936 Upahl
+f6bd31d27fb02016,Die Linke,Landesliste+Wahlkreis,1,27,Nordwestmecklenburg I,Oldenburg,Simone,Lehrerin,1969,23968 Gägelow
+8e37643888eb46a2,FDP,Landesliste+Wahlkreis,18,27,Nordwestmecklenburg I,Vogler,Luise,Landwirtin,2001,23923 Lüdersdorf
+72ed972e964d39bf,GRÜNE,Landesliste+Wahlkreis,9,27,Nordwestmecklenburg I,Zahradníčková,"Miroslava (""Miro Zahra"")",Künstlerin,1960,23936 Upahl
+546f7ad0ff076db1,SPD,Landesliste+Wahlkreis,3,27,Nordwestmecklenburg I,Hesse,Birgit,"Juristin, Abgeordnete des Landtages",1975,23972 Dorf Mecklenburg
+618b044384f200bd,AfD,Landesliste+Wahlkreis,8,28,Nordwestmecklenburg II,Timm,Paul-Joachim,"Jurist, Mitglied des Landtages",1990,23996 Bobitz
+1ef91c48e99bb35f,BSW,Landesliste+Wahlkreis,6,28,Nordwestmecklenburg II,Guhl,Meinhard,selbstständiger Elektromeister,1981,19209 Schildetal
+7cf7312a26736066,CDU,Landesliste+Wahlkreis,18,28,Nordwestmecklenburg II,"Ringlepp, Dr.",Anne,Chemikerin,1988,19069 Klein Trebbow
+538ab59f2b2c2f38,Die Linke,Wahlkreis,,28,Nordwestmecklenburg II,Balck,Judith,Schulsozialarbeiterin,1964,19205 Roggendorf
+b7ba2634b552ff68,FDP,Landesliste+Wahlkreis,17,28,Nordwestmecklenburg II,Kaufmann,Jens,Maler,1977,19209 Lützow
+b6da2ff71a607095,GRÜNE,Landesliste+Wahlkreis,11,28,Nordwestmecklenburg II,Tamm,Claudia,Krankenschwester,1968,23966 Wismar
+24f85e2e58b32d13,SPD,Landesliste+Wahlkreis,38,28,Nordwestmecklenburg II,Strohschein,Jens,Büroleiter,1965,19217 Schlagsdorf
+7edd146794bc065c,AfD,Wahlkreis,,29,Vorpommern-Greifswald II,Schulze-Wiehenbrauk,Jens,"Landwirt, Politiker",1966,17129 Bentzin
+f5e6c9be8f57a676,CDU,Landesliste+Wahlkreis,28,29,Vorpommern-Greifswald II,Dröse,Kai,selbstständig,1971,17498 Wackerow
+f0c6c27bb66316fe,Die Linke,Landesliste+Wahlkreis,11,29,Vorpommern-Greifswald II,Rösler,Jeannine,Dipl. Kauffrau (FH),1970,17129 Tutow
+6b9600327f63c72a,FDP,Landesliste+Wahlkreis,19,29,Vorpommern-Greifswald II,Bartelt,Christian,Zahnarzt,1976,17392 Spantekow
+d8a1f1ef4b2af570,GRÜNE,Landesliste+Wahlkreis,8,29,Vorpommern-Greifswald II,van den Bosch,Jan,Student,2001,17489 Greifswald
+41246e2d08047c0c,SPD,Landesliste+Wahlkreis,34,29,Vorpommern-Greifswald II,Falk,Marcel,"Verwaltungsfachangestellter, MdL",1977,17391 Stolpe an der Peene
+059fcb2cebfa0542,AfD,Wahlkreis,,30,Vorpommern-Greifswald III,Reuken,Stephan Johannes,Historiker,1985,17509 Kemnitz
+f2b657cfad422db3,BSW,Wahlkreis,,30,Vorpommern-Greifswald III,Schuldt,Christian,Angestellter,1980,17449 Karlshagen
+3af8d3f6524e4d07,CDU,Landesliste+Wahlkreis,7,30,Vorpommern-Greifswald III,von Busse,Jeannette,Volljuristin,1978,17440 Krummin
+bdfa30b236a67646,Die Linke,Landesliste+Wahlkreis,25,30,Vorpommern-Greifswald III,Retzlaff,André,Umschüler,1968,17440 Zemitz
+88d4d19809d59066,FDP,Landesliste+Wahlkreis,1,30,Vorpommern-Greifswald III,"Schirmer, Prof. Dr.",Jakob,Jurist,1982,17424 Heringsdorf
+3e3673789874efbd,GRÜNE,Wahlkreis,,30,Vorpommern-Greifswald III,Gühne,Elias,Student Lehramt,2004,17489 Greifswald
+418fb3f233a3d04d,SPD,Landesliste+Wahlkreis,18,30,Vorpommern-Greifswald III,Beitz,Falko,Abgeordneter des Landtages,1986,17406 Stolpe auf Usedom
+717c32f0b616ea80,AfD,Landesliste+Wahlkreis,2,31,Ludwigslust-Parchim IV,Stein,Thore,"Agrarwissenschaftler, Mitglied des Landtages",1988,19230 Moraas
+ba7461b228756c66,BSW,Landesliste+Wahlkreis,1,31,Ludwigslust-Parchim IV,Schabbel,Peter,Heilpraktiker,1966,19395 Ganzlin
+dfcd401e7db85d7f,CDU,Landesliste+Wahlkreis,9,31,Ludwigslust-Parchim IV,Waldmüller,Wolfgang,Mitglied des Landtages,1962,19372 Rom
+2e23912869866ccf,Die Linke,Landesliste+Wahlkreis,12,31,Ludwigslust-Parchim IV,Pulz-Debler,Steffi,Abgeordnete des Landtages,1981,19370 Parchim
+83ed6962c8be2327,FDP,Wahlkreis,,31,Ludwigslust-Parchim IV,Schulz,Wolfgang,Steuerberater,1952,19370 Parchim
+c5d29e44a0a993c4,GRÜNE,Wahlkreis,,31,Ludwigslust-Parchim IV,Kowalsky,Brigitte,Kauffrau im Einzelhandel,1961,19370 Parchim
+9e2b1729dc854735,SPD,Landesliste+Wahlkreis,24,31,Ludwigslust-Parchim IV,Brade,Christian,Betriebswirt,1971,19374 Domsühl
+9050ae2832bd411b,WLD,Landesliste+Wahlkreis,1,31,Ludwigslust-Parchim IV,Rexin,Marco,Weinkaufmann,1973,19395 Plau am See
+b0c93d7c8626cfab,AfD,Landesliste+Wahlkreis,6,32,Ludwigslust-Parchim V,Tadsen,Jan-Phillip,"Politikwissenschaftler, Mitglied des Landtages",1988,19406 Sternberg
+922a4f24fe524690,BSW,Landesliste+Wahlkreis,2,32,Ludwigslust-Parchim V,Firnhaber,Sabine,Landwirtin,1977,19079 Banzkow
+c6fa6f45e7d9f4c1,CDU,Landesliste+Wahlkreis,20,32,Ludwigslust-Parchim V,Ihde-Lütge,Karen,Polizeibeamtin,1978,19086 Plate
+ed9d0d598f164fe5,Die Linke,Wahlkreis,,32,Ludwigslust-Parchim V,Marquardt,Ralf,IT-Systemadministrator,1977,19399 Goldberg
+461316964b9fecbd,Einzelbewerber,Wahlkreis,,32,Ludwigslust-Parchim V,Frost,Thomas,"Flohmarktbetreiber, Erzieher",1985,19374 Mestlin
+6172e87f52c0d62b,FDP,Wahlkreis,,32,Ludwigslust-Parchim V,Gantke,Brigitte,Ärztin,1959,19386 Gehlsbach
+c795bf9b2e3f509b,GRÜNE,Wahlkreis,,32,Ludwigslust-Parchim V,Kudla,Jürn,"Bootsbauer, Berufsschullehrer",1979,19067 Leezen
+e4208c466d587241,SPD,Landesliste+Wahlkreis,11,32,Ludwigslust-Parchim V,Klingohr,Christine,Erzieherin,1967,19412 Golchen
+1c6eb1175de36830,AfD,Landesliste+Wahlkreis,16,33,Vorpommern-Rügen IV,Thormann,Tommy,Lokführer,1994,18546 Sassnitz
+0292f8de0a8b6670,BSW,Landesliste+Wahlkreis,17,33,Vorpommern-Rügen IV,Vetter,Thomas,Polizist,1972,18586 Ostseebad Baabe
+67e2f2fd1e6631a8,CDU,Landesliste+Wahlkreis,21,33,Vorpommern-Rügen IV,Kliewe,Holger,Landwirt,1963,18569 Ummanz
+af2c6a10005f9bd6,Die Linke,Landesliste+Wahlkreis,18,33,Vorpommern-Rügen IV,Hübner,Frans,Rentner,1996,18546 Sassnitz
+c58af0ed88db89cd,FDP,Landesliste+Wahlkreis,4,33,Vorpommern-Rügen IV,Ahlers,Uwe,Unternehmensberater,1953,18556 Dranske
+d17554eb251b2818,GRÜNE,Wahlkreis,,33,Vorpommern-Rügen IV,"Trzeczak, Dr.",Stefan,Arzt,1971,18573 Altefähr
+2378d2ead9150c16,SPD,Landesliste+Wahlkreis,12,33,Vorpommern-Rügen IV,Miraß,Heiko,"Staatssekretär, Abgeordneter des Landtages",1967,18574 Poseritz
+7d8b71f1b1032ff7,AfD,Landesliste+Wahlkreis,12,34,Vorpommern-Rügen V,Naulin,Thomas,Gastwirt,1977,18528 Bergen auf Rügen
+2dcba69946ba04e9,BSW,Landesliste+Wahlkreis,9,34,Vorpommern-Rügen V,Bösel,Karel,Tourismusunternehmer,1970,18609 Ostseebad Binz
+ba0bccd38d0eb993,CDU,Landesliste+Wahlkreis,13,34,Vorpommern-Rügen V,Mietzner,Birgit,Schulleiterin,1970,18507 Grimmen
+91dc44219759797a,Die Linke,Landesliste+Wahlkreis,15,34,Vorpommern-Rügen V,Dabrowska,Martyna Ewa,Betriebsprüferin,2005,18586 Osteeebad Sellin
+1fd3beb78dfe7dee,Einzelbewerber,Wahlkreis,,34,Vorpommern-Rügen V,Gens,Thomas,selbstständig,1970,18565 Seebad Insel Hiddensee
+fdd16ffdacfe2ac7,FDP,Wahlkreis,,34,Vorpommern-Rügen V,Steckelbach,Manfred,Kaufmann im Ruhestand,1959,18546 Sassnitz
+66a1b70140cf528a,GRÜNE,Landesliste+Wahlkreis,14,34,Vorpommern-Rügen V,Sorge,Martin,Bio-Landwirt,1980,18551 Glowe
+3c90cac4f80c4354,SPD,Landesliste+Wahlkreis,15,34,Vorpommern-Rügen V,"Rahm-Präger, Dr.",Sylva,Diplom-Agraringenieur,1960,18586 Ostseebad Baabe
+014a7168fee8b988,AfD,Wahlkreis,,35,Vorpommern-Greifswald IV,Arndt,Inken,Unternehmerin Außenhandel,1963,17373 Ueckermünde
+f4986cb3cfc3dab8,BSW,Wahlkreis,,35,Vorpommern-Greifswald IV,Läufer,Holger,Rentner,1956,17375 Liepgarten
+e7b297e5f8b5bf43,CDU,Landesliste+Wahlkreis,25,35,Vorpommern-Greifswald IV,Sieder,Ivo,Politikwissenschaftler,1983,17489 Greifswald
+81cb755cf487ecb3,Die Linke,Landesliste+Wahlkreis,16,35,Vorpommern-Greifswald IV,Griffel,Steffi,Wahlkreismitarbeiterin,1975,17358 Torgelow
+61a9765b18e325b4,FDP,Wahlkreis,,35,Vorpommern-Greifswald IV,Pohl,Detlef,Gastronom,1960,17373 Ueckermünde
+65278b8538992dda,SPD,Landesliste+Wahlkreis,10,35,Vorpommern-Greifswald IV,Dahlemann,Patrick,Chef der Staatskanzlei,1988,17375 Mönkebude
+49eb38413f2ab0b5,AfD,Wahlkreis,,36,Vorpommern-Greifswald V,Kramer,Nikolaus,Polizeibeamter,1976,17489 Greifswald
+cb26dd43af869a7a,BSW,Wahlkreis,,36,Vorpommern-Greifswald V,Buchwald,Jörg,Geschäftsführer,1965,17321 Löcknitz
+2f7da0f44d246d3b,CDU,Landesliste+Wahlkreis,37,36,Vorpommern-Greifswald V,Wenzel,Dietrich,Lehrer,1994,17309 Pasewalk
+cda55ab9494f3cc3,Die Linke,Wahlkreis,,36,Vorpommern-Greifswald V,Suchanek,Leon,Schüler,2002,17309 Pasewalk
+88c78016dfdd010c,FDP,Wahlkreis,,36,Vorpommern-Greifswald V,Kaessler,Stella Renée,Schülerin,2007,18249 Buchenhof
+acd2f3ed5aaa7778,SPD,Landesliste+Wahlkreis,7,36,Vorpommern-Greifswald V,Martin,Bettina,Ministerin,1966,19061 Schwerin
+ebad65ead6f580c5,AfD,Landesliste,11,,,Jenniches,David,Diplom-Volkswirt,1977,19055 Schwerin
+31ce382974f58d50,AfD,Landesliste,18,,,Zorn,Christian,Maler und Lackierer,1982,18528 Bergen auf Rügen
+37d0de34644f9617,AfD,Landesliste,23,,,Schilke,Jarod,Fachinformatiker,2000,18435 Stralsund
+a5a8b52f99c63660,AfD,Landesliste,24,,,"Stein, Dr. med.",Stefan,Arzt,1958,17373 Ueckermünde
+444959d4490832f6,AfD,Landesliste,29,,,Schrauber,Steffen,geschäftsführender Gesellschafter,1981,19230 Hagenow
+82ed1dc951ecba2d,AfD,Landesliste,30,,,Halle,Nicole,Handelsvertreterin,1986,18546 Sassnitz
+a84e5f3447502079,AfD,Landesliste,31,,,"Nagel, Dr. med.",Andreas,Arzt,1982,17237 Carpin
+c3637584b2e01a0d,AfD,Landesliste,32,,,Jacobs,Sven,Selbstständig,1963,19067 Dobin am See
+bdec8757e7d66b01,AfD,Landesliste,33,,,Rybka,Frank,Bankdirektor a. D.,1962,18439 Stralsund
+5a5421974c2541c5,AfD,Landesliste,34,,,Kohls,Mirko,Busfahrer,1983,17111 Kletzin
+636498abe4e41191,AfD,Landesliste,35,,,Giebner,Marko,Selbstständig,1979,18198 Kritzmow
+7765accf3abf085a,AfD,Landesliste,36,,,Braum,Ulf,Dipl.-Verwaltungswirt (FH),1968,18586 Ostseebad Baabe
+2e6ebbeeb5c4f04d,AfD,Landesliste,37,,,Zimmermann,Anita,Handelsfachwirtin,1980,18519 Sundhagen
+4ac693452d035a7b,AfD,Landesliste,38,,,Eisenhardt,Ralf,Historiker,1964,19249 Lübtheen
+f8a4b636f02b1c42,AfD,Landesliste,39,,,Pfitzner,Thomas,"Selbstständig, Unternehmer",1968,17258 Feldberger Seenlandschaft
+a451d87d6d6ab27c,AfD,Landesliste,40,,,Franck,Hannes,"Bildungswissenschaftler, Lehramtsstudent",1997,18055 Rostock
+6da3416befd1ab2c,AfD,Landesliste,41,,,Holter,Marco,Automobilserviceberater,1971,23936 Hamberge
+56c396cd1f3b643b,AfD,Landesliste,42,,,Schmitt-Schröder,Beatrice,Seniorenbetreuung und Alltagsbegleiterin,1977,19406 Sternberg
+be1a932dd0fd5707,AfD,Landesliste,44,,,Beyer,Sebastian,Unternehmer,1980,23992 Perniek
+f7a25d1595dfd9b0,AfD,Landesliste,47,,,Petersen,Mario,Fachwirt Gebäude- und Facilitymanagement,1969,18546 Sassnitz
+d50aa563a1359bd5,AfD,Landesliste,48,,,Wismer,Birgit,geprüfte Versicherungskauffrau,1964,18507 Grimmen
+e9cebcccb726f719,AfD,Landesliste,49,,,Korth,Roland,Rentner,1961,19300 Grabow
+922988f7506bf458,AfD,Landesliste,50,,,Prochnow,Philipp,Wahlkreismitarbeiter,1988,18510 Zarrendorf
+07c6495bcacc526e,BSW,Landesliste,7,,,Stegemann,Anke,Agraringenieurin,1965,17139 Kummerow
+24d762169d47d57f,BSW,Landesliste,8,,,Marschall,Silke,Diplom-Demographin,1969,18109 Rostock
+3a8deacffddb61cd,BSW,Landesliste,13,,,Zeugmann-Tebben,Annette,Modedesignerin,1964,19061 Schwerin
+75e65470eafd3804,BSW,Landesliste,14,,,Fehrmann,Daniel,Polizeibeamter,1982,19417 Warin
+21bfc901779df3be,BSW,Landesliste,15,,,Groth,Olaf,Jurist,1970,18069 Rostock
+3564a3f92de56dcf,BSW,Landesliste,18,,,Wölfel,Tim,Tourismuskaufmann,2000,18057 Rostock
+acf17949c843f133,BSW,Landesliste,19,,,Vibrans,Hans-Dieter,Rentner,1952,17192 Waren (Müritz)
+afd0908d33d5e074,Bündnis C,Landesliste,1,,,Hauser,Christian,Beamter,1964,19258 Boizenburg/Elbe
+70d3c8cf0c45d15f,Bündnis C,Landesliste,2,,,Magath,Olaf,Grundschullehrer,1962,17309 Pasewalk
+9fa82357c4392dfa,Bündnis C,Landesliste,3,,,Kohlstedt,Gabriele,Kinderkrankenschwester,1959,18292 Kuchelmiß
+3910e9d72533fdf1,Bündnis C,Landesliste,4,,,Rübner,Martin,Softwareentwickler,1985,23972 Groß Stieten
+bb3977b3046c9da9,Bündnis C,Landesliste,5,,,von Holst,Margarete,Pastorin i. R.,1937,18273 Güstrow
+8081d17a8a61c828,Bündnis C,Landesliste,6,,,Kohlstedt,Matthias,Sozialtherapeut,1959,18292 Kuchelmiß
+14ac85a0ce9dbda4,Bündnis C,Landesliste,7,,,Reeps,Christoph,Pastor i. R.,1964,18292 Dobbin-Linstow
+375168ee55a44b0f,CDU,Landesliste,32,,,"Riecken, Dr.",Antonia,Landwirtin,1985,19073 Dümmer
+94f071b27f891c5e,CDU,Landesliste,33,,,Nawotke,Oliver,Polizeivollzugsbeamter,1995,17166 Teterow
+eacf682f8cad789f,CDU,Landesliste,34,,,Mattis,Ulrike,Vertriebsleiterin,1975,17509 Lubmin
+0aa700bed8d598d1,CDU,Landesliste,35,,,Antony,Jacqueline,Agraringenieurin,1976,17091 Mölln
+629e2cc3e005dfeb,CDU,Landesliste,36,,,Geib,Philipp,Dozent,1992,19055 Schwerin
+d24183a6e3e835aa,Die Linke,Landesliste,7,,,Tieding,Sophie,Studentin,2000,17489 Greifswald
+a34babaf139a62f6,Die Linke,Landesliste,14,,,Wenzel,Julia,Sozialarbeiterin,1991,18198 Kritzmow
+748ae1d4e114f4df,Die Linke,Landesliste,17,,,Jarmer,Fanny,Krankenschwester,1985,18516 Süderholz
+722a42802311bebb,Die Linke,Landesliste,19,,,Reinders,Jutta,Dipl. Ökonomin,1953,18147 Rostock
+42fdfbd2c283871a,Die Linke,Landesliste,23,,,Schneider,Michael,Servicecentermitarbeiter,1982,18107 Rostock
+6b6aece625397208,Die PARTEI,Landesliste,2,,,Tardel,Willy René,Heilerziehungspfleger,1990,19053 Schwerin
+62ae9c0cc20279be,Die PARTEI,Landesliste,3,,,Osiablo,Raik,Software - Entwickler,1986,19061 Schwerin
+49f4b6570b18d68a,Die PARTEI,Landesliste,4,,,Rosenbohm,Johannes,Lehrer,1987,18311 Ribnitz-Damgarten
+8efc92965eff70fa,Die PARTEI,Landesliste,5,,,Weiss,Lucas,Lehrer,1992,18147 Rostock
+d444d429889b5193,Die PARTEI,Landesliste,6,,,Behnsen,Inga,Kulturmanagerin,1992,19055 Schwerin
+94cd1e8b9028a955,Die PARTEI,Landesliste,7,,,Wohlert,Martin,Softwareentwickler,1986,19258 Boizenburg/Elbe
+f78f3761a036d370,FDP,Landesliste,7,,,"Grahl, Dr.",Lia,wissenschaftliche Mitarbeiterin,1998,17389 Anklam
+70f6de1b257b4865,FDP,Landesliste,14,,,Tackmann,Dietmar,Polizeibeamter,1976,19061 Schwerin
+14cebb18b9364f8d,FREIE WÄHLER,Landesliste,2,,,Schmidt,Roger,Diplom-Kaufmann,1968,18055 Rostock
+112d3cac9248e441,FREIE WÄHLER,Landesliste,5,,,Graf von Westarp,Gustav,Diplom-Biologe,1948,19399 Goldberg
+2a9d190089ce7a02,GRÜNE,Landesliste,13,,,Böhme,Rhea,Diplom-Kirchenmusikerin,1971,17493 Greifswald
+01d76141c95846a9,GRÜNE,Landesliste,15,,,Ringe,Franziska,Sängerin,1987,18439 Stralsund
+de91ce54a35e19f5,GRÜNE,Landesliste,19,,,Gashi,Diana,Unternehmerin,1977,23942 Dönkendorf
+003f26592bbdc0b5,Handwerker Partei Deutschland,Landesliste,1,,,Klein,Siegfried,,1959,18609 Ostseebad Binz
+8f18f00350cafb24,Handwerker Partei Deutschland,Landesliste,2,,,Thormann,Dirk,,1971,18546 Sassnitz
+b31f635e391a7f1a,Handwerker Partei Deutschland,Landesliste,3,,,Trusheim,Ingo,,1978,18546 Sassnitz
+d6639b1072d1fc5d,Handwerker Partei Deutschland,Landesliste,4,,,Leuschel,Henry,,1969,18439 Stralsund
+91558f78322bfcf2,Handwerker Partei Deutschland,Landesliste,5,,,Pagel,Mario,,1974,18546 Sassnitz
+843c4534584d751a,Handwerker Partei Deutschland,Landesliste,6,,,Pintak,Kathleen,,1971,18546 Sassnitz
+da2103c6a5889fc4,Handwerker Partei Deutschland,Landesliste,7,,,Thormann,René,,1971,18546 Sassnitz
+62b75f2ebfb7c138,Handwerker Partei Deutschland,Landesliste,8,,,Kuphal,Thomas,,1955,18442 Langendorf
+457c37cd166a1485,Handwerker Partei Deutschland,Landesliste,9,,,Retzlaff,Eckard,,1951,18546 Sassnnitz
+1172113f52227d0a,KPD,Landesliste,1,,,Melcher,Christine,Lehrerin,1953,23968 Wismar
+63b9f253ed545fa0,KPD,Landesliste,2,,,Piechowski,Lothar,Staatswissenschaftler,1948,18507 Grimmen
+9a6e4b8976650dab,PIRATEN,Landesliste,1,,,Klüver,Dennis,Personalsachbearbeiter,1965,19217 Rehna
+ede3cec98987d83f,PIRATEN,Landesliste,2,,,Darmann,Jonathan,Usability-Ingenieur,1997,18109 Rostock
+822a2a5d00b8e74c,PIRATEN,Landesliste,3,,,Smyra,Friedrich,Pflegefachassistent,1984,18439 Stralsund
+2fc9a7aaea58a0ef,PIRATEN,Landesliste,4,,,Triebner,Ronny,"Diplom-Finanzwirt, Beamter",1990,18055 Rostock
+420bd08d642bfa0c,PIRATEN,Landesliste,5,,,Clasen,Dennis,Pflegefachkraft,1992,19217 Rehna
+a03508b5b67ad60c,PdF,Landesliste,1,,,Graf,Susanne,Sachbearbeiterin,1972,23968 Wismar
+f9896a9a6be8c589,PdF,Landesliste,2,,,Stapel,Christian,Leitender Angestellter,1966,18198 Kritzmow
+40646b0445ec6a8f,PdF,Landesliste,3,,,Große,Bastian,Ingenieur,1999,17192 Waren (Müritz)
+8ddafa71aa119abe,SPD,Landesliste,20,,,Barsch,Johannes,Rechtsanwalt,1994,17489 Greifswald
+15af69516108366d,SPD,Landesliste,31,,,Lichtermann,Maria,Referentin für Antisemitismus-Monitoring,1986,18055 Rostock
+9773e0b7b2b3844b,SPD,Landesliste,33,,,Bartsch,Sylvia,Leiterin Marketing und Öffentlichkeitsarbeit,1969,23966 Wismar
+9fbebaabcfc5718d,SPD,Landesliste,35,,,Boomgaarden-Kühl,Ilka,Steuerfachangestellte,1972,18292 Krakow am See
+683d4da9941c510b,SPD,Landesliste,37,,,Joop,Emma,Studentin,2007,18057 Rostock
+3f88b627e03f36d3,SPD,Landesliste,39,,,Keßler,Daniela,Bundespolizistin,1976,23970 Wismar
+4682bb606dc51d98,SPD,Landesliste,41,,,Tiedke,Lea,Studentin,2003,18069 Rostock
+dc7083de41991bee,SPD,Landesliste,43,,,Shafaei,Melina,Studentin,2003,17489 Greifswald
+fd93abc5b8c4be5d,SPD,Landesliste,45,,,Fischer,Anne,Studentin,2004,18146 Rostock
+e44ed190ba1e2a22,SPD,Landesliste,46,,,Alsayjare,Asem,Referent,1985,19057 Schwerin
+05439158eb5cbb93,SPD,Landesliste,47,,,Reitberger,Cornelia,Lehrerin,1962,17033 Neubrandenburg
+07039a51cd613c73,SPD,Landesliste,48,,,"Langer-Corinth, Dr.",Sebastian,Arzt,1988,19370 Parchim
+17f4a87a9bc93c75,SPD,Landesliste,49,,,Kallisch-Puchelt,Sandra,Direktionsassistentin,1976,17192 Waren (Müritz)
+ece8241fc09bc2ad,SPD,Landesliste,50,,,Plaumann,Alexander,"Filialdirektor, Versicherungsfachwirt",1968,18246 Jürgenshagen
+3142de595e8f1e46,SPD,Landesliste,51,,,Tischer,Martin,Polizeivollzugsbeamter,1991,19217 Schlagsdorf
+d7e8f274bd05b8d4,SPD,Landesliste,52,,,Prehn,Ingo,Bestattungshelfer,1974,19230 Moraas
+c671a3bcbff4ec6f,SPD,Landesliste,53,,,Peters,Manuel,Bundesbeamter,1992,18198 Kritzmow
+109302706ed5b4b4,SPD,Landesliste,54,,,Tiedke,Michael,Dipl.-Verwaltungswirt (FH),1978,23970 Wismar
+7cf421cba6421aa6,SPD,Landesliste,55,,,Berner,Christoph,Biochemiker,2001,17498 Greifswald
+3a12ff58d935d106,SPD,Landesliste,56,,,Awaad,Josef,Student,2003,19370 Parchim
+c825c5963857b4d9,SPD,Landesliste,57,,,Lüth,Tom,Projektleiter Fördermittelmanagement,1992,18057 Rostock
+ea619aa0bb34247e,SPD,Landesliste,58,,,Alsaleh,Mohammed,Lehrkraft,1986,23966 Wismar
+7ddf2a8f002f1fec,SPD,Landesliste,59,,,Scharge,Felix,Moderator,1990,18057 Rostock
+c0aa88cbd32cf875,SPD,Landesliste,60,,,Keßler,Ronny,Fachleiter für politische Bildung,1980,23970 Wismar
+2fc9a10e4ab91dfb,SPD,Landesliste,61,,,Krüger,David,Büromitarbeiter,1997,17109 Demmin
+e2f85bf1a7e081d5,SPD,Landesliste,62,,,Scholz,Sven,Altenpfleger,1987,17217 Penzlin
+052f930b93e446b5,Team Freiheit,Landesliste,2,,,van Baal,Sandy,selbständige Kauffrau,1977,18292 Dobbin-Linstow
+e91dfd0747d963e3,Team Freiheit,Landesliste,4,,,Grabia,Hannes,selbständiger Unternehmensberater,1996,18059 Rostock
+b2f79f718cb54da1,Team Freiheit,Landesliste,5,,,Hirch,Daniel,Unternehmensberater,1982,18239 Satow
+46b2bd3ff89aa03d,Team Freiheit,Landesliste,6,,,Meier,Michael,Industriekaufmann,1966,18225 Kühlungsborn
+36b0ac392efbb690,Team Freiheit,Landesliste,7,,,Roskosch,Jan,IT-Berater,1976,18209 Hohenfelde
+ff6db8adf48e550a,Tierschutzpartei,Landesliste,1,,,Melchin,Petra,Dipl.-Ing. (FH) Landespflege,1964,18195 Thelkow
+bdfe028c0257274a,Tierschutzpartei,Landesliste,2,,,Volkenand,Christoph,Dialoger für Umweltorganisation,1971,17489 Greifswald
+13ffe2fcfd717a0e,Tierschutzpartei,Landesliste,3,,,Wagner,Elvira,"Bürokauffrau, Rentnerin",1950,17498 Mesekenhagen
+5d644be0f2336023,Tierschutzpartei,Landesliste,4,,,Hübner,Anja,Tiermedizinische Fachangestellte,1989,17489 Greifswald
+1676d5c40a5453a8,Tierschutzpartei,Landesliste,5,,,Gabel,Robert,Sozialwissenschaftler,1979,17491 Greifswald
+c0d2e3e376d2d335,Tierschutzpartei,Landesliste,6,,,Preusche,Thomas Rex,Programmierer,1988,17491 Greifswald
+c0326c8bc1d31c79,Tierschutzpartei,Landesliste,7,,,Melchin,Ralf,Lagerist,1967,18195 Thelkow
+0901e5477aea44c4,Tierschutzpartei,Landesliste,8,,,Yaremchyshyn,Mariana,"Auszubildende (Ergotherapie), Sprachmittlerin",1994,17489 Greifswald
+bb3c2c766d40624e,Volt,Landesliste,1,,,Rieker,Lisa,Demographin,1997,18057 Rostock
+94259bc75f0544c1,Volt,Landesliste,5,,,Bode,Gerrit,Ingenieur,1989,19059 Schwerin
+95109702c50ffbba,Volt,Landesliste,6,,,Häusler,Tim,Betriebsleiter,1997,18445 Klausdorf
+6bcd3355c7114f65,Volt,Landesliste,7,,,Kraak,Robert,Augenarzt,1975,18055 Rostock
+c8391f8ac6097667,Volt,Landesliste,8,,,Zademack,Lasse,Student,2005,18055 Rostock
+3ce215e9c0a4c042,Volt,Landesliste,10,,,Vorpahl,David,Pflegehilfskraft,1988,19057 Schwerin
+1bd6ed3f1e1fa466,WLD,Landesliste,2,,,Quanter,Silvio,Dachdeckermeister,1972,17248 Rechlin
+ee40fa77b6e5a6d6,WLD,Landesliste,4,,,Hager,Miriam,Unternehmerin,1970,18279 Lalendorf
+6d0c9f10905f9097,WLD,Landesliste,5,,,Zarnikow,Torsten,Zentralheizungs- und Lüftungsbauer,1977,17194 Hohen Wangelin
+2c218ef17ffed8b0,WLD,Landesliste,6,,,Reincke,Raimo,Vertrieb,1970,19288 Groß Laasch
+2908fbfb0d03d709,WLD,Landesliste,7,,,Behrens,Hannes-Alexander,Bäckermeister,1986,19395 Plau am See
+b0934797cb1d8132,WLD,Landesliste,8,,,Brose,David,Rufbusfahrer,1986,19386 Lübz
+bbffe10dd03d9b65,WLD,Landesliste,9,,,Schleede,Sebastian,Koch,1991,19395 Plau am See
+31ea1a30a142a7a1,WLD,Landesliste,10,,,Fülla,Axel,Koch,1986,18439 Stralsund
+2b6645254f41ab7d,WLD,Landesliste,11,,,Göttsche,Franziska,GF Lebensmittelproduktion,1985,17217 Penzlin
+4674feecce5a0dd9,WLD,Landesliste,12,,,Dreschler,Viola,Rezeptionistin Physiotherapie,1961,19386 Kuppentin
+e6ab59fc69e8a03f,WLD,Landesliste,13,,,Papenroth,Kathrin,Landschaftsarchitektin,1971,19395 Ganzlin
+cc9be2aa981d0db6,WLD,Landesliste,14,,,Feddeler,Michael,Handwerksmeister,1979,19395 Plau am See
+347958c059c571c5,ÖDP,Landesliste,1,,,Schünemann,Ronald,Verkäufer,1969,19057 Schwerin
+9c0dc3767ec50784,ÖDP,Landesliste,2,,,Meixner,Ernst,Gärtner,1979,18057 Rostock
+779df3a46c9b1b66,ÖDP,Landesliste,3,,,Wagner,Elke,Hausfrau,1965,17192 Waren (Müritz)

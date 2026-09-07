@@ -14,5 +14,11 @@
   "template_delimiter": ";",
   "template_preamble_lines": 5,
   "live_collection_enabled": false,
-  "geometry_status": "source archive configured; GeoJSON conversion pending"
+  "geometry_status": "GeoJSON artifact committed; source archive URL configured",
+  "candidate_data": "metadata/candidates.csv",
+  "historical_reference": "reference/2021",
+  "pre_election_pages": [
+    "site/2026-mv/candidates.html",
+    "site/2026-mv/index.html"
+  ]
 }

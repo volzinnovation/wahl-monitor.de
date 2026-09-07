@@ -514,7 +514,7 @@ def reference_2021_dir(config: core.Config) -> Path:
 
 
 def load_lsa_reference_2021(config: core.Config) -> Dict[str, Any]:
-    """Load the normalized official 2021 Sachsen-Anhalt reference tables."""
+    """Load normalized official 2021 reference tables for an election."""
     reference_dir = reference_2021_dir(config)
     if not reference_dir.exists():
         return {}
@@ -565,6 +565,7 @@ def load_lsa_reference_2021(config: core.Config) -> Dict[str, Any]:
                 "winner_share_percent": parse_float(row.get("winner_second_share_percent")) or 0.0,
             }
 
+    is_mv = config.election_key == "2026-mv"
     return {
         "areas": areas,
         "party_rows": party_rows,
@@ -573,8 +574,101 @@ def load_lsa_reference_2021(config: core.Config) -> Dict[str, Any]:
         "winners": winners,
         "seats": seats,
         "land_area": land_area,
-        "source_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php",
+        "source_url": (
+            "https://www.laiv-mv.de/Wahlen/Landtagswahlen/2021/Ergebnisse/"
+            if is_mv else "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php"
+        ),
+        "source_label": "amtliche Endergebnisse Mecklenburg-Vorpommern" if is_mv else "offizielle Downloads der Landtagswahl 2021",
+        "reference_date": "26. September 2021" if is_mv else "6. Juni 2021",
     }
+
+
+def load_reference_2021(config: core.Config) -> Dict[str, Any]:
+    if config.election_key.endswith("-lsa") or config.election_key == "2026-mv":
+        return load_lsa_reference_2021(config)
+    return {}
+
+
+def load_mv_candidates(config: core.Config) -> List[Dict[str, str]]:
+    if config.election_key != "2026-mv":
+        return []
+    return read_csv_rows(core.META_DIR / "candidates.csv")
+
+
+def render_candidates_page(output_root: Path, config: core.Config, candidates: List[Dict[str, str]]) -> None:
+    direct = [row for row in candidates if row.get("wahlkreisnummer")]
+    lists = [row for row in candidates if row.get("list_position")]
+    by_wahlkreis: Dict[str, List[Dict[str, str]]] = defaultdict(list)
+    for row in direct:
+        by_wahlkreis[str(row.get("wahlkreisnummer") or "")].append(row)
+    by_party: Dict[str, List[Dict[str, str]]] = defaultdict(list)
+    for row in lists:
+        by_party[str(row.get("party") or "")].append(row)
+
+    def candidate_row(row: Dict[str, str], *, show_wahlkreis: bool = False) -> str:
+        name = f"{row.get('surname') or ''}, {row.get('given_name') or ''}".strip(", ")
+        wahlkreis = (
+            f"<td>{html.escape(str(row.get('wahlkreisnummer') or ''))} {html.escape(str(row.get('wahlkreis_name') or ''))}</td>"
+            if show_wahlkreis else ""
+        )
+        return (
+            "<tr>"
+            f"<td>{html.escape(str(row.get('list_position') or ''))}</td>"
+            f"<td>{html.escape(name)}</td>"
+            f"<td>{html.escape(str(row.get('party') or ''))}</td>"
+            f"{wahlkreis}"
+            f"<td>{html.escape(str(row.get('birth_year') or ''))}</td>"
+            f"<td>{html.escape(str(row.get('residence') or ''))}</td>"
+            f"<td>{html.escape(str(row.get('occupation') or ''))}</td>"
+            "</tr>"
+        )
+
+    direct_sections = []
+    for wahlkreis in sorted(by_wahlkreis, key=lambda value: int(value) if value.isdigit() else 999):
+        rows = sorted(by_wahlkreis[wahlkreis], key=lambda row: (row.get("party") or "", row.get("surname") or ""))
+        label = rows[0].get("wahlkreis_name") or f"Wahlkreis {wahlkreis}"
+        direct_sections.append(
+            f"<details><summary>Wahlkreis {html.escape(wahlkreis)} · {html.escape(label)} ({len(rows)})</summary>"
+            "<table class='compact'><thead><tr><th>Listenplatz</th><th>Name</th><th>Partei</th><th>Geburtsjahr</th><th>Wohnort</th><th>Beruf/Tätigkeit</th></tr></thead>"
+            f"<tbody>{''.join(candidate_row(row) for row in rows)}</tbody></table></details>"
+        )
+    list_sections = []
+    for party in sorted(by_party):
+        rows = sorted(by_party[party], key=lambda row: int(row.get("list_position") or 999))
+        list_sections.append(
+            f"<details><summary>{html.escape(party)} ({len(rows)})</summary>"
+            "<table class='compact'><thead><tr><th>Listenplatz</th><th>Name</th><th>Partei</th><th>Wahlkreis</th><th>Geburtsjahr</th><th>Wohnort</th><th>Beruf/Tätigkeit</th></tr></thead>"
+            f"<tbody>{''.join(candidate_row(row, show_wahlkreis=True) for row in rows)}</tbody></table></details>"
+        )
+    body = (
+        "<div class='hero'><div class='topbar'><a href='index.html'>Übersicht</a><span>/</span>"
+        "<a href='search.html'>Suche</a><span>/</span><a href='../index.html'>Alle Wahlen</a></div>"
+        f"<h1>Kandidaturen · {html.escape(config.election_name)}</h1>"
+        "<p class='muted'>Amtlich zugelassene Landeslisten und Kreiswahlvorschläge für die Landtagswahl am 20. September 2026.</p>"
+        f"<div class='stats'><div class='stat'><div class='stat-label'>Personen</div><div class='stat-value'>{len(candidates)}</div></div>"
+        f"<div class='stat'><div class='stat-label'>Landeslisten-Kandidaturen</div><div class='stat-value'>{len(lists)}</div></div>"
+        f"<div class='stat'><div class='stat-label'>Kreiswahlvorschläge</div><div class='stat-value'>{len(direct)}</div></div>"
+        f"<div class='stat'><div class='stat-label'>Wahlkreise</div><div class='stat-value'>{len(by_wahlkreis)}</div></div></div></div>"
+        "<div class='panel'><h2>Direktbewerberinnen und Direktbewerber</h2>"
+        "<p class='small'>Die Listenplatzangabe zeigt, ob eine Person zusätzlich auf einer Landesliste kandidiert.</p>"
+        f"{''.join(direct_sections)}</div>"
+        "<div class='panel'><h2>Landeslisten</h2>"
+        f"{''.join(list_sections)}</div>"
+        "<div class='panel'><h2>Quelle</h2><p class='small'>"
+        "Statistisches Amt Mecklenburg-Vorpommern, Wahlheft 4/2026, zugelassene Kandidatinnen und Kandidaten. "
+        "Die normalisierten Daten werden aus dem offiziellen XLSX-Download erzeugt.</p></div>"
+    )
+    write_page(
+        output_root / "candidates.html",
+        f"Kandidaturen {config.election_name} | wahl-monitor.de",
+        body,
+        description=f"Zugelassene Kandidatinnen und Kandidaten zur {config.election_name}.",
+        breadcrumbs=[
+            ("wahl-monitor.de", "/"),
+            (config.election_name, f"/{config.election_key}/"),
+            ("Kandidaturen", f"/{config.election_key}/candidates.html"),
+        ],
+    )
 
 
 def render_lsa_current_results_panel(
@@ -688,6 +782,9 @@ def render_lsa_current_results_panel(
 def render_reference_2021_panel(reference: Dict[str, Any]) -> str:
     if not reference:
         return ""
+    source_url = str(reference.get("source_url") or "")
+    source_label = str(reference.get("source_label") or "offizielle Downloads der Landtagswahl 2021")
+    reference_date = str(reference.get("reference_date") or "2021")
     land = reference.get("land_area") or {}
     valid_second = core.parse_int(land.get("valid_second_votes")) or 0
     turnout = ""
@@ -729,7 +826,7 @@ def render_reference_2021_panel(reference: Dict[str, Any]) -> str:
         )
     return (
         "<div class='panel'><h2>2021 als Referenz</h2>"
-        "<p class='small'>Amtliches Endergebnis der Landtagswahl vom 6. Juni 2021. Die Referenzwerte sind separat gespeichert und bleiben sichtbar, solange noch keine 2026-Ergebnisse vorliegen.</p>"
+        f"<p class='small'>Amtliches Endergebnis der Landtagswahl vom {html.escape(reference_date)}. Die Referenzwerte sind separat gespeichert und bleiben sichtbar, solange noch keine 2026-Ergebnisse vorliegen.</p>"
         f"<div class='stats'>{metric_cells}</div>"
         "<div class='reference-columns'>"
         "<div><h3>Landesweite Zweitstimmen</h3>"
@@ -739,7 +836,7 @@ def render_reference_2021_panel(reference: Dict[str, Any]) -> str:
         "<table class='compact'><thead><tr><th>Partei</th><th>Sitze</th><th>Direkt</th><th>Liste</th></tr></thead>"
         f"<tbody>{''.join(seat_rows)}</tbody></table></div>"
         "</div>"
-        "<p class='small'>Quelle: <a href='https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php'>offizielle Downloads der Landtagswahl 2021</a>. Die Karte darüber nutzt die Wahlkreiseinteilung 2026 und färbt sie nach dem Zweitstimmen-Sieger von 2021.</p>"
+        f"<p class='small'>Quelle: <a href='{html.escape(source_url)}'>{html.escape(source_label)}</a>. Die Karte darüber nutzt die Wahlkreiseinteilung 2026 und färbt sie nach dem Zweitstimmen-Sieger von 2021.</p>"
         "</div>"
     )
 
@@ -3365,8 +3462,10 @@ def render_index_page(
         "reported_precincts": run_metadata.get("overview_reported_precincts"),
         "total_precincts": run_metadata.get("overview_total_precincts"),
     }
-    reference_2021 = load_lsa_reference_2021(config) if config.election_key.endswith("-lsa") else {}
-    reference_map_mode = bool(reference_2021) and not statla_snapshots
+    reference_2021 = load_reference_2021(config)
+    reference_map_mode = bool(reference_2021) and (
+        not statla_snapshots or (config.election_key == "2026-mv" and statla_mode == "DUMMY")
+    )
     map_heading = "Wahlkreiskarte · 2021 Referenz" if reference_map_mode else "Klickbare Wahlkreiskarte"
     map_note = (
         "Farbe = Zweitstimmen-Sieger der Landtagswahl 2021; die Geometrie zeigt die Wahlkreiseinteilung 2026. Jeder Wahlkreis führt zur Detailseite."
@@ -3400,10 +3499,18 @@ def render_index_page(
             "<p class='small'>Veröffentlichte Ergebnisebenen: Land, Landkreis/kreisfreie Stadt, Wahlkreis und Gemeinde. "
             "Wahlbezirk-Ergebnisse werden angezeigt, sobald die offizielle Datei verfügbar ist.</p>"
         )
+    elif config.election_key == "2026-mv":
+        wahlkreis_metric_label = "Wahlkreise vorbereitet"
+        wahlkreis_metric_value = len(features)
+        availability_note = (
+            "<p class='small'>Vorwahlansicht mit amtlicher Wahlkreisgeometrie, zugelassenen Kandidaturen und 2021-Referenz. "
+            f"Die Kandidaturseite enthält {len(load_mv_candidates(config))} Personen; Live-Ergebnisse werden am Wahltag ab etwa 19:00 Uhr veröffentlicht.</p>"
+        )
     body = (
         "<div class='hero'><div class='topbar'><a href='search.html'>Suche</a><span>/</span>"
         "<a href='scenario.html'>Szenario</a><span>/</span>"
-        "<a href='../index.html'>Alle Wahlen</a></div>"
+        + ("<a href='candidates.html'>Kandidaturen</a><span>/</span>" if config.election_key == "2026-mv" else "")
+        + "<a href='../index.html'>Alle Wahlen</a></div>"
         f"<h1>{html.escape(config.election_name)} ({html.escape(config.election_key)})</h1>"
         "<p class='muted'>Statische Übersicht mit Drill-down von Land zu Landkreis, Wahlkreis, Gemeinde und – sofern veröffentlicht – Wahlbezirk.</p>"
         f"{availability_note}"
@@ -3425,7 +3532,7 @@ def render_index_page(
         f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk, reference_2021.get('winners'), reference_map_mode)}"
         f"{render_reference_map_legend(reference_2021) if reference_map_mode else ''}</div>"
         f"{render_structure_profile_panel(features, wahlkreis_link_by_wk)}"
-        f"{render_reference_2021_panel(reference_2021) if not config.election_key.endswith('-lsa') else ''}"
+        f"{render_reference_2021_panel(reference_2021) if config.election_key == '2026-mv' else ''}"
         f"{render_landkreis_overview_table(landkreis_overview_rows, landkreis_link_by_id)}"
         f"{render_historical_comparison_section(land_snapshot, party_row_details_by_row_key, party_order)}"
         f"{render_report_figure_panel(output_root, title='Politische Repräsentation', image_path=core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png', image_alt='Politische Repräsentation der Stimmenanteile', description='Reportgrafik zur politischen Repräsentation der Landes- bzw. Zweitstimmen.', data_links=[('PNG', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png'), ('CSV', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.csv')])}"
@@ -3457,9 +3564,23 @@ def render_index_page(
             else ""
         )
         + (
-            "<li>2026 Wahlkreisgeometrie und Gemeindezuordnung: <a href='https://statistik.sachsen-anhalt.de/themen/gebiet-und-wahlen/wahlen/landtagswahl-2026-2/uebersicht-wahlkreiseinteilung'>Statistisches Landesamt Sachsen-Anhalt</a></li>"
-            if config.election_key.endswith("-lsa")
-            else f"<li>Offizieller Wahlkreis-Strukturbericht 2026: <a href='{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}'>{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}</a></li>"
+            "<li>2026 Wahlkreisgeometrie und Gemeindezuordnung: <a href='https://www.laiv-mv.de/Wahlen/Landtagswahlen/2026/Wahlkreise-und-%E2%80%93leiter/'>Landesamt für innere Verwaltung Mecklenburg-Vorpommern</a></li>"
+            if config.election_key == "2026-mv"
+            else (
+                "<li>2026 Wahlkreisgeometrie und Gemeindezuordnung: <a href='https://statistik.sachsen-anhalt.de/themen/gebiet-und-wahlen/wahlen/landtagswahl-2026-2/uebersicht-wahlkreiseinteilung'>Statistisches Landesamt Sachsen-Anhalt</a></li>"
+                if config.election_key.endswith("-lsa")
+                else f"<li>Offizieller Wahlkreis-Strukturbericht 2026: <a href='{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}'>{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}</a></li>"
+            )
+        )
+        + (
+            "<li>Zugelassene Kandidaturen: <a href='candidates.html'>Kandidatinnen und Kandidaten nach Wahlkreis und Landesliste</a></li>"
+            if config.election_key == "2026-mv" and load_mv_candidates(config)
+            else ""
+        )
+        + (
+            "<li>2021 Referenzdaten: <a href='https://www.laiv-mv.de/Wahlen/Landtagswahlen/2021/Ergebnisse/'>amtliche Endergebnisse Mecklenburg-Vorpommern</a></li>"
+            if config.election_key == "2026-mv" and reference_2021
+            else ""
         )
         + (
             "<li>Zugelassene Landes- und Kreiswahlvorschläge: <a href='https://wahlen.sachsen-anhalt.de/zu-den-wahlen/landtagswahl'>Landeswahlleiterin Sachsen-Anhalt</a></li>"
@@ -3468,7 +3589,7 @@ def render_index_page(
         )
         + (
             "<li>2021 Endergebnisse: <a href='https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php'>Wahlergebnisportal Sachsen-Anhalt</a></li>"
-            if reference_2021
+            if reference_2021 and config.election_key.endswith("-lsa")
             else ""
         )
         + "</ul></div>"
@@ -4162,6 +4283,9 @@ def main() -> int:
         party_row_details,
         latest_source_diffs,
     )
+    candidates = load_mv_candidates(config)
+    if candidates:
+        render_candidates_page(output_root, config, candidates)
     scenario_page.render_scenario_page(config, output_root, write_page, WAHL_PARTY_COLORS)
     render_search_page(config, output_root, search_entries)
     render_site_root_index(site_root, config)
