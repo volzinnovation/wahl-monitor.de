@@ -1813,51 +1813,137 @@ def build_wahlkreis_feature_lookup(features: List[Dict[str, Any]]) -> Dict[str, 
     return lookup
 
 
-def compute_wahlkreis_map_projection(features: List[Dict[str, Any]]) -> Optional[Dict[str, float]]:
-    all_points: List[Tuple[float, float]] = []
+def _wahlkreis_map_points(features: List[Dict[str, Any]]) -> List[Tuple[float, float]]:
+    points: List[Tuple[float, float]] = []
     for feature in features:
         for ring in core.iter_exterior_rings(feature.get("geometry") or {}):
             for point in ring:
                 if len(point) >= 2:
-                    all_points.append((float(point[0]), float(point[1])))
-    if not all_points:
+                    points.append((float(point[0]), float(point[1])))
+    return points
+
+
+def _is_geographic_coordinate_system(points: List[Tuple[float, float]]) -> bool:
+    """Return whether coordinates look like longitude/latitude degrees."""
+    return bool(points) and all(abs(x) <= 180 and abs(y) <= 90 for x, y in points)
+
+
+def _lambert_conformal_conic_parameters(
+    points: List[Tuple[float, float]],
+) -> Dict[str, float]:
+    """Build a local spherical Lambert Conformal Conic projection.
+
+    Berlin's source GeoJSON is EPSG:4326.  LCC is a good fit for compact
+    mid-latitude regions because it keeps local angles and shape readable,
+    while the two standard parallels keep scale error low across the extent.
+    """
+    import math
+
+    min_lat = min(point[1] for point in points)
+    max_lat = max(point[1] for point in points)
+    min_lon = min(point[0] for point in points)
+    max_lon = max(point[0] for point in points)
+    latitude_span = max(max_lat - min_lat, 1e-6)
+    standard_parallel_1 = min_lat + latitude_span / 6.0
+    standard_parallel_2 = max_lat - latitude_span / 6.0
+    phi_1 = math.radians(standard_parallel_1)
+    phi_2 = math.radians(standard_parallel_2)
+    lambda_0 = math.radians((min_lon + max_lon) / 2.0)
+
+    denominator = math.log(
+        math.tan(math.pi / 4.0 + phi_2 / 2.0)
+        / math.tan(math.pi / 4.0 + phi_1 / 2.0)
+    )
+    n = math.log(math.cos(phi_1) / math.cos(phi_2)) / denominator if abs(denominator) > 1e-12 else math.sin(phi_1)
+    n = n if abs(n) > 1e-12 else 1e-12
+    f = math.cos(phi_1) * math.tan(math.pi / 4.0 + phi_1 / 2.0) ** n / n
+    latitude_0 = math.radians((min_lat + max_lat) / 2.0)
+    rho_0 = f / math.tan(math.pi / 4.0 + latitude_0 / 2.0) ** n
+    return {"lambda_0": lambda_0, "n": n, "f": f, "rho_0": rho_0}
+
+
+def _project_wahlkreis_source_point(
+    x: float,
+    y: float,
+    projection: Dict[str, Any],
+) -> Tuple[float, float]:
+    """Project source coordinates into the normalized map coordinate plane."""
+    import math
+
+    if projection.get("coordinate_system") != "geographic":
+        # MV's official shapefile is already in a regional metric CRS. Keeping
+        # those coordinates avoids the severe distortion of treating metres as
+        # longitude/latitude degrees.
+        return x, y
+
+    params = projection["lcc"]
+    phi = math.radians(y)
+    lambda_value = math.radians(x)
+    rho = params["f"] / math.tan(math.pi / 4.0 + phi / 2.0) ** params["n"]
+    theta = params["n"] * (lambda_value - params["lambda_0"])
+    return rho * math.sin(theta), params["rho_0"] - rho * math.cos(theta)
+
+
+def compute_wahlkreis_map_projection(features: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    """Fit a regional projection tightly to the supplied Wahlkreis geometry."""
+    source_points = _wahlkreis_map_points(features)
+    if not source_points:
         return None
 
-    min_lon = min(p[0] for p in all_points)
-    max_lon = max(p[0] for p in all_points)
-    min_lat = min(p[1] for p in all_points)
-    max_lat = max(p[1] for p in all_points)
+    coordinate_system = "geographic" if _is_geographic_coordinate_system(source_points) else "projected"
+    projection: Dict[str, Any] = {"coordinate_system": coordinate_system}
+    if coordinate_system == "geographic":
+        projection["lcc"] = _lambert_conformal_conic_parameters(source_points)
+
+    projected_points = [
+        _project_wahlkreis_source_point(x, y, projection)
+        for x, y in source_points
+    ]
+    min_x = min(point[0] for point in projected_points)
+    max_x = max(point[0] for point in projected_points)
+    min_y = min(point[1] for point in projected_points)
+    max_y = max(point[1] for point in projected_points)
+    extent_x = max(max_x - min_x, 1e-9)
+    extent_y = max(max_y - min_y, 1e-9)
+
     width = 1000.0
-    height = 1300.0
-    pad = 40.0
-    scale_x = (width - 2 * pad) / max(max_lon - min_lon, 1e-9)
-    scale_y = (height - 2 * pad) / max(max_lat - min_lat, 1e-9)
-    scale = min(scale_x, scale_y)
+    pad = 36.0
+    scale = (width - 2.0 * pad) / extent_x
+    height = 2.0 * pad + extent_y * scale
     return {
-        "min_lon": min_lon,
-        "min_lat": min_lat,
+        "coordinate_system": coordinate_system,
+        "lcc": projection.get("lcc"),
+        "min_x": min_x,
+        "min_y": min_y,
         "scale": scale,
         "width": width,
-        "height": height,
+        "height": max(height, 2.0 * pad),
         "pad": pad,
+        "source_extent": (extent_x, extent_y),
     }
 
 
-def build_projected_wahlkreis_path(feature: Dict[str, Any], projection: Dict[str, float]) -> str:
+def _project_wahlkreis_output_point(
+    x: float,
+    y: float,
+    projection: Dict[str, Any],
+) -> Tuple[float, float]:
+    projected_x, projected_y = _project_wahlkreis_source_point(x, y, projection)
+    return (
+        projection["pad"] + (projected_x - projection["min_x"]) * projection["scale"],
+        projection["height"]
+        - projection["pad"]
+        - (projected_y - projection["min_y"]) * projection["scale"],
+    )
+
+
+def build_projected_wahlkreis_path(feature: Dict[str, Any], projection: Dict[str, Any]) -> str:
     d_parts: List[str] = []
     for ring in core.iter_exterior_rings(feature.get("geometry") or {}):
         if len(ring) < 3:
             continue
         projected = [
-            core.project_point(
-                float(pt[0]),
-                float(pt[1]),
-                min_lon=projection["min_lon"],
-                min_lat=projection["min_lat"],
-                scale=projection["scale"],
-                pad=projection["pad"],
-                height=projection["height"],
-            )
+            _project_wahlkreis_output_point(float(pt[0]), float(pt[1]), projection)
             for pt in ring
         ]
         d_parts.append("M " + " L ".join(f"{x:.2f} {y:.2f}" for x, y in projected) + " Z")

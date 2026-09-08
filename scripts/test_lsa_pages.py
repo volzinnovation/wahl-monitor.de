@@ -253,6 +253,40 @@ class CurrentOverviewTests(unittest.TestCase):
         self.assertNotIn("Zweitstimmen: CDU", result)
         self.assertIn("#00ccff", result)
 
+    def test_wahlkreis_map_projection_fits_regional_geometry(self):
+        berlin = [{
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[13.0, 52.3], [13.8, 52.3], [13.8, 52.7], [13.0, 52.7], [13.0, 52.3]]],
+            }
+        }]
+        mecklenburg_vorpommern = [{
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[206000, 5890000], [460000, 5890000], [460000, 6060000], [206000, 6060000], [206000, 5890000]]],
+            }
+        }]
+
+        berlin_projection = generator.compute_wahlkreis_map_projection(berlin)
+        mv_projection = generator.compute_wahlkreis_map_projection(mecklenburg_vorpommern)
+
+        self.assertEqual(berlin_projection["coordinate_system"], "geographic")
+        self.assertEqual(mv_projection["coordinate_system"], "projected")
+        for features, projection in (
+            (berlin, berlin_projection),
+            (mecklenburg_vorpommern, mv_projection),
+        ):
+            points = [
+                generator._project_wahlkreis_output_point(float(point[0]), float(point[1]), projection)
+                for ring in generator.core.iter_exterior_rings(features[0]["geometry"])
+                for point in ring
+            ]
+            xs, ys = zip(*points)
+            self.assertLess(projection["height"], 1300)
+            self.assertAlmostEqual(min(xs), projection["pad"], places=3)
+            self.assertAlmostEqual(min(ys), projection["pad"], places=3)
+            self.assertLess(max(ys), projection["height"] - projection["pad"] + 0.001)
+
 
 class PreservationTests(unittest.TestCase):
     def setUp(self):
