@@ -1,0 +1,18 @@
+{
+  "election_key": "2026-be",
+  "election_name": "Wahl zum 20. Abgeordnetenhaus von Berlin 2026",
+  "election_date": "2026-09-20",
+  "prepared_at_utc": "2026-09-08T09:01:56Z",
+  "status": "pre-election",
+  "wahlkreise": 78,
+  "bezirke": 12,
+  "landeslisten": 15,
+  "party_or_group_entries": 30,
+  "individual_candidates_in_source": 11,
+  "geometry_source_url": "https://gdi.berlin.de/services/wfs/wahlgebiete_agh2026?request=GetFeature&service=WFS&version=2.0.0&typeNames=wahlgebiete_agh2026%3Aagh2026_awk&outputFormat=application%2Fjson&srsName=EPSG%3A4326",
+  "geometry_dataset_url": "https://daten.berlin.de/datensaetze/geometrien-der-wahlkreise-fur-die-wahl-zum-20-abgeordnetenhaus-von-berlin-2026",
+  "wfs_dataset_url": "https://daten.berlin.de/datensaetze/wahlgebiete-fur-die-wahl-zum-20-abgeordnetenhaus-von-berlin-2026-wfs-bc61142d",
+  "approved_proposals_url": "https://www.berlin.de/wahlen/wahlen/berliner-wahlen-2026/allgemeine-informationen/abl_2026_36_2273_2644_98lwl.pdf?ts=1788850674",
+  "geometry_crs": "EPSG:4326",
+  "geometry_update_note": "Open Data catalog states that the April 2026 update changed topology only, not boundaries or attributes."
+}

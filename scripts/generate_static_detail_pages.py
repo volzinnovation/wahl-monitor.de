@@ -489,6 +489,10 @@ def load_lsa_landkreis_names(
 ) -> Dict[str, str]:
     """Use current StatLA Kreis names, with the 2021 reference as pre-election fallback."""
     names: Dict[str, str] = {}
+    if config.election_key == "2026-be":
+        # Berlin is a Stadtstaat.  The 12 Bezirke are the municipality-level
+        # drill-down entities, while the five-digit parent is Berlin itself.
+        names["11000"] = "Berlin"
     for row in snapshots:
         if str(row.get("gebietsart") or "").strip().upper() != "KREIS":
             continue
@@ -602,6 +606,61 @@ def load_mv_candidates(config: core.Config) -> List[Dict[str, str]]:
     if config.election_key != "2026-mv":
         return []
     return read_csv_rows(core.META_DIR / "candidates.csv")
+
+
+def load_berlin_parties(config: core.Config) -> List[Dict[str, str]]:
+    if config.election_key != "2026-be":
+        return []
+    return read_csv_rows(core.META_DIR / "parties.csv")
+
+
+def render_berlin_parties_page(
+    output_root: Path,
+    config: core.Config,
+    parties: List[Dict[str, str]],
+) -> None:
+    state_lists = [row for row in parties if row.get("landesliste_zugelassen") == "ja"]
+    voter_groups = [row for row in parties if row.get("wahlvorschlagstyp") == "Wählergemeinschaft"]
+    rows = []
+    for party in sorted(parties, key=lambda row: int(row.get("nummer") or 999)):
+        rows.append(
+            "<tr>"
+            f"<td>{html.escape(str(party.get('nummer') or ''))}</td>"
+            f"<td><strong>{html.escape(str(party.get('kurzbezeichnung') or ''))}</strong></td>"
+            f"<td>{html.escape(str(party.get('bezeichnung') or ''))}</td>"
+            f"<td>{html.escape(str(party.get('wahlvorschlagstyp') or ''))}</td>"
+            f"<td>{'ja' if party.get('landesliste_zugelassen') == 'ja' else 'nein'}</td>"
+            "</tr>"
+        )
+    body = (
+        "<div class='hero'><div class='topbar'><a href='index.html'>Übersicht</a><span>/</span>"
+        "<a href='search.html'>Suche</a><span>/</span><a href='../index.html'>Alle Wahlen</a></div>"
+        f"<h1>Parteien und Wählergemeinschaften · {html.escape(config.election_name)}</h1>"
+        "<p class='muted'>Amtliche Nummernfolge der bei der Wahl zum Abgeordnetenhaus und zu den Bezirksverordnetenversammlungen vertretenen Parteien und Wählergemeinschaften.</p>"
+        f"<div class='stats'><div class='stat'><div class='stat-label'>Parteien/Gruppen</div><div class='stat-value'>{len(parties)}</div></div>"
+        f"<div class='stat'><div class='stat-label'>Landeslisten</div><div class='stat-value'>{len(state_lists)}</div></div>"
+        f"<div class='stat'><div class='stat-label'>Wählergemeinschaften</div><div class='stat-value'>{len(voter_groups)}</div></div>"
+        "<div class='stat'><div class='stat-label'>Wahlkreise</div><div class='stat-value'>78</div></div></div></div>"
+        "<div class='panel'><h2>Amtliche Nummernfolge</h2>"
+        "<p class='small'>Die Nummernfolge folgt dem Beschluss des Landeswahlausschusses vom 24. Juli 2026, veröffentlicht im Amtsblatt für Berlin Nr. 36 vom 27. August 2026. Die Quelle nennt zusätzlich 11 Einzelbewerberinnen und Einzelbewerber; diese sind keine Parteieinträge und werden deshalb nicht in dieser Tabelle geführt.</p>"
+        "<div class='table-scroll'><table class='compact'><thead><tr><th>Nr.</th><th>Kurzbezeichnung</th><th>Bezeichnung</th><th>Typ</th><th>Landesliste</th></tr></thead>"
+        f"<tbody>{''.join(rows)}</tbody></table></div></div>"
+        "<div class='panel'><h2>Quellen</h2><ul class='inline-list'>"
+        "<li><a href='https://www.berlin.de/wahlen/wahlen/berliner-wahlen-2026/wahlvorschlaege/artikel.1600254.php'>Berlin: Zugelassene Wahlvorschläge</a></li>"
+        "<li><a href='https://www.berlin.de/wahlen/wahlen/berliner-wahlen-2026/allgemeine-informationen/abl_2026_36_2273_2644_98lwl.pdf?ts=1788850674'>Amtsblatt für Berlin Nr. 36 vom 27. August 2026 (PDF)</a></li>"
+        "</ul></div>"
+    )
+    write_page(
+        output_root / "parties.html",
+        f"Parteien {config.election_name} | wahl-monitor.de",
+        body,
+        description=f"Amtliche Parteien und Wählergemeinschaften zur {config.election_name}.",
+        breadcrumbs=[
+            ("wahl-monitor.de", "/"),
+            (config.election_name, f"/{config.election_key}/"),
+            ("Parteien", f"/{config.election_key}/parties.html"),
+        ],
+    )
 
 
 def render_candidates_page(output_root: Path, config: core.Config, candidates: List[Dict[str, str]]) -> None:
@@ -2586,6 +2645,7 @@ def write_page(
 SEARCH_TYPE_LABELS = {
     "election": "Wahl",
     "scenario": "Szenario",
+    "parties": "Parteien",
     "landkreis": "Landkreis",
     "wahlkreis": "Wahlkreis",
     "municipality": "Gemeinde",
@@ -2595,10 +2655,11 @@ SEARCH_TYPE_LABELS = {
 SEARCH_TYPE_ORDER = {
     "election": 0,
     "scenario": 1,
-    "landkreis": 2,
-    "wahlkreis": 3,
-    "municipality": 4,
-    "booth": 5,
+    "parties": 2,
+    "landkreis": 3,
+    "wahlkreis": 4,
+    "municipality": 5,
+    "booth": 6,
 }
 
 
@@ -3523,10 +3584,22 @@ def render_index_page(
             "<p class='small'>Vorwahlansicht mit amtlicher Wahlkreisgeometrie, zugelassenen Kandidaturen und 2021-Referenz. "
             f"Die Kandidaturseite enthält {len(load_mv_candidates(config))} Personen; Live-Ergebnisse werden am Wahltag ab etwa 19:00 Uhr veröffentlicht.</p>"
         )
+    elif config.election_key == "2026-be":
+        wahlkreis_metric_label = "Wahlkreise vorbereitet"
+        wahlkreis_metric_value = len(features)
+        parties = load_berlin_parties(config)
+        availability_note = (
+            "<p class='small'>Vorwahlansicht mit amtlicher Geometrie für 78 Wahlkreise, 12 Bezirken und zugelassenen Wahlvorschlägen. "
+            f"Die Parteiseite enthält {len(parties)} Parteien und Wählergemeinschaften; Live-Ergebnisse werden am Wahltag ab 18:00 Uhr erwartet.</p>"
+        )
     body = (
         "<div class='hero'><div class='topbar'><a href='search.html'>Suche</a><span>/</span>"
         "<a href='scenario.html'>Szenario</a><span>/</span>"
-        + ("<a href='candidates.html'>Kandidaturen</a><span>/</span>" if config.election_key == "2026-mv" else "")
+        + (
+            "<a href='candidates.html'>Kandidaturen</a><span>/</span>"
+            if config.election_key == "2026-mv"
+            else ("<a href='parties.html'>Parteien</a><span>/</span>" if config.election_key == "2026-be" else "")
+        )
         + "<a href='../index.html'>Alle Wahlen</a></div>"
         f"<h1>{html.escape(config.election_name)} ({html.escape(config.election_key)})</h1>"
         "<p class='muted'>Statische Übersicht mit Drill-down von Land zu Landkreis, Wahlkreis, Gemeinde und – sofern veröffentlicht – Wahlbezirk.</p>"
@@ -3586,12 +3659,28 @@ def render_index_page(
             else (
                 "<li>2026 Wahlkreisgeometrie und Gemeindezuordnung: <a href='https://statistik.sachsen-anhalt.de/themen/gebiet-und-wahlen/wahlen/landtagswahl-2026-2/uebersicht-wahlkreiseinteilung'>Statistisches Landesamt Sachsen-Anhalt</a></li>"
                 if config.election_key.endswith("-lsa")
-                else f"<li>Offizieller Wahlkreis-Strukturbericht 2026: <a href='{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}'>{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}</a></li>"
+                else (
+                    "<li>2026 Wahlkreisgeometrie: <a href='https://daten.berlin.de/datensaetze/"
+                    "wahlgebiete-fur-die-wahl-zum-20-abgeordnetenhaus-von-berlin-2026-wfs-bc61142d'>"
+                    "Berlin Open Data / WFS des Amtes für Statistik Berlin-Brandenburg</a></li>"
+                    if config.election_key == "2026-be"
+                    else f"<li>Offizieller Wahlkreis-Strukturbericht 2026: <a href='{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}'>{html.escape(wk_structure.DEFAULT_STRUCTURE_WORKBOOK_URL)}</a></li>"
+                )
             )
         )
         + (
             "<li>Zugelassene Kandidaturen: <a href='candidates.html'>Kandidatinnen und Kandidaten nach Wahlkreis und Landesliste</a></li>"
             if config.election_key == "2026-mv" and load_mv_candidates(config)
+            else ""
+        )
+        + (
+            "<li>Zugelassene Parteien und Wählergemeinschaften: <a href='parties.html'>Parteienübersicht</a></li>"
+            if config.election_key == "2026-be" and load_berlin_parties(config)
+            else ""
+        )
+        + (
+            "<li>Zugelassene Wahlvorschläge: <a href='https://www.berlin.de/wahlen/wahlen/berliner-wahlen-2026/wahlvorschlaege/artikel.1600254.php'>Landeswahlleiterin Berlin</a> · <a href='https://www.berlin.de/wahlen/wahlen/berliner-wahlen-2026/allgemeine-informationen/abl_2026_36_2273_2644_98lwl.pdf?ts=1788850674'>Amtsblatt-PDF</a></li>"
+            if config.election_key == "2026-be"
             else ""
         )
         + (
@@ -3851,6 +3940,16 @@ def main() -> int:
         search_fields=["szenario", "simulation", "koalition", "sitze", "swing", config.election_key],
         sort_key="0a",
     )
+    if config.election_key == "2026-be" and load_berlin_parties(config):
+        append_search_entry(
+            search_entries,
+            kind="parties",
+            title="Parteien und Wählergemeinschaften",
+            href="parties.html",
+            subtitle="Amtliche Nummernfolge der Wahlvorschläge",
+            search_fields=["parteien", "wählergemeinschaften", "wahlvorschläge", config.election_key],
+            sort_key="0b",
+        )
 
     for entity in city_entities:
         slug = municipality_detail_slug(
@@ -4303,6 +4402,9 @@ def main() -> int:
     candidates = load_mv_candidates(config)
     if candidates:
         render_candidates_page(output_root, config, candidates)
+    parties = load_berlin_parties(config)
+    if parties:
+        render_berlin_parties_page(output_root, config, parties)
     scenario_page.render_scenario_page(config, output_root, write_page, WAHL_PARTY_COLORS)
     render_search_page(config, output_root, search_entries)
     render_site_root_index(site_root, config)

@@ -125,6 +125,46 @@ STATLA_PARTY_CODEBOOK: Dict[str, List[Tuple[str, str]]] = {
     ],
 }
 
+# Berlin's Landeswahlausschuss uses its own proposal numbering.  Keeping this
+# separate from the Statistik-BW codebook lets the generic normalizer display
+# Berlin's official roster without importing Baden-Württemberg-only parties.
+BERLIN_PARTY_ORDER = [
+    "CDU",
+    "SPD",
+    "GRÜNE",
+    "Die Linke",
+    "AfD",
+    "FDP",
+    "Tierschutzpartei",
+    "Die PARTEI",
+    "Volt",
+    "FREIE WÄHLER",
+    "Mieterpartei",
+    "Die Urbane.",
+    "DKP",
+    "ÖDP",
+    "Die Heimat",
+    "bergpartei",
+    "SGP",
+    "Menschliche Welt",
+    "AB Spandau",
+    "Ausländer für Berlin",
+    "Migrants for Neukölln",
+    "Berliner:innen ohne Grenzen",
+    "Berlin Retten",
+    "BSW",
+    "Losdemokratie",
+    "MERA25",
+    "PdF",
+    "Jan Mihm: Bester Mann",
+    "Demokratische Linke",
+    "DIE FRAUEN",
+]
+BERLIN_PARTY_CODEBOOK: Dict[str, List[Tuple[str, str]]] = {
+    vote_type: [(f"{prefix}{index}", party) for index, party in enumerate(BERLIN_PARTY_ORDER, start=1)]
+    for vote_type, prefix in (("Erststimmen", "D"), ("Zweitstimmen", "F"))
+}
+
 KOMMONE_HTML_PATH_SUFFIXES = (
     "landtagswahl_gemeinde_ohne_kwl",
     "landtagswahl_kwl_1_wk",
@@ -388,7 +428,8 @@ def parse_bool_flag(value: Any) -> bool:
 
 def statla_party_name_from_code(vote_type: str, code: str) -> str:
     key = str(code).strip()
-    for party_code, party_name in STATLA_PARTY_CODEBOOK.get(vote_type, []):
+    codebook = BERLIN_PARTY_CODEBOOK if ACTIVE_ELECTION_KEY == "2026-be" else STATLA_PARTY_CODEBOOK
+    for party_code, party_name in codebook.get(vote_type, []):
         if key == party_code:
             return party_name
     return key
@@ -438,6 +479,31 @@ def canonical_party_name(label: str, vote_type: Optional[str] = None) -> str:
         "pdf": "PdF",
         "partei des fortschritts": "PdF",
         "anderer kreiswahlvorschlag": "Anderer Kreiswahlvorschlag",
+        "mieterpartei": "Mieterpartei",
+        "die urbane": "Die Urbane.",
+        "die urbane eine hiphop partei": "Die Urbane.",
+        "dkp": "DKP",
+        "deutsche kommunistische partei": "DKP",
+        "die heimat": "Die Heimat",
+        "bergpartei": "bergpartei",
+        "bergpartei die uberpartei": "bergpartei",
+        "sgp": "SGP",
+        "sozialistische gleichheitspartei vierte internationale": "SGP",
+        "menschliche welt": "Menschliche Welt",
+        "ab spandau": "AB Spandau",
+        "antifaschistisches bundnis spandau": "AB Spandau",
+        "auslander fur berlin": "Ausländer für Berlin",
+        "migrants for neukolln": "Migrants for Neukölln",
+        "berliner innen ohne grenzen": "Berliner:innen ohne Grenzen",
+        "berlin retten": "Berlin Retten",
+        "losdemokratie": "Losdemokratie",
+        "losdemokratie partei eine starke burgerschaft": "Losdemokratie",
+        "mera25": "MERA25",
+        "mera25 gemeinsam fur frieden solidaritat und freiheit": "MERA25",
+        "jan mihm bester mann": "Jan Mihm: Bester Mann",
+        "demokratische linke": "Demokratische Linke",
+        "die frauen": "DIE FRAUEN",
+        "feministische partei die frauen": "DIE FRAUEN",
     }
     if normalized_simple.startswith("eb ") or normalized.startswith("eb:"):
         return "Anderer Kreiswahlvorschlag"
@@ -4240,6 +4306,11 @@ def source_party_totals(
 
 
 def fixed_party_order_by_vote_type() -> Dict[str, List[str]]:
+    if ACTIVE_ELECTION_KEY == "2026-be":
+        return {
+            "Erststimmen": list(BERLIN_PARTY_ORDER),
+            "Zweitstimmen": list(BERLIN_PARTY_ORDER),
+        }
     first_codes: List[str] = []
     second_codes: List[str] = []
     dummy_path = LOCAL_DUMMY_STATLA_PATH

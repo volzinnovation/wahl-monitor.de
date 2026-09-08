@@ -122,6 +122,8 @@ def summarize_election(root: Path, config_path: Path) -> dict[str, Any]:
             / str(config.get("local_wahlkreise_mapping_csv_filename") or "wahlkreis-mapping.csv")
         ),
     }
+    if election_key == "2026-be":
+        metadata_files["parties.csv"] = file_status(metadata_dir / "parties.csv")
 
     today = datetime.now(UTC).date()
     days_until_election = (election_date - today).days if election_date else None

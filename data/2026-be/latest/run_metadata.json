@@ -1,0 +1,12 @@
+{
+  "generated_at_utc": "2026-09-08T09:01:56Z",
+  "run_label": "berlin-pre-election",
+  "election_key": "2026-be",
+  "election_date": "2026-09-20",
+  "statla_mode": "PREPARED",
+  "statla_url": "https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/",
+  "statla_error": "No official 2026 result file published yet; dashboard is in pre-election mode.",
+  "overview_reported_precincts": 0,
+  "overview_total_precincts": 0,
+  "source_status": "pre-election"
+}

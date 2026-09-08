@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build LSA and MV pages while preserving the published BW/RLP files verbatim."""
+"""Build LSA, MV, and Berlin pages while preserving BW/RLP files verbatim."""
 from __future__ import annotations
 
 import argparse
@@ -87,6 +87,27 @@ def validate_lsa(output: Path) -> None:
         raise ValueError("Missing LSA scenario page")
 
 
+def validate_berlin(output: Path) -> None:
+    root = output / "2026-be"
+    payload = json.loads((root / "search.json").read_text())
+    if payload["electionKey"] != "2026-be" or payload["entryCount"] != len(payload["entries"]):
+        raise ValueError("Invalid Berlin search index")
+    for entry in payload["entries"]:
+        if not (root / entry["href"]).is_file():
+            raise ValueError(f"Broken Berlin search link: {entry['href']}")
+    if len(list((root / "landkreis").glob("*.html"))) != 1:
+        raise ValueError("Missing Berlin parent page")
+    if len(list((root / "wahlkreis").glob("*.html"))) != 78:
+        raise ValueError("Missing Berlin Wahlkreis pages")
+    if len(list((root / "municipality").glob("*.html"))) != 78:
+        raise ValueError("Missing Berlin district/Wahlkreis drill-down pages")
+    if not (root / "parties.html").is_file() or not (root / "scenario.html").is_file():
+        raise ValueError("Missing Berlin parties or scenario page")
+    metadata = json.loads((core.ROOT / "data/2026-be/metadata/setup_manifest.json").read_text())
+    if metadata.get("wahlkreise") != 78 or metadata.get("party_or_group_entries") != 30:
+        raise ValueError("Invalid Berlin prepared metadata")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-root", type=Path, default=core.ROOT / "site")
@@ -100,10 +121,14 @@ def main() -> None:
     subprocess.run([sys.executable, str(core.ROOT / "scripts/generate_static_detail_pages.py"),
                     "--election-key", "2026-mv", "--output-root", str(args.output_root / "2026-mv")],
                    cwd=core.ROOT, check=True)
+    subprocess.run([sys.executable, str(core.ROOT / "scripts/generate_static_detail_pages.py"),
+                    "--election-key", "2026-be", "--output-root", str(args.output_root / "2026-be")],
+                   cwd=core.ROOT, check=True)
     verify_frozen_pages(args.output_root, manifest)
     if before != result_fingerprints():
         raise ValueError("BW/RLP result files changed during the LSA build")
     validate_lsa(args.output_root)
+    validate_berlin(args.output_root)
     proof = {"source_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=core.ROOT, text=True).strip(),
              "result_generated_at_utc": metadata["generated_at_utc"],
              "preserved_files": len(manifest["files"]),

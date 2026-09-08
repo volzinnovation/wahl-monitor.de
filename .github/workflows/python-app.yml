@@ -32,6 +32,7 @@ jobs:
             scripts/generate_static_detail_pages.py \
             scripts/scenario_page.py \
             scripts/election_status.py \
+            scripts/prepare_berlin_2026_metadata.py \
             scripts/rlp_seat_allocation.py \
             scripts/test_rlp_seat_allocation.py
       - name: Print election artifact status

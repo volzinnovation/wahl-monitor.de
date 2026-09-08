@@ -17,6 +17,8 @@ The repository is organized by election key in the form `<year>-<state>`, for ex
 - Search Rheinland-Pfalz 2026: `https://wahl-monitor.de/2026-rlp/search.html`
 - Landtagswahl Sachsen-Anhalt 2026: `https://wahl-monitor.de/2026-lsa/`
 - Search Sachsen-Anhalt 2026: `https://wahl-monitor.de/2026-lsa/search.html`
+- Wahl zum 20. Abgeordnetenhaus von Berlin 2026: `https://wahl-monitor.de/2026-be/`
+- Search Berlin 2026: `https://wahl-monitor.de/2026-be/search.html`
 
 ## Available Elections
 
@@ -24,11 +26,13 @@ The repository is organized by election key in the form `<year>-<state>`, for ex
 - `2026-rlp`: Landtagswahl Rheinland-Pfalz 2026
 - `2026-lsa`: Landtagswahl Sachsen-Anhalt 2026
 - `2026-mv`: Landtagswahl Mecklenburg-Vorpommern 2026 (pre-election setup)
+- `2026-be`: Wahl zum 20. Abgeordnetenhaus von Berlin 2026 (pre-election setup)
 
 Current operational status:
 
 - Active scheduled collection: `2026-lsa`, from 18:00 CEST on `2026-09-06` through the morning of `2026-09-08`
 - Prepared, but not activated: `2026-mv`, election day `2026-09-20`; official LAIV result URLs are expected from calendar week 38
+- Prepared, but not activated: `2026-be`, election day `2026-09-20`; official Berlin result files are expected on election day
 - Election-night activation, recovery, and independent backup: [LSA runbook](docs/lsa-election-night.md)
 - Active GitHub Actions workflows: `.github/workflows/` (automatic LSA Pages deployment after collection, CI, and the scheduled LSA archive)
 - Archived scheduled GitHub Actions workflows: `.github/workflows-disabled/`
@@ -74,6 +78,7 @@ Current operational status:
 
 - `scripts/setup_rlp_2026_metadata.py`: builds Rheinland-Pfalz 2026 metadata from official published sources
 - `scripts/build_rlp_zero_latest.py`: creates zero-result RLP latest exports from official metadata before live results exist
+- `scripts/prepare_berlin_2026_metadata.py`: prepares Berlin's official 78-constituency geometry, district mapping, party catalogue, status map, and pre-election exports
 - `scripts/rlp_wahlkreis_structure.py`: parses the official RLP 2026 Wahlkreis structure workbook
 
 ### Seat Calculation and Electoral Law Helpers
@@ -171,11 +176,13 @@ Then open:
 - `http://localhost:8000/site/2026-rlp/search.html`
 - `http://localhost:8000/site/2026-lsa/index.html`
 - `http://localhost:8000/site/2026-lsa/search.html`
+- `http://localhost:8000/site/2026-be/index.html`
+- `http://localhost:8000/site/2026-be/search.html`
 
 ## GitHub Pages Procedure
 
 LSA Pages build and deploy automatically after each successful archive run.
-LSA and the pre-election MV stub are generated; published BW/RLP pages are
+LSA and the pre-election MV/Berlin stubs are generated; published BW/RLP pages are
 restored byte for byte from `data/published-site/` and verified before deployment.
 Other election data and configs are checked for changes too.
 
@@ -200,6 +207,7 @@ Other election data and configs are checked for changes too.
 - official Wahlkreis geometry and mapping files
 - official Sachsen-Anhalt 2026 result CSVs, including the post-preliminary Wahlbezirk export when published
 - official Mecklenburg-Vorpommern 2026 LAIV CSV templates and the official result-download page
+- official Berlin 2026 Open Data WFS geometry and approved Wahlvorschläge publication
 - cached `komm.one` 2021 structure data for municipality and polling-place drill-down
 
 ## Notes
