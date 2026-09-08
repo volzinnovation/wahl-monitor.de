@@ -260,14 +260,14 @@ class CurrentOverviewTests(unittest.TestCase):
         self.assertEqual(reference["winners"]["1"]["winner_party_first"], "GRÜNE")
         self.assertEqual(reference["winners"]["61"]["winner_party_first"], "AfD")
 
-        feature = {"properties": {"Nummer": "12", "WK Name": "Friedrichshain-Kreuzberg 5"}}
-        status = [{"wahlkreisnummer": "12", "status": "prestart"}]
+        feature = {"properties": {"Nummer": "11", "WK Name": "Friedrichshain-Kreuzberg 4"}}
+        status = [{"wahlkreisnummer": "11", "status": "prestart"}]
         with mock.patch.object(generator, "compute_wahlkreis_map_projection", return_value={"width": 100, "height": 80}), \
              mock.patch.object(generator, "build_projected_wahlkreis_path", return_value="M0 0 L1 1"):
             result = generator.render_clickable_wahlkreis_map(
                 [feature],
                 status,
-                {"12": "wahlkreis/test.html"},
+                {"11": "wahlkreis/test.html"},
                 reference["winners"],
                 True,
                 reference["map_vote_type"],
