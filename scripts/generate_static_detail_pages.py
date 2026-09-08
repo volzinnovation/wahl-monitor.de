@@ -115,11 +115,11 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def read_csv_rows(path: Path) -> List[Dict[str, str]]:
+def read_csv_rows(path: Path, delimiter: str = ",") -> List[Dict[str, str]]:
     if not path.exists():
         return []
     with path.open("r", encoding="utf-8", newline="") as handle:
-        return list(csv.DictReader(handle))
+        return list(csv.DictReader(handle, delimiter=delimiter))
 
 
 def read_csv_rows_from_text(text: str) -> List[Dict[str, str]]:
@@ -596,9 +596,47 @@ def load_lsa_reference_2021(config: core.Config) -> Dict[str, Any]:
     }
 
 
+def load_berlin_reference_2021(config: core.Config) -> Dict[str, Any]:
+    """Load the official 2021 Berlin constituency winners for the pre-election map."""
+    if config.election_key != "2026-be":
+        return {}
+
+    reference_dir = reference_2021_dir(config)
+    rows = read_csv_rows(reference_dir / "wahlkreis_summary.csv", delimiter=";")
+    if not rows:
+        return {}
+
+    winners: Dict[str, Dict[str, Any]] = {}
+    for row in rows:
+        wk = core.normalize_wahlkreis_nummer(row.get("wahlkreisnummer"))
+        winner = core.canonical_party_name(str(row.get("winner_first") or ""), "Erststimmen")
+        if not wk or not winner:
+            continue
+        winners[wk] = {
+            "winner_party": winner,
+            "winner_party_first": winner,
+        }
+
+    if not winners:
+        return {}
+    return {
+        "wahlkreis_rows": rows,
+        "winners": winners,
+        "source_url": (
+            "https://www.berlin.de/wahlen/historie/berliner-wahlen/ergebnisberichte/"
+            "sb_b07-02-03_2021j05_be_ah_bvv-2.pdf"
+        ),
+        "source_label": "amtlicher Ergebnisbericht der Landeswahlleiterin Berlin und des Amtes für Statistik Berlin-Brandenburg",
+        "reference_date": "26. September 2021",
+        "map_vote_type": "Erststimmen",
+    }
+
+
 def load_reference_2021(config: core.Config) -> Dict[str, Any]:
     if config.election_key.endswith("-lsa") or config.election_key == "2026-mv":
         return load_lsa_reference_2021(config)
+    if config.election_key == "2026-be":
+        return load_berlin_reference_2021(config)
     return {}
 
 
@@ -3487,7 +3525,8 @@ def render_clickable_wahlkreis_map(
                 share = reference_winners[wk].get(f"winner_{suffix}_share_percent")
                 if share is None:
                     share = reference_winners[wk].get("winner_share_percent")
-                title_text += f" ({float(share or 0.0):.1f} %)"
+                if share is not None:
+                    title_text += f" ({float(share):.1f} %)"
         title = html.escape(title_text)
         path_markup = f"<path d=\"{path_d}\" fill=\"{fill}\" stroke=\"#111827\" stroke-width=\"0.8\"><title>{title}</title></path>"
         href = link_by_wk.get(wk)
@@ -3630,9 +3669,10 @@ def render_index_page(
         not statla_snapshots or (config.election_key == "2026-mv" and statla_mode == "DUMMY")
     )
     reference_vote_type = str(reference_2021.get("map_vote_type") or "Zweitstimmen")
+    reference_election_label = "Abgeordnetenhauswahl" if config.election_key == "2026-be" else "Landtagswahl"
     map_heading = "Wahlkreiskarte · 2021 Referenz" if reference_map_mode else "Klickbare Wahlkreiskarte"
     map_note = (
-        f"Farbe = {reference_vote_type}-Sieger der Landtagswahl 2021; die Geometrie zeigt die Wahlkreiseinteilung 2026. Jeder Wahlkreis führt zur Detailseite."
+        f"Farbe = {reference_vote_type}-Sieger der {reference_election_label} 2021; die Geometrie zeigt die Wahlkreiseinteilung 2026. Jeder Wahlkreis führt zur Detailseite."
         if reference_map_mode
         else "Farbe = führende Erststimme im aktuellen Ergebnis. Jeder Wahlkreis führt direkt zur Detailseite."
     )

@@ -253,6 +253,29 @@ class CurrentOverviewTests(unittest.TestCase):
         self.assertNotIn("Zweitstimmen: CDU", result)
         self.assertIn("#00ccff", result)
 
+    def test_berlin_reference_map_uses_all_2021_first_vote_winners(self):
+        reference = generator.load_reference_2021(SimpleNamespace(election_key="2026-be"))
+        self.assertEqual(reference["map_vote_type"], "Erststimmen")
+        self.assertEqual(len(reference["winners"]), 78)
+        self.assertEqual(reference["winners"]["1"]["winner_party_first"], "GRÜNE")
+        self.assertEqual(reference["winners"]["61"]["winner_party_first"], "AfD")
+
+        feature = {"properties": {"Nummer": "12", "WK Name": "Friedrichshain-Kreuzberg 5"}}
+        status = [{"wahlkreisnummer": "12", "status": "prestart"}]
+        with mock.patch.object(generator, "compute_wahlkreis_map_projection", return_value={"width": 100, "height": 80}), \
+             mock.patch.object(generator, "build_projected_wahlkreis_path", return_value="M0 0 L1 1"):
+            result = generator.render_clickable_wahlkreis_map(
+                [feature],
+                status,
+                {"12": "wahlkreis/test.html"},
+                reference["winners"],
+                True,
+                reference["map_vote_type"],
+            )
+        self.assertIn("2021 Erststimmen: Die Linke", result)
+        self.assertIn("#e6007b", result)
+        self.assertNotIn("0.0 %", result)
+
     def test_wahlkreis_map_projection_fits_regional_geometry(self):
         berlin = [{
             "geometry": {

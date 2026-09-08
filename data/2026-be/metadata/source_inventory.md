@@ -17,6 +17,7 @@ Prepared: `2026-09-08T09:01:56Z`
 - [Open Data geometry dataset](https://daten.berlin.de/datensaetze/geometrien-der-wahlkreise-fur-die-wahl-zum-20-abgeordnetenhaus-von-berlin-2026)
 - [Open Data WFS dataset](https://daten.berlin.de/datensaetze/wahlgebiete-fur-die-wahl-zum-20-abgeordnetenhaus-von-berlin-2026-wfs-bc61142d)
 - [WFS GetFeature source](https://gdi.berlin.de/services/wfs/wahlgebiete_agh2026?request=GetFeature&service=WFS&version=2.0.0&typeNames=wahlgebiete_agh2026%3Aagh2026_awk&outputFormat=application%2Fjson&srsName=EPSG%3A4326)
+- [2021 official result report](https://www.berlin.de/wahlen/historie/berliner-wahlen/ergebnisberichte/sb_b07-02-03_2021j05_be_ah_bvv-2.pdf): constituency-level Erststimmen winners used for the pre-election map.
 
 ## Normalized files
 
