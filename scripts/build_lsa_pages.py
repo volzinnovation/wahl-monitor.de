@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 import subprocess
@@ -108,6 +109,21 @@ def validate_berlin(output: Path) -> None:
         raise ValueError("Invalid Berlin prepared metadata")
 
 
+def generate_election_pages(election_key: str, output: Path) -> None:
+    subprocess.run(
+        [
+            sys.executable,
+            str(core.ROOT / "scripts/generate_static_detail_pages.py"),
+            "--election-key",
+            election_key,
+            "--output-root",
+            str(output / election_key),
+        ],
+        cwd=core.ROOT,
+        check=True,
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-root", type=Path, default=core.ROOT / "site")
@@ -115,15 +131,14 @@ def main() -> None:
     metadata = version_lsa_results.verify(core.ROOT)
     before = result_fingerprints()
     manifest = restore_baseline(args.output_root)
-    subprocess.run([sys.executable, str(core.ROOT / "scripts/generate_static_detail_pages.py"),
-                    "--election-key", "2026-lsa", "--output-root", str(args.output_root / "2026-lsa")],
-                   cwd=core.ROOT, check=True)
-    subprocess.run([sys.executable, str(core.ROOT / "scripts/generate_static_detail_pages.py"),
-                    "--election-key", "2026-mv", "--output-root", str(args.output_root / "2026-mv")],
-                   cwd=core.ROOT, check=True)
-    subprocess.run([sys.executable, str(core.ROOT / "scripts/generate_static_detail_pages.py"),
-                    "--election-key", "2026-be", "--output-root", str(args.output_root / "2026-be")],
-                   cwd=core.ROOT, check=True)
+    generate_election_pages("2026-lsa", args.output_root)
+    with ThreadPoolExecutor(max_workers=2, thread_name_prefix="generate-pages") as executor:
+        futures = [
+            executor.submit(generate_election_pages, election_key, args.output_root)
+            for election_key in ("2026-mv", "2026-be")
+        ]
+        for future in futures:
+            future.result()
     verify_frozen_pages(args.output_root, manifest)
     if before != result_fingerprints():
         raise ValueError("BW/RLP result files changed during the LSA build")

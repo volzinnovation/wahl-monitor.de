@@ -58,7 +58,7 @@ jobs:
       - name: Verify LSA result schema
         run: python scripts/test_lsa_statla_csv.py
 
-      - name: Build LSA, MV stub, and verify frozen elections remain byte-identical
+      - name: Build LSA, MV, Berlin, and verify frozen elections remain byte-identical
         run: python scripts/build_lsa_pages.py
 
       - name: Configure GitHub Pages
