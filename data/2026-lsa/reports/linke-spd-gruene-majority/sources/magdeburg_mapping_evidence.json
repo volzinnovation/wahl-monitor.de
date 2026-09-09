@@ -1,0 +1,1212 @@
+{
+  "metadata": {
+    "coordinate_system": "LOCAL_PDF_PAGE",
+    "coordinate_units": "points (1/72 inch)",
+    "origin": "top left",
+    "x_direction": "right",
+    "y_direction": "down",
+    "page_size": [
+      595,
+      842
+    ],
+    "source_geometry": "https://www.magdeburg.de/loadDocument.phtml?Ext=PDF&ObjID=24496&ObjLa=1&ObjSvrID=698",
+    "source_label_crosscheck": "https://www.magdeburg.de/loadDocument.phtml?Ext=PDF&ObjID=22655&ObjLa=1&ObjSvrID=698",
+    "current_id_validation": "https://www.magdeburg.de/loadDocument.phtml?Ext=PDF&ObjID=23752&ObjLa=1&ObjSvrID=698",
+    "attribution": "Landeshauptstadt Magdeburg, Amt für Statistik, Wahlen und Digitalisierung",
+    "note": "Exact vector paths from the official 2026 map. PDF page coordinates, NOT longitude/latitude. IDs recovered from official 2025 PDF only after equivalent-shape matching; all 148 polygons match at IoU >0.99997 after uniform scaling/translation. No 2025 geometry used in output."
+  },
+  "transform_2025_to_2026": [
+    0.7127470824816307,
+    0,
+    0,
+    0.7127470924962838,
+    -2.5895758407399683,
+    -0.9385282887481026
+  ],
+  "mappings": [
+    {
+      "wahlbezirk": "2001",
+      "draw_index_2026": 6,
+      "draw_index_2025": 2,
+      "iou": 0.9999969331248576,
+      "label_draw_index_2025": 306,
+      "centroid_anchor_residual_pdf_pt": 0.4815899919646622
+    },
+    {
+      "wahlbezirk": "2002",
+      "draw_index_2026": 7,
+      "draw_index_2025": 4,
+      "iou": 0.999993976071017,
+      "label_draw_index_2025": 307,
+      "centroid_anchor_residual_pdf_pt": 0.4815874402914633
+    },
+    {
+      "wahlbezirk": "2204",
+      "draw_index_2026": 8,
+      "draw_index_2025": 228,
+      "iou": 0.999994688180364,
+      "label_draw_index_2025": 418,
+      "centroid_anchor_residual_pdf_pt": 0.48157509629053324
+    },
+    {
+      "wahlbezirk": "2211",
+      "draw_index_2026": 9,
+      "draw_index_2025": 226,
+      "iou": 0.9999959809463541,
+      "label_draw_index_2025": 453,
+      "centroid_anchor_residual_pdf_pt": 0.051266061041390504
+    },
+    {
+      "wahlbezirk": "2003",
+      "draw_index_2026": 10,
+      "draw_index_2025": 6,
+      "iou": 0.9999984412330964,
+      "label_draw_index_2025": 308,
+      "centroid_anchor_residual_pdf_pt": 0.48159529173304855
+    },
+    {
+      "wahlbezirk": "2215",
+      "draw_index_2026": 11,
+      "draw_index_2025": 8,
+      "iou": 0.9999967241759119,
+      "label_draw_index_2025": 309,
+      "centroid_anchor_residual_pdf_pt": 0.4815825765237193
+    },
+    {
+      "wahlbezirk": "1801",
+      "draw_index_2026": 12,
+      "draw_index_2025": 10,
+      "iou": 0.9999938177504589,
+      "label_draw_index_2025": 310,
+      "centroid_anchor_residual_pdf_pt": 0.005131829325127285
+    },
+    {
+      "wahlbezirk": "1802",
+      "draw_index_2026": 13,
+      "draw_index_2025": 12,
+      "iou": 0.9999949735046004,
+      "label_draw_index_2025": 311,
+      "centroid_anchor_residual_pdf_pt": 0.00511744754393009
+    },
+    {
+      "wahlbezirk": "0802",
+      "draw_index_2026": 14,
+      "draw_index_2025": 222,
+      "iou": 0.9999853551319604,
+      "label_draw_index_2025": 416,
+      "centroid_anchor_residual_pdf_pt": 0.3298704996270058
+    },
+    {
+      "wahlbezirk": "0806",
+      "draw_index_2026": 15,
+      "draw_index_2025": 14,
+      "iou": 0.9999834504322809,
+      "label_draw_index_2025": 312,
+      "centroid_anchor_residual_pdf_pt": 0.3298367700902278
+    },
+    {
+      "wahlbezirk": "0804",
+      "draw_index_2026": 16,
+      "draw_index_2025": 224,
+      "iou": 0.999996024354464,
+      "label_draw_index_2025": 417,
+      "centroid_anchor_residual_pdf_pt": 0.32985939403959186
+    },
+    {
+      "wahlbezirk": "0609",
+      "draw_index_2026": 17,
+      "draw_index_2025": 16,
+      "iou": 0.9999906154487584,
+      "label_draw_index_2025": 313,
+      "centroid_anchor_residual_pdf_pt": 0.3298809365763896
+    },
+    {
+      "wahlbezirk": "0610",
+      "draw_index_2026": 18,
+      "draw_index_2025": 18,
+      "iou": 0.999986940101872,
+      "label_draw_index_2025": 314,
+      "centroid_anchor_residual_pdf_pt": 0.3298267335832932
+    },
+    {
+      "wahlbezirk": "1209",
+      "draw_index_2026": 19,
+      "draw_index_2025": 20,
+      "iou": 0.9999875889557561,
+      "label_draw_index_2025": 315,
+      "centroid_anchor_residual_pdf_pt": 0.005128562380731937
+    },
+    {
+      "wahlbezirk": "1205",
+      "draw_index_2026": 20,
+      "draw_index_2025": 22,
+      "iou": 0.9999923863167249,
+      "label_draw_index_2025": 316,
+      "centroid_anchor_residual_pdf_pt": 0.002938989050108249
+    },
+    {
+      "wahlbezirk": "1203",
+      "draw_index_2026": 21,
+      "draw_index_2025": 24,
+      "iou": 0.9999922270097809,
+      "label_draw_index_2025": 317,
+      "centroid_anchor_residual_pdf_pt": 0.0029930352373430448
+    },
+    {
+      "wahlbezirk": "0402",
+      "draw_index_2026": 22,
+      "draw_index_2025": 26,
+      "iou": 0.999994994911853,
+      "label_draw_index_2025": 318,
+      "centroid_anchor_residual_pdf_pt": 0.32982999328375706
+    },
+    {
+      "wahlbezirk": "0405",
+      "draw_index_2026": 23,
+      "draw_index_2025": 28,
+      "iou": 0.9999935461419351,
+      "label_draw_index_2025": 319,
+      "centroid_anchor_residual_pdf_pt": 0.3298512180149322
+    },
+    {
+      "wahlbezirk": "0403",
+      "draw_index_2026": 24,
+      "draw_index_2025": 30,
+      "iou": 0.9999859312891223,
+      "label_draw_index_2025": 320,
+      "centroid_anchor_residual_pdf_pt": 0.3298274936323271
+    },
+    {
+      "wahlbezirk": "0404",
+      "draw_index_2026": 25,
+      "draw_index_2025": 32,
+      "iou": 0.999989882955998,
+      "label_draw_index_2025": 321,
+      "centroid_anchor_residual_pdf_pt": 0.32983244282257446
+    },
+    {
+      "wahlbezirk": "0401",
+      "draw_index_2026": 26,
+      "draw_index_2025": 34,
+      "iou": 0.9999939627056033,
+      "label_draw_index_2025": 322,
+      "centroid_anchor_residual_pdf_pt": 0.32982681797925856
+    },
+    {
+      "wahlbezirk": "0104",
+      "draw_index_2026": 27,
+      "draw_index_2025": 36,
+      "iou": 0.9999936720753431,
+      "label_draw_index_2025": 323,
+      "centroid_anchor_residual_pdf_pt": 0.3298262677126158
+    },
+    {
+      "wahlbezirk": "0103",
+      "draw_index_2026": 28,
+      "draw_index_2025": 38,
+      "iou": 0.9999926196052833,
+      "label_draw_index_2025": 324,
+      "centroid_anchor_residual_pdf_pt": 0.329808681267669
+    },
+    {
+      "wahlbezirk": "0102",
+      "draw_index_2026": 29,
+      "draw_index_2025": 40,
+      "iou": 0.9999920331309392,
+      "label_draw_index_2025": 325,
+      "centroid_anchor_residual_pdf_pt": 0.3298441532552079
+    },
+    {
+      "wahlbezirk": "0101",
+      "draw_index_2026": 30,
+      "draw_index_2025": 42,
+      "iou": 0.9999955502278527,
+      "label_draw_index_2025": 326,
+      "centroid_anchor_residual_pdf_pt": 0.32983985662695503
+    },
+    {
+      "wahlbezirk": "0105",
+      "draw_index_2026": 31,
+      "draw_index_2025": 44,
+      "iou": 0.999993702425552,
+      "label_draw_index_2025": 327,
+      "centroid_anchor_residual_pdf_pt": 0.3298542179217415
+    },
+    {
+      "wahlbezirk": "2404",
+      "draw_index_2026": 32,
+      "draw_index_2025": 46,
+      "iou": 0.9999936926915396,
+      "label_draw_index_2025": 328,
+      "centroid_anchor_residual_pdf_pt": 0.4815983472337979
+    },
+    {
+      "wahlbezirk": "2403",
+      "draw_index_2026": 33,
+      "draw_index_2025": 48,
+      "iou": 0.999992910985864,
+      "label_draw_index_2025": 329,
+      "centroid_anchor_residual_pdf_pt": 0.48161139749169046
+    },
+    {
+      "wahlbezirk": "2408",
+      "draw_index_2026": 34,
+      "draw_index_2025": 50,
+      "iou": 0.999993319527703,
+      "label_draw_index_2025": 330,
+      "centroid_anchor_residual_pdf_pt": 0.48161331045061273
+    },
+    {
+      "wahlbezirk": "2405",
+      "draw_index_2026": 35,
+      "draw_index_2025": 52,
+      "iou": 0.9999899757345794,
+      "label_draw_index_2025": 331,
+      "centroid_anchor_residual_pdf_pt": 0.4815950081902841
+    },
+    {
+      "wahlbezirk": "2407",
+      "draw_index_2026": 36,
+      "draw_index_2025": 54,
+      "iou": 0.9999939796267563,
+      "label_draw_index_2025": 332,
+      "centroid_anchor_residual_pdf_pt": 0.48158102058395025
+    },
+    {
+      "wahlbezirk": "2409",
+      "draw_index_2026": 37,
+      "draw_index_2025": 56,
+      "iou": 0.9999921654993826,
+      "label_draw_index_2025": 333,
+      "centroid_anchor_residual_pdf_pt": 0.48163797244154555
+    },
+    {
+      "wahlbezirk": "2410",
+      "draw_index_2026": 38,
+      "draw_index_2025": 58,
+      "iou": 0.9999944847688146,
+      "label_draw_index_2025": 334,
+      "centroid_anchor_residual_pdf_pt": 0.48156136103921354
+    },
+    {
+      "wahlbezirk": "2609",
+      "draw_index_2026": 39,
+      "draw_index_2025": 60,
+      "iou": 0.9999975561669738,
+      "label_draw_index_2025": 335,
+      "centroid_anchor_residual_pdf_pt": 0.4816144316769224
+    },
+    {
+      "wahlbezirk": "6401",
+      "draw_index_2026": 40,
+      "draw_index_2025": 62,
+      "iou": 0.9999979882453006,
+      "label_draw_index_2025": 336,
+      "centroid_anchor_residual_pdf_pt": 0.3254914838564749
+    },
+    {
+      "wahlbezirk": "5202",
+      "draw_index_2026": 41,
+      "draw_index_2025": 64,
+      "iou": 0.9999956435731981,
+      "label_draw_index_2025": 337,
+      "centroid_anchor_residual_pdf_pt": 0.3081638241360843
+    },
+    {
+      "wahlbezirk": "5601",
+      "draw_index_2026": 42,
+      "draw_index_2025": 66,
+      "iou": 0.999994746982829,
+      "label_draw_index_2025": 338,
+      "centroid_anchor_residual_pdf_pt": 0.3081707043050315
+    },
+    {
+      "wahlbezirk": "5602",
+      "draw_index_2026": 43,
+      "draw_index_2025": 68,
+      "iou": 0.9999935324598171,
+      "label_draw_index_2025": 339,
+      "centroid_anchor_residual_pdf_pt": 0.3081485615969306
+    },
+    {
+      "wahlbezirk": "5603",
+      "draw_index_2026": 44,
+      "draw_index_2025": 70,
+      "iou": 0.9999953771454753,
+      "label_draw_index_2025": 340,
+      "centroid_anchor_residual_pdf_pt": 0.3081751396842311
+    },
+    {
+      "wahlbezirk": "5401",
+      "draw_index_2026": 45,
+      "draw_index_2025": 72,
+      "iou": 0.9999951778160209,
+      "label_draw_index_2025": 341,
+      "centroid_anchor_residual_pdf_pt": 0.30815329019573146
+    },
+    {
+      "wahlbezirk": "5605",
+      "draw_index_2026": 46,
+      "draw_index_2025": 74,
+      "iou": 0.9999943121664534,
+      "label_draw_index_2025": 342,
+      "centroid_anchor_residual_pdf_pt": 0.30815674316226055
+    },
+    {
+      "wahlbezirk": "5604",
+      "draw_index_2026": 47,
+      "draw_index_2025": 76,
+      "iou": 0.9999930153592504,
+      "label_draw_index_2025": 343,
+      "centroid_anchor_residual_pdf_pt": 0.3081677094785307
+    },
+    {
+      "wahlbezirk": "5402",
+      "draw_index_2026": 48,
+      "draw_index_2025": 78,
+      "iou": 0.9999978077412358,
+      "label_draw_index_2025": 344,
+      "centroid_anchor_residual_pdf_pt": 0.30815369513328295
+    },
+    {
+      "wahlbezirk": "0106",
+      "draw_index_2026": 49,
+      "draw_index_2025": 80,
+      "iou": 0.999995590563446,
+      "label_draw_index_2025": 345,
+      "centroid_anchor_residual_pdf_pt": 0.3298477139847065
+    },
+    {
+      "wahlbezirk": "0108",
+      "draw_index_2026": 50,
+      "draw_index_2025": 82,
+      "iou": 0.9999920037712388,
+      "label_draw_index_2025": 346,
+      "centroid_anchor_residual_pdf_pt": 0.32989213271973006
+    },
+    {
+      "wahlbezirk": "0110",
+      "draw_index_2026": 51,
+      "draw_index_2025": 84,
+      "iou": 0.9999841718936044,
+      "label_draw_index_2025": 448,
+      "centroid_anchor_residual_pdf_pt": 0.15025039386128536
+    },
+    {
+      "wahlbezirk": "0107",
+      "draw_index_2026": 52,
+      "draw_index_2025": 86,
+      "iou": 0.9999968232152439,
+      "label_draw_index_2025": 348,
+      "centroid_anchor_residual_pdf_pt": 0.32982338042875675
+    },
+    {
+      "wahlbezirk": "2401",
+      "draw_index_2026": 53,
+      "draw_index_2025": 88,
+      "iou": 0.9999948457200946,
+      "label_draw_index_2025": 349,
+      "centroid_anchor_residual_pdf_pt": 0.48159836799460337
+    },
+    {
+      "wahlbezirk": "2415",
+      "draw_index_2026": 54,
+      "draw_index_2025": 90,
+      "iou": 0.9999919849142569,
+      "label_draw_index_2025": 350,
+      "centroid_anchor_residual_pdf_pt": 0.48161901604525276
+    },
+    {
+      "wahlbezirk": "2402",
+      "draw_index_2026": 55,
+      "draw_index_2025": 92,
+      "iou": 0.9999947019969855,
+      "label_draw_index_2025": 351,
+      "centroid_anchor_residual_pdf_pt": 0.48160405793996436
+    },
+    {
+      "wahlbezirk": "2606",
+      "draw_index_2026": 56,
+      "draw_index_2025": 94,
+      "iou": 0.9999953910285869,
+      "label_draw_index_2025": 352,
+      "centroid_anchor_residual_pdf_pt": 0.48160862735038457
+    },
+    {
+      "wahlbezirk": "2411",
+      "draw_index_2026": 57,
+      "draw_index_2025": 96,
+      "iou": 0.9999937128031515,
+      "label_draw_index_2025": 449,
+      "centroid_anchor_residual_pdf_pt": 0.05125421541413764
+    },
+    {
+      "wahlbezirk": "2412",
+      "draw_index_2026": 58,
+      "draw_index_2025": 98,
+      "iou": 0.9999927702603038,
+      "label_draw_index_2025": 354,
+      "centroid_anchor_residual_pdf_pt": 0.4843213606276278
+    },
+    {
+      "wahlbezirk": "2413",
+      "draw_index_2026": 59,
+      "draw_index_2025": 100,
+      "iou": 0.999991181722574,
+      "label_draw_index_2025": 355,
+      "centroid_anchor_residual_pdf_pt": 0.4815751985139908
+    },
+    {
+      "wahlbezirk": "2416",
+      "draw_index_2026": 60,
+      "draw_index_2025": 102,
+      "iou": 0.9999924042662087,
+      "label_draw_index_2025": 356,
+      "centroid_anchor_residual_pdf_pt": 0.4815936642001188
+    },
+    {
+      "wahlbezirk": "2604",
+      "draw_index_2026": 61,
+      "draw_index_2025": 104,
+      "iou": 0.999994189717558,
+      "label_draw_index_2025": 357,
+      "centroid_anchor_residual_pdf_pt": 0.4815818130207047
+    },
+    {
+      "wahlbezirk": "2802",
+      "draw_index_2026": 62,
+      "draw_index_2025": 230,
+      "iou": 0.9999987670356599,
+      "label_draw_index_2025": 419,
+      "centroid_anchor_residual_pdf_pt": 0.4816068101615342
+    },
+    {
+      "wahlbezirk": "2602",
+      "draw_index_2026": 63,
+      "draw_index_2025": 106,
+      "iou": 0.9999948085962062,
+      "label_draw_index_2025": 358,
+      "centroid_anchor_residual_pdf_pt": 0.4815950838314477
+    },
+    {
+      "wahlbezirk": "2605",
+      "draw_index_2026": 64,
+      "draw_index_2025": 108,
+      "iou": 0.9999963895511897,
+      "label_draw_index_2025": 359,
+      "centroid_anchor_residual_pdf_pt": 0.4815898648643418
+    },
+    {
+      "wahlbezirk": "2414",
+      "draw_index_2026": 65,
+      "draw_index_2025": 110,
+      "iou": 0.9999963579384294,
+      "label_draw_index_2025": 360,
+      "centroid_anchor_residual_pdf_pt": 0.4843085890122436
+    },
+    {
+      "wahlbezirk": "0109",
+      "draw_index_2026": 66,
+      "draw_index_2025": 112,
+      "iou": 0.9999945846108703,
+      "label_draw_index_2025": 361,
+      "centroid_anchor_residual_pdf_pt": 0.3298669754587554
+    },
+    {
+      "wahlbezirk": "4401",
+      "draw_index_2026": 67,
+      "draw_index_2025": 114,
+      "iou": 0.9999951087190313,
+      "label_draw_index_2025": 362,
+      "centroid_anchor_residual_pdf_pt": 0.5379285272957549
+    },
+    {
+      "wahlbezirk": "3001",
+      "draw_index_2026": 68,
+      "draw_index_2025": 116,
+      "iou": 0.9999971878955625,
+      "label_draw_index_2025": 363,
+      "centroid_anchor_residual_pdf_pt": 0.36887266237450844
+    },
+    {
+      "wahlbezirk": "3003",
+      "draw_index_2026": 69,
+      "draw_index_2025": 118,
+      "iou": 0.9999946994770604,
+      "label_draw_index_2025": 364,
+      "centroid_anchor_residual_pdf_pt": 0.3688316734572519
+    },
+    {
+      "wahlbezirk": "3004",
+      "draw_index_2026": 70,
+      "draw_index_2025": 120,
+      "iou": 0.9999964373220455,
+      "label_draw_index_2025": 365,
+      "centroid_anchor_residual_pdf_pt": 0.3688619910584893
+    },
+    {
+      "wahlbezirk": "3002",
+      "draw_index_2026": 71,
+      "draw_index_2025": 122,
+      "iou": 0.9999958525403898,
+      "label_draw_index_2025": 366,
+      "centroid_anchor_residual_pdf_pt": 0.3688360381095638
+    },
+    {
+      "wahlbezirk": "3009",
+      "draw_index_2026": 72,
+      "draw_index_2025": 124,
+      "iou": 0.9999973784144705,
+      "label_draw_index_2025": 367,
+      "centroid_anchor_residual_pdf_pt": 0.36887329348418807
+    },
+    {
+      "wahlbezirk": "3202",
+      "draw_index_2026": 73,
+      "draw_index_2025": 126,
+      "iou": 0.99999698146854,
+      "label_draw_index_2025": 368,
+      "centroid_anchor_residual_pdf_pt": 0.36885339976984705
+    },
+    {
+      "wahlbezirk": "3207",
+      "draw_index_2026": 74,
+      "draw_index_2025": 128,
+      "iou": 0.9999953486203568,
+      "label_draw_index_2025": 369,
+      "centroid_anchor_residual_pdf_pt": 0.36885254549664354
+    },
+    {
+      "wahlbezirk": "3011",
+      "draw_index_2026": 75,
+      "draw_index_2025": 130,
+      "iou": 0.9999963396367171,
+      "label_draw_index_2025": 450,
+      "centroid_anchor_residual_pdf_pt": 0.11121208888154467
+    },
+    {
+      "wahlbezirk": "3201",
+      "draw_index_2026": 76,
+      "draw_index_2025": 132,
+      "iou": 0.9999973081262475,
+      "label_draw_index_2025": 371,
+      "centroid_anchor_residual_pdf_pt": 0.36886643745865644
+    },
+    {
+      "wahlbezirk": "3010",
+      "draw_index_2026": 77,
+      "draw_index_2025": 134,
+      "iou": 0.9999969298550413,
+      "label_draw_index_2025": 372,
+      "centroid_anchor_residual_pdf_pt": 0.3688707490986136
+    },
+    {
+      "wahlbezirk": "3601",
+      "draw_index_2026": 78,
+      "draw_index_2025": 136,
+      "iou": 0.9999963919495624,
+      "label_draw_index_2025": 373,
+      "method": "unique remaining principal polygon after 147 unambiguous centroid matches"
+    },
+    {
+      "wahlbezirk": "4402",
+      "draw_index_2026": 79,
+      "draw_index_2025": 138,
+      "iou": 0.9999932752070576,
+      "label_draw_index_2025": 374,
+      "centroid_anchor_residual_pdf_pt": 0.5379590869945546
+    },
+    {
+      "wahlbezirk": "4403",
+      "draw_index_2026": 80,
+      "draw_index_2025": 140,
+      "iou": 0.9999971534013297,
+      "label_draw_index_2025": 375,
+      "centroid_anchor_residual_pdf_pt": 0.5379461753571655
+    },
+    {
+      "wahlbezirk": "3605",
+      "draw_index_2026": 81,
+      "draw_index_2025": 142,
+      "iou": 0.9999963924650658,
+      "label_draw_index_2025": 376,
+      "centroid_anchor_residual_pdf_pt": 0.3688591744128465
+    },
+    {
+      "wahlbezirk": "3606",
+      "draw_index_2026": 82,
+      "draw_index_2025": 144,
+      "iou": 0.9999914583500606,
+      "label_draw_index_2025": 377,
+      "centroid_anchor_residual_pdf_pt": 0.36885666918683735
+    },
+    {
+      "wahlbezirk": "3801",
+      "draw_index_2026": 83,
+      "draw_index_2025": 234,
+      "iou": 0.999993299002756,
+      "label_draw_index_2025": 421,
+      "centroid_anchor_residual_pdf_pt": 0.3688710714579499
+    },
+    {
+      "wahlbezirk": "3802",
+      "draw_index_2026": 84,
+      "draw_index_2025": 232,
+      "iou": 0.999995733786493,
+      "label_draw_index_2025": 420,
+      "centroid_anchor_residual_pdf_pt": 0.36888024892412674
+    },
+    {
+      "wahlbezirk": "3607",
+      "draw_index_2026": 85,
+      "draw_index_2025": 146,
+      "iou": 0.9999905237213201,
+      "label_draw_index_2025": 378,
+      "centroid_anchor_residual_pdf_pt": 0.3688770847046358
+    },
+    {
+      "wahlbezirk": "4002",
+      "draw_index_2026": 86,
+      "draw_index_2025": 148,
+      "iou": 0.9999950186579581,
+      "label_draw_index_2025": 379,
+      "centroid_anchor_residual_pdf_pt": 0.5379737459172024
+    },
+    {
+      "wahlbezirk": "3809",
+      "draw_index_2026": 87,
+      "draw_index_2025": 150,
+      "iou": 0.9999911560267075,
+      "label_draw_index_2025": 380,
+      "centroid_anchor_residual_pdf_pt": 0.3688523324031232
+    },
+    {
+      "wahlbezirk": "3804",
+      "draw_index_2026": 88,
+      "draw_index_2025": 152,
+      "iou": 0.999995306051676,
+      "label_draw_index_2025": 381,
+      "centroid_anchor_residual_pdf_pt": 0.3688654057287226
+    },
+    {
+      "wahlbezirk": "4001",
+      "draw_index_2026": 89,
+      "draw_index_2025": 154,
+      "iou": 0.9999954673950266,
+      "label_draw_index_2025": 382,
+      "centroid_anchor_residual_pdf_pt": 0.5379780449957814
+    },
+    {
+      "wahlbezirk": "3204",
+      "draw_index_2026": 90,
+      "draw_index_2025": 156,
+      "iou": 0.9999971544298847,
+      "label_draw_index_2025": 383,
+      "centroid_anchor_residual_pdf_pt": 0.368844642523022
+    },
+    {
+      "wahlbezirk": "3203",
+      "draw_index_2026": 91,
+      "draw_index_2025": 158,
+      "iou": 0.9999958121989915,
+      "label_draw_index_2025": 384,
+      "centroid_anchor_residual_pdf_pt": 0.3688616574477873
+    },
+    {
+      "wahlbezirk": "4802",
+      "draw_index_2026": 92,
+      "draw_index_2025": 160,
+      "iou": 0.999995656544372,
+      "label_draw_index_2025": 385,
+      "centroid_anchor_residual_pdf_pt": 0.537962228366603
+    },
+    {
+      "wahlbezirk": "4801",
+      "draw_index_2026": 93,
+      "draw_index_2025": 162,
+      "iou": 0.9999940606135657,
+      "label_draw_index_2025": 386,
+      "centroid_anchor_residual_pdf_pt": 0.537983315693371
+    },
+    {
+      "wahlbezirk": "7801",
+      "draw_index_2026": 94,
+      "draw_index_2025": 164,
+      "iou": 0.9999981234107483,
+      "label_draw_index_2025": 387,
+      "centroid_anchor_residual_pdf_pt": 0.32551883777442525
+    },
+    {
+      "wahlbezirk": "4803",
+      "draw_index_2026": 95,
+      "draw_index_2025": 166,
+      "iou": 0.9999977214622745,
+      "label_draw_index_2025": 388,
+      "centroid_anchor_residual_pdf_pt": 0.537969853128817
+    },
+    {
+      "wahlbezirk": "7802",
+      "draw_index_2026": 96,
+      "draw_index_2025": 168,
+      "iou": 0.9999975140722764,
+      "label_draw_index_2025": 389,
+      "centroid_anchor_residual_pdf_pt": 0.32549891969997163
+    },
+    {
+      "wahlbezirk": "7401",
+      "draw_index_2026": 97,
+      "draw_index_2025": 236,
+      "iou": 0.9999963894094686,
+      "label_draw_index_2025": 422,
+      "centroid_anchor_residual_pdf_pt": 0.3255428399257752
+    },
+    {
+      "wahlbezirk": "0202",
+      "draw_index_2026": 98,
+      "draw_index_2025": 170,
+      "iou": 0.9999977977560117,
+      "label_draw_index_2025": 390,
+      "centroid_anchor_residual_pdf_pt": 0.3298250956868851
+    },
+    {
+      "wahlbezirk": "5201",
+      "draw_index_2026": 99,
+      "draw_index_2025": 172,
+      "iou": 0.9999960709078315,
+      "label_draw_index_2025": 391,
+      "centroid_anchor_residual_pdf_pt": 0.3081713249391998
+    },
+    {
+      "wahlbezirk": "0601",
+      "draw_index_2026": 100,
+      "draw_index_2025": 174,
+      "iou": 0.9999966125661589,
+      "label_draw_index_2025": 392,
+      "centroid_anchor_residual_pdf_pt": 0.3298318916160015
+    },
+    {
+      "wahlbezirk": "0406",
+      "draw_index_2026": 101,
+      "draw_index_2025": 176,
+      "iou": 0.9999954787558387,
+      "label_draw_index_2025": 393,
+      "centroid_anchor_residual_pdf_pt": 0.3298456883899345
+    },
+    {
+      "wahlbezirk": "0201",
+      "draw_index_2026": 102,
+      "draw_index_2025": 178,
+      "iou": 0.9999946891874462,
+      "label_draw_index_2025": 394,
+      "centroid_anchor_residual_pdf_pt": 0.3298227896854154
+    },
+    {
+      "wahlbezirk": "3604",
+      "draw_index_2026": 103,
+      "draw_index_2025": 180,
+      "iou": 0.9999944576328906,
+      "label_draw_index_2025": 395,
+      "centroid_anchor_residual_pdf_pt": 0.3688441331501678
+    },
+    {
+      "wahlbezirk": "3603",
+      "draw_index_2026": 104,
+      "draw_index_2025": 182,
+      "iou": 0.999995906225489,
+      "label_draw_index_2025": 396,
+      "centroid_anchor_residual_pdf_pt": 0.3688580547020104
+    },
+    {
+      "wahlbezirk": "3005",
+      "draw_index_2026": 105,
+      "draw_index_2025": 184,
+      "iou": 0.9999981243531351,
+      "label_draw_index_2025": 397,
+      "centroid_anchor_residual_pdf_pt": 0.3688678224776301
+    },
+    {
+      "wahlbezirk": "2601",
+      "draw_index_2026": 106,
+      "draw_index_2025": 186,
+      "iou": 0.9999955698267282,
+      "label_draw_index_2025": 398,
+      "centroid_anchor_residual_pdf_pt": 0.48157587525075707
+    },
+    {
+      "wahlbezirk": "5802",
+      "draw_index_2026": 107,
+      "draw_index_2025": 188,
+      "iou": 0.9999977595154799,
+      "label_draw_index_2025": 399,
+      "centroid_anchor_residual_pdf_pt": 0.3081342266623007
+    },
+    {
+      "wahlbezirk": "3602",
+      "draw_index_2026": 108,
+      "draw_index_2025": 190,
+      "iou": 0.9999910400053137,
+      "label_draw_index_2025": 400,
+      "centroid_anchor_residual_pdf_pt": 0.3688693143526405
+    },
+    {
+      "wahlbezirk": "1803",
+      "draw_index_2026": 109,
+      "draw_index_2025": 192,
+      "iou": 0.9999967918748853,
+      "label_draw_index_2025": 401,
+      "centroid_anchor_residual_pdf_pt": 0.005169869235571147
+    },
+    {
+      "wahlbezirk": "2406",
+      "draw_index_2026": 110,
+      "draw_index_2025": 194,
+      "iou": 0.999993362397764,
+      "label_draw_index_2025": 402,
+      "centroid_anchor_residual_pdf_pt": 0.48157351822234273
+    },
+    {
+      "wahlbezirk": "5801",
+      "draw_index_2026": 111,
+      "draw_index_2025": 196,
+      "iou": 0.9999979824232678,
+      "label_draw_index_2025": 403,
+      "centroid_anchor_residual_pdf_pt": 0.30818807423608235
+    },
+    {
+      "wahlbezirk": "3206",
+      "draw_index_2026": 112,
+      "draw_index_2025": 198,
+      "iou": 0.999997468708071,
+      "label_draw_index_2025": 404,
+      "centroid_anchor_residual_pdf_pt": 0.3688540390556271
+    },
+    {
+      "wahlbezirk": "3205",
+      "draw_index_2026": 113,
+      "draw_index_2025": 200,
+      "iou": 0.9999990477795417,
+      "label_draw_index_2025": 405,
+      "centroid_anchor_residual_pdf_pt": 0.3688556943504399
+    },
+    {
+      "wahlbezirk": "2607",
+      "draw_index_2026": 114,
+      "draw_index_2025": 202,
+      "iou": 0.999993871825632,
+      "label_draw_index_2025": 406,
+      "centroid_anchor_residual_pdf_pt": 0.48157959819856383
+    },
+    {
+      "wahlbezirk": "2603",
+      "draw_index_2026": 115,
+      "draw_index_2025": 204,
+      "iou": 0.9999974613666638,
+      "label_draw_index_2025": 407,
+      "centroid_anchor_residual_pdf_pt": 0.48157326365780645
+    },
+    {
+      "wahlbezirk": "2610",
+      "draw_index_2026": 116,
+      "draw_index_2025": 250,
+      "iou": 0.9999973101668226,
+      "label_draw_index_2025": 425,
+      "centroid_anchor_residual_pdf_pt": 0.4815763248290638
+    },
+    {
+      "wahlbezirk": "2611",
+      "draw_index_2026": 117,
+      "draw_index_2025": 252,
+      "iou": 0.9999956349326433,
+      "label_draw_index_2025": 452,
+      "centroid_anchor_residual_pdf_pt": 0.0033494860126046717
+    },
+    {
+      "wahlbezirk": "0807",
+      "draw_index_2026": 118,
+      "draw_index_2025": 212,
+      "iou": 0.999996636141216,
+      "label_draw_index_2025": 411,
+      "centroid_anchor_residual_pdf_pt": 0.3298583458811929
+    },
+    {
+      "wahlbezirk": "1001",
+      "draw_index_2026": 119,
+      "draw_index_2025": 214,
+      "iou": 0.9999860716513416,
+      "label_draw_index_2025": 412,
+      "centroid_anchor_residual_pdf_pt": 0.002952302512721427
+    },
+    {
+      "wahlbezirk": "0801",
+      "draw_index_2026": 120,
+      "draw_index_2025": 246,
+      "iou": 0.9999859764613901,
+      "label_draw_index_2025": 423,
+      "centroid_anchor_residual_pdf_pt": 0.3298513475141381
+    },
+    {
+      "wahlbezirk": "0606",
+      "draw_index_2026": 121,
+      "draw_index_2025": 210,
+      "iou": 0.9999937059586765,
+      "label_draw_index_2025": 410,
+      "centroid_anchor_residual_pdf_pt": 0.32983460678557164
+    },
+    {
+      "wahlbezirk": "0604",
+      "draw_index_2026": 122,
+      "draw_index_2025": 208,
+      "iou": 0.9999963579593985,
+      "label_draw_index_2025": 409,
+      "centroid_anchor_residual_pdf_pt": 0.329821753194973
+    },
+    {
+      "wahlbezirk": "1201",
+      "draw_index_2026": 123,
+      "draw_index_2025": 216,
+      "iou": 0.9999936046771217,
+      "label_draw_index_2025": 413,
+      "centroid_anchor_residual_pdf_pt": 0.00298182463413659
+    },
+    {
+      "wahlbezirk": "3006",
+      "draw_index_2026": 124,
+      "draw_index_2025": 248,
+      "iou": 0.9999968206745231,
+      "label_draw_index_2025": 424,
+      "centroid_anchor_residual_pdf_pt": 0.3688572451034148
+    },
+    {
+      "wahlbezirk": "3803",
+      "draw_index_2026": 125,
+      "draw_index_2025": 220,
+      "iou": 0.9999916765638533,
+      "label_draw_index_2025": 415,
+      "centroid_anchor_residual_pdf_pt": 0.3688846372371252
+    },
+    {
+      "wahlbezirk": "3608",
+      "draw_index_2026": 126,
+      "draw_index_2025": 218,
+      "iou": 0.9999938216414589,
+      "label_draw_index_2025": 414,
+      "centroid_anchor_residual_pdf_pt": 0.3688720314183125
+    },
+    {
+      "wahlbezirk": "3805",
+      "draw_index_2026": 127,
+      "draw_index_2025": 256,
+      "iou": 0.9999963648847173,
+      "label_draw_index_2025": 427,
+      "centroid_anchor_residual_pdf_pt": 0.3688522915781312
+    },
+    {
+      "wahlbezirk": "4003",
+      "draw_index_2026": 128,
+      "draw_index_2025": 254,
+      "iou": 0.9999985927531652,
+      "label_draw_index_2025": 426,
+      "centroid_anchor_residual_pdf_pt": 0.5379783766101435
+    },
+    {
+      "wahlbezirk": "7601",
+      "draw_index_2026": 129,
+      "draw_index_2025": 206,
+      "iou": 0.9999980436757231,
+      "label_draw_index_2025": 408,
+      "centroid_anchor_residual_pdf_pt": 0.32549234031235763
+    },
+    {
+      "wahlbezirk": "1003",
+      "draw_index_2026": 130,
+      "draw_index_2025": 302,
+      "iou": 0.999997598400285,
+      "label_draw_index_2025": 353,
+      "centroid_anchor_residual_pdf_pt": 0.002961687714898388
+    },
+    {
+      "wahlbezirk": "1005",
+      "draw_index_2026": 131,
+      "draw_index_2025": 304,
+      "iou": 0.999990209808227,
+      "label_draw_index_2025": 370,
+      "centroid_anchor_residual_pdf_pt": 0.002964044818200392
+    },
+    {
+      "wahlbezirk": "3401",
+      "draw_index_2026": 132,
+      "draw_index_2025": 282,
+      "iou": 0.9999951753419479,
+      "label_draw_index_2025": 440,
+      "centroid_anchor_residual_pdf_pt": 0.368860031778184
+    },
+    {
+      "wahlbezirk": "3402",
+      "draw_index_2026": 133,
+      "draw_index_2025": 284,
+      "iou": 0.9999965416722919,
+      "label_draw_index_2025": 441,
+      "centroid_anchor_residual_pdf_pt": 0.36885832040630845
+    },
+    {
+      "wahlbezirk": "3811",
+      "draw_index_2026": 134,
+      "draw_index_2025": 288,
+      "iou": 0.9999850297756366,
+      "label_draw_index_2025": 451,
+      "centroid_anchor_residual_pdf_pt": 0.1112974391986032
+    },
+    {
+      "wahlbezirk": "3807",
+      "draw_index_2026": 135,
+      "draw_index_2025": 286,
+      "iou": 0.9999923965664443,
+      "label_draw_index_2025": 442,
+      "centroid_anchor_residual_pdf_pt": 0.3688814879607769
+    },
+    {
+      "wahlbezirk": "4602",
+      "draw_index_2026": 136,
+      "draw_index_2025": 292,
+      "iou": 0.9999981419568794,
+      "label_draw_index_2025": 444,
+      "centroid_anchor_residual_pdf_pt": 0.5379650958204634
+    },
+    {
+      "wahlbezirk": "4601",
+      "draw_index_2026": 137,
+      "draw_index_2025": 290,
+      "iou": 0.9999966325671866,
+      "label_draw_index_2025": 443,
+      "centroid_anchor_residual_pdf_pt": 0.5379826951073101
+    },
+    {
+      "wahlbezirk": "5002",
+      "draw_index_2026": 138,
+      "draw_index_2025": 296,
+      "iou": 0.999990483032032,
+      "label_draw_index_2025": 446,
+      "centroid_anchor_residual_pdf_pt": 0.30813979912177386
+    },
+    {
+      "wahlbezirk": "5001",
+      "draw_index_2026": 139,
+      "draw_index_2025": 294,
+      "iou": 0.9999976218177706,
+      "label_draw_index_2025": 445,
+      "centroid_anchor_residual_pdf_pt": 0.30814464789101725
+    },
+    {
+      "wahlbezirk": "2801",
+      "draw_index_2026": 140,
+      "draw_index_2025": 278,
+      "iou": 0.9999963327574346,
+      "label_draw_index_2025": 438,
+      "centroid_anchor_residual_pdf_pt": 0.481609113384915
+    },
+    {
+      "wahlbezirk": "2803",
+      "draw_index_2026": 141,
+      "draw_index_2025": 280,
+      "iou": 0.9999990306881856,
+      "label_draw_index_2025": 439,
+      "centroid_anchor_residual_pdf_pt": 0.48160180748865333
+    },
+    {
+      "wahlbezirk": "2201",
+      "draw_index_2026": 142,
+      "draw_index_2025": 270,
+      "iou": 0.999994114257421,
+      "label_draw_index_2025": 434,
+      "centroid_anchor_residual_pdf_pt": 0.4815831529112788
+    },
+    {
+      "wahlbezirk": "2207",
+      "draw_index_2026": 143,
+      "draw_index_2025": 274,
+      "iou": 0.9999913617473865,
+      "label_draw_index_2025": 436,
+      "centroid_anchor_residual_pdf_pt": 0.481599806897099
+    },
+    {
+      "wahlbezirk": "2209",
+      "draw_index_2026": 144,
+      "draw_index_2025": 276,
+      "iou": 0.999996479866068,
+      "label_draw_index_2025": 437,
+      "centroid_anchor_residual_pdf_pt": 0.4816072124478005
+    },
+    {
+      "wahlbezirk": "2203",
+      "draw_index_2026": 145,
+      "draw_index_2025": 272,
+      "iou": 0.9999982467638495,
+      "label_draw_index_2025": 435,
+      "centroid_anchor_residual_pdf_pt": 0.4815917787713005
+    },
+    {
+      "wahlbezirk": "1208",
+      "draw_index_2026": 146,
+      "draw_index_2025": 268,
+      "iou": 0.9999884286823785,
+      "label_draw_index_2025": 433,
+      "centroid_anchor_residual_pdf_pt": 0.005137435186474612
+    },
+    {
+      "wahlbezirk": "1207",
+      "draw_index_2026": 147,
+      "draw_index_2025": 266,
+      "iou": 0.9999932501907765,
+      "label_draw_index_2025": 432,
+      "centroid_anchor_residual_pdf_pt": 0.0029768573902158074
+    },
+    {
+      "wahlbezirk": "0602",
+      "draw_index_2026": 148,
+      "draw_index_2025": 258,
+      "iou": 0.9999890339000738,
+      "label_draw_index_2025": 428,
+      "centroid_anchor_residual_pdf_pt": 0.32984886048646933
+    },
+    {
+      "wahlbezirk": "0603",
+      "draw_index_2026": 149,
+      "draw_index_2025": 260,
+      "iou": 0.9999945818418727,
+      "label_draw_index_2025": 429,
+      "centroid_anchor_residual_pdf_pt": 0.32983094555438003
+    },
+    {
+      "wahlbezirk": "0805",
+      "draw_index_2026": 150,
+      "draw_index_2025": 264,
+      "iou": 0.9999843573516055,
+      "label_draw_index_2025": 431,
+      "centroid_anchor_residual_pdf_pt": 0.32984889619083085
+    },
+    {
+      "wahlbezirk": "0803",
+      "draw_index_2026": 151,
+      "draw_index_2025": 262,
+      "iou": 0.9999765802590103,
+      "label_draw_index_2025": 430,
+      "centroid_anchor_residual_pdf_pt": 0.32987200968585356
+    },
+    {
+      "wahlbezirk": "6601",
+      "draw_index_2026": 152,
+      "draw_index_2025": 298,
+      "iou": 0.9999971222500726,
+      "label_draw_index_2025": 447,
+      "centroid_anchor_residual_pdf_pt": 0.3255095164921441
+    },
+    {
+      "wahlbezirk": "6603",
+      "draw_index_2026": 153,
+      "draw_index_2025": 300,
+      "iou": 0.9999981416458951,
+      "label_draw_index_2025": 347,
+      "centroid_anchor_residual_pdf_pt": 0.325500686821317
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "election": "Landtagswahl Sachsen-Anhalt 2026",
+  "election_date": "2026-09-06",
+  "result_status": "Vorläufiges Ergebnis",
+  "retrieved_at_utc": "2026-09-09T11:42:22.788653+00:00",
+  "source_url": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/downloads/Ergebnisse_WBZ_LT_2026.csv",
+  "sha256": "8e85b855f2ef7ad793cafb787db9b363c565f1ef67e30f25b88ee807a3d4aac8",
+  "normalized_repository_snapshot": "2026-09-07T02:06:28.451306+00:00",
+  "comparison": "All 2661 records and all fields identical to archived source after CSV parsing (byte-level line ending difference).",
+  "geographic_point_source": "https://api.openstreetmap.org/api/0.6/way/1137609885/full.json"
+}

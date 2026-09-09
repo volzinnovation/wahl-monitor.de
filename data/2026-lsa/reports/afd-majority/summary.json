@@ -1,0 +1,30 @@
+{
+  "total_precincts": 2661,
+  "majority_precincts": 1395,
+  "in_person_total": 2150,
+  "in_person_majority": 1395,
+  "postal_total": 511,
+  "postal_majority": 0,
+  "exactly_50_excluded": 17,
+  "municipalities_with_majority_precincts": 211,
+  "municipality_categories": {
+    "ein_teil": 118,
+    "keiner": 7,
+    "alle": 93
+  },
+  "halle_majority": 24,
+  "magdeburg_majority": 30,
+  "exact_majority_polygons_in_city_maps": 54,
+  "other_majority_precincts_shown_as_municipality_counts": 1341,
+  "valid_second_votes": 1315315,
+  "afd_votes": 576037,
+  "threshold": "2 * AfD > valid_second_votes (integer comparison)",
+  "source_csv": "data/2026-lsa/reports/linke-spd-gruene-majority/Ergebnisse_WBZ_LT_2026.csv",
+  "source_sha256": "8e85b855f2ef7ad793cafb787db9b363c565f1ef67e30f25b88ee807a3d4aac8",
+  "checks": {
+    "all_party_sums_equal_denominator": true,
+    "unique_precinct_keys": true,
+    "all_218_municipality_geometries_join": true,
+    "all_274_city_precinct_geometries_join": true
+  }
+}

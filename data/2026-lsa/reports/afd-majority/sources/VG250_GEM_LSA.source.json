@@ -1,0 +1,34 @@
+{
+  "source_name": "Bundesamt für Kartographie und Geodäsie (BKG), VG250 Verwaltungsgebiete 1:250 000",
+  "source_product_url": "https://gdz.bkg.bund.de/index.php/default/open-data/wfs-verwaltungsgebiete-1-250-000-stand-01-01-wfs-vg250.html",
+  "download_url": "https://sgx.geodatenzentrum.de/wfs_vg250?service=WFS&version=2.0.0&request=GetFeature&typenames=vg250_gem&cql_filter=sn_l%3D%2715%27&count=2000&outputFormat=application/json",
+  "downloaded_at_utc": "2026-09-09T19:31:31.066925+00:00",
+  "service_timestamp": "2026-09-09T19:30:42.499Z",
+  "geography_as_of": "2025-01-01",
+  "service_last_update": "2026-02-13",
+  "crs": "EPSG:25832",
+  "feature_granularity": "Gemeinde (municipality); these are not precinct boundaries",
+  "license_name": "Datenlizenz Deutschland – Namensnennung – Version 2.0",
+  "license_url": "https://www.govdata.de/dl-de/by-2-0",
+  "required_attribution": "© BKG 2026 dl-de/by-2-0",
+  "data_sources_url": "https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf",
+  "change_notice": "Auswahl Sachsen-Anhalt. Für die Karte werden Gemeindegrenzen mit Wahlergebnissen verknüpft und eingefärbt.",
+  "sha256": "c99f489bc404efa6da0174029e29ee4f14aad9fc5f102b281fdacccdaae60182",
+  "validation": {
+    "features": 218,
+    "unique_ags": 218,
+    "result_ags_count": 218,
+    "missing_result_ags": [],
+    "extra_geometry_ags": [],
+    "invalid_geometries": [],
+    "empty_geometry_count": 0,
+    "total_area_km2": 20554.165885786868,
+    "union_area_km2": 20554.165885786886,
+    "bounds": [
+      607166.174,
+      5647855.4209,
+      789202.8023,
+      5880148.5667
+    ]
+  }
+}
