@@ -26,3 +26,4 @@ Prepared: `2026-09-08T09:01:56Z`
 - `municipalities.csv`: the 12 Berlin Bezirke as pre-election drill-down entities.
 - `parties.csv`: the 30 party/voter-group entries from the approved number sequence; the source also lists 11 individual candidates.
 - `wahlkreis-status.csv`: all 78 constituencies marked `prestart` until result tracking begins.
+- `reference/2021/party_results.csv`: official 2021 state-wide second-vote totals used as the initial scenario baseline.

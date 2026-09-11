@@ -268,6 +268,56 @@ class CurrentOverviewTests(unittest.TestCase):
                 {"GRÜNE": 1},
             )
 
+    def test_mv_and_berlin_scenarios_start_from_2021_reference_results(self):
+        current_rows = [
+            {"row_key": "state:LAND", "vote_type": "Zweitstimmen", "party_name": "SPD", "votes": "0"},
+        ]
+        reference_rows = [
+            {"area_level": "LAND", "vote_type": "Zweitstimmen", "party_name": "SPD", "votes": "60", "valid_votes": "100"},
+            {"area_level": "LAND", "vote_type": "Zweitstimmen", "party_name": "CDU", "votes": "40", "valid_votes": "100"},
+        ]
+        snapshot = {"gebietsart": "LAND", "valid_votes_zweit": "0", "valid_votes_zweit_2021": "0"}
+
+        def fake_rows(path, delimiter=","):
+            if path.name == "statla_party_results.csv":
+                return current_rows
+            if path.name == "party_results.csv":
+                return reference_rows
+            return []
+
+        with mock.patch.object(scenario_page, "read_csv_rows", side_effect=fake_rows), \
+             mock.patch.object(scenario_page, "land_snapshot", return_value=snapshot):
+            for election_key in ("2026-mv", "2026-be"):
+                baseline = scenario_page.load_party_baseline(SimpleNamespace(election_key=election_key), {})
+                self.assertEqual(baseline["baselineMode"], "reference_2021")
+                self.assertEqual(baseline["validVotes"], 100)
+                self.assertEqual([(row["party"], row["votes"]) for row in baseline["parties"]],
+                                 [("SPD", 60), ("CDU", 40)])
+
+    def test_mv_and_berlin_direct_seats_fall_back_to_2021_winners(self):
+        latest_rows = [
+            {"row_key": "mv:WAHLKREIS:001", "vote_type": "Erststimmen", "party_name": "SPD", "votes": "0"},
+        ]
+        mv_reference_rows = [{"wahlkreisnummer": "1", "winner_first": "CDU"}]
+        berlin_reference_rows = [{"wahlkreisnummer": "1", "winner_first": "DIE LINKE"}]
+
+        def fake_rows(path, delimiter=","):
+            if path.name == "statla_party_results.csv":
+                return latest_rows
+            if path.name == "wahlkreis_summary.csv":
+                return berlin_reference_rows if delimiter == ";" else mv_reference_rows
+            return []
+
+        with mock.patch.object(scenario_page, "read_csv_rows", side_effect=fake_rows):
+            self.assertEqual(
+                scenario_page.load_direct_seat_counts(SimpleNamespace(election_key="2026-mv")),
+                {"CDU": 1},
+            )
+            self.assertEqual(
+                scenario_page.load_direct_seat_counts(SimpleNamespace(election_key="2026-be")),
+                {"Die Linke": 1},
+            )
+
     def test_current_lsa_wahlkreis_leaders_are_counted_as_direct_seats(self):
         rows = [
             {"row_key": "lsa:WAHLKREIS:001", "vote_type": "Erststimmen", "party_name": "AfD", "votes": "70"},

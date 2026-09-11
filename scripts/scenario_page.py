@@ -70,11 +70,11 @@ SEAT_RULES = {
 }
 
 
-def read_csv_rows(path: Path) -> list[dict[str, str]]:
+def read_csv_rows(path: Path, delimiter: str = ",") -> list[dict[str, str]]:
     if not path.exists():
         return []
     with path.open(newline="", encoding="utf-8") as handle:
-        return list(csv.DictReader(handle))
+        return list(csv.DictReader(handle, delimiter=delimiter))
 
 
 def state_code(election_key: str) -> str:
@@ -130,6 +130,26 @@ def land_snapshot() -> dict[str, str]:
     return {}
 
 
+def reference_2021_path(config: core.Config, filename: str) -> Path:
+    return core.ROOT / "data" / config.election_key / "reference" / "2021" / filename
+
+
+def reference_2021_party_rows(config: core.Config) -> list[dict[str, str]]:
+    return read_csv_rows(reference_2021_path(config, "party_results.csv"))
+
+
+def reference_2021_direct_seat_counts(config: core.Config) -> dict[str, int]:
+    state = state_code(config.election_key)
+    delimiter = ";" if state == "be" else ","
+    rows = read_csv_rows(reference_2021_path(config, "wahlkreis_summary.csv"), delimiter=delimiter)
+    counts: dict[str, int] = {}
+    for row in rows:
+        party = core.canonical_party_name(str(row.get("winner_first") or ""), "Erststimmen")
+        if party:
+            counts[party] = counts.get(party, 0) + 1
+    return dict(sorted(counts.items()))
+
+
 def load_party_baseline(config: core.Config, party_colors: dict[str, str]) -> dict[str, Any]:
     rows = land_rows(read_csv_rows(core.LATEST_DIR / "statla_party_results.csv"))
     second_vote_rows = [
@@ -141,9 +161,9 @@ def load_party_baseline(config: core.Config, party_colors: dict[str, str]) -> di
     current_total = core.parse_int(snapshot.get("valid_votes_zweit")) or 0
     reference_total = core.parse_int(snapshot.get("valid_votes_zweit_2021")) or 0
     use_reference = current_total <= 0 and reference_total > 0
-    if not second_vote_rows and state_code(config.election_key) == "lsa":
-        reference_path = core.ROOT / "data" / config.election_key / "reference" / "2021" / "party_results.csv"
-        reference_rows = read_csv_rows(reference_path)
+    reference_rows_loaded = False
+    if current_total <= 0 and state_code(config.election_key) in {"lsa", "mv", "be"}:
+        reference_rows = reference_2021_party_rows(config)
         second_vote_rows = [
             row
             for row in reference_rows
@@ -159,13 +179,14 @@ def load_party_baseline(config: core.Config, party_colors: dict[str, str]) -> di
             0,
         )
         use_reference = bool(second_vote_rows and reference_total > 0)
+        reference_rows_loaded = use_reference
 
     parties: list[dict[str, Any]] = []
     for row in second_vote_rows:
         party = core.canonical_party_name(str(row.get("party_name") or row.get("party_key") or ""), "Zweitstimmen")
         if not party:
             continue
-        vote_field = "votes" if state_code(config.election_key) == "lsa" and use_reference else ("votes_2021" if use_reference else "votes")
+        vote_field = "votes" if reference_rows_loaded else ("votes_2021" if use_reference else "votes")
         votes = core.parse_int(row.get(vote_field)) or 0
         if votes <= 0:
             continue
@@ -228,7 +249,9 @@ def load_direct_seat_counts(config: core.Config) -> dict[str, int]:
         winner_votes, winner_party = max(entries, key=lambda item: (item[0], item[1]))
         if winner_votes > 0:
             counts[winner_party] = counts.get(winner_party, 0) + 1
-    return dict(sorted(counts.items()))
+    if counts:
+        return dict(sorted(counts.items()))
+    return reference_2021_direct_seat_counts(config)
 
 
 def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str, Any]:
