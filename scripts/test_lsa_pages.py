@@ -220,6 +220,54 @@ class CurrentOverviewTests(unittest.TestCase):
         self.assertIn("aktuellen Zweitstimmen", payload["seatNote"])
         self.assertNotIn("97 Sitze", payload["seatNote"])
 
+    def test_mv_and_berlin_use_their_legal_seat_models(self):
+        self.assertEqual(scenario_page.seat_count_for("2026-mv"), 71)
+        self.assertEqual(scenario_page.direct_seat_count_for("2026-mv"), 36)
+        self.assertEqual(scenario_page.allocation_method_for("2026-mv"), "hare_niemeyer")
+        self.assertEqual(scenario_page.seat_count_for("2026-be"), 130)
+        self.assertEqual(scenario_page.direct_seat_count_for("2026-be"), 78)
+        self.assertEqual(scenario_page.allocation_method_for("2026-be"), "hare_niemeyer")
+
+        baseline = {
+            "baselineMode": "none",
+            "validVotes": 0,
+            "reportedPrecincts": 0,
+            "totalPrecincts": 0,
+            "parties": [],
+        }
+        for election_key, exception, rule in (
+            ("2026-mv", False, "mv"),
+            ("2026-be", True, "berlin"),
+        ):
+            with mock.patch.object(scenario_page, "load_party_baseline", return_value=baseline), \
+                 mock.patch.object(scenario_page, "load_direct_seat_counts", return_value={}):
+                payload = scenario_page.build_payload(
+                    SimpleNamespace(election_key=election_key, election_name="state", second_vote_label="Zweitstimmen"),
+                    {},
+                )
+            self.assertEqual(payload["allocationMethod"], "hare_niemeyer")
+            self.assertEqual(payload["thresholdDirectException"], exception)
+            self.assertEqual(payload["compensationRule"], rule)
+            self.assertEqual(payload["seatBasis"], "gesetzliche Ausgangszahl")
+
+    def test_mv_and_berlin_constituency_leaders_are_counted(self):
+        rows = [
+            {"row_key": "mv:WAHLKREIS:001", "vote_type": "Erststimmen", "party_name": "SPD", "votes": "70"},
+            {"row_key": "mv:WAHLKREIS:001", "vote_type": "Erststimmen", "party_name": "CDU", "votes": "30"},
+            {"row_key": "berlin:WAHLKREIS:0101", "vote_type": "Erststimmen", "party_name": "GRÜNE", "votes": "55"},
+            {"row_key": "berlin:WAHLKREIS:0101", "vote_type": "Erststimmen", "party_name": "SPD", "votes": "45"},
+            {"row_key": "mv:LAND:13", "vote_type": "Erststimmen", "party_name": "AfD", "votes": "999"},
+        ]
+        with mock.patch.object(scenario_page, "read_csv_rows", return_value=rows):
+            self.assertEqual(
+                scenario_page.load_direct_seat_counts(SimpleNamespace(election_key="2026-mv")),
+                {"SPD": 1},
+            )
+            self.assertEqual(
+                scenario_page.load_direct_seat_counts(SimpleNamespace(election_key="2026-be")),
+                {"GRÜNE": 1},
+            )
+
     def test_current_lsa_wahlkreis_leaders_are_counted_as_direct_seats(self):
         rows = [
             {"row_key": "lsa:WAHLKREIS:001", "vote_type": "Erststimmen", "party_name": "AfD", "votes": "70"},
@@ -235,8 +283,9 @@ class CurrentOverviewTests(unittest.TestCase):
     def test_scenario_keeps_baseline_precision_and_does_not_double_count_direct_seats(self):
         script = scenario_page.scenario_script()
         self.assertIn('step="0.01"', script)
-        self.assertIn("const allocation = new Map(eligible.map((party) => [party.party, 0]));", script)
-        self.assertNotIn("Number(directSeatCounts[party.party]) || 0]).filter", script)
+        self.assertIn("const allocation = new Map(parties.map((party) => [party.party, 0]));", script)
+        self.assertIn("payload.thresholdDirectException", script)
+        self.assertIn("payload.compensationRule === \"mv\"", script)
 
     def test_wahlkreis_map_uses_current_first_vote_leader(self):
         feature = {"properties": {"Nummer": "01", "WK Name": "Testkreis"}}

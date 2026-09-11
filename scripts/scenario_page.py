@@ -28,6 +28,48 @@ DEFAULT_PARTY_COLORS = {
 }
 
 
+# These are the statutory starting sizes used by the scenario model.  The
+# final parliament can be larger where the applicable law requires
+# overhang/compensation mandates.
+SEAT_RULES = {
+    "bw": {
+        "base_seats": 120,
+        "direct_seats": 0,
+        "allocation_method": "sainte_lague",
+        "direct_threshold_exception": False,
+        "compensation_rule": "none",
+    },
+    "rlp": {
+        "base_seats": 101,
+        "direct_seats": 0,
+        "allocation_method": "sainte_lague",
+        "direct_threshold_exception": False,
+        "compensation_rule": "none",
+    },
+    "lsa": {
+        "base_seats": 83,
+        "direct_seats": 41,
+        "allocation_method": "hare_niemeyer",
+        "direct_threshold_exception": False,
+        "compensation_rule": "lsa",
+    },
+    "mv": {
+        "base_seats": 71,
+        "direct_seats": 36,
+        "allocation_method": "hare_niemeyer",
+        "direct_threshold_exception": False,
+        "compensation_rule": "mv",
+    },
+    "be": {
+        "base_seats": 130,
+        "direct_seats": 78,
+        "allocation_method": "hare_niemeyer",
+        "direct_threshold_exception": True,
+        "compensation_rule": "berlin",
+    },
+}
+
+
 def read_csv_rows(path: Path) -> list[dict[str, str]]:
     if not path.exists():
         return []
@@ -40,18 +82,15 @@ def state_code(election_key: str) -> str:
 
 
 def seat_count_for(election_key: str) -> int:
-    # Sachsen-Anhalt's current LWG sets the regular starting size at 83
-    # seats: 41 constituency seats and 42 list seats. The 2021 parliament
-    # had 97 seats after overhang and compensation mandates.
-    return {"bw": 120, "rlp": 101, "lsa": 83}.get(state_code(election_key), 100)
+    return SEAT_RULES.get(state_code(election_key), {}).get("base_seats", 100)
 
 
 def direct_seat_count_for(election_key: str) -> int:
-    return 41 if state_code(election_key) == "lsa" else 0
+    return SEAT_RULES.get(state_code(election_key), {}).get("direct_seats", 0)
 
 
 def allocation_method_for(election_key: str) -> str:
-    return "hare_niemeyer" if state_code(election_key) == "lsa" else "sainte_lague"
+    return SEAT_RULES.get(state_code(election_key), {}).get("allocation_method", "sainte_lague")
 
 
 def allocation_method_label(method: str) -> str:
@@ -156,17 +195,21 @@ def load_party_baseline(config: core.Config, party_colors: dict[str, str]) -> di
 
 
 def load_direct_seat_counts(config: core.Config) -> dict[str, int]:
-    """Count current first-vote leaders in the LSA Wahlkreise.
+    """Count current first-vote leaders in the state's constituencies.
 
     These leaders are provisional while the live result is incomplete. The
     scenario keeps them fixed while users vary the second-vote shares.
     """
-    if state_code(config.election_key) != "lsa":
+    state = state_code(config.election_key)
+    if state not in {"lsa", "mv", "be"}:
         return {}
+    row_prefix = "berlin" if state == "be" else state
     rows = read_csv_rows(core.LATEST_DIR / "statla_party_results.csv")
     by_wahlkreis: dict[str, list[tuple[int, str]]] = {}
     for row in rows:
         key = str(row.get("row_key") or "")
+        if not key.lower().startswith(f"{row_prefix}:"):
+            continue
         key_parts = {part.strip().upper() for part in key.split(":")}
         if "WAHLKREIS" not in key_parts:
             continue
@@ -192,19 +235,32 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
     baseline = load_party_baseline(config, party_colors)
     direct_seat_counts = load_direct_seat_counts(config)
     vote_label = config.second_vote_label or "Zweitstimmen"
+    state = state_code(config.election_key)
     allocation_method = allocation_method_for(config.election_key)
-    lsa = state_code(config.election_key) == "lsa"
-    notes = (
-        [
+    rule = SEAT_RULES.get(state, {})
+    notes_by_state = {
+        "lsa": [
             "Sachsen-Anhalt: gesetzliche Ausgangszahl 83 Sitze (41 Direktmandate und 42 Listenmandate).",
             "Die Sitzverteilung nutzt die 5-Prozent-Schwelle und Hare/Niemeyer.",
             "Die aktuellen Direktmandatsführer werden berücksichtigt; bei Überhang werden zusätzliche Sitze nach der gesetzlichen Ausgleichslogik ergänzt.",
-        ]
-        if lsa
-        else [
+        ],
+        "mv": [
+            "Mecklenburg-Vorpommern: gesetzliche Ausgangszahl 71 Sitze (36 Direktmandate und 35 Listenmandate).",
+            "Die Sitzverteilung nutzt die 5-Prozent-Schwelle und Hare/Niemeyer; eine Grundmandatsklausel gibt es nicht.",
+            "Direktmandate werden auf den proportionalen Sitzanspruch angerechnet; Überhang- und Ausgleichsmandate werden nach der M-V-Regel modelliert.",
+        ],
+        "be": [
+            "Berlin: mindestens 130 Sitze (78 Direktmandate und mindestens 52 Listenmandate).",
+            "Die Sitzverteilung nutzt die 5-Prozent-Schwelle und Hare/Niemeyer.",
+            "Eine Partei nimmt auch unter 5 % an der Sitzverteilung teil, wenn sie mindestens ein Wahlkreismandat gewinnt; Überhang- und Ausgleichsmandate werden nach der Berliner Regel modelliert.",
+        ],
+    }
+    notes = notes_by_state.get(
+        state,
+        [
             f"Die Sitzverteilung nutzt ein proportionales {allocation_method_label(allocation_method)}-Modell mit 5-Prozent-Schwelle.",
             "Direktmandate, Überhangmandate, Mehrheitssicherungen und amtliche Losentscheide werden hier nicht simuliert.",
-        ]
+        ],
     )
     notes.append("Die Regler geben absolute Stimmenanteile an; bei einer Summe ungleich 100 % wird für die Sitznäherung proportional normiert.")
     return {
@@ -216,11 +272,19 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         "directSeatCounts": direct_seat_counts,
         "reportedDirectSeats": sum(direct_seat_counts.values()),
         "allocationMethod": allocation_method,
-        "seatBasis": "gesetzliche Ausgangszahl" if lsa else "Modellbasis",
+        "thresholdDirectException": bool(rule.get("direct_threshold_exception", False)),
+        "compensationRule": rule.get("compensation_rule", "none"),
+        "seatBasis": "gesetzliche Ausgangszahl" if state in {"lsa", "mv", "be"} else "Modellbasis",
         "seatNote": (
             "Gesetzliche Ausgangszahl: 83 Sitze (41 Direktmandate + 42 Listenmandate). "
             "Die Sitznäherung wird mit den aktuellen Zweitstimmen und Hare/Niemeyer berechnet; Überhang und Ausgleich können die Gesamtzahl erhöhen."
-            if lsa
+            if state == "lsa"
+            else "Gesetzliche Ausgangszahl: 71 Sitze (36 Direktmandate + 35 Listenmandate). "
+            "Die Sitznäherung verwendet Hare/Niemeyer sowie die landesspezifische Überhang- und Ausgleichslogik."
+            if state == "mv"
+            else "Gesetzliche Ausgangszahl: mindestens 130 Sitze (78 Direktmandate + mindestens 52 Listenmandate). "
+            "Die Sitznäherung verwendet Hare/Niemeyer sowie die landesspezifische Überhang- und Ausgleichslogik."
+            if state == "be"
             else "Transparente Modellbasis ohne landesspezifische Überhang- und Ausgleichsmandate."
         ),
         "thresholdPercent": 5.0,
@@ -438,74 +502,109 @@ def scenario_script() -> str:
     }[char]));
   }
 
-  function allocateSainteLague(parties, seats, threshold) {
-    const eligible = parties.filter((party) => party.adjustedShare >= threshold);
-    const allocation = new Map(eligible.map((party) => [party.party, 0]));
+  function isEligibleForAllocation(party, threshold, directSeatCounts) {
+    const directSeats = Number(directSeatCounts[party.party]) || 0;
+    return party.adjustedShare >= threshold || (payload.thresholdDirectException && directSeats > 0);
+  }
+
+  function initializeAllocation(parties, seats, threshold, directSeatCounts) {
+    const eligible = parties.filter((party) => isEligibleForAllocation(party, threshold, directSeatCounts));
+    const ineligible = parties.filter((party) => !isEligibleForAllocation(party, threshold, directSeatCounts));
+    const allocation = new Map(parties.map((party) => [party.party, 0]));
+    ineligible.forEach((party) => {
+      allocation.set(party.party, Number(directSeatCounts[party.party]) || 0);
+    });
+    const excludedDirectSeats = ineligible.reduce(
+      (total, party) => total + (Number(directSeatCounts[party.party]) || 0),
+      0,
+    );
+    return { eligible, allocation, seatsToAllocate: Math.max(0, seats - excludedDirectSeats) };
+  }
+
+  function allocateSainteLague(parties, seats, threshold, directSeatCounts = {}) {
+    const initialized = initializeAllocation(parties, seats, threshold, directSeatCounts);
+    const { eligible, allocation, seatsToAllocate } = initialized;
     const quotients = [];
     eligible.forEach((party) => {
-      for (let index = 0; index < seats; index += 1) {
+      for (let index = 0; index < seatsToAllocate; index += 1) {
         quotients.push({ party: party.party, value: party.adjustedShare / (2 * index + 1) });
       }
     });
     quotients.sort((a, b) => b.value - a.value || a.party.localeCompare(b.party));
-    quotients.slice(0, seats).forEach((item) => allocation.set(item.party, (allocation.get(item.party) || 0) + 1));
+    quotients.slice(0, seatsToAllocate).forEach((item) => allocation.set(item.party, (allocation.get(item.party) || 0) + 1));
     return allocation;
   }
 
   function allocateHareNiemeyer(parties, seats, threshold, directSeatCounts = {}) {
-    const eligible = parties.filter((party) => party.adjustedShare >= threshold);
-    const ineligible = parties.filter((party) => party.adjustedShare < threshold);
-    const ineligibleDirectSeats = ineligible.reduce(
-      (total, party) => total + (Number(directSeatCounts[party.party]) || 0),
-      0,
-    );
-    // Direct mandates are a constraint on the proportional result. They must
-    // not be added on top of the proportional seats, otherwise every direct
-    // mandate is counted twice (once as a direct seat and once again in the
-    // Hare/Niemeyer allocation).
-    const allocation = new Map(eligible.map((party) => [party.party, 0]));
+    const initialized = initializeAllocation(parties, seats, threshold, directSeatCounts);
+    const { eligible, allocation, seatsToAllocate } = initialized;
     const eligibleTotal = eligible.reduce((total, party) => total + party.adjustedShare, 0);
     if (eligibleTotal <= 0) {
       return allocation;
     }
-    const proportionalSeats = Math.max(0, seats - ineligibleDirectSeats);
     let assigned = 0;
     const remainders = eligible.map((party) => {
-      const exact = (party.adjustedShare / eligibleTotal) * proportionalSeats;
+      const exact = (party.adjustedShare / eligibleTotal) * seatsToAllocate;
       const whole = Math.floor(exact);
       allocation.set(party.party, (allocation.get(party.party) || 0) + whole);
       assigned += whole;
       return { party: party.party, remainder: exact - whole, share: party.adjustedShare };
     });
     remainders.sort((a, b) => b.remainder - a.remainder || b.share - a.share || a.party.localeCompare(b.party));
-    remainders.slice(0, proportionalSeats - assigned).forEach((item) => {
+    remainders.slice(0, seatsToAllocate - assigned).forEach((item) => {
       allocation.set(item.party, (allocation.get(item.party) || 0) + 1);
     });
     return allocation;
   }
 
+  function countOverhang(parties, allocation, threshold, directSeatCounts) {
+    return parties.reduce((total, party) => {
+      if (!isEligibleForAllocation(party, threshold, directSeatCounts)) {
+        return total;
+      }
+      const directSeats = Number(directSeatCounts[party.party]) || 0;
+      return total + Math.max(0, directSeats - (allocation.get(party.party) || 0));
+    }, 0);
+  }
+
   function allocateSeats(parties, seats, threshold) {
     const directSeatCounts = payload.directSeatCounts || {};
     let totalSeats = seats;
-    let allocation = new Map();
-    let overhang = 0;
-    for (let iteration = 0; iteration < 12; iteration += 1) {
+    let allocation = payload.allocationMethod === "hare_niemeyer"
+      ? allocateHareNiemeyer(parties, totalSeats, threshold, directSeatCounts)
+      : allocateSainteLague(parties, totalSeats, threshold, directSeatCounts);
+    const initialOverhang = countOverhang(parties, allocation, threshold, directSeatCounts);
+    let overhang = initialOverhang;
+    if (payload.compensationRule === "mv") {
+      // M-V applies the two-times-overhang increase after each recalculation.
+      // Repeating the step is important: in the 2021 result, overhang fell
+      // from three seats to one before disappearing at 79 total seats.
+      for (let iteration = 0; iteration < 10000 && overhang > 0; iteration += 1) {
+        totalSeats += 2 * overhang;
+        allocation = payload.allocationMethod === "hare_niemeyer"
+          ? allocateHareNiemeyer(parties, totalSeats, threshold, directSeatCounts)
+          : allocateSainteLague(parties, totalSeats, threshold, directSeatCounts);
+        overhang = countOverhang(parties, allocation, threshold, directSeatCounts);
+      }
+    } else {
+      // Berlin increases the total until every eligible direct mandate is
+      // covered by the proportional party entitlement.
+      for (let iteration = 0; iteration < 10000 && overhang > 0; iteration += 1) {
+        totalSeats += 1;
+        allocation = payload.allocationMethod === "hare_niemeyer"
+          ? allocateHareNiemeyer(parties, totalSeats, threshold, directSeatCounts)
+          : allocateSainteLague(parties, totalSeats, threshold, directSeatCounts);
+        overhang = countOverhang(parties, allocation, threshold, directSeatCounts);
+      }
+    }
+    if (payload.compensationRule === "mv" && totalSeats > seats && totalSeats % 2 === 0) {
+      totalSeats += 1;
       allocation = payload.allocationMethod === "hare_niemeyer"
         ? allocateHareNiemeyer(parties, totalSeats, threshold, directSeatCounts)
-        : allocateSainteLague(parties, totalSeats, threshold);
-      overhang = parties.reduce((total, party) => {
-        if (party.adjustedShare < threshold) {
-          return total;
-        }
-        const directSeats = Number(directSeatCounts[party.party]) || 0;
-        return total + Math.max(0, directSeats - (allocation.get(party.party) || 0));
-      }, 0);
-      if (overhang <= 0) {
-        break;
-      }
-      totalSeats = seats + (2 * overhang);
+        : allocateSainteLague(parties, totalSeats, threshold, directSeatCounts);
+      overhang = countOverhang(parties, allocation, threshold, directSeatCounts);
     }
-    return { allocation, totalSeats, overhang };
+    return { allocation, totalSeats, overhang, initialOverhang };
   }
 
   function currentScenarioShares() {
@@ -559,7 +658,7 @@ def scenario_script() -> str:
     parties.forEach((party) => {
       party.seats = allocation.get(party.party) || 0;
       party.directSeats = Number((payload.directSeatCounts || {})[party.party]) || 0;
-      party.qualifies = party.adjustedShare >= payload.thresholdPercent;
+      party.qualifies = isEligibleForAllocation(party, payload.thresholdPercent, payload.directSeatCounts || {});
     });
     parties.sort((a, b) => b.seats - a.seats || b.adjustedShare - a.adjustedShare || a.party.localeCompare(b.party));
     const majority = Math.floor(totalSeats / 2) + 1;
