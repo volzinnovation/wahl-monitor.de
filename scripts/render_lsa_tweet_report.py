@@ -252,6 +252,50 @@ class Report:
         ax.legend(frameon=False,ncol=2,loc="lower right")
         self.save(fig,"11_urne_brief","How does the observed vote mix differ by reporting mode?","paired dot",["party","mode","share"],"latest_official_rows.json","Valid-vote weighted statewide totals; voting mode is self-selected and observational." + ("" if self.complete else " Reporting is incomplete."))
 
+        # Normalize the two voting modes within each selected party so every
+        # bar has a common 100% denominator. Absolute totals stay visible.
+        total_row=self.raw["lsa:LAND:15:TOTAL"]
+        urne_row=self.raw["lsa:LAND:15:U"]
+        brief_row=self.raw["lsa:LAND:15:B"]
+        above_five=[]
+        for code in sorted((party["code"] for party in self.selected),
+                           key=lambda code: total_row["parties"].get(code) or 0, reverse=True):
+            total_votes=total_row["parties"].get(code) or 0
+            assert total_votes and 100*total_votes/total_row["valid_votes_zweit"] > 5, code
+            urne_votes=urne_row["parties"].get(code) or 0
+            brief_votes=brief_row["parties"].get(code) or 0
+            assert urne_votes + brief_votes == total_votes, (code, urne_votes, brief_votes, total_votes)
+            urne_share=100*urne_votes/total_votes
+            brief_share=100*brief_votes/total_votes
+            assert abs(urne_share + brief_share - 100) < 1e-12
+            above_five.append({"party_code":code,"party":total_row["party_names"][code],
+                               "total_votes":total_votes,"total_share_percent":100*total_votes/total_row["valid_votes_zweit"],
+                               "urne_votes":urne_votes,"brief_votes":brief_votes,
+                               "urne_percent_of_party":urne_share,"brief_percent_of_party":brief_share})
+        assert len(above_five) == len(self.selected) == 6
+        with (self.path/"urne_brief_ueber_5.csv").open("w",newline="",encoding="utf-8") as stream:
+            writer=csv.DictWriter(stream,fieldnames=list(above_five[0]))
+            writer.writeheader();writer.writerows(above_five)
+
+        fig=self.figure("Parteien über 5 %: Urnen- und Briefwahlanteil",
+                        f"Gültige Zweitstimmen am Endstand · {num(total_row['valid_votes_zweit'])} insgesamt · jeder Balken = 100 % der jeweiligen Partei")
+        ax=fig.add_axes([.18,.19,.68,.57])
+        y=np.arange(len(above_five))
+        urne_shares=np.array([x["urne_percent_of_party"] for x in above_five])
+        brief_shares=np.array([x["brief_percent_of_party"] for x in above_five])
+        ax.barh(y,urne_shares,color=BLUE,height=.62,label="Urne",zorder=3)
+        ax.barh(y,brief_shares,left=urne_shares,color=ORANGE,height=.62,label="Briefwahl",zorder=3)
+        for i,(u_share,b_share) in enumerate(zip(urne_shares,brief_shares)):
+            ax.text(u_share/2,i,f"{num(u_share,1)} %",ha="center",va="center",fontsize=10,color="white",weight="bold")
+            ax.text(u_share+b_share/2,i,f"{num(b_share,1)} %",ha="center",va="center",fontsize=10,color="white",weight="bold")
+            ax.text(102.5,i,f"{num(above_five[i]['total_votes'])} Stimmen",ha="left",va="center",fontsize=10.5,color=INK)
+        ax.set_yticks(y,[x["party"] for x in above_five]);ax.invert_yaxis();ax.set_xlim(0,124);ax.set_xticks(range(0,101,20))
+        ax.set_xlabel("Urne und Briefwahl als Anteil der jeweiligen Parteistimmen (%)")
+        ax.axvline(100,color=MUTED,lw=.8);ax.grid(axis="x",alpha=.15);ax.set_axisbelow(True)
+        ax.legend(frameon=False,ncol=2,loc="lower left",bbox_to_anchor=(0,1.02))
+        fig.text(.18,.10,"Sortiert nach absoluten Zweitstimmen. Die Zahl rechts ist der Parteisummen-Nenner; Balkenlängen sind nicht absolute Parteigrößen.",fontsize=10.5,color=MUTED)
+        self.save(fig,"26_urne_brief_ueber_5","How are parties above 5% split between in-person and postal voting?","100% stacked bar",["party","total votes","Urne votes","Briefwahl votes","within-party share"],"latest_official_rows.json; urne_brief_ueber_5.csv","Six parties above 5% of all valid second votes. Each bar is normalized to that party's own total; absolute party totals are shown at the right.")
+
         # A share distribution describes equal-weight geographic units, not voters.
         fig=self.figure("Streuung zwischen Gemeinden und Wahlkreisen", "Zweitstimmen in % · jede Gebietseinheit gleich gewichtet · große Punkte zeigen die Landesanteile",height=9)
         for ix,(level,label) in enumerate([("GEMEINDE","218 Gemeinden"),("WAHLKREIS","41 Wahlkreise")]):

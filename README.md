@@ -30,12 +30,12 @@ The repository is organized by election key in the form `<year>-<state>`, for ex
 
 Current operational status:
 
+- Active scheduled collection: `2026-mv`, from 19:00 CEST on `2026-09-20` through 05:00 CEST on `2026-09-21`
+- Active scheduled collection: `2026-be`, from 19:30 CEST on `2026-09-20` through 05:00 CEST on `2026-09-21`
 - Active scheduled collection: `2026-lsa`, from 18:00 CEST on `2026-09-06` through the morning of `2026-09-08`
-- Prepared, but not activated: `2026-mv`, election day `2026-09-20`; official LAIV result URLs are expected from calendar week 38
-- Prepared, but not activated: `2026-be`, election day `2026-09-20`; official Berlin result files are expected on election day
 - Election-night activation, recovery, and independent backup: [LSA runbook](docs/lsa-election-night.md)
 - Active GitHub Actions workflows: `.github/workflows/` (automatic LSA Pages deployment after collection, CI, and the scheduled LSA archive)
-- Archived scheduled GitHub Actions workflows: `.github/workflows-disabled/`
+- Archived scheduled GitHub Actions workflows: `.github/workflows-disabled/`; election-night MV/Berlin workflows are active under `.github/workflows/`
 
 ## Repository Layout
 

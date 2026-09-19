@@ -1,6 +1,6 @@
 # Berlin 2026 source inventory
 
-Prepared: `2026-09-08T09:01:56Z`
+Prepared: `2026-09-08T09:01:56Z`; scheduled live collection starts at 19:30 CEST on `2026-09-20`.
 
 ## Election
 

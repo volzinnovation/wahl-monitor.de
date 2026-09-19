@@ -1,8 +1,8 @@
-3# Sachsen-Anhalt 2026: die zehn wichtigsten Befunde
+# Sachsen-Anhalt 2026: die zehn wichtigsten Befunde
 
 **Zehn Tweets in steigender Priorität: 1 = ergänzender Kontext, 10 = wichtigste Gesamtbewertung.** Die Reihenfolge richtet sich nach der Bedeutung für die Verlässlichkeit der veröffentlichten Ergebnisse: zunächst Einordnung und Quellenlimits, dann belegte Änderungen und abschließend der vollständige Summenabgleich. Das ist eine redaktionelle Gewichtung, kein statistischer Schweregrad.
 
-Die Serie bündelt zusammengehörige Beobachtungen zu zehn Befunden. Alle 25 Grafiken, die politischen Repräsentationsdaten und die vollständigen Prüfbelege sind in Serie und Anhang zugänglich. Ergänzende Ergebnis- und Verteilungsgrafiken stehen im Anhang.
+Die Serie bündelt zusammengehörige Beobachtungen zu zehn Befunden. Alle 26 Grafiken, die politischen Repräsentationsdaten und die vollständigen Prüfbelege sind in Serie und Anhang zugänglich. Ergänzende Ergebnis- und Verteilungsgrafiken stehen im Anhang.
 
 Archiv-Endpunkt `80fa3052044a45af29f4f0b2867957d8a3b1df35`, letzter Datencommit `eeae7f0d9e0cbf3b825b19eb14727dc64704ac7b`. Letzter Git-Abruf **07.09.2026, 04:06:37,856 MESZ**. 124 Daten-Commits, 122 datierte Abrufe: 119 ab Wahlabend, 3 frühe Nullvorlagen; 2 Einrichtungsschritte ohne Abrufzeit. Alle Zeiten sind Europe/Berlin (MESZ, UTC+2).
 
@@ -117,6 +117,8 @@ Die elf hier gezeigten Änderungen von Wähler- oder gültigen Stimmensummen sin
 ![Übersicht und CSV laufen zeitweise auseinander · Differenz der gemeldeten Wahlbezirke: HTML-Übersicht minus Landes-CSV · keine Differenz von Stimmen](charts/10_quellenversatz.png)
 
 ![Urnen- und Briefwahl: unterschiedliche Parteianteile · Gültige Zweitstimmen: Urne 953.528 · Brief 361.787 · je eigener Nenner](charts/11_urne_brief.png)
+
+![Parteien über 5 %: Urnen- und Briefwahlanteil · Gültige Zweitstimmen am Endstand · 1.315.315 insgesamt · jeder Balken = 100 % der jeweiligen Partei](charts/26_urne_brief_ueber_5.png)
 
 ![Streuung zwischen Gemeinden und Wahlkreisen · Zweitstimmen in % · jede Gebietseinheit gleich gewichtet · große Punkte zeigen die Landesanteile](charts/12_gebietsstreuung.png)
 

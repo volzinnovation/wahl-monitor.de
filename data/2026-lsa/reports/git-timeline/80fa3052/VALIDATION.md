@@ -13,8 +13,8 @@
 - External versioned inputs pass the saved SHA-256 manifest. Simulated digit-test p/q-values and multivariate/spatial models were not independently rerun; they are clearly labelled.
 - The eight executed notebook cells also verify all 18 relative share changes using exact fractions, 546 area-arrival observations across two definitions, and the representation waterfall including its source hash and zero endpoint.
 - The first RLP export has a documented FREIE WÄHLER parser defect. Displayed party numerators and the published valid-vote denominator are retained without renormalization; BW/RLP endpoint checks use normalized Git exports.
-- 10 tweet drafts, maximum 263 weighted characters; 25 PNGs. Visual review: True. Local report links resolve.
-- Independent offline reconstruction: 124 byte-identical files; full list in verification.json.
+- 10 tweet drafts, maximum 263 weighted characters; 26 PNGs. Visual review: True. Local report links resolve.
+- Independent offline reconstruction: 0 byte-identical files; full list in verification.json.
 - Regression tests cover missing/zero distinctions, omitted preliminary columns, votes with missing parent counters, postal electorate handling, reporting resets, denominator changes, aggregation and source identity. See notebook_execution.json for separately executed raw-CSV checks.
 
 Completeness of publication and arithmetic consistency do not certify factual correctness or establish electoral misconduct. One individual-vote snapshot cannot reconstruct earlier district changes. No live election polling, schedule change, commit, publication or deployment was performed by this rerun.

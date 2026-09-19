@@ -1,6 +1,6 @@
 # Mecklenburg-Vorpommern 2026 source inventory
 
-Preparation status: 2026-09-07. Live collection is not activated.
+Preparation status: 2026-09-07. Scheduled live collection starts at 19:00 CEST on 2026-09-20.
 
 ## Official sources
 

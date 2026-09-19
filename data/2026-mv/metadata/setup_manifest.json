@@ -1,7 +1,7 @@
 {
   "election_key": "2026-mv",
   "prepared_at": "2026-09-07",
-  "status": "pre-election",
+  "status": "scheduled",
   "election_date": "2026-09-20",
   "official_download_page": "https://www.laiv-mv.de/Wahlen/Landtagswahlen/2026/Ergebnisse/",
   "result_levels": [
@@ -13,7 +13,7 @@
   "template_encoding": "ISO-8859-1",
   "template_delimiter": ";",
   "template_preamble_lines": 5,
-  "live_collection_enabled": false,
+  "live_collection_enabled": true,
   "geometry_status": "GeoJSON artifact committed; source archive URL configured",
   "candidate_data": "metadata/candidates.csv",
   "historical_reference": "reference/2021",

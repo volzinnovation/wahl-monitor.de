@@ -1681,6 +1681,32 @@ def fetch_kommone_all(
 
 def extract_statla_parties(row: Dict[str, str]) -> List[Dict[str, Any]]:
     parties: List[Dict[str, Any]] = []
+    if is_berlin_download_row(row):
+        vote_type = berlin_vote_type(row)
+        if not vote_type:
+            return parties
+        prefix = "D" if vote_type == "Erststimmen" else "F"
+        for key, raw_value in row.items():
+            match = re.fullmatch(r"P(\d+)", str(key).strip())
+            if not match:
+                continue
+            number = int(match.group(1))
+            if number < 1 or number > len(BERLIN_PARTY_ORDER):
+                continue
+            votes = parse_int(raw_value)
+            if votes is None:
+                continue
+            party_key = f"{prefix}{number}"
+            parties.append(
+                {
+                    "vote_type": vote_type,
+                    "party_key": party_key,
+                    "party_name": canonical_party_name(party_key, vote_type),
+                    "votes": votes,
+                }
+            )
+        return parties
+
     for key, raw_value in row.items():
         value = parse_int(raw_value)
         if value is None:
@@ -1757,6 +1783,8 @@ def extract_statla_parties(row: Dict[str, str]) -> List[Dict[str, Any]]:
 
 
 def is_statla_municipality_row(row: Dict[str, str]) -> bool:
+    if is_berlin_download_row(row):
+        return berlin_area_type(row) == "GEMEINDE"
     if is_lsa_download_row(row):
         return (
             str(row.get("Satzart") or "").strip().upper() == "GEM"
@@ -1797,7 +1825,63 @@ def is_lsa_wahlbezirk_download_row(row: Dict[str, str]) -> bool:
     }.issubset(normalized)
 
 
+def is_berlin_download_row(row: Dict[str, str]) -> bool:
+    """Return whether a row uses Berlin's AGH 2026 result export schema."""
+    normalized = {normalize_text(key) for key in row}
+    return {
+        "adresse",
+        "stimmart",
+        "gebietsart",
+        "gebietsname",
+        "nummer",
+        "anzwbez",
+        "auswbez",
+        "waehler",
+        "gueltig",
+    }.issubset(normalized)
+
+
+def berlin_vote_type(row: Dict[str, str]) -> str:
+    return {
+        "1": "Erststimmen",
+        "2": "Zweitstimmen",
+    }.get(str(row.get("StimmArt") or "").strip(), "")
+
+
+def berlin_area_type(row: Dict[str, str]) -> str:
+    return {
+        "bundesland": "LAND",
+        "bezirk": "GEMEINDE",
+        "abgeordnetenhauswahlkreis": "WAHLKREIS",
+    }.get(normalize_text(str(row.get("Gebietsart") or "")), "")
+
+
+def berlin_wahlkreis_code_map() -> Dict[str, str]:
+    if ACTIVE_ELECTION_KEY != "2026-be" or not WAHLKREIS_MAPPING_PATH.exists():
+        return {}
+    try:
+        rows = csv.DictReader(
+            decode_bytes(WAHLKREIS_MAPPING_PATH.read_bytes()).splitlines(),
+            delimiter=";",
+        )
+        return {
+            str(row.get("Wahlkreiscode") or "").strip(): normalize_wahlkreis_nummer(row.get("Wahlkreisnummer"))
+            for row in rows
+            if str(row.get("Wahlkreiscode") or "").strip()
+            and normalize_wahlkreis_nummer(row.get("Wahlkreisnummer"))
+        }
+    except (OSError, csv.Error):
+        return {}
+
+
+def berlin_wahlkreis_number(row: Dict[str, str]) -> str:
+    code = str(row.get("Nummer") or "").strip()
+    return berlin_wahlkreis_code_map().get(code, normalize_wahlkreis_nummer(code))
+
+
 def statla_area_type(row: Dict[str, str]) -> str:
+    if is_berlin_download_row(row):
+        return berlin_area_type(row)
     if is_lsa_download_row(row):
         return {
             "LAN": "LAND",
@@ -1811,6 +1895,11 @@ def statla_area_type(row: Dict[str, str]) -> str:
 
 
 def statla_area_number(row: Dict[str, str]) -> str:
+    if is_berlin_download_row(row):
+        area_type = berlin_area_type(row)
+        if area_type == "WAHLKREIS":
+            return berlin_wahlkreis_number(row)
+        return str(row.get("Nummer") or "").strip()
     if is_lsa_download_row(row):
         return str(row.get("Schlüsselnummer") or "").strip()
     if is_lsa_wahlbezirk_download_row(row):
@@ -1819,6 +1908,11 @@ def statla_area_number(row: Dict[str, str]) -> str:
 
 
 def statla_ags(row: Dict[str, str]) -> str:
+    if is_berlin_download_row(row):
+        if berlin_area_type(row) != "GEMEINDE":
+            return ""
+        number = parse_int(row.get("Nummer"))
+        return f"110000{number:02d}" if number is not None else ""
     if is_lsa_download_row(row):
         area_type = str(row.get("Satzart") or "").strip().upper()
         area_number = statla_area_number(row)
@@ -1829,6 +1923,8 @@ def statla_ags(row: Dict[str, str]) -> str:
 
 
 def statla_municipality_name(row: Dict[str, str]) -> str:
+    if is_berlin_download_row(row):
+        return canonical_municipality_name(row.get("Gebietsname")) if berlin_area_type(row) == "GEMEINDE" else ""
     if is_lsa_download_row(row):
         return canonical_municipality_name(row.get("Name"))
     if is_lsa_wahlbezirk_download_row(row):
@@ -1838,16 +1934,35 @@ def statla_municipality_name(row: Dict[str, str]) -> str:
 
 def statla_summary_row(row: Dict[str, str]) -> bool:
     """Use the combined U/B/total row from the LSA download."""
+    if is_berlin_download_row(row):
+        return berlin_area_type(row) in {"LAND", "GEMEINDE", "WAHLKREIS"}
     if not is_lsa_download_row(row):
         return True
     return not str(row.get("Wahllokal") or "").strip()
 
 
 def statla_metric(row: Dict[str, str], new_key: str, old_key: str) -> Optional[int]:
+    if is_berlin_download_row(row):
+        vote_type = berlin_vote_type(row)
+        berlin_keys = {
+            "Ist.Wahlbezirke": "AusWbez",
+            "Soll.Wahlbezirke": "AnzWbez",
+            "B.Wähler": "Waehler",
+        }
+        if new_key == "D.Gültige.Erststimmen":
+            return parse_int(row.get("Gueltig")) if vote_type == "Erststimmen" else None
+        if new_key == "F.Gültige.Zweitstimmen":
+            return parse_int(row.get("Gueltig")) if vote_type == "Zweitstimmen" else None
+        berlin_key = berlin_keys.get(new_key)
+        if berlin_key:
+            return parse_int(row.get(berlin_key))
+        return None
     return parse_int(row.get(new_key if (is_lsa_download_row(row) or is_lsa_wahlbezirk_download_row(row)) else old_key))
 
 
 def statla_wahlkreis_number(row: Dict[str, str]) -> str:
+    if is_berlin_download_row(row):
+        return statla_area_number(row) if berlin_area_type(row) == "WAHLKREIS" else ""
     if is_lsa_wahlbezirk_download_row(row):
         return normalize_wahlkreis_nummer(row.get("Wahlkreisnummer"))
     return ""
@@ -2050,6 +2165,7 @@ def parse_statla_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dic
         return parse_statla_wahlbezirk_csv_rows(csv_text)
 
     snapshots: List[Dict[str, Any]] = []
+    berlin_snapshots_by_key: Dict[str, Dict[str, Any]] = {}
     party_rows: List[Dict[str, Any]] = []
     for idx, raw_row in enumerate(csv_rows_from_text(csv_text, delimiter=";")):
         row = dict(raw_row)
@@ -2058,7 +2174,18 @@ def parse_statla_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dic
         canonical_row_json = json.dumps(row, sort_keys=True, ensure_ascii=False).encode("utf-8")
         row_hash = sha256_bytes(canonical_row_json)
 
-        if is_lsa_download_row(row):
+        if is_berlin_download_row(row):
+            area_type = statla_area_type(row)
+            area_number = statla_area_number(row)
+            if area_type == "LAND":
+                row_key = "berlin:LAND"
+            elif area_type == "WAHLKREIS":
+                row_key = f"berlin:WAHLKREIS:{area_number}"
+            elif area_type == "GEMEINDE":
+                row_key = f"berlin:GEMEINDE:{statla_ags(row)}"
+            else:
+                continue
+        elif is_lsa_download_row(row):
             row_key = f"lsa:{statla_area_type(row)}:{statla_area_number(row) or '-'}"
         else:
             row_key = (
@@ -2074,6 +2201,7 @@ def parse_statla_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dic
             "municipality_name": statla_municipality_name(row),
             "gebietsart": statla_area_type(row),
             "gebietsnummer": statla_area_number(row),
+            "wahlkreisnummer": statla_wahlkreis_number(row),
             "reported_precincts": statla_metric(row, "Ist.Wahlbezirke", "gemeldete Wahlbezirke"),
             "total_precincts": statla_metric(row, "Soll.Wahlbezirke", "Anzahl Wahlbezirke"),
             "voters_total": statla_metric(row, "B.Wähler", "Waehler gesamt (B)"),
@@ -2082,10 +2210,29 @@ def parse_statla_csv_rows(csv_text: str) -> Tuple[List[Dict[str, Any]], List[Dic
             "payload_hash": row_hash,
             "is_municipality_summary": is_statla_municipality_row(row),
         }
-        snapshots.append(snapshot)
+        if is_berlin_download_row(row):
+            existing = berlin_snapshots_by_key.get(row_key)
+            if existing is None:
+                berlin_snapshots_by_key[row_key] = snapshot
+            else:
+                for field in (
+                    "reported_precincts",
+                    "total_precincts",
+                    "voters_total",
+                    "valid_votes_erst",
+                    "valid_votes_zweit",
+                ):
+                    if snapshot.get(field) is not None:
+                        existing[field] = snapshot[field]
+                existing["payload_hash"] = sha256_bytes(
+                    f"{existing['payload_hash']}:{snapshot['payload_hash']}".encode("utf-8")
+                )
+        else:
+            snapshots.append(snapshot)
         for party in extract_statla_parties(row):
             party_rows.append({"row_key": row_key, **party})
 
+    snapshots.extend(berlin_snapshots_by_key.values())
     return snapshots, party_rows
 
 
@@ -2882,6 +3029,13 @@ def looks_like_statla_csv(text: str) -> bool:
         return False
     if looks_like_mv_csv(content):
         return True
+    for line in content.splitlines()[:3]:
+        try:
+            header = next(csv.reader([line], delimiter=";"))
+        except Exception:
+            continue
+        if is_berlin_download_row({key: "" for key in header if key.strip()}):
+            return True
 
     nonempty_lines = [line for line in content.splitlines() if line.strip()]
     for line in nonempty_lines[:3]:

@@ -8,7 +8,10 @@ on:
         required: false
         type: string
   workflow_run:
-    workflows: ["Archive Sachsen-Anhalt 2026"]
+    workflows:
+      - "Archive Sachsen-Anhalt 2026"
+      - "Poll Mecklenburg-Vorpommern 2026"
+      - "Poll Berlin 2026"
     types: [completed]
 
 permissions:

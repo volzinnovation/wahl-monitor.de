@@ -5,7 +5,7 @@
   "note": "Population is dated 31 December 2025; eligible/votes are election results dated 6/7 September 2026. Their difference is an approximate contextual bridge, not a measured election-day count of ineligible people. Representation here means votes for parties with seats in the published preliminary seat CSV.",
   "population_date": "2025-12-31",
   "population_file": "context_sources/population_2025.html",
-  "population_sha256": "c5605f163ee828d077c22070b7d1ecadb4ed7ef95b80e5e5194e99419bb2ba1d",
+  "population_sha256": "e019f7f106447abc8597e964f33054a0f9ec90ad8408234ab001c0d918f34938",
   "population_total": 2120252,
   "population_url": "https://statistik.sachsen-anhalt.de/news/news-details/212-mio-menschen-lebten-am-31122025-in-sachsen-anhalt",
   "represented_share_eligible": 71.72811217850885,

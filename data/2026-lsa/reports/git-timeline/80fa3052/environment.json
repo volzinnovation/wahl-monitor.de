@@ -5,12 +5,12 @@
   "scripts": {
     "analyze_lsa_git_timeline.py": "be41a09a29c3747b9c93b4d07e6e3300d9a588e4e68a33a9b03c73b4c48da1ed",
     "compare_lsa_external_analysis.py": "5f4631257544964381e5376d7ecba1967cd4c1d6ebae2f1ce4800765f4174cfd",
-    "lsa_complete_history_report.py": "2ded5c1d685dca3f8d45b0a72f6b509e9b42e7c110e6072763c838181790a912",
+    "lsa_complete_history_report.py": "69928065e2085b5174992f4242809c33c6b720a3a56ea96eec0d782715ab0dce",
     "lsa_full_history_report.py": "118ebbfa56bcc8dd41d0b36d07c547c2b7c8bed2f19cb404be167af97603fb56",
     "render_bw_second_vote_representation_waterfall.py": "3f96fe1d77f006e906d53186f928b52f767424c866f8e5666586e40b43ff7d6b",
     "render_cross_election_share_delta.py": "c1e502da76a27162382bfb5e7a86fbb295160f5319c1d219d7b153254224c6d0",
     "render_lsa_additional_charts.py": "b5825c1a72caf91559717613c06bad1a594fb89c171c4a0b9243c6bd6a94cec2",
-    "render_lsa_tweet_report.py": "cc8a53af5d252204a784fe80072236e9577d0b351dd53a3c268faec6dd77a692",
+    "render_lsa_tweet_report.py": "4ae922259b3b00509f8c051e083522f477618af5c23f8e1278f0ad83f63d0b4f",
     "run_lsa_audit_notebook.py": "28692b9e0d637116b1d26391f480cfc10dea39a4ec2293ea8a0a2beb9d5de80e",
     "test_lsa_git_timeline.py": "c099e21ec7dcf5f91ff776149cfbdc2761d35794bc5d69494e44e18762ffc9b3",
     "verify_lsa_git_report.py": "d9ae127c7367266543a227a8493204106e462e3965a30348e5085e4289003e08"

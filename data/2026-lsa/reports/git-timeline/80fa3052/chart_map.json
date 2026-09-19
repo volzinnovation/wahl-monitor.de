@@ -190,6 +190,25 @@
     "source": "latest_official_rows.json"
   },
   {
+    "alt_text": "Parteien über 5 %: Urnen- und Briefwahlanteil · Gültige Zweitstimmen am Endstand · 1.315.315 insgesamt · jeder Balken = 100 % der jeweiligen Partei",
+    "family": "100% stacked bar",
+    "fields": [
+      "party",
+      "total votes",
+      "Urne votes",
+      "Briefwahl votes",
+      "within-party share"
+    ],
+    "id": "26_urne_brief_ueber_5",
+    "non_color_encoding": "direct labels, explicit values, line styles, or separate panels",
+    "note": "Six parties above 5% of all valid second votes. Each bar is normalized to that party's own total; absolute party totals are shown at the right.",
+    "palette_policy": "single-root or two-root; party identity uses five roots plus neutral",
+    "path": "charts/26_urne_brief_ueber_5.png",
+    "question": "How are parties above 5% split between in-person and postal voting?",
+    "renderer": "Matplotlib PNG",
+    "source": "latest_official_rows.json; urne_brief_ueber_5.csv"
+  },
+  {
     "alt_text": "Streuung zwischen Gemeinden und Wahlkreisen · Zweitstimmen in % · jede Gebietseinheit gleich gewichtet · große Punkte zeigen die Landesanteile",
     "family": "box plot",
     "fields": [
