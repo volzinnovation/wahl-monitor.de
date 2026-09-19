@@ -1,0 +1,112 @@
+name: Poll Berlin 2026
+
+on:
+  # 19:30 CEST on 20 September 2026 through 05:00 CEST on 21 September.
+  schedule:
+    - cron: "30-59/5 17 20 9 *"
+    - cron: "*/5 18-23 20 9 *"
+    - cron: "*/5 0-2 21 9 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: 2026-be-election-night-poll
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PUSH_TOKEN: ${{ secrets.WORKFLOW_WRITE_TOKEN != '' && secrets.WORKFLOW_WRITE_TOKEN || github.token }}
+
+    steps:
+      - name: Check collection window
+        id: timing
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          now = datetime.now(ZoneInfo("Europe/Berlin"))
+          start = datetime(2026, 9, 20, 19, 30, tzinfo=ZoneInfo("Europe/Berlin"))
+          end = datetime(2026, 9, 21, 5, 0, tzinfo=ZoneInfo("Europe/Berlin"))
+          run = os.environ["EVENT_NAME"] == "workflow_dispatch" or start <= now < end
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"run={str(run).lower()}\n")
+          print(f"Europe/Berlin now={now.isoformat()} run={run}")
+          PY
+
+      - name: Checkout repository
+        if: steps.timing.outputs.run == 'true'
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        if: steps.timing.outputs.run == 'true'
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Run Berlin poller with retry
+        if: steps.timing.outputs.run == 'true'
+        run: |
+          set -euo pipefail
+          attempt=1
+          max_attempts=3
+          sleep_seconds=30
+
+          while [ "$attempt" -le "$max_attempts" ]; do
+            echo "Starting poll attempt $attempt/$max_attempts"
+            if python scripts/poll_election.py --election-key 2026-be --skip-kommone --no-progress; then
+              exit 0
+            fi
+
+            if [ "$attempt" -eq "$max_attempts" ]; then
+              echo "Poll failed after $max_attempts attempts"
+              exit 1
+            fi
+
+            echo "Poll attempt $attempt failed, waiting ${sleep_seconds}s before retry"
+            sleep "$sleep_seconds"
+            attempt=$((attempt + 1))
+          done
+
+      - name: Snapshot generated outputs
+        if: steps.timing.outputs.run == 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/poll-output/data/2026-be/metadata
+          mkdir -p /tmp/poll-output/data/2026-be/reports
+          cp -R data/2026-be/latest /tmp/poll-output/data/2026-be/
+          cp data/2026-be/metadata/wahlkreis-status.csv /tmp/poll-output/data/2026-be/metadata/
+          cp data/2026-be/reports/latest_events.csv /tmp/poll-output/data/2026-be/reports/
+
+      - name: Commit and push updates
+        if: steps.timing.outputs.run == 'true'
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git remote set-url origin "https://x-access-token:${PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch origin "$DEFAULT_BRANCH"
+          git checkout -B "$DEFAULT_BRANCH" "origin/$DEFAULT_BRANCH"
+          rm -rf data/2026-be/latest
+          mkdir -p data/2026-be/metadata data/2026-be/reports
+          cp -R /tmp/poll-output/data/2026-be/latest data/2026-be/
+          cp /tmp/poll-output/data/2026-be/metadata/wahlkreis-status.csv data/2026-be/metadata/
+          cp /tmp/poll-output/data/2026-be/reports/latest_events.csv data/2026-be/reports/
+          git add -A data/2026-be/latest data/2026-be/metadata/wahlkreis-status.csv data/2026-be/reports/latest_events.csv
+          git diff --cached --quiet && exit 0
+          git commit -m "2026-be poll $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          git push origin "HEAD:$DEFAULT_BRANCH"
