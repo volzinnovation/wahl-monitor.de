@@ -8,7 +8,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 7,Mitte 7,complete,45,45,1,0,0,1
 8,Friedrichshain-Kreuzberg 1,complete,53,53,1,0,0,1
 9,Friedrichshain-Kreuzberg 2,pending,66,68,1,0,0,1
-10,Friedrichshain-Kreuzberg 3,pending,70,71,1,0,0,1
+10,Friedrichshain-Kreuzberg 3,complete,71,71,1,0,0,1
 11,Friedrichshain-Kreuzberg 4,pending,67,68,1,0,0,1
 12,Friedrichshain-Kreuzberg 5,complete,68,68,1,0,0,1
 13,Pankow 1,complete,59,59,1,0,0,1
@@ -36,7 +36,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 35,Steglitz-Zehlendorf 2,complete,60,60,1,0,0,1
 36,Steglitz-Zehlendorf 3,pending,57,58,1,0,0,1
 37,Steglitz-Zehlendorf 4,pending,59,60,1,0,0,1
-38,Steglitz-Zehlendorf 5,pending,54,58,1,0,0,1
+38,Steglitz-Zehlendorf 5,pending,57,58,1,0,0,1
 39,Steglitz-Zehlendorf 6,pending,55,60,1,0,0,1
 40,Steglitz-Zehlendorf 7,pending,55,56,1,0,0,1
 41,Tempelhof-Schöneberg 1,pending,52,53,1,0,0,1
