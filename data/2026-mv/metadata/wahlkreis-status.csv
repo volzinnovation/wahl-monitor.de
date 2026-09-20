@@ -6,7 +6,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 5,Hansestadt Rostock II,complete,40,40,1,0,0,1
 6,Hansestadt Rostock III,complete,53,53,1,0,0,1
 7,Hansestadt Rostock IV,complete,53,53,1,0,0,1
-8,Schwerin I,pending,50,51,1,0,0,1
+8,Schwerin I,complete,51,51,1,0,0,1
 9,Schwerin II,complete,28,28,1,0,0,1
 10,Wismar,complete,36,36,1,0,0,1
 11,Landkreis Rostock I,complete,60,60,22,0,0,22
