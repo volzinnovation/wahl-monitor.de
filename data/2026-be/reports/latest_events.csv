@@ -1,2 +1,2 @@
 event_time_utc,source,ags,municipality_name,event_type,details_json
-2026-09-20T23:32:03.760274+00:00,statla,,,FILE_UPDATED,"{""current_hash"": ""2442f13092a29d2a289c0d2e8796c6475303ef2336c1fb8974a5e8c7c985e638"", ""previous_hash"": ""fe02a024171535f9dd865c37267859245c9292373aad7578ae949c9dd5aba48e""}"
+2026-09-20T23:36:34.335967+00:00,statla,,,FILE_UPDATED,"{""current_hash"": ""363f1a09abea286cf97ef1026ca39a1adfcf4dd75fb33159d6ef14d8303333bd"", ""previous_hash"": ""4285adaa4fd4a213bdde39141f46d9ce06b8163c4aad5f8ecfc4f456f4781b70""}"
