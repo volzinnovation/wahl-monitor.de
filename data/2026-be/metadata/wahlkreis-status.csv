@@ -9,7 +9,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 8,Friedrichshain-Kreuzberg 1,complete,53,53,1,0,0,1
 9,Friedrichshain-Kreuzberg 2,pending,67,68,1,0,0,1
 10,Friedrichshain-Kreuzberg 3,complete,71,71,1,0,0,1
-11,Friedrichshain-Kreuzberg 4,pending,67,68,1,0,0,1
+11,Friedrichshain-Kreuzberg 4,complete,68,68,1,0,0,1
 12,Friedrichshain-Kreuzberg 5,complete,68,68,1,0,0,1
 13,Pankow 1,complete,59,59,1,0,0,1
 14,Pankow 2,complete,57,57,1,0,0,1
@@ -38,7 +38,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 37,Steglitz-Zehlendorf 4,complete,60,60,1,0,0,1
 38,Steglitz-Zehlendorf 5,complete,58,58,1,0,0,1
 39,Steglitz-Zehlendorf 6,complete,60,60,1,0,0,1
-40,Steglitz-Zehlendorf 7,pending,55,56,1,0,0,1
+40,Steglitz-Zehlendorf 7,complete,56,56,1,0,0,1
 41,Tempelhof-Schöneberg 1,complete,53,53,1,0,0,1
 42,Tempelhof-Schöneberg 2,complete,54,54,1,0,0,1
 43,Tempelhof-Schöneberg 3,complete,54,54,1,0,0,1
@@ -59,7 +59,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 58,Treptow-Köpenick 5,complete,48,48,1,0,0,1
 59,Treptow-Köpenick 6,complete,45,45,1,0,0,1
 60,Treptow-Köpenick 7,complete,49,49,1,0,0,1
-61,Marzahn-Hellersdorf 1,pending,41,45,1,0,0,1
+61,Marzahn-Hellersdorf 1,pending,42,45,1,0,0,1
 62,Marzahn-Hellersdorf 2,pending,44,51,1,0,0,1
 63,Marzahn-Hellersdorf 3,pending,46,52,1,0,0,1
 64,Marzahn-Hellersdorf 4,pending,52,58,1,0,0,1
