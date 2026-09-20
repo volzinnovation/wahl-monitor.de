@@ -303,6 +303,60 @@ class CurrentOverviewTests(unittest.TestCase):
                 {"GRÜNE": 1},
             )
 
+    def test_berlin_district_model_keeps_second_votes_and_direct_winners_together(self):
+        rows = [
+            {"row_key": "berlin:GEMEINDE:11000001", "vote_type": "Zweitstimmen", "party_name": "CDU", "votes": "100"},
+            {"row_key": "berlin:GEMEINDE:11000001", "vote_type": "Zweitstimmen", "party_name": "Die Linke", "votes": "80"},
+            {"row_key": "berlin:WAHLKREIS:1", "vote_type": "Erststimmen", "party_name": "CDU", "votes": "60"},
+            {"row_key": "berlin:WAHLKREIS:1", "vote_type": "Erststimmen", "party_name": "Die Linke", "votes": "40"},
+        ]
+        mapping = [{"Wahlkreisnummer": "1", "Bezirk": "01"}]
+
+        def fake_rows(path, delimiter=","):
+            return mapping if path.name == "wahlkreis-mapping.csv" else rows
+
+        with mock.patch.object(scenario_page, "read_csv_rows", side_effect=fake_rows):
+            result = scenario_page.load_berlin_district_model(SimpleNamespace(election_key="2026-be"))
+        self.assertEqual(result, [{
+            "district": "01",
+            "secondVotes": {"CDU": 100, "Die Linke": 80},
+            "directSeats": {"CDU": 1},
+        }])
+
+    def test_berlin_scenario_applies_district_overhang_and_compensation(self):
+        payload = {
+            "compensationRule": "berlin",
+            "allocationMethod": "hare_niemeyer",
+            "baseSeats": 130,
+            "thresholdPercent": 5,
+            "thresholdDirectException": True,
+            "directSeatCounts": {"CDU": 28, "SPD": 1, "GRÜNE": 10, "Die Linke": 28, "AfD": 11},
+            "berlinDistrictListParties": ["CDU", "SPD", "Die Linke"],
+            "berlinDistricts": [
+                {"district": "01", "secondVotes": {"CDU": 100, "SPD": 50, "Die Linke": 50}, "directSeats": {"CDU": 20}},
+                {"district": "02", "secondVotes": {"CDU": 10, "SPD": 50, "Die Linke": 50}, "directSeats": {"CDU": 8}},
+            ],
+            "parties": [
+                {"party": "CDU", "share": 20},
+                {"party": "SPD", "share": 15},
+                {"party": "GRÜNE", "share": 15},
+                {"party": "Die Linke", "share": 30},
+                {"party": "AfD", "share": 20},
+            ],
+        }
+        script = scenario_page.scenario_script()
+        start = script.index("  function isEligibleForAllocation")
+        end = script.index("  function currentScenarioShares")
+        node_source = (
+            "const payload = " + json.dumps(payload, ensure_ascii=False) + ";\n"
+            + script[start:end]
+            + "const parties = payload.parties.map((party) => ({...party, scenarioShare: party.share, adjustedShare: party.share}));\n"
+            + "const result = allocateSeats(parties, payload.baseSeats, payload.thresholdPercent);\n"
+            + "if (result.totalSeats <= payload.baseSeats || result.initialOverhang <= 0) process.exit(1);\n"
+        )
+        completed = subprocess.run(["node", "-e", node_source], capture_output=True, text=True)
+        self.assertEqual(completed.returncode, 0, completed.stderr or completed.stdout)
+
     def test_mv_and_berlin_scenarios_start_from_2021_reference_results(self):
         current_rows = [
             {"row_key": "state:LAND", "vote_type": "Zweitstimmen", "party_name": "SPD", "votes": "0"},

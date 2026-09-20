@@ -27,6 +27,15 @@ DEFAULT_PARTY_COLORS = {
     "Volt": "#502379",
 }
 
+# The 2026 Berlin election uses Bezirkslisten for these parties.  Their
+# statewide entitlement is distributed to the twelve Wahlkreisverbände before
+# direct mandates are checked for overhang.  The remaining qualifying parties
+# compete with a Landesliste and are handled at the statewide level.  HEIMAT
+# and B* have district lists only in individual districts; include their
+# canonical names so a scenario remains correct if either crosses the
+# threshold or wins a direct mandate.
+BERLIN_DISTRICT_LIST_PARTIES = {"CDU", "SPD", "Die Linke", "Die Heimat", "B*"}
+
 
 # These are the statutory starting sizes used by the scenario model.  The
 # final parliament can be larger where the applicable law requires
@@ -150,6 +159,84 @@ def reference_2021_direct_seat_counts(config: core.Config) -> dict[str, int]:
     return dict(sorted(counts.items()))
 
 
+def load_berlin_district_model(config: core.Config) -> list[dict[str, Any]]:
+    """Load current Berlin district second votes and direct winners.
+
+    Berlin's CDU, SPD and Die Linke lists are distributed by Bezirk; HEIMAT and
+    B* can also appear with district lists in individual districts. Keep the
+    district-level inputs in the scenario payload so the browser can apply the
+    statutory overhang check instead of comparing only statewide totals.
+    """
+    if state_code(config.election_key) != "be":
+        return []
+
+    rows = read_csv_rows(core.LATEST_DIR / "statla_party_results.csv")
+    mapping_rows = read_csv_rows(core.META_DIR / "wahlkreis-mapping.csv", delimiter=";")
+    wahlkreis_to_district = {
+        str(row.get("Wahlkreisnummer") or "").strip().lstrip("0") or "0":
+            str(row.get("Bezirk") or "").strip().zfill(2)
+        for row in mapping_rows
+        if str(row.get("Wahlkreisnummer") or "").strip()
+    }
+
+    district_votes: dict[str, dict[str, int]] = {}
+    for row in rows:
+        key = str(row.get("row_key") or "")
+        key_parts = {part.strip().upper() for part in key.split(":")}
+        if not key.lower().startswith("berlin:") or "GEMEINDE" not in key_parts:
+            continue
+        if core.canonical_vote_type(str(row.get("vote_type") or "")) != "Zweitstimmen":
+            continue
+        ags = key.split(":")[-1].strip()
+        district = ags[-2:] if len(ags) >= 2 else ""
+        if not district.isdigit():
+            continue
+        party = core.canonical_party_name(
+            str(row.get("party_name") or row.get("party_key") or ""),
+            "Zweitstimmen",
+        )
+        if not party:
+            continue
+        district_votes.setdefault(district, {})[party] = core.parse_int(row.get("votes")) or 0
+
+    direct_by_district: dict[str, dict[str, int]] = {}
+    by_wahlkreis: dict[str, list[tuple[int, str]]] = {}
+    for row in rows:
+        key = str(row.get("row_key") or "")
+        key_parts = {part.strip().upper() for part in key.split(":")}
+        if not key.lower().startswith("berlin:") or "WAHLKREIS" not in key_parts:
+            continue
+        if core.canonical_vote_type(str(row.get("vote_type") or "")) != "Erststimmen":
+            continue
+        votes = core.parse_int(row.get("votes")) or 0
+        party = core.canonical_party_name(
+            str(row.get("party_name") or row.get("party_key") or ""),
+            "Erststimmen",
+        )
+        if votes <= 0 or not party:
+            continue
+        wahlkreis = key.split(":")[-1].strip().lstrip("0") or "0"
+        by_wahlkreis.setdefault(wahlkreis, []).append((votes, party))
+    for wahlkreis, entries in by_wahlkreis.items():
+        district = wahlkreis_to_district.get(wahlkreis)
+        if not district:
+            continue
+        _votes, winner = max(entries, key=lambda item: (item[0], item[1]))
+        district_by_party = direct_by_district.setdefault(district, {})
+        district_by_party[winner] = district_by_party.get(winner, 0) + 1
+
+    districts = []
+    for district in sorted(set(district_votes) | set(direct_by_district)):
+        districts.append(
+            {
+                "district": district,
+                "secondVotes": district_votes.get(district, {}),
+                "directSeats": direct_by_district.get(district, {}),
+            }
+        )
+    return districts
+
+
 def load_party_baseline(config: core.Config, party_colors: dict[str, str]) -> dict[str, Any]:
     rows = land_rows(read_csv_rows(core.LATEST_DIR / "statla_party_results.csv"))
     second_vote_rows = [
@@ -257,6 +344,7 @@ def load_direct_seat_counts(config: core.Config) -> dict[str, int]:
 def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str, Any]:
     baseline = load_party_baseline(config, party_colors)
     direct_seat_counts = load_direct_seat_counts(config)
+    berlin_districts = load_berlin_district_model(config)
     vote_label = config.second_vote_label or "Zweitstimmen"
     state = state_code(config.election_key)
     allocation_method = allocation_method_for(config.election_key)
@@ -275,7 +363,8 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         "be": [
             "Berlin: mindestens 130 Sitze (78 Direktmandate und mindestens 52 Listenmandate).",
             "Die Sitzverteilung nutzt die 5-Prozent-Schwelle und Hare/Niemeyer.",
-            "Eine Partei nimmt auch unter 5 % an der Sitzverteilung teil, wenn sie mindestens ein Wahlkreismandat gewinnt; Überhang- und Ausgleichsmandate werden nach der Berliner Regel modelliert.",
+            "2026 treten CDU, SPD und Die Linke mit Bezirkslisten an; ihre Listenmandate werden je Bezirk verteilt, bevor Überhang- und Ausgleichsmandate nach der Berliner Regel berechnet werden.",
+            "Eine Partei nimmt auch unter 5 % an der Sitzverteilung teil, wenn sie mindestens ein Wahlkreismandat gewinnt.",
         ],
     }
     notes = notes_by_state.get(
@@ -294,6 +383,8 @@ def build_payload(config: core.Config, party_colors: dict[str, str]) -> dict[str
         "directSeats": direct_seat_count_for(config.election_key),
         "directSeatCounts": direct_seat_counts,
         "reportedDirectSeats": sum(direct_seat_counts.values()),
+        "berlinDistricts": berlin_districts,
+        "berlinDistrictListParties": sorted(BERLIN_DISTRICT_LIST_PARTIES),
         "allocationMethod": allocation_method,
         "thresholdDirectException": bool(rule.get("direct_threshold_exception", False)),
         "compensationRule": rule.get("compensation_rule", "none"),
@@ -580,6 +671,60 @@ def scenario_script() -> str:
     return allocation;
   }
 
+  function allocateHareNiemeyerWithFixed(parties, seats, threshold, directSeatCounts = {}, fixedSeats = {}) {
+    const initialized = initializeAllocation(parties, seats, threshold, directSeatCounts);
+    const { eligible, allocation, seatsToAllocate } = initialized;
+    const eligibleTotal = eligible.reduce((total, party) => total + party.adjustedShare, 0);
+    if (eligibleTotal <= 0) {
+      return allocation;
+    }
+    let assigned = 0;
+    const remainders = [];
+    eligible.forEach((party) => {
+      const fixed = Number(fixedSeats[party.party]);
+      if (Number.isFinite(fixed) && fixed > 0) {
+        allocation.set(party.party, fixed);
+        assigned += fixed;
+        return;
+      }
+      const exact = (party.adjustedShare / eligibleTotal) * seatsToAllocate;
+      const whole = Math.floor(exact);
+      allocation.set(party.party, whole);
+      assigned += whole;
+      remainders.push({ party: party.party, remainder: exact - whole, share: party.adjustedShare });
+    });
+    remainders.sort((a, b) => b.remainder - a.remainder || b.share - a.share || a.party.localeCompare(b.party));
+    remainders.slice(0, Math.max(0, seatsToAllocate - assigned)).forEach((item) => {
+      allocation.set(item.party, (allocation.get(item.party) || 0) + 1);
+    });
+    return allocation;
+  }
+
+  function allocateDistrictSeats(party, seats, districts) {
+    const weights = districts.map((district) => ({
+      district: district.district,
+      votes: Number((district.secondVotes || {})[party.party]) || 0,
+    }));
+    const totalVotes = weights.reduce((total, item) => total + item.votes, 0);
+    const allocation = new Map(weights.map((item) => [item.district, 0]));
+    if (totalVotes <= 0 || seats <= 0) {
+      return allocation;
+    }
+    let assigned = 0;
+    const remainders = weights.map((item) => {
+      const exact = (item.votes / totalVotes) * seats;
+      const whole = Math.floor(exact);
+      allocation.set(item.district, whole);
+      assigned += whole;
+      return { district: item.district, remainder: exact - whole, votes: item.votes };
+    });
+    remainders.sort((a, b) => b.remainder - a.remainder || b.votes - a.votes || a.district.localeCompare(b.district));
+    remainders.slice(0, seats - assigned).forEach((item) => {
+      allocation.set(item.district, (allocation.get(item.district) || 0) + 1);
+    });
+    return allocation;
+  }
+
   function countOverhang(parties, allocation, threshold, directSeatCounts) {
     return parties.reduce((total, party) => {
       if (!isEligibleForAllocation(party, threshold, directSeatCounts)) {
@@ -590,8 +735,77 @@ def scenario_script() -> str:
     }, 0);
   }
 
+  function countBerlinPartySeats(parties, allocation, threshold, directSeatCounts) {
+    const districts = Array.isArray(payload.berlinDistricts) ? payload.berlinDistricts : [];
+    const districtListParties = new Set(payload.berlinDistrictListParties || []);
+    const totals = new Map();
+    parties.forEach((party) => {
+      if (!isEligibleForAllocation(party, threshold, directSeatCounts)) {
+        totals.set(party.party, Number(directSeatCounts[party.party]) || 0);
+        return;
+      }
+      const partySeats = allocation.get(party.party) || 0;
+      if (!districtListParties.has(party.party) || districts.length === 0) {
+        totals.set(party.party, Math.max(partySeats, Number(directSeatCounts[party.party]) || 0));
+        return;
+      }
+      const districtAllocation = allocateDistrictSeats(party, partySeats, districts);
+      const total = districts.reduce((sum, district) => {
+        const districtDirect = Number((district.directSeats || {})[party.party]) || 0;
+        return sum + Math.max(districtAllocation.get(district.district) || 0, districtDirect);
+      }, 0);
+      totals.set(party.party, total);
+    });
+    return totals;
+  }
+
+  function allocateBerlinSeats(parties, seats, threshold, directSeatCounts) {
+    const firstAllocation = allocateHareNiemeyer(parties, seats, threshold, directSeatCounts);
+    const firstPartySeats = countBerlinPartySeats(parties, firstAllocation, threshold, directSeatCounts);
+    const eligible = parties.filter((party) => isEligibleForAllocation(party, threshold, directSeatCounts));
+    const eligibleTotal = eligible.reduce((total, party) => total + party.adjustedShare, 0);
+    const overhangParties = eligible.filter((party) =>
+      (firstPartySeats.get(party.party) || 0) > (firstAllocation.get(party.party) || 0),
+    );
+    const initialOverhang = overhangParties.reduce(
+      (total, party) => total + (firstPartySeats.get(party.party) || 0) - (firstAllocation.get(party.party) || 0),
+      0,
+    );
+    if (overhangParties.length === 0 || eligibleTotal <= 0) {
+      return { allocation: firstAllocation, totalSeats: seats, overhang: 0, initialOverhang };
+    }
+
+    const requiredTotals = overhangParties.map((party) => {
+      const partySeats = firstPartySeats.get(party.party) || 0;
+      const required = party.adjustedShare > 0
+        ? Math.floor((partySeats * eligibleTotal / party.adjustedShare) + 0.5)
+        : seats;
+      return { party: party.party, seats: partySeats, required: Math.max(seats, required) };
+    });
+    const totalSeats = Math.max(...requiredTotals.map((item) => item.required));
+    const highestRequired = Math.max(...requiredTotals.map((item) => item.required));
+    const fixedSeats = Object.fromEntries(
+      requiredTotals
+        .filter((item) => item.required === highestRequired)
+        .map((item) => [item.party, item.seats]),
+    );
+    const allocation = allocateHareNiemeyerWithFixed(
+      parties,
+      totalSeats,
+      threshold,
+      directSeatCounts,
+      fixedSeats,
+    );
+    // The fixed party's seats already include its district-level overhang.
+    // The remaining parties receive the Hare/Niemeyer compensation seats.
+    return { allocation, totalSeats, overhang: 0, initialOverhang };
+  }
+
   function allocateSeats(parties, seats, threshold) {
     const directSeatCounts = payload.directSeatCounts || {};
+    if (payload.compensationRule === "berlin" && Array.isArray(payload.berlinDistricts) && payload.berlinDistricts.length > 0) {
+      return allocateBerlinSeats(parties, seats, threshold, directSeatCounts);
+    }
     let totalSeats = seats;
     let allocation = payload.allocationMethod === "hare_niemeyer"
       ? allocateHareNiemeyer(parties, totalSeats, threshold, directSeatCounts)
@@ -610,8 +824,7 @@ def scenario_script() -> str:
         overhang = countOverhang(parties, allocation, threshold, directSeatCounts);
       }
     } else {
-      // Berlin increases the total until every eligible direct mandate is
-      // covered by the proportional party entitlement.
+      // Fallback for elections without a district-level compensation model.
       for (let iteration = 0; iteration < 10000 && overhang > 0; iteration += 1) {
         totalSeats += 1;
         allocation = payload.allocationMethod === "hare_niemeyer"
@@ -692,7 +905,10 @@ def scenario_script() -> str:
     const directLabel = payload.reportedDirectSeats
       ? ` Aktuelle Direktmandatsführer: ${payload.reportedDirectSeats} von ${payload.directSeats}.`
       : "";
-    summary.textContent = `${totalLabel}, gesetzliche Ausgangszahl ${payload.baseSeats}, Mehrheit ab ${majority}. Modell: 5%-Schwelle und ${methodLabel}.${directLabel}`;
+    const overhangLabel = payload.compensationRule === "berlin" && seatResult.initialOverhang > 0
+      ? ` Bezirksebene: ${seatResult.initialOverhang} Überhangmandate; Ausgleich auf ${totalSeats} Sitze.`
+      : "";
+    summary.textContent = `${totalLabel}, gesetzliche Ausgangszahl ${payload.baseSeats}, Mehrheit ab ${majority}. Modell: 5%-Schwelle und ${methodLabel}.${directLabel}${overhangLabel}`;
     coalitionSummary.textContent = `Absolute Mehrheit ab ${majority} von ${totalSeats} Sitzen.`;
 
     seatsRoot.replaceChildren();
