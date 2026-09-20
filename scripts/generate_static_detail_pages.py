@@ -31,6 +31,7 @@ SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://wahl-monitor.de").rstri
 STRUCTURE_DATE = "20210314"
 STRUCTURE_BASE_URL = "https://wahlergebnisse.komm.one/01/produktion/wahltermin-20210314"
 REMOTE_TIMEOUT_SECONDS = 20
+HISTORY_TOP_PARTY_COUNT = 6
 
 WAHL_PARTY_COLORS = {
     "GRÜNE": "#008939",
@@ -1073,9 +1074,8 @@ def load_git_vote_share_history(config: core.Config) -> List[Dict[str, Any]]:
             "total_precincts": core.parse_int(land_snapshot.get("total_precincts")) or 0,
             "valid_votes": valid_votes,
             "shares": {
-                "AfD": ((party_votes.get("AfD") or 0) / valid_votes) * 100.0,
-                "CDU": ((party_votes.get("CDU") or 0) / valid_votes) * 100.0,
-                "GRÜNE": ((party_votes.get("GRÜNE") or 0) / valid_votes) * 100.0,
+                party: (votes / valid_votes) * 100.0
+                for party, votes in party_votes.items()
             },
         }
 
@@ -1093,16 +1093,33 @@ def render_vote_share_history_panel(config: core.Config) -> str:
     width = 880.0
     height = 360.0
     margin_left = 58.0
-    margin_right = 88.0
-    margin_top = 24.0
+    margin_right = 120.0
+    margin_top = 52.0
     margin_bottom = 96.0
     plot_width = width - margin_left - margin_right
     plot_height = height - margin_top - margin_bottom
+    legend_columns = 3
+    legend_column_width = plot_width / legend_columns
 
     timestamps = [item["timestamp_local"].timestamp() for item in history]
     min_x = min(timestamps)
     max_x = max(timestamps)
-    parties = ["AfD", "CDU", "GRÜNE"]
+    latest_shares = history[-1].get("shares", {})
+    party_names = {
+        str(party).strip()
+        for history_item in history
+        for party in history_item.get("shares", {})
+        if str(party).strip()
+    }
+    parties = sorted(
+        party_names,
+        key=lambda party: (-float(latest_shares.get(party, 0.0)), party.casefold()),
+    )[:HISTORY_TOP_PARTY_COUNT]
+    if not parties:
+        return (
+            "<div class='panel'><h2>Verlauf der Stimmanteile am Wahlabend</h2>"
+            "<p class='muted'>Keine landesweiten Zweitstimmen nach Parteien vorhanden.</p></div>"
+        )
     # Keep the election-night comparison visually stable as new snapshots arrive.
     # The fixed 0–60% range also keeps low-result early snapshots readable.
     padded_min = 0.0
@@ -1156,9 +1173,9 @@ def render_vote_share_history_panel(config: core.Config) -> str:
     legend_nodes: List[str] = []
     end_labels: List[Dict[str, Any]] = []
     for series_index, party in enumerate(parties):
-        color = WAHL_PARTY_COLORS[party]
+        color = WAHL_PARTY_COLORS.get(party, "#94a3b8")
         points = [
-            (x_pos(ts_value), y_pos(float(history_item["shares"][party])))
+            (x_pos(ts_value), y_pos(float(history_item.get("shares", {}).get(party, 0.0))))
             for history_item, ts_value in zip(history, timestamps)
         ]
         polyline_points = " ".join(f"{x:.2f},{y:.2f}" for x, y in points)
@@ -1171,7 +1188,7 @@ def render_vote_share_history_panel(config: core.Config) -> str:
                 f"<circle cx='{x:.2f}' cy='{y:.2f}' r='4.5' fill='{color}' stroke='#ffffff' stroke-width='1.5'/>"
             )
         end_x, end_y = points[-1]
-        latest_value = float(history[-1]["shares"][party])
+        latest_value = float(history[-1].get("shares", {}).get(party, 0.0))
         end_labels.append(
             {
                 "party": party,
@@ -1181,9 +1198,10 @@ def render_vote_share_history_panel(config: core.Config) -> str:
                 "value": latest_value,
             }
         )
-        legend_x = margin_left + (series_index * 118.0)
+        legend_x = margin_left + ((series_index % legend_columns) * legend_column_width)
+        legend_y = 14.0 + ((series_index // legend_columns) * 18.0)
         legend_nodes.append(
-            f"<g transform='translate({legend_x:.2f}, {margin_top - 4:.2f})'>"
+            f"<g transform='translate({legend_x:.2f}, {legend_y:.2f})'>"
             f"<line x1='0' y1='0' x2='20' y2='0' stroke='{color}' stroke-width='3.5' stroke-linecap='round'/>"
             f"<text x='28' y='4' class='history-legend-label'>{html.escape(party)}</text>"
             "</g>"
@@ -1221,9 +1239,13 @@ def render_vote_share_history_panel(config: core.Config) -> str:
         f"Letzter Stand {latest['timestamp_local'].strftime('%H:%M %Z')}, {reporting}."
     )
 
+    if len(parties) == 1:
+        party_label = parties[0]
+    else:
+        party_label = ", ".join(parties[:-1]) + " und " + parties[-1]
     chart = (
         f"<svg class='history-chart' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {int(width)} {int(height)}' "
-        f"role='img' aria-label='Verlauf der Zweitstimmenanteile von AfD, CDU und GRÜNE am Wahlabend'>"
+        f"role='img' aria-label='Verlauf der Zweitstimmenanteile von {html.escape(party_label)} am Wahlabend'>"
         f"<rect x='0' y='0' width='{width:.2f}' height='{height:.2f}' rx='14' fill='#fbfdff'/>"
         f"{''.join(grid_lines)}"
         f"<line x1='{margin_left:.2f}' y1='{margin_top + plot_height:.2f}' x2='{width - margin_right:.2f}' y2='{margin_top + plot_height:.2f}' stroke='#7c8a9a' stroke-width='1.2'/>"

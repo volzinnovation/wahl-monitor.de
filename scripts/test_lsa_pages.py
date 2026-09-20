@@ -71,25 +71,48 @@ class CurrentOverviewTests(unittest.TestCase):
         self.assertIn("CSV-Ergebnisstand (1 / 10 Wahlbezirke)", result)
         self.assertIn("Delta HTML − CSV (gemeldet / gesamt): +218 / +2.650 Wahlbezirke", result)
 
-    def test_vote_share_history_uses_fixed_zero_to_sixty_percent_axis(self):
+    def test_vote_share_history_shows_latest_top_six_parties(self):
         history = [
             {
                 "timestamp_local": datetime(2026, 9, 6, 18, 0, tzinfo=timezone.utc),
                 "label": "18:00",
                 "reported_precincts": 1,
                 "total_precincts": 10,
-                "shares": {"AfD": 10.0, "CDU": 20.0, "GRÜNE": 5.0},
+                "shares": {
+                    "AfD": 10.0,
+                    "CDU": 20.0,
+                    "GRÜNE": 5.0,
+                    "SPD": 25.0,
+                    "BSW": 8.0,
+                    "Die Linke": 7.0,
+                    "FDP": 1.0,
+                },
             },
             {
                 "timestamp_local": datetime(2026, 9, 6, 18, 15, tzinfo=timezone.utc),
                 "label": "18:15",
                 "reported_precincts": 2,
                 "total_precincts": 10,
-                "shares": {"AfD": 12.0, "CDU": 19.0, "GRÜNE": 6.0},
+                "shares": {
+                    "AfD": 12.0,
+                    "CDU": 19.0,
+                    "GRÜNE": 6.0,
+                    "SPD": 25.0,
+                    "BSW": 8.0,
+                    "Die Linke": 7.0,
+                    "FDP": 1.0,
+                },
             },
         ]
         with mock.patch.object(generator, "load_git_vote_share_history", return_value=history):
             result = generator.render_vote_share_history_panel(object())
+        for party in ("SPD", "CDU", "AfD", "BSW", "Die Linke", "GRÜNE"):
+            self.assertIn(f">{party}</text>", result)
+        self.assertNotIn(">FDP</text>", result)
+        self.assertIn(
+            "aria-label='Verlauf der Zweitstimmenanteile von SPD, CDU, AfD, BSW, Die Linke und GRÜNE am Wahlabend'",
+            result,
+        )
         for tick in (0, 12, 24, 36, 48, 60):
             self.assertIn(f">{tick}%</text>", result)
         self.assertIn(">18:00</text>", result)
