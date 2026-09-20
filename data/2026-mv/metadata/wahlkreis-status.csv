@@ -13,7 +13,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 12,Landkreis Rostock II,complete,73,73,32,0,0,32
 13,Mecklenburgische Seenplatte I -Vorpommern-Greifswald I,complete,55,55,31,0,0,31
 14,Mecklenburgische Seenplatte II,complete,55,55,41,0,0,41
-15,Landkreis Rostock III,pending,69,70,42,0,0,42
+15,Landkreis Rostock III,complete,70,70,42,0,0,42
 16,Landkreis Rostock IV,complete,61,61,29,0,0,29
 17,Ludwigslust-Parchim I,complete,65,65,28,0,0,28
 18,Ludwigslust-Parchim II,complete,60,60,33,0,0,33
@@ -28,7 +28,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 27,Nordwestmecklenburg I,complete,84,84,38,0,0,38
 28,Nordwestmecklenburg II,complete,71,71,53,0,0,53
 29,Vorpommern-Greifswald II,complete,64,64,44,0,0,44
-30,Vorpommern-Greifswald III,pending,67,68,42,0,0,42
+30,Vorpommern-Greifswald III,complete,68,68,42,0,0,42
 31,Ludwigslust-Parchim IV,complete,64,64,27,0,0,27
 32,Ludwigslust-Parchim V,pending,63,64,37,0,0,37
 33,Vorpommern-Rügen IV,complete,37,37,26,0,0,26
