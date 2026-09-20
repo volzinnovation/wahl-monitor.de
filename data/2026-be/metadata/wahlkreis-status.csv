@@ -7,8 +7,8 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 6,Mitte 6,complete,44,44,1,0,0,1
 7,Mitte 7,pending,44,45,1,0,0,1
 8,Friedrichshain-Kreuzberg 1,complete,53,53,1,0,0,1
-9,Friedrichshain-Kreuzberg 2,pending,65,68,1,0,0,1
-10,Friedrichshain-Kreuzberg 3,pending,68,71,1,0,0,1
+9,Friedrichshain-Kreuzberg 2,pending,66,68,1,0,0,1
+10,Friedrichshain-Kreuzberg 3,pending,69,71,1,0,0,1
 11,Friedrichshain-Kreuzberg 4,pending,65,68,1,0,0,1
 12,Friedrichshain-Kreuzberg 5,complete,68,68,1,0,0,1
 13,Pankow 1,complete,59,59,1,0,0,1
@@ -49,8 +49,8 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 48,Neukölln 1,complete,51,51,1,0,0,1
 49,Neukölln 2,complete,50,50,1,0,0,1
 50,Neukölln 3,pending,46,47,1,0,0,1
-51,Neukölln 4,pending,45,46,1,0,0,1
-52,Neukölln 5,pending,51,53,1,0,0,1
+51,Neukölln 4,complete,46,46,1,0,0,1
+52,Neukölln 5,pending,52,53,1,0,0,1
 53,Neukölln 6,pending,51,52,1,0,0,1
 54,Treptow-Köpenick 1,complete,46,46,1,0,0,1
 55,Treptow-Köpenick 2,complete,45,45,1,0,0,1
@@ -72,7 +72,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 71,Lichtenberg 5,complete,57,57,1,0,0,1
 72,Lichtenberg 6,pending,52,54,1,0,0,1
 73,Reinickendorf 1,pending,42,45,1,0,0,1
-74,Reinickendorf 2,pending,44,48,1,0,0,1
+74,Reinickendorf 2,pending,45,48,1,0,0,1
 75,Reinickendorf 3,pending,53,57,1,0,0,1
 76,Reinickendorf 4,complete,57,57,1,0,0,1
 77,Reinickendorf 5,complete,43,43,1,0,0,1
