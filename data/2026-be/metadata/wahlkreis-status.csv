@@ -70,7 +70,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 69,Lichtenberg 3,complete,58,58,1,0,0,1
 70,Lichtenberg 4,complete,57,57,1,0,0,1
 71,Lichtenberg 5,complete,57,57,1,0,0,1
-72,Lichtenberg 6,pending,53,54,1,0,0,1
+72,Lichtenberg 6,complete,54,54,1,0,0,1
 73,Reinickendorf 1,pending,44,45,1,0,0,1
 74,Reinickendorf 2,complete,48,48,1,0,0,1
 75,Reinickendorf 3,complete,57,57,1,0,0,1
