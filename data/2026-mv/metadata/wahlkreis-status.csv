@@ -1,8 +1,8 @@
 wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipalities_total,municipalities_complete,municipalities_pending,municipalities_no_data
-1,Greifswald,pending,56,60,1,0,0,1
+1,Greifswald,pending,58,60,1,0,0,1
 2,Neubrandenburg I,pending,25,27,1,0,0,1
-3,Neubrandenburg II,pending,27,29,1,0,0,1
-4,Hansestadt Rostock I,pending,38,40,1,0,0,1
+3,Neubrandenburg II,pending,28,29,1,0,0,1
+4,Hansestadt Rostock I,pending,39,40,1,0,0,1
 5,Hansestadt Rostock II,pending,38,40,1,0,0,1
 6,Hansestadt Rostock III,pending,50,53,1,0,0,1
 7,Hansestadt Rostock IV,pending,51,53,1,0,0,1
@@ -13,25 +13,25 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 12,Landkreis Rostock II,pending,72,73,32,0,0,32
 13,Mecklenburgische Seenplatte I -Vorpommern-Greifswald I,complete,55,55,31,0,0,31
 14,Mecklenburgische Seenplatte II,complete,55,55,41,0,0,41
-15,Landkreis Rostock III,pending,66,70,42,0,0,42
-16,Landkreis Rostock IV,pending,48,61,29,0,0,29
+15,Landkreis Rostock III,pending,67,70,42,0,0,42
+16,Landkreis Rostock IV,pending,57,61,29,0,0,29
 17,Ludwigslust-Parchim I,pending,64,65,28,0,0,28
 18,Ludwigslust-Parchim II,pending,59,60,33,0,0,33
-19,Ludwigslust-Parchim III,pending,56,58,31,0,0,31
+19,Ludwigslust-Parchim III,pending,57,58,31,0,0,31
 20,Mecklenburgische Seenplatte III,pending,77,82,43,0,0,43
 21,Mecklenburgische Seenplatte IV,complete,53,53,19,0,0,19
-22,Mecklenburgische Seenplatte V,pending,75,78,37,0,0,37
-23,Vorpommern-Rügen I,pending,55,60,25,0,0,25
+22,Mecklenburgische Seenplatte V,complete,78,78,37,0,0,37
+23,Vorpommern-Rügen I,pending,57,60,25,0,0,25
 24,Vorpommern-Rügen II -Stralsund III,pending,43,45,18,0,0,18
 25,Vorpommern-Rügen III -Stralsund I,pending,56,58,28,0,0,28
 26,Stralsund II,pending,25,26,1,0,0,1
-27,Nordwestmecklenburg I,pending,81,84,38,0,0,38
-28,Nordwestmecklenburg II,pending,68,71,53,0,0,53
+27,Nordwestmecklenburg I,pending,82,84,38,0,0,38
+28,Nordwestmecklenburg II,pending,69,71,53,0,0,53
 29,Vorpommern-Greifswald II,pending,62,64,44,0,0,44
-30,Vorpommern-Greifswald III,pending,64,68,42,0,0,42
+30,Vorpommern-Greifswald III,pending,66,68,42,0,0,42
 31,Ludwigslust-Parchim IV,complete,64,64,27,0,0,27
 32,Ludwigslust-Parchim V,pending,60,64,37,0,0,37
 33,Vorpommern-Rügen IV,pending,36,37,26,0,0,26
-34,Vorpommern-Rügen V,pending,36,39,18,0,0,18
+34,Vorpommern-Rügen V,pending,37,39,18,0,0,18
 35,Vorpommern-Greifswald IV,complete,48,48,22,0,0,22
 36,Vorpommern-Greifswald V,complete,59,59,30,0,0,30
