@@ -1,8 +1,8 @@
 wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipalities_total,municipalities_complete,municipalities_pending,municipalities_no_data
 1,Greifswald,complete,60,60,1,0,0,1
-2,Neubrandenburg I,pending,26,27,1,0,0,1
+2,Neubrandenburg I,complete,27,27,1,0,0,1
 3,Neubrandenburg II,complete,29,29,1,0,0,1
-4,Hansestadt Rostock I,pending,39,40,1,0,0,1
+4,Hansestadt Rostock I,complete,40,40,1,0,0,1
 5,Hansestadt Rostock II,complete,40,40,1,0,0,1
 6,Hansestadt Rostock III,complete,53,53,1,0,0,1
 7,Hansestadt Rostock IV,complete,53,53,1,0,0,1
