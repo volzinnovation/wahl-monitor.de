@@ -1,9 +1,9 @@
 wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipalities_total,municipalities_complete,municipalities_pending,municipalities_no_data
-1,Greifswald,pending,59,60,1,0,0,1
+1,Greifswald,complete,60,60,1,0,0,1
 2,Neubrandenburg I,pending,26,27,1,0,0,1
 3,Neubrandenburg II,complete,29,29,1,0,0,1
 4,Hansestadt Rostock I,pending,39,40,1,0,0,1
-5,Hansestadt Rostock II,pending,39,40,1,0,0,1
+5,Hansestadt Rostock II,complete,40,40,1,0,0,1
 6,Hansestadt Rostock III,complete,53,53,1,0,0,1
 7,Hansestadt Rostock IV,complete,53,53,1,0,0,1
 8,Schwerin I,pending,50,51,1,0,0,1
@@ -13,7 +13,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 12,Landkreis Rostock II,complete,73,73,32,0,0,32
 13,Mecklenburgische Seenplatte I -Vorpommern-Greifswald I,complete,55,55,31,0,0,31
 14,Mecklenburgische Seenplatte II,complete,55,55,41,0,0,41
-15,Landkreis Rostock III,pending,68,70,42,0,0,42
+15,Landkreis Rostock III,pending,69,70,42,0,0,42
 16,Landkreis Rostock IV,pending,60,61,29,0,0,29
 17,Ludwigslust-Parchim I,complete,65,65,28,0,0,28
 18,Ludwigslust-Parchim II,complete,60,60,33,0,0,33
@@ -22,12 +22,12 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 21,Mecklenburgische Seenplatte IV,complete,53,53,19,0,0,19
 22,Mecklenburgische Seenplatte V,complete,78,78,37,0,0,37
 23,Vorpommern-Rügen I,complete,60,60,25,0,0,25
-24,Vorpommern-Rügen II -Stralsund III,pending,44,45,18,0,0,18
+24,Vorpommern-Rügen II -Stralsund III,complete,45,45,18,0,0,18
 25,Vorpommern-Rügen III -Stralsund I,pending,57,58,28,0,0,28
 26,Stralsund II,complete,26,26,1,0,0,1
 27,Nordwestmecklenburg I,complete,84,84,38,0,0,38
 28,Nordwestmecklenburg II,complete,71,71,53,0,0,53
-29,Vorpommern-Greifswald II,pending,63,64,44,0,0,44
+29,Vorpommern-Greifswald II,complete,64,64,44,0,0,44
 30,Vorpommern-Greifswald III,pending,67,68,42,0,0,42
 31,Ludwigslust-Parchim IV,complete,64,64,27,0,0,27
 32,Ludwigslust-Parchim V,pending,63,64,37,0,0,37
