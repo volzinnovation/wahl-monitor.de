@@ -1,0 +1,14 @@
+{
+  "election_key": "2026-mv",
+  "git_ref": "60845e75aa1425199bd28557b9ad5050b2675e13",
+  "original_source_sha256": "3b4e6e5500757afbaf66fd411b13f2886af6c73cc2accd80e268fc93ddbda8bb",
+  "archive_encoding": "UTF-8/LF; verified after restoring CP1252/CRLF source encoding",
+  "fetched_at_utc": "2026-09-20T21:51:30.134776+00:00",
+  "sha256": {
+    "run_metadata.json": "a680037fba74a7d8cb1681dd6732c3f9d783bbe5e13c4d3ad1700293f326d365",
+    "official-results-source.csv": "7c4e2a5b9ec43a60102b98430189361890f5c2f7479014394898cc1119974fdc",
+    "statla_party_results.csv": "f8e65c87c8a774f8d2efc14a6a9405eaf0fa0d839fe48b7bea801e3e8aefca2f",
+    "statla_snapshots.csv": "468e32023199ee9c7ab8da96cb0dc845a87fc1d79d0b24f1d8e46ac41c4d0889",
+    "official_results_source_metadata.json": "b61302c00e4ff4515912509f546a3028fac804e28a5e5c8a5fabd315b4a0b363"
+  }
+}

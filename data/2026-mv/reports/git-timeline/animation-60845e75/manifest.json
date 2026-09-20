@@ -1,0 +1,169 @@
+{
+  "election_key": "2026-mv",
+  "source_ref": "60845e75aa1425199bd28557b9ad5050b2675e13",
+  "captures": 75,
+  "excluded": [
+    {
+      "commit": "7eaf8cebfff66df574c429a10c80c5970053bfcb",
+      "reason": "not a successful live CSV capture"
+    }
+  ],
+  "first_capture_local": "2026-09-20T19:12:21.930864+02:00",
+  "last_capture_local": "2026-09-20T23:51:30.273609+02:00",
+  "selected_parties": [
+    {
+      "party": "AfD",
+      "votes": 387929
+    },
+    {
+      "party": "Die Linke",
+      "votes": 66310
+    },
+    {
+      "party": "GRÜNE",
+      "votes": 57466
+    },
+    {
+      "party": "SPD",
+      "votes": 360061
+    }
+  ],
+  "selection": "strictly above 5% in last archived Land observation",
+  "denominator": "all valid second votes in each normalized official Land row",
+  "archive_duration_seconds": 16748.342745,
+  "movie_duration_seconds": 80.0,
+  "fps": 25,
+  "frames": 2000,
+  "axis_percent": [
+    0,
+    60
+  ],
+  "timing": "capture completion times; elapsed-time proportional steps without interpolation; 2s opening/3s closing holds",
+  "checks": {
+    "every_party_sum_reconciled": true,
+    "every_capture_present": true,
+    "fixed_axis_bounds": true
+  },
+  "generator_sha256": {
+    "render_state_results_animation.py": "d6b0c6d0cd7e641ad82c69a2e51f4ee729052597f9da71d1be7b2bad64301fb2",
+    "render_lsa_results_animation.py": "dba06d207aa9b553570301c1a272bde505513d4843828a48d81436fb224128e8"
+  },
+  "python": "3.10.5",
+  "videos": {
+    "auszaehlung-landtagswahl-mecklenburg-vorpommern.mpg": {
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mpeg2video",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "25/1",
+            "nb_read_frames": "2000",
+            "side_data_list": [
+              {}
+            ]
+          }
+        ],
+        "format": {
+          "format_name": "mpeg",
+          "duration": "80.000000"
+        }
+      },
+      "full_decode": "passed",
+      "command": [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-f",
+        "concat",
+        "-safe",
+        "0",
+        "-i",
+        "frames.ffconcat",
+        "-an",
+        "-vf",
+        "fps=25",
+        "-frames:v",
+        "2000",
+        "-threads",
+        "2",
+        "-pix_fmt",
+        "yuv420p",
+        "-c:v",
+        "mpeg2video",
+        "-q:v",
+        "2",
+        "-maxrate",
+        "12M",
+        "-bufsize",
+        "4M",
+        "-g",
+        "15",
+        "-bf",
+        "2",
+        "-f",
+        "mpeg",
+        "auszaehlung-landtagswahl-mecklenburg-vorpommern.mpg"
+      ]
+    },
+    "auszaehlung-landtagswahl-mecklenburg-vorpommern.mp4": {
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "25/1",
+            "nb_read_frames": "2000"
+          }
+        ],
+        "format": {
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "duration": "80.000000"
+        }
+      },
+      "full_decode": "passed",
+      "command": [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-f",
+        "concat",
+        "-safe",
+        "0",
+        "-i",
+        "frames.ffconcat",
+        "-an",
+        "-vf",
+        "fps=25",
+        "-frames:v",
+        "2000",
+        "-threads",
+        "2",
+        "-pix_fmt",
+        "yuv420p",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "18",
+        "-preset",
+        "medium",
+        "-tune",
+        "stillimage",
+        "-g",
+        "50",
+        "-movflags",
+        "+faststart",
+        "auszaehlung-landtagswahl-mecklenburg-vorpommern.mp4"
+      ]
+    }
+  }
+}

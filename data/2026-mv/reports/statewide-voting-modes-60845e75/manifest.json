@@ -1,0 +1,89 @@
+{
+  "election_key": "2026-mv",
+  "source": {
+    "election_key": "2026-mv",
+    "git_ref": "60845e75aa1425199bd28557b9ad5050b2675e13",
+    "original_source_sha256": "3b4e6e5500757afbaf66fd411b13f2886af6c73cc2accd80e268fc93ddbda8bb",
+    "archive_encoding": "UTF-8/LF; verified after restoring CP1252/CRLF source encoding",
+    "fetched_at_utc": "2026-09-20T21:51:30.134776+00:00",
+    "sha256": {
+      "run_metadata.json": "a680037fba74a7d8cb1681dd6732c3f9d783bbe5e13c4d3ad1700293f326d365",
+      "official-results-source.csv": "7c4e2a5b9ec43a60102b98430189361890f5c2f7479014394898cc1119974fdc",
+      "statla_party_results.csv": "f8e65c87c8a774f8d2efc14a6a9405eaf0fa0d839fe48b7bea801e3e8aefca2f",
+      "statla_snapshots.csv": "468e32023199ee9c7ab8da96cb0dc845a87fc1d79d0b24f1d8e46ac41c4d0889",
+      "official_results_source_metadata.json": "b61302c00e4ff4515912509f546a3028fac804e28a5e5c8a5fabd315b4a0b363"
+    }
+  },
+  "context": {
+    "source_time": "20.09.2026 23:46:56",
+    "reported": 1973,
+    "expected": 1974,
+    "valid_second_votes": 1014559,
+    "groups": {
+      "briefwahl": {
+        "valid": 284274,
+        "precincts": 339,
+        "positive_precincts": 338,
+        "votes": {
+          "AfD": 63265,
+          "BSW": 13674,
+          "Bündnis C": 329,
+          "CDU": 21263,
+          "Die Linke": 24841,
+          "Die PARTEI": 883,
+          "FDP": 4065,
+          "FREIE WÄHLER": 1331,
+          "GRÜNE": 22175,
+          "Handwerker Partei Deutschland": 1960,
+          "KPD": 236,
+          "PIRATEN": 579,
+          "PdF": 404,
+          "SPD": 123399,
+          "Team Freiheit": 721,
+          "Tierschutzpartei": 3498,
+          "Volt": 799,
+          "WLD": 477,
+          "ÖDP": 375
+        }
+      },
+      "urnenwahl": {
+        "valid": 730285,
+        "precincts": 1635,
+        "positive_precincts": 1635,
+        "votes": {
+          "AfD": 324664,
+          "BSW": 35335,
+          "Bündnis C": 560,
+          "CDU": 28302,
+          "Die Linke": 41469,
+          "Die PARTEI": 1870,
+          "FDP": 6338,
+          "FREIE WÄHLER": 2490,
+          "GRÜNE": 35291,
+          "Handwerker Partei Deutschland": 2835,
+          "KPD": 582,
+          "PIRATEN": 1424,
+          "PdF": 534,
+          "SPD": 236662,
+          "Team Freiheit": 1820,
+          "Tierschutzpartei": 7626,
+          "Volt": 1105,
+          "WLD": 772,
+          "ÖDP": 606
+        }
+      }
+    },
+    "all_party_sum_reconciled": true,
+    "mode_party_totals_reconciled_to_land": true,
+    "source_url": "https://wahlen.mvnet.de/dateien/ergebnisse.2026/landtagswahl/csv/l_wahlbezirke.csv"
+  },
+  "generator_sha256": "75626013acef7ec22cd291ee9807042c3a41ebbf3fa5c8c387d21e1713ab76aa",
+  "selection": ">5% in either mode; exclude composite Sonstige",
+  "selected_parties": [
+    "AfD",
+    "SPD",
+    "Die Linke",
+    "GRÜNE",
+    "CDU"
+  ]
+}

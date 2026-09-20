@@ -184,7 +184,7 @@ def assign_frames(rows, seconds, fps):
     return span, start
 
 
-def render_frames(output, selected, rows):
+def render_frames(output, selected, rows, *, title=TITLE, selection_note=None):
     (output / "frames").mkdir(exist_ok=True)
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 15,
                          "text.color": INK, "axes.labelcolor": INK,
@@ -192,15 +192,15 @@ def render_frames(output, selected, rows):
                          "figure.facecolor": "white", "axes.facecolor": "white"})
     fig = plt.figure(figsize=(16, 9), dpi=120)
     ax = fig.add_axes([.08, .185, .88, .605])
-    fig.text(.08, .932, TITLE, fontsize=27, weight="bold", ha="left", va="top")
+    fig.text(.08, .932, title, fontsize=27, weight="bold", ha="left", va="top")
     subtitle = fig.text(.08, .867, "", fontsize=19, ha="left", va="top")
-    fig.text(.08, .035, "wahl-monitor.de · Zeitraffer · Auswahl: sechs Parteien über 5 % beim letzten Abruf",
+    fig.text(.08, .035, selection_note or "wahl-monitor.de · Zeitraffer · Auswahl: sechs Parteien über 5 % beim letzten Abruf",
              fontsize=11, color=MUTED)
     names = [p["party"] for p in selected]
-    bars = ax.bar(names, [0] * 6, width=.65, color=[COLORS[n] for n in names],
+    bars = ax.bar(names, [0] * len(names), width=.65, color=[COLORS[n] for n in names],
                   edgecolor=[COLORS[n] for n in names], linewidth=.7, zorder=3)
     labels = [ax.text(i, 0, "", ha="center", va="top", color="white", fontsize=20,
-                      weight="bold", zorder=4) for i in range(6)]
+                      weight="bold", zorder=4) for i in range(len(names))]
     ax.set_ylim(0, 60)
     ax.set_yticks(range(0, 61, 10))
     ax.yaxis.set_major_formatter(FuncFormatter(lambda value, pos: f"{int(value)} %"))
@@ -232,7 +232,7 @@ def render_frames(output, selected, rows):
     plt.close(fig)
 
 
-def encode(output, rows, fps, total_frames):
+def encode(output, rows, fps, total_frames, *, basename=BASENAME):
     concat = ["ffconcat version 1.0"]
     for row in rows:
         concat += [f"file '{row['image']}'", f"duration {row['frame_count'] / fps:.8f}"]
@@ -244,7 +244,7 @@ def encode(output, rows, fps, total_frames):
     }
     validation = {}
     for extension, options in encodings.items():
-        filename = f"{BASENAME}.{extension}"
+        filename = f"{basename}.{extension}"
         command = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-f", "concat", "-safe", "0",
                    "-i", "frames.ffconcat", "-an", "-vf", f"fps={fps}", "-frames:v", str(total_frames),
                    "-threads", "2", "-pix_fmt", "yuv420p", *options, filename]

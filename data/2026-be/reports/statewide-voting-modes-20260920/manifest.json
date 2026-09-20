@@ -1,0 +1,41 @@
+{
+  "election_key": "2026-be",
+  "source": {
+    "election_key": "2026-be",
+    "url": "https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/index.html",
+    "status": 200,
+    "fetched_at_utc": "2026-09-20T22:01:29.563943+00:00",
+    "sha256": {
+      "official-results.html": "a79ab6a19f974a5ea65f2e2235346546a72f39037f51e3c59c0497f868dda94f"
+    }
+  },
+  "context": {
+    "source_time": "20.09.2026, 23:59:22",
+    "reported": 4071,
+    "expected": 4114,
+    "source_url": "https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/index.html",
+    "source_chart": {
+      "title": "Vergleich Urne-/Briefwahl: Zweitstimmen",
+      "subTitle": "Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, Berlin, Zwischenergebnis",
+      "info": "Ausgezählte Gebiete: 4.071 von 4.114 (0 ausbleibend), 20.09.2026, 23:59:22",
+      "footer": "© Der Landeswahlleiter für Berlin/Amt für Statistik Berlin-Brandenburg"
+    },
+    "official_percentage_sums_reconciled": true,
+    "missing_fields": [
+      "absolute party votes by mode",
+      "valid second votes by mode",
+      "precinct counts by mode"
+    ],
+    "note": "Official published percentage series, not inferred counts; Sonstige is a composite category."
+  },
+  "generator_sha256": "75626013acef7ec22cd291ee9807042c3a41ebbf3fa5c8c387d21e1713ab76aa",
+  "selection": ">5% in either mode; exclude composite Sonstige",
+  "selected_parties": [
+    "Die Linke",
+    "CDU",
+    "AfD",
+    "GRÜNE",
+    "SPD",
+    "BSW"
+  ]
+}

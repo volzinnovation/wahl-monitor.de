@@ -1,0 +1,174 @@
+{
+  "options": {
+    "type": "stimmen-vergleich",
+    "orientation": "auto",
+    "texte": {
+      "title": "Vergleich Urne-/Briefwahl: Zweitstimmen",
+      "subTitle": "Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, Berlin, Zwischenergebnis",
+      "info": "Ausgezählte Gebiete: 4.071 von 4.114 (0 ausbleibend), 20.09.2026, 23:59:22",
+      "footer": "© Der Landeswahlleiter für Berlin/Amt für Statistik Berlin-Brandenburg"
+    },
+    "legende": [
+      {
+        "label": "Urnenwählende (linke Säule)",
+        "color": "#404040"
+      },
+      {
+        "label": "Briefwählende (rechte Säule)",
+        "color": "#d3d3d3"
+      }
+    ],
+    "axisY": {
+      "unit": "%"
+    },
+    "showLegend": true
+  },
+  "data": {
+    "dataSeries": [
+      {
+        "dataSets": [
+          {
+            "label": "CDU",
+            "value": 16.7819514968,
+            "valueFormatted": "16,8",
+            "color": "#576164",
+            "tooltipData": {
+              "headlineBold": "CDU",
+              "headlineNotBold": "(Christlich Demokratische Union Deutschlands)",
+              "text": "Urnenwählende: 16,8 %<br/>Briefwählende: 21,7 %"
+            }
+          },
+          {
+            "label": "SPD",
+            "value": 11.0100379064,
+            "valueFormatted": "11,0",
+            "color": "#c0003d",
+            "tooltipData": {
+              "headlineBold": "SPD",
+              "headlineNotBold": "(Sozialdemokratische Partei Deutschlands)",
+              "text": "Urnenwählende: 11,0 %<br/>Briefwählende: 13,8 %"
+            }
+          },
+          {
+            "label": "GRÜNE",
+            "value": 12.7828533583,
+            "valueFormatted": "12,8",
+            "color": "#008549",
+            "tooltipData": {
+              "headlineBold": "GRÜNE",
+              "headlineNotBold": "(BÜNDNIS 90/DIE GRÜNEN)",
+              "text": "Urnenwählende: 12,8 %<br/>Briefwählende: 16,7 %"
+            }
+          },
+          {
+            "label": "Die Linke",
+            "value": 26.6700173327,
+            "valueFormatted": "26,7",
+            "color": "#5f316e",
+            "tooltipData": {
+              "headlineBold": "Die Linke",
+              "headlineNotBold": "",
+              "text": "Urnenwählende: 26,7 %<br/>Briefwählende: 24,4 %"
+            }
+          },
+          {
+            "label": "AfD",
+            "value": 19.9224962775,
+            "valueFormatted": "19,9",
+            "color": "#80cdec",
+            "tooltipData": {
+              "headlineBold": "AfD",
+              "headlineNotBold": "(Alternative für Deutschland)",
+              "text": "Urnenwählende: 19,9 %<br/>Briefwählende: 10,5 %"
+            }
+          },
+          {
+            "label": "FDP",
+            "value": 2.1840079289,
+            "valueFormatted": "2,2",
+            "color": "#f7bc3d",
+            "tooltipData": {
+              "headlineBold": "FDP",
+              "headlineNotBold": "(Freie Demokratische Partei)",
+              "text": "Urnenwählende: 2,2 %<br/>Briefwählende: 3,1 %"
+            }
+          },
+          {
+            "label": "BSW",
+            "value": 5.311118731,
+            "valueFormatted": "5,3",
+            "color": "#cd386c",
+            "tooltipData": {
+              "headlineBold": "BSW",
+              "headlineNotBold": "(Bündnis Sahra Wagenknecht - Vernunft und Gerechtigkeit)",
+              "text": "Urnenwählende: 5,3 %<br/>Briefwählende: 3,8 %"
+            }
+          },
+          {
+            "label": "Sonstige",
+            "value": 5.3375169686,
+            "valueFormatted": "5,3",
+            "color": "#878787",
+            "tooltipData": {
+              "headlineBold": "Sonstige",
+              "headlineNotBold": "",
+              "text": "Urnenwählende: 5,3 %<br/>Briefwählende: 6,1 %"
+            }
+          }
+        ]
+      },
+      {
+        "dataSets": [
+          {
+            "label": "CDU",
+            "value": 21.6535087423,
+            "valueFormatted": "21,7",
+            "color": "#576164"
+          },
+          {
+            "label": "SPD",
+            "value": 13.7710453628,
+            "valueFormatted": "13,8",
+            "color": "#c0003d"
+          },
+          {
+            "label": "GRÜNE",
+            "value": 16.6508411392,
+            "valueFormatted": "16,7",
+            "color": "#008549"
+          },
+          {
+            "label": "Die Linke",
+            "value": 24.3625779176,
+            "valueFormatted": "24,4",
+            "color": "#5f316e"
+          },
+          {
+            "label": "AfD",
+            "value": 10.5438533696,
+            "valueFormatted": "10,5",
+            "color": "#80cdec"
+          },
+          {
+            "label": "FDP",
+            "value": 3.0640292288,
+            "valueFormatted": "3,1",
+            "color": "#f7bc3d"
+          },
+          {
+            "label": "BSW",
+            "value": 3.8250052339,
+            "valueFormatted": "3,8",
+            "color": "#cd386c"
+          },
+          {
+            "label": "Sonstige",
+            "value": 6.1291390058,
+            "valueFormatted": "6,1",
+            "color": "#878787"
+          }
+        ]
+      }
+    ]
+  }
+}

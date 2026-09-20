@@ -1,0 +1,9 @@
+{
+  "election_key": "2026-be",
+  "url": "https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/index.html",
+  "status": 200,
+  "fetched_at_utc": "2026-09-20T22:01:29.563943+00:00",
+  "sha256": {
+    "official-results.html": "a79ab6a19f974a5ea65f2e2235346546a72f39037f51e3c59c0497f868dda94f"
+  }
+}

@@ -1,0 +1,9 @@
+party,briefwahl_votes,briefwahl_share_percent,urnenwahl_votes,urnenwahl_share_percent,briefwahl_valid_second_votes,urnenwahl_valid_second_votes,briefwahl_wahlbezirke,urnenwahl_wahlbezirke,brief_minus_urne_pp,selected_for_chart,source_url,source_time
+CDU,,21.6535087423,,16.7819514968,,,,,4.8715572455,True,https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/index.html,"20.09.2026, 23:59:22"
+SPD,,13.7710453628,,11.0100379064,,,,,2.7610074564000016,True,https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/index.html,"20.09.2026, 23:59:22"
+GRÜNE,,16.6508411392,,12.7828533583,,,,,3.8679877809,True,https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/index.html,"20.09.2026, 23:59:22"
+Die Linke,,24.3625779176,,26.6700173327,,,,,-2.3074394150999993,True,https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/index.html,"20.09.2026, 23:59:22"
+AfD,,10.5438533696,,19.9224962775,,,,,-9.378642907899998,True,https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/index.html,"20.09.2026, 23:59:22"
+FDP,,3.0640292288,,2.1840079289,,,,,0.8800212999000001,False,https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/index.html,"20.09.2026, 23:59:22"
+BSW,,3.8250052339,,5.311118731,,,,,-1.4861134970999998,True,https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/index.html,"20.09.2026, 23:59:22"
+Sonstige,,6.1291390058,,5.3375169686,,,,,0.7916220371999998,False,https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/index.html,"20.09.2026, 23:59:22"
