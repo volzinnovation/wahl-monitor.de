@@ -1,0 +1,149 @@
+level,field,sum,land,delta
+GEMEINDE,voters_total,1826108,1826108,0
+GEMEINDE,valid_votes_erst,1793003,1793003,0
+GEMEINDE,valid_votes_zweit,1804830,1804830,0
+GEMEINDE,Erststimmen:CDU,362784,362784,0
+GEMEINDE,Erststimmen:SPD,246690,246690,0
+GEMEINDE,Erststimmen:GRÜNE,295639,295639,0
+GEMEINDE,Erststimmen:Die Linke,432193,432193,0
+GEMEINDE,Erststimmen:AfD,283152,283152,0
+GEMEINDE,Erststimmen:FDP,40025,40025,0
+GEMEINDE,Erststimmen:Tierschutzpartei,10172,10172,0
+GEMEINDE,Erststimmen:Die PARTEI,4781,4781,0
+GEMEINDE,Erststimmen:Volt,40241,40241,0
+GEMEINDE,Erststimmen:FREIE WÄHLER,0,0,0
+GEMEINDE,Erststimmen:Mieterpartei,289,289,0
+GEMEINDE,Erststimmen:Die Urbane.,0,0,0
+GEMEINDE,Erststimmen:DKP,252,252,0
+GEMEINDE,Erststimmen:ÖDP,0,0,0
+GEMEINDE,Erststimmen:Die Heimat,0,0,0
+GEMEINDE,Erststimmen:bergpartei,43,43,0
+GEMEINDE,Erststimmen:SGP,0,0,0
+GEMEINDE,Erststimmen:Menschliche Welt,0,0,0
+GEMEINDE,Erststimmen:AB Spandau,0,0,0
+GEMEINDE,Erststimmen:Ausländer für Berlin,0,0,0
+GEMEINDE,Erststimmen:Migrants for Neukölln,0,0,0
+GEMEINDE,Erststimmen:Berliner:innen ohne Grenzen,0,0,0
+GEMEINDE,Erststimmen:Berlin Retten,0,0,0
+GEMEINDE,Erststimmen:BSW,74769,74769,0
+GEMEINDE,Erststimmen:Losdemokratie,0,0,0
+GEMEINDE,Erststimmen:MERA25,374,374,0
+GEMEINDE,Erststimmen:PdF,0,0,0
+GEMEINDE,Erststimmen:Jan Mihm: Bester Mann,0,0,0
+GEMEINDE,Erststimmen:Demokratische Linke,57,57,0
+GEMEINDE,Erststimmen:DIE FRAUEN,57,57,0
+GEMEINDE,"Erststimmen:Einzelbewerbung: Fleischmann, Florian",126,126,0
+GEMEINDE,"Erststimmen:Einzelbewerbung: Dr. Gerken, Thomas",153,153,0
+GEMEINDE,"Erststimmen:Einzelbewerbung: Kanzler, Jörg",120,120,0
+GEMEINDE,"Erststimmen:Einzelbewerbung: Lindlmair, Thomas",113,113,0
+GEMEINDE,"Erststimmen:Einzelbewerbung: Mansamba, Mutombo Kandu",51,51,0
+GEMEINDE,"Erststimmen:Einzelbewerbung: Mihm, Jan",185,185,0
+GEMEINDE,"Erststimmen:Einzelbewerbung: Ngwa, Albert",207,207,0
+GEMEINDE,"Erststimmen:Einzelbewerbung: Schnitzer, Sebastian Alexander",48,48,0
+GEMEINDE,"Erststimmen:Einzelbewerbung: Snelinski, Oliver",300,300,0
+GEMEINDE,"Erststimmen:Einzelbewerbung: Trockle, Nuri",83,83,0
+GEMEINDE,"Erststimmen:Einzelbewerbung: Worbs, Hans-Dieter",99,99,0
+GEMEINDE,Zweitstimmen:CDU,338953,338953,0
+GEMEINDE,Zweitstimmen:SPD,219154,219154,0
+GEMEINDE,Zweitstimmen:GRÜNE,259346,259346,0
+GEMEINDE,Zweitstimmen:Die Linke,464265,464265,0
+GEMEINDE,Zweitstimmen:AfD,290131,290131,0
+GEMEINDE,Zweitstimmen:FDP,45933,45933,0
+GEMEINDE,Zweitstimmen:Tierschutzpartei,38104,38104,0
+GEMEINDE,Zweitstimmen:Die PARTEI,13397,13397,0
+GEMEINDE,Zweitstimmen:Volt,37587,37587,0
+GEMEINDE,Zweitstimmen:FREIE WÄHLER,0,0,0
+GEMEINDE,Zweitstimmen:Mieterpartei,0,0,0
+GEMEINDE,Zweitstimmen:Die Urbane.,1522,1522,0
+GEMEINDE,Zweitstimmen:DKP,2044,2044,0
+GEMEINDE,Zweitstimmen:ÖDP,2543,2543,0
+GEMEINDE,Zweitstimmen:Die Heimat,519,519,0
+GEMEINDE,Zweitstimmen:bergpartei,80,80,0
+GEMEINDE,Zweitstimmen:SGP,708,708,0
+GEMEINDE,Zweitstimmen:Menschliche Welt,0,0,0
+GEMEINDE,Zweitstimmen:AB Spandau,0,0,0
+GEMEINDE,Zweitstimmen:Ausländer für Berlin,0,0,0
+GEMEINDE,Zweitstimmen:Migrants for Neukölln,0,0,0
+GEMEINDE,Zweitstimmen:Berliner:innen ohne Grenzen,0,0,0
+GEMEINDE,Zweitstimmen:Berlin Retten,0,0,0
+GEMEINDE,Zweitstimmen:BSW,84854,84854,0
+GEMEINDE,Zweitstimmen:Losdemokratie,0,0,0
+GEMEINDE,Zweitstimmen:MERA25,0,0,0
+GEMEINDE,Zweitstimmen:PdF,5690,5690,0
+GEMEINDE,Zweitstimmen:Jan Mihm: Bester Mann,0,0,0
+GEMEINDE,Zweitstimmen:Demokratische Linke,0,0,0
+GEMEINDE,Zweitstimmen:DIE FRAUEN,0,0,0
+WAHLKREIS,voters_total,1826108,1826108,0
+WAHLKREIS,valid_votes_erst,1793003,1793003,0
+WAHLKREIS,valid_votes_zweit,1804830,1804830,0
+WAHLKREIS,Erststimmen:CDU,362784,362784,0
+WAHLKREIS,Erststimmen:SPD,246690,246690,0
+WAHLKREIS,Erststimmen:GRÜNE,295639,295639,0
+WAHLKREIS,Erststimmen:Die Linke,432193,432193,0
+WAHLKREIS,Erststimmen:AfD,283152,283152,0
+WAHLKREIS,Erststimmen:FDP,40025,40025,0
+WAHLKREIS,Erststimmen:Tierschutzpartei,10172,10172,0
+WAHLKREIS,Erststimmen:Die PARTEI,4781,4781,0
+WAHLKREIS,Erststimmen:Volt,40241,40241,0
+WAHLKREIS,Erststimmen:FREIE WÄHLER,0,0,0
+WAHLKREIS,Erststimmen:Mieterpartei,289,289,0
+WAHLKREIS,Erststimmen:Die Urbane.,0,0,0
+WAHLKREIS,Erststimmen:DKP,252,252,0
+WAHLKREIS,Erststimmen:ÖDP,0,0,0
+WAHLKREIS,Erststimmen:Die Heimat,0,0,0
+WAHLKREIS,Erststimmen:bergpartei,43,43,0
+WAHLKREIS,Erststimmen:SGP,0,0,0
+WAHLKREIS,Erststimmen:Menschliche Welt,0,0,0
+WAHLKREIS,Erststimmen:AB Spandau,0,0,0
+WAHLKREIS,Erststimmen:Ausländer für Berlin,0,0,0
+WAHLKREIS,Erststimmen:Migrants for Neukölln,0,0,0
+WAHLKREIS,Erststimmen:Berliner:innen ohne Grenzen,0,0,0
+WAHLKREIS,Erststimmen:Berlin Retten,0,0,0
+WAHLKREIS,Erststimmen:BSW,74769,74769,0
+WAHLKREIS,Erststimmen:Losdemokratie,0,0,0
+WAHLKREIS,Erststimmen:MERA25,374,374,0
+WAHLKREIS,Erststimmen:PdF,0,0,0
+WAHLKREIS,Erststimmen:Jan Mihm: Bester Mann,0,0,0
+WAHLKREIS,Erststimmen:Demokratische Linke,57,57,0
+WAHLKREIS,Erststimmen:DIE FRAUEN,57,57,0
+WAHLKREIS,"Erststimmen:Einzelbewerbung: Fleischmann, Florian",126,126,0
+WAHLKREIS,"Erststimmen:Einzelbewerbung: Dr. Gerken, Thomas",153,153,0
+WAHLKREIS,"Erststimmen:Einzelbewerbung: Kanzler, Jörg",120,120,0
+WAHLKREIS,"Erststimmen:Einzelbewerbung: Lindlmair, Thomas",113,113,0
+WAHLKREIS,"Erststimmen:Einzelbewerbung: Mansamba, Mutombo Kandu",51,51,0
+WAHLKREIS,"Erststimmen:Einzelbewerbung: Mihm, Jan",185,185,0
+WAHLKREIS,"Erststimmen:Einzelbewerbung: Ngwa, Albert",207,207,0
+WAHLKREIS,"Erststimmen:Einzelbewerbung: Schnitzer, Sebastian Alexander",48,48,0
+WAHLKREIS,"Erststimmen:Einzelbewerbung: Snelinski, Oliver",300,300,0
+WAHLKREIS,"Erststimmen:Einzelbewerbung: Trockle, Nuri",83,83,0
+WAHLKREIS,"Erststimmen:Einzelbewerbung: Worbs, Hans-Dieter",99,99,0
+WAHLKREIS,Zweitstimmen:CDU,338953,338953,0
+WAHLKREIS,Zweitstimmen:SPD,219154,219154,0
+WAHLKREIS,Zweitstimmen:GRÜNE,259346,259346,0
+WAHLKREIS,Zweitstimmen:Die Linke,464265,464265,0
+WAHLKREIS,Zweitstimmen:AfD,290131,290131,0
+WAHLKREIS,Zweitstimmen:FDP,45933,45933,0
+WAHLKREIS,Zweitstimmen:Tierschutzpartei,38104,38104,0
+WAHLKREIS,Zweitstimmen:Die PARTEI,13397,13397,0
+WAHLKREIS,Zweitstimmen:Volt,37587,37587,0
+WAHLKREIS,Zweitstimmen:FREIE WÄHLER,0,0,0
+WAHLKREIS,Zweitstimmen:Mieterpartei,0,0,0
+WAHLKREIS,Zweitstimmen:Die Urbane.,1522,1522,0
+WAHLKREIS,Zweitstimmen:DKP,2044,2044,0
+WAHLKREIS,Zweitstimmen:ÖDP,2543,2543,0
+WAHLKREIS,Zweitstimmen:Die Heimat,519,519,0
+WAHLKREIS,Zweitstimmen:bergpartei,80,80,0
+WAHLKREIS,Zweitstimmen:SGP,708,708,0
+WAHLKREIS,Zweitstimmen:Menschliche Welt,0,0,0
+WAHLKREIS,Zweitstimmen:AB Spandau,0,0,0
+WAHLKREIS,Zweitstimmen:Ausländer für Berlin,0,0,0
+WAHLKREIS,Zweitstimmen:Migrants for Neukölln,0,0,0
+WAHLKREIS,Zweitstimmen:Berliner:innen ohne Grenzen,0,0,0
+WAHLKREIS,Zweitstimmen:Berlin Retten,0,0,0
+WAHLKREIS,Zweitstimmen:BSW,84854,84854,0
+WAHLKREIS,Zweitstimmen:Losdemokratie,0,0,0
+WAHLKREIS,Zweitstimmen:MERA25,0,0,0
+WAHLKREIS,Zweitstimmen:PdF,5690,5690,0
+WAHLKREIS,Zweitstimmen:Jan Mihm: Bester Mann,0,0,0
+WAHLKREIS,Zweitstimmen:Demokratische Linke,0,0,0
+WAHLKREIS,Zweitstimmen:DIE FRAUEN,0,0,0

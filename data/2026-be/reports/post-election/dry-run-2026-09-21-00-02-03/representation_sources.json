@@ -1,0 +1,19 @@
+{
+  "population": 3700577,
+  "population_date": "2025-12-31",
+  "population_url": "https://www.statistik-berlin-brandenburg.de/presse/2026/73-bevoelkerungsfortschreibung-2025-berlin/",
+  "eligible_voters": 2487318,
+  "voters": 1826108,
+  "valid_second_votes": 1804830,
+  "represented_votes": 1571849,
+  "represented_share_valid": 87.09124959137425,
+  "basis": "Szenario: Parteien ab 5 % oder mit aktueller Erststimmenführung; keine amtliche Sitzfeststellung",
+  "official_seats": false,
+  "represented_parties": [
+    "AfD",
+    "CDU",
+    "Die Linke",
+    "GRÜNE",
+    "SPD"
+  ]
+}

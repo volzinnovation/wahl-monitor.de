@@ -25,8 +25,8 @@ The repository is organized by election key in the form `<year>-<state>`, for ex
 - `2026-bw`: Landtagswahl Baden-Württemberg 2026
 - `2026-rlp`: Landtagswahl Rheinland-Pfalz 2026
 - `2026-lsa`: Landtagswahl Sachsen-Anhalt 2026
-- `2026-mv`: Landtagswahl Mecklenburg-Vorpommern 2026 (pre-election setup)
-- `2026-be`: Wahl zum 20. Abgeordnetenhaus von Berlin 2026 (pre-election setup)
+- `2026-mv`: Landtagswahl Mecklenburg-Vorpommern 2026
+- `2026-be`: Wahl zum 20. Abgeordnetenhaus von Berlin 2026
 
 Current operational status:
 
@@ -98,6 +98,10 @@ Current operational status:
 
 ### Analysis and Consistency Checks
 
+- Berlin/MV post-election reports, demographic analyses and political-representation waterfall: [reproduction and completion workflow](docs/post-election-reports.md)
+- MV/Berlin timelapses and postal/in-person comparisons: [retained election-night artifacts](docs/mv-berlin-election-night-artifacts.md)
+- `scripts/prepare_post_election_demographics.py`: official census extracts for Berlin Bezirke and MV Ämter/amtsfreie Gemeinden
+- `scripts/build_post_election_report.py`: local dry-run or completeness-gated HTML/PNG/SVG/CSV report packages
 - `scripts/analyze_statla_total_vote_timeline.py`: analyzes the git-tracked timeline of total valid votes
 - `scripts/analyze_statla_vote_invalid_timeline.py`: analyzes the git-tracked timeline of invalid votes
 - `scripts/analyze_statla_wahlkreis_consistency.py`: checks Wahlkreis-level consistency across git history

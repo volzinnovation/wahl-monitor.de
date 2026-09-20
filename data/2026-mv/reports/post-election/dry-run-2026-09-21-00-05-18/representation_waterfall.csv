@@ -1,0 +1,20 @@
+label,amount,start,end,role
+Einwohner,1573685,0,1573685,total
+"Differenz zum
+Wahlberechtigten-
+stand*",262391,1573685,1311294,excluded
+Wahlberechtigte,1311294,0,1311294,total
+Nichtwählende,287043,1311294,1024251,excluded
+"Erfasste
+Wählende",1024251,0,1024251,total
+"Ungültige
+Zweitstimmen",8928,1024251,1015323,excluded
+"Gültige
+Zweitstimmen",1015323,0,1015323,total
+Übrige Parteien,142929,1015323,872394,excluded
+"Repräsentierte
+Zweitstimmen (Szenario)",872394,0,872394,represented
+AfD,388026,872394,484368,party
+SPD,360393,484368,123975,party
+Die Linke,66388,123975,57587,party
+GRÜNE,57587,57587,0,party

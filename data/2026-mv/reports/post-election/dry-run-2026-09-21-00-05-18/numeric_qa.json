@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "source_file_hashes": 81,
+  "demographic_areas": 116,
+  "independently_recalculated_correlations": 104,
+  "embedded_charts": 18,
+  "counting_complete": true,
+  "model_validation_checked": true
+}

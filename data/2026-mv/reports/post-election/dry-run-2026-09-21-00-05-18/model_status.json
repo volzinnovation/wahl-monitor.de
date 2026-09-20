@@ -1,0 +1,13 @@
+{
+  "status": "fit",
+  "n": 116,
+  "blocks": 8,
+  "features": [
+    "log_population",
+    "age19_24_share",
+    "age67_share",
+    "owner_occupancy_share",
+    "foreign_citizenship_share"
+  ],
+  "method": "Grouped binomial counts [k,n-k]; leave-one-Kreis-out; training-only scaling and baseline; no ballot-level inference or p values."
+}

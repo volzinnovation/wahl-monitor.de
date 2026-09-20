@@ -1,0 +1,26 @@
+{
+  "election_key": "2026-mv",
+  "capture": "2026-09-21-00-05-18",
+  "as_of": "2026-09-20T22:05:20.792488+00:00",
+  "reported_precincts": 1974,
+  "total_precincts": 1974,
+  "counting_complete": true,
+  "reconciliation_passed": true,
+  "ready": true,
+  "issues": [],
+  "demographic_areas": 116,
+  "demographic_votes": 1015323,
+  "land_votes": 1015323,
+  "demographic_votes_reconcile": true,
+  "charts": 18,
+  "correlations": 104,
+  "official_seats": false,
+  "html_embedded_images": 18,
+  "history": {
+    "git_ref": "f3d205a3732a3bad2ea1fb42608f8b3228687b29",
+    "captures": 78,
+    "first": "2026-09-20T17:12:21.930864+00:00",
+    "last": "2026-09-20T22:05:20.792488+00:00",
+    "fixed_counter_party_changes": 14
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "browser_checked": true,
+  "viewport": "1280px",
+  "horizontal_page_overflow": false,
+  "all_embedded_images_loaded": true,
+  "charts_visually_inspected": [
+    "representation waterfall",
+    "published voting-mode comparison"
+  ],
+  "numeric_checks": "numeric_qa.json",
+  "tests": "12 offline regression tests passed"
+}

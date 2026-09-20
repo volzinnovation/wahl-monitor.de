@@ -1,0 +1,13 @@
+geo_id,source_key,source_name,valid_second_votes
+1101,berlin:GEMEINDE:11000001,Mitte,149792
+1102,berlin:GEMEINDE:11000002,Friedrichshain-Kreuzberg,131447
+1103,berlin:GEMEINDE:11000003,Pankow,228196
+1104,berlin:GEMEINDE:11000004,Charlottenburg-Wilmersdorf,164311
+1105,berlin:GEMEINDE:11000005,Spandau,107006
+1106,berlin:GEMEINDE:11000006,Steglitz-Zehlendorf,171995
+1107,berlin:GEMEINDE:11000007,Tempelhof-Schöneberg,174700
+1108,berlin:GEMEINDE:11000008,Neukölln,134062
+1109,berlin:GEMEINDE:11000009,Treptow-Köpenick,159203
+1110,berlin:GEMEINDE:11000010,Marzahn-Hellersdorf,124698
+1111,berlin:GEMEINDE:11000011,Lichtenberg,140316
+1112,berlin:GEMEINDE:11000012,Reinickendorf,119104

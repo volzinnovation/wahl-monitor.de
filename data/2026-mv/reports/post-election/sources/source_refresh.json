@@ -1,0 +1,27 @@
+{
+  "checked_at_utc": "2026-09-20T22:23:39.353500+00:00",
+  "capture": "2026-09-21-00-05-18",
+  "result_rows_identical": true,
+  "compared_absolute_result_rows": 5620,
+  "comparison": "All parsed absolute result rows, including source timestamps and every party/area, match the retained capture.",
+  "files": [
+    {
+      "file": "refreshed_l_wahlbezirke.csv",
+      "url": "https://wahlen.mvnet.de/dateien/ergebnisse.2026/landtagswahl/csv/l_wahlbezirke.csv",
+      "sha256": "f290cc639ba26649550254a98899b3a37a5b173ccdfba7d2847f2c848cd20cd2",
+      "absolute_result_rows": 3948
+    },
+    {
+      "file": "refreshed_l_gemeinden.csv",
+      "url": "https://wahlen.mvnet.de/dateien/ergebnisse.2026/landtagswahl/csv/l_gemeinden.csv",
+      "sha256": "d336e758aae11b8510427e5a901c4216b5a494f579df2fff5f9088e73368c3c6",
+      "absolute_result_rows": 1598
+    },
+    {
+      "file": "refreshed_l_wahlkreise.csv",
+      "url": "https://wahlen.mvnet.de/dateien/ergebnisse.2026/landtagswahl/csv/l_wahlkreise.csv",
+      "sha256": "c19f60a852d95afe1d70acc78fbc681009f88cb82cc9895b0506ead4496d6aac",
+      "absolute_result_rows": 74
+    }
+  ]
+}

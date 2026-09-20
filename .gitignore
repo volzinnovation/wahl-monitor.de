@@ -3,6 +3,7 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+.venv-reports/
 .coverage
 htmlcov/
 /out*

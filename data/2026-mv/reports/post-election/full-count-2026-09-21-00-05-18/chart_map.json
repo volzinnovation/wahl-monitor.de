@@ -1,0 +1,128 @@
+[
+  {
+    "slug": "01_politische_repraesentation",
+    "title": "Politische Repräsentation",
+    "note": "Szenario: Parteien ab 5 % oder mit aktueller Erststimmenführung; keine amtliche Sitzfeststellung. 872.394 Stimmen · 85.92 % der erfassten gültigen Zweitstimmen.",
+    "source": "representation_waterfall.csv; representation_sources.json",
+    "path": "charts/01_politische_repraesentation.png"
+  },
+  {
+    "slug": "02_parteien",
+    "title": "Erst- und Zweitstimmen",
+    "note": "Unterschiedliche Stimmarten haben eigene Nenner.",
+    "source": "party_results.csv",
+    "path": "charts/02_parteien.png"
+  },
+  {
+    "slug": "03_streuung_wahlkreis",
+    "title": "Streuung · Wahlkreise",
+    "note": "Deskriptive Gebietsverteilung, keine Unsicherheitsintervalle.",
+    "source": "results_by_area.csv",
+    "path": "charts/03_streuung_wahlkreis.png"
+  },
+  {
+    "slug": "03_streuung_wahlbezirk",
+    "title": "Streuung · Wahlbezirke",
+    "note": "Deskriptive Gebietsverteilung, keine Unsicherheitsintervalle.",
+    "source": "results_by_area.csv",
+    "path": "charts/03_streuung_wahlbezirk.png"
+  },
+  {
+    "slug": "04_brief_urne",
+    "title": "Briefwahl und Urnenwahl",
+    "note": "Gesamtergebnis je Modus, gewichtet mit den gültigen Stimmen.",
+    "source": "voting_modes.csv",
+    "path": "charts/04_brief_urne.png"
+  },
+  {
+    "slug": "05_staerkste_partei",
+    "title": "Stärkste Partei nach Zweitstimmen",
+    "note": "Kartierung der aktuellen Wahlkreisergebnisse; keine Sitzmehrheiten.",
+    "source": "05_staerkste_partei.csv; sources/wahlkreise.geojson",
+    "path": "charts/05_staerkste_partei.png"
+  },
+  {
+    "slug": "06_afd_mehrheit",
+    "title": "AfD: absolute Mehrheit der Zweitstimmen",
+    "note": "Kartierung der aktuellen Wahlkreisergebnisse; keine Sitzmehrheiten.",
+    "source": "06_afd_mehrheit.csv; sources/wahlkreise.geojson",
+    "path": "charts/06_afd_mehrheit.png"
+  },
+  {
+    "slug": "07_linke_spd_gruene",
+    "title": "Linke, SPD und GRÜNE: gemeinsame Zweitstimmenmehrheit",
+    "note": "Kartierung der aktuellen Wahlkreisergebnisse; keine Sitzmehrheiten.",
+    "source": "07_linke_spd_gruene.csv; sources/wahlkreise.geojson",
+    "path": "charts/07_linke_spd_gruene.png"
+  },
+  {
+    "slug": "08_auszaehlung",
+    "title": "Verlauf der Auszählung",
+    "note": "Der Nenner stammt aus jedem einzelnen Abruf.",
+    "source": "counting_timeline.csv",
+    "path": "charts/08_auszaehlung.png"
+  },
+  {
+    "slug": "09_parteien_verlauf",
+    "title": "Parteianteile im Verlauf",
+    "note": "Frühe Ergebnisse sind geografisch selektiv.",
+    "source": "party_timeline.csv",
+    "path": "charts/09_parteien_verlauf.png"
+  },
+  {
+    "slug": "10_ankunft_first_positive",
+    "title": "AfD-Anteil beim ersten positiven Ergebnis",
+    "note": "MV-Meldegebiete enthalten gesonderte Briefwahlgebiete; hier keine demografischen Einheiten.",
+    "source": "arrival_observations.csv",
+    "path": "charts/10_ankunft_first_positive.png"
+  },
+  {
+    "slug": "10_ankunft_first_complete",
+    "title": "AfD-Anteil bei erster Vollmeldung",
+    "note": "MV-Meldegebiete enthalten gesonderte Briefwahlgebiete; hier keine demografischen Einheiten.",
+    "source": "arrival_observations.csv",
+    "path": "charts/10_ankunft_first_complete.png"
+  },
+  {
+    "slug": "11_demografie",
+    "title": "Demografische Zusammenhänge",
+    "note": "Vollständiges Merkmalsraster; unterschiedliche Abdeckung steht im Coverage-CSV.",
+    "source": "demographic_correlations.csv; demographic_coverage.csv",
+    "path": "charts/11_demografie.png"
+  },
+  {
+    "slug": "12_stimmengewichtung",
+    "title": "Was verändert die Stimmengewichtung?",
+    "note": "Gewichte ändern die Fragestellung; sie liefern keine Individualdaten.",
+    "source": "demographic_strongest.csv",
+    "path": "charts/12_stimmengewichtung.png"
+  },
+  {
+    "slug": "13_geografische_sensitivitaet",
+    "title": "Geografische Sensitivität",
+    "note": "Punkt: alle Gebiete; Linie: Spannweite nach geografischem Ausschluss.",
+    "source": "demographic_leave_one_block_out.csv",
+    "path": "charts/13_geografische_sensitivitaet.png"
+  },
+  {
+    "slug": "14_demografie_scatter_1",
+    "title": "Die Linke und Anteil 19–24 Jahre",
+    "note": "Jeder Punkt ist ein Gebiet, keine Person.",
+    "source": "demographic_areas.csv",
+    "path": "charts/14_demografie_scatter_1.png"
+  },
+  {
+    "slug": "14_demografie_scatter_2",
+    "title": "GRÜNE und Einwohnerzahl (log)",
+    "note": "Jeder Punkt ist ein Gebiet, keine Person.",
+    "source": "demographic_areas.csv",
+    "path": "charts/14_demografie_scatter_2.png"
+  },
+  {
+    "slug": "15_zaehlmodell",
+    "title": "Geografische Validierung der Zählmodelle",
+    "note": "Keine Prognose für Einzelpersonen; Überdispersion und Koeffizientenstabilität stehen in den CSVs.",
+    "source": "model_validation.csv; model_predictions.csv",
+    "path": "charts/15_zaehlmodell.png"
+  }
+]

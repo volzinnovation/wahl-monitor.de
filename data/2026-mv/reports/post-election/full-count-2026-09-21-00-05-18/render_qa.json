@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "browser": "Codex in-app browser",
+  "viewport_width": 1280,
+  "document_width": 1280,
+  "embedded_images": 18,
+  "all_images_loaded": true,
+  "status": "Bericht zum vollst\u00e4ndig erfassten Stand",
+  "visually_reviewed": [
+    "report opening",
+    "political representation waterfall"
+  ],
+  "regressions_passed": 12,
+  "incomplete_capture_rejected": true
+}

@@ -1,0 +1,12 @@
+{
+  "status": "not_fit",
+  "reason": "Fünf Kovariaten bei nur zwölf Berliner Bezirken: zu wenige unabhängige Gebiete für den LSA-Modellumfang.",
+  "n": 12,
+  "features": [
+    "log_population",
+    "age19_24_share",
+    "age67_share",
+    "owner_occupancy_share",
+    "foreign_citizenship_share"
+  ]
+}

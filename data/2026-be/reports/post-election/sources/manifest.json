@@ -1,0 +1,95 @@
+{
+  "prepared_at": "2026-09-20T22:02:13.541962+00:00",
+  "sources": [
+    {
+      "file": "census_berlin.xlsx",
+      "url": "https://download.statistik-berlin-brandenburg.de/a9cf3ac18d95cdc0/d6af0d4cfde4/Zensus2022_Basistabelle_Berlin.xlsx",
+      "sha256": "71dc26b6846f39de2cb75b4bef169e95d72777588122e9379d361121698b0333"
+    },
+    {
+      "file": "population_2025.html",
+      "url": "https://www.statistik-berlin-brandenburg.de/presse/2026/73-bevoelkerungsfortschreibung-2025-berlin/",
+      "sha256": "7ea7af37f5a8b1c260042d1e33be09ab2fdb590837acee1df7953de4080995d8",
+      "population": 3700577,
+      "date": "2025-12-31"
+    }
+  ],
+  "census_date": "2022-05-15",
+  "geographic_unit": "Bezirke",
+  "features": {
+    "log_population": {
+      "label": "Einwohnerzahl (log)",
+      "definition": "ln(Bevölkerung insgesamt)",
+      "date": "2022-05-15"
+    },
+    "age67_share": {
+      "label": "Anteil 67 Jahre und älter",
+      "definition": "100 × (67–74 + 75+) / Bevölkerung",
+      "date": "2022-05-15"
+    },
+    "age19_24_share": {
+      "label": "Anteil 19–24 Jahre",
+      "definition": "100 × Personen 19–24 / Bevölkerung",
+      "date": "2022-05-15"
+    },
+    "male_share": {
+      "label": "Männeranteil",
+      "definition": "100 × männliche Personen / Bevölkerung",
+      "date": "2022-05-15"
+    },
+    "foreign_citizenship_share": {
+      "label": "Ausländische Staatsangehörigkeit",
+      "definition": "100 × nichtdeutsche Personen / Bevölkerung; kein Migrationshintergrund",
+      "date": "2022-05-15"
+    },
+    "single_household_share": {
+      "label": "Einpersonenhaushalte",
+      "definition": "100 × Einpersonenhaushalte / private Haushalte",
+      "date": "2022-05-15"
+    },
+    "owner_occupancy_share": {
+      "label": "Wohneigentumsquote",
+      "definition": "Amtliche ETQ für bewohnte Wohnungen in Wohngebäuden ohne Wohnheime",
+      "date": "2022-05-15"
+    },
+    "vacancy_share": {
+      "label": "Wohnungsleerstand",
+      "definition": "Amtliche LEQ für Wohnungen in Wohngebäuden ohne Wohnheime",
+      "date": "2022-05-15"
+    },
+    "rent_eur_m2": {
+      "label": "Nettokaltmiete je m²",
+      "definition": "Amtliche durchschnittliche Nettokaltmiete, EUR/m²",
+      "date": "2022-05-15"
+    },
+    "abitur_share": {
+      "label": "Abitur/Fachhochschulreife",
+      "definition": "100 × Hochschulreife / Personen ab 15 in der Haushaltsstichprobe",
+      "date": "2022-05-15"
+    },
+    "no_vocational_qualification_share": {
+      "label": "Ohne Berufsabschluss",
+      "definition": "100 × ohne Berufsabschluss / Personen ab 15 in der Haushaltsstichprobe",
+      "date": "2022-05-15"
+    },
+    "ilo_unemployment_share": {
+      "label": "ILO-Erwerbslosenanteil",
+      "definition": "100 × Erwerbslose / Erwerbspersonen; keine BA-Arbeitslosenquote",
+      "date": "2022-05-15"
+    },
+    "manufacturing_share": {
+      "label": "Produzierendes Gewerbe",
+      "definition": "100 × Erwerbstätige im produzierenden Gewerbe / alle Erwerbstätigen der Haushaltsstichprobe",
+      "date": "2022-05-15"
+    }
+  },
+  "adaptation": "Published census age bands 67+ and 19–24 replace LSA's 2025 bands 65+ and 18–29. Density and 2024–25 change are not computed without comparable dated area/population inputs.",
+  "extracts": {
+    "Bildung.csv": "23e2fe8ebdf048e469189c717a71022d403987a71ff3f1daddcab8f2fa892ab6",
+    "Erwerbstätigkeit.csv": "63cbadd38e5221070b0dc07b46c7ec40db518870cae2b5d71dec054e77109944",
+    "Wohnungen.csv": "19097ea90d1a15df739169aa904476b856b8693242c5fe20c055a3898a13b884",
+    "Haushalte.csv": "497dd289d96c7dc8182e97591a6061ab5f16ced61d4f598850944d9449929b3c",
+    "Demografie.csv": "e0b9aad8bd3a6d5b4b3299d9d13f804548acd9126ca69fed6757ff3e9befa8f0",
+    "demographics.csv": "deddbc7ca8887b826326e99419f6c1671b165ac986855e97a64c237ddba94709"
+  }
+}

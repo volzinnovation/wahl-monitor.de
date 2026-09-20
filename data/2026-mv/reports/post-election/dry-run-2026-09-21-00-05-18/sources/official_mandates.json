@@ -1,0 +1,6 @@
+{
+  "url": "https://wahlen.mvnet.de/dateien/ergebnisse.2026/landtagswahl/csv/l_mandate.csv",
+  "sha256": "f0370e63958a8ff8ce834b99bfaf2cc8674e007104602d4c68ec48315a7f52b4",
+  "status": "not_ready",
+  "reason": "Published file still contains 18:00 zero-seat template; not used as seat evidence"
+}

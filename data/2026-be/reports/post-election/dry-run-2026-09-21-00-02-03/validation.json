@@ -1,0 +1,26 @@
+{
+  "election_key": "2026-be",
+  "capture": "2026-09-21-00-02-03",
+  "as_of": "2026-09-20T22:02:06.433854+00:00",
+  "reported_precincts": 4071,
+  "total_precincts": 4114,
+  "counting_complete": false,
+  "reconciliation_passed": true,
+  "ready": false,
+  "issues": [],
+  "demographic_areas": 12,
+  "demographic_votes": 1804830,
+  "land_votes": 1804830,
+  "demographic_votes_reconcile": true,
+  "charts": 16,
+  "correlations": 117,
+  "official_seats": false,
+  "html_embedded_images": 16,
+  "history": {
+    "git_ref": "f3d205a3732a3bad2ea1fb42608f8b3228687b29",
+    "captures": 72,
+    "first": "2026-09-20T17:20:06.577503+00:00",
+    "last": "2026-09-20T22:02:06.433854+00:00",
+    "fixed_counter_party_changes": 14
+  }
+}

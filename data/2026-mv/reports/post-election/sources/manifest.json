@@ -1,0 +1,120 @@
+{
+  "prepared_at": "2026-09-20T21:54:32.407684+00:00",
+  "sources": [
+    {
+      "file": "data/2026-lsa/reports/demographic-feasibility/raw/census_education.xlsx",
+      "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Bildung_Erwerbstaetigkeit.xlsx",
+      "bytes": 28096453,
+      "sha256": "aad34940d33fa984e900ee18f732b53e60c6b6cb20da4d1305073d016c6a0a12",
+      "retrieved_at_utc": "2026-09-07T13:13:41.258610+00:00"
+    },
+    {
+      "file": "data/2026-lsa/reports/demographic-feasibility/raw/census_demography.xlsx",
+      "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Demografie.xlsx",
+      "bytes": 5408238,
+      "sha256": "4d129b55ce031ed72a59e8b84eebb402f679ba33b28848c0ee99ff13502fea75",
+      "retrieved_at_utc": "2026-09-07T13:13:37.995784+00:00"
+    },
+    {
+      "file": "data/2026-lsa/reports/demographic-feasibility/raw/census_households.xlsx",
+      "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Haushalte.xlsx",
+      "bytes": 4669959,
+      "sha256": "ae576a1532c9ee5151bde866dff506dd53cb672882b8605c4a4db8e195dd74cc",
+      "retrieved_at_utc": "2026-09-07T13:13:38.057652+00:00"
+    },
+    {
+      "file": "data/2026-lsa/reports/demographic-feasibility/raw/census_housing.xlsx",
+      "url": "https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Gebaeude_Wohnungen.xlsx",
+      "bytes": 21451209,
+      "sha256": "82da8578a4657e20752b436a756ed27846c77f96e3f7333bdea7f4fe29a8b551",
+      "retrieved_at_utc": "2026-09-07T13:13:40.194897+00:00"
+    },
+    {
+      "file": "population_2025.html",
+      "url": "https://www.laiv-mv.de/Pressemitteilungen/?id=221343&processor=processor.sa.pressemitteilung",
+      "sha256": "cca08aefe699ab79c543f8bef49993a034f765ac795f11f2238237241f258d87",
+      "population": 1573685,
+      "date": "2025-12-31"
+    }
+  ],
+  "census_date": "2022-05-15",
+  "geographic_unit": "Ämter und amtsfreie Gemeinden",
+  "features": {
+    "log_population": {
+      "label": "Einwohnerzahl (log)",
+      "definition": "ln(Bevölkerung insgesamt)",
+      "date": "2022-05-15"
+    },
+    "age67_share": {
+      "label": "Anteil 67 Jahre und älter",
+      "definition": "100 × (67–74 + 75+) / Bevölkerung",
+      "date": "2022-05-15"
+    },
+    "age19_24_share": {
+      "label": "Anteil 19–24 Jahre",
+      "definition": "100 × Personen 19–24 / Bevölkerung",
+      "date": "2022-05-15"
+    },
+    "male_share": {
+      "label": "Männeranteil",
+      "definition": "100 × männliche Personen / Bevölkerung",
+      "date": "2022-05-15"
+    },
+    "foreign_citizenship_share": {
+      "label": "Ausländische Staatsangehörigkeit",
+      "definition": "100 × nichtdeutsche Personen / Bevölkerung; kein Migrationshintergrund",
+      "date": "2022-05-15"
+    },
+    "single_household_share": {
+      "label": "Einpersonenhaushalte",
+      "definition": "100 × Einpersonenhaushalte / private Haushalte",
+      "date": "2022-05-15"
+    },
+    "owner_occupancy_share": {
+      "label": "Wohneigentumsquote",
+      "definition": "Amtliche ETQ für bewohnte Wohnungen in Wohngebäuden ohne Wohnheime",
+      "date": "2022-05-15"
+    },
+    "vacancy_share": {
+      "label": "Wohnungsleerstand",
+      "definition": "Amtliche LEQ für Wohnungen in Wohngebäuden ohne Wohnheime",
+      "date": "2022-05-15"
+    },
+    "rent_eur_m2": {
+      "label": "Nettokaltmiete je m²",
+      "definition": "Amtliche durchschnittliche Nettokaltmiete, EUR/m²",
+      "date": "2022-05-15"
+    },
+    "abitur_share": {
+      "label": "Abitur/Fachhochschulreife",
+      "definition": "100 × Hochschulreife / Personen ab 15 in der Haushaltsstichprobe",
+      "date": "2022-05-15"
+    },
+    "no_vocational_qualification_share": {
+      "label": "Ohne Berufsabschluss",
+      "definition": "100 × ohne Berufsabschluss / Personen ab 15 in der Haushaltsstichprobe",
+      "date": "2022-05-15"
+    },
+    "ilo_unemployment_share": {
+      "label": "ILO-Erwerbslosenanteil",
+      "definition": "100 × Erwerbslose / Erwerbspersonen; keine BA-Arbeitslosenquote",
+      "date": "2022-05-15"
+    },
+    "manufacturing_share": {
+      "label": "Produzierendes Gewerbe",
+      "definition": "100 × Erwerbstätige im produzierenden Gewerbe / alle Erwerbstätigen der Haushaltsstichprobe",
+      "date": "2022-05-15"
+    }
+  },
+  "adaptation": "Published census age bands 67+ and 19–24 replace LSA's 2025 bands 65+ and 18–29. Density and 2024–25 change are not computed without comparable dated area/population inputs.",
+  "extracts": {
+    "CSV-Hoechster_Schulabschluss.csv": "7d154c6f46321884c265319bcc8aec1e82f0a6ceb121f4388c30750683513924",
+    "CSV-Haushalte.csv": "53758f90dfc1967956ecbd3ce053708010120d659d1296b9e5e4caf8ef836e46",
+    "CSV-Erwerbsstatus.csv": "80b91fc919c7da25796dfc10459212823b4cd4c3b3252ec739c324cab51d694a",
+    "CSV-Demografie.csv": "98835ed9d24089620b865495ac551c081c54059554936daa046f4ad9de1ea5d2",
+    "CSV-ET_Wirtschaftszweig.csv": "fbbc491c5834b6f7de548a1bb7ac509aaeca57920eebd25f4f2ac9c01f331616",
+    "CSV-Hoechster_berufl_Abschluss.csv": "cd101e82482d37842e0b392d8faaf79d42eba6514da90a8f493f6b6894041528",
+    "CSV-Wohnungen.csv": "8aa9363d55eecf051d2fe91a648528d7b7271a2a5a16c85212b89401ce5832bb",
+    "demographics.csv": "9257cd53d3ff97608d53ef39f01022da2a0ae5ab394ef9e6783751539201b552"
+  }
+}
