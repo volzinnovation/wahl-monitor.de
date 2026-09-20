@@ -36,6 +36,18 @@ class CurrentOverviewTests(unittest.TestCase):
         result = generator.render_lsa_current_results_panel(self.snapshot, self.current, self.reference)
         self.assertIn("<td>40</td><td>40,00 %</td><td>—</td><td>—</td>", result)
 
+    def test_comparison_labels_and_links_identify_the_correct_election(self):
+        for label in ("Berlin", "Mecklenburg-Vorpommern"):
+            with self.subTest(label=label):
+                reference = {**self.reference, "source_url": "https://example.test/2021.csv",
+                             "reference_date": "26. September 2021"}
+                result = generator.render_lsa_current_results_panel(
+                    self.snapshot, self.current, reference, election_label=label)
+                self.assertIn(f"Aktueller Ergebnisstand · {label}", result)
+                self.assertIn(f"amtliches Endergebnis {label} vom 26. September 2021", result)
+                self.assertIn("href='https://example.test/2021.csv'", result)
+                self.assertNotIn("Sachsen-Anhalt", result)
+
     def test_zero_votes_and_zero_change_are_visible(self):
         self.current[0]["votes"] = 0
         self.reference["party_rows"][0]["votes"] = 0
@@ -408,6 +420,72 @@ class CurrentOverviewTests(unittest.TestCase):
             self.assertAlmostEqual(min(xs), projection["pad"], places=3)
             self.assertAlmostEqual(min(ys), projection["pad"], places=3)
             self.assertLess(max(ys), projection["height"] - projection["pad"] + 0.001)
+
+
+class LiveDatasetBuildTests(unittest.TestCase):
+    def test_official_2021_reference_totals_and_party_columns(self):
+        for election, first, second, spd_first in (
+            ("2026-mv", 910169, 913863, 313224),
+            ("2026-be", 1809486, 1821664, 422754),
+        ):
+            rows = generator.read_csv_rows(pages.core.ROOT / f"data/{election}/reference/2021/party_results.csv")
+            for vote_type, expected in (("Erststimmen", first), ("Zweitstimmen", second)):
+                with self.subTest(election=election, vote_type=vote_type):
+                    land = [r for r in rows if r["area_level"] == "LAND" and r["vote_type"] == vote_type]
+                    self.assertEqual(sum(int(r["votes"]) for r in land), expected)
+                    self.assertEqual({int(r["valid_votes"]) for r in land}, {expected})
+                    if vote_type == "Erststimmen":
+                        self.assertEqual(next(int(r["votes"]) for r in land if r["party_name"] == "SPD"), spd_first)
+
+    def test_local_grouped_raw_files_do_not_change_normalized_pages(self):
+        with tempfile.TemporaryDirectory() as directory:
+            raw = Path(directory) / "raw.csv"
+            raw.write_text(
+                "# SOURCE: https://example.test/l_wahlbezirke.csv\n"
+                "Wahl zum Landtag\nBerechnungsdatum;Ausgabe;Wahlkreis\n"
+                "20.09.2026 19:05:55;A;4\n"
+            )
+            for key in ("2026-mv", "2026-be"):
+                snapshots = [{"row_key": f"{key}:LAND", "valid_votes_zweit": 89729}]
+                with self.subTest(key=key), \
+                     mock.patch.object(generator.core, "ACTIVE_ELECTION_KEY", key), \
+                     mock.patch.object(generator, "load_latest_statla_snapshots", return_value=snapshots), \
+                     mock.patch.object(generator, "current_raw_statla_csv_path", return_value=raw):
+                    local = generator.load_statla_dataset()
+                    with mock.patch.object(generator, "current_raw_statla_csv_path", return_value=None):
+                        clean_checkout = generator.load_statla_dataset()
+                self.assertEqual(local, clean_checkout)
+                self.assertEqual(local[0], snapshots)
+
+    def test_berlin_checks_live_districts_and_prepared_constituencies(self):
+        for live, count in ((True, 12), (False, 78)):
+            with self.subTest(live=live), tempfile.TemporaryDirectory() as directory:
+                base = Path(directory)
+                root = base / "site/2026-be"
+                for name, total in (("landkreis", 1), ("wahlkreis", 78), ("municipality", count)):
+                    (root / name).mkdir(parents=True)
+                    for index in range(total):
+                        (root / name / f"{index}.html").write_text("page")
+                (root / "search.json").write_text(json.dumps({
+                    "electionKey": "2026-be", "entryCount": 0, "entries": [],
+                }))
+                for name in ("parties.html", "scenario.html"):
+                    (root / name).write_text("page")
+                metadata = base / "data/2026-be/metadata"
+                metadata.mkdir(parents=True)
+                (metadata / "setup_manifest.json").write_text(json.dumps({
+                    "wahlkreise": 78, "party_or_group_entries": 30,
+                }))
+                latest = base / "data/2026-be/latest"
+                latest.mkdir()
+                (latest / "statla_snapshots.csv").write_text(
+                    "gebietsart\n" + ("GEMEINDE\n" * 12 if live else "")
+                )
+                with mock.patch.object(pages.core, "ROOT", base):
+                    pages.validate_berlin(base / "site")
+                    (root / "municipality/0.html").unlink()
+                    with self.assertRaisesRegex(ValueError, "district/Wahlkreis"):
+                        pages.validate_berlin(base / "site")
 
 
 class PreservationTests(unittest.TestCase):

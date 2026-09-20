@@ -1,0 +1,10 @@
+{
+  "source_url": "https://www.laiv-mv.de/static/LAIV/Wahlen/2-Landtagswahlen/2021/Ergebnisse/l_wahlkreise.csv",
+  "source_sha256": "ad1ba0899aab43ead2db51cfe720921b902e929e4643469b2b0aa12dcdb31cf9",
+  "election_date": "2021-09-26",
+  "levels": [
+    "LAND",
+    "WAHLKREIS"
+  ],
+  "note": "Reimported official named CSV columns to correct the shifted first-vote columns in the previous workbook import."
+}

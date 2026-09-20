@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 from concurrent.futures import ThreadPoolExecutor
+import csv
 import hashlib
 import json
 import subprocess
@@ -100,7 +101,12 @@ def validate_berlin(output: Path) -> None:
         raise ValueError("Missing Berlin parent page")
     if len(list((root / "wahlkreis").glob("*.html"))) != 78:
         raise ValueError("Missing Berlin Wahlkreis pages")
-    if len(list((root / "municipality").glob("*.html"))) != 78:
+    with (core.ROOT / "data/2026-be/latest/statla_snapshots.csv").open() as source:
+        has_district_results = any(row.get("gebietsart") == "GEMEINDE" for row in csv.DictReader(source))
+    # Prepared pages use 78 constituency placeholders; live exports provide
+    # Berlin's 12 districts, with the 78 constituencies checked above.
+    expected_municipalities = 12 if has_district_results else 78
+    if len(list((root / "municipality").glob("*.html"))) != expected_municipalities:
         raise ValueError("Missing Berlin district/Wahlkreis drill-down pages")
     if not (root / "parties.html").is_file() or not (root / "scenario.html").is_file():
         raise ValueError("Missing Berlin parties or scenario page")

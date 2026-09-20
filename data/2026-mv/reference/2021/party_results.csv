@@ -1,15 +1,15 @@
 area_level,area_id,area_name,vote_type,party_name,votes,valid_votes
-WAHLKREIS,1,Greifswald,Erststimmen,SPD,4248,32322
-WAHLKREIS,1,Greifswald,Erststimmen,AfD,5079,32322
-WAHLKREIS,1,Greifswald,Erststimmen,CDU,3263,32322
-WAHLKREIS,1,Greifswald,Erststimmen,Die Linke,4719,32322
-WAHLKREIS,1,Greifswald,Erststimmen,GRÜNE,2275,32322
-WAHLKREIS,1,Greifswald,Erststimmen,NPD,1374,32322
-WAHLKREIS,1,Greifswald,Erststimmen,FREiER HORIZONT,626,32322
-WAHLKREIS,1,Greifswald,Erststimmen,Die PARTEI,394,32322
-WAHLKREIS,1,Greifswald,Erststimmen,TIERSCHUTZ hier!,523,32322
-WAHLKREIS,1,Greifswald,Erststimmen,DiB,141,32322
-WAHLKREIS,1,Greifswald,Erststimmen,Einzelbewerber,455,32322
+WAHLKREIS,1,Greifswald,Erststimmen,SPD,9680,32322
+WAHLKREIS,1,Greifswald,Erststimmen,AfD,4248,32322
+WAHLKREIS,1,Greifswald,Erststimmen,CDU,5079,32322
+WAHLKREIS,1,Greifswald,Erststimmen,Die Linke,3263,32322
+WAHLKREIS,1,Greifswald,Erststimmen,GRÜNE,4719,32322
+WAHLKREIS,1,Greifswald,Erststimmen,FDP,2275,32322
+WAHLKREIS,1,Greifswald,Erststimmen,Tierschutzpartei,1374,32322
+WAHLKREIS,1,Greifswald,Erststimmen,Die PARTEI,626,32322
+WAHLKREIS,1,Greifswald,Erststimmen,FREIE WÄHLER,394,32322
+WAHLKREIS,1,Greifswald,Erststimmen,dieBasis,523,32322
+WAHLKREIS,1,Greifswald,Erststimmen,FPA,141,32322
 WAHLKREIS,1,Greifswald,Zweitstimmen,SPD,10867,32410
 WAHLKREIS,1,Greifswald,Zweitstimmen,AfD,4027,32410
 WAHLKREIS,1,Greifswald,Zweitstimmen,CDU,4055,32410
@@ -34,13 +34,13 @@ WAHLKREIS,1,Greifswald,Zweitstimmen,Die Humanisten,109,32410
 WAHLKREIS,1,Greifswald,Zweitstimmen,Gesundheitsforschung,104,32410
 WAHLKREIS,1,Greifswald,Zweitstimmen,Team Todenhöfer,90,32410
 WAHLKREIS,1,Greifswald,Zweitstimmen,UNABHÄNGIGE,54,32410
-WAHLKREIS,2,Neubrandenburg I,Erststimmen,SPD,3078,17334
-WAHLKREIS,2,Neubrandenburg I,Erststimmen,AfD,2693,17334
-WAHLKREIS,2,Neubrandenburg I,Erststimmen,CDU,3190,17334
-WAHLKREIS,2,Neubrandenburg I,Erststimmen,Die Linke,898,17334
-WAHLKREIS,2,Neubrandenburg I,Erststimmen,GRÜNE,1019,17334
-WAHLKREIS,2,Neubrandenburg I,Erststimmen,TIERSCHUTZ hier!,455,17334
-WAHLKREIS,2,Neubrandenburg I,Erststimmen,Einzelbewerber,279,17334
+WAHLKREIS,2,Neubrandenburg I,Erststimmen,SPD,6001,17334
+WAHLKREIS,2,Neubrandenburg I,Erststimmen,AfD,3078,17334
+WAHLKREIS,2,Neubrandenburg I,Erststimmen,CDU,2693,17334
+WAHLKREIS,2,Neubrandenburg I,Erststimmen,Die Linke,3190,17334
+WAHLKREIS,2,Neubrandenburg I,Erststimmen,GRÜNE,898,17334
+WAHLKREIS,2,Neubrandenburg I,Erststimmen,FDP,1019,17334
+WAHLKREIS,2,Neubrandenburg I,Erststimmen,dieBasis,455,17334
 WAHLKREIS,2,Neubrandenburg I,Zweitstimmen,SPD,7396,17465
 WAHLKREIS,2,Neubrandenburg I,Zweitstimmen,AfD,2872,17465
 WAHLKREIS,2,Neubrandenburg I,Zweitstimmen,CDU,2007,17465
@@ -65,13 +65,13 @@ WAHLKREIS,2,Neubrandenburg I,Zweitstimmen,Die Humanisten,31,17465
 WAHLKREIS,2,Neubrandenburg I,Zweitstimmen,Gesundheitsforschung,54,17465
 WAHLKREIS,2,Neubrandenburg I,Zweitstimmen,Team Todenhöfer,31,17465
 WAHLKREIS,2,Neubrandenburg I,Zweitstimmen,UNABHÄNGIGE,53,17465
-WAHLKREIS,3,Neubrandenburg II,Erststimmen,SPD,3084,17457
-WAHLKREIS,3,Neubrandenburg II,Erststimmen,AfD,2997,17457
-WAHLKREIS,3,Neubrandenburg II,Erststimmen,CDU,2832,17457
-WAHLKREIS,3,Neubrandenburg II,Erststimmen,Die Linke,973,17457
-WAHLKREIS,3,Neubrandenburg II,Erststimmen,GRÜNE,1127,17457
-WAHLKREIS,3,Neubrandenburg II,Erststimmen,TIERSCHUTZ hier!,516,17457
-WAHLKREIS,3,Neubrandenburg II,Erststimmen,Einzelbewerber,278,17457
+WAHLKREIS,3,Neubrandenburg II,Erststimmen,SPD,5928,17457
+WAHLKREIS,3,Neubrandenburg II,Erststimmen,AfD,3084,17457
+WAHLKREIS,3,Neubrandenburg II,Erststimmen,CDU,2997,17457
+WAHLKREIS,3,Neubrandenburg II,Erststimmen,Die Linke,2832,17457
+WAHLKREIS,3,Neubrandenburg II,Erststimmen,GRÜNE,973,17457
+WAHLKREIS,3,Neubrandenburg II,Erststimmen,FDP,1127,17457
+WAHLKREIS,3,Neubrandenburg II,Erststimmen,dieBasis,516,17457
 WAHLKREIS,3,Neubrandenburg II,Zweitstimmen,SPD,7148,17658
 WAHLKREIS,3,Neubrandenburg II,Zweitstimmen,AfD,2856,17658
 WAHLKREIS,3,Neubrandenburg II,Zweitstimmen,CDU,2104,17658
@@ -96,14 +96,14 @@ WAHLKREIS,3,Neubrandenburg II,Zweitstimmen,Die Humanisten,30,17658
 WAHLKREIS,3,Neubrandenburg II,Zweitstimmen,Gesundheitsforschung,42,17658
 WAHLKREIS,3,Neubrandenburg II,Zweitstimmen,Team Todenhöfer,46,17658
 WAHLKREIS,3,Neubrandenburg II,Zweitstimmen,UNABHÄNGIGE,63,17658
-WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,SPD,3736,23686
-WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,AfD,2783,23686
-WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,CDU,3527,23686
-WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,Die Linke,2202,23686
-WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,GRÜNE,1312,23686
-WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,Die PARTEI,602,23686
-WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,TIERSCHUTZ hier!,660,23686
-WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,Einzelbewerber,416,23686
+WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,SPD,8864,23686
+WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,AfD,3736,23686
+WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,CDU,2783,23686
+WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,Die Linke,3527,23686
+WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,GRÜNE,2202,23686
+WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,FDP,1312,23686
+WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,FREIE WÄHLER,602,23686
+WAHLKREIS,4,Hansestadt Rostock I,Erststimmen,dieBasis,660,23686
 WAHLKREIS,4,Hansestadt Rostock I,Zweitstimmen,SPD,10254,23811
 WAHLKREIS,4,Hansestadt Rostock I,Zweitstimmen,AfD,3352,23811
 WAHLKREIS,4,Hansestadt Rostock I,Zweitstimmen,CDU,2271,23811
@@ -128,16 +128,16 @@ WAHLKREIS,4,Hansestadt Rostock I,Zweitstimmen,Die Humanisten,33,23811
 WAHLKREIS,4,Hansestadt Rostock I,Zweitstimmen,Gesundheitsforschung,59,23811
 WAHLKREIS,4,Hansestadt Rostock I,Zweitstimmen,Team Todenhöfer,41,23811
 WAHLKREIS,4,Hansestadt Rostock I,Zweitstimmen,UNABHÄNGIGE,49,23811
-WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,SPD,3166,24090
-WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,AfD,2182,24090
-WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,CDU,4019,24090
-WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,Die Linke,2053,24090
-WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,GRÜNE,1326,24090
-WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,NPD,891,24090
-WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,Die PARTEI,449,24090
-WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,DKP,33,24090
-WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,TIERSCHUTZ hier!,470,24090
-WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,Einzelbewerber,416,24090
+WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,SPD,9501,24090
+WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,AfD,3166,24090
+WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,CDU,2182,24090
+WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,Die Linke,4019,24090
+WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,GRÜNE,2053,24090
+WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,FDP,1326,24090
+WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,Tierschutzpartei,891,24090
+WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,FREIE WÄHLER,449,24090
+WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,Bündnis C,33,24090
+WAHLKREIS,5,Hansestadt Rostock II,Erststimmen,dieBasis,470,24090
 WAHLKREIS,5,Hansestadt Rostock II,Zweitstimmen,SPD,10811,24236
 WAHLKREIS,5,Hansestadt Rostock II,Zweitstimmen,AfD,2865,24236
 WAHLKREIS,5,Hansestadt Rostock II,Zweitstimmen,CDU,1901,24236
@@ -162,16 +162,16 @@ WAHLKREIS,5,Hansestadt Rostock II,Zweitstimmen,Die Humanisten,45,24236
 WAHLKREIS,5,Hansestadt Rostock II,Zweitstimmen,Gesundheitsforschung,59,24236
 WAHLKREIS,5,Hansestadt Rostock II,Zweitstimmen,Team Todenhöfer,40,24236
 WAHLKREIS,5,Hansestadt Rostock II,Zweitstimmen,UNABHÄNGIGE,48,24236
-WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,SPD,2805,34809
-WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,AfD,3618,34809
-WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,CDU,7135,34809
-WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,Die Linke,5801,34809
-WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,GRÜNE,2016,34809
-WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,NPD,1428,34809
-WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,Die PARTEI,476,34809
-WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,TIERSCHUTZ hier!,754,34809
-WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,DiB,130,34809
-WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,Einzelbewerber,364,34809
+WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,SPD,10646,34809
+WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,AfD,2805,34809
+WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,CDU,3618,34809
+WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,Die Linke,7135,34809
+WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,GRÜNE,5801,34809
+WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,FDP,2016,34809
+WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,Tierschutzpartei,1428,34809
+WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,FREIE WÄHLER,476,34809
+WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,dieBasis,754,34809
+WAHLKREIS,6,Hansestadt Rostock III,Erststimmen,FPA,130,34809
 WAHLKREIS,6,Hansestadt Rostock III,Zweitstimmen,SPD,12340,34982
 WAHLKREIS,6,Hansestadt Rostock III,Zweitstimmen,AfD,2604,34982
 WAHLKREIS,6,Hansestadt Rostock III,Zweitstimmen,CDU,3075,34982
@@ -196,15 +196,15 @@ WAHLKREIS,6,Hansestadt Rostock III,Zweitstimmen,Die Humanisten,91,34982
 WAHLKREIS,6,Hansestadt Rostock III,Zweitstimmen,Gesundheitsforschung,54,34982
 WAHLKREIS,6,Hansestadt Rostock III,Zweitstimmen,Team Todenhöfer,57,34982
 WAHLKREIS,6,Hansestadt Rostock III,Zweitstimmen,UNABHÄNGIGE,74,34982
-WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,SPD,4154,36628
-WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,AfD,5162,36628
-WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,CDU,5097,36628
-WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,Die Linke,5619,36628
-WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,GRÜNE,2695,36628
-WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,NPD,1216,36628
-WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,Die PARTEI,583,36628
-WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,TIERSCHUTZ hier!,1089,36628
-WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,Einzelbewerber,441,36628
+WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,SPD,11013,36628
+WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,AfD,4154,36628
+WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,CDU,5162,36628
+WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,Die Linke,5097,36628
+WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,GRÜNE,5619,36628
+WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,FDP,2695,36628
+WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,Tierschutzpartei,1216,36628
+WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,FREIE WÄHLER,583,36628
+WAHLKREIS,7,Hansestadt Rostock IV,Erststimmen,dieBasis,1089,36628
 WAHLKREIS,7,Hansestadt Rostock IV,Zweitstimmen,SPD,13428,36757
 WAHLKREIS,7,Hansestadt Rostock IV,Zweitstimmen,AfD,3968,36757
 WAHLKREIS,7,Hansestadt Rostock IV,Zweitstimmen,CDU,3611,36757
@@ -229,16 +229,16 @@ WAHLKREIS,7,Hansestadt Rostock IV,Zweitstimmen,Die Humanisten,79,36757
 WAHLKREIS,7,Hansestadt Rostock IV,Zweitstimmen,Gesundheitsforschung,72,36757
 WAHLKREIS,7,Hansestadt Rostock IV,Zweitstimmen,Team Todenhöfer,105,36757
 WAHLKREIS,7,Hansestadt Rostock IV,Zweitstimmen,UNABHÄNGIGE,77,36757
-WAHLKREIS,8,Schwerin I,Erststimmen,SPD,3986,35723
-WAHLKREIS,8,Schwerin I,Erststimmen,AfD,4230,35723
-WAHLKREIS,8,Schwerin I,Erststimmen,CDU,3518,35723
-WAHLKREIS,8,Schwerin I,Erststimmen,Die Linke,2934,35723
-WAHLKREIS,8,Schwerin I,Erststimmen,GRÜNE,2177,35723
-WAHLKREIS,8,Schwerin I,Erststimmen,FREiER HORIZONT,568,35723
-WAHLKREIS,8,Schwerin I,Erststimmen,Die PARTEI,759,35723
-WAHLKREIS,8,Schwerin I,Erststimmen,FREIE WÄHLER,399,35723
-WAHLKREIS,8,Schwerin I,Erststimmen,TIERSCHUTZ hier!,579,35723
-WAHLKREIS,8,Schwerin I,Erststimmen,Einzelbewerber,467,35723
+WAHLKREIS,8,Schwerin I,Erststimmen,SPD,16573,35723
+WAHLKREIS,8,Schwerin I,Erststimmen,AfD,3986,35723
+WAHLKREIS,8,Schwerin I,Erststimmen,CDU,4230,35723
+WAHLKREIS,8,Schwerin I,Erststimmen,Die Linke,3518,35723
+WAHLKREIS,8,Schwerin I,Erststimmen,GRÜNE,2934,35723
+WAHLKREIS,8,Schwerin I,Erststimmen,FDP,2177,35723
+WAHLKREIS,8,Schwerin I,Erststimmen,Die PARTEI,568,35723
+WAHLKREIS,8,Schwerin I,Erststimmen,FREIE WÄHLER,759,35723
+WAHLKREIS,8,Schwerin I,Erststimmen,PIRATEN,399,35723
+WAHLKREIS,8,Schwerin I,Erststimmen,dieBasis,579,35723
 WAHLKREIS,8,Schwerin I,Zweitstimmen,SPD,12562,35686
 WAHLKREIS,8,Schwerin I,Zweitstimmen,AfD,4234,35686
 WAHLKREIS,8,Schwerin I,Zweitstimmen,CDU,4316,35686
@@ -263,14 +263,15 @@ WAHLKREIS,8,Schwerin I,Zweitstimmen,Die Humanisten,73,35686
 WAHLKREIS,8,Schwerin I,Zweitstimmen,Gesundheitsforschung,75,35686
 WAHLKREIS,8,Schwerin I,Zweitstimmen,Team Todenhöfer,88,35686
 WAHLKREIS,8,Schwerin I,Zweitstimmen,UNABHÄNGIGE,101,35686
-WAHLKREIS,9,Schwerin II,Erststimmen,SPD,3128,17873
-WAHLKREIS,9,Schwerin II,Erststimmen,AfD,2160,17873
-WAHLKREIS,9,Schwerin II,Erststimmen,CDU,2388,17873
-WAHLKREIS,9,Schwerin II,Erststimmen,Die Linke,1155,17873
-WAHLKREIS,9,Schwerin II,Erststimmen,GRÜNE,1179,17873
-WAHLKREIS,9,Schwerin II,Erststimmen,Die PARTEI,421,17873
-WAHLKREIS,9,Schwerin II,Erststimmen,TIERSCHUTZ hier!,271,17873
-WAHLKREIS,9,Schwerin II,Erststimmen,Einzelbewerber,292,17873
+WAHLKREIS,9,Schwerin II,Erststimmen,SPD,6892,17873
+WAHLKREIS,9,Schwerin II,Erststimmen,AfD,3128,17873
+WAHLKREIS,9,Schwerin II,Erststimmen,CDU,2160,17873
+WAHLKREIS,9,Schwerin II,Erststimmen,Die Linke,2388,17873
+WAHLKREIS,9,Schwerin II,Erststimmen,GRÜNE,1155,17873
+WAHLKREIS,9,Schwerin II,Erststimmen,FDP,1179,17873
+WAHLKREIS,9,Schwerin II,Erststimmen,FREIE WÄHLER,421,17873
+WAHLKREIS,9,Schwerin II,Erststimmen,dieBasis,271,17873
+WAHLKREIS,9,Schwerin II,Erststimmen,Einzelbewerber,279,17873
 WAHLKREIS,9,Schwerin II,Zweitstimmen,SPD,7977,18020
 WAHLKREIS,9,Schwerin II,Zweitstimmen,AfD,2837,18020
 WAHLKREIS,9,Schwerin II,Zweitstimmen,CDU,1882,18020
@@ -295,16 +296,17 @@ WAHLKREIS,9,Schwerin II,Zweitstimmen,Die Humanisten,16,18020
 WAHLKREIS,9,Schwerin II,Zweitstimmen,Gesundheitsforschung,52,18020
 WAHLKREIS,9,Schwerin II,Zweitstimmen,Team Todenhöfer,29,18020
 WAHLKREIS,9,Schwerin II,Zweitstimmen,UNABHÄNGIGE,41,18020
-WAHLKREIS,10,Wismar,Erststimmen,SPD,2833,22111
-WAHLKREIS,10,Wismar,Erststimmen,AfD,2746,22111
-WAHLKREIS,10,Wismar,Erststimmen,CDU,2173,22111
-WAHLKREIS,10,Wismar,Erststimmen,Die Linke,1856,22111
-WAHLKREIS,10,Wismar,Erststimmen,GRÜNE,1615,22111
-WAHLKREIS,10,Wismar,Erststimmen,Die PARTEI,283,22111
-WAHLKREIS,10,Wismar,Erststimmen,FREIE WÄHLER,346,22111
-WAHLKREIS,10,Wismar,Erststimmen,TIERSCHUTZ hier!,296,22111
-WAHLKREIS,10,Wismar,Erststimmen,DiB,50,22111
-WAHLKREIS,10,Wismar,Erststimmen,Einzelbewerber,360,22111
+WAHLKREIS,10,Wismar,Erststimmen,SPD,9590,22111
+WAHLKREIS,10,Wismar,Erststimmen,AfD,2833,22111
+WAHLKREIS,10,Wismar,Erststimmen,CDU,2746,22111
+WAHLKREIS,10,Wismar,Erststimmen,Die Linke,2173,22111
+WAHLKREIS,10,Wismar,Erststimmen,GRÜNE,1856,22111
+WAHLKREIS,10,Wismar,Erststimmen,FDP,1615,22111
+WAHLKREIS,10,Wismar,Erststimmen,FREIE WÄHLER,283,22111
+WAHLKREIS,10,Wismar,Erststimmen,PIRATEN,346,22111
+WAHLKREIS,10,Wismar,Erststimmen,dieBasis,296,22111
+WAHLKREIS,10,Wismar,Erststimmen,FPA,50,22111
+WAHLKREIS,10,Wismar,Erststimmen,Einzelbewerber,323,22111
 WAHLKREIS,10,Wismar,Zweitstimmen,SPD,10007,22193
 WAHLKREIS,10,Wismar,Zweitstimmen,AfD,2753,22193
 WAHLKREIS,10,Wismar,Zweitstimmen,CDU,2314,22193
@@ -329,14 +331,15 @@ WAHLKREIS,10,Wismar,Zweitstimmen,Die Humanisten,19,22193
 WAHLKREIS,10,Wismar,Zweitstimmen,Gesundheitsforschung,43,22193
 WAHLKREIS,10,Wismar,Zweitstimmen,Team Todenhöfer,35,22193
 WAHLKREIS,10,Wismar,Zweitstimmen,UNABHÄNGIGE,69,22193
-WAHLKREIS,11,Landkreis Rostock I,Erststimmen,SPD,5336,32056
-WAHLKREIS,11,Landkreis Rostock I,Erststimmen,AfD,5314,32056
-WAHLKREIS,11,Landkreis Rostock I,Erststimmen,CDU,3144,32056
-WAHLKREIS,11,Landkreis Rostock I,Erststimmen,Die Linke,1841,32056
-WAHLKREIS,11,Landkreis Rostock I,Erststimmen,GRÜNE,2100,32056
-WAHLKREIS,11,Landkreis Rostock I,Erststimmen,Die PARTEI,721,32056
-WAHLKREIS,11,Landkreis Rostock I,Erststimmen,TIERSCHUTZ hier!,972,32056
-WAHLKREIS,11,Landkreis Rostock I,Erststimmen,Einzelbewerber,502,32056
+WAHLKREIS,11,Landkreis Rostock I,Erststimmen,SPD,12335,32056
+WAHLKREIS,11,Landkreis Rostock I,Erststimmen,AfD,5336,32056
+WAHLKREIS,11,Landkreis Rostock I,Erststimmen,CDU,5314,32056
+WAHLKREIS,11,Landkreis Rostock I,Erststimmen,Die Linke,3144,32056
+WAHLKREIS,11,Landkreis Rostock I,Erststimmen,GRÜNE,1841,32056
+WAHLKREIS,11,Landkreis Rostock I,Erststimmen,FDP,2100,32056
+WAHLKREIS,11,Landkreis Rostock I,Erststimmen,FREIE WÄHLER,721,32056
+WAHLKREIS,11,Landkreis Rostock I,Erststimmen,dieBasis,972,32056
+WAHLKREIS,11,Landkreis Rostock I,Erststimmen,Einzelbewerber,293,32056
 WAHLKREIS,11,Landkreis Rostock I,Zweitstimmen,SPD,13300,32137
 WAHLKREIS,11,Landkreis Rostock I,Zweitstimmen,AfD,4951,32137
 WAHLKREIS,11,Landkreis Rostock I,Zweitstimmen,CDU,4186,32137
@@ -361,15 +364,15 @@ WAHLKREIS,11,Landkreis Rostock I,Zweitstimmen,Die Humanisten,35,32137
 WAHLKREIS,11,Landkreis Rostock I,Zweitstimmen,Gesundheitsforschung,61,32137
 WAHLKREIS,11,Landkreis Rostock I,Zweitstimmen,Team Todenhöfer,88,32137
 WAHLKREIS,11,Landkreis Rostock I,Zweitstimmen,UNABHÄNGIGE,73,32137
-WAHLKREIS,12,Landkreis Rostock II,Erststimmen,SPD,6082,37618
-WAHLKREIS,12,Landkreis Rostock II,Erststimmen,AfD,6266,37618
-WAHLKREIS,12,Landkreis Rostock II,Erststimmen,CDU,4288,37618
-WAHLKREIS,12,Landkreis Rostock II,Erststimmen,Die Linke,2689,37618
-WAHLKREIS,12,Landkreis Rostock II,Erststimmen,GRÜNE,3178,37618
-WAHLKREIS,12,Landkreis Rostock II,Erststimmen,Die PARTEI,842,37618
-WAHLKREIS,12,Landkreis Rostock II,Erststimmen,FREIE WÄHLER,292,37618
-WAHLKREIS,12,Landkreis Rostock II,Erststimmen,TIERSCHUTZ hier!,1113,37618
-WAHLKREIS,12,Landkreis Rostock II,Erststimmen,Einzelbewerber,418,37618
+WAHLKREIS,12,Landkreis Rostock II,Erststimmen,SPD,12868,37618
+WAHLKREIS,12,Landkreis Rostock II,Erststimmen,AfD,6082,37618
+WAHLKREIS,12,Landkreis Rostock II,Erststimmen,CDU,6266,37618
+WAHLKREIS,12,Landkreis Rostock II,Erststimmen,Die Linke,4288,37618
+WAHLKREIS,12,Landkreis Rostock II,Erststimmen,GRÜNE,2689,37618
+WAHLKREIS,12,Landkreis Rostock II,Erststimmen,FDP,3178,37618
+WAHLKREIS,12,Landkreis Rostock II,Erststimmen,FREIE WÄHLER,842,37618
+WAHLKREIS,12,Landkreis Rostock II,Erststimmen,PIRATEN,292,37618
+WAHLKREIS,12,Landkreis Rostock II,Erststimmen,dieBasis,1113,37618
 WAHLKREIS,12,Landkreis Rostock II,Zweitstimmen,SPD,15175,37776
 WAHLKREIS,12,Landkreis Rostock II,Zweitstimmen,AfD,5657,37776
 WAHLKREIS,12,Landkreis Rostock II,Zweitstimmen,CDU,5230,37776
@@ -394,13 +397,14 @@ WAHLKREIS,12,Landkreis Rostock II,Zweitstimmen,Die Humanisten,41,37776
 WAHLKREIS,12,Landkreis Rostock II,Zweitstimmen,Gesundheitsforschung,77,37776
 WAHLKREIS,12,Landkreis Rostock II,Zweitstimmen,Team Todenhöfer,60,37776
 WAHLKREIS,12,Landkreis Rostock II,Zweitstimmen,UNABHÄNGIGE,79,37776
-WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,SPD,5083,18563
-WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,AfD,4919,18563
-WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,CDU,1853,18563
-WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,Die Linke,600,18563
-WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,GRÜNE,888,18563
-WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,Tierschutzpartei,388,18563
-WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,Einzelbewerber,366,18563
+WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,SPD,4757,18563
+WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,AfD,5083,18563
+WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,CDU,4919,18563
+WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,Die Linke,1853,18563
+WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,GRÜNE,600,18563
+WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,FDP,888,18563
+WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,FREiER HORIZONT,388,18563
+WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Erststimmen,Einzelbewerber,75,18563
 WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Zweitstimmen,SPD,6280,18648
 WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Zweitstimmen,AfD,4483,18648
 WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Zweitstimmen,CDU,3932,18648
@@ -425,14 +429,14 @@ WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Zweitstimme
 WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Zweitstimmen,Gesundheitsforschung,42,18648
 WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Zweitstimmen,Team Todenhöfer,17,18648
 WAHLKREIS,13,Mecklenburgische Seenplatte I - Vorpommern-Greifswald I,Zweitstimmen,UNABHÄNGIGE,44,18648
-WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,SPD,4627,20481
-WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,AfD,4375,20481
-WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,CDU,1931,20481
-WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,Die Linke,430,20481
-WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,GRÜNE,1240,20481
-WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,Die PARTEI,538,20481
-WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,TIERSCHUTZ hier!,320,20481
-WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,Einzelbewerber,422,20481
+WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,SPD,7020,20481
+WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,AfD,4627,20481
+WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,CDU,4375,20481
+WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,Die Linke,1931,20481
+WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,GRÜNE,430,20481
+WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,FDP,1240,20481
+WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,FREIE WÄHLER,538,20481
+WAHLKREIS,14,Mecklenburgische Seenplatte II,Erststimmen,dieBasis,320,20481
 WAHLKREIS,14,Mecklenburgische Seenplatte II,Zweitstimmen,SPD,8204,20491
 WAHLKREIS,14,Mecklenburgische Seenplatte II,Zweitstimmen,AfD,4310,20491
 WAHLKREIS,14,Mecklenburgische Seenplatte II,Zweitstimmen,CDU,3253,20491
@@ -457,14 +461,14 @@ WAHLKREIS,14,Mecklenburgische Seenplatte II,Zweitstimmen,Die Humanisten,14,20491
 WAHLKREIS,14,Mecklenburgische Seenplatte II,Zweitstimmen,Gesundheitsforschung,33,20491
 WAHLKREIS,14,Mecklenburgische Seenplatte II,Zweitstimmen,Team Todenhöfer,17,20491
 WAHLKREIS,14,Mecklenburgische Seenplatte II,Zweitstimmen,UNABHÄNGIGE,42,20491
-WAHLKREIS,15,Landkreis Rostock III,Erststimmen,SPD,6062,27167
-WAHLKREIS,15,Landkreis Rostock III,Erststimmen,AfD,5468,27167
-WAHLKREIS,15,Landkreis Rostock III,Erststimmen,CDU,2748,27167
-WAHLKREIS,15,Landkreis Rostock III,Erststimmen,Die Linke,1237,27167
-WAHLKREIS,15,Landkreis Rostock III,Erststimmen,GRÜNE,1627,27167
-WAHLKREIS,15,Landkreis Rostock III,Erststimmen,Die PARTEI,917,27167
-WAHLKREIS,15,Landkreis Rostock III,Erststimmen,DKP,153,27167
-WAHLKREIS,15,Landkreis Rostock III,Erststimmen,Einzelbewerber,557,27167
+WAHLKREIS,15,Landkreis Rostock III,Erststimmen,SPD,8955,27167
+WAHLKREIS,15,Landkreis Rostock III,Erststimmen,AfD,6062,27167
+WAHLKREIS,15,Landkreis Rostock III,Erststimmen,CDU,5468,27167
+WAHLKREIS,15,Landkreis Rostock III,Erststimmen,Die Linke,2748,27167
+WAHLKREIS,15,Landkreis Rostock III,Erststimmen,GRÜNE,1237,27167
+WAHLKREIS,15,Landkreis Rostock III,Erststimmen,FDP,1627,27167
+WAHLKREIS,15,Landkreis Rostock III,Erststimmen,FREIE WÄHLER,917,27167
+WAHLKREIS,15,Landkreis Rostock III,Erststimmen,Bündnis C,153,27167
 WAHLKREIS,15,Landkreis Rostock III,Zweitstimmen,SPD,11062,27306
 WAHLKREIS,15,Landkreis Rostock III,Zweitstimmen,AfD,5389,27306
 WAHLKREIS,15,Landkreis Rostock III,Zweitstimmen,CDU,3967,27306
@@ -489,14 +493,14 @@ WAHLKREIS,15,Landkreis Rostock III,Zweitstimmen,Die Humanisten,25,27306
 WAHLKREIS,15,Landkreis Rostock III,Zweitstimmen,Gesundheitsforschung,60,27306
 WAHLKREIS,15,Landkreis Rostock III,Zweitstimmen,Team Todenhöfer,34,27306
 WAHLKREIS,15,Landkreis Rostock III,Zweitstimmen,UNABHÄNGIGE,40,27306
-WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,SPD,5783,29765
-WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,AfD,4989,29765
-WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,CDU,2630,29765
-WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,Die Linke,1317,29765
-WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,GRÜNE,2098,29765
-WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,Die PARTEI,643,29765
-WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,TIERSCHUTZ hier!,571,29765
-WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,Einzelbewerber,479,29765
+WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,SPD,11734,29765
+WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,AfD,5783,29765
+WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,CDU,4989,29765
+WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,Die Linke,2630,29765
+WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,GRÜNE,1317,29765
+WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,FDP,2098,29765
+WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,FREIE WÄHLER,643,29765
+WAHLKREIS,16,Landkreis Rostock IV,Erststimmen,dieBasis,571,29765
 WAHLKREIS,16,Landkreis Rostock IV,Zweitstimmen,SPD,13208,29862
 WAHLKREIS,16,Landkreis Rostock IV,Zweitstimmen,AfD,5256,29862
 WAHLKREIS,16,Landkreis Rostock IV,Zweitstimmen,CDU,3534,29862
@@ -521,14 +525,14 @@ WAHLKREIS,16,Landkreis Rostock IV,Zweitstimmen,Die Humanisten,32,29862
 WAHLKREIS,16,Landkreis Rostock IV,Zweitstimmen,Gesundheitsforschung,63,29862
 WAHLKREIS,16,Landkreis Rostock IV,Zweitstimmen,Team Todenhöfer,68,29862
 WAHLKREIS,16,Landkreis Rostock IV,Zweitstimmen,UNABHÄNGIGE,49,29862
-WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,SPD,3403,22984
-WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,AfD,2670,22984
-WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,CDU,1989,22984
-WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,Die Linke,931,22984
-WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,GRÜNE,1196,22984
-WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,Die PARTEI,578,22984
-WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,TIERSCHUTZ hier!,391,22984
-WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,Einzelbewerber,356,22984
+WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,SPD,11826,22984
+WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,AfD,3403,22984
+WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,CDU,2670,22984
+WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,Die Linke,1989,22984
+WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,GRÜNE,931,22984
+WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,FDP,1196,22984
+WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,FREIE WÄHLER,578,22984
+WAHLKREIS,17,Ludwigslust-Parchim I,Erststimmen,dieBasis,391,22984
 WAHLKREIS,17,Ludwigslust-Parchim I,Zweitstimmen,SPD,11074,23028
 WAHLKREIS,17,Ludwigslust-Parchim I,Zweitstimmen,AfD,3294,23028
 WAHLKREIS,17,Ludwigslust-Parchim I,Zweitstimmen,CDU,2750,23028
@@ -553,15 +557,15 @@ WAHLKREIS,17,Ludwigslust-Parchim I,Zweitstimmen,Die Humanisten,13,23028
 WAHLKREIS,17,Ludwigslust-Parchim I,Zweitstimmen,Gesundheitsforschung,36,23028
 WAHLKREIS,17,Ludwigslust-Parchim I,Zweitstimmen,Team Todenhöfer,46,23028
 WAHLKREIS,17,Ludwigslust-Parchim I,Zweitstimmen,UNABHÄNGIGE,45,23028
-WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,SPD,3906,23685
-WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,AfD,4494,23685
-WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,CDU,2484,23685
-WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,Die Linke,926,23685
-WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,GRÜNE,1831,23685
-WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,Die PARTEI,478,23685
-WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,TIERSCHUTZ hier!,317,23685
-WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,DiB,87,23685
-WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,Einzelbewerber,319,23685
+WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,SPD,9162,23685
+WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,AfD,3906,23685
+WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,CDU,4494,23685
+WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,Die Linke,2484,23685
+WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,GRÜNE,926,23685
+WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,FDP,1831,23685
+WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,FREIE WÄHLER,478,23685
+WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,dieBasis,317,23685
+WAHLKREIS,18,Ludwigslust-Parchim II,Erststimmen,FPA,87,23685
 WAHLKREIS,18,Ludwigslust-Parchim II,Zweitstimmen,SPD,10356,23802
 WAHLKREIS,18,Ludwigslust-Parchim II,Zweitstimmen,AfD,3613,23802
 WAHLKREIS,18,Ludwigslust-Parchim II,Zweitstimmen,CDU,3524,23802
@@ -586,16 +590,16 @@ WAHLKREIS,18,Ludwigslust-Parchim II,Zweitstimmen,Die Humanisten,16,23802
 WAHLKREIS,18,Ludwigslust-Parchim II,Zweitstimmen,Gesundheitsforschung,44,23802
 WAHLKREIS,18,Ludwigslust-Parchim II,Zweitstimmen,Team Todenhöfer,52,23802
 WAHLKREIS,18,Ludwigslust-Parchim II,Zweitstimmen,UNABHÄNGIGE,63,23802
-WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,SPD,4157,22122
-WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,AfD,3407,22122
-WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,CDU,2964,22122
-WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,Die Linke,726,22122
-WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,GRÜNE,1467,22122
-WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,Tierschutzpartei,1125,22122
-WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,FREiER HORIZONT,274,22122
-WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,Die PARTEI,480,22122
-WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,DiB,152,22122
-WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,Einzelbewerber,363,22122
+WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,SPD,7370,22122
+WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,AfD,4157,22122
+WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,CDU,3407,22122
+WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,Die Linke,2964,22122
+WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,GRÜNE,726,22122
+WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,FDP,1467,22122
+WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,FREiER HORIZONT,1125,22122
+WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,Die PARTEI,274,22122
+WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,FREIE WÄHLER,480,22122
+WAHLKREIS,19,Ludwigslust-Parchim III,Erststimmen,FPA,152,22122
 WAHLKREIS,19,Ludwigslust-Parchim III,Zweitstimmen,SPD,9166,22254
 WAHLKREIS,19,Ludwigslust-Parchim III,Zweitstimmen,AfD,3977,22254
 WAHLKREIS,19,Ludwigslust-Parchim III,Zweitstimmen,CDU,2928,22254
@@ -620,14 +624,14 @@ WAHLKREIS,19,Ludwigslust-Parchim III,Zweitstimmen,Die Humanisten,22,22254
 WAHLKREIS,19,Ludwigslust-Parchim III,Zweitstimmen,Gesundheitsforschung,42,22254
 WAHLKREIS,19,Ludwigslust-Parchim III,Zweitstimmen,Team Todenhöfer,25,22254
 WAHLKREIS,19,Ludwigslust-Parchim III,Zweitstimmen,UNABHÄNGIGE,46,22254
-WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,SPD,5911,31265
-WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,AfD,6286,31265
-WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,CDU,3608,31265
-WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,Die Linke,1362,31265
-WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,GRÜNE,1808,31265
-WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,Die PARTEI,606,31265
-WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,TIERSCHUTZ hier!,587,31265
-WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,Einzelbewerber,607,31265
+WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,SPD,11097,31265
+WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,AfD,5911,31265
+WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,CDU,6286,31265
+WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,Die Linke,3608,31265
+WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,GRÜNE,1362,31265
+WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,FDP,1808,31265
+WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,FREIE WÄHLER,606,31265
+WAHLKREIS,20,Mecklenburgische Seenplatte III,Erststimmen,dieBasis,587,31265
 WAHLKREIS,20,Mecklenburgische Seenplatte III,Zweitstimmen,SPD,12993,31384
 WAHLKREIS,20,Mecklenburgische Seenplatte III,Zweitstimmen,AfD,5816,31384
 WAHLKREIS,20,Mecklenburgische Seenplatte III,Zweitstimmen,CDU,4250,31384
@@ -652,14 +656,14 @@ WAHLKREIS,20,Mecklenburgische Seenplatte III,Zweitstimmen,Die Humanisten,30,3138
 WAHLKREIS,20,Mecklenburgische Seenplatte III,Zweitstimmen,Gesundheitsforschung,49,31384
 WAHLKREIS,20,Mecklenburgische Seenplatte III,Zweitstimmen,Team Todenhöfer,51,31384
 WAHLKREIS,20,Mecklenburgische Seenplatte III,Zweitstimmen,UNABHÄNGIGE,69,31384
-WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,SPD,4201,22824
-WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,AfD,3376,22824
-WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,CDU,2739,22824
-WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,Die Linke,1489,22824
-WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,GRÜNE,1291,22824
-WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,Die PARTEI,614,22824
-WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,TIERSCHUTZ hier!,558,22824
-WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,Einzelbewerber,353,22824
+WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,SPD,8556,22824
+WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,AfD,4201,22824
+WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,CDU,3376,22824
+WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,Die Linke,2739,22824
+WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,GRÜNE,1489,22824
+WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,FDP,1291,22824
+WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,FREIE WÄHLER,614,22824
+WAHLKREIS,21,Mecklenburgische Seenplatte IV,Erststimmen,dieBasis,558,22824
 WAHLKREIS,21,Mecklenburgische Seenplatte IV,Zweitstimmen,SPD,9469,22873
 WAHLKREIS,21,Mecklenburgische Seenplatte IV,Zweitstimmen,AfD,4011,22873
 WAHLKREIS,21,Mecklenburgische Seenplatte IV,Zweitstimmen,CDU,2842,22873
@@ -684,16 +688,16 @@ WAHLKREIS,21,Mecklenburgische Seenplatte IV,Zweitstimmen,Die Humanisten,17,22873
 WAHLKREIS,21,Mecklenburgische Seenplatte IV,Zweitstimmen,Gesundheitsforschung,37,22873
 WAHLKREIS,21,Mecklenburgische Seenplatte IV,Zweitstimmen,Team Todenhöfer,34,22873
 WAHLKREIS,21,Mecklenburgische Seenplatte IV,Zweitstimmen,UNABHÄNGIGE,52,22873
-WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,SPD,5773,24014
-WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,AfD,4418,24014
-WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,CDU,2899,24014
-WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,Die Linke,745,24014
-WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,GRÜNE,1321,24014
-WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,Tierschutzpartei,542,24014
-WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,Die PARTEI,480,24014
-WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,TIERSCHUTZ hier!,442,24014
-WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,UNABHÄNGIGE,325,24014
-WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,Einzelbewerber,435,24014
+WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,SPD,7069,24014
+WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,AfD,5773,24014
+WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,CDU,4418,24014
+WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,Die Linke,2899,24014
+WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,GRÜNE,745,24014
+WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,FDP,1321,24014
+WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,FREiER HORIZONT,542,24014
+WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,FREIE WÄHLER,480,24014
+WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,dieBasis,442,24014
+WAHLKREIS,22,Mecklenburgische Seenplatte V,Erststimmen,Einzelbewerber,325,24014
 WAHLKREIS,22,Mecklenburgische Seenplatte V,Zweitstimmen,SPD,9025,24090
 WAHLKREIS,22,Mecklenburgische Seenplatte V,Zweitstimmen,AfD,5387,24090
 WAHLKREIS,22,Mecklenburgische Seenplatte V,Zweitstimmen,CDU,3505,24090
@@ -718,14 +722,14 @@ WAHLKREIS,22,Mecklenburgische Seenplatte V,Zweitstimmen,Die Humanisten,12,24090
 WAHLKREIS,22,Mecklenburgische Seenplatte V,Zweitstimmen,Gesundheitsforschung,54,24090
 WAHLKREIS,22,Mecklenburgische Seenplatte V,Zweitstimmen,Team Todenhöfer,43,24090
 WAHLKREIS,22,Mecklenburgische Seenplatte V,Zweitstimmen,UNABHÄNGIGE,67,24090
-WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,SPD,4338,24323
-WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,AfD,5912,24323
-WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,CDU,2734,24323
-WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,Die Linke,1310,24323
-WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,GRÜNE,1260,24323
-WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,Die PARTEI,907,24323
-WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,TIERSCHUTZ hier!,474,24323
-WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,Einzelbewerber,441,24323
+WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,SPD,7388,24323
+WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,AfD,4338,24323
+WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,CDU,5912,24323
+WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,Die Linke,2734,24323
+WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,GRÜNE,1310,24323
+WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,FDP,1260,24323
+WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,FREIE WÄHLER,907,24323
+WAHLKREIS,23,Vorpommern-Rügen I,Erststimmen,dieBasis,474,24323
 WAHLKREIS,23,Vorpommern-Rügen I,Zweitstimmen,SPD,9864,24446
 WAHLKREIS,23,Vorpommern-Rügen I,Zweitstimmen,AfD,4169,24446
 WAHLKREIS,23,Vorpommern-Rügen I,Zweitstimmen,CDU,3961,24446
@@ -750,13 +754,13 @@ WAHLKREIS,23,Vorpommern-Rügen I,Zweitstimmen,Die Humanisten,19,24446
 WAHLKREIS,23,Vorpommern-Rügen I,Zweitstimmen,Gesundheitsforschung,63,24446
 WAHLKREIS,23,Vorpommern-Rügen I,Zweitstimmen,Team Todenhöfer,43,24446
 WAHLKREIS,23,Vorpommern-Rügen I,Zweitstimmen,UNABHÄNGIGE,68,24446
-WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,SPD,4136,18247
-WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,AfD,6041,18247
-WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,CDU,1735,18247
-WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,Die Linke,754,18247
-WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,GRÜNE,1004,18247
-WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,Die PARTEI,438,18247
-WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,Einzelbewerber,384,18247
+WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,SPD,4139,18247
+WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,AfD,4136,18247
+WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,CDU,6041,18247
+WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,Die Linke,1735,18247
+WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,GRÜNE,754,18247
+WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,FDP,1004,18247
+WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Erststimmen,FREIE WÄHLER,438,18247
 WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Zweitstimmen,SPD,6161,18284
 WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Zweitstimmen,AfD,3926,18284
 WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Zweitstimmen,CDU,3739,18284
@@ -781,15 +785,15 @@ WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Zweitstimmen,Die Humanisten,19
 WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Zweitstimmen,Gesundheitsforschung,40,18284
 WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Zweitstimmen,Team Todenhöfer,28,18284
 WAHLKREIS,24,Vorpommern-Rügen II - Stralsund III,Zweitstimmen,UNABHÄNGIGE,39,18284
-WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,SPD,6188,27749
-WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,AfD,4855,27749
-WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,CDU,2874,27749
-WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,Die Linke,1351,27749
-WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,GRÜNE,1676,27749
-WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,NPD,986,27749
-WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,Die PARTEI,555,27749
-WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,TIERSCHUTZ hier!,555,27749
-WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,Einzelbewerber,540,27749
+WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,SPD,8709,27749
+WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,AfD,6188,27749
+WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,CDU,4855,27749
+WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,Die Linke,2874,27749
+WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,GRÜNE,1351,27749
+WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,FDP,1676,27749
+WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,Tierschutzpartei,986,27749
+WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,FREIE WÄHLER,555,27749
+WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Erststimmen,dieBasis,555,27749
 WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Zweitstimmen,SPD,10579,27868
 WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Zweitstimmen,AfD,5768,27868
 WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Zweitstimmen,CDU,3947,27868
@@ -814,14 +818,15 @@ WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Zweitstimmen,Die Humanisten,35,
 WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Zweitstimmen,Gesundheitsforschung,77,27868
 WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Zweitstimmen,Team Todenhöfer,44,27868
 WAHLKREIS,25,Vorpommern-Rügen III - Stralsund I,Zweitstimmen,UNABHÄNGIGE,52,27868
-WAHLKREIS,26,Stralsund II,Erststimmen,SPD,3103,19186
-WAHLKREIS,26,Stralsund II,Erststimmen,AfD,3234,19186
-WAHLKREIS,26,Stralsund II,Erststimmen,CDU,2160,19186
-WAHLKREIS,26,Stralsund II,Erststimmen,Die Linke,2109,19186
-WAHLKREIS,26,Stralsund II,Erststimmen,GRÜNE,1731,19186
-WAHLKREIS,26,Stralsund II,Erststimmen,FREIE WÄHLER,374,19186
-WAHLKREIS,26,Stralsund II,Erststimmen,TIERSCHUTZ hier!,448,19186
-WAHLKREIS,26,Stralsund II,Erststimmen,Einzelbewerber,333,19186
+WAHLKREIS,26,Stralsund II,Erststimmen,SPD,4901,19186
+WAHLKREIS,26,Stralsund II,Erststimmen,AfD,3103,19186
+WAHLKREIS,26,Stralsund II,Erststimmen,CDU,3234,19186
+WAHLKREIS,26,Stralsund II,Erststimmen,Die Linke,2160,19186
+WAHLKREIS,26,Stralsund II,Erststimmen,GRÜNE,2109,19186
+WAHLKREIS,26,Stralsund II,Erststimmen,FDP,1731,19186
+WAHLKREIS,26,Stralsund II,Erststimmen,PIRATEN,374,19186
+WAHLKREIS,26,Stralsund II,Erststimmen,dieBasis,448,19186
+WAHLKREIS,26,Stralsund II,Erststimmen,Einzelbewerber,1126,19186
 WAHLKREIS,26,Stralsund II,Zweitstimmen,SPD,6460,19251
 WAHLKREIS,26,Stralsund II,Zweitstimmen,AfD,3034,19251
 WAHLKREIS,26,Stralsund II,Zweitstimmen,CDU,2621,19251
@@ -846,14 +851,14 @@ WAHLKREIS,26,Stralsund II,Zweitstimmen,Die Humanisten,35,19251
 WAHLKREIS,26,Stralsund II,Zweitstimmen,Gesundheitsforschung,64,19251
 WAHLKREIS,26,Stralsund II,Zweitstimmen,Team Todenhöfer,37,19251
 WAHLKREIS,26,Stralsund II,Zweitstimmen,UNABHÄNGIGE,55,19251
-WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,SPD,4987,32703
-WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,AfD,5547,32703
-WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,CDU,4972,32703
-WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,Die Linke,2003,32703
-WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,GRÜNE,1662,32703
-WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,Die PARTEI,642,32703
-WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,FREIE WÄHLER,363,32703
-WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,Einzelbewerber,419,32703
+WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,SPD,12527,32703
+WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,AfD,4987,32703
+WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,CDU,5547,32703
+WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,Die Linke,4972,32703
+WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,GRÜNE,2003,32703
+WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,FDP,1662,32703
+WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,FREIE WÄHLER,642,32703
+WAHLKREIS,27,Nordwestmecklenburg I,Erststimmen,PIRATEN,363,32703
 WAHLKREIS,27,Nordwestmecklenburg I,Zweitstimmen,SPD,13972,32789
 WAHLKREIS,27,Nordwestmecklenburg I,Zweitstimmen,AfD,4555,32789
 WAHLKREIS,27,Nordwestmecklenburg I,Zweitstimmen,CDU,4402,32789
@@ -878,16 +883,16 @@ WAHLKREIS,27,Nordwestmecklenburg I,Zweitstimmen,Die Humanisten,26,32789
 WAHLKREIS,27,Nordwestmecklenburg I,Zweitstimmen,Gesundheitsforschung,56,32789
 WAHLKREIS,27,Nordwestmecklenburg I,Zweitstimmen,Team Todenhöfer,63,32789
 WAHLKREIS,27,Nordwestmecklenburg I,Zweitstimmen,UNABHÄNGIGE,64,32789
-WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,SPD,6169,33677
-WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,AfD,5548,33677
-WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,CDU,3791,33677
-WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,Die Linke,2064,33677
-WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,GRÜNE,2097,33677
-WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,FREiER HORIZONT,358,33677
-WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,Die PARTEI,1064,33677
-WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,TIERSCHUTZ hier!,758,33677
-WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,DiB,148,33677
-WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,Einzelbewerber,429,33677
+WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,SPD,11680,33677
+WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,AfD,6169,33677
+WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,CDU,5548,33677
+WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,Die Linke,3791,33677
+WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,GRÜNE,2064,33677
+WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,FDP,2097,33677
+WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,Die PARTEI,358,33677
+WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,FREIE WÄHLER,1064,33677
+WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,dieBasis,758,33677
+WAHLKREIS,28,Nordwestmecklenburg II,Erststimmen,FPA,148,33677
 WAHLKREIS,28,Nordwestmecklenburg II,Zweitstimmen,SPD,14054,33817
 WAHLKREIS,28,Nordwestmecklenburg II,Zweitstimmen,AfD,5726,33817
 WAHLKREIS,28,Nordwestmecklenburg II,Zweitstimmen,CDU,4480,33817
@@ -912,14 +917,14 @@ WAHLKREIS,28,Nordwestmecklenburg II,Zweitstimmen,Die Humanisten,28,33817
 WAHLKREIS,28,Nordwestmecklenburg II,Zweitstimmen,Gesundheitsforschung,54,33817
 WAHLKREIS,28,Nordwestmecklenburg II,Zweitstimmen,Team Todenhöfer,41,33817
 WAHLKREIS,28,Nordwestmecklenburg II,Zweitstimmen,UNABHÄNGIGE,84,33817
-WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,SPD,5796,24542
-WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,AfD,4940,24542
-WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,CDU,2101,24542
-WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,Die Linke,999,24542
-WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,GRÜNE,2316,24542
-WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,NPD,1007,24542
-WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,Die PARTEI,472,24542
-WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,Einzelbewerber,459,24542
+WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,SPD,6911,24542
+WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,AfD,5796,24542
+WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,CDU,4940,24542
+WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,Die Linke,2101,24542
+WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,GRÜNE,999,24542
+WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,FDP,2316,24542
+WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,Tierschutzpartei,1007,24542
+WAHLKREIS,29,Vorpommern-Greifswald II,Erststimmen,FREIE WÄHLER,472,24542
 WAHLKREIS,29,Vorpommern-Greifswald II,Zweitstimmen,SPD,8779,24659
 WAHLKREIS,29,Vorpommern-Greifswald II,Zweitstimmen,AfD,5255,24659
 WAHLKREIS,29,Vorpommern-Greifswald II,Zweitstimmen,CDU,4137,24659
@@ -944,15 +949,15 @@ WAHLKREIS,29,Vorpommern-Greifswald II,Zweitstimmen,Die Humanisten,20,24659
 WAHLKREIS,29,Vorpommern-Greifswald II,Zweitstimmen,Gesundheitsforschung,63,24659
 WAHLKREIS,29,Vorpommern-Greifswald II,Zweitstimmen,Team Todenhöfer,50,24659
 WAHLKREIS,29,Vorpommern-Greifswald II,Zweitstimmen,UNABHÄNGIGE,56,24659
-WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,SPD,8167,32014
-WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,AfD,7395,32014
-WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,CDU,2529,32014
-WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,Die Linke,1257,32014
-WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,GRÜNE,1814,32014
-WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,Die PARTEI,620,32014
-WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,TIERSCHUTZ hier!,747,32014
-WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,Team Todenhöfer,558,32014
-WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,Einzelbewerber,666,32014
+WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,SPD,8927,32014
+WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,AfD,8167,32014
+WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,CDU,7395,32014
+WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,Die Linke,2529,32014
+WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,GRÜNE,1257,32014
+WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,FDP,1814,32014
+WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,FREIE WÄHLER,620,32014
+WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,dieBasis,747,32014
+WAHLKREIS,30,Vorpommern-Greifswald III,Erststimmen,UNABHÄNGIGE,558,32014
 WAHLKREIS,30,Vorpommern-Greifswald III,Zweitstimmen,SPD,11176,32162
 WAHLKREIS,30,Vorpommern-Greifswald III,Zweitstimmen,AfD,7635,32162
 WAHLKREIS,30,Vorpommern-Greifswald III,Zweitstimmen,CDU,4982,32162
@@ -977,14 +982,14 @@ WAHLKREIS,30,Vorpommern-Greifswald III,Zweitstimmen,Die Humanisten,55,32162
 WAHLKREIS,30,Vorpommern-Greifswald III,Zweitstimmen,Gesundheitsforschung,80,32162
 WAHLKREIS,30,Vorpommern-Greifswald III,Zweitstimmen,Team Todenhöfer,58,32162
 WAHLKREIS,30,Vorpommern-Greifswald III,Zweitstimmen,UNABHÄNGIGE,268,32162
-WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,SPD,5068,25824
-WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,AfD,4983,25824
-WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,CDU,2768,25824
-WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,Die Linke,855,25824
-WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,GRÜNE,1296,25824
-WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,Die PARTEI,642,25824
-WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,TIERSCHUTZ hier!,1139,25824
-WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,Einzelbewerber,478,25824
+WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,SPD,9073,25824
+WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,AfD,5068,25824
+WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,CDU,4983,25824
+WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,Die Linke,2768,25824
+WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,GRÜNE,855,25824
+WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,FDP,1296,25824
+WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,FREIE WÄHLER,642,25824
+WAHLKREIS,31,Ludwigslust-Parchim IV,Erststimmen,dieBasis,1139,25824
 WAHLKREIS,31,Ludwigslust-Parchim IV,Zweitstimmen,SPD,10562,25892
 WAHLKREIS,31,Ludwigslust-Parchim IV,Zweitstimmen,AfD,4791,25892
 WAHLKREIS,31,Ludwigslust-Parchim IV,Zweitstimmen,CDU,3669,25892
@@ -1009,14 +1014,15 @@ WAHLKREIS,31,Ludwigslust-Parchim IV,Zweitstimmen,Die Humanisten,20,25892
 WAHLKREIS,31,Ludwigslust-Parchim IV,Zweitstimmen,Gesundheitsforschung,50,25892
 WAHLKREIS,31,Ludwigslust-Parchim IV,Zweitstimmen,Team Todenhöfer,30,25892
 WAHLKREIS,31,Ludwigslust-Parchim IV,Zweitstimmen,UNABHÄNGIGE,78,25892
-WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,SPD,4644,26692
-WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,AfD,4320,26692
-WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,CDU,3149,26692
-WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,Die Linke,1578,26692
-WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,GRÜNE,1664,26692
-WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,Die PARTEI,756,26692
-WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,TIERSCHUTZ hier!,512,26692
-WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,Einzelbewerber,372,26692
+WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,SPD,9248,26692
+WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,AfD,4644,26692
+WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,CDU,4320,26692
+WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,Die Linke,3149,26692
+WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,GRÜNE,1578,26692
+WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,FDP,1664,26692
+WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,FREIE WÄHLER,756,26692
+WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,dieBasis,512,26692
+WAHLKREIS,32,Ludwigslust-Parchim V,Erststimmen,Einzelbewerber,821,26692
 WAHLKREIS,32,Ludwigslust-Parchim V,Zweitstimmen,SPD,10970,26839
 WAHLKREIS,32,Ludwigslust-Parchim V,Zweitstimmen,AfD,4425,26839
 WAHLKREIS,32,Ludwigslust-Parchim V,Zweitstimmen,CDU,3657,26839
@@ -1041,14 +1047,15 @@ WAHLKREIS,32,Ludwigslust-Parchim V,Zweitstimmen,Die Humanisten,20,26839
 WAHLKREIS,32,Ludwigslust-Parchim V,Zweitstimmen,Gesundheitsforschung,57,26839
 WAHLKREIS,32,Ludwigslust-Parchim V,Zweitstimmen,Team Todenhöfer,43,26839
 WAHLKREIS,32,Ludwigslust-Parchim V,Zweitstimmen,UNABHÄNGIGE,101,26839
-WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,SPD,3517,16911
-WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,AfD,4223,16911
-WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,CDU,1916,16911
-WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,Die Linke,810,16911
-WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,GRÜNE,871,16911
-WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,Die PARTEI,376,16911
-WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,TIERSCHUTZ hier!,340,16911
-WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,Einzelbewerber,316,16911
+WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,SPD,4628,16911
+WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,AfD,3517,16911
+WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,CDU,4223,16911
+WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,Die Linke,1916,16911
+WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,GRÜNE,810,16911
+WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,FDP,871,16911
+WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,FREIE WÄHLER,376,16911
+WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,dieBasis,340,16911
+WAHLKREIS,33,Vorpommern-Rügen IV,Erststimmen,Einzelbewerber,230,16911
 WAHLKREIS,33,Vorpommern-Rügen IV,Zweitstimmen,SPD,6298,16960
 WAHLKREIS,33,Vorpommern-Rügen IV,Zweitstimmen,AfD,3340,16960
 WAHLKREIS,33,Vorpommern-Rügen IV,Zweitstimmen,CDU,2512,16960
@@ -1073,14 +1080,14 @@ WAHLKREIS,33,Vorpommern-Rügen IV,Zweitstimmen,Die Humanisten,12,16960
 WAHLKREIS,33,Vorpommern-Rügen IV,Zweitstimmen,Gesundheitsforschung,55,16960
 WAHLKREIS,33,Vorpommern-Rügen IV,Zweitstimmen,Team Todenhöfer,32,16960
 WAHLKREIS,33,Vorpommern-Rügen IV,Zweitstimmen,UNABHÄNGIGE,33,16960
-WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,SPD,3662,18542
-WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,AfD,4018,18542
-WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,CDU,1998,18542
-WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,Die Linke,1088,18542
-WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,GRÜNE,1099,18542
-WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,Die PARTEI,459,18542
-WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,TIERSCHUTZ hier!,462,18542
-WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,Einzelbewerber,336,18542
+WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,SPD,5756,18542
+WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,AfD,3662,18542
+WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,CDU,4018,18542
+WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,Die Linke,1998,18542
+WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,GRÜNE,1088,18542
+WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,FDP,1099,18542
+WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,FREIE WÄHLER,459,18542
+WAHLKREIS,34,Vorpommern-Rügen V,Erststimmen,dieBasis,462,18542
 WAHLKREIS,34,Vorpommern-Rügen V,Zweitstimmen,SPD,7112,18625
 WAHLKREIS,34,Vorpommern-Rügen V,Zweitstimmen,AfD,3321,18625
 WAHLKREIS,34,Vorpommern-Rügen V,Zweitstimmen,CDU,2763,18625
@@ -1105,13 +1112,14 @@ WAHLKREIS,34,Vorpommern-Rügen V,Zweitstimmen,Die Humanisten,8,18625
 WAHLKREIS,34,Vorpommern-Rügen V,Zweitstimmen,Gesundheitsforschung,50,18625
 WAHLKREIS,34,Vorpommern-Rügen V,Zweitstimmen,Team Todenhöfer,31,18625
 WAHLKREIS,34,Vorpommern-Rügen V,Zweitstimmen,UNABHÄNGIGE,46,18625
-WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,SPD,5139,18376
-WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,AfD,2798,18376
-WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,CDU,1497,18376
-WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,Die Linke,426,18376
-WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,GRÜNE,887,18376
-WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,Die PARTEI,529,18376
-WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,Einzelbewerber,412,18376
+WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,SPD,6764,18376
+WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,AfD,5139,18376
+WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,CDU,2798,18376
+WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,Die Linke,1497,18376
+WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,GRÜNE,426,18376
+WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,FDP,887,18376
+WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,FREIE WÄHLER,529,18376
+WAHLKREIS,35,Vorpommern-Greifswald IV,Erststimmen,Einzelbewerber,336,18376
 WAHLKREIS,35,Vorpommern-Greifswald IV,Zweitstimmen,SPD,7200,18475
 WAHLKREIS,35,Vorpommern-Greifswald IV,Zweitstimmen,AfD,4379,18475
 WAHLKREIS,35,Vorpommern-Greifswald IV,Zweitstimmen,CDU,2461,18475
@@ -1136,13 +1144,13 @@ WAHLKREIS,35,Vorpommern-Greifswald IV,Zweitstimmen,Die Humanisten,10,18475
 WAHLKREIS,35,Vorpommern-Greifswald IV,Zweitstimmen,Gesundheitsforschung,63,18475
 WAHLKREIS,35,Vorpommern-Greifswald IV,Zweitstimmen,Team Todenhöfer,17,18475
 WAHLKREIS,35,Vorpommern-Greifswald IV,Zweitstimmen,UNABHÄNGIGE,51,18475
-WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,SPD,4506,16806
-WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,AfD,3957,16806
-WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,CDU,1546,16806
-WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,Die Linke,437,16806
-WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,GRÜNE,788,16806
-WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,Tierschutzpartei,436,16806
-WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,Einzelbewerber,414,16806
+WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,SPD,5136,16806
+WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,AfD,4506,16806
+WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,CDU,3957,16806
+WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,Die Linke,1546,16806
+WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,GRÜNE,437,16806
+WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,FDP,788,16806
+WAHLKREIS,36,Vorpommern-Greifswald V,Erststimmen,FREiER HORIZONT,436,16806
 WAHLKREIS,36,Vorpommern-Greifswald V,Zweitstimmen,SPD,6480,16927
 WAHLKREIS,36,Vorpommern-Greifswald V,Zweitstimmen,AfD,3939,16927
 WAHLKREIS,36,Vorpommern-Greifswald V,Zweitstimmen,CDU,2815,16927
@@ -1167,6 +1175,46 @@ WAHLKREIS,36,Vorpommern-Greifswald V,Zweitstimmen,Die Humanisten,8,16927
 WAHLKREIS,36,Vorpommern-Greifswald V,Zweitstimmen,Gesundheitsforschung,46,16927
 WAHLKREIS,36,Vorpommern-Greifswald V,Zweitstimmen,Team Todenhöfer,17,16927
 WAHLKREIS,36,Vorpommern-Greifswald V,Zweitstimmen,UNABHÄNGIGE,38,16927
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,SPD,313224,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,AfD,163962,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,CDU,157403,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,Die Linke,106189,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,GRÜNE,59544,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,FDP,56951,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,Tierschutzpartei,6902,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,FREiER HORIZONT,2491,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,Die PARTEI,1826,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,FREIE WÄHLER,18324,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,PIRATEN,1774,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,Bündnis C,186,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,dieBasis,16319,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,FPA,708,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,UNABHÄNGIGE,558,910169
+LAND,99,Mecklenburg-Vorpommern,Erststimmen,Einzelbewerber,3808,910169
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,SPD,361769,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,AfD,152775,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,CDU,121583,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Die Linke,90881,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,GRÜNE,57554,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,FDP,52963,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,NPD,7063,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Tierschutzpartei,15212,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,FREiER HORIZONT,3348,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Die PARTEI,7023,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,FREIE WÄHLER,10075,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,PIRATEN,3706,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,DKP,727,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Bündnis C,827,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,TIERSCHUTZ hier!,3883,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,dieBasis,15221,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,DiB,563,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,FPA,436,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,LKR,221,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,ÖDP,936,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Die Humanisten,1105,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Gesundheitsforschung,2030,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Team Todenhöfer,1631,913863
+LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,UNABHÄNGIGE,2331,913863
 GEMEINDE,13003000,"Rostock, Hanse- und Universitätsstadt",Erststimmen,SPD,40024,119213
 GEMEINDE,13003000,"Rostock, Hanse- und Universitätsstadt",Erststimmen,AfD,13861,119213
 GEMEINDE,13003000,"Rostock, Hanse- und Universitätsstadt",Erststimmen,CDU,13745,119213
@@ -20095,43 +20143,3 @@ GEMEINDE,13076768,Briefwahl Crivitz,Zweitstimmen,Die Humanisten,6,5696
 GEMEINDE,13076768,Briefwahl Crivitz,Zweitstimmen,Gesundheitsforschung,16,5696
 GEMEINDE,13076768,Briefwahl Crivitz,Zweitstimmen,Team Todenhöfer,7,5696
 GEMEINDE,13076768,Briefwahl Crivitz,Zweitstimmen,UNABHÄNGIGE,21,5696
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,AfD,157403,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,CDU,106189,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,DKP,186,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,DiB,708,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,Die Linke,59544,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,Die PARTEI,18324,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,Einzelbewerber,14944,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,FREIE WÄHLER,1774,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,FREiER HORIZONT,1826,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,GRÜNE,56951,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,NPD,6902,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,SPD,163962,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,TIERSCHUTZ hier!,16319,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,Team Todenhöfer,558,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,Tierschutzpartei,2491,910169
-LAND,99,Mecklenburg-Vorpommern,Erststimmen,UNABHÄNGIGE,325,910169
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,AfD,152775,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Bündnis C,827,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,CDU,121583,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,DKP,727,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,DiB,563,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Die Humanisten,1105,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Die Linke,90881,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Die PARTEI,7023,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,FDP,52963,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,FPA,436,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,FREIE WÄHLER,10075,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,FREiER HORIZONT,3348,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,GRÜNE,57554,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Gesundheitsforschung,2030,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,LKR,221,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,NPD,7063,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,PIRATEN,3706,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,SPD,361769,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,TIERSCHUTZ hier!,3883,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Team Todenhöfer,1631,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,Tierschutzpartei,15212,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,UNABHÄNGIGE,2331,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,dieBasis,15221,913863
-LAND,99,Mecklenburg-Vorpommern,Zweitstimmen,ÖDP,936,913863

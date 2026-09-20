@@ -1,1 +1,13 @@
-ags,municipality_name,status
+ags,municipality_name,status,reported_precincts,total_precincts,voters_total,valid_votes,invalid_votes,source_timestamp,payload_hash,error_message
+11000001,Mitte,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+11000002,Friedrichshain-Kreuzberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+11000003,Pankow,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+11000004,Charlottenburg-Wilmersdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+11000005,Spandau,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+11000006,Steglitz-Zehlendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+11000007,Tempelhof-Schöneberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+11000008,Neukölln,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+11000009,Treptow-Köpenick,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+11000010,Marzahn-Hellersdorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+11000011,Lichtenberg,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone
+11000012,Reinickendorf,NO_DATA,,,,,,,,komm.one polling skipped by --skip-kommone

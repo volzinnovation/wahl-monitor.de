@@ -1,0 +1,10 @@
+{
+  "source_url": "https://www.berlin.de/wahlen/historie/berliner-wahlen/ergebnisberichte/sb_b07-02-03_2021j05_be_ah_bvv-2.pdf",
+  "source_sha256": "f95170ef113bf2e109450208700378d49b30bf456154be702aa9c1e442e0efa9",
+  "pdf_page": 6,
+  "election_date": "2021-09-26",
+  "valid_first_votes": 1809486,
+  "valid_second_votes": 1821664,
+  "first_vote_party_rows": 22,
+  "second_vote_party_rows": 34
+}

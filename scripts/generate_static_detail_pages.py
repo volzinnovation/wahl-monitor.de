@@ -439,6 +439,12 @@ def load_latest_statla_snapshots() -> List[Dict[str, Any]]:
 def load_statla_dataset() -> Tuple[List[Dict[str, Any]], Dict[str, Dict[str, str]]]:
     snapshots = load_latest_statla_snapshots()
     raw_by_row_key: Dict[str, Dict[str, str]] = {}
+    # MV combines CSVs with separate preambles and headers; Berlin merges the
+    # two vote types into each snapshot. Neither raw format has a one-to-one
+    # row correspondence with normalized snapshots. Use their normalized
+    # fields, as a clean GitHub Pages checkout without local raw files does.
+    if core.ACTIVE_ELECTION_KEY in {"2026-mv", "2026-be"}:
+        return snapshots, raw_by_row_key
     raw_path = current_raw_statla_csv_path()
     if raw_path is not None:
         raw_text = core.decode_bytes(raw_path.read_bytes())
@@ -597,7 +603,7 @@ def load_lsa_reference_2021(config: core.Config) -> Dict[str, Any]:
 
 
 def load_berlin_reference_2021(config: core.Config) -> Dict[str, Any]:
-    """Load the official 2021 Berlin constituency winners for the pre-election map."""
+    """Load official 2021 Berlin party results and constituency winners."""
     if config.election_key != "2026-be":
         return {}
 
@@ -619,7 +625,17 @@ def load_berlin_reference_2021(config: core.Config) -> Dict[str, Any]:
 
     if not winners:
         return {}
+    party_rows = read_csv_rows(reference_dir / "party_results.csv")
+    land_area = {}
+    for vote_type, field in (("Erststimmen", "valid_first_votes"), ("Zweitstimmen", "valid_second_votes")):
+        land_area[field] = next((
+            core.parse_int(row.get("valid_votes"))
+            for row in party_rows
+            if row.get("area_level") == "LAND" and row.get("vote_type") == vote_type
+        ), None)
     return {
+        "party_rows": party_rows,
+        "land_area": land_area,
         "wahlkreis_rows": rows,
         "winners": winners,
         "source_url": (
@@ -782,6 +798,8 @@ def render_lsa_current_results_panel(
     party_rows: List[Dict[str, Any]],
     reference: Dict[str, Any],
     overview_summary: Optional[Dict[str, Any]] = None,
+    *,
+    election_label: str = "Sachsen-Anhalt",
 ) -> str:
     """Lead with current counts; compare shares against the labelled 2021 final."""
     def number(value: Any, decimals: int = 0) -> str:
@@ -789,6 +807,8 @@ def render_lsa_current_results_panel(
 
     csv_reported, csv_total = reporting_counts(snapshot)
     overview_summary = overview_summary or {}
+    reference_url = str(reference.get("source_url") or "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php")
+    reference_date = str(reference.get("reference_date") or "6. Juni 2021")
     overview_reported = core.parse_int(overview_summary.get("reported_precincts"))
     overview_total = core.parse_int(overview_summary.get("total_precincts"))
 
@@ -834,7 +854,7 @@ def render_lsa_current_results_panel(
     )
     panels = [
         "<section class='panel' id='ergebnis-2026'><h2>Landesergebnis 2026</h2>"
-        "<p class='small'>Aktueller Ergebnisstand · Sachsen-Anhalt</p>"
+        f"<p class='small'>Aktueller Ergebnisstand · {html.escape(election_label)}</p>"
         f"<div class='stats'>{cells}</div><p class='small'>{html.escape(coverage_note)}</p></section>"
     ]
     row_key = str(snapshot.get("row_key") or "")
@@ -879,8 +899,8 @@ def render_lsa_current_results_panel(
             "<th>Anteil 2026</th><th>Anteil 2021 (Endergebnis)</th><th>Differenz (Pp.)</th></tr></thead>"
             f"<tbody>{''.join(body_rows)}</tbody></table>"
             "<p class='small'>—: noch keine gültigen Stimmen oder keine vergleichbare Parteizeile in dieser Wahl. "
-            "Vergleichsbasis: <a href='https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt21/and/lt.download.php'>"
-            "amtliches Endergebnis Sachsen-Anhalt vom 6. Juni 2021</a>.</p></section>"
+            f"Vergleichsbasis: <a href='{html.escape(reference_url)}'>"
+            f"amtliches Endergebnis {html.escape(election_label)} vom {html.escape(reference_date)}</a>.</p></section>"
         )
     return "".join(panels)
 
@@ -3665,12 +3685,14 @@ def render_index_page(
         "total_precincts": run_metadata.get("overview_total_precincts"),
     }
     reference_2021 = load_reference_2021(config)
-    reference_map_mode = bool(reference_2021) and (
+    live_election = config.election_key in {"2026-mv", "2026-be"}
+    reference_map_mode = not live_election and bool(reference_2021) and (
         not statla_snapshots or (config.election_key == "2026-mv" and statla_mode == "DUMMY")
     )
     reference_vote_type = str(reference_2021.get("map_vote_type") or "Zweitstimmen")
     reference_election_label = "Abgeordnetenhauswahl" if config.election_key == "2026-be" else "Landtagswahl"
-    map_heading = "Wahlkreiskarte · 2021 Referenz" if reference_map_mode else "Klickbare Wahlkreiskarte"
+    map_heading = ("Wahlkreiskarte · Erststimmen 2026" if live_election else
+                   "Wahlkreiskarte · 2021 Referenz" if reference_map_mode else "Klickbare Wahlkreiskarte")
     map_note = (
         f"Farbe = {reference_vote_type}-Sieger der {reference_election_label} 2021; die Geometrie zeigt die Wahlkreiseinteilung 2026. Jeder Wahlkreis führt zur Detailseite."
         if reference_map_mode
@@ -3704,19 +3726,26 @@ def render_index_page(
             "Wahlbezirk-Ergebnisse werden angezeigt, sobald die offizielle Datei verfügbar ist.</p>"
         )
     elif config.election_key == "2026-mv":
-        wahlkreis_metric_label = "Wahlkreise vorbereitet"
-        wahlkreis_metric_value = len(features)
+        wahlkreis_metric_label = "Wahlkreise mit Ergebnis"
+        wahlkreis_metric_value = wahlkreise_with_votes
         availability_note = (
-            "<p class='small'>Vorwahlansicht mit amtlicher Wahlkreisgeometrie, zugelassenen Kandidaturen und 2021-Referenz. "
-            f"Die Kandidaturseite enthält {len(load_mv_candidates(config))} Personen; Live-Ergebnisse werden am Wahltag ab etwa 19:00 Uhr veröffentlicht.</p>"
+            "<p class='small'>Aktuelle Ergebnisse 2026 für Land, 36 Wahlkreise und Gemeinden, "
+            f"mit {booth_count_label} veröffentlichten Wahlbezirken. "
+            "Die Erst- und Zweitstimmen werden mit dem amtlichen Endergebnis 2021 verglichen.</p>"
         )
     elif config.election_key == "2026-be":
-        wahlkreis_metric_label = "Wahlkreise vorbereitet"
-        wahlkreis_metric_value = len(features)
-        parties = load_berlin_parties(config)
+        wahlkreis_metric_label = "Wahlkreise mit Ergebnis"
+        wahlkreis_metric_value = wahlkreise_with_votes
         availability_note = (
-            "<p class='small'>Vorwahlansicht mit amtlicher Geometrie für 78 Wahlkreise, 12 Bezirken und zugelassenen Wahlvorschlägen. "
-            f"Die Parteiseite enthält {len(parties)} Parteien und Wählergemeinschaften; Live-Ergebnisse werden am Wahltag ab 18:00 Uhr erwartet.</p>"
+            "<p class='small'>Aktuelle Ergebnisse 2026 für Berlin, 12 Bezirke und 78 Wahlkreise. "
+            "Vergleichsbasis ist das amtliche Endergebnis 2021. "
+            "Noch nicht gemeldete Ergebnisse bleiben als ausstehend gekennzeichnet.</p>"
+        )
+    current_results_panel = ""
+    if config.election_key.endswith("-lsa") or live_election:
+        current_results_panel = render_lsa_current_results_panel(
+            land_snapshot, statla_party_rows, reference_2021, overview_summary,
+            election_label={"2026-mv": "Mecklenburg-Vorpommern", "2026-be": "Berlin"}.get(config.election_key, "Sachsen-Anhalt"),
         )
     body = (
         "<div class='hero'><div class='topbar'><a href='search.html'>Suche</a><span>/</span>"
@@ -3733,13 +3762,13 @@ def render_index_page(
         f"<div class='stats'>"
         f"<div class='stat'><div class='stat-label'>Letzte Abfrage</div><div class='stat-value'>{html.escape(polled_at_local)}</div></div>"
         f"<div class='stat'><div class='stat-label'>Trackingstart</div><div class='stat-value'>{html.escape(tracking_start)}</div></div>"
-        f"<div class='stat'><div class='stat-label'>Gemeinden</div><div class='stat-value'>{len(municipality_link_by_ags):,}</div></div>"
-        f"<div class='stat'><div class='stat-label'>Landkreise</div><div class='stat-value'>{len(landkreis_pages)}</div></div>"
+        f"<div class='stat'><div class='stat-label'>{'Bezirke' if config.election_key == '2026-be' else 'Gemeinden'}</div><div class='stat-value'>{len(municipality_link_by_ags):,}</div></div>"
+        f"<div class='stat'><div class='stat-label'>{'Land' if config.election_key == '2026-be' else 'Landkreise'}</div><div class='stat-value'>{len(landkreis_pages)}</div></div>"
         f"<div class='stat'><div class='stat-label'>{wahlkreis_metric_label}</div><div class='stat-value'>{wahlkreis_metric_value}</div></div>"
-        f"<div class='stat'><div class='stat-label'>Wahlkreise vor Start</div><div class='stat-value'>{wahlkreis_counts['prestart']}</div></div>"
+        f"<div class='stat'><div class='stat-label'>{'Wahlkreise vollständig' if live_election else 'Wahlkreise vor Start'}</div><div class='stat-value'>{wahlkreis_counts['complete'] if live_election else wahlkreis_counts['prestart']}</div></div>"
         "</div></div>"
         "<div class='grid'>"
-        f"{render_lsa_current_results_panel(land_snapshot, statla_party_rows, reference_2021, overview_summary) if config.election_key.endswith('-lsa') else ''}"
+        f"{current_results_panel}"
         "<div class='panel'><h2>Was-wäre-wenn-Szenario</h2>"
         "<p class='small'>Stimmenanteile verschieben, 5-Prozent-Schwelle prüfen und Koalitionsmehrheiten als teilbaren Link simulieren.</p>"
         "<ul class='linklist'><li><a href='scenario.html'>Szenario öffnen</a></li></ul></div>"
@@ -3748,7 +3777,6 @@ def render_index_page(
         f"{render_clickable_wahlkreis_map(features, wahlkreis_status_rows, wahlkreis_link_by_wk, reference_2021.get('winners'), reference_map_mode, reference_vote_type)}"
         f"{render_reference_map_legend(reference_2021, reference_vote_type) if reference_map_mode else ''}</div>"
         f"{render_structure_profile_panel(features, wahlkreis_link_by_wk)}"
-        f"{render_reference_2021_panel(reference_2021) if config.election_key == '2026-mv' else ''}"
         f"{render_landkreis_overview_table(landkreis_overview_rows, landkreis_link_by_id)}"
         f"{render_historical_comparison_section(land_snapshot, party_row_details_by_row_key, party_order)}"
         f"{render_report_figure_panel(output_root, title='Politische Repräsentation', image_path=core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png', image_alt='Politische Repräsentation der Stimmenanteile', description='Reportgrafik zur politischen Repräsentation der Landes- bzw. Zweitstimmen.', data_links=[('PNG', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.png'), ('CSV', core.REPORT_DIR / 'statla_second_vote_representation_waterfall.csv')])}"

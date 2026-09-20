@@ -213,7 +213,7 @@ def extract_areas(book: Any, sheet_name: str, *, municipality: bool) -> Tuple[Li
     rows = list(sheet.iter_rows(min_row=12, values_only=True))
     areas: List[Dict[str, Any]] = []
     party_rows: Dict[str, Dict[str, str]] = {}
-    first_party_start, first_party_end = (12, 45) if municipality else (11, 44)
+    first_party_start, first_party_end = (12, 45) if municipality else (10, 43)
     second_party_start, second_party_end = (47, 71) if municipality else (45, 69)
     for raw_values in rows:
         values = list(raw_values)
