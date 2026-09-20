@@ -60,9 +60,9 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 59,Treptow-Köpenick 6,complete,45,45,1,0,0,1
 60,Treptow-Köpenick 7,complete,49,49,1,0,0,1
 61,Marzahn-Hellersdorf 1,pending,44,45,1,0,0,1
-62,Marzahn-Hellersdorf 2,pending,46,51,1,0,0,1
+62,Marzahn-Hellersdorf 2,pending,47,51,1,0,0,1
 63,Marzahn-Hellersdorf 3,pending,49,52,1,0,0,1
-64,Marzahn-Hellersdorf 4,pending,55,58,1,0,0,1
+64,Marzahn-Hellersdorf 4,pending,56,58,1,0,0,1
 65,Marzahn-Hellersdorf 5,complete,66,66,1,0,0,1
 66,Marzahn-Hellersdorf 6,pending,47,50,1,0,0,1
 67,Lichtenberg 1,pending,56,57,1,0,0,1
