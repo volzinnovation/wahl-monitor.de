@@ -23,7 +23,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 22,Charlottenburg-Wilmersdorf 1,complete,43,43,1,0,0,1
 23,Charlottenburg-Wilmersdorf 2,complete,50,50,1,0,0,1
 24,Charlottenburg-Wilmersdorf 3,complete,47,47,1,0,0,1
-25,Charlottenburg-Wilmersdorf 4,pending,50,51,1,0,0,1
+25,Charlottenburg-Wilmersdorf 4,complete,51,51,1,0,0,1
 26,Charlottenburg-Wilmersdorf 5,complete,47,47,1,0,0,1
 27,Charlottenburg-Wilmersdorf 6,complete,49,49,1,0,0,1
 28,Charlottenburg-Wilmersdorf 7,complete,50,50,1,0,0,1
@@ -73,7 +73,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 72,Lichtenberg 6,pending,52,54,1,0,0,1
 73,Reinickendorf 1,pending,44,45,1,0,0,1
 74,Reinickendorf 2,pending,47,48,1,0,0,1
-75,Reinickendorf 3,pending,54,57,1,0,0,1
+75,Reinickendorf 3,pending,55,57,1,0,0,1
 76,Reinickendorf 4,complete,57,57,1,0,0,1
 77,Reinickendorf 5,complete,43,43,1,0,0,1
 78,Reinickendorf 6,complete,61,61,1,0,0,1
