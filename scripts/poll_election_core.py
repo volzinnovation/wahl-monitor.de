@@ -160,6 +160,22 @@ BERLIN_PARTY_ORDER = [
     "Demokratische Linke",
     "DIE FRAUEN",
 ]
+# The first-vote export appends individual candidates after the 30 party and
+# group entries.  Keep these separate from the party catalogue used by the
+# election UI, while retaining their votes in the normalized result data.
+BERLIN_INDEPENDENT_CANDIDATES = {
+    31: "Einzelbewerbung: Fleischmann, Florian",
+    32: "Einzelbewerbung: Dr. Gerken, Thomas",
+    33: "Einzelbewerbung: Kanzler, Jörg",
+    34: "Einzelbewerbung: Lindlmair, Thomas",
+    35: "Einzelbewerbung: Mansamba, Mutombo Kandu",
+    36: "Einzelbewerbung: Mihm, Jan",
+    37: "Einzelbewerbung: Ngwa, Albert",
+    38: "Einzelbewerbung: Schnitzer, Sebastian Alexander",
+    39: "Einzelbewerbung: Snelinski, Oliver",
+    40: "Einzelbewerbung: Trockle, Nuri",
+    41: "Einzelbewerbung: Worbs, Hans-Dieter",
+}
 BERLIN_PARTY_CODEBOOK: Dict[str, List[Tuple[str, str]]] = {
     vote_type: [(f"{prefix}{index}", party) for index, party in enumerate(BERLIN_PARTY_ORDER, start=1)]
     for vote_type, prefix in (("Erststimmen", "D"), ("Zweitstimmen", "F"))
@@ -1691,7 +1707,12 @@ def extract_statla_parties(row: Dict[str, str]) -> List[Dict[str, Any]]:
             if not match:
                 continue
             number = int(match.group(1))
-            if number < 1 or number > len(BERLIN_PARTY_ORDER):
+            candidate_name = (
+                BERLIN_INDEPENDENT_CANDIDATES.get(number)
+                if vote_type == "Erststimmen"
+                else None
+            )
+            if number < 1 or (number > len(BERLIN_PARTY_ORDER) and candidate_name is None):
                 continue
             votes = parse_int(raw_value)
             if votes is None:
@@ -1701,7 +1722,7 @@ def extract_statla_parties(row: Dict[str, str]) -> List[Dict[str, Any]]:
                 {
                     "vote_type": vote_type,
                     "party_key": party_key,
-                    "party_name": canonical_party_name(party_key, vote_type),
+                    "party_name": candidate_name or canonical_party_name(party_key, vote_type),
                     "votes": votes,
                 }
             )
@@ -5541,6 +5562,16 @@ def main() -> None:
             f"mode={statla.get('mode')} snapshots={len(statla.get('snapshots', []))} "
             f"party_rows={len(statla.get('party_rows', []))}"
         )
+
+        # Do not replace a previously valid export with an empty snapshot when
+        # the official source is unavailable or cannot be normalized. Raising
+        # here lets the workflow retry instead of committing a
+        # successful-looking, empty poll.
+        if not statla.get("snapshots"):
+            raise RuntimeError(
+                "StatLA source did not provide result rows: "
+                f"mode={statla.get('mode')} error={statla.get('error_message') or 'unknown error'}"
+            )
 
         all_fetches = list(kommone["fetches"]) + list(statla["fetches"])
         store_source_fetches(conn, poll_id, all_fetches)

@@ -9,7 +9,7 @@
   "statla_live_csv_url": "https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/downloads.html",
   "statla_live_results_url": "https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/",
   "statla_dummy_csv_url": "",
-  "statla_downloads_url": "https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/",
+  "statla_downloads_url": "https://www.wahlen-berlin.de/wahlen/Be2026/AFSPRAES/agh/downloads.html",
   "wahlkreise_geojson_zip_url": "https://www.statistik-berlin-brandenburg.de/opendata/RBS_OD_Wahlkreise_AH2026.zip",
   "wahlkreise_shp_zip_url": "https://www.statistik-berlin-brandenburg.de/opendata/RBS_OD_Wahlkreise_AH2026.zip",
   "wahlkreise_mapping_csv_url": "https://gdi.berlin.de/services/wfs/wahlgebiete_agh2026?request=GetFeature&service=WFS&version=2.0.0&typeNames=wahlgebiete_agh2026%3Aagh2026_awk&outputFormat=application%2Fjson&srsName=EPSG%3A4326",
