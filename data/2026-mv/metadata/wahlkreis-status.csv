@@ -21,7 +21,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 20,Mecklenburgische Seenplatte III,complete,82,82,43,0,0,43
 21,Mecklenburgische Seenplatte IV,complete,53,53,19,0,0,19
 22,Mecklenburgische Seenplatte V,complete,78,78,37,0,0,37
-23,Vorpommern-Rügen I,pending,59,60,25,0,0,25
+23,Vorpommern-Rügen I,complete,60,60,25,0,0,25
 24,Vorpommern-Rügen II -Stralsund III,pending,44,45,18,0,0,18
 25,Vorpommern-Rügen III -Stralsund I,pending,57,58,28,0,0,28
 26,Stralsund II,complete,26,26,1,0,0,1
