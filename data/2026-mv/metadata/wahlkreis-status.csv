@@ -32,6 +32,6 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 31,Ludwigslust-Parchim IV,complete,64,64,27,0,0,27
 32,Ludwigslust-Parchim V,pending,63,64,37,0,0,37
 33,Vorpommern-Rügen IV,complete,37,37,26,0,0,26
-34,Vorpommern-Rügen V,pending,38,39,18,0,0,18
+34,Vorpommern-Rügen V,complete,39,39,18,0,0,18
 35,Vorpommern-Greifswald IV,complete,48,48,22,0,0,22
 36,Vorpommern-Greifswald V,complete,59,59,30,0,0,30
