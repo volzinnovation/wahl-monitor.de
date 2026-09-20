@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Frozen analysis artifacts retain exact bytes for their SHA-256 manifests.
+data/2026-mv/reports/git-timeline/animation-60845e75/** -text -whitespace
+data/2026-mv/reports/git-timeline/animation-604f5ef2/** -text -whitespace
+data/2026-be/reports/git-timeline/animation-60845e75/** -text -whitespace
+data/2026-mv/reports/statewide-voting-modes-60845e75/** -text -whitespace
+data/2026-be/reports/statewide-voting-modes-20260920/** -text -whitespace
