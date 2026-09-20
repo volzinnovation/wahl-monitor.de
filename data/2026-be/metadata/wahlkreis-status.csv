@@ -30,7 +30,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 29,Spandau 1,complete,56,56,1,0,0,1
 30,Spandau 2,complete,44,44,1,0,0,1
 31,Spandau 3,complete,53,53,1,0,0,1
-32,Spandau 4,pending,47,48,1,0,0,1
+32,Spandau 4,complete,48,48,1,0,0,1
 33,Spandau 5,complete,50,50,1,0,0,1
 34,Steglitz-Zehlendorf 1,complete,60,60,1,0,0,1
 35,Steglitz-Zehlendorf 2,complete,60,60,1,0,0,1
@@ -62,7 +62,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 61,Marzahn-Hellersdorf 1,pending,44,45,1,0,0,1
 62,Marzahn-Hellersdorf 2,pending,45,51,1,0,0,1
 63,Marzahn-Hellersdorf 3,pending,48,52,1,0,0,1
-64,Marzahn-Hellersdorf 4,pending,54,58,1,0,0,1
+64,Marzahn-Hellersdorf 4,pending,55,58,1,0,0,1
 65,Marzahn-Hellersdorf 5,complete,66,66,1,0,0,1
 66,Marzahn-Hellersdorf 6,pending,47,50,1,0,0,1
 67,Lichtenberg 1,pending,56,57,1,0,0,1
