@@ -60,7 +60,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 59,Treptow-Köpenick 6,complete,45,45,1,0,0,1
 60,Treptow-Köpenick 7,complete,49,49,1,0,0,1
 61,Marzahn-Hellersdorf 1,pending,44,45,1,0,0,1
-62,Marzahn-Hellersdorf 2,pending,45,51,1,0,0,1
+62,Marzahn-Hellersdorf 2,pending,46,51,1,0,0,1
 63,Marzahn-Hellersdorf 3,pending,48,52,1,0,0,1
 64,Marzahn-Hellersdorf 4,pending,55,58,1,0,0,1
 65,Marzahn-Hellersdorf 5,complete,66,66,1,0,0,1
@@ -70,7 +70,7 @@ wahlkreisnummer,wahlkreisname,status,reported_precincts,total_precincts,municipa
 69,Lichtenberg 3,complete,58,58,1,0,0,1
 70,Lichtenberg 4,complete,57,57,1,0,0,1
 71,Lichtenberg 5,complete,57,57,1,0,0,1
-72,Lichtenberg 6,pending,52,54,1,0,0,1
+72,Lichtenberg 6,pending,53,54,1,0,0,1
 73,Reinickendorf 1,pending,44,45,1,0,0,1
 74,Reinickendorf 2,pending,47,48,1,0,0,1
 75,Reinickendorf 3,pending,55,57,1,0,0,1
