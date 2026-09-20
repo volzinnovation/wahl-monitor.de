@@ -1,8 +1,8 @@
 {
-  "content_hash": "86039e0a95c79c7818f6ea3bad13cbced87248e207cb15ac5b4086b23a25af8e",
+  "content_hash": "e911b030ec40a73583fa1ab09e4d677dc6bf855dd4eda0f999b26fd7c79b6668",
   "error_message": null,
-  "fetched_at_utc": "2026-09-07T17:52:37.289680+00:00",
+  "fetched_at_utc": "2026-09-20T17:12:21.664299+00:00",
   "overview_reporting": null,
   "status_code": 200,
-  "url": "/Users/raphaelvolz/Github/ltw26-bw-wahlergebnis/data/2026-mv/metadata/l_wahlbezirke.csv"
+  "url": "https://wahlen.mvnet.de/dateien/ergebnisse.2026/landtagswahl/csv/l_wahlbezirke.csv"
 }
