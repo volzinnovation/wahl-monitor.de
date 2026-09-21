@@ -1,7 +1,7 @@
 {
-  "content_hash": "f290cc639ba26649550254a98899b3a37a5b173ccdfba7d2847f2c848cd20cd2",
+  "content_hash": "fb53bf978ba2b1f9a6215ffd9a3ee2182819a6c04102041b3fe5737e9ac5bdcd",
   "error_message": null,
-  "fetched_at_utc": "2026-09-20T22:05:20.648814+00:00",
+  "fetched_at_utc": "2026-09-21T01:20:51.514561+00:00",
   "overview_reporting": null,
   "status_code": 200,
   "url": "https://wahlen.mvnet.de/dateien/ergebnisse.2026/landtagswahl/csv/l_wahlbezirke.csv"
