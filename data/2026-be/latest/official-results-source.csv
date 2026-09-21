@@ -60,8 +60,8 @@ id="id_34ee2de7_ae46_41bf_918d_23d0c020fec3">
         <div class="header-wahl__wahl">
 <h1 aria-label="Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026"
                 class="wahl__name"><a href="index.html" >Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026</a></h1>            <div class="header-wahl-sub">
-                <p class="stand"> 20. September 2026, Berlin, Zwischenergebnis </p>
-                <p class="stand"> Ausgez&auml;hlte Gebiete: 4.114 von 4.114, 21.09.2026, 01:56:01 </p>
+                <p class="stand"> 20. September 2026, Berlin </p>
+                <p class="stand"> Vorl&auml;ufiges Ergebnis, 21.09.2026, 03:33:56 </p>
             </div>
         </div>
 
@@ -196,6 +196,97 @@ scope="col"        data-sort="Beschreibung">
     
         data-sort="Ergebnis Zweitstimme nach Wahlkreisen und weiteren Aggregaten (Datensatzbeschreibung)">
  Ergebnis Zweitstimme nach Wahlkreisen und weiteren Aggregaten (Datensatzbeschreibung)</td>    </tr>
+        </tbody>
+
+
+        <tfoot>
+        </tfoot>
+    </table>
+</figure>
+
+
+
+
+
+
+
+
+
+                </div>
+        </div>
+        <div class="flex__row  ">
+                <div class="card     col-4-of-6 col-sm-4-of-6 col-md-2-of-6 col-lg-2-of-6 col-xl-1-of-6 "
+id="id_d800cecf_c27b_4625_92be_29ee9cff4b5b">
+<div class="card_header" role="heading" aria-level="2">Download W-Tabellen</div>
+
+
+
+<figure class="table__wrapper" style="">
+    <table class="tablesaw "
+
+
+
+
+
+
+
+    >
+
+        <caption>
+            <div>
+<h3>Download W-Tabellen</h3>
+                <p class="stand"> </p> 
+            </div>
+        </caption>
+            <colgroup>
+                    <col   />             </colgroup>
+            <colgroup>
+                    <col   />             </colgroup>
+
+        <thead>
+    <tr >
+    <th        class="tableexport-string align-left"
+    
+scope="col"        data-sort="Datei">
+ Datei</th>    <th        class="tableexport-string align-left"
+    
+scope="col"        data-sort="Beschreibung">
+ Beschreibung</th>    </tr>
+        </thead>
+
+        <tbody>
+    <tr >
+            <td        class="tableexport-string align-left"
+    
+        data-sort="Datenexport_AGH2026_Erststimme_W_BE.csv">
+<a href="Datenexport_AGH2026_Erststimme_W_BE.csv"  > Datenexport_AGH2026_Erststimme_W_BE.csv</a></td>            <td        class="tableexport-string align-left"
+    
+        data-sort="Ergebnis Erststimme nach Wahlbezirken">
+ Ergebnis Erststimme nach Wahlbezirken</td>    </tr>
+    <tr >
+            <td        class="tableexport-string align-left"
+    
+        data-sort="Datenexport_AGH2026_Zweitstimme_W_BE.csv">
+<a href="Datenexport_AGH2026_Zweitstimme_W_BE.csv"  > Datenexport_AGH2026_Zweitstimme_W_BE.csv</a></td>            <td        class="tableexport-string align-left"
+    
+        data-sort="Ergebnis Zweitstimme nach Wahlbezirken">
+ Ergebnis Zweitstimme nach Wahlbezirken</td>    </tr>
+    <tr >
+            <td        class="tableexport-string align-left"
+    
+        data-sort="DSB_Datenexport_AGH2026_Erststimme_W_BE.csv">
+<a href="DSB/DSB_Datenexport_AGH2026_Erststimme_W_BE.csv"  > DSB_Datenexport_AGH2026_Erststimme_W_BE.csv</a></td>            <td        class="tableexport-string align-left"
+    
+        data-sort="Ergebnis Erststimme nach Wahlbezirken (Datensatzbeschreibung)">
+ Ergebnis Erststimme nach Wahlbezirken (Datensatzbeschreibung)</td>    </tr>
+    <tr >
+            <td        class="tableexport-string align-left"
+    
+        data-sort="DSB_Datenexport_AGH2026_Zweitstimme_W_BE.csv">
+<a href="DSB/DSB_Datenexport_AGH2026_Zweitstimme_W_BE.csv"  > DSB_Datenexport_AGH2026_Zweitstimme_W_BE.csv</a></td>            <td        class="tableexport-string align-left"
+    
+        data-sort="Ergebnis Zweitstimme nach Wahlbezirken (Datensatzbeschreibung)">
+ Ergebnis Zweitstimme nach Wahlbezirken (Datensatzbeschreibung)</td>    </tr>
         </tbody>
 
 
